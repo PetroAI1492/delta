@@ -4,176 +4,481 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Global Chokepoints — 24h Signal Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
   <style>
+    :root {
+      --bg:        #0b1120;
+      --surface:   #111827;
+      --surface2:  #1e293b;
+      --border:    #1f2d3d;
+      --text:      #e2e8f0;
+      --muted:     #94a3b8;
+      --faint:     #334155;
+      --accent:    #38bdf8;
+      --high:      #ef4444;
+      --med:       #f59e0b;
+      --low:       #3b82f6;
+      --none:      #64748b;
+      --mono:      'IBM Plex Mono', monospace;
+      --sans:      'IBM Plex Sans', sans-serif;
+    }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: 12px; color: #1a1a1a; background: #f4f6f9; padding: 24px;
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.5;
+      padding: 0;
     }
-    .page {
-      max-width: 1100px; margin: 0 auto; background: #fff;
-      padding: 32px 40px 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    /* ── TOP BAR ── */
+    .topbar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 32px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
     }
-    h1 {
-      font-size: 15px; font-weight: bold; text-align: center;
-      color: #1a3a5c; letter-spacing: 0.05em; margin-bottom: 4px;
+    .topbar-title {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      text-transform: uppercase;
     }
-    .meta { text-align: center; font-size: 10px; color: #555; margin-bottom: 8px; }
-    hr.top { border: none; border-top: 2px solid #1a3a5c; margin-bottom: 12px; }
-    hr.bot { border: none; border-top: 1px solid #aaa; margin-top: 16px; margin-bottom: 6px; }
-    .copyright { font-size: 9px; color: #666; font-style: italic; line-height: 13px; }
-    a { color: #1d4ed8; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    table tbody tr:nth-child(even) td { background: #f0f4f8; }
+    .topbar-meta {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    /* ── SCORECARD ── */
+    .scorecard {
+      display: flex;
+      gap: 1px;
+      background: var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .sc-cell {
+      flex: 1;
+      background: var(--surface);
+      padding: 12px 16px 10px;
+      transition: background 0.15s;
+    }
+    .sc-cell:hover { background: var(--surface2); }
+    .sc-name {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .sc-sig {
+      font-family: var(--mono);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      margin-bottom: 2px;
+    }
+    .sc-count {
+      font-size: 10px;
+      color: var(--faint);
+    }
+    /* ── MAIN CONTENT ── */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 32px 48px;
+    }
+    /* ── CHOKEPOINT CARDS ── */
+    .cp-card {
+      background: var(--surface);
+      border-radius: 6px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .cp-card-header {
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cp-title {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--text);
+    }
+    .cp-pills {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .pill {
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 3px;
+      letter-spacing: 0.06em;
+    }
+    .pill-high { background: rgba(239,68,68,0.15); color: #ef4444; }
+    .pill-med  { background: rgba(245,158,11,0.15); color: #f59e0b; }
+    .pill-low  { background: rgba(59,130,246,0.15); color: #3b82f6; }
+    .pill-conc {
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 3px;
+      border: 1px solid;
+      letter-spacing: 0.06em;
+      background: transparent;
+    }
+    /* ── ASSESSMENT ── */
+    .cp-why {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 11.5px;
+      line-height: 1.6;
+      color: #cbd5e1;
+    }
+    .why-label {
+      font-family: var(--mono);
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    .why-text { vertical-align: middle; }
+    /* ── ARTICLE TABLE ── */
+    .art-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .art-table thead tr {
+      background: var(--surface2);
+    }
+    .art-table th {
+      font-family: var(--mono);
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      text-transform: uppercase;
+      padding: 7px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .art-table td {
+      padding: 8px 12px;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border);
+      font-size: 11.5px;
+    }
+    .art-row:last-child td { border-bottom: none; }
+    .art-row:hover td { background: var(--surface2); }
+    .td-time {
+      font-family: var(--mono);
+      font-size: 9.5px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .td-headline a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 400;
+      line-height: 1.45;
+    }
+    .td-headline a:hover { color: var(--accent); text-decoration: underline; }
+    .td-source {
+      display: block;
+      font-size: 9.5px;
+      color: var(--muted);
+      margin-top: 2px;
+      font-family: var(--mono);
+    }
+    .td-cats {
+      font-size: 10px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .td-sig { text-align: center; }
+    .sig-badge {
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 600;
+      padding: 3px 7px;
+      border-radius: 3px;
+      border: 1px solid;
+      background: transparent;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+    .td-empty {
+      text-align: center;
+      color: var(--faint);
+      font-style: italic;
+      padding: 16px;
+      font-size: 11px;
+    }
+    /* ── FOOTER ── */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 16px 32px;
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--faint);
+      line-height: 1.7;
+    }
   </style>
 </head>
 <body>
 
-  <div class="page">
-    <h1>GLOBAL CHOKEPOINTS — 24h SIGNAL DASHBOARD</h1>
-    <div class="meta">23 February 2026  |  01:32 EST</div>
-    <hr class="top"/>
+  <div class="topbar">
+    <div class="topbar-title">Global Chokepoints &nbsp;//&nbsp; 24h Signal Dashboard</div>
+    <div class="topbar-meta">23 February 2026  |  01:40 EST &nbsp;·&nbsp; Distribution: ACME</div>
+  </div>
+  <div class="scorecard">
     
-    <div style="background:#fff;border-radius:8px;padding:14px 18px 16px;margin-top:16px;
-                box-shadow:0 2px 10px rgba(15,23,42,0.07);">
-      <div style="font-size:11px;font-weight:bold;background:#b91c1c;color:#fff;
-                  padding:4px 8px;margin-bottom:8px;letter-spacing:0.04em;">
-        STRAIT OF HORMUZ  &nbsp;|&nbsp; Signal Concentration: HIGH (2 of 5 High Severity)
+        <div class="sc-cell" style="border-top:3px solid #ef4444;">
+          <div class="sc-name">Hormuz</div>
+          <div class="sc-sig" style="color:#ef4444;">HIGH</div>
+          <div class="sc-count">5 articles</div>
+        </div>
+        <div class="sc-cell" style="border-top:3px solid #64748b;">
+          <div class="sc-name">Malacca</div>
+          <div class="sc-sig" style="color:#64748b;">—</div>
+          <div class="sc-count">0 articles</div>
+        </div>
+        <div class="sc-cell" style="border-top:3px solid #64748b;">
+          <div class="sc-name">Suez Canal</div>
+          <div class="sc-sig" style="color:#64748b;">—</div>
+          <div class="sc-count">0 articles</div>
+        </div>
+        <div class="sc-cell" style="border-top:3px solid #64748b;">
+          <div class="sc-name">Bab el-Mandeb</div>
+          <div class="sc-sig" style="color:#64748b;">—</div>
+          <div class="sc-count">0 articles</div>
+        </div>
+        <div class="sc-cell" style="border-top:3px solid #64748b;">
+          <div class="sc-name">Turkish Str.</div>
+          <div class="sc-sig" style="color:#64748b;">—</div>
+          <div class="sc-count">0 articles</div>
+        </div>
+        <div class="sc-cell" style="border-top:3px solid #3b82f6;">
+          <div class="sc-name">Panama Canal</div>
+          <div class="sc-sig" style="color:#3b82f6;">LOW</div>
+          <div class="sc-count">2 articles</div>
+        </div>
+  </div>
+  <div class="main">
+    
+      <div class="cp-card" style="border-left:4px solid #dc2626;">
+        <div class="cp-card-header" style="background:#450a0a;">
+          <div class="cp-title">STRAIT OF HORMUZ</div>
+          <div class="cp-pills"><span class='pill pill-high'>HIGH &nbsp;2</span><span class='pill pill-med'>MED &nbsp;2</span><span class='pill pill-low'>LOW &nbsp;1</span><span class='pill-conc' style='color:#ef4444;border-color:#ef4444;'>Concentration: HIGH</span></div>
+        </div>
+        <div class="cp-why">
+          <span class="why-label">ASSESSMENT</span>
+          <span class="why-text">Activity around Strait of Hormuz generated multiple relevant signals in the last 24 hours. Multiple high-severity developments detected — elevated operational or geopolitical risk. Coverage explicitly links developments to oil and LNG flows — potential market impact. Geopolitics and security dynamics prominent — miscalculation risk among regional actors elevated.</span>
+        </div>
+        <table class="art-table">
+          <thead>
+            <tr>
+              <th style="width:13%">Published</th>
+              <th style="width:57%">Headline &amp; Source</th>
+              <th style="width:23%">Categories</th>
+              <th style="width:7%">Signal</th>
+            </tr>
+          </thead>
+          <tbody>
+                <tr class="art-row">
+                  <td class="td-time">2026-02-22 13:40 UTC</td>
+                  <td class="td-headline">
+                    <a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxORTA4QnViNFZIX1hSNERPdUpiVGlKaU9DVUFLVXBJNXNGNVYyU3VsWjZqZmp3d1JIZ0ZBRGF2ZFNMNzlRYWRtX2JDdm9RMHRPWXRDM0FhbHlUZDZiTnBQVWF5cFFjcDRRYVFNbi1kb3dLUjl5MXdORGRseTllYk1fOE5UN2V0YkE0N2dWekZ5OG9ZYlZqWFh1d0ZWOEJSM0dnT09VRFFDdWNOTzdlRXZPcNIBtgFBVV95cUxNR3diWGdLclZYYUtmYnlhQ2o5RldONHVPWFQ1QWlxSW44U2ZtUF8yQlNJRzV1MGhyWHBTWndiUU1rVUJkbWI5SjhKMHNUV3dSaGNkX0UtcUxiT2NqU3pZcHNyLWkwZlR6cThnR3k2TEIxZ1llRUR2OFNKS1ZVSXA3TjFILWtjNDI4ejRGMElIZVNiQzRWblpwQWdTQlp5a3NyMFUwU1FTT0E3TmVvT0oxaE9WZXg1dw?oc=5" target="_blank" rel="noopener noreferrer">Iran-US tensions: What would blocking Strait of Hormuz mean for oil, LNG? - Al Jazeera</a>
+                    <span class="td-source">Al Jazeera</span>
+                  </td>
+                  <td class="td-cats">Chokepoint · Energy Markets · Geopolitics / Security</td>
+                  <td class="td-sig"><span class="sig-badge" style="color:#ef4444;border-color:#ef4444;">HIGH</span></td>
+                </tr>
+                <tr class="art-row">
+                  <td class="td-time">2026-02-22 08:37 UTC</td>
+                  <td class="td-headline">
+                    <a href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxQem9Yb2JYdWlRaUYzUEFVZ2xFei1CNEN6SW96OUU5bVU3TVlxa1J3MEVTbjRIN1drVWw4VHNIRGIzSnlMSVVIUUpPUkl4MDFza2xmQzBLaTRqY3piSnNRTTZDN1UtMnZqM1NWRzJXdG5HNlZKd2Q3TWFSWnNnMkFXdUlBeVE3VlNLVFc2NDVuYm9lLVQ0ZUZrd2RVOTkyR0wyMnA5em9JRktPcG54dU1IUlNzYWM2U3VDZ1JhcHRWNmkxa1VpVXZ0dGJfV2JmMklsOUhKZjJKcF8?oc=5" target="_blank" rel="noopener noreferrer">Iran Operationalizes Long-Range Naval Air Defense with Sayyad-3G Missile in Strait of Hormuz Drill - اسلام تايمز</a>
+                    <span class="td-source">اسلام تايمز</span>
+                  </td>
+                  <td class="td-cats">Chokepoint · Geopolitics / Security</td>
+                  <td class="td-sig"><span class="sig-badge" style="color:#ef4444;border-color:#ef4444;">HIGH</span></td>
+                </tr>
+                <tr class="art-row">
+                  <td class="td-time">2026-02-22 14:18 UTC</td>
+                  <td class="td-headline">
+                    <a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxNNWNZd2JKU051TnlkUDFXLWEwc2t5SnJwU2xFX3VKVGc0WnNZOFhpejZEQkFjNWdjdU9rb0lkSldoUU0wSVVNaVJwbHhGd3Y3SEdja3V1Q01fd1FaQjJMcjhfZDlLWDN3YzZ6LWhMckwyLV81cVZGSHFCa2JvRHd3Ymx4M014Qy1lVEN0MXhtLTZ2SEJZdUJaU0RtbDI1bGVkX3k0bGJvRzdjNlFBVU1WSg?oc=5" target="_blank" rel="noopener noreferrer">Iran-US tensions: Submarine hunter aircraft circles Strait of Hormuz - Gulf News</a>
+                    <span class="td-source">Gulf News</span>
+                  </td>
+                  <td class="td-cats">Chokepoint</td>
+                  <td class="td-sig"><span class="sig-badge" style="color:#f59e0b;border-color:#f59e0b;">MEDIUM</span></td>
+                </tr>
+                <tr class="art-row">
+                  <td class="td-time">2026-02-22 11:41 UTC</td>
+                  <td class="td-headline">
+                    <a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxOc1BjTDFJVHgxbXdhOXExSG5PWDU3aTF3bXF5a1FIbXlpSXV2LWZTTnA2bEdNWmFxOGlGaTkwanBUTjdWNTlqTEF0OG4zQWkwMEI5dlZkTk1PMWx0eDJJajZEcllERktNeUwwYXZyaU03SDE3VVVOTHBlU3BURUEyQlVSMzJFRnplQW83QTRqdW01N29fdVI1aVpodHBLcGNoYWlwNU9mRUNqOWd0NEUzNFFRRkZTdw?oc=5" target="_blank" rel="noopener noreferrer">Strait Of Hormuz In Focus: How Oil Markets Would Price A Disruption - Forbes Middle East</a>
+                    <span class="td-source">Forbes Middle East</span>
+                  </td>
+                  <td class="td-cats">Chokepoint · Energy Markets</td>
+                  <td class="td-sig"><span class="sig-badge" style="color:#f59e0b;border-color:#f59e0b;">MEDIUM</span></td>
+                </tr>
+                <tr class="art-row">
+                  <td class="td-time">2026-02-22 14:01 UTC</td>
+                  <td class="td-headline">
+                    <a href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxQWDNlYmx6eC1YQ0JTdnYyQ0lhMEY5VngwTzFQLXItYm5MM0ppalpuTDVsS0pzWEpaUGc0N2x3U0s2bm1Ra3dsNl9OUnNYYndkODhyVE5CMkRxYnZsQWY3azlSUnEwNkRpdEtkTHhSbHJNZGN5Q3o3cVZELUdpU3I0ZWJ5QTk4aUxuWVo4?oc=5" target="_blank" rel="noopener noreferrer">Iran’s Military Drills Heighten Concerns Over Strait of Hormuz - Oz Arab Media</a>
+                    <span class="td-source">Oz Arab Media</span>
+                  </td>
+                  <td class="td-cats">Chokepoint · Geopolitics / Security</td>
+                  <td class="td-sig"><span class="sig-badge" style="color:#3b82f6;border-color:#3b82f6;">LOW</span></td>
+                </tr></tbody>
+        </table>
       </div>
-      <div style="font-size:11px;margin-bottom:8px;color:#111827;">
-        <span style="font-weight:bold">Why this matters: </span>Activity around Strait of Hormuz generated multiple relevant signals in the last 24 hours. Multiple high-severity developments detected — elevated operational or geopolitical risk. Coverage explicitly links developments to oil and LNG flows — potential market impact. Geopolitics and security dynamics prominent — miscalculation risk among regional actors elevated.
+      <div class="cp-card" style="border-left:4px solid #334155;">
+        <div class="cp-card-header" style="background:#1e293b;">
+          <div class="cp-title">STRAIT OF MALACCA</div>
+          <div class="cp-pills"><span class='pill pill-high'>HIGH &nbsp;0</span><span class='pill pill-med'>MED &nbsp;0</span><span class='pill pill-low'>LOW &nbsp;0</span><span class='pill-conc' style='color:#64748b;border-color:#64748b;'>Concentration: —</span></div>
+        </div>
+        <div class="cp-why">
+          <span class="why-label">ASSESSMENT</span>
+          <span class="why-text">No significant signals detected for Strait of Malacca in the last 24 hours.</span>
+        </div>
+        <table class="art-table">
+          <thead>
+            <tr>
+              <th style="width:13%">Published</th>
+              <th style="width:57%">Headline &amp; Source</th>
+              <th style="width:23%">Categories</th>
+              <th style="width:7%">Signal</th>
+            </tr>
+          </thead>
+          <tbody><tr><td colspan='4' class='td-empty'>No qualifying articles in the last 24 hours.</td></tr></tbody>
+        </table>
       </div>
-      <table style="width:100%;border-collapse:collapse;font-size:10px;">
-        <thead>
-          <tr style="background:#2a5080;color:white;">
-            <th style="padding:4px 6px;text-align:left">Published</th>
-            <th style="padding:4px 6px;text-align:left">Headline</th>
-            <th style="padding:4px 6px;text-align:left">Source</th>
-            <th style="padding:4px 6px;text-align:left">Categories</th>
-            <th style="padding:4px 6px;text-align:center">Signal</th>
-          </tr>
-        </thead>
-        <tbody><tr><td style='white-space:nowrap;color:#4b5563'>2026-02-22 13:40 UTC</td><td><a href='https://news.google.com/rss/articles/CBMisAFBVV95cUxORTA4QnViNFZIX1hSNERPdUpiVGlKaU9DVUFLVXBJNXNGNVYyU3VsWjZqZmp3d1JIZ0ZBRGF2ZFNMNzlRYWRtX2JDdm9RMHRPWXRDM0FhbHlUZDZiTnBQVWF5cFFjcDRRYVFNbi1kb3dLUjl5MXdORGRseTllYk1fOE5UN2V0YkE0N2dWekZ5OG9ZYlZqWFh1d0ZWOEJSM0dnT09VRFFDdWNOTzdlRXZPcNIBtgFBVV95cUxNR3diWGdLclZYYUtmYnlhQ2o5RldONHVPWFQ1QWlxSW44U2ZtUF8yQlNJRzV1MGhyWHBTWndiUU1rVUJkbWI5SjhKMHNUV3dSaGNkX0UtcUxiT2NqU3pZcHNyLWkwZlR6cThnR3k2TEIxZ1llRUR2OFNKS1ZVSXA3TjFILWtjNDI4ejRGMElIZVNiQzRWblpwQWdTQlp5a3NyMFUwU1FTT0E3TmVvT0oxaE9WZXg1dw?oc=5' target='_blank' rel='noopener noreferrer'>Iran-US tensions: What would blocking Strait of Hormuz mean for oil, LNG? - Al Jazeera</a></td><td style='color:#4b5563'>Al Jazeera</td><td style='color:#374151'>Chokepoint, Energy Markets, Geopolitics / Security</td><td style='font-weight:bold;text-align:center;color:#b91c1c'>HIGH</td></tr>
-<tr><td style='white-space:nowrap;color:#4b5563'>2026-02-22 08:37 UTC</td><td><a href='https://news.google.com/rss/articles/CBMi2AFBVV95cUxQem9Yb2JYdWlRaUYzUEFVZ2xFei1CNEN6SW96OUU5bVU3TVlxa1J3MEVTbjRIN1drVWw4VHNIRGIzSnlMSVVIUUpPUkl4MDFza2xmQzBLaTRqY3piSnNRTTZDN1UtMnZqM1NWRzJXdG5HNlZKd2Q3TWFSWnNnMkFXdUlBeVE3VlNLVFc2NDVuYm9lLVQ0ZUZrd2RVOTkyR0wyMnA5em9JRktPcG54dU1IUlNzYWM2U3VDZ1JhcHRWNmkxa1VpVXZ0dGJfV2JmMklsOUhKZjJKcF8?oc=5' target='_blank' rel='noopener noreferrer'>Iran Operationalizes Long-Range Naval Air Defense with Sayyad-3G Missile in Strait of Hormuz Drill - اسلام تايمز</a></td><td style='color:#4b5563'>اسلام تايمز</td><td style='color:#374151'>Chokepoint, Geopolitics / Security</td><td style='font-weight:bold;text-align:center;color:#b91c1c'>HIGH</td></tr>
-<tr><td style='white-space:nowrap;color:#4b5563'>2026-02-22 14:18 UTC</td><td><a href='https://news.google.com/rss/articles/CBMisAFBVV95cUxNNWNZd2JKU051TnlkUDFXLWEwc2t5SnJwU2xFX3VKVGc0WnNZOFhpejZEQkFjNWdjdU9rb0lkSldoUU0wSVVNaVJwbHhGd3Y3SEdja3V1Q01fd1FaQjJMcjhfZDlLWDN3YzZ6LWhMckwyLV81cVZGSHFCa2JvRHd3Ymx4M014Qy1lVEN0MXhtLTZ2SEJZdUJaU0RtbDI1bGVkX3k0bGJvRzdjNlFBVU1WSg?oc=5' target='_blank' rel='noopener noreferrer'>Iran-US tensions: Submarine hunter aircraft circles Strait of Hormuz - Gulf News</a></td><td style='color:#4b5563'>Gulf News</td><td style='color:#374151'>Chokepoint</td><td style='font-weight:bold;text-align:center;color:#d97706'>MEDIUM</td></tr>
-<tr><td style='white-space:nowrap;color:#4b5563'>2026-02-22 11:41 UTC</td><td><a href='https://news.google.com/rss/articles/CBMitgFBVV95cUxOc1BjTDFJVHgxbXdhOXExSG5PWDU3aTF3bXF5a1FIbXlpSXV2LWZTTnA2bEdNWmFxOGlGaTkwanBUTjdWNTlqTEF0OG4zQWkwMEI5dlZkTk1PMWx0eDJJajZEcllERktNeUwwYXZyaU03SDE3VVVOTHBlU3BURUEyQlVSMzJFRnplQW83QTRqdW01N29fdVI1aVpodHBLcGNoYWlwNU9mRUNqOWd0NEUzNFFRRkZTdw?oc=5' target='_blank' rel='noopener noreferrer'>Strait Of Hormuz In Focus: How Oil Markets Would Price A Disruption - Forbes Middle East</a></td><td style='color:#4b5563'>Forbes Middle East</td><td style='color:#374151'>Chokepoint, Energy Markets</td><td style='font-weight:bold;text-align:center;color:#d97706'>MEDIUM</td></tr>
-<tr><td style='white-space:nowrap;color:#4b5563'>2026-02-22 14:01 UTC</td><td><a href='https://news.google.com/rss/articles/CBMiiwFBVV95cUxQWDNlYmx6eC1YQ0JTdnYyQ0lhMEY5VngwTzFQLXItYm5MM0ppalpuTDVsS0pzWEpaUGc0N2x3U0s2bm1Ra3dsNl9OUnNYYndkODhyVE5CMkRxYnZsQWY3azlSUnEwNkRpdEtkTHhSbHJNZGN5Q3o3cVZELUdpU3I0ZWJ5QTk4aUxuWVo4?oc=5' target='_blank' rel='noopener noreferrer'>Iran’s Military Drills Heighten Concerns Over Strait of Hormuz - Oz Arab Media</a></td><td style='color:#4b5563'>Oz Arab Media</td><td style='color:#374151'>Chokepoint, Geopolitics / Security</td><td style='font-weight:bold;text-align:center;color:#2563eb'>LOW</td></tr>
-</tbody>
-      </table>
-    </div>
-    <div style="background:#fff;border-radius:8px;padding:14px 18px 16px;margin-top:16px;
-                box-shadow:0 2px 10px rgba(15,23,42,0.07);">
-      <div style="font-size:11px;font-weight:bold;background:#9ca3af;color:#fff;
-                  padding:4px 8px;margin-bottom:8px;letter-spacing:0.04em;">
-        STRAIT OF MALACCA  &nbsp;|&nbsp; Signal Concentration: — (0 articles)
+      <div class="cp-card" style="border-left:4px solid #334155;">
+        <div class="cp-card-header" style="background:#1e293b;">
+          <div class="cp-title">SUEZ CANAL</div>
+          <div class="cp-pills"><span class='pill pill-high'>HIGH &nbsp;0</span><span class='pill pill-med'>MED &nbsp;0</span><span class='pill pill-low'>LOW &nbsp;0</span><span class='pill-conc' style='color:#64748b;border-color:#64748b;'>Concentration: —</span></div>
+        </div>
+        <div class="cp-why">
+          <span class="why-label">ASSESSMENT</span>
+          <span class="why-text">No significant signals detected for Suez Canal in the last 24 hours.</span>
+        </div>
+        <table class="art-table">
+          <thead>
+            <tr>
+              <th style="width:13%">Published</th>
+              <th style="width:57%">Headline &amp; Source</th>
+              <th style="width:23%">Categories</th>
+              <th style="width:7%">Signal</th>
+            </tr>
+          </thead>
+          <tbody><tr><td colspan='4' class='td-empty'>No qualifying articles in the last 24 hours.</td></tr></tbody>
+        </table>
       </div>
-      <div style="font-size:11px;margin-bottom:8px;color:#111827;">
-        <span style="font-weight:bold">Why this matters: </span>No significant signals detected for Strait of Malacca in the last 24 hours.
+      <div class="cp-card" style="border-left:4px solid #334155;">
+        <div class="cp-card-header" style="background:#1e293b;">
+          <div class="cp-title">BAB EL-MANDEB</div>
+          <div class="cp-pills"><span class='pill pill-high'>HIGH &nbsp;0</span><span class='pill pill-med'>MED &nbsp;0</span><span class='pill pill-low'>LOW &nbsp;0</span><span class='pill-conc' style='color:#64748b;border-color:#64748b;'>Concentration: —</span></div>
+        </div>
+        <div class="cp-why">
+          <span class="why-label">ASSESSMENT</span>
+          <span class="why-text">No significant signals detected for Bab el-Mandeb in the last 24 hours.</span>
+        </div>
+        <table class="art-table">
+          <thead>
+            <tr>
+              <th style="width:13%">Published</th>
+              <th style="width:57%">Headline &amp; Source</th>
+              <th style="width:23%">Categories</th>
+              <th style="width:7%">Signal</th>
+            </tr>
+          </thead>
+          <tbody><tr><td colspan='4' class='td-empty'>No qualifying articles in the last 24 hours.</td></tr></tbody>
+        </table>
       </div>
-      <table style="width:100%;border-collapse:collapse;font-size:10px;">
-        <thead>
-          <tr style="background:#2a5080;color:white;">
-            <th style="padding:4px 6px;text-align:left">Published</th>
-            <th style="padding:4px 6px;text-align:left">Headline</th>
-            <th style="padding:4px 6px;text-align:left">Source</th>
-            <th style="padding:4px 6px;text-align:left">Categories</th>
-            <th style="padding:4px 6px;text-align:center">Signal</th>
-          </tr>
-        </thead>
-        <tbody><tr><td colspan='5' style='text-align:center;color:#9ca3af;font-style:italic'>No qualifying articles in the last 24 hours.</td></tr></tbody>
-      </table>
-    </div>
-    <div style="background:#fff;border-radius:8px;padding:14px 18px 16px;margin-top:16px;
-                box-shadow:0 2px 10px rgba(15,23,42,0.07);">
-      <div style="font-size:11px;font-weight:bold;background:#9ca3af;color:#fff;
-                  padding:4px 8px;margin-bottom:8px;letter-spacing:0.04em;">
-        SUEZ CANAL  &nbsp;|&nbsp; Signal Concentration: — (0 articles)
+      <div class="cp-card" style="border-left:4px solid #334155;">
+        <div class="cp-card-header" style="background:#1e293b;">
+          <div class="cp-title">TURKISH STRAITS</div>
+          <div class="cp-pills"><span class='pill pill-high'>HIGH &nbsp;0</span><span class='pill pill-med'>MED &nbsp;0</span><span class='pill pill-low'>LOW &nbsp;0</span><span class='pill-conc' style='color:#64748b;border-color:#64748b;'>Concentration: —</span></div>
+        </div>
+        <div class="cp-why">
+          <span class="why-label">ASSESSMENT</span>
+          <span class="why-text">No significant signals detected for Turkish Straits in the last 24 hours.</span>
+        </div>
+        <table class="art-table">
+          <thead>
+            <tr>
+              <th style="width:13%">Published</th>
+              <th style="width:57%">Headline &amp; Source</th>
+              <th style="width:23%">Categories</th>
+              <th style="width:7%">Signal</th>
+            </tr>
+          </thead>
+          <tbody><tr><td colspan='4' class='td-empty'>No qualifying articles in the last 24 hours.</td></tr></tbody>
+        </table>
       </div>
-      <div style="font-size:11px;margin-bottom:8px;color:#111827;">
-        <span style="font-weight:bold">Why this matters: </span>No significant signals detected for Suez Canal in the last 24 hours.
+      <div class="cp-card" style="border-left:4px solid #2563eb;">
+        <div class="cp-card-header" style="background:#1e3a5f;">
+          <div class="cp-title">PANAMA CANAL</div>
+          <div class="cp-pills"><span class='pill pill-high'>HIGH &nbsp;0</span><span class='pill pill-med'>MED &nbsp;0</span><span class='pill pill-low'>LOW &nbsp;2</span><span class='pill-conc' style='color:#3b82f6;border-color:#3b82f6;'>Concentration: LOW</span></div>
+        </div>
+        <div class="cp-why">
+          <span class="why-label">ASSESSMENT</span>
+          <span class="why-text">Activity around Panama Canal generated multiple relevant signals in the last 24 hours.</span>
+        </div>
+        <table class="art-table">
+          <thead>
+            <tr>
+              <th style="width:13%">Published</th>
+              <th style="width:57%">Headline &amp; Source</th>
+              <th style="width:23%">Categories</th>
+              <th style="width:7%">Signal</th>
+            </tr>
+          </thead>
+          <tbody>
+                <tr class="art-row">
+                  <td class="td-time">2026-02-22 15:26 UTC</td>
+                  <td class="td-headline">
+                    <a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxPbmZ6WEFJLWpBU2lZNVdvUWVMRTAyaW5aWnhWZFQ2VXlCdzBlX2lqQ2dhVTRtbHpsRlZVOUppZ1ZkRTlGS0pHa0lJVk1uWXRMYW1GdkFyMlpVb05GMnY0VUQyNVpWeHNsSEV4NXpybkt4NGsyNnZFdjBfSHdVMmhuYm1YQkM0bHJxdHpIM1k5U3AzZV9Gb0JvTTdYZlNFX190bWtJVU45dFdaRDZnTzFyeWNlTzRfM2JW?oc=5" target="_blank" rel="noopener noreferrer">Best Time to Cruise the Panama Canal: A Year-Round Guide - Cruise Critic</a>
+                    <span class="td-source">Cruise Critic</span>
+                  </td>
+                  <td class="td-cats">Chokepoint</td>
+                  <td class="td-sig"><span class="sig-badge" style="color:#3b82f6;border-color:#3b82f6;">LOW</span></td>
+                </tr>
+                <tr class="art-row">
+                  <td class="td-time">2026-02-23 04:22 UTC</td>
+                  <td class="td-headline">
+                    <a href="https://news.google.com/rss/articles/CBMi7AFBVV95cUxQWW9yUGViQ28tMHBBdVpWS3ZQVk9EQnIzOWhkNTBURnJtWl9JS1BxelNqS2F4aktqbHdmLXhmUU1HeVA3Z1VJUkpBa25SRVBkaEFfOXIxYWpDS0lrX2hvbDdxYWxVQUw0VmFucV8ycWw3SzMtUnRTdUdrRFZ3OUROWlg1N0RadmMzQmR6akR3TldrQlNDRW5oZVV1dFg1N0ZJQnltT1RmeVg1TDBMRHZUZ0N0b0pYZkZXX3RqOU1xWVExX2UwYkNNUDdzdzExbDRhM25NVVYwWkZQcmtDVzZGaXRoNlpyVVNRa1kxYtIB8gFBVV95cUxQYkJKVHRLZ0hUX3VTS016SlBQeWtaWVlfRzJndU5uZEsxUHNfNUd3dmdRLWd6WGpZM1lZSk44cFgxcjludmY5M1NORy1VU2RnWGxBWkN5VEM2bmxPS3lvWUFvQjJnRTd1UWV6ZFdRUkdMZzZtRGxGQ0ExbS1EdTJOM2xPdjZMN2ctam9wcWZfc3NVVkJScXJBRjkyQi1uakhNbWJ1eE95YTZ5THBWb3ZqcHd6Z25XNzdKb3lfZW5BRHl6R1ZJaXZRRDJ1UnFkUnBBQ1RwTlpLZjE5aGN4SzZvYWxCTUpxVWNEci04amdaeXJSUQ?oc=5" target="_blank" rel="noopener noreferrer">Today in US history on February 23: From the Iwo Jima victory to US control of the Panama Canal - The Economic Times</a>
+                    <span class="td-source">The Economic Times</span>
+                  </td>
+                  <td class="td-cats">Chokepoint</td>
+                  <td class="td-sig"><span class="sig-badge" style="color:#3b82f6;border-color:#3b82f6;">LOW</span></td>
+                </tr></tbody>
+        </table>
       </div>
-      <table style="width:100%;border-collapse:collapse;font-size:10px;">
-        <thead>
-          <tr style="background:#2a5080;color:white;">
-            <th style="padding:4px 6px;text-align:left">Published</th>
-            <th style="padding:4px 6px;text-align:left">Headline</th>
-            <th style="padding:4px 6px;text-align:left">Source</th>
-            <th style="padding:4px 6px;text-align:left">Categories</th>
-            <th style="padding:4px 6px;text-align:center">Signal</th>
-          </tr>
-        </thead>
-        <tbody><tr><td colspan='5' style='text-align:center;color:#9ca3af;font-style:italic'>No qualifying articles in the last 24 hours.</td></tr></tbody>
-      </table>
-    </div>
-    <div style="background:#fff;border-radius:8px;padding:14px 18px 16px;margin-top:16px;
-                box-shadow:0 2px 10px rgba(15,23,42,0.07);">
-      <div style="font-size:11px;font-weight:bold;background:#9ca3af;color:#fff;
-                  padding:4px 8px;margin-bottom:8px;letter-spacing:0.04em;">
-        BAB EL-MANDEB  &nbsp;|&nbsp; Signal Concentration: — (0 articles)
-      </div>
-      <div style="font-size:11px;margin-bottom:8px;color:#111827;">
-        <span style="font-weight:bold">Why this matters: </span>No significant signals detected for Bab el-Mandeb in the last 24 hours.
-      </div>
-      <table style="width:100%;border-collapse:collapse;font-size:10px;">
-        <thead>
-          <tr style="background:#2a5080;color:white;">
-            <th style="padding:4px 6px;text-align:left">Published</th>
-            <th style="padding:4px 6px;text-align:left">Headline</th>
-            <th style="padding:4px 6px;text-align:left">Source</th>
-            <th style="padding:4px 6px;text-align:left">Categories</th>
-            <th style="padding:4px 6px;text-align:center">Signal</th>
-          </tr>
-        </thead>
-        <tbody><tr><td colspan='5' style='text-align:center;color:#9ca3af;font-style:italic'>No qualifying articles in the last 24 hours.</td></tr></tbody>
-      </table>
-    </div>
-    <div style="background:#fff;border-radius:8px;padding:14px 18px 16px;margin-top:16px;
-                box-shadow:0 2px 10px rgba(15,23,42,0.07);">
-      <div style="font-size:11px;font-weight:bold;background:#9ca3af;color:#fff;
-                  padding:4px 8px;margin-bottom:8px;letter-spacing:0.04em;">
-        TURKISH STRAITS  &nbsp;|&nbsp; Signal Concentration: — (0 articles)
-      </div>
-      <div style="font-size:11px;margin-bottom:8px;color:#111827;">
-        <span style="font-weight:bold">Why this matters: </span>No significant signals detected for Turkish Straits in the last 24 hours.
-      </div>
-      <table style="width:100%;border-collapse:collapse;font-size:10px;">
-        <thead>
-          <tr style="background:#2a5080;color:white;">
-            <th style="padding:4px 6px;text-align:left">Published</th>
-            <th style="padding:4px 6px;text-align:left">Headline</th>
-            <th style="padding:4px 6px;text-align:left">Source</th>
-            <th style="padding:4px 6px;text-align:left">Categories</th>
-            <th style="padding:4px 6px;text-align:center">Signal</th>
-          </tr>
-        </thead>
-        <tbody><tr><td colspan='5' style='text-align:center;color:#9ca3af;font-style:italic'>No qualifying articles in the last 24 hours.</td></tr></tbody>
-      </table>
-    </div>
-    <div style="background:#fff;border-radius:8px;padding:14px 18px 16px;margin-top:16px;
-                box-shadow:0 2px 10px rgba(15,23,42,0.07);">
-      <div style="font-size:11px;font-weight:bold;background:#2563eb;color:#fff;
-                  padding:4px 8px;margin-bottom:8px;letter-spacing:0.04em;">
-        PANAMA CANAL  &nbsp;|&nbsp; Signal Concentration: LOW (1 articles)
-      </div>
-      <div style="font-size:11px;margin-bottom:8px;color:#111827;">
-        <span style="font-weight:bold">Why this matters: </span>Activity around Panama Canal generated at least one relevant signal in the last 24 hours.
-      </div>
-      <table style="width:100%;border-collapse:collapse;font-size:10px;">
-        <thead>
-          <tr style="background:#2a5080;color:white;">
-            <th style="padding:4px 6px;text-align:left">Published</th>
-            <th style="padding:4px 6px;text-align:left">Headline</th>
-            <th style="padding:4px 6px;text-align:left">Source</th>
-            <th style="padding:4px 6px;text-align:left">Categories</th>
-            <th style="padding:4px 6px;text-align:center">Signal</th>
-          </tr>
-        </thead>
-        <tbody><tr><td style='white-space:nowrap;color:#4b5563'>2026-02-23 04:22 UTC</td><td><a href='https://news.google.com/rss/articles/CBMi7AFBVV95cUxQWW9yUGViQ28tMHBBdVpWS3ZQVk9EQnIzOWhkNTBURnJtWl9JS1BxelNqS2F4aktqbHdmLXhmUU1HeVA3Z1VJUkpBa25SRVBkaEFfOXIxYWpDS0lrX2hvbDdxYWxVQUw0VmFucV8ycWw3SzMtUnRTdUdrRFZ3OUROWlg1N0RadmMzQmR6akR3TldrQlNDRW5oZVV1dFg1N0ZJQnltT1RmeVg1TDBMRHZUZ0N0b0pYZkZXX3RqOU1xWVExX2UwYkNNUDdzdzExbDRhM25NVVYwWkZQcmtDVzZGaXRoNlpyVVNRa1kxYtIB8gFBVV95cUxQYkJKVHRLZ0hUX3VTS016SlBQeWtaWVlfRzJndU5uZEsxUHNfNUd3dmdRLWd6WGpZM1lZSk44cFgxcjludmY5M1NORy1VU2RnWGxBWkN5VEM2bmxPS3lvWUFvQjJnRTd1UWV6ZFdRUkdMZzZtRGxGQ0ExbS1EdTJOM2xPdjZMN2ctam9wcWZfc3NVVkJScXJBRjkyQi1uakhNbWJ1eE95YTZ5THBWb3ZqcHd6Z25XNzdKb3lfZW5BRHl6R1ZJaXZRRDJ1UnFkUnBBQ1RwTlpLZjE5aGN4SzZvYWxCTUpxVWNEci04amdaeXJSUQ?oc=5' target='_blank' rel='noopener noreferrer'>Today in US history on February 23: From the Iwo Jima victory to US control of the Panama Canal - The Economic Times</a></td><td style='color:#4b5563'>The Economic Times</td><td style='color:#374151'>Chokepoint</td><td style='font-weight:bold;text-align:center;color:#2563eb'>LOW</td></tr>
-</tbody>
-      </table>
-    </div>
-    <hr class="bot"/>
-    <div class="copyright">© 2026 Randy Hinton. All rights reserved. Unauthorized reproduction, distribution, or transmission of this brief, in whole or in part, is strictly prohibited without prior written consent. Signal data sourced from Google News RSS feeds via deterministic rule-based classification.   Distribution: acme</div>
+  </div>
+  <div class="footer">
+    © 2026 Randy Hinton. All rights reserved. Unauthorized reproduction, distribution, or transmission of this brief, in whole or in part, is strictly prohibited without prior written consent. Signal data sourced from Google News RSS feeds via deterministic rule-based classification.   Distribution: acme
   </div>
 </body>
 </html>
