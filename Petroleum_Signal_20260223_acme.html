@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Global Petroleum Signal Brief</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg:       #0b1120;
+      --surface:  #111827;
+      --surface2: #1e293b;
+      --border:   #1f2d3d;
+      --text:     #e2e8f0;
+      --muted:    #94a3b8;
+      --faint:    #334155;
+      --accent:   #38bdf8;
+      --mono:     'IBM Plex Mono', monospace;
+      --sans:     'IBM Plex Sans', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    /* TOP BAR */
+    .topbar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 32px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .topbar-title {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+    .topbar-meta {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    /* SCORECARD */
+    .scorecard {
+      display: flex;
+      gap: 1px;
+      background: var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .sc-cell {
+      flex: 1;
+      background: var(--surface);
+      padding: 14px 20px 12px;
+    }
+    .sc-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .sc-value {
+      font-family: var(--mono);
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .sc-sub {
+      font-size: 10px;
+      color: var(--muted);
+    }
+    /* MAIN */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 32px 48px;
+    }
+    /* SUMMARY CARD */
+    .summary-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid #ef4444;
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+    }
+    .summary-label {
+      font-family: var(--mono);
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .summary-text {
+      font-size: 12.5px;
+      line-height: 1.7;
+      color: #cbd5e1;
+    }
+    /* TRANSPARENCY PANEL */
+    .trans-panel {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 14px 18px;
+      margin-bottom: 24px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .trans-item { }
+    .trans-label {
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+    .trans-value {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    /* EVENTS TABLE */
+    .section-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .ev-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .ev-table thead tr {
+      background: var(--surface2);
+    }
+    .ev-table th {
+      font-family: var(--mono);
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      text-transform: uppercase;
+      padding: 8px 10px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .ev-table td {
+      padding: 9px 10px;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border);
+      font-size: 11.5px;
+    }
+    .ev-row:last-child td { border-bottom: none; }
+    .ev-row:hover td { background: var(--surface2); }
+    .td-num {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--faint);
+      text-align: center;
+      width: 32px;
+    }
+    .td-country {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .dir-badge, .sev-badge {
+      font-family: var(--mono);
+      font-size: 8.5px;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: 3px;
+      border: 1px solid;
+      background: transparent;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+    .td-cats {
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--muted);
+    }
+    .td-timing {
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .td-headline a {
+      color: #93c5fd;
+      text-decoration: none;
+      line-height: 1.45;
+    }
+    .td-headline a:hover { color: var(--accent); text-decoration: underline; }
+    .td-source {
+      display: block;
+      font-size: 9.5px;
+      color: var(--muted);
+      margin-top: 2px;
+      font-family: var(--mono);
+    }
+    /* FOOTER */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 16px 32px;
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--faint);
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-title">Global Petroleum Signal Brief</div>
+    <div class="topbar-meta">23 February 2026  |  02:26 EST &nbsp;·&nbsp; Distribution: ACME</div>
+  </div>
+
+  <div class="scorecard">
+    <div class="sc-cell" style="border-top:3px solid #ef4444;">
+      <div class="sc-label">Pressure Score</div>
+      <div class="sc-value" style="color:#ef4444;">74<span style="font-size:12px;color:var(--muted);">/100</span></div>
+      <div class="sc-sub">TIGHTENING</div>
+    </div>
+    <div class="sc-cell" style="border-top:3px solid #ef4444;">
+      <div class="sc-label">Tightening Weight</div>
+      <div class="sc-value" style="color:#ef4444;">4.0</div>
+      <div class="sc-sub">weighted pressure units</div>
+    </div>
+    <div class="sc-cell" style="border-top:3px solid #3b82f6;">
+      <div class="sc-label">Loosening Weight</div>
+      <div class="sc-value" style="color:#3b82f6;">1.4</div>
+      <div class="sc-sub">weighted pressure units</div>
+    </div>
+    <div class="sc-cell" style="border-top:3px solid #38bdf8;">
+      <div class="sc-label">Primary Node</div>
+      <div class="sc-value" style="font-size:14px;color:#38bdf8;">Global</div>
+      <div class="sc-sub">100% of structural pressure</div>
+    </div>
+    <div class="sc-cell" style="border-top:3px solid #a78bfa;">
+      <div class="sc-label">Events Classified</div>
+      <div class="sc-value" style="color:#a78bfa;">4</div>
+      <div class="sc-sub">of 56 articles fetched</div>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="summary-card">
+      <div class="summary-label">EXECUTIVE SUMMARY</div>
+      <div class="summary-text">Tightening structural pressure is dominant this window, with Global as the primary node. No confirmed physical supply disruption reported. Chokepoint exposure elevated.</div>
+    </div>
+
+    <div class="trans-panel">
+      <div class="trans-item">
+        <div class="trans-label">Flow Status</div>
+        <div class="trans-value" style="font-size:10px;font-weight:400;">No confirmed physical supply disruption reported.</div>
+      </div>
+      <div class="trans-item">
+        <div class="trans-label">Chokepoint Risk</div>
+        <div class="trans-value" style="font-size:10px;font-weight:400;">Chokepoint exposure elevated.</div>
+      </div>
+      <div class="trans-item">
+        <div class="trans-label">Structural Balance</div>
+        <div class="trans-value" style="font-size:10px;font-weight:400;">Mixed — tightening and loosening present.</div>
+      </div>
+      <div class="trans-item">
+        <div class="trans-label">Concentration</div>
+        <div class="trans-value" style="font-size:10px;font-weight:400;">100% in Global</div>
+      </div>
+    </div>
+
+    <div class="section-label">Classified Events — Top 4</div>
+    <table class="ev-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Country</th>
+          <th>Direction</th>
+          <th>Severity</th>
+          <th>Category</th>
+          <th>Timing</th>
+          <th>Headline &amp; Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="ev-row">
+          <td class="td-num">01</td>
+          <td class="td-country">GLOBAL</td>
+          <td><span class="dir-badge" style="color:#ef4444;border-color:#ef4444;">TIGHTENING</span></td>
+          <td><span class="sev-badge" style="color:#f59e0b;border-color:#f59e0b;">MEDIUM</span></td>
+          <td class="td-cats">TRANSIT</td>
+          <td class="td-timing">NEAR-TERM</td>
+          <td class="td-headline">
+            <a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxORTA4QnViNFZIX1hSNERPdUpiVGlKaU9DVUFLVXBJNXNGNVYyU3VsWjZqZmp3d1JIZ0ZBRGF2ZFNMNzlRYWRtX2JDdm9RMHRPWXRDM0FhbHlUZDZiTnBQVWF5cFFjcDRRYVFNbi1kb3dLUjl5MXdORGRseTllYk1fOE5UN2V0YkE0N2dWekZ5OG9ZYlZqWFh1d0ZWOEJSM0dnT09VRFFDdWNOTzdlRXZPcNIBtgFBVV95cUxNR3diWGdLclZYYUtmYnlhQ2o5RldONHVPWFQ1QWlxSW44U2ZtUF8yQlNJRzV1MGhyWHBTWndiUU1rVUJkbWI5SjhKMHNUV3dSaGNkX0UtcUxiT2NqU3pZcHNyLWkwZlR6cThnR3k2TEIxZ1llRUR2OFNKS1ZVSXA3TjFILWtjNDI4ejRGMElIZVNiQzRWblpwQWdTQlp5a3NyMFUwU1FTT0E3TmVvT0oxaE9WZXg1dw?oc=5" target="_blank" rel="noopener noreferrer">Iran-US tensions: What would blocking Strait of Hormuz mean for oil, LNG? - Al Jazeera</a>
+            <span class="td-source">Al Jazeera</span>
+          </td>
+        </tr>
+        <tr class="ev-row">
+          <td class="td-num">02</td>
+          <td class="td-country">GLOBAL</td>
+          <td><span class="dir-badge" style="color:#3b82f6;border-color:#3b82f6;">LOOSENING</span></td>
+          <td><span class="sev-badge" style="color:#f59e0b;border-color:#f59e0b;">MEDIUM</span></td>
+          <td class="td-cats">MILITARY</td>
+          <td class="td-timing">NEAR-TERM</td>
+          <td class="td-headline">
+            <a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxPM1dFb3U0eVlDR1QxWFpWckRxT3A4OWp3cHJVdXFvbDJ2aXFSSE1zazZrNHpBQnB0eDVFNWRPZnUwclQ0NW85Yk1FWml6a3pHNFNBVmlCbUZWejkyQ0NwcU01c1loNU42aE1FS0JsQllnVFBnNVQ4WFZVZVM4VVI3cDZHZFBGZ1N50gGcAUFVX3lxTFAtN0xXSlRNOVZjZWpibnpvTFZNcWQ2T3Q5cVBXOFFDamcxN2xhakVOQ2RXM1pvTkZXWGNJY0ZHN2VnQ0ZmQVluanpzMm1iZWpxbWJ4cHlTY1ZUbzRmNi1LODN5emdzNUJNZWdYb28zazZ5N3pYRHlKSDhHT244YVVDS0M3Q2tjNWlpU2NuOWRVZkZBa1p5WFN2LUVOLQ?oc=5" target="_blank" rel="noopener noreferrer">Us strike on Iran risks regional war and global oil shock - CHOSUNBIZ - Chosunbiz</a>
+            <span class="td-source">Chosunbiz</span>
+          </td>
+        </tr>
+        <tr class="ev-row">
+          <td class="td-num">03</td>
+          <td class="td-country">GLOBAL</td>
+          <td><span class="dir-badge" style="color:#ef4444;border-color:#ef4444;">TIGHTENING</span></td>
+          <td><span class="sev-badge" style="color:#f59e0b;border-color:#f59e0b;">MEDIUM</span></td>
+          <td class="td-cats">SUPPLY</td>
+          <td class="td-timing">NEAR-TERM</td>
+          <td class="td-headline">
+            <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxNWXhIWENpekFIWUszLTJwUFZfYlVQNnFDWEIxSWJLMFFjS0RTRy0teDdBMUJDdjNVMm1raE55LTdmOGJjSTgwdVZQak1vdkhDS0pOR09oOUJrdGNYM1pObWcwVFhSYUQxNVFhZkQzVWF1S2NDa1JPQ0tFNkhmR1ZlZmV0UVFfek83ZWNja09VYw?oc=5" target="_blank" rel="noopener noreferrer">Rising Oil Prices: US-Iran Tensions in the Background - Capmad.com</a>
+            <span class="td-source">Capmad.com</span>
+          </td>
+        </tr>
+        <tr class="ev-row">
+          <td class="td-num">04</td>
+          <td class="td-country">GLOBAL</td>
+          <td><span class="dir-badge" style="color:#ef4444;border-color:#ef4444;">TIGHTENING</span></td>
+          <td><span class="sev-badge" style="color:#f59e0b;border-color:#f59e0b;">MEDIUM</span></td>
+          <td class="td-cats">SANCTIONS</td>
+          <td class="td-timing">NEAR-TERM</td>
+          <td class="td-headline">
+            <a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxPVTU0d0RWb0lmNjhiRFlrVjlZaldHNVZqcGVOcDVDQmwtN01HeWxrZlFMMzBhd1V4WnFlY3dHZkhQajFEZExVYjFJRnByVXJZWjNxMmZzaXl3UU45cUZ4UkRxQ2o1OUVPM2UzS002WWx4VFVxWjBJRkRsekEyWXpsYzZzc2t1a3lpVGt0cXJoU05PNlQ4LVgzcUViek5OTmwwdHRyNGlad1FXUWpVcUFmdzFFWWtNSVVENUZv?oc=5" target="_blank" rel="noopener noreferrer">Hungary to block new EU sanctions on Russia over Ukraine pipeline dispute - Reuters</a>
+            <span class="td-source">Reuters</span>
+          </td>
+        </tr></tbody>
+    </table>
+  </div>
+
+  <div class="footer">© 2026 Randy Hinton. All rights reserved. Unauthorized reproduction, distribution, or transmission of this brief, in whole or in part, is strictly prohibited without prior written consent. Signal scores represent relative structural pressure within the observed window and do not constitute forecasts or investment advice. Signal data sourced from Google News RSS feeds.  Distribution: acme</div>
+</body>
+</html>
