@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Global Energy Intelligence — PetroAI1492</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg:       #0b1120;
+      --surface:  #111827;
+      --surface2: #1e293b;
+      --border:   #1f2d3d;
+      --text:     #e2e8f0;
+      --muted:    #94a3b8;
+      --faint:    #334155;
+      --accent:   #38bdf8;
+      --mono:     'IBM Plex Mono', monospace;
+      --sans:     'IBM Plex Sans', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+    /* TOP BAR */
+    .topbar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 32px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .topbar-title {
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+    }
+    .topbar-sub {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    /* HERO */
+    .hero {
+      background: linear-gradient(180deg, #0f1e35 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 40px 32px 32px;
+      text-align: center;
+    }
+    .hero-title {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .hero-name {
+      font-family: var(--sans);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+    .hero-name span { color: var(--accent); }
+    .hero-desc {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    /* MAIN */
+    .main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 32px 64px;
+    }
+    .section-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      margin-top: 32px;
+    }
+    /* LATEST CARDS */
+    .latest-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+    .report-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 20px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.15s;
+      cursor: pointer;
+    }
+    .report-card:hover {
+      background: var(--surface2);
+      transform: translateY(-2px);
+    }
+    .report-card-missing {
+      opacity: 0.4;
+      cursor: default;
+    }
+    .rc-icon {
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+    .rc-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.4;
+    }
+    .rc-date {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .rc-view {
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--faint);
+      margin-top: 8px;
+      letter-spacing: 0.06em;
+    }
+    .report-card:hover .rc-view {
+      color: var(--accent);
+    }
+    /* ARCHIVE TABLE */
+    .arc-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .arc-table thead tr {
+      background: var(--surface2);
+    }
+    .arc-table th {
+      font-family: var(--mono);
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      text-transform: uppercase;
+      padding: 8px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .arc-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border);
+      font-size: 11.5px;
+    }
+    .arc-row:last-child td { border-bottom: none; }
+    .arc-row:hover td { background: var(--surface2); }
+    .arc-date {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .arc-cell {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 600;
+    }
+    .arc-cell a {
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+    .arc-cell a:hover { text-decoration: underline; }
+    /* FOOTER */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 16px 32px;
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--faint);
+      line-height: 1.7;
+      text-align: center;
+    }
+    @media (max-width: 700px) {
+      .latest-grid { grid-template-columns: 1fr; }
+      .topbar { flex-direction: column; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-title">GLOBAL ENERGY INTELLIGENCE &nbsp;//&nbsp; PetroAI1492</div>
+    <div class="topbar-sub">Updated: 23 February 2026  |  03:08 EST</div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-title">Daily Intelligence Briefings</div>
+    <div class="hero-name">Energy <span>Signal</span> Platform</div>
+    <div class="hero-desc">
+      Three independent intelligence products covering global petroleum markets,
+      maritime chokepoint risk, and Strait of Hormuz operational posture.
+      Published daily. Subscriber access only.
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="section-label">Latest Reports</div>
+    
+      <div class="latest-grid">
+        
+        <div class="report-card report-card-missing" style="border-top:3px solid #334155;">
+          <div class="rc-icon" style="opacity:0.3;">⚓</div>
+          <div class="rc-label" style="color:#334155;">Strait of Hormuz — Executive SITREP</div>
+          <div class="rc-date" style="color:#334155;">Not published</div>
+        </div>
+        <a class="report-card" href="Chokepoints_Dashboard_20260223_acme.html" target="_blank" rel="noopener noreferrer"
+           style="border-top:3px solid #a78bfa;">
+          <div class="rc-icon">🌐</div>
+          <div class="rc-label" style="color:#a78bfa;">Global Chokepoints — 24h Signal Dashboard</div>
+          <div class="rc-date">23 February 2026</div>
+          <div class="rc-view">VIEW REPORT →</div>
+        </a>
+        <a class="report-card" href="Petroleum_Signal_20260223_acme.html" target="_blank" rel="noopener noreferrer"
+           style="border-top:3px solid #f59e0b;">
+          <div class="rc-icon">🛢</div>
+          <div class="rc-label" style="color:#f59e0b;">Global Petroleum Signal Brief</div>
+          <div class="rc-date">23 February 2026</div>
+          <div class="rc-view">VIEW REPORT →</div>
+        </a>
+      </div>
+    
+    <div class="section-label">ARCHIVE</div>
+    <table class="arc-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th style="color:#38bdf8;">⚓ Strait of Hormuz</th><th style="color:#a78bfa;">🌐 Global Chokepoints</th><th style="color:#f59e0b;">🛢 Global Petroleum Signal Brief</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="arc-row">
+          <td class="arc-date">22 February 2026</td>
+          <td class="arc-cell"><a href="Hormuz_SITREP_20260222_acme.html" target="_blank" rel="noopener noreferrer" style="color:#38bdf8;">⚓ VIEW</a></td><td class="arc-cell" style="color:#334155;">—</td><td class="arc-cell" style="color:#334155;">—</td>
+        </tr></tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    © 2026 Randy Hinton. All rights reserved. &nbsp;·&nbsp;
+    Reports are password-protected and intended solely for named subscribers. &nbsp;·&nbsp;
+    Not investment advice.
+  </div>
+</body>
+</html>
