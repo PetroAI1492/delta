@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Global Petroleum Signal Brief</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg:       #0b1120;
+      --surface:  #111827;
+      --surface2: #1e293b;
+      --border:   #1f2d3d;
+      --text:     #e2e8f0;
+      --muted:    #94a3b8;
+      --faint:    #334155;
+      --accent:   #38bdf8;
+      --mono:     'IBM Plex Mono', monospace;
+      --sans:     'IBM Plex Sans', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    /* TOP BAR */
+    .topbar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 32px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .topbar-title {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+    .topbar-meta {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    /* SCORECARD */
+    .scorecard {
+      display: flex;
+      gap: 1px;
+      background: var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .sc-cell {
+      flex: 1;
+      background: var(--surface);
+      padding: 14px 20px 12px;
+    }
+    .sc-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .sc-value {
+      font-family: var(--mono);
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .sc-sub {
+      font-size: 10px;
+      color: var(--muted);
+    }
+    /* MAIN */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 32px 48px;
+    }
+    /* SUMMARY CARD */
+    .summary-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid #ef4444;
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+    }
+    .summary-label {
+      font-family: var(--mono);
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .summary-text {
+      font-size: 12.5px;
+      line-height: 1.7;
+      color: #cbd5e1;
+    }
+    /* TRANSPARENCY PANEL */
+    .trans-panel {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 14px 18px;
+      margin-bottom: 24px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .trans-item { }
+    .trans-label {
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+    .trans-value {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    /* EVENTS TABLE */
+    .section-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .ev-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .ev-table thead tr {
+      background: var(--surface2);
+    }
+    .ev-table th {
+      font-family: var(--mono);
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      text-transform: uppercase;
+      padding: 8px 10px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .ev-table td {
+      padding: 9px 10px;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border);
+      font-size: 11.5px;
+    }
+    .ev-row:last-child td { border-bottom: none; }
+    .ev-row:hover td { background: var(--surface2); }
+    .td-num {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--faint);
+      text-align: center;
+      width: 32px;
+    }
+    .td-country {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .dir-badge, .sev-badge {
+      font-family: var(--mono);
+      font-size: 8.5px;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: 3px;
+      border: 1px solid;
+      background: transparent;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+    .td-cats {
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--muted);
+    }
+    .td-timing {
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .td-headline a {
+      color: #93c5fd;
+      text-decoration: none;
+      line-height: 1.45;
+    }
+    .td-headline a:hover { color: var(--accent); text-decoration: underline; }
+    .td-source {
+      display: block;
+      font-size: 9.5px;
+      color: var(--muted);
+      margin-top: 2px;
+      font-family: var(--mono);
+    }
+    /* FOOTER */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 16px 32px;
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--faint);
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-title">Global Petroleum Signal Brief</div>
+    <div class="topbar-meta">24 February 2026  |  16:13 EST &nbsp;·&nbsp; Distribution: ACME</div>
+  </div>
+
+  <div class="scorecard">
+    <div class="sc-cell" style="border-top:3px solid #ef4444;">
+      <div class="sc-label">Pressure Score</div>
+      <div class="sc-value" style="color:#ef4444;">82<span style="font-size:12px;color:var(--muted);">/100</span></div>
+      <div class="sc-sub">ESCALATING</div>
+    </div>
+    <div class="sc-cell" style="border-top:3px solid #ef4444;">
+      <div class="sc-label">Tightening Weight</div>
+      <div class="sc-value" style="color:#ef4444;">20.88</div>
+      <div class="sc-sub">weighted pressure units</div>
+    </div>
+    <div class="sc-cell" style="border-top:3px solid #3b82f6;">
+      <div class="sc-label">Loosening Weight</div>
+      <div class="sc-value" style="color:#3b82f6;">4.5</div>
+      <div class="sc-sub">weighted pressure units</div>
+    </div>
+    <div class="sc-cell" style="border-top:3px solid #38bdf8;">
+      <div class="sc-label">Primary Node</div>
+      <div class="sc-value" style="font-size:14px;color:#38bdf8;">Russia</div>
+      <div class="sc-sub">16% of structural pressure</div>
+    </div>
+    <div class="sc-cell" style="border-top:3px solid #a78bfa;">
+      <div class="sc-label">Events Classified</div>
+      <div class="sc-value" style="color:#a78bfa;">19</div>
+      <div class="sc-sub">of 141 articles fetched</div>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="summary-card">
+      <div class="summary-label">AI EXECUTIVE SUMMARY</div>
+      <div class="summary-text">The petroleum market is currently navigating an escalating tightening regime characterized by elevated geopolitical risks and heightened volatility sensitivity. While no confirmed physical supply disruptions have been reported, the market is under significant pressure, with Russia identified as the largest single contributor to structural pressure. The concentration profile remains broadly dispersed, indicating a complex landscape where multiple factors, including military tensions and policy sanctions, play critical roles. Notably, chokepoint exposure is elevated, particularly in the context of ongoing tensions in the Gulf region, which could further exacerbate market dynamics.</div>
+    </div>
+
+    <div class="trans-panel">
+      <div class="trans-item">
+        <div class="trans-label">Flow Status</div>
+        <div class="trans-value" style="font-size:10px;font-weight:400;">No confirmed physical supply disruption reported.</div>
+      </div>
+      <div class="trans-item">
+        <div class="trans-label">Chokepoint Risk</div>
+        <div class="trans-value" style="font-size:10px;font-weight:400;">Chokepoint exposure elevated.</div>
+      </div>
+      <div class="trans-item">
+        <div class="trans-label">Structural Balance</div>
+        <div class="trans-value" style="font-size:10px;font-weight:400;">Tightening dominant — limited counter-signals.</div>
+      </div>
+      <div class="trans-item">
+        <div class="trans-label">Concentration</div>
+        <div class="trans-value" style="font-size:10px;font-weight:400;">16% in Russia</div>
+      </div>
+    </div>
+
+    <div class="section-label">Classified Events — Top 10</div>
+    <table class="ev-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Country</th>
+          <th>Direction</th>
+          <th>Severity</th>
+          <th>Category</th>
+          <th>Timing</th>
+          <th>Headline &amp; Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="ev-row">
+          <td class="td-num">01</td>
+          <td class="td-country">HORMUZ / GULF</td>
+          <td><span class="dir-badge" style="color:#ef4444;border-color:#ef4444;">TIGHTENING</span></td>
+          <td><span class="sev-badge" style="color:#f59e0b;border-color:#f59e0b;">MEDIUM</span></td>
+          <td class="td-cats">GEOPOLITICAL RISK</td>
+          <td class="td-timing">NEAR-TERM</td>
+          <td class="td-headline">
+            <a href="https://news.google.com/rss/articles/CBMiQkFVX3lxTE9FSUFPSGkzV0RWeWlRck5vN3lKSm0zd0c3SXVWa1REck5fbUtDanRUZVlmYkZpYmRreU5GNUdwMGp0UQ?oc=5" target="_blank" rel="noopener noreferrer">On the Edge of Hormuz: Gulf States Face a Difficult Test - الحرة</a>
+            <span class="td-source">الحرة</span>
+          </td>
+        </tr>
+        <tr class="ev-row">
+          <td class="td-num">02</td>
+          <td class="td-country">IRAN</td>
+          <td><span class="dir-badge" style="color:#ef4444;border-color:#ef4444;">TIGHTENING</span></td>
+          <td><span class="sev-badge" style="color:#ef4444;border-color:#ef4444;">HIGH</span></td>
+          <td class="td-cats">SUPPLY</td>
+          <td class="td-timing">IMMEDIATE</td>
+          <td class="td-headline">
+            <a href="https://news.google.com/rss/articles/CBMiaEFVX3lxTE5zbkZxc1pWX1hnWnF3WHFwZDVHUjM2REhYYlk1Rk50RDdzbGdlWkdNS0Z3RzBIbTVpTHlrb2M2MGVvMGNNSGUyWVQ4YWd4T3J6b3BVcVNEU043WlFDNVVyTWVZNWFZYXVX?oc=5" target="_blank" rel="noopener noreferrer">Oil surges on Iran tensions, but Israeli energy stocks lag - CTech</a>
+            <span class="td-source">CTech</span>
+          </td>
+        </tr>
+        <tr class="ev-row">
+          <td class="td-num">03</td>
+          <td class="td-country">CHINA</td>
+          <td><span class="dir-badge" style="color:#ef4444;border-color:#ef4444;">TIGHTENING</span></td>
+          <td><span class="sev-badge" style="color:#ef4444;border-color:#ef4444;">HIGH</span></td>
+          <td class="td-cats">SUPPLY</td>
+          <td class="td-timing">NEAR-TERM</td>
+          <td class="td-headline">
+            <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxQR0dIX25wOHBSRGFwRE5sWklFWEhpekhnU1RoUEpITlJhaF9RVEFzVWVuWDlPVTByZHRkX0hrcnRzZkp2ems2MjR5XzJ5Sk11ZWt1RG54VUxUalZwOEF5WUpIT1dNVHlCaTV6cUVXdFV3T0pPZHF2WHpHM1lIcVpRT2c5RkZ2dG9ITzU4QUM0QndHbUZNVFZuWmFrTng5bEF5cVE?oc=5" target="_blank" rel="noopener noreferrer">U.S. and China Could Hold the Line in a Middle East Oil Crisis - Modern Diplomacy</a>
+            <span class="td-source">Modern Diplomacy</span>
+          </td>
+        </tr>
+        <tr class="ev-row">
+          <td class="td-num">04</td>
+          <td class="td-country">HORMUZ / GULF</td>
+          <td><span class="dir-badge" style="color:#ef4444;border-color:#ef4444;">TIGHTENING</span></td>
+          <td><span class="sev-badge" style="color:#ef4444;border-color:#ef4444;">HIGH</span></td>
+          <td class="td-cats">MILITARY</td>
+          <td class="td-timing">IMMEDIATE</td>
+          <td class="td-headline">
+            <a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxPS3E3MnZJMlFPNVhVMllMQWJFenJxdUM2el9UYW5zN1g3YjNLeW9HOW9FVWxodmlrT3RGZW9SMlU3VEpWREptWmFzc1NaMUJ3OUZMbmJDSUoyRUx6aU1OTHFGLWFpRmp0dTYtS1VhQWxONGQxZndDdnpoRkswcGYtRTZYM2dUdXVZR2tCUGNlNU9vaUk3RXVpdDJpMDBZalJSdnhVRg?oc=5" target="_blank" rel="noopener noreferrer">In any Trump strike on Iran, Hormuz is the real prize - Arabian Gulf Business Insight | AGBI</a>
+            <span class="td-source">Arabian Gulf Business Insight | AGBI</span>
+          </td>
+        </tr>
+        <tr class="ev-row">
+          <td class="td-num">05</td>
+          <td class="td-country">IRAN</td>
+          <td><span class="dir-badge" style="color:#ef4444;border-color:#ef4444;">TIGHTENING</span></td>
+          <td><span class="sev-badge" style="color:#ef4444;border-color:#ef4444;">HIGH</span></td>
+          <td class="td-cats">POLICY</td>
+          <td class="td-timing">IMMEDIATE</td>
+          <td class="td-headline">
+            <a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxONktKSHNPLVBITTg0SV85NDdKa0ctV2E5U0tJd2hoNE1ZV2pHS05xVUVjS1VGU2NkdDRrcGw4RGxQTldZcmRSVE51alVQdlRxZVhkc1Bic05KOWFPOEF0M1k2N1BBcGlzYXRxMUtQQVFaV3dKa3FQeDZGTmxmQm1vaE1CenNwX3Z1ZHhrNQ?oc=5" target="_blank" rel="noopener noreferrer">Iran conflict exposes Canada’s oil export policy failures - Troy Media</a>
+            <span class="td-source">Troy Media</span>
+          </td>
+        </tr>
+        <tr class="ev-row">
+          <td class="td-num">06</td>
+          <td class="td-country">RUSSIA</td>
+          <td><span class="dir-badge" style="color:#ef4444;border-color:#ef4444;">TIGHTENING</span></td>
+          <td><span class="sev-badge" style="color:#f59e0b;border-color:#f59e0b;">MEDIUM</span></td>
+          <td class="td-cats">SUPPLY</td>
+          <td class="td-timing">NEAR-TERM</td>
+          <td class="td-headline">
+            <a href="https://news.google.com/rss/articles/CBMi2gFBVV95cUxPQ04wQUtXZ0RmcGgybThFektrdkJqLXkxOTFWYlB4a1VpOW9zb1p6MjdVNUplYTBTQlZFRlFWZHpTR2ZrNmRJNU9Obm1CYTlfN0dKdjE4WjNYYTJqdUtTRm5MU0ZkbHZQUkhfMmViaUlFZ2FHZWxFQVJoQXdkMG1saDNqR042UVNoZllJWlgxR2wyMXAyWHE0ckhNMThyZGx2ckdjYzkxdUZ5QkNleklVcFdRMUZrZTN2VDdkUjFtV2JkWG1PSVhZQV9lMlJmYk9KcGdscHRUUnJ6dw?oc=5" target="_blank" rel="noopener noreferrer">Four years into war, Russia's energy revenues drop but oil keeps flowing - Reuters</a>
+            <span class="td-source">Reuters</span>
+          </td>
+        </tr>
+        <tr class="ev-row">
+          <td class="td-num">07</td>
+          <td class="td-country">RUSSIA</td>
+          <td><span class="dir-badge" style="color:#ef4444;border-color:#ef4444;">TIGHTENING</span></td>
+          <td><span class="sev-badge" style="color:#ef4444;border-color:#ef4444;">HIGH</span></td>
+          <td class="td-cats">SANCTIONS</td>
+          <td class="td-timing">IMMEDIATE</td>
+          <td class="td-headline">
+            <a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxNMVoxQzM1QW93QTNXV0R2RzB1ZWVyLWI0VW9FSHlKWk5FUTB0YkpNc2lCNTFHd01ZOTNQUEhpQXFQWXY3VHlzMUVudHdvdUFDNFZmWjFSdVp5bGUwejNUWXppTTJNbHN3SURJTzcwSVNrenpodjFpMUN0THlOQ0FhZkx0aHl2cTg0d21iS1lLLXYtcUJCaFExVlJVR1VLblQ4SlprdFI4c3dSLUZjSGFmUkx0OV90MUVGcnYwUWFYZmdTeUE5?oc=5" target="_blank" rel="noopener noreferrer">EU to propose permanent ban on Russian oil after Hungary election, document shows - Reuters</a>
+            <span class="td-source">Reuters</span>
+          </td>
+        </tr>
+        <tr class="ev-row">
+          <td class="td-num">08</td>
+          <td class="td-country">NIGERIA</td>
+          <td><span class="dir-badge" style="color:#3b82f6;border-color:#3b82f6;">LOOSENING</span></td>
+          <td><span class="sev-badge" style="color:#f59e0b;border-color:#f59e0b;">MEDIUM</span></td>
+          <td class="td-cats">SUPPLY</td>
+          <td class="td-timing">NEAR-TERM</td>
+          <td class="td-headline">
+            <a href="https://news.google.com/rss/articles/CBMivgFBVV95cUxQcXFhMlBTN0hKMHI3d2lMOGxuWHNmcG9oUUZzMHFTZEtEX2NTT3BDcDdERm1XLWZuVjFkUGlmcTZJU2NUWTJYN29QOTRrcmVTTmM2czAxV1NPMTJrZFNYM2xUUWJrZ3pKSlJZQmVHek11dkgwZnFfc3BZRWJkNVBESnFIUDg4bE54Wnk2dUY2eGRfcVpybk9pY1U3eGpHUXZZREk5YTFmR09hY1hJS3dDTlp4blhYZUpkS1BmN2hB?oc=5" target="_blank" rel="noopener noreferrer">Nigeria to start exporting new crude grade in March, further boosting output - Reuters</a>
+            <span class="td-source">Reuters</span>
+          </td>
+        </tr>
+        <tr class="ev-row">
+          <td class="td-num">09</td>
+          <td class="td-country">VENEZUELA</td>
+          <td><span class="dir-badge" style="color:#3b82f6;border-color:#3b82f6;">LOOSENING</span></td>
+          <td><span class="sev-badge" style="color:#f59e0b;border-color:#f59e0b;">MEDIUM</span></td>
+          <td class="td-cats">SUPPLY</td>
+          <td class="td-timing">NEAR-TERM</td>
+          <td class="td-headline">
+            <a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxORHEzS3JXY3JrVlJLMHFudHZLclp2R3J2Qlh3UEpJN1ZRcWo2bUdYS3EwV2F0eHpXWENLUlRkMWdOanN0YVFCU2JtUTVCZUlKVVhIQUJLNnZvQVlJQTlzSGwzTWc0V1U1emppYjNENWJzTWF4WWUxT1ZXVmxPcVI0TXViTnNOa3BIMmllZmdfSGQ0Ujd2bnZnQWFmVnlIQm5OWllhU25ySUZmQ2tMM0ZB?oc=5" target="_blank" rel="noopener noreferrer">Venezuela readies larger oil cargoes for export, targets India - Reuters</a>
+            <span class="td-source">Reuters</span>
+          </td>
+        </tr>
+        <tr class="ev-row">
+          <td class="td-num">10</td>
+          <td class="td-country">CUBA</td>
+          <td><span class="dir-badge" style="color:#ef4444;border-color:#ef4444;">TIGHTENING</span></td>
+          <td><span class="sev-badge" style="color:#f59e0b;border-color:#f59e0b;">MEDIUM</span></td>
+          <td class="td-cats">SANCTIONS</td>
+          <td class="td-timing">NEAR-TERM</td>
+          <td class="td-headline">
+            <a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxPenpKcXhKSUpCaVdrak13TzRqMVVXRmJUNGh3MVdfWHFEaUVfMkx2enpwZUVNQzdGVjFKNHdUWm10SU5faDV2TGRmZnlDX3o2Y2pWcWp4Q05oYnFCWnR6aDUwcU13WTh0ZUcxR1ZxS1JxOU1Sd2NoOEhzT1FreEpEdzBqcjZ6cVVtRnVQdXhNVDJhRGtjd3RfbHI5Vm9nczBGMHgzc1lwNzZTTGNyOWc?oc=5" target="_blank" rel="noopener noreferrer">Canada plans to assist Cuba while Washington squeezes the island - Reuters</a>
+            <span class="td-source">Reuters</span>
+          </td>
+        </tr></tbody>
+    </table>
+  </div>
+
+  <div class="footer">© 2026 Randy Hinton. All rights reserved. Unauthorized reproduction, distribution, or transmission of this brief, in whole or in part, is strictly prohibited without prior written consent. Signal scores represent relative structural pressure within the observed window and do not constitute forecasts or investment advice. Signal data sourced from Google News RSS feeds.  Executive summary generated by OpenAI GPT-4o-mini.  Distribution: acme</div>
+</body>
+</html>
