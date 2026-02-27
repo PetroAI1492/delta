@@ -7,7 +7,7 @@
   <meta http-equiv="refresh" content="300">
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>◎ Monitoring — Energy Tripwire — 27 February 2026  |  17:44 EST</title>
+  <title>◎ Monitoring — Energy Tripwire — 27 February 2026  |  17:47 EST</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet"/>
   <style>
@@ -279,18 +279,18 @@
     <div class="hero-eyebrow">No Qualifying Events This Window</div>
     <div class="hero-count">—<span>CLEAR</span></div>
     <div class="hero-label">System Active — Scanning Every 30 Minutes</div>
-    <div class="hero-timestamp">Last scan: 27 February 2026  |  17:44 EST &nbsp;·&nbsp; LIVE FEED — NO TRIGGERS DETECTED</div>
+    <div class="hero-timestamp">Last scan: 27 February 2026  |  17:47 EST &nbsp;·&nbsp; LIVE FEED — NO TRIGGERS DETECTED</div>
   </div>
 
   <div class="scan-bar">
     <div class="scan-item">
       <div class="scan-label">Articles Scanned</div>
-      <div class="scan-value" style="color:var(--text);">38</div>
+      <div class="scan-value" style="color:var(--text);">37</div>
     </div>
     <div class="scan-divider"></div>
     <div class="scan-item">
       <div class="scan-label">Candidates</div>
-      <div class="scan-value" style="color:var(--amber);">36</div>
+      <div class="scan-value" style="color:var(--amber);">35</div>
     </div>
     <div class="scan-divider"></div>
     <div class="scan-item">
@@ -340,11 +340,22 @@
     </div>
   </div>
 
-  <div class="footer">
-    Page Last Refeshed: 27 February 2026  17:44 EST &nbsp;·&nbsp;
+<div class="footer">
+    Page Last Refeshed: 27 February 2026  17:47 EST &nbsp;·&nbsp;
     Auto-refreshes every 30 minutes. &nbsp;·&nbsp;
     Classification is fully deterministic — no AI inference. All signals require human verification. &nbsp;·&nbsp;
     © 2026 Randy Hinton. All rights reserved. &nbsp;·&nbsp; Distribution: GUES
   </div>
+
+  <script>
+  (function() {
+      const REFRESH_INTERVAL = 300000;  // 5 minutes
+
+      setInterval(function() {
+          window.location.reload(true);
+      }, REFRESH_INTERVAL);
+  })();
+  </script>
+
 </body>
 </html>
