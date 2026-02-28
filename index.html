@@ -7,7 +7,7 @@
   <meta http-equiv="refresh" content="300">
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>◎ Monitoring — Energy Tripwire — 28 February 2026  |  08:28 EST</title>
+  <title>⚠ ALERT — Energy Tripwire — 28 February 2026  |  11:56 EST</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet"/>
   <style>
@@ -38,25 +38,25 @@
     }
     .alert-stripe {
       height: 4px;
-      background: #1e3a5f;
-      
-      background: #1e3a5f;
+      background: #ef4444;
+      animation: stripe-scroll 1.2s linear infinite;
+      background: repeating-linear-gradient(90deg, #ef4444 0px, #ef4444 20px, #b91c1c 20px, #b91c1c 40px);
     }
     @keyframes stripe-scroll {
       from { background-position: 0 0; }
       to   { background-position: 40px 0; }
     }
     .topbar {
-      background: #0f1e35;
+      background: #7f1d1d;
       padding: 10px 32px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid #1e3a5f;
+      border-bottom: 1px solid #991b1b;
     }
     .topbar-left { display: flex; align-items: center; gap: 12px; }
     .alert-pill {
-      background: #1e3a5f;
+      background: #ef4444;
       color: #fff;
       font-size: 9px;
       font-weight: 700;
@@ -69,8 +69,8 @@
       0%, 100% { opacity: 1; }
       50%       { opacity: 0.55; }
     }
-    .topbar-title { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: #94a3b8; }
-    .topbar-right { font-size: 10px; color: #94a3b8; letter-spacing: 0.04em; opacity: 0.8; }
+    .topbar-title { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: #fca5a5; }
+    .topbar-right { font-size: 10px; color: #fca5a5; letter-spacing: 0.04em; opacity: 0.8; }
     .hero {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
@@ -83,13 +83,13 @@
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 1px;
-      background: linear-gradient(90deg, #38bdf8 0%, transparent 60%);
+      background: linear-gradient(90deg, #ef4444 0%, transparent 60%);
     }
     .hero-eyebrow {
       font-size: 9px;
       font-weight: 600;
       letter-spacing: 0.18em;
-      color: #38bdf8;
+      color: #ef4444;
       text-transform: uppercase;
       margin-bottom: 14px;
     }
@@ -97,7 +97,7 @@
       font-family: var(--serif);
       font-size: 48px;
       font-weight: 300;
-      color: #38bdf8;
+      color: #ef4444;
       line-height: 1;
       margin-bottom: 6px;
       font-style: italic;
@@ -330,38 +330,38 @@
 
   <div class="topbar">
     <div class="topbar-left">
-      <div class="alert-pill">● MONITORING</div>
+      <div class="alert-pill">⚠ LIVE ALERT</div>
       <div class="topbar-title">GLOBAL ENERGY INTELLIGENCE  //  HIGH-SEVERITY TRIPWIRE</div>
     </div>
-    <div class="topbar-right">Distribution: ADM &nbsp;·&nbsp; Next refresh: 30 min</div>
+    <div class="topbar-right">Distribution: GUES &nbsp;·&nbsp; Next refresh: 30 min</div>
   </div>
 
   <div class="hero">
-    <div class="hero-eyebrow">No Qualifying Events This Window</div>
-    <div class="hero-count">—<span>CLEAR</span></div>
-    <div class="hero-label">System Active — Scanning Every 30 Minutes</div>
-    <div class="hero-timestamp">Last scan: 28 February 2026  |  08:28 EST &nbsp;·&nbsp; LIVE FEED — NO TRIGGERS DETECTED</div>
+    <div class="hero-eyebrow">High-Severity Tightening Event Detected</div>
+    <div class="hero-count">4<span>EVENTS</span></div>
+    <div class="hero-label">Qualifying High-Severity Tightening Signals</div>
+    <div class="hero-timestamp">Last scan: 28 February 2026  |  11:56 EST &nbsp;·&nbsp; LIVE FEED — DETERMINISTIC CLASSIFICATION</div>
   </div>
 
   <div class="scan-bar">
     <div class="scan-item">
       <div class="scan-label">Articles Scanned</div>
-      <div class="scan-value" style="color:var(--text);">66</div>
+      <div class="scan-value" style="color:var(--text);">101</div>
     </div>
     <div class="scan-divider"></div>
     <div class="scan-item">
       <div class="scan-label">Candidates</div>
-      <div class="scan-value" style="color:var(--amber);">62</div>
+      <div class="scan-value" style="color:var(--amber);">99</div>
     </div>
     <div class="scan-divider"></div>
     <div class="scan-item">
       <div class="scan-label">Triggers</div>
-      <div class="scan-value" style="color:var(--muted);">0</div>
+      <div class="scan-value" style="color:var(--red);">4</div>
     </div>
     <div class="scan-divider"></div>
     <div class="scan-item">
       <div class="scan-label">Trigger Rate</div>
-      <div class="scan-value" style="color:var(--muted);">0%</div>
+      <div class="scan-value" style="color:var(--muted);">3%</div>
     </div>
     <div class="scan-divider"></div>
     <div class="scan-item">
@@ -377,15 +377,112 @@
 
   <div class="main">
     
-    <div class="quiet-state">
-      <div class="quiet-icon">◎</div>
-      <div class="quiet-title">System Nominal</div>
-      <div class="quiet-body">
-        No high-severity tightening events detected in the current 24-hour window.<br/>
-        The tripwire requires: direction = tightening &nbsp;·&nbsp; severity = HIGH
-        &nbsp;·&nbsp; timing = immediate &nbsp;·&nbsp; category = operational.
-      </div>
-    </div>
+    <div class="section-label">Triggering Events</div>
+    <div class="events">
+        <div class="event-card">
+          <div class="event-index">01</div>
+          <div class="event-body">
+            <div class="event-badges">
+              <span class="badge" style="color:#ef4444;border-color:#ef4444;">MILITARY</span>
+              <span class="badge sev-high">HIGH SEVERITY</span>
+              <span class="badge dir-tight">TIGHTENING</span>
+              <span class="badge tim-imm">IMMEDIATE</span>
+            </div>
+            <div class="event-headline">Oil and Stock Market Moves Could Come Down to China’s Reaction to Iran War - Barron's</div>
+            
+            <div class="impact-line">
+              <span class="impact-node">IRAN</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-vol">~3.2M bbl/day</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-exp">China (primary buyer), global spot market</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-note">Sanctions constrain official flows — shadow fleet active</span>
+            </div>
+            <div class="event-meta">
+              <span class="event-source">Barron's</span>
+              <a class="event-link" href="https://news.google.com/rss/articles/CBMigwNBVV95cUxNQzRYMEhYUUJkSkptQ2RfbWlkd0FET0l6LUV0dTBxdExGWnNtOWE4M21QZy1NZFdlZWx0c3RlMldnSjVKRHFPaEZaVmRpQmFGM0FrOFFFbC1nUlNxMUpLd2NhdkdKMEI1bjd5MDVXRjZvWnkzSzk5aHBqdnkyNnpoSEdUZDNqWDhQeGdkOVhzZnY5T3VSRWhycDBfdkFCWFJTYVlONjhlVE5PaHJPdEUyaUQ5Nkc2Qk40ZV9TNllBczcyYlhDM1JkWl80ZF82bVAtOTE5VEYzbEVYUGxfODhwRXg4MS05VHRQUC0tWG1Ccm9uTzU4cTNZRHl3dHpPZS1kLUxjT2tPTEJmYnRzMHdVVlVYY2R5aUp0Z3hyV0dOWEVUSUd2Wlo1Y2taQllsVVJzNk1hZXJjME1PWC1HUlBMbm1wQjJMdjU3SXljTndWbUFJWGRuTXotSVBMZmxqRTVQNFoxRzdVcGszRXNkZllZWnhOa2Z2VnowdFZYN0JCd0szNGM?oc=5" target="_blank" rel="noopener noreferrer">VIEW SOURCE →</a>
+            </div>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-index">02</div>
+          <div class="event-body">
+            <div class="event-badges">
+              <span class="badge" style="color:#ef4444;border-color:#ef4444;">MILITARY</span>
+              <span class="badge sev-high">HIGH SEVERITY</span>
+              <span class="badge dir-tight">TIGHTENING</span>
+              <span class="badge tim-imm">IMMEDIATE</span>
+            </div>
+            <div class="event-headline">Trump confirms 'massive and ongoing' attacks on Iran and calls on Iranians to overthrow regime - Fortune</div>
+            
+            <div class="impact-line">
+              <span class="impact-node">IRAN</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-vol">~3.2M bbl/day</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-exp">China (primary buyer), global spot market</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-note">Sanctions constrain official flows — shadow fleet active</span>
+            </div>
+            <div class="event-meta">
+              <span class="event-source">Fortune</span>
+              <a class="event-link" href="https://news.google.com/rss/articles/CBMikwFBVV95cUxOZ182T2JpbzV6dDF3aWw5bG91X2tDMGhHUW9oeXhWeXlSU3k2aFZpeDBGTXBvb0V3RmRtN1RNMUZpYk1IVjlLaEkzeHVHUVlZWjk0RWdBM2xHMGk4QkxlQXVBdUFCekJYbHIzaWNhUFd4WlM0WDJEcndMbGVqRzBGSzdLRlhpU3VmcHVLUlVwaFhybGM?oc=5" target="_blank" rel="noopener noreferrer">VIEW SOURCE →</a>
+            </div>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-index">03</div>
+          <div class="event-body">
+            <div class="event-badges">
+              <span class="badge" style="color:#ef4444;border-color:#ef4444;">MILITARY</span>
+              <span class="badge sev-high">HIGH SEVERITY</span>
+              <span class="badge dir-tight">TIGHTENING</span>
+              <span class="badge tim-imm">IMMEDIATE</span>
+            </div>
+            <div class="event-headline">209 billion barrels: Iran’s oil muscle looms over global markets as conflict escalates - Business Today</div>
+            
+            <div class="impact-line">
+              <span class="impact-node">IRAN</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-vol">~3.2M bbl/day</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-exp">China (primary buyer), global spot market</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-note">Sanctions constrain official flows — shadow fleet active</span>
+            </div>
+            <div class="event-meta">
+              <span class="event-source">Business Today</span>
+              <a class="event-link" href="https://news.google.com/rss/articles/CBMi6wFBVV95cUxPOTRUOHJUTXhENURBR0V4Z0lsbmF2dzlvQnd0MTFhUWlOeWhYRXVOZjFPWm1iR2xuc0V5UlhCV2FFbFFtbTVma1pTZmdSZ1BybHNMV3NPR19WcUY5MHphVW1VRFZIZ0h5YUxPUDN0ZXhnem0xcXQzbUJMb0k2NWp3TUE2YjBEdXI3djBhM21NczIxU3JnaHc2WWh4eU1ZWGlvWGNlbGprMThNT0JIRUF4SUh2WGw1c05mdFZCUWdCWFJ5eU9GWjVTNndfUXQ3RFJidzdhWUZCX3NHTWI5V0l3d0VqMjMxekFiTGJF0gHwAUFVX3lxTE5BN3BvYXcyRVdHc0hGQ001elJLTENqUlJoM29oa3Y5Yjl6bF83TENXZzRhb2pjcVUwdTEzRW9zQ3dvemhfSllMU25RSFBqWGExeEo2QTFpdGR4U1ZwWU1VUDJZMVFYTHp6LWk2MWt0dDgwOXItNHB3MEw0dUdXbk0tazhBVm9QN2RfQ3F1YVBZVEsxNUhKTTB1YmFQVjRYbHJpWGtXYm9KUS1OTlU0RlUxNnBnQUVNN1Q4ektuR3d2UklUV3ZwUmg3Mm10SVd1RDB5N0dDNmpWbWM3amVwMXNkMDJZeGl6Rno2Y1BuZzNoNg?oc=5" target="_blank" rel="noopener noreferrer">VIEW SOURCE →</a>
+            </div>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-index">04</div>
+          <div class="event-body">
+            <div class="event-badges">
+              <span class="badge" style="color:#ef4444;border-color:#ef4444;">MILITARY</span>
+              <span class="badge sev-high">HIGH SEVERITY</span>
+              <span class="badge dir-tight">TIGHTENING</span>
+              <span class="badge tim-imm">IMMEDIATE</span>
+            </div>
+            <div class="event-headline">Iran-Israel Conflict: Strait Of Hormuz In Focus Again — Why Is It So Significant? - NDTV Profit</div>
+            
+            <div class="impact-line">
+              <span class="impact-node">STRAIT OF HORMUZ</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-vol">~21M bbl/day</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-exp">Global — 21% of world oil supply</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-note">Single most critical oil chokepoint</span>
+            </div>
+            <div class="event-meta">
+              <span class="event-source">NDTV Profit</span>
+              <a class="event-link" href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxPNTNDbDZ3ek9hRjJhVTU3S1d0bVFYb1hKRFl5ek9wSkpDLVFSdE1WeEs0YUYwNWpmU3RxMDl6eERZVHVsNi1OTjBjdDVzS1FibTZtbmJSMTZZRUI0dVRtRjQxMXc3NGNOWDNEYVktMjBUX0tpdEdad0ZHT2lBM2VsdEVBVFFDV0NncDdZaFJ3dlU3MTZNYWU3U0FTVURpT2djc1BzOG9NNkFfVlpVWlFBQmdHR1poNUhaTGdn0gHDAUFVX3lxTE12WWQ0cUU2eGFwUkZRLWFrdTlfSjVfazZ0QThFeGFBLVFHajV5Tk1WZ2RETVpva3IxUEg4WTF3VTZ1TjBVcl9wcGc3ZkZlS082SVBoOENDeDRIYlh4d3p5bVRWTUdoXzVaT2FVUU45QnZ3dzgxOXlNN1Y1eUdNdzhZakNyZXd3Qk5raVdjYXJZa0NBZDg3LVRJRUE5RFpWN3Z4LS1VczZ1bXgtcDNUV0FhTlQyTG9FMkxHSm1rQk5KQXdPYw?oc=5" target="_blank" rel="noopener noreferrer">VIEW SOURCE →</a>
+            </div>
+          </div>
+        </div></div>
     <div class="class-grid">
       <div class="class-cell">
         <div class="class-cell-label">Direction Required</div>
@@ -472,7 +569,7 @@
   <div class="footer">
     Auto-refreshes every 30 minutes. &nbsp;·&nbsp;
     Classification is fully deterministic — no AI inference. All signals require human verification. &nbsp;·&nbsp;
-    © 2026 Randy Hinton. All rights reserved. &nbsp;·&nbsp; Distribution: ADM
+    © 2026 Randy Hinton. All rights reserved. &nbsp;·&nbsp; Distribution: GUES
   </div>
 </body>
 </html>
