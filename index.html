@@ -7,7 +7,7 @@
   <meta http-equiv="refresh" content="300">
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>⚠ ALERT — Energy Tripwire — 28 February 2026  |  06:23 EST</title>
+  <title>◎ Monitoring — Energy Tripwire — 28 February 2026  |  07:13 EST</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet"/>
   <style>
@@ -38,25 +38,25 @@
     }
     .alert-stripe {
       height: 4px;
-      background: #ef4444;
-      animation: stripe-scroll 1.2s linear infinite;
-      background: repeating-linear-gradient(90deg, #ef4444 0px, #ef4444 20px, #b91c1c 20px, #b91c1c 40px);
+      background: #1e3a5f;
+      
+      background: #1e3a5f;
     }
     @keyframes stripe-scroll {
       from { background-position: 0 0; }
       to   { background-position: 40px 0; }
     }
     .topbar {
-      background: #7f1d1d;
+      background: #0f1e35;
       padding: 10px 32px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid #991b1b;
+      border-bottom: 1px solid #1e3a5f;
     }
     .topbar-left { display: flex; align-items: center; gap: 12px; }
     .alert-pill {
-      background: #ef4444;
+      background: #1e3a5f;
       color: #fff;
       font-size: 9px;
       font-weight: 700;
@@ -69,8 +69,8 @@
       0%, 100% { opacity: 1; }
       50%       { opacity: 0.55; }
     }
-    .topbar-title { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: #fca5a5; }
-    .topbar-right { font-size: 10px; color: #fca5a5; letter-spacing: 0.04em; opacity: 0.8; }
+    .topbar-title { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: #94a3b8; }
+    .topbar-right { font-size: 10px; color: #94a3b8; letter-spacing: 0.04em; opacity: 0.8; }
     .hero {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
@@ -83,13 +83,13 @@
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 1px;
-      background: linear-gradient(90deg, #ef4444 0%, transparent 60%);
+      background: linear-gradient(90deg, #38bdf8 0%, transparent 60%);
     }
     .hero-eyebrow {
       font-size: 9px;
       font-weight: 600;
       letter-spacing: 0.18em;
-      color: #ef4444;
+      color: #38bdf8;
       text-transform: uppercase;
       margin-bottom: 14px;
     }
@@ -97,7 +97,7 @@
       font-family: var(--serif);
       font-size: 48px;
       font-weight: 300;
-      color: #ef4444;
+      color: #38bdf8;
       line-height: 1;
       margin-bottom: 6px;
       font-style: italic;
@@ -330,38 +330,38 @@
 
   <div class="topbar">
     <div class="topbar-left">
-      <div class="alert-pill">⚠ LIVE ALERT</div>
+      <div class="alert-pill">● MONITORING</div>
       <div class="topbar-title">GLOBAL ENERGY INTELLIGENCE  //  HIGH-SEVERITY TRIPWIRE</div>
     </div>
     <div class="topbar-right">Distribution: ADM &nbsp;·&nbsp; Next refresh: 30 min</div>
   </div>
 
   <div class="hero">
-    <div class="hero-eyebrow">High-Severity Tightening Event Detected</div>
-    <div class="hero-count">1<span>EVENT</span></div>
-    <div class="hero-label">Qualifying High-Severity Tightening Signal</div>
-    <div class="hero-timestamp">Last scan: 28 February 2026  |  06:23 EST &nbsp;·&nbsp; LIVE FEED — DETERMINISTIC CLASSIFICATION</div>
+    <div class="hero-eyebrow">No Qualifying Events This Window</div>
+    <div class="hero-count">—<span>CLEAR</span></div>
+    <div class="hero-label">System Active — Scanning Every 30 Minutes</div>
+    <div class="hero-timestamp">Last scan: 28 February 2026  |  07:13 EST &nbsp;·&nbsp; LIVE FEED — NO TRIGGERS DETECTED</div>
   </div>
 
   <div class="scan-bar">
     <div class="scan-item">
       <div class="scan-label">Articles Scanned</div>
-      <div class="scan-value" style="color:var(--text);">56</div>
+      <div class="scan-value" style="color:var(--text);">51</div>
     </div>
     <div class="scan-divider"></div>
     <div class="scan-item">
       <div class="scan-label">Candidates</div>
-      <div class="scan-value" style="color:var(--amber);">51</div>
+      <div class="scan-value" style="color:var(--amber);">48</div>
     </div>
     <div class="scan-divider"></div>
     <div class="scan-item">
       <div class="scan-label">Triggers</div>
-      <div class="scan-value" style="color:var(--red);">1</div>
+      <div class="scan-value" style="color:var(--muted);">0</div>
     </div>
     <div class="scan-divider"></div>
     <div class="scan-item">
       <div class="scan-label">Trigger Rate</div>
-      <div class="scan-value" style="color:var(--muted);">1%</div>
+      <div class="scan-value" style="color:var(--muted);">0%</div>
     </div>
     <div class="scan-divider"></div>
     <div class="scan-item">
@@ -371,40 +371,21 @@
     <div class="scan-divider"></div>
     <div class="scan-item">
       <div class="scan-label">Last Triggered</div>
-      <div class="scan-value" style="font-size:10px;color:var(--red);">28 Feb 2026  06:23 EST</div>
+      <div class="scan-value" style="font-size:10px;color:var(--red);">28 Feb 2026  06:34 EST</div>
     </div>
   </div>
 
   <div class="main">
     
-    <div class="section-label">Triggering Events</div>
-    <div class="events">
-        <div class="event-card">
-          <div class="event-index">01</div>
-          <div class="event-body">
-            <div class="event-badges">
-              <span class="badge" style="color:#ef4444;border-color:#ef4444;">MILITARY</span>
-              <span class="badge sev-high">HIGH SEVERITY</span>
-              <span class="badge dir-tight">TIGHTENING</span>
-              <span class="badge tim-imm">IMMEDIATE</span>
-            </div>
-            <div class="event-headline">Economic impact of US-Israel-Iran war depends on duration of the conflict, says economist - Khaleej Times</div>
-            
-            <div class="impact-line">
-              <span class="impact-node">IRAN</span>
-              <span class="impact-sep">·</span>
-              <span class="impact-vol">~3.2M bbl/day</span>
-              <span class="impact-sep">·</span>
-              <span class="impact-exp">China (primary buyer), global spot market</span>
-              <span class="impact-sep">·</span>
-              <span class="impact-note">Sanctions constrain official flows — shadow fleet active</span>
-            </div>
-            <div class="event-meta">
-              <span class="event-source">Khaleej Times</span>
-              <a class="event-link" href="https://news.google.com/rss/articles/CBMixAFBVV95cUxQdllpX1IweFJDa2NFOVlfUVBpNHJMVUZHQXFYLUc3TExCYXNOWlRxRjA0YkFieXJnVlpQbXp0dGN5UURUYi0xSUIzNUNmR3ZNamxXbWxfNXlCVjRnc2duYzRXNk84ZU96LVZvWlY3UzNoSU5oSGg0X0RaSHAtMWptSDYtWEFzUXlYY21kdFRLcE90V25iV3BEUU0wajNfV09XYlpYZ2hXMUotcjB0aHZrem5pVTdWX3A3enB2S1Z4NnhPSG000gHMAUFVX3lxTE5yT0JDTHY4VEdqTWhfTVFCd3Rucm5NUDZTdVhNNExyc3d3Mkl1NW1ILWFsV1BDUGJsOVBsX0dRNVVFQ1ctZ1QyZXVsXzNzRkhRdloxd1VKcVRZa0NMcWZkako3OTRGSUtCbkh1SDdZNmQ0X1JWemZsTExtMFE4WkstOG14VkRqbXMzNTlSMTQzcnFuTDdubmpYNzVNajhQV3pPSEJYbUxBZFJwMHJNOHdITjFSSXpFYkJ3ck1aYlg2NWFlUWhSNjlCUVA5QQ?oc=5" target="_blank" rel="noopener noreferrer">VIEW SOURCE →</a>
-            </div>
-          </div>
-        </div></div>
+    <div class="quiet-state">
+      <div class="quiet-icon">◎</div>
+      <div class="quiet-title">System Nominal</div>
+      <div class="quiet-body">
+        No high-severity tightening events detected in the current 24-hour window.<br/>
+        The tripwire requires: direction = tightening &nbsp;·&nbsp; severity = HIGH
+        &nbsp;·&nbsp; timing = immediate &nbsp;·&nbsp; category = operational.
+      </div>
+    </div>
     <div class="class-grid">
       <div class="class-cell">
         <div class="class-cell-label">Direction Required</div>
@@ -436,6 +417,18 @@
           </tr>
         </thead>
         <tbody>
+            <tr>
+              <td class="ht-ts">28 Feb  06:34</td>
+              <td class="ht-cat"><span class="ht-badge" style="color:#64748b;border-color:#64748b;">MANUAL INJECT</span></td>
+              <td class="ht-title">Oil Markets Brace for Volatility As U.S.-Israel Launch Strikes Across Iran</td>
+              <td class="ht-src">MANUAL INJECT</td>
+            </tr>
+            <tr>
+              <td class="ht-ts">28 Feb  06:33</td>
+              <td class="ht-cat"><span class="ht-badge" style="color:#64748b;border-color:#64748b;">MANUAL INJECT</span></td>
+              <td class="ht-title">Trump says ‘massive’ strike against Iran underway — bitcoin plunge offers a glimpse at how markets could react</td>
+              <td class="ht-src">MANUAL INJECT</td>
+            </tr>
             <tr>
               <td class="ht-ts">28 Feb  06:23</td>
               <td class="ht-cat"><span class="ht-badge" style="color:#64748b;border-color:#64748b;">KHALEEJ TIMES</span></td>
@@ -471,18 +464,6 @@
               <td class="ht-cat"><span class="ht-badge" style="color:#64748b;border-color:#64748b;">AKIPRESS NEWS AGENCY</span></td>
               <td class="ht-title">Identity confirmed in fatal fuel tanker explosion on Bishkek-Osh road - AKIpress News Agency</td>
               <td class="ht-src">AKIpress News Agency</td>
-            </tr>
-            <tr>
-              <td class="ht-ts">26 Feb  07:39</td>
-              <td class="ht-cat"><span class="ht-badge" style="color:#64748b;border-color:#64748b;">CRUDE OIL PRICES TODAY | OILPRICE.COM</span></td>
-              <td class="ht-title">Iran Rushes to Ship Oil Ahead of Possible U.S. Strike - Crude Oil Prices Today | OilPrice.com</td>
-              <td class="ht-src">Crude Oil Prices Today | OilPrice.com</td>
-            </tr>
-            <tr>
-              <td class="ht-ts">25 Feb  15:52</td>
-              <td class="ht-cat"><span class="ht-badge" style="color:#64748b;border-color:#64748b;">ENERGYNOW.COM</span></td>
-              <td class="ht-title">Saudi Arabia Boosts Oil Output, Exports for US Attack on Iran Contingency, Sources Say - EnergyNow.com</td>
-              <td class="ht-src">EnergyNow.com</td>
             </tr></tbody>
       </table>
     </div>
