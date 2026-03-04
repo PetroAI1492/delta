@@ -7,7 +7,7 @@
   <meta http-equiv="refresh" content="300">
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>◎ Monitoring — Energy Tripwire — 03 March 2026  |  22:23 EST</title>
+  <title>⚠ ALERT — Energy Tripwire — 04 March 2026  |  00:30 EST</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet"/>
   <style>
@@ -38,25 +38,25 @@
     }
     .alert-stripe {
       height: 4px;
-      background: #1e3a5f;
-      
-      background: #1e3a5f;
+      background: #ef4444;
+      animation: stripe-scroll 1.2s linear infinite;
+      background: repeating-linear-gradient(90deg, #ef4444 0px, #ef4444 20px, #b91c1c 20px, #b91c1c 40px);
     }
     @keyframes stripe-scroll {
       from { background-position: 0 0; }
       to   { background-position: 40px 0; }
     }
     .topbar {
-      background: #0f1e35;
+      background: #7f1d1d;
       padding: 10px 32px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid #1e3a5f;
+      border-bottom: 1px solid #991b1b;
     }
     .topbar-left { display: flex; align-items: center; gap: 12px; }
     .alert-pill {
-      background: #1e3a5f;
+      background: #ef4444;
       color: #fff;
       font-size: 9px;
       font-weight: 700;
@@ -69,8 +69,8 @@
       0%, 100% { opacity: 1; }
       50%       { opacity: 0.55; }
     }
-    .topbar-title { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: #94a3b8; }
-    .topbar-right { font-size: 10px; color: #94a3b8; letter-spacing: 0.04em; opacity: 0.8; }
+    .topbar-title { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: #fca5a5; }
+    .topbar-right { font-size: 10px; color: #fca5a5; letter-spacing: 0.04em; opacity: 0.8; }
     .hero {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
@@ -83,13 +83,13 @@
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 1px;
-      background: linear-gradient(90deg, #38bdf8 0%, transparent 60%);
+      background: linear-gradient(90deg, #ef4444 0%, transparent 60%);
     }
     .hero-eyebrow {
       font-size: 9px;
       font-weight: 600;
       letter-spacing: 0.18em;
-      color: #38bdf8;
+      color: #ef4444;
       text-transform: uppercase;
       margin-bottom: 14px;
     }
@@ -97,7 +97,7 @@
       font-family: var(--serif);
       font-size: 48px;
       font-weight: 300;
-      color: #38bdf8;
+      color: #ef4444;
       line-height: 1;
       margin-bottom: 6px;
       font-style: italic;
@@ -324,7 +324,7 @@
 
   <div class="topbar">
     <div class="topbar-left">
-      <div class="alert-pill">● MONITORING</div>
+      <div class="alert-pill">⚠ LIVE ALERT</div>
       <div class="topbar-title">GLOBAL ENERGY  //  TRIPWIRE</div>
     </div>
     <div class="topbar-right">Distribution: ADM &nbsp;·&nbsp; Next refresh: 30 min</div>
@@ -373,10 +373,10 @@
   </div>
 
   <div class="hero">
-    <div class="hero-eyebrow">No Qualifying Events This Window</div>
-    <div class="hero-count">—<span>CLEAR</span></div>
-    <div class="hero-label">System Active — Scanning Every 30 Minutes</div>
-    <div class="hero-timestamp">Last scan: 03 March 2026  |  22:23 EST &nbsp;·&nbsp; LIVE FEED — NO TRIGGERS DETECTED</div>
+    <div class="hero-eyebrow">High-Severity Tightening Event Detected</div>
+    <div class="hero-count">5<span>EVENTS</span></div>
+    <div class="hero-label">Qualifying High-Severity Tightening Signals</div>
+    <div class="hero-timestamp">Last scan: 04 March 2026  |  00:30 EST &nbsp;·&nbsp; LIVE FEED — DETERMINISTIC CLASSIFICATION</div>
   </div>
 
   <div class="scan-bar">
@@ -392,12 +392,12 @@
     <div class="scan-divider"></div>
     <div class="scan-item">
       <div class="scan-label">Triggers</div>
-      <div class="scan-value" style="color:var(--muted);">0</div>
+      <div class="scan-value" style="color:var(--red);">5</div>
     </div>
     <div class="scan-divider"></div>
     <div class="scan-item">
       <div class="scan-label">Trigger Rate</div>
-      <div class="scan-value" style="color:var(--muted);">0%</div>
+      <div class="scan-value" style="color:var(--muted);">2%</div>
     </div>
     <div class="scan-divider"></div>
     <div class="scan-item">
@@ -408,15 +408,138 @@
 
   <div class="main">
     
-    <div class="quiet-state">
-      <div class="quiet-icon">◎</div>
-      <div class="quiet-title">System Nominal</div>
-      <div class="quiet-body">
-        No high-severity tightening events detected in the current 24-hour window.<br/>
-        The tripwire requires: direction = tightening &nbsp;·&nbsp; severity = HIGH
-        &nbsp;·&nbsp; timing = immediate &nbsp;·&nbsp; category = operational.
-      </div>
-    </div>
+    <div class="section-label">Triggering Events</div>
+    <div class="events">
+        <div class="event-card">
+          <div class="event-index">01</div>
+          <div class="event-body">
+            <div class="event-badges">
+              <span class="badge" style="color:#ef4444;border-color:#ef4444;">MILITARY</span>
+              <span class="badge sev-high">HIGH SEVERITY</span>
+              <span class="badge dir-tight">TIGHTENING</span>
+              <span class="badge tim-imm">IMMEDIATE</span>
+            </div>
+            <div class="event-headline">Rising oil prices due to Iran conflict may affect Las Vegas tourism – KLAS - KLAS 8 News Now</div>
+            
+            <div class="impact-line">
+              <span class="impact-node">IRAN</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-vol">~3.2M bbl/day</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-exp">China (primary buyer), global spot market</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-note">Sanctions constrain official flows — shadow fleet active</span>
+            </div>
+            <div class="event-meta">
+              <span class="event-source">KLAS 8 News Now</span>
+              <a class="event-link" href="https://news.google.com/rss/articles/CBMirAFBVV95cUxNTENXbF95bVhwa3ByenV0RWUwLWllU3RwTGxwMUJOazgtRkxEREpIa1loZkNlUXhqb01TUng3blZvbmYzZU5tRjgxZDEzaml6UFB2MnBuZDdwNmVkV245S1dweXNkZ3ZBZE5Fal9wWUo5YklQUl9YTzhXbFY3QlN3V2dVel9oOXlFR1pfRW1rVGNkd1JkamFqXzktMWhDX0lZYVFJY0phWVBuLXNF?oc=5" target="_blank" rel="noopener noreferrer">VIEW SOURCE →</a>
+            </div>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-index">02</div>
+          <div class="event-body">
+            <div class="event-badges">
+              <span class="badge" style="color:#ef4444;border-color:#ef4444;">MILITARY</span>
+              <span class="badge sev-high">HIGH SEVERITY</span>
+              <span class="badge dir-tight">TIGHTENING</span>
+              <span class="badge tim-imm">IMMEDIATE</span>
+            </div>
+            <div class="event-headline">Oil Surge From Iran Conflict Pushes U.S. Gas Prices Above $3 - Dailyfly News</div>
+            
+            <div class="impact-line">
+              <span class="impact-node">IRAN</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-vol">~3.2M bbl/day</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-exp">China (primary buyer), global spot market</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-note">Sanctions constrain official flows — shadow fleet active</span>
+            </div>
+            <div class="event-meta">
+              <span class="event-source">Dailyfly News</span>
+              <a class="event-link" href="https://news.google.com/rss/articles/CBMimwFBVV95cUxOY1Bsdmp6MnppRDh2ZnBidVNRMmxIVGVpMi1ydndxd3B6bGpQRVRVUktiUWtPV1EzNmlWYkpjanowZ0N0cFNjaWwzR3FkcndrN25FMGZrb0tSNGhWSnc0U19VVGhBZlc5YUtmQ2NfdnFaSGUyc1BwVk11MmY4ODF6alRwdjk2bzU5cTN0elZSVlhSWG82eFNGRGhBMA?oc=5" target="_blank" rel="noopener noreferrer">VIEW SOURCE →</a>
+            </div>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-index">03</div>
+          <div class="event-body">
+            <div class="event-badges">
+              <span class="badge" style="color:#ef4444;border-color:#ef4444;">MILITARY</span>
+              <span class="badge sev-high">HIGH SEVERITY</span>
+              <span class="badge dir-tight">TIGHTENING</span>
+              <span class="badge tim-imm">IMMEDIATE</span>
+            </div>
+            <div class="event-headline">Trump discusses impact of Iran conflict on energy prices - Dakota News Now</div>
+            
+            <div class="impact-line">
+              <span class="impact-node">IRAN</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-vol">~3.2M bbl/day</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-exp">China (primary buyer), global spot market</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-note">Sanctions constrain official flows — shadow fleet active</span>
+            </div>
+            <div class="event-meta">
+              <span class="event-source">Dakota News Now</span>
+              <a class="event-link" href="https://news.google.com/rss/articles/CBMinwFBVV95cUxNbWU1Y1BxcVNqZlFXWk5ra2hEbWFUYnBKWVI0SGdveUVKbGZYcEhiTTFxTE56T1R0d0JSTC1TcW5LTEE4UXlQdkY5VEhIWFk1UUNEZWdlZTNtMWdBQzlBVUhBUTJabmhJWjVRNEdNYi13X0kwNHFzWDlmVmV4dnhWR19zd0VZN0dpRTM1Zzh0Q2NJSm1DTlhjcVVjSHJXVVE?oc=5" target="_blank" rel="noopener noreferrer">VIEW SOURCE →</a>
+            </div>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-index">04</div>
+          <div class="event-body">
+            <div class="event-badges">
+              <span class="badge" style="color:#ef4444;border-color:#ef4444;">MILITARY</span>
+              <span class="badge sev-high">HIGH SEVERITY</span>
+              <span class="badge dir-tight">TIGHTENING</span>
+              <span class="badge tim-imm">IMMEDIATE</span>
+            </div>
+            <div class="event-headline">Asian shares extend losses, Kospi sinks 10%, as the war with Iran widens and oil surges higher - Union-Bulletin</div>
+            
+            <div class="impact-line">
+              <span class="impact-node">IRAN</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-vol">~3.2M bbl/day</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-exp">China (primary buyer), global spot market</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-note">Sanctions constrain official flows — shadow fleet active</span>
+            </div>
+            <div class="event-meta">
+              <span class="event-source">Union-Bulletin</span>
+              <a class="event-link" href="https://news.google.com/rss/articles/CBMi_gFBVV95cUxOQVExTHd3cDF1WXB2SUIyczlyNmVkZUNjZ1pOR1NzQ2ZaYjRVdkJOa280bnllUTFxNHhFdkE4dXZSamgxZnpWVzBKOTMwYWctdE5FaWhjZzU0QjdMbXgzXzR6a1BWV0lSRFFCRG0xVlRmS2hpdDlNNGo5VWhYcm5MNG5oS0VPckM0dG04VVRJdUNNRjJGZDBkTEUyaGQ4TjYtZk9XbGhsc1d1VzlqRmFlQjUyX0JTN0xnOWh1SjhVX0ZpSnJJcER3QWJqb2ExM0s1TVVrajdTQ1g5bVBEaTE0THdCRmR2djQzdTByZEE1bTFxc2JhdWJ3aTUxVjZldw?oc=5" target="_blank" rel="noopener noreferrer">VIEW SOURCE →</a>
+            </div>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-index">05</div>
+          <div class="event-body">
+            <div class="event-badges">
+              <span class="badge" style="color:#ef4444;border-color:#ef4444;">MILITARY</span>
+              <span class="badge sev-high">HIGH SEVERITY</span>
+              <span class="badge dir-tight">TIGHTENING</span>
+              <span class="badge tim-imm">IMMEDIATE</span>
+            </div>
+            <div class="event-headline">Trump discusses impact of Iran conflict on energy prices - Hawaii News Now</div>
+            
+            <div class="impact-line">
+              <span class="impact-node">IRAN</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-vol">~3.2M bbl/day</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-exp">China (primary buyer), global spot market</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-note">Sanctions constrain official flows — shadow fleet active</span>
+            </div>
+            <div class="event-meta">
+              <span class="event-source">Hawaii News Now</span>
+              <a class="event-link" href="https://news.google.com/rss/articles/CBMinwFBVV95cUxPWHo5dS1ieUV1b1h6RUxaT2VOeE1VT3hDU3I4R1loTF9yYU13aVowenFpMFZHa0tsM3c3Rk04dzUyZTNhQXlyV29zLWh6cUFHaTViNU9rcTBIMWE5YkJ4Qzk1LXIwcEZpZ3M5cmVUQkhOZGljZFVLMjBzbl9GcS1uNnR1RWM1MkZWQWVSZFdKWVJRRXJENTV1YjBCUC1DRHM?oc=5" target="_blank" rel="noopener noreferrer">VIEW SOURCE →</a>
+            </div>
+          </div>
+        </div></div>
     <div class="class-grid">
       <div class="class-cell">
         <div class="class-cell-label">Direction Required</div>
