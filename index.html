@@ -7,7 +7,7 @@
   <meta http-equiv="refresh" content="300">
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>◎ Monitoring — Energy Tripwire — 04 March 2026  |  22:13 EST</title>
+  <title>⚠ ALERT — Energy Tripwire — 05 March 2026  |  00:37 EST</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet"/>
   <style>
@@ -38,25 +38,25 @@
     }
     .alert-stripe {
       height: 4px;
-      background: #1e3a5f;
-      
-      background: #1e3a5f;
+      background: #ef4444;
+      animation: stripe-scroll 1.2s linear infinite;
+      background: repeating-linear-gradient(90deg, #ef4444 0px, #ef4444 20px, #b91c1c 20px, #b91c1c 40px);
     }
     @keyframes stripe-scroll {
       from { background-position: 0 0; }
       to   { background-position: 40px 0; }
     }
     .topbar {
-      background: #0f1e35;
+      background: #7f1d1d;
       padding: 10px 32px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid #1e3a5f;
+      border-bottom: 1px solid #991b1b;
     }
     .topbar-left { display: flex; align-items: center; gap: 12px; }
     .alert-pill {
-      background: #1e3a5f;
+      background: #ef4444;
       color: #fff;
       font-size: 9px;
       font-weight: 700;
@@ -69,8 +69,8 @@
       0%, 100% { opacity: 1; }
       50%       { opacity: 0.55; }
     }
-    .topbar-title { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: #94a3b8; }
-    .topbar-right { font-size: 10px; color: #94a3b8; letter-spacing: 0.04em; opacity: 0.8; }
+    .topbar-title { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: #fca5a5; }
+    .topbar-right { font-size: 10px; color: #fca5a5; letter-spacing: 0.04em; opacity: 0.8; }
     .hero {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
@@ -83,13 +83,13 @@
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 1px;
-      background: linear-gradient(90deg, #38bdf8 0%, transparent 60%);
+      background: linear-gradient(90deg, #ef4444 0%, transparent 60%);
     }
     .hero-eyebrow {
       font-size: 9px;
       font-weight: 600;
       letter-spacing: 0.18em;
-      color: #38bdf8;
+      color: #ef4444;
       text-transform: uppercase;
       margin-bottom: 14px;
     }
@@ -97,7 +97,7 @@
       font-family: var(--serif);
       font-size: 48px;
       font-weight: 300;
-      color: #38bdf8;
+      color: #ef4444;
       line-height: 1;
       margin-bottom: 6px;
       font-style: italic;
@@ -324,7 +324,7 @@
 
   <div class="topbar">
     <div class="topbar-left">
-      <div class="alert-pill">● MONITORING</div>
+      <div class="alert-pill">⚠ LIVE ALERT</div>
       <div class="topbar-title">GLOBAL ENERGY  //  TRIPWIRE</div>
     </div>
     <div class="topbar-right">Distribution: ADM &nbsp;·&nbsp; Next refresh: 30 min</div>
@@ -373,10 +373,10 @@
   </div>
 
   <div class="hero">
-    <div class="hero-eyebrow">No Qualifying Events This Window</div>
-    <div class="hero-count">—<span>CLEAR</span></div>
-    <div class="hero-label">System Active — Scanning Every 30 Minutes</div>
-    <div class="hero-timestamp">Last scan: 04 March 2026  |  22:13 EST &nbsp;·&nbsp; LIVE FEED — NO TRIGGERS DETECTED</div>
+    <div class="hero-eyebrow">High-Severity Tightening Event Detected</div>
+    <div class="hero-count">2<span>EVENTS</span></div>
+    <div class="hero-label">Qualifying High-Severity Tightening Signals</div>
+    <div class="hero-timestamp">Last scan: 05 March 2026  |  00:37 EST &nbsp;·&nbsp; LIVE FEED — DETERMINISTIC CLASSIFICATION</div>
   </div>
 
   <div class="scan-bar">
@@ -387,17 +387,17 @@
     <div class="scan-divider"></div>
     <div class="scan-item">
       <div class="scan-label">Candidates</div>
-      <div class="scan-value" style="color:var(--amber);">109</div>
+      <div class="scan-value" style="color:var(--amber);">108</div>
     </div>
     <div class="scan-divider"></div>
     <div class="scan-item">
       <div class="scan-label">Triggers</div>
-      <div class="scan-value" style="color:var(--muted);">0</div>
+      <div class="scan-value" style="color:var(--red);">2</div>
     </div>
     <div class="scan-divider"></div>
     <div class="scan-item">
       <div class="scan-label">Trigger Rate</div>
-      <div class="scan-value" style="color:var(--muted);">0%</div>
+      <div class="scan-value" style="color:var(--muted);">1%</div>
     </div>
     <div class="scan-divider"></div>
     <div class="scan-item">
@@ -408,15 +408,51 @@
 
   <div class="main">
     
-    <div class="quiet-state">
-      <div class="quiet-icon">◎</div>
-      <div class="quiet-title">System Nominal</div>
-      <div class="quiet-body">
-        No high-severity tightening events detected in the current 24-hour window.<br/>
-        The tripwire requires: direction = tightening &nbsp;·&nbsp; severity = HIGH
-        &nbsp;·&nbsp; timing = immediate &nbsp;·&nbsp; category = operational.
-      </div>
-    </div>
+    <div class="section-label">Triggering Events</div>
+    <div class="events">
+        <div class="event-card">
+          <div class="event-index">01</div>
+          <div class="event-body">
+            <div class="event-badges">
+              <span class="badge" style="color:#ef4444;border-color:#ef4444;">MILITARY</span>
+              <span class="badge sev-high">HIGH SEVERITY</span>
+              <span class="badge dir-tight">TIGHTENING</span>
+              <span class="badge tim-imm">IMMEDIATE</span>
+            </div>
+            <div class="event-headline">Inside India newsletter: Energy, airlines and now over $50 billion in remittances to India at risk as Middle East conflict deepens - CNBC</div>
+            
+            <div class="event-meta">
+              <span class="event-source">CNBC</span>
+              <a class="event-link" href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxQZVR3U09hbUlWalNZcXYtNm5mRlNiTzdJUTFYWlJJb0pmekVvOGZKZW9TWDd4ZVZuc1lYZzN4UVA3RTZSbGprZjZobzlwZUExeFNCWWMzSnViZ2Q1dDB4dUhadVRGcF9VR3hneXR3UFU1RVNURjdlQjVkX0tYWXk1bng5ZF9BRl96VFdz0gGQAUFVX3lxTE5RbHE4YTI0Y2JyR0R6X1dCRXFwNVpDN1VIaGQ2dnZSN00wRkFqTklCMjhKSExaelNWOUxKNTU2S2dXV1BONzNGZ3NtQkI2YTBaR2I4elFtNnlSdWswZHByMVFMX1BXVW1VSy1jZ0pVZWJhZnE4aGdpZHlOejZDbWhPeG5PYUg4U3p3SzdaOUgyYw?oc=5" target="_blank" rel="noopener noreferrer">VIEW SOURCE →</a>
+            </div>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-index">02</div>
+          <div class="event-body">
+            <div class="event-badges">
+              <span class="badge" style="color:#ef4444;border-color:#ef4444;">MILITARY</span>
+              <span class="badge sev-high">HIGH SEVERITY</span>
+              <span class="badge dir-tight">TIGHTENING</span>
+              <span class="badge tim-imm">IMMEDIATE</span>
+            </div>
+            <div class="event-headline">Tanker explosion reported near Kuwait, UKMTO reports oil spill amid ongoing Mideast war - The Economic Times</div>
+            
+            <div class="impact-line">
+              <span class="impact-node">KUWAIT</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-vol">~2.7M bbl/day</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-exp">Asia, Europe</span>
+              <span class="impact-sep">·</span>
+              <span class="impact-note">Gulf producer — Hormuz exposure</span>
+            </div>
+            <div class="event-meta">
+              <span class="event-source">The Economic Times</span>
+              <a class="event-link" href="https://news.google.com/rss/articles/CBMijwJBVV95cUxOT3lNM1g1Z3ViVEdGSlNRMTlGVDNlR0hFMEFXYW9fUHRCaHBXY1h6ZmtiaDlnS2Z0a05TNVJhOVVwU1RRQ0JETm5XQVZrZjExbW5ieWpfdG9KRThkSFlwcUpnN1ZsZzZZZ0NUdVVHUGhlM085bXNIaVF0WEFnYUh4VlhRQUltbE15QXQxVVhnbldqNjh0TlRhTFNYNDNJNEszUHhqTVNVRUVZV2xSdHVnMnBubkU5RmR4UlozVldEY1RXVkVzZzZsRFo2OFFUc2xjTW5xNnQ0a0l2ZVVNTThxa29fY25NSGRTd1pIM0lrMmZZU0t0eDFrcUFGaVhKOThwS0JiNzlKZ19IdHF6N2hv0gGUAkFVX3lxTE1vOXcyVmpSTmF6VllhNEdVYXgyVHZXeTBXUVFIT0VfTFowTDNsUXhiMHFBbE50VUNNWHh5N0hLSFZycUVqVkM3dHlZWXhFelQ4Y21Fc2JlRjhvdm93U1RfSkxBWGJ1cmFwdm5vZDR4R05oTW05dm5LZk44ZFo2UzdlUHRwSU5iSTBTV1VadGg0eFQ1U1BXd0hIQklqV1RZYXB5ZVJnOExWb1FyZGUxWnRpWnRnZkdhNlE2bHlzRkhzSFpjcTdDbWw4amNQMTlIanJ4RUNNVGRySFJxRmpxMzM5Q3ZlcGpDcWlHSXdyNFJVUmhLSGs3eUlNYnREVUhpdXdIWk1kOFpqZVF5VEY2NWRvVXRpeg?oc=5" target="_blank" rel="noopener noreferrer">VIEW SOURCE →</a>
+            </div>
+          </div>
+        </div></div>
     <div class="class-grid">
       <div class="class-cell">
         <div class="class-cell-label">Direction Required</div>
