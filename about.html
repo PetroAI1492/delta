@@ -67,18 +67,14 @@
 
 /* ── Report styles ──────────────────────────────────────────────── */
 
-
-
-* { box-sizing: border-box; }
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: #000;
     color: #e6e6e6;
-    margin: 40px;
+    margin: 0;
 }
 
-@media (max-width: 768px) { body { margin: 16px; } }
+@media (max-width: 768px) { .inner { margin: 16px !important; } }
 
 h1 { color: #ffcc00; margin-bottom: 4px; }
 h2 { color: #ffcc00; }
@@ -91,37 +87,6 @@ h3 { color: #e6e6e6; margin-bottom: 4px; }
     border: 1px solid #333;
 }
 
-.market-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 12px;
-    margin-top: 10px;
-}
-
-@media (max-width: 768px) { .market-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 480px) { .market-grid { grid-template-columns: repeat(2, 1fr); } }
-
-.market-card {
-    background: #1a1a1a;
-    border: 1px solid #333;
-    padding: 10px;
-    text-align: center;
-}
-
-.market-card div:first-child { color: #ffcc00; font-size: 12px; }
-.market-card div:last-child  { font-size: 20px; font-weight: bold; }
-
-.event {
-    margin-top: 16px;
-    padding: 14px;
-    background: #0d0d0d;
-    border-left: 3px solid #ffcc00;
-    page-break-inside: avoid;
-}
-
-.event a         { color: #ffcc00; text-decoration: none; }
-.event a:visited { color: #ffcc00; }
-
 .badge {
     display: inline-block;
     padding: 2px 7px;
@@ -132,7 +97,6 @@ h3 { color: #e6e6e6; margin-bottom: 4px; }
     text-transform: uppercase;
 }
 
-.badge-red    { background: #ff2222; color: #000; }
 .badge-orange { background: #ff8800; color: #000; }
 .badge-yellow { background: #ffcc00; color: #000; }
 .badge-blue   { background: #2266cc; color: #fff; }
@@ -142,23 +106,97 @@ h3 { color: #e6e6e6; margin-bottom: 4px; }
 .meta    { color: #aaa; font-size: 13px; margin-top: 5px; }
 .summary { margin-top: 6px; font-style: italic; color: #ccc; font-size: 14px; }
 
-.impact-box {
-    margin-top: 8px;
+/* ── Architecture grid ──────────────────────────────────────────── */
+
+.arch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+}
+
+@media (max-width: 768px) { .arch-grid { grid-template-columns: 1fr; } }
+
+.arch-card {
     background: #1a1a1a;
     border: 1px solid #333;
-    padding: 8px 12px;
+    border-top: 3px solid #ffcc00;
+    padding: 14px;
+}
+
+.arch-card .arch-title {
+    color: #ffcc00;
     font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.arch-card .arch-body {
     color: #aaa;
+    font-size: 13px;
+    line-height: 1.6;
 }
 
-.impact-box span { color: #ffcc00; }
+/* ── Output cards ───────────────────────────────────────────────── */
 
-
-
-
-body {
-    margin: 0;
+.output-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 16px;
 }
+
+@media (max-width: 768px) { .output-grid { grid-template-columns: 1fr; } }
+
+.output-card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    padding: 14px;
+}
+
+.output-card .output-label {
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.output-card .output-body {
+    color: #aaa;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* ── Sample event ───────────────────────────────────────────────── */
+
+.event {
+    margin-top: 16px;
+    padding: 14px;
+    background: #0d0d0d;
+    border-left: 3px solid #ffcc00;
+}
+
+.event a         { color: #ffcc00; text-decoration: none; }
+.event a:visited { color: #ffcc00; }
+
+/* ── Snapshot row ───────────────────────────────────────────────── */
+
+.snap-row {
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+    margin-top: 4px;
+    font-family: monospace;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.snap-label { color: #aaa; min-width: 200px; }
+.snap-value { color: #fff; font-weight: bold; }
+.snap-note  { color: #888; font-size: 11px; margin-left: 8px; }
 
 </style>
 
@@ -179,303 +217,179 @@ body {
         This report is generated automatically twice daily from U.S. government registry data.
         Offered free to patient advocacy organizations, patient navigators, and support groups.
     </p>
-    <a class="pdf-btn" href="timelines/coloncancer_timeline.pdf" target="_blank">⬇ Download PDF</a>
+    <a class="pdf-btn" href="timelines/coloncancer_timeline.pdf" target="_blank">&#11015; Download Latest Report</a>
 </div>
 
-<!-- Report -->
-<div style="background:#000; padding: 30px 40px;">
-<h1>Colon & Colorectal Cancer — Clinical Trial & Treatment Timeline</h1>
-<div class="meta">Alert Window: Last 30 Days &nbsp;·&nbsp; Generated: 2026-03-12 07:30:27</div>
+<!-- Main content -->
+<div class="inner" style="padding: 30px 40px;">
 
+<!-- How it works -->
 <div class="section" style="border-color:#ffcc00">
-<h2>Clinical Summary</h2>
-<div style="line-height:1.7;font-size:14px">Recent developments in colorectal cancer research highlight several new clinical trials targeting advanced stages of the disease. Notably, trials are investigating innovative treatments such as Tegavivint, RC148 combined with chemotherapy, and dual-target CAR-NK cells, which may provide new options for patients with metastatic colorectal cancer. Additionally, studies are focusing on enhancing existing therapies, such as combining low-dose radiotherapy with pucotenlimab for locally advanced rectal cancer and exploring the use of immunotherapy in various combinations for unresectable cases. Moving forward, it will be important to monitor the outcomes of these trials, particularly for specific biomarker-selected populations and those with advanced disease stages.</div>
-<div class="meta" style="margin-top:8px">AI-generated from deterministic classification data &nbsp;&middot;&nbsp; 2026-03-12 07:30:27</div>
+<h2>How It Works</h2>
+<div style="font-size:14px;color:#ccc;line-height:1.7;max-width:860px">
+    The system ingests the ClinicalTrials.gov RSS feed twice daily, classifies each new trial
+    deterministically by stage, biomarker target, and therapy class, scores trials by scientific
+    significance, and generates a structured PDF report. Summaries are AI-generated from trial
+    titles only &mdash; no inference, no speculation, no outside knowledge introduced.
 </div>
 
+<div class="arch-grid">
+    <div class="arch-card">
+        <div class="arch-title">&#8675; Ingest</div>
+        <div class="arch-body">
+            ClinicalTrials.gov RSS feed &middot; parsed twice daily &middot;
+            duplicate detection by URL &middot; stored in SQLite with published date,
+            description, and metadata
+        </div>
+    </div>
+    <div class="arch-card">
+        <div class="arch-title">&#9654; Classify</div>
+        <div class="arch-body">
+            Deterministic keyword matching against title + description &middot;
+            stage (I&ndash;IV) &middot; biomarker target (KRAS, BRAF, HER2, MSI, VEGF, EGFR) &middot;
+            therapy class (immunotherapy, cell therapy, new trial) &middot; phase &middot;
+            breakthrough score
+        </div>
+    </div>
+    <div class="arch-card">
+        <div class="arch-title">&#128196; Report</div>
+        <div class="arch-body">
+            Structured PDF generated via HTML + Edge headless &middot;
+            three distinct output sections &middot;
+            breakthrough score badges surface highest-signal trials &middot;
+            updated on every run
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Report outputs -->
 <div class="section">
-<h2>Situation Summary</h2>
-<div>Events Detected: 10</div>
-<div>High Significance: 0</div>
-<div>Top Category: New Trial</div>
-<div>Primary Stage: Stage IV</div>
-<div>Primary Target: General</div>
-<div>Research Activity: Active Monitoring</div>
+<h2>Report Sections</h2>
 
-</div>
-<div class="section"><h2>Event Timeline</h2>
-
-<div class="event" style="border-left-color:#ffcc00">
-<h3>EVENT CLUSTER — <a href="https://clinicaltrials.gov/study/NCT07463599?cond=colon+cancer&aggFilters=phase%3A2" target="_blank">Safety and Efficacy of Tegavivint in Patients With Metastatic Colorectal Carcinoma</a></h3>
-<div>
-    <span class="badge badge-yellow">MEDIUM</span>
-    <span class="badge badge-gray">Stage IV</span>
-    <span class="badge badge-blue">General</span>
-    <span class="badge" style="background:#2266cc;color:#fff">NEW TRIAL</span>
-    <span class="badge badge-green">VERIFIED</span>
-    <span class="badge badge-gray">Published Mar 11</span>
-</div>
-<div class="meta">
-Mar 11 20:02 &nbsp;·&nbsp; immediate
-&nbsp;·&nbsp; <em>clinicaltrials.gov</em>
-</div>
-<div class="summary">A new clinical trial is evaluating the safety and effectiveness of Tegavivint for patients with advanced metastatic colorectal cancer, potentially offering a new treatment option for those with this challenging stage of the disease.</div>
-<div class="meta">
-1 source(s) reporting &nbsp;·&nbsp; cluster 1 of 10
-</div>
-</div>
-
-<div class="event" style="border-left-color:#ffcc00">
-<h3>EVENT CLUSTER — <a href="https://clinicaltrials.gov/study/NCT07462143?cond=colon+cancer&aggFilters=phase%3A2" target="_blank">A Phase Ⅱ/Ⅲ Clinical Trial of RC148 Plus Chemotherapy as 1L Therapy for Unresectable or Metastatic Colorectal Cancer</a></h3>
-<div>
-    <span class="badge badge-yellow">MEDIUM</span>
-    <span class="badge badge-gray">Stage IV</span>
-    <span class="badge badge-blue">General</span>
-    <span class="badge" style="background:#2266cc;color:#fff">NEW TRIAL</span>
-    <span class="badge badge-green">VERIFIED</span>
-    <span class="badge badge-gray">Published Mar 10</span>
-</div>
-<div class="meta">
-Mar 11 20:02 &nbsp;·&nbsp; immediate
-&nbsp;·&nbsp; <em>clinicaltrials.gov</em>
-</div>
-<div class="summary">A new clinical trial is investigating the combination of RC148 and chemotherapy as a first-line treatment for patients with unresectable or metastatic colorectal cancer, potentially offering a new option for improving outcomes in this advanced stage of the disease.</div>
-<div class="meta">
-1 source(s) reporting &nbsp;·&nbsp; cluster 2 of 10
+<div class="output-grid">
+    <div class="output-card">
+        <div class="output-label" style="color:#ffcc00">Clinical Summary</div>
+        <div class="output-body">
+            AI-generated analytical paragraph for oncologists and researchers.
+            Identifies trial types, patient populations, and biomarker themes
+            present in the dataset. Grounded strictly in registry data &mdash;
+            no speculation or invented claims.
+        </div>
+    </div>
+    <div class="output-card">
+        <div class="output-label" style="color:#ff8800">Data Intelligence Snapshot</div>
+        <div class="output-body">
+            Structured metrics block: trial count, Stage IV breakdown,
+            biomarker-targeted trials, pMMR/MSS focus, cell therapy activity,
+            phase distribution, and breakthrough signal count.
+            Designed for data professionals.
+        </div>
+    </div>
+    <div class="output-card">
+        <div class="output-label" style="color:#22aa44">Patient-Friendly Summary</div>
+        <div class="output-body">
+            Plain-language appendix written for patients, caregivers, and navigators.
+            Names specific trials and drugs. Explains biomarker terms in plain English.
+            Tells patients what to ask their oncologist &mdash; never what decision to make.
+        </div>
+    </div>
 </div>
 </div>
 
-<div class="event" style="border-left-color:#ffcc00">
-<h3>EVENT CLUSTER — <a href="https://clinicaltrials.gov/study/NCT07462650?cond=colon+cancer&aggFilters=phase%3A2" target="_blank">Dual-Target CAR-NK Cells for Biomarker-Selected Advanced Colorectal Cancer</a></h3>
-<div>
-    <span class="badge badge-yellow">MEDIUM</span>
-    <span class="badge badge-gray">Stage IV</span>
-    <span class="badge badge-blue">PD-1/PD-L1</span>
-    <span class="badge" style="background:#2266cc;color:#fff">NEW TRIAL</span>
-    <span class="badge badge-green">VERIFIED</span>
-    <span class="badge badge-gray">Published Mar 10</span>
+<!-- Trials to Watch -->
+<div class="section" style="border:1px solid #ff8800">
+<h2 style="color:#ff8800">&#9889; Trials to Watch</h2>
+<div style="font-size:14px;color:#ccc;line-height:1.7;max-width:860px">
+    Each trial is scored for scientific significance based on biomarker target,
+    therapy class, disease stage, and trial phase. Trials scoring above a threshold
+    &mdash; or targeting key biomarkers (KRAS, BRAF, HER2, MSI, PD-1/PD-L1) &mdash;
+    are surfaced in a dedicated callout section above the full event timeline,
+    with scores shown inline on each event card.
 </div>
-<div class="meta">
-Mar 11 20:02 &nbsp;·&nbsp; immediate
-&nbsp;·&nbsp; <em>clinicaltrials.gov</em>
-</div>
-<div class="summary">A new clinical trial is exploring the use of dual-target CAR-NK cells in patients with advanced colorectal cancer, potentially offering a promising treatment option for those whose tumors express specific biomarkers.</div>
-<div class="meta">
-1 source(s) reporting &nbsp;·&nbsp; cluster 3 of 10
+
+<div style="margin-top:16px;padding:12px 16px;background:#0d0d0d;border-left:3px solid #ff8800;max-width:680px">
+    <div style="font-weight:bold;color:#fff;margin-bottom:6px">
+        Dual-Target CAR-NK Cells for Biomarker-Selected Advanced Colorectal Cancer
+    </div>
+    <div>
+        <span class="badge badge-gray">Stage IV</span>
+        <span class="badge badge-blue">PD-1/PD-L1</span>
+        <span style="font-size:11px;color:#ff8800;font-weight:bold;margin-left:6px">&#9889; Score 7</span>
+        <span class="badge badge-gray" style="margin-left:4px">Published Mar 10</span>
+    </div>
+    <div class="summary">This study evaluates Dual-Target CAR-NK Cells for Biomarker-Selected Advanced Colorectal Cancer.</div>
 </div>
 </div>
 
-<div class="event" style="border-left-color:#ffcc00">
-<h3>EVENT CLUSTER — <a href="https://clinicaltrials.gov/study/NCT07448142?cond=colon+cancer&aggFilters=phase%3A2" target="_blank">Low-Dose Radiotherapy to Sensitize Pucotenlimab Plus CAPEOX for pMMR Locally Advanced Rectal Cancer</a></h3>
-<div>
-    <span class="badge badge-yellow">MEDIUM</span>
-    <span class="badge badge-gray">Stage III</span>
-    <span class="badge badge-blue">General</span>
-    <span class="badge" style="background:#2266cc;color:#fff">NEW TRIAL</span>
-    <span class="badge badge-green">VERIFIED</span>
-    <span class="badge badge-gray">Published Mar 4</span>
-</div>
-<div class="meta">
-Mar 11 20:02 &nbsp;·&nbsp; immediate
-&nbsp;·&nbsp; <em>clinicaltrials.gov</em>
-</div>
-<div class="summary">A new clinical trial is exploring the use of low-dose radiotherapy to enhance the effectiveness of the drug pucotenlimab combined with CAPEOX chemotherapy for patients with locally advanced rectal cancer, potentially offering a more effective treatment option.</div>
-<div class="meta">
-1 source(s) reporting &nbsp;·&nbsp; cluster 4 of 10
-</div>
-</div>
-
-<div class="event" style="border-left-color:#ffcc00">
-<h3>EVENT CLUSTER — <a href="https://clinicaltrials.gov/study/NCT07446387?cond=colon+cancer&aggFilters=phase%3A2" target="_blank">A Clinical Study of Iparomlimab and Tuvonralimab Combined With Bevacizumab and Alternating Triweekly CAPOX/mCAPIRI Regimen as First-line Treatment for Unresectable Advanced Colorectal Cancer</a></h3>
-<div>
-    <span class="badge badge-yellow">MEDIUM</span>
-    <span class="badge badge-gray">Stage IV</span>
-    <span class="badge badge-blue">VEGF</span>
-    <span class="badge" style="background:#2266cc;color:#fff">NEW TRIAL</span>
-    <span class="badge badge-green">VERIFIED</span>
-    <span class="badge badge-gray">Published Mar 3</span>
-</div>
-<div class="meta">
-Mar 11 20:02 &nbsp;·&nbsp; immediate
-&nbsp;·&nbsp; <em>clinicaltrials.gov</em>
-</div>
-<div class="summary">A new clinical trial is exploring a combination of Iparomlimab, Tuvonralimab, and Bevacizumab with a chemotherapy regimen for patients with unresectable advanced colorectal cancer, potentially offering a new first-line treatment option.</div>
-<div class="meta">
-1 source(s) reporting &nbsp;·&nbsp; cluster 5 of 10
-</div>
-</div>
-
-<div class="event" style="border-left-color:#ffcc00">
-<h3>EVENT CLUSTER — <a href="https://clinicaltrials.gov/study/NCT07435584?cond=colon+cancer&aggFilters=phase%3A2" target="_blank">Everolimus in CDK12-Deficient Metastatic Colorectal Cancer (EVER-RECODE)</a></h3>
-<div>
-    <span class="badge badge-yellow">MEDIUM</span>
-    <span class="badge badge-gray">Stage IV</span>
-    <span class="badge badge-blue">General</span>
-    <span class="badge" style="background:#2266cc;color:#fff">NEW TRIAL</span>
-    <span class="badge badge-green">VERIFIED</span>
-    <span class="badge badge-gray">Published Feb 27</span>
-</div>
-<div class="meta">
-Mar 11 20:02 &nbsp;·&nbsp; immediate
-&nbsp;·&nbsp; <em>clinicaltrials.gov</em>
-</div>
-<div class="summary">The EVER-RECODE trial is investigating the use of everolimus for patients with CDK12-deficient metastatic colorectal cancer, potentially offering a new treatment option for this specific group.</div>
-<div class="meta">
-1 source(s) reporting &nbsp;·&nbsp; cluster 6 of 10
-</div>
-</div>
-
-<div class="event" style="border-left-color:#ffcc00">
-<h3>EVENT CLUSTER — <a href="https://clinicaltrials.gov/study/NCT07432399?cond=colon+cancer&aggFilters=phase%3A2" target="_blank">Effect of Perioperative Lidocaine or High-Dose Dexamethasone on Immune Response in Colon Cancer Surgery (PILDI Study)</a></h3>
-<div>
-    <span class="badge badge-yellow">MEDIUM</span>
-    <span class="badge badge-gray">Stage III</span>
-    <span class="badge badge-blue">General</span>
-    <span class="badge" style="background:#2266cc;color:#fff">NEW TRIAL</span>
-    <span class="badge badge-green">VERIFIED</span>
-    <span class="badge badge-gray">Published Mar 6</span>
-</div>
-<div class="meta">
-Mar 11 20:02 &nbsp;·&nbsp; immediate
-&nbsp;·&nbsp; <em>clinicaltrials.gov</em>
-</div>
-<div class="summary">The PILDI Study is investigating whether using perioperative lidocaine or high-dose dexamethasone during colon cancer surgery can enhance the immune response, potentially improving recovery and outcomes for patients with Stage III colorectal cancer.</div>
-<div class="meta">
-1 source(s) reporting &nbsp;·&nbsp; cluster 7 of 10
-</div>
-</div>
-
-<div class="event" style="border-left-color:#ffcc00">
-<h3>EVENT CLUSTER — <a href="https://clinicaltrials.gov/study/NCT07446465?cond=colon+cancer&aggFilters=phase%3A4" target="_blank">FOLFOX Chemotherapy Combined With Fruquintinib and Serplulimab as First-Line Conversion Therapy for Initially Unresectable pMMR/MSS Colorectal Cancer</a></h3>
-<div>
-    <span class="badge badge-yellow">MEDIUM</span>
-    <span class="badge badge-gray">Stage IV</span>
-    <span class="badge badge-blue">General</span>
-    <span class="badge" style="background:#2266cc;color:#fff">NEW TRIAL</span>
-    <span class="badge badge-green">VERIFIED</span>
-    <span class="badge badge-gray">Published Mar 3</span>
-</div>
-<div class="meta">
-Mar 11 20:02 &nbsp;·&nbsp; immediate
-&nbsp;·&nbsp; <em>clinicaltrials.gov</em>
-</div>
-<div class="summary">A new clinical trial is exploring the combination of FOLFOX chemotherapy with Fruquintinib and Serplulimab as a potential first-line treatment for patients with initially unresectable colorectal cancer, which may improve options for those facing advanced disease.</div>
-<div class="meta">
-1 source(s) reporting &nbsp;·&nbsp; cluster 8 of 10
-</div>
-</div>
-
-<div class="event" style="border-left-color:#ffcc00">
-<h3>EVENT CLUSTER — <a href="https://clinicaltrials.gov/study/NCT07458529?cond=colorectal+cancer&aggFilters=phase%3A2" target="_blank">Neoadjuvant Chemoradiotherapy Plus Tislelizumab With or Without Probio-M9 in pMMR/MSS Locally Advanced Rectal Cancer</a></h3>
-<div>
-    <span class="badge badge-yellow">MEDIUM</span>
-    <span class="badge badge-gray">Stage III</span>
-    <span class="badge badge-blue">General</span>
-    <span class="badge" style="background:#2266cc;color:#fff">NEW TRIAL</span>
-    <span class="badge badge-green">VERIFIED</span>
-    <span class="badge badge-gray">Published Mar 10</span>
-</div>
-<div class="meta">
-Mar 11 20:02 &nbsp;·&nbsp; immediate
-&nbsp;·&nbsp; <em>clinicaltrials.gov</em>
-</div>
-<div class="summary">A new clinical trial is exploring the combination of neoadjuvant chemoradiotherapy with the immunotherapy drug Tislelizumab, with or without the addition of Probio-M9, for patients with locally advanced rectal cancer, potentially offering new treatment options to improve outcomes.</div>
-<div class="meta">
-1 source(s) reporting &nbsp;·&nbsp; cluster 9 of 10
-</div>
-</div>
-
-<div class="event" style="border-left-color:#ffcc00">
-<h3>EVENT CLUSTER — <a href="https://clinicaltrials.gov/study/NCT07446322?cond=colorectal+cancer&aggFilters=phase%3A2" target="_blank">FOLFIRI and Bevacizumab With or Without Pelareorep for Second-Line Treatment of Metastatic RAS-Mutated, Microsatellite-Stable Colorectal Cancer</a></h3>
-<div>
-    <span class="badge badge-yellow">MEDIUM</span>
-    <span class="badge badge-gray">Stage IV</span>
-    <span class="badge badge-blue">VEGF</span>
-    <span class="badge" style="background:#2266cc;color:#fff">NEW TRIAL</span>
-    <span class="badge badge-green">VERIFIED</span>
-    <span class="badge badge-gray">Published Mar 4</span>
-</div>
-<div class="meta">
-Mar 11 20:02 &nbsp;·&nbsp; immediate
-&nbsp;·&nbsp; <em>clinicaltrials.gov</em>
-</div>
-<div class="summary">A new clinical trial is exploring whether adding Pelareorep to the standard treatment of FOLFIRI and Bevacizumab can improve outcomes for patients with advanced colorectal cancer that has specific genetic characteristics.</div>
-<div class="meta">
-1 source(s) reporting &nbsp;·&nbsp; cluster 10 of 10
-</div>
-</div>
-</div>
-
-<div style="page-break-before:always"></div>
-<div class="section" style="border-color:#22aa44">
-<h2>Appendix A — Patient-Friendly Summary</h2>
-<div style="font-size:13px;color:#aaa;margin-bottom:12px">
-Plain-language overview for patients, caregivers, and family members
-</div>
-<div style="color:#ffcc00;font-weight:bold;margin-top:12px">What's happening</div>
-<div style="line-height:1.8;font-size:14px;margin-top:6px">Recently, several new clinical trials have started that could bring hope to patients with advanced colorectal cancer. One trial is looking at a drug called Tegavivint to see if it is safe and effective for those with metastatic colorectal cancer. Another trial is testing a combination of RC148 and chemotherapy as a first treatment for patients whose cancer cannot be surgically removed. There are also studies exploring new treatments like dual-target CAR-NK cells and combinations of existing therapies, which may offer more options for patients facing this challenging disease.</div>
-<div style="color:#ffcc00;font-weight:bold;margin-top:12px">What this means for you</div>
-<div style="line-height:1.8;font-size:14px;margin-top:6px">For patients, these developments mean there may be new treatment options on the horizon. If you or a loved one is dealing with advanced colorectal cancer, it’s a good idea to ask your oncologist about these trials and whether you might be eligible to participate. You can also discuss how these new treatments could fit into your overall care plan. Staying informed and engaged with your healthcare team can help you navigate this journey. Remember, you are not alone, and there are people and resources ready to support you.</div>
-
-<div class="meta" style="margin-top:12px">
-AI-generated in plain language from clinical data &nbsp;&middot;&nbsp; 2026-03-12 07:30:27<br>
-<span style="color:#ff8800">This is not medical advice. Always speak with your oncologist before making any treatment decisions.</span>
-</div>
-</div>
-
-<div style="page-break-before:always"></div>
+<!-- Data Intelligence Snapshot sample -->
 <div class="section">
-<h2>Appendix B — Colon &amp; Colorectal Cancer Treatment Reference</h2>
-<div style="font-size:13px;color:#aaa;line-height:1.8">
-
-<div style="color:#ffcc00;margin-top:6px;font-weight:bold">Incidence &amp; Trends</div>
-<div>~150,000 new US cases/year &nbsp;·&nbsp; ~52,000 deaths/year &nbsp;·&nbsp; 4th most common US cancer</div>
-<div style="color:#ff8800">&#9650; Early-Onset Alert: CRC rates in adults under 50 have risen ~2% per year since the 1990s &nbsp;·&nbsp; Adults under 55 now account for ~20% of all new CRC diagnoses &nbsp;·&nbsp; Cause under active investigation (diet, microbiome, obesity, sedentary lifestyle)</div>
-
-<div style="color:#ffcc00;margin-top:8px;font-weight:bold">Current Screening Guidelines (2025)</div>
-<div><span style="color:#aaa">USPSTF / ACS / ACG — Average Risk:</span> Begin screening at age 45 (lowered from 50 in 2021)</div>
-<div>Colonoscopy every 10 years &nbsp;·&nbsp; FIT (fecal immunochemical test) annually &nbsp;·&nbsp; Cologuard every 1-3 years &nbsp;·&nbsp; CT colonography every 5 years</div>
-<div><span style="color:#aaa">High Risk (family history / Lynch syndrome / IBD):</span> Begin at age 40 or 10 years before youngest affected relative — whichever comes first &nbsp;·&nbsp; Colonoscopy every 1-5 years depending on risk</div>
-<div><span style="color:#aaa">Symptoms at any age:</span> Rectal bleeding, change in bowel habits &gt;4 weeks, unexplained weight loss, iron deficiency anemia → immediate evaluation regardless of age</div>
-
-<div style="color:#ffcc00;margin-top:8px;font-weight:bold">Key Biomarkers — Test All mCRC at Diagnosis</div>
-<div>RAS (KRAS/NRAS) &nbsp;·&nbsp; BRAF V600E &nbsp;·&nbsp; MSI/MMR status &nbsp;·&nbsp; HER2 &nbsp;·&nbsp; NTRK fusion &nbsp;·&nbsp; TMB</div>
-
-<div style="color:#ffcc00;margin-top:8px;font-weight:bold">Stage IV Targeted Options</div>
-<div>KRAS G12C (~3-4%) → sotorasib + cetuximab &nbsp;·&nbsp; adagrasib + cetuximab</div>
-<div>BRAF V600E (~8-10%) → encorafenib + cetuximab ± binimetinib</div>
-<div>MSI-H/dMMR (~5%) → pembrolizumab (1st line preferred) &nbsp;·&nbsp; nivolumab ± ipilimumab</div>
-<div>HER2 amplified (~2-3%) → trastuzumab + pertuzumab &nbsp;·&nbsp; trastuzumab deruxtecan</div>
-<div>RAS/BRAF WT → FOLFOX or FOLFIRI + cetuximab or panitumumab (left-sided preferred)</div>
-
-<div style="color:#ffcc00;margin-top:8px;font-weight:bold">1st Line mCRC Standard of Care</div>
-<div>FOLFOX or FOLFIRI ± bevacizumab (RAS mutant / right-sided)</div>
-<div>FOLFOX or FOLFIRI + cetuximab or panitumumab (RAS/BRAF WT, left-sided)</div>
-<div>Pembrolizumab monotherapy (MSI-H/dMMR)</div>
-
-<div style="color:#ffcc00;margin-top:8px;font-weight:bold">Key Resources</div>
-<div>ClinicalTrials.gov &nbsp;·&nbsp; NCCN Guidelines (nccn.org) &nbsp;·&nbsp; Colorectal Cancer Alliance (ccalliance.org) &nbsp;·&nbsp; Fight Colorectal Cancer (fightcrc.org) &nbsp;·&nbsp; ACS (cancer.org)</div>
+<h2>Situation Summary — Sample Output</h2>
+<div style="font-family:monospace;font-size:12px;color:#ccc;line-height:1.9">
+    <div class="snap-row">
+        <span class="snap-label">Trial Activity</span>
+        <span class="snap-value">37 new registrations</span>
+        <span class="snap-note">30-day window</span>
+    </div>
+    <div class="snap-row">
+        <span class="snap-label">Stage IV Trials</span>
+        <span class="snap-value">8 of 37</span>
+    </div>
+    <div class="snap-row">
+        <span class="snap-label">Biomarker-Targeted</span>
+        <span class="snap-value">5 trials</span>
+        <span class="snap-note">VEGF (2) &middot; PD-1/PD-L1 (1) &middot; KRAS (1) &middot; EGFR (1)</span>
+    </div>
+    <div class="snap-row">
+        <span class="snap-label">pMMR/MSS Focus</span>
+        <span class="snap-value">4 trials</span>
+        <span class="snap-note">hardest-to-treat subtype &middot; active research</span>
+    </div>
+    <div class="snap-row">
+        <span class="snap-label">Cell Therapy</span>
+        <span class="snap-value">1 trial</span>
+        <span class="snap-note">CAR-NK / CAR-T</span>
+    </div>
+    <div class="snap-row">
+        <span class="snap-label">Phase Distribution</span>
+        <span class="snap-value">Phase I: 1 &middot; Phase II: 1</span>
+    </div>
+    <div class="snap-row">
+        <span class="snap-label">Breakthrough Signals</span>
+        <span class="snap-value" style="color:#ff8800">4 trials scored &ge; 4</span>
+    </div>
+    <div class="snap-row">
+        <span class="snap-label">Research Activity</span>
+        <span class="snap-value" style="color:#ffcc00">Active Monitoring</span>
+    </div>
 </div>
 </div>
 
-<div class="section" style="page-break-before:always">
-<hr>
-<div style="font-size:12px;color:#777">
+<!-- Footer / license -->
+<div class="section" style="margin-top:30px">
+<div style="font-size:12px;color:#777;line-height:1.8">
+    Alert classification fields are generated using deterministic rule-based analysis.
+    Alert summaries are AI-generated from ClinicalTrials.gov, a registry and database
+    maintained by the U.S. National Library of Medicine. This report aggregates publicly
+    available trial registry data from U.S. government databases for situational awareness
+    only. No registry content is reproduced verbatim.<br><br>
 
-Colon & Colorectal Cancer — Clinical Trial & Treatment Timeline<br><br>
+    This report is made available under a free-use license for patient advocacy organizations,
+    oncology practices, and individual patients. You may share or distribute it freely. You may
+    not modify it, remove attribution, or republish it as your own work. Authorship and all
+    intellectual property rights are retained by Randy Hinton.<br><br>
 
-Alert classification fields are generated using deterministic rule-based analysis. Alert summaries are AI-generated from ClinicalTrials.gov, a registry and database maintained by the U.S. National Library of Medicine. This report aggregates publicly available trial registry data from U.S. government databases for situational awareness only. No registry content is reproduced verbatim.
+    This report is provided for informational purposes only and does not constitute medical advice.
+    Always consult your oncologist or a qualified healthcare provider before making any treatment
+    decisions.<br><br>
 
-This report is made available under a free-use license for patient advocacy organizations, oncology practices, and individual patients. You may share or distribute it freely. You may not modify it, remove attribution, or republish it as your own work. Authorship and all intellectual property rights are retained by Randy Hinton.
-
-This report is provided for informational purposes only and does not constitute medical advice. Always consult your oncologist or a qualified healthcare provider before making any treatment decisions.<br><br>
-
-&copy; 2026 Randy Hinton. All rights reserved. &nbsp;&middot;&nbsp;
-<a href="https://petroai1492.github.io/delta/timelines/coloncancer_timeline.pdf" style="color:#555">https://petroai1492.github.io/delta/timelines/coloncancer_timeline.pdf</a>
-
+    &copy; 2026 Randy Hinton. All rights reserved. &nbsp;&middot;&nbsp;
+    <a href="https://github.com/petroai1492" style="color:#555">github.com/petroai1492</a>
+    &nbsp;&middot;&nbsp;
+    <a href="mailto:RandyHinton@gmail.com" style="color:#555">RandyHinton@gmail.com</a>
 </div>
 </div>
-</div>
 
+</div><!-- /inner -->
 </body>
 </html>
