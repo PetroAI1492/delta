@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Treasury Market Liquidity Report — 2026-06-10</title>
+<style>
+    @page { size: Letter; margin: 0.6in; }
+    body { background:#FFFFFF; color:#1A1A1A;
+            font-family: Calibri, Arial, sans-serif;
+            font-size:10.5pt; line-height:1.45; margin:0; padding:0; }
+    .page { max-width:7.3in; margin:0 auto; }
+    .report-header { border-bottom:3px solid #003366;
+                      padding-bottom:10px; margin-bottom:18px; }
+    h1 { font-size:22pt; font-weight:600; color:#003366; margin:0 0 3px 0; }
+    .meta { color:#666666; font-size:8.5pt; }
+
+    /* KPI grid */
+    .kpi-section { background:#F5F7FA; border-left:4px solid #003366;
+                    padding:14px; margin-bottom:18px; }
+    .kpi-section h2 { font-size:11pt; color:#003366; margin:0 0 12px 0;
+                       text-transform:uppercase; letter-spacing:0.5px; }
+    .kpi-grid { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:12px; }
+    .kpi-card { background:#FFFFFF; border:1px solid #D1D5DB; padding:10px; }
+    .kpi-label { font-size:8pt; color:#6B7280; text-transform:uppercase;
+                  letter-spacing:0.3px; margin-bottom:3px; }
+    .kpi-value { font-size:20pt; font-weight:700; color:#1A1A1A;
+                  line-height:1.1; margin-bottom:4px; }
+    .kpi-delta { font-size:9pt; font-weight:600; }
+    .kpi-sub   { font-size:8pt; color:#6B7280; margin-top:3px; }
+
+    /* AI narrative */
+    .narrative { border:1px solid #D1D5DB; padding:16px 20px;
+                  margin-bottom:20px; background:#FAFBFC; }
+    .narrative h2 { font-size:11pt; color:#003366; margin:0 0 10px 0;
+                     text-transform:uppercase; letter-spacing:0.5px; }
+    .narrative p { margin:0 0 10px 0; text-align:justify; font-size:10pt; }
+    .narrative p:last-child { margin-bottom:0; }
+    .ai-badge { font-size:7.5pt; color:#9CA3AF; float:right;
+                 margin-top:2px; font-style:italic; }
+
+    /* Tables */
+    .block { margin-bottom:20px; }
+    .section-title { font-size:11pt; font-weight:600; color:#003366;
+                      margin:0 0 4px 0; padding-bottom:5px;
+                      border-bottom:2px solid #E5E7EB; }
+    .section-subtitle { font-size:9pt; color:#6B7280; margin:0 0 8px 0; }
+    table { width:100%; border-collapse:collapse; font-size:9.5pt; }
+    thead { background:#F3F4F6; }
+    th { color:#374151; font-weight:600; text-align:left;
+          padding:7px 12px; border-bottom:2px solid #D1D5DB; }
+    th:nth-child(2) { text-align:right; }
+    td { padding:6px 12px; border-bottom:1px solid #E5E7EB; }
+    td:nth-child(2) { text-align:right; font-family:'Consolas','Courier New',monospace;
+                       font-weight:600; font-size:10pt; }
+    tbody tr:nth-child(even) { background:#FAFAFA; }
+
+    /* Debt table — 4 cols */
+    .debt-table th:nth-child(n+2),
+    .debt-table td:nth-child(n+2) { text-align:right; }
+
+    /* Footer */
+    .footer { margin-top:28px; padding-top:14px;
+               border-top:1px solid #9CA3AF;
+               font-size:7pt; color:#6B7280; line-height:1.4; }
+    .footer-sources, .footer-disclaimer { margin-bottom:6px; text-align:justify; }
+    .footer-legal { display:flex; justify-content:space-between;
+                     padding-top:6px; border-top:1px solid #E5E7EB;
+                     font-weight:600; color:#4B5563; }
+    @media print { .page { margin:0; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ── Header ──────────────────────────────────────────────────────────── -->
+<div class="report-header">
+    <h1>Treasury Market Liquidity Report</h1>
+    <div class="meta">
+        Statement date: 2026-06-10 &nbsp;|&nbsp;
+        Generated: 2026-06-14 12:43 &nbsp;|&nbsp;
+        Source: U.S. Treasury fiscaldata.treasury.gov via storehouse.db
+    </div>
+</div>
+
+<!-- ── KPI Cards ────────────────────────────────────────────────────────── -->
+<div class="kpi-section">
+    <h2>At a Glance</h2>
+    <div class="kpi-grid">
+        
+        <div class="kpi-card">
+            <div class="kpi-label">TGA Closing Balance</div>
+            <div class="kpi-value">$801.1B</div>
+            <div class="kpi-delta"><span style="color:#DC2626;font-weight:600;">▼ -29.3B</span></div>
+            <div class='kpi-sub'>WoW: <span style="color:#DC2626;font-weight:600;">▼ -55.8B</span> &nbsp;|&nbsp; 67 days to $500B threshold<br><span style="color:#6B7280;">1.9% of debt limit</span></div>
+        </div>
+        
+        <div class="kpi-card">
+            <div class="kpi-label">Daily Net Flow</div>
+            <div class="kpi-value">-$29.3B</div>
+            <div class="kpi-delta"><span style="color:#DC2626;font-weight:600;">▼ -29.3B</span></div>
+            <div class='kpi-sub'>Dep $27.2B &nbsp; Wit $56.5B</div>
+        </div>
+        
+        <div class="kpi-card">
+            <div class="kpi-label">Total Debt Outstanding</div>
+            <div class="kpi-value">$39,213.3B</div>
+            <div class="kpi-delta"><span style="color:#DC2626;font-weight:600;">▲ +40.5B</span></div>
+            <div class='kpi-sub'>Avg weekly growth: $40.5B/wk</div>
+        </div>
+        
+        <div class="kpi-card">
+            <div class="kpi-label">Debt Ceiling Headroom</div>
+            <div class="kpi-value"><span style="color:#059669">$1,890.7B</span></div>
+            <div class="kpi-delta"><span style="color:#6B7280;">46 wks at current pace</span></div>
+            <div class='kpi-sub'>Limit: $41,104.0B</div>
+        </div>
+    </div>
+</div>
+
+<!-- ── Liquidity Triad ───────────────────────────────────────────────────── -->
+<div class="kpi-section">
+    <h2>Fed Liquidity Dashboard</h2>
+    <div class="kpi-grid" style="grid-template-columns:repeat(5,1fr);">
+        
+        <div class="kpi-card">
+            <div class="kpi-label">Liquidity Score</div>
+            <div class="kpi-value"><span style="color:#059669;font-size:16pt;">EXPANDING</span></div>
+            <div class="kpi-delta"><span style="color:#059669;">+3 / 4</span></div>
+            <div class='kpi-sub'>TGA · Reserves · RRP · Fed BS</div>
+        </div>
+        
+        <div class="kpi-card">
+            <div class="kpi-label">Fed Balance Sheet</div>
+            <div class="kpi-value">$6,725.4B</div>
+            <div class="kpi-delta"><span style="color:#059669;font-weight:600;">▲ +13.9B</span></div>
+            <div class='kpi-sub'>WoW &nbsp;|&nbsp; as of 2026-06-10</div>
+        </div>
+        
+        <div class="kpi-card">
+            <div class="kpi-label">Reserve Balances</div>
+            <div class="kpi-value">$3,080.7B</div>
+            <div class="kpi-delta"><span style="color:#059669;font-weight:600;">▲ +66.8B</span></div>
+            <div class='kpi-sub'>WoW &nbsp;|&nbsp; as of 2026-06-10</div>
+        </div>
+        
+        <div class="kpi-card">
+            <div class="kpi-label">Overnight RRP</div>
+            <div class="kpi-value">$0.5B</div>
+            <div class="kpi-delta"><span style="color:#6B7280;">unchanged</span></div>
+            <div class='kpi-sub'>DoD &nbsp;|&nbsp; as of 2026-06-12</div>
+        </div>
+        
+        <div class="kpi-card">
+            <div class="kpi-label">SOFR</div>
+            <div class="kpi-value">3.600%</div>
+            <div class="kpi-delta"><span style="color:#6B7280;">▲ 1.0bp DoD</span></div>
+            <div class='kpi-sub'>as of 2026-06-11</div>
+        </div>
+    </div>
+    <div style="font-size:8pt;color:#6B7280;margin-top:8px;padding-top:6px;border-top:1px solid #E5E7EB;">
+        <strong>Score inputs:</strong>
+        &nbsp; TGA trend: <strong>+1</strong>
+        &nbsp;|&nbsp; Reserves: <strong>+1</strong>
+        &nbsp;|&nbsp; RRP: <strong>+1</strong>
+        &nbsp;|&nbsp; Fed BS: <strong>0</strong>
+        &nbsp;&nbsp; (+1 = expanding · −1 = contracting · 0 = neutral · band = ±0.5%)
+        <br>
+        <strong>RRP rule:</strong> when RRP &lt; $50B the facility is effectively drained and cash is deployed into markets (+1 by level, regardless of daily change).
+        Above $50B, signal follows weekly direction. &nbsp;
+        <strong>Other inputs:</strong> signal fires when weekly change exceeds ±0.5% of prior value; within band = neutral (0).
+    </div>
+</div>
+
+<!-- ── Rates & Stress ────────────────────────────────────────────────────── -->
+<div class="kpi-section">
+    <h2>Rates &amp; Market Stress</h2>
+    <div class="kpi-grid">
+        
+        <div class="kpi-card">
+            <div class="kpi-label">2Y Treasury</div>
+            <div class="kpi-value">4.050%</div>
+            <div class="kpi-delta"><span style="color:#6B7280;">unchanged WoW</span></div>
+            <div class='kpi-sub'>as of 2026-06-11</div>
+        </div>
+        
+        <div class="kpi-card">
+            <div class="kpi-label">10Y Treasury</div>
+            <div class="kpi-value">4.450%</div>
+            <div class="kpi-delta"><span style="color:#6B7280;">▼ 1bp WoW</span></div>
+            <div class='kpi-sub'>as of 2026-06-11</div>
+        </div>
+        
+        <div class="kpi-card">
+            <div class="kpi-label">2s10s Spread</div>
+            <div class="kpi-value">+39bps</div>
+            <div class="kpi-delta"><span style="color:#059669;">Normal</span></div>
+            <div class='kpi-sub'>10Y minus 2Y</div>
+        </div>
+        
+        <div class="kpi-card">
+            <div class="kpi-label">VIX</div>
+            <div class="kpi-value">19.44</div>
+            <div class="kpi-delta"><span style="color:#6B7280;">▲ 3.67 WoW</span></div>
+            <div class='kpi-sub'>30d avg: 17.6</div>
+        </div>
+    </div>
+</div>
+
+<!-- ── Analysis ──────────────────────────────────────────────────────────── -->
+<div class="narrative">
+    <h2>Analysis <span class="ai-badge">Deterministic · computed from DTS data</span></h2>
+    <p>The Treasury General Account closed at $801.1B, versus an opening balance of $830.4B, for a net daily change of -$29.3B. On a week-over-week basis, the TGA declined by $55.8B. At the current pace, the TGA would reach the $500B threshold in approximately 67 days. A year ago the TGA stood at $309.4B, leaving the current balance $491.7B above that prior-year level.</p><p>Total deposits for the day were $27.2B against withdrawals of $56.5B, producing a net flow of -$29.3B. Deposits were well below the 7-day average (-83.2%), compared to a 7-day rolling average of $162.3B. Withdrawals were well below the 7-day average (-67.3%), relative to a 7-day average of $172.8B. Over the prior 7 trading days (excluding today), cumulative deposits totaled $1,135.8B versus withdrawals of $1,209.3B, a net flow of -$73.5B.</p><p>Total debt outstanding stands at $39,213.3B, comprising $31,592.4B held by the public and $7,620.9B in intragovernmental holdings. Remaining headroom under the statutory limit of $41,104.0B is $1,890.7B. At the current average weekly growth rate of $40.5B, the limit would be reached in approximately 46 weeks. Debt held by the public is $2,667.1B higher than one year ago.</p><p>The TGA has been declining at an average of $4.5B per day over the past 42 calendar days, injecting reserves into the banking system at that pace. The current TGA balance of $801.1B represents 1.9% of the statutory debt limit. Continued drawdown at this rate would accelerate reserve injection ahead of any potential issuance-driven absorption.</p><p>Reserve balances held at the Federal Reserve stood at $3,080.7B, up $66.8B week-over-week. The Federal Reserve balance sheet stood at $6,725.4B, up $13.9B week-over-week. Overnight reverse repo (RRP) usage was $0.5B, a low level that indicates money funds are deploying cash into markets. SOFR fixed at 3.600%, up 1.0 bp day-over-day. The composite Liquidity Score is +3/4 (EXPANDING), driven by TGA drawdown injecting reserves, rising reserve balances.</p><p>The 2-year Treasury yielded 4.050% (unchanged WoW) and the 10-year yielded 4.450% (▼1bp WoW). The 2s10s curve was +39bps (normal). The 10Y-3M spread, the Fed's preferred recession indicator, stood at +70bps (normal). The 10-year real yield was 2.16% with breakeven inflation at 2.31%. VIX closed at 19.44, up 3.67 week-over-week, signaling low stress vs. a 30-day average of 17.6.</p>
+</div>
+
+<!-- ── TGA Balance History ───────────────────────────────────────────────── -->
+
+    <div class="block">
+        <div class="section-title">TGA Cash Balance — 30-Day History</div>
+        <div class="section-subtitle">Treasury General Account closing balance (USD billions)</div>
+        <table>
+            <thead><tr><th>Date</th><th>Balance ($B)</th></tr></thead>
+            <tbody><tr><td>2026-06-10</td><td>$801.1B</td></tr><tr><td>2026-06-09</td><td>$830.4B</td></tr><tr><td>2026-06-08</td><td>$844.2B</td></tr><tr><td>2026-06-05</td><td>$825.5B</td></tr><tr><td>2026-06-04</td><td>$844.5B</td></tr><tr><td>2026-06-03</td><td>$845.7B</td></tr><tr><td>2026-06-02</td><td>$866.1B</td></tr><tr><td>2026-06-01</td><td>$856.8B</td></tr><tr><td>2026-05-29</td><td>$903.9B</td></tr><tr><td>2026-05-28</td><td>$849.7B</td></tr></tbody>
+        </table>
+    </div>
+
+<!-- ── Daily Flows ───────────────────────────────────────────────────────── -->
+<table style="width:100%; border-collapse:collapse; margin-bottom:20px;">
+  <tr>
+    <td style="width:50%; vertical-align:top; padding-right:12px;">
+        
+    <div class="block">
+        <div class="section-title">Deposits — 14-Day</div>
+        <div class="section-subtitle">Total daily TGA deposits (USD billions)</div>
+        <table>
+            <thead><tr><th>Date</th><th>Deposits ($B)</th></tr></thead>
+            <tbody><tr><td>2026-06-10</td><td>$27.2B</td></tr><tr><td>2026-06-09</td><td>$247.5B</td></tr><tr><td>2026-06-08</td><td>$38.3B</td></tr><tr><td>2026-06-05</td><td>$15.6B</td></tr><tr><td>2026-06-04</td><td>$266.1B</td></tr><tr><td>2026-06-03</td><td>$24.7B</td></tr><tr><td>2026-06-02</td><td>$263.3B</td></tr><tr><td>2026-06-01</td><td>$280.3B</td></tr><tr><td>2026-05-29</td><td>$68.3B</td></tr><tr><td>2026-05-28</td><td>$279.6B</td></tr></tbody>
+        </table>
+    </div>
+    </td>
+    <td style="width:50%; vertical-align:top; padding-left:12px;">
+        
+    <div class="block">
+        <div class="section-title">Withdrawals — 14-Day</div>
+        <div class="section-subtitle">Total daily TGA withdrawals (USD billions)</div>
+        <table>
+            <thead><tr><th>Date</th><th>Withdrawals ($B)</th></tr></thead>
+            <tbody><tr><td>2026-06-10</td><td>$56.5B</td></tr><tr><td>2026-06-09</td><td>$261.3B</td></tr><tr><td>2026-06-08</td><td>$19.6B</td></tr><tr><td>2026-06-05</td><td>$34.6B</td></tr><tr><td>2026-06-04</td><td>$267.3B</td></tr><tr><td>2026-06-03</td><td>$45.1B</td></tr><tr><td>2026-06-02</td><td>$254.0B</td></tr><tr><td>2026-06-01</td><td>$327.3B</td></tr><tr><td>2026-05-29</td><td>$14.1B</td></tr><tr><td>2026-05-28</td><td>$272.6B</td></tr></tbody>
+        </table>
+    </div>
+    </td>
+  </tr>
+</table>
+
+<!-- ── Debt Summary ──────────────────────────────────────────────────────── -->
+<div class="block">
+    <div class="section-title">Debt Subject to Limit</div>
+    <div class="section-subtitle">
+        All values USD billions &nbsp;|&nbsp; as of 2026-06-10
+    </div>
+    <table class="debt-table">
+        <thead>
+            <tr>
+                <th style="width:40%">Component</th>
+                <th>Balance</th>
+                <th>Weekly Growth</th>
+                <th>YoY Change</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Debt Held by the Public</td>
+                <td>$31,592.4B</td>
+                <td>—</td>
+                <td><span style="color:#DC2626;font-weight:600;">▲ +2,667.1B</span></td>
+            </tr>
+            <tr>
+                <td>Intragovernmental Holdings</td>
+                <td>$7,620.9B</td>
+                <td>—</td>
+                <td>—</td>
+            </tr>
+            <tr style="font-weight:600; background:#F3F4F6;">
+                <td>Total Debt Outstanding</td>
+                <td>$39,213.3B</td>
+                <td><span style="color:#DC2626;font-weight:600;">▲ +40.5B</span></td>
+                <td>—</td>
+            </tr>
+            <tr>
+                <td>Statutory Debt Limit</td>
+                <td>$41,104.0B</td>
+                <td>—</td>
+                <td>—</td>
+            </tr>
+            <tr style="font-weight:600; color:#059669;">
+                <td>Headroom</td>
+                <td>$1,890.7B</td>
+                <td>—</td>
+                <td>—</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ── Footer ───────────────────────────────────────────────────────────── -->
+<div class="footer">
+    <div class="footer-sources">
+        <strong>Data Sources:</strong>
+        Treasury General Account balances, deposits, withdrawals, and debt
+        figures sourced from the U.S. Treasury Daily Treasury Statement (DTS),
+        published daily at fiscaldata.treasury.gov.
+        Reserve balances (WRESBAL), overnight RRP (RRPONTSYD), SOFR, Fed balance
+        sheet (WALCL), Treasury account at Fed (WTREGEN), Treasury yields (DGS2,
+        DGS10, T10Y2Y, T10Y3M), real yield (DFII10), breakeven inflation (T10YIE),
+        and VIX (VIXCLS) sourced from the Federal Reserve Bank of St. Louis (FRED).
+        All data stored in the Thor Storehouse database.
+        Values in USD billions (raw millions ÷ 1,000); rates in percent.
+    </div>
+    <div class="footer-disclaimer">
+        <strong>Methodology:</strong>
+        All numerical values and narrative text originate from deterministic,
+        timestamped sources (U.S. Treasury Daily Treasury Statement).
+        The Analysis section is generated programmatically from pre-computed
+        values — no AI model is involved. Same input data always produces
+        identical output.
+    </div>
+    <div class="footer-disclaimer">
+        <strong>Disclaimer:</strong>
+        This report is for informational purposes only and does not constitute
+        investment advice. Past performance does not guarantee future results.
+        Data is believed accurate but not warranted. Figures are subject to
+        revision by the U.S. Treasury.
+    </div>
+    <div class="footer-legal">
+        <span>© 2026 Randy Hinton. All rights reserved.</span>
+        <span>Treasury Market Liquidity Report | 2026-06-14</span>
+    </div>
+</div>
+
+</div>
+</body>
+</html>
