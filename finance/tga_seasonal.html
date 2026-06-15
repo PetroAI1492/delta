@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seasonal TGA Pattern Report — 2026-06-15</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+          background: #F9FAFB; color: #111827; font-size: 10pt; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+  /* Header */
+  .header { background: #0F2044; color: white; padding: 20px 28px;
+             border-radius: 8px; margin-bottom: 20px; }
+  .header h1 { font-size: 18pt; font-weight: 700; letter-spacing: 0.3px; }
+  .header .meta { font-size: 8.5pt; color: #93C5FD; margin-top: 4px; }
+
+  /* KPI grid */
+  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr);
+               gap: 14px; margin-bottom: 20px; }
+  .kpi-card { background: white; border: 1px solid #E5E7EB;
+               border-radius: 8px; padding: 16px 18px;
+               box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+  .kpi-label { font-size: 7.5pt; font-weight: 600; color: #6B7280;
+                text-transform: uppercase; letter-spacing: 0.6px;
+                margin-bottom: 6px; }
+  .kpi-value { font-size: 20pt; font-weight: 700; color: #0F2044;
+                line-height: 1.1; margin-bottom: 4px; }
+  .kpi-delta { font-size: 9pt; font-weight: 600; margin-bottom: 4px; }
+  .kpi-sub   { font-size: 7.5pt; color: #9CA3AF; }
+
+  /* Chart */
+  .chart-section { background: white; border: 1px solid #E5E7EB;
+                    border-radius: 8px; padding: 20px;
+                    margin-bottom: 20px;
+                    box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+  .chart-section h2 { font-size: 11pt; font-weight: 700; color: #0F2044;
+                       margin-bottom: 14px; text-transform: uppercase;
+                       letter-spacing: 0.5px; }
+
+  /* Narrative */
+  .narrative { background: white; border: 1px solid #E5E7EB;
+                border-radius: 8px; padding: 20px 24px;
+                margin-bottom: 20px;
+                box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+  .narrative h2 { font-size: 11pt; font-weight: 700; color: #0F2044;
+                   margin-bottom: 12px; text-transform: uppercase;
+                   letter-spacing: 0.5px; }
+  .det-badge { font-size: 7pt; font-weight: 500; color: #6B7280;
+                background: #F3F4F6; border-radius: 4px;
+                padding: 2px 6px; margin-left: 8px;
+                text-transform: none; letter-spacing: 0; }
+  .narrative p { font-size: 9.5pt; line-height: 1.65; color: #374151;
+                  margin-bottom: 10px; }
+
+  /* Table */
+  .table-section { background: white; border: 1px solid #E5E7EB;
+                    border-radius: 8px; padding: 20px;
+                    margin-bottom: 20px;
+                    box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+  .table-section h2 { font-size: 11pt; font-weight: 700; color: #0F2044;
+                       margin-bottom: 14px; text-transform: uppercase;
+                       letter-spacing: 0.5px; }
+  table { width: 100%; border-collapse: collapse; font-size: 8.5pt; }
+  th { background: #F8FAFC; color: #374151; font-weight: 600;
+        padding: 8px 10px; text-align: right; border-bottom: 2px solid #E5E7EB; }
+  th:first-child { text-align: left; }
+  td { padding: 6px 10px; text-align: right; border-bottom: 1px solid #F3F4F6;
+        color: #374151; }
+  td:first-child { text-align: left; color: #6B7280; font-weight: 500; }
+  tr:hover { background: #FAFAFA; }
+
+  /* Footer */
+  .footer { font-size: 7.5pt; color: #9CA3AF; margin-top: 8px;
+             padding-top: 12px; border-top: 1px solid #E5E7EB; }
+  .footer-sources { margin-bottom: 6px; }
+  .footer-disclaimer { margin-bottom: 6px; }
+  .footer-legal { display: flex; justify-content: space-between; }
+
+  @media print {
+    body { background: white; }
+    .container { padding: 12px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Header -->
+<div class="header">
+    <h1>Seasonal TGA Pattern Report</h1>
+    <div class="meta">
+        Generated: 2026-06-15 08:56 &nbsp;|&nbsp;
+        Data: 2005-10-03 to 2026-06-11 &nbsp;|&nbsp;
+        Source: U.S. Treasury fiscaldata.treasury.gov via storehouse.db
+    </div>
+</div>
+
+<!-- KPI Cards -->
+<div class="kpi-grid">
+    
+        <div class="kpi-card" style="border-left:4px solid #0F2044;">
+            <div class="kpi-label">2026 YTD SEASONAL DEVIATION</div>
+            <div class="kpi-value" style="color:#059669;">
+                +535.8B
+            </div>
+            <div class="kpi-delta" style="color:#6B7280;">avg TGA above seasonal norm</div>
+            <div class="kpi-sub">Weeks 1–24 of 2026</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">CURRENT TGA</div>
+            <div class="kpi-value">$799.5B</div>
+            <div class="kpi-delta" style="color:#059669;">
+                ▲ +502.0B vs seasonal avg
+            </div>
+            <div class="kpi-sub">Week 24 of 2026 &nbsp;|&nbsp; as of 2026-06-11</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">SEASONAL AVG (WK 24)</div>
+            <div class="kpi-value">$297.5B</div>
+            <div class="kpi-delta" style="color:#6B7280;">Oct 2005 – Jun 2026</div>
+            <div class="kpi-sub">Range: $4.2B – $1,550.4B</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">DATASET</div>
+            <div class="kpi-value" style="font-size:13pt;">Oct 2005 – Jun 2026</div>
+            <div class="kpi-delta" style="color:#6B7280;">21-year sample</div>
+            <div class="kpi-sub">2005-10-03 to 2026-06-11</div>
+        </div>
+</div>
+
+<!-- Chart -->
+<div class="chart-section">
+    <h2>TGA Closing Balance by Week of Year — 2026 vs 21-Year Average (Oct 2005 – Jun 2026)</h2>
+    <svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg"
+         style="width:100%;max-width:900px;height:auto;">
+    <polygon points="70.0,62.6 85.9,59.4 101.8,56.6 117.6,58.0 133.5,54.9 149.4,61.0 165.3,64.3 181.2,70.4 197.1,77.1 212.9,94.2 228.8,93.5 244.7,131.2 260.6,128.4 276.5,142.7 292.4,142.8 308.2,140.5 324.1,139.7 340.0,120.5 355.9,118.0 371.8,117.0 387.6,103.9 403.5,84.1 419.4,76.9 435.3,70.3 451.2,58.8 467.1,57.2 482.9,47.1 498.8,55.4 514.7,34.8 530.6,33.1 546.5,32.4 562.4,44.0 578.2,53.3 594.1,55.0 610.0,59.6 625.9,49.3 641.8,64.8 657.6,51.0 673.5,51.5 689.4,39.0 705.3,50.2 721.2,45.8 737.1,45.1 752.9,51.4 768.8,54.3 784.7,61.8 800.6,65.8 816.5,73.9 832.4,60.5 848.2,71.4 864.1,60.8 880.0,62.4 880.0,279.8 864.1,279.8 848.2,279.8 832.4,279.7 816.5,279.8 800.6,279.8 784.7,279.8 768.8,279.9 752.9,279.8 737.1,279.7 721.2,279.8 705.3,279.8 689.4,279.8 673.5,279.8 657.6,279.8 641.8,279.9 625.9,279.8 610.0,279.7 594.1,279.7 578.2,279.9 562.4,279.9 546.5,279.8 530.6,279.9 514.7,279.8 498.8,279.8 482.9,279.8 467.1,279.8 451.2,279.8 435.3,279.8 419.4,279.8 403.5,280.0 387.6,279.8 371.8,279.9 355.9,279.8 340.0,279.8 324.1,279.7 308.2,279.7 292.4,279.9 276.5,279.8 260.6,279.8 244.7,279.7 228.8,280.0 212.9,279.7 197.1,279.8 181.2,279.8 165.3,279.9 149.4,279.8 133.5,279.7 117.6,279.8 101.8,279.8 85.9,279.7 70.0,279.8" fill="#DBEAFE" opacity="0.5"/>
+    <polyline points="70.0,233.3 85.9,237.5 101.8,235.2 117.6,231.1 133.5,231.0 149.4,234.8 165.3,237.1 181.2,238.1 197.1,242.0 212.9,245.3 228.8,245.1 244.7,243.6 260.6,246.0 276.5,247.4 292.4,247.8 308.2,233.7 324.1,229.2 340.0,229.4 355.9,233.2 371.8,236.3 387.6,239.2 403.5,238.8 419.4,241.1 435.3,240.0 451.2,236.3 467.1,235.5 482.9,235.5 498.8,239.3 514.7,237.9 530.6,238.4 546.5,239.7 562.4,241.7 578.2,243.1 594.1,244.1 610.0,243.1 625.9,241.6 641.8,243.2 657.6,234.5 673.5,235.9 689.4,237.0 705.3,237.4 721.2,236.4 737.1,234.0 752.9,235.7 768.8,236.2 784.7,238.5 800.6,236.5 816.5,240.0 832.4,239.8 848.2,241.5 864.1,234.0 880.0,235.5" fill="none" stroke="#3B82F6" stroke-width="2"/>
+    <polyline points="70.0,174.5 85.9,175.3 101.8,162.7 117.6,158.4 133.5,159.4 149.4,157.7 165.3,156.6 181.2,159.3 197.1,172.1 212.9,167.5 228.8,171.1 244.7,162.4 260.6,165.4 276.5,178.2 292.4,185.1 308.2,145.1 324.1,148.4 340.0,164.2 355.9,166.7 371.8,177.6 387.6,168.5 403.5,157.9 419.4,168.5 435.3,172.0" fill="none" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="none"/>
+    <circle cx="435.3" cy="172.0" r="5" fill="#DC2626" stroke="white" stroke-width="2"/>
+    <line x1="65" y1="280.0" x2="70" y2="280.0" stroke="#D1D5DB"/><text x="62" y="284.0" text-anchor="end" font-size="10" fill="#6B7280">$0.0T</text><line x1="70" y1="280.0" x2="880" y2="280.0" stroke="#F3F4F6" stroke-width="0.5"/><line x1="65" y1="215.0" x2="70" y2="215.0" stroke="#D1D5DB"/><text x="62" y="219.0" text-anchor="end" font-size="10" fill="#6B7280">$0.5T</text><line x1="70" y1="215.0" x2="880" y2="215.0" stroke="#F3F4F6" stroke-width="0.5"/><line x1="65" y1="150.0" x2="70" y2="150.0" stroke="#D1D5DB"/><text x="62" y="154.0" text-anchor="end" font-size="10" fill="#6B7280">$1.0T</text><line x1="70" y1="150.0" x2="880" y2="150.0" stroke="#F3F4F6" stroke-width="0.5"/><line x1="65" y1="85.0" x2="70" y2="85.0" stroke="#D1D5DB"/><text x="62" y="89.0" text-anchor="end" font-size="10" fill="#6B7280">$1.4T</text><line x1="70" y1="85.0" x2="880" y2="85.0" stroke="#F3F4F6" stroke-width="0.5"/><line x1="65" y1="20.0" x2="70" y2="20.0" stroke="#D1D5DB"/><text x="62" y="24.0" text-anchor="end" font-size="10" fill="#6B7280">$1.9T</text><line x1="70" y1="20.0" x2="880" y2="20.0" stroke="#F3F4F6" stroke-width="0.5"/>
+    <text x="70.0" y="294" text-anchor="middle" font-size="10" fill="#6B7280">W1</text><text x="133.5" y="294" text-anchor="middle" font-size="10" fill="#6B7280">W5</text><text x="197.1" y="294" text-anchor="middle" font-size="10" fill="#6B7280">W9</text><text x="260.6" y="294" text-anchor="middle" font-size="10" fill="#6B7280">W13</text><text x="324.1" y="294" text-anchor="middle" font-size="10" fill="#6B7280">W17</text><text x="387.6" y="294" text-anchor="middle" font-size="10" fill="#6B7280">W21</text><text x="467.1" y="294" text-anchor="middle" font-size="10" fill="#6B7280">W26</text><text x="546.5" y="294" text-anchor="middle" font-size="10" fill="#6B7280">W31</text><text x="610.0" y="294" text-anchor="middle" font-size="10" fill="#6B7280">W35</text><text x="673.5" y="294" text-anchor="middle" font-size="10" fill="#6B7280">W39</text><text x="752.9" y="294" text-anchor="middle" font-size="10" fill="#6B7280">W44</text><text x="816.5" y="294" text-anchor="middle" font-size="10" fill="#6B7280">W48</text><text x="880.0" y="294" text-anchor="middle" font-size="10" fill="#6B7280">W52</text>
+    <line x1="70" y1="20" x2="70" y2="280" stroke="#D1D5DB"/>
+    <line x1="70" y1="280" x2="880" y2="280" stroke="#D1D5DB"/>
+    <!-- Legend -->
+    <rect x="80" y="25" width="14" height="10" fill="#DBEAFE" opacity="0.8"/>
+    <text x="98" y="34" font-size="11" fill="#6B7280">Historical range</text>
+    <line x1="190" y1="30" x2="210" y2="30" stroke="#3B82F6" stroke-width="2"/>
+    <text x="214" y="34" font-size="11" fill="#6B7280">Oct 2005 – Jun 2026 avg</text>
+    <line x1="290" y1="30" x2="310" y2="30" stroke="#DC2626" stroke-width="2.5"/>
+    <text x="314" y="34" font-size="11" fill="#6B7280">2026</text>
+</svg>
+</div>
+
+<!-- Narrative -->
+<div class="narrative">
+    <h2>Analysis <span class="det-badge">Deterministic · computed from DTS data</span></h2>
+    <p>This report shows the seasonal pattern of the U.S. Treasury General Account (TGA) closing balance using 21 years of daily data (2005–2026), sourced from the Daily Treasury Statement published by the U.S. Treasury.</p><p>As of 2026-06-11 (ISO week 24), the TGA closed at $799.5B, $502.0B above the 21-year seasonal average of $297.5B (percentile rank within historical range: 51). The more significant signal is the year-to-date picture: across all 24 weeks of 2026, the TGA has averaged $535.8B above the seasonal norm, ranging from a low of $+433.6B in week 20 to a high of $+654.5B in week 16. This sustained deviation suggests Treasury has been carrying an unusually elevated cash buffer for most of the year, not just at this point in the calendar.</p><p>Based on the available history, the TGA seasonal average peaks in week 17 at $377.2B and troughs in week 15 at $240.0B — a seasonal swing of $137.2B. The current balance of $799.5B represents 212% of the seasonal peak average of $377.2B, which typically occurs in week 17 — notable given that week 24 is 7 weeks past that seasonal peak.</p>
+</div>
+
+<!-- Seasonal Table -->
+<div class="table-section">
+    <h2>Weekly Seasonal Statistics &nbsp;
+        <span style="font-size:8pt;font-weight:400;color:#6B7280;">
+            All values USD billions &nbsp;|&nbsp;
+            Oct 2005 – Jun 2026 (2005–2026) &nbsp;|&nbsp;
+            Current week highlighted
+        </span>
+    </h2>
+    <table>
+        <thead>
+            <tr>
+                <th style="text-align:left;">Week</th>
+                <th>Oct 2005 – Jun 2026 Avg</th>
+                <th>Historical Low</th>
+                <th>Historical High</th>
+                <th>2026 Actual</th>
+                <th>vs Avg</th>
+                <th>Yrs</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td>Wk 01</td>
+                <td>$347.3B</td>
+                <td>$3.9B (2006)</td>
+                <td>$1,607.4B (2021)</td>
+                <td>$781.2B</td>
+                <td><span style="color:#059669;">+433.9B</span></td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 02</td>
+                <td>$316.6B</td>
+                <td>$4.4B (2007)</td>
+                <td>$1,630.9B (2021)</td>
+                <td>$775.1B</td>
+                <td><span style="color:#059669;">+458.5B</span></td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 03</td>
+                <td>$333.4B</td>
+                <td>$3.7B (2006)</td>
+                <td>$1,652.0B (2021)</td>
+                <td>$868.2B</td>
+                <td><span style="color:#059669;">+534.8B</span></td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 04</td>
+                <td>$363.2B</td>
+                <td>$4.3B (2008)</td>
+                <td>$1,641.4B (2021)</td>
+                <td>$900.5B</td>
+                <td><span style="color:#059669;">+537.3B</span></td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 05</td>
+                <td>$363.9B</td>
+                <td>$4.5B (2008)</td>
+                <td>$1,664.6B (2021)</td>
+                <td>$893.2B</td>
+                <td><span style="color:#059669;">+529.3B</span></td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 06</td>
+                <td>$336.4B</td>
+                <td>$4.0B (2006)</td>
+                <td>$1,619.4B (2021)</td>
+                <td>$905.3B</td>
+                <td><span style="color:#059669;">+568.9B</span></td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 07</td>
+                <td>$319.1B</td>
+                <td>$3.0B (2008)</td>
+                <td>$1,595.3B (2021)</td>
+                <td>$913.6B</td>
+                <td><span style="color:#059669;">+594.5B</span></td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 08</td>
+                <td>$311.8B</td>
+                <td>$4.3B (2006)</td>
+                <td>$1,550.1B (2021)</td>
+                <td>$893.4B</td>
+                <td><span style="color:#059669;">+581.6B</span></td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 09</td>
+                <td>$283.2B</td>
+                <td>$4.3B (2007)</td>
+                <td>$1,500.7B (2021)</td>
+                <td>$798.9B</td>
+                <td><span style="color:#059669;">+515.7B</span></td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 10</td>
+                <td>$258.7B</td>
+                <td>$4.4B (2007)</td>
+                <td>$1,374.0B (2021)</td>
+                <td>$833.1B</td>
+                <td><span style="color:#059669;">+574.4B</span></td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 11</td>
+                <td>$259.9B</td>
+                <td>$2.8B (2006)</td>
+                <td>$1,379.2B (2021)</td>
+                <td>$806.3B</td>
+                <td><span style="color:#059669;">+546.4B</span></td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 12</td>
+                <td>$271.2B</td>
+                <td>$4.4B (2006)</td>
+                <td>$1,101.3B (2021)</td>
+                <td>$870.9B</td>
+                <td><span style="color:#059669;">+599.7B</span></td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 13</td>
+                <td>$253.3B</td>
+                <td>$4.2B (2007)</td>
+                <td>$1,122.0B (2021)</td>
+                <td>$848.7B</td>
+                <td><span style="color:#059669;">+595.4B</span></td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 14</td>
+                <td>$243.3B</td>
+                <td>$3.6B (2008)</td>
+                <td>$1,016.2B (2021)</td>
+                <td>$753.9B</td>
+                <td><span style="color:#059669;">+510.6B</span></td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 15</td>
+                <td>$240.0B</td>
+                <td>$3.3B (2007)</td>
+                <td>$1,015.5B (2021)</td>
+                <td>$703.2B</td>
+                <td><span style="color:#059669;">+463.2B</span></td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 16</td>
+                <td>$344.1B</td>
+                <td>$4.6B (2008)</td>
+                <td>$1,032.7B (2021)</td>
+                <td>$998.6B</td>
+                <td><span style="color:#059669;">+654.5B</span></td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>Wk 17</td>
+                <td>$377.2B</td>
+                <td>$4.5B (2006)</td>
+                <td>$1,038.0B (2026)</td>
+                <td>$974.3B</td>
+                <td><span style="color:#059669;">+597.1B</span></td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>Wk 18</td>
+                <td>$375.9B</td>
+                <td>$4.3B (2008)</td>
+                <td>$1,180.0B (2020)</td>
+                <td>$857.3B</td>
+                <td><span style="color:#059669;">+481.4B</span></td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>Wk 19</td>
+                <td>$348.1B</td>
+                <td>$4.1B (2008)</td>
+                <td>$1,198.5B (2020)</td>
+                <td>$839.2B</td>
+                <td><span style="color:#059669;">+491.1B</span></td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>Wk 20</td>
+                <td>$325.2B</td>
+                <td>$3.0B (2008)</td>
+                <td>$1,206.0B (2020)</td>
+                <td>$758.8B</td>
+                <td><span style="color:#059669;">+433.6B</span></td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>Wk 21</td>
+                <td>$303.7B</td>
+                <td>$4.3B (2007)</td>
+                <td>$1,302.8B (2020)</td>
+                <td>$825.5B</td>
+                <td><span style="color:#059669;">+521.8B</span></td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>Wk 22</td>
+                <td>$306.9B</td>
+                <td>$2.6B (2006)</td>
+                <td>$1,449.1B (2020)</td>
+                <td>$903.9B</td>
+                <td><span style="color:#059669;">+597.0B</span></td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>Wk 23</td>
+                <td>$289.3B</td>
+                <td>$4.3B (2010)</td>
+                <td>$1,501.7B (2020)</td>
+                <td>$825.5B</td>
+                <td><span style="color:#059669;">+536.2B</span></td>
+                <td>21</td>
+            </tr>
+            <tr style="background:#F0F9FF;">
+                <td><strong>Wk 24</strong></td>
+                <td>$297.5B</td>
+                <td>$4.2B (2008)</td>
+                <td>$1,550.4B (2020)</td>
+                <td>$799.5B</td>
+                <td><span style="color:#059669;">+502.0B</span></td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>Wk 25</td>
+                <td>$324.8B</td>
+                <td>$4.2B (2008)</td>
+                <td>$1,635.5B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 26</td>
+                <td>$331.2B</td>
+                <td>$4.0B (2007)</td>
+                <td>$1,647.2B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 27</td>
+                <td>$331.2B</td>
+                <td>$4.1B (2007)</td>
+                <td>$1,722.0B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 28</td>
+                <td>$303.0B</td>
+                <td>$3.8B (2007)</td>
+                <td>$1,660.7B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 29</td>
+                <td>$313.1B</td>
+                <td>$3.8B (2007)</td>
+                <td>$1,812.8B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 30</td>
+                <td>$309.7B</td>
+                <td>$3.2B (2010)</td>
+                <td>$1,825.5B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 31</td>
+                <td>$299.9B</td>
+                <td>$4.3B (2008)</td>
+                <td>$1,830.5B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 32</td>
+                <td>$285.0B</td>
+                <td>$2.9B (2006)</td>
+                <td>$1,745.1B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 33</td>
+                <td>$274.8B</td>
+                <td>$3.1B (2006)</td>
+                <td>$1,676.5B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 34</td>
+                <td>$267.3B</td>
+                <td>$4.7B (2006)</td>
+                <td>$1,663.9B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 35</td>
+                <td>$275.1B</td>
+                <td>$4.4B (2006)</td>
+                <td>$1,629.3B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 36</td>
+                <td>$286.1B</td>
+                <td>$4.0B (2008)</td>
+                <td>$1,706.0B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 37</td>
+                <td>$274.1B</td>
+                <td>$3.2B (2007)</td>
+                <td>$1,591.5B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 38</td>
+                <td>$338.2B</td>
+                <td>$3.6B (2006)</td>
+                <td>$1,692.8B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 39</td>
+                <td>$328.3B</td>
+                <td>$3.9B (2008)</td>
+                <td>$1,689.6B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 40</td>
+                <td>$319.8B</td>
+                <td>$3.9B (2007)</td>
+                <td>$1,781.7B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 41</td>
+                <td>$316.8B</td>
+                <td>$4.1B (2005)</td>
+                <td>$1,699.1B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 42</td>
+                <td>$324.4B</td>
+                <td>$4.0B (2008)</td>
+                <td>$1,731.4B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 43</td>
+                <td>$342.4B</td>
+                <td>$4.5B (2005)</td>
+                <td>$1,736.9B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 44</td>
+                <td>$329.8B</td>
+                <td>$3.6B (2005)</td>
+                <td>$1,690.2B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 45</td>
+                <td>$325.7B</td>
+                <td>$3.3B (2010)</td>
+                <td>$1,668.5B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 46</td>
+                <td>$309.1B</td>
+                <td>$3.7B (2005)</td>
+                <td>$1,613.5B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 47</td>
+                <td>$323.9B</td>
+                <td>$4.1B (2006)</td>
+                <td>$1,583.7B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 48</td>
+                <td>$297.8B</td>
+                <td>$4.3B (2005)</td>
+                <td>$1,524.0B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 49</td>
+                <td>$299.1B</td>
+                <td>$4.5B (2006)</td>
+                <td>$1,623.0B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 50</td>
+                <td>$286.9B</td>
+                <td>$4.3B (2005)</td>
+                <td>$1,542.5B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 51</td>
+                <td>$342.1B</td>
+                <td>$3.9B (2007)</td>
+                <td>$1,620.6B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Wk 52</td>
+                <td>$331.2B</td>
+                <td>$4.2B (2005)</td>
+                <td>$1,609.3B (2020)</td>
+                <td>—</td>
+                <td>—</td>
+                <td>20</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <div class="footer-sources">
+        <strong>Data Source:</strong>
+        Treasury General Account closing balance sourced from the U.S. Treasury
+        Daily Treasury Statement (DTS), published daily at fiscaldata.treasury.gov
+        and stored in the Thor Storehouse database. All values in USD billions
+        (raw storage in millions, divided by 1,000).
+    </div>
+    <div class="footer-disclaimer">
+        <strong>Methodology:</strong>
+        All values computed deterministically from timestamped source data.
+        Seasonal averages use ISO week numbers (1–52); week 53 observations excluded.
+        No AI model is involved. Same input data always produces identical output.
+    </div>
+    <div class="footer-disclaimer">
+        <strong>Disclaimer:</strong>
+        This report is for informational purposes only and does not constitute
+        investment advice. Data is believed accurate but not warranted.
+        Figures are subject to revision by the U.S. Treasury.
+    </div>
+    <div class="footer-legal">
+        <span>&copy; 2026 Randy Hinton. All rights reserved.</span>
+        <span>Seasonal TGA Pattern Report | 2026-06-15</span>
+    </div>
+</div>
+
+</div>
+</body>
+</html>
