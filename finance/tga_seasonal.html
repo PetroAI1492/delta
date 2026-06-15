@@ -91,7 +91,7 @@
 <div class="header">
     <h1>Seasonal TGA Pattern Report</h1>
     <div class="meta">
-        Generated: 2026-06-15 08:56 &nbsp;|&nbsp;
+        Generated: 2026-06-15 09:14 &nbsp;|&nbsp;
         Data: 2005-10-03 to 2026-06-11 &nbsp;|&nbsp;
         Source: U.S. Treasury fiscaldata.treasury.gov via storehouse.db
     </div>
@@ -109,12 +109,27 @@
             <div class="kpi-sub">Weeks 1–24 of 2026</div>
         </div>
         <div class="kpi-card">
+            <div class="kpi-label">TREASURY CASH REGIME</div>
+            <div class="kpi-value" style="color:#DC2626;font-size:14pt;">
+                EXTREME BUFFER
+            </div>
+            <div class="kpi-delta" style="color:#6B7280;">
+                +169% above 21-yr avg
+            </div>
+            <div class="kpi-sub">
+                Wk 24 rank: #9 of 21 yrs · 92th pct
+            </div>
+        </div>
+        <div class="kpi-card">
             <div class="kpi-label">CURRENT TGA</div>
             <div class="kpi-value">$799.5B</div>
             <div class="kpi-delta" style="color:#059669;">
                 ▲ +502.0B vs seasonal avg
             </div>
-            <div class="kpi-sub">Week 24 of 2026 &nbsp;|&nbsp; as of 2026-06-11</div>
+            <div class="kpi-sub">
+                Z-score: +1.36 · σ=370.0B
+                &nbsp;|&nbsp; as of 2026-06-11
+            </div>
         </div>
         <div class="kpi-card">
             <div class="kpi-label">SEASONAL AVG (WK 24)</div>
@@ -156,7 +171,7 @@
 <!-- Narrative -->
 <div class="narrative">
     <h2>Analysis <span class="det-badge">Deterministic · computed from DTS data</span></h2>
-    <p>This report shows the seasonal pattern of the U.S. Treasury General Account (TGA) closing balance using 21 years of daily data (2005–2026), sourced from the Daily Treasury Statement published by the U.S. Treasury.</p><p>As of 2026-06-11 (ISO week 24), the TGA closed at $799.5B, $502.0B above the 21-year seasonal average of $297.5B (percentile rank within historical range: 51). The more significant signal is the year-to-date picture: across all 24 weeks of 2026, the TGA has averaged $535.8B above the seasonal norm, ranging from a low of $+433.6B in week 20 to a high of $+654.5B in week 16. This sustained deviation suggests Treasury has been carrying an unusually elevated cash buffer for most of the year, not just at this point in the calendar.</p><p>Based on the available history, the TGA seasonal average peaks in week 17 at $377.2B and troughs in week 15 at $240.0B — a seasonal swing of $137.2B. The current balance of $799.5B represents 212% of the seasonal peak average of $377.2B, which typically occurs in week 17 — notable given that week 24 is 7 weeks past that seasonal peak.</p>
+    <p>This report shows the seasonal pattern of the U.S. Treasury General Account (TGA) closing balance using 21 years of daily data (2005–2026), sourced from the Daily Treasury Statement published by the U.S. Treasury. Historical averages include the extraordinary Treasury cash accumulation during 2020–2021 (COVID fiscal response) and the pre-GFC era of minimal cash buffers (2005–2008), making the full-sample average a structurally informative but wide baseline.</p><p>As of 2026-06-11 (ISO week 24), the TGA closed at $799.5B, $502.0B above the 21-year seasonal average of $297.5B — ranked #9 of 21 years (92th percentile). The seasonal standard deviation for week 24 is $370.0B, placing the current value at a Z-score of +1.36 — within one standard deviation of normal. Notably, the current TGA of $799.5B represents 212% of the 21-year seasonal peak average of $377.2B — which itself typically occurs in week 17. Based on its deviation from seasonal norms, the current Treasury cash position is classified as: EXTREME BUFFER (+169% above the 21-year average). The more significant signal is the year-to-date picture: across all 24 weeks of 2026, the TGA has averaged $535.8B above the seasonal norm, ranging from a low of $+433.6B in week 20 to a high of $+654.5B in week 16. This sustained deviation suggests Treasury has been carrying an unusually elevated cash buffer for most of the year, not just at this point in the calendar.</p><p>Based on the available history, the TGA seasonal average peaks in week 17 at $377.2B and troughs in week 15 at $240.0B — a seasonal swing of $137.2B. The current balance of $799.5B represents 212% of the seasonal peak average of $377.2B, which typically occurs in week 17 — notable given that week 24 is 7 weeks past that seasonal peak. The TGA remains historically elevated, but the recent trend has been downward, which is liquidity-supportive as spending draws down the buffer. Each $100B decline in the TGA injects approximately $100B of reserves into the banking system.</p>
 </div>
 
 <!-- Seasonal Table -->
@@ -654,7 +669,33 @@
     </table>
 </div>
 
-<!-- Footer -->
+<!-- ── Top Historical Deviations ──────────────────────────────────────────── -->
+<div class="table-section">
+    <h2>Week 24 — Top Historical Deviations vs 21-Year Average
+        <span style="font-size:8pt;font-weight:400;color:#6B7280;">
+            &nbsp;All values USD billions
+        </span>
+    </h2>
+    <table style="max-width:500px;">
+        <thead>
+            <tr>
+                <th style="text-align:left;">Rank</th>
+                <th style="text-align:left;">Year</th>
+                <th>TGA Balance</th>
+                <th>vs 21-Yr Avg</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>#1</td><td><strong>2020</strong></td><td>$1,550.4B</td><td><span style="color:#059669;">+1,252.9B</span></td></tr><tr><td>#2</td><td><strong>2020</strong></td><td>$1,541.3B</td><td><span style="color:#059669;">+1,243.8B</span></td></tr><tr><td>#3</td><td><strong>2020</strong></td><td>$1,535.3B</td><td><span style="color:#059669;">+1,237.8B</span></td></tr><tr><td>#4</td><td><strong>2020</strong></td><td>$1,520.8B</td><td><span style="color:#059669;">+1,223.3B</span></td></tr><tr><td>#5</td><td><strong>2020</strong></td><td>$1,504.6B</td><td><span style="color:#059669;">+1,207.1B</span></td></tr>
+        </tbody>
+    </table>
+    <div style="font-size:8pt;color:#9CA3AF;margin-top:8px;">
+        ★ = current year &nbsp;|&nbsp;
+        Historical averages include extraordinary Treasury cash accumulation during
+        2020–2021 (COVID fiscal response) and low pre-GFC balances (2005–2008).
+        These structural regime shifts are inherent to a long historical sample.
+    </div>
+</div>
 <div class="footer">
     <div class="footer-sources">
         <strong>Data Source:</strong>
