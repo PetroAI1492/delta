@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A New Treatment for Pancreatic Cancer — What You Need to Know</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #ffffff;
+  --bg-rule:   #f7f6f4;
+  --border:    #e0e0e0;
+  --border-hvy:#1a1a1a;
+  --text:      #1a1a1a;
+  --text-dim:  #444444;
+  --text-lt:   #888888;
+  --accent:    #e8650a;
+  --accent-lt: #fff3eb;
+  --pos:       #1a6b38;
+  --pos-lt:    #edf6f1;
+  --neg:       #b0200a;
+  --neg-lt:    #fdf0ee;
+  --warn:      #7a5500;
+  --warn-lt:   #fdf7eb;
+  --serif:     'PT Serif', Georgia, serif;
+  --sans:      'PT Sans', Arial, sans-serif;
+  --mono:      'IBM Plex Mono', 'Courier New', monospace;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.top-rule { height: 4px; background: var(--accent); }
+
+/* MASTHEAD */
+.masthead {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 28px 40px 22px;
+  border-bottom: 1px solid var(--border-hvy);
+}
+.masthead-kicker {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .18em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.masthead h1 {
+  font-family: var(--serif);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -.02em;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+.masthead-sub {
+  font-family: var(--serif);
+  font-size: 17px;
+  color: var(--text-dim);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  max-width: 580px;
+}
+.masthead-note {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-lt);
+  line-height: 1.8;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+.masthead-note strong { color: var(--text-dim); }
+.masthead-free {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(232,101,10,0.3);
+  font-family: var(--serif);
+  font-size: 12px;
+  font-style: italic;
+  color: var(--text-lt);
+  line-height: 1.6;
+}
+.masthead-free a { color: var(--accent); }
+
+/* BODY */
+.body-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 40px 80px;
+}
+
+/* ALERT */
+.alert-banner {
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 18px;
+  margin: 24px 0;
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.alert-banner strong { font-size: 15px; }
+
+/* SECTIONS */
+h2 {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--text-lt);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-hvy);
+  margin: 44px 0 20px;
+}
+h3 {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 26px 0 10px;
+  line-height: 1.3;
+}
+p {
+  font-size: 17px;
+  color: var(--text-dim);
+  margin-bottom: 14px;
+  line-height: 1.8;
+}
+p strong { color: var(--text); font-weight: 700; }
+ul { padding-left: 22px; margin-bottom: 16px; }
+li {
+  font-size: 17px;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+  line-height: 1.7;
+}
+li strong { color: var(--text); }
+
+/* RESULT BOX */
+.result-box {
+  border: 2px solid var(--border-hvy);
+  padding: 24px 28px;
+  margin: 24px 0;
+  background: var(--bg-rule);
+}
+.result-box-label {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--text-lt);
+  margin-bottom: 14px;
+}
+.result-row {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.result-number {
+  font-family: var(--mono);
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1;
+}
+.result-number.pos { color: var(--pos); }
+.result-number.neg { color: var(--neg); }
+.result-number.accent { color: var(--accent); }
+.result-desc {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--text-dim);
+  line-height: 1.5;
+  max-width: 420px;
+}
+.result-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 14px 0;
+}
+
+/* CALLOUTS */
+.callout {
+  border-left: 3px solid var(--accent);
+  background: var(--accent-lt);
+  padding: 16px 20px;
+  margin: 20px 0;
+}
+.callout-label {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.callout p { color: var(--text-dim); font-size: 16px; margin: 0; line-height: 1.7; }
+
+.callout-pos { border-left-color: var(--pos); background: var(--pos-lt); }
+.callout-pos .callout-label { color: var(--pos); }
+.callout-warn { border-left-color: var(--warn); background: var(--warn-lt); }
+.callout-warn .callout-label { color: var(--warn); }
+
+/* PLAIN LANGUAGE EXPLAINER */
+.explainer {
+  background: var(--bg-rule);
+  border: 1px solid var(--border);
+  padding: 20px 24px;
+  margin: 20px 0;
+}
+.explainer-label {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text-lt);
+  margin-bottom: 8px;
+}
+.explainer p { font-size: 16px; color: var(--text-dim); margin-bottom: 8px; }
+.explainer p:last-child { margin-bottom: 0; }
+
+/* DRUG TABLE — simplified */
+.drug-table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 15px; }
+.drug-table th {
+  text-align: left;
+  padding: 8px 14px;
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-lt);
+  background: var(--bg-rule);
+  border-bottom: 1px solid var(--border);
+}
+.drug-table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--serif);
+  color: var(--text-dim);
+  vertical-align: top;
+}
+.drug-table tr:hover td { background: var(--accent-lt); }
+.drug-name-cell { font-weight: 700; color: var(--text); font-size: 16px; }
+.drug-stage { font-family: var(--mono); font-size: 10px; }
+.stage-green { color: var(--pos); }
+.stage-amber { color: var(--warn); }
+.stage-blue  { color: #1565c0; }
+
+/* QUESTIONS TO ASK */
+.question-list { list-style: none; padding: 0; margin: 16px 0 24px; }
+.question-list li {
+  padding: 12px 16px 12px 44px;
+  margin-bottom: 8px;
+  background: var(--bg-rule);
+  border-left: 3px solid var(--accent);
+  position: relative;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.question-list li::before {
+  content: "Q";
+  position: absolute;
+  left: 14px;
+  top: 12px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* RESOURCES */
+.resource-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 16px 0 24px;
+}
+.resource-card {
+  border: 1px solid var(--border);
+  padding: 14px 16px;
+  background: var(--bg-rule);
+}
+.resource-card:hover { background: var(--accent-lt); border-color: var(--accent); }
+.resource-name { font-family: var(--sans); font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+.resource-desc { font-family: var(--serif); font-size: 13px; color: var(--text-dim); line-height: 1.5; }
+
+/* SOURCE NOTE */
+.source-note {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--text-lt);
+  margin-top: 6px;
+  line-height: 1.8;
+  border-top: 1px solid var(--border);
+  padding-top: 6px;
+}
+
+/* FOOTER */
+.footer {
+  background: var(--bg-rule);
+  border-top: 2px solid var(--border-hvy);
+  padding: 20px 40px;
+}
+.footer-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-lt);
+  line-height: 1.9;
+}
+.footer-disclaimer {
+  background: #fff3eb;
+  border: 1px solid #f5c89a;
+  padding: 12px 16px;
+  margin-bottom: 14px;
+  font-family: var(--serif);
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+.footer-disclaimer strong { color: var(--accent); }
+
+@media (max-width: 640px) {
+  .masthead, .body-wrap, .footer, .free-band { padding-left: 20px; padding-right: 20px; }
+  .masthead h1 { font-size: 28px; }
+  .result-number { font-size: 28px; }
+  .resource-grid { grid-template-columns: 1fr; }
+}
+/* ── FREE USE BAND ── */
+.free-band {
+  padding: 28px 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.free-band-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.free-band-rule {
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.4;
+}
+.free-band-text {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--text-dim);
+  text-align: center;
+  line-height: 1.7;
+  max-width: 560px;
+  margin: 0;
+}
+</style>
+</head>
+<body>
+
+<div class="top-rule"></div>
+
+<div class="masthead">
+  <div class="masthead-kicker">Pancreatic Cancer &nbsp;&middot;&nbsp; New Treatment Research &nbsp;&middot;&nbsp; May 2026</div>
+  <h1>A New Drug Is Changing What&rsquo;s Possible for Most Pancreatic Cancer Patients</h1>
+  <div class="masthead-sub">A clinical trial announced on April 13, 2026 showed that patients who took an oral pill lived nearly twice as long as those who received chemotherapy. Full results are being presented today at ASCO 2026 in Chicago. Here is what happened, what it means, and what questions to bring to your doctor.</div>
+  <div class="masthead-note">
+    <strong>About this report:</strong> Written for patients and families. Every fact traces to a published clinical trial, a medical journal, or an official press release. Sources are listed at the end of each section.
+    This report is for information only — it is not medical advice. Please discuss any treatment decisions with your oncologist.
+    Links to sources may change over time — if you find a broken link, please DM the author so it can be corrected.
+  </div>
+  <div class="masthead-free">
+    <em>Share it, print it, pass it on. Licensed under
+    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
+    — free to use, reprint, and adapt with attribution.</em>
+  </div>
+</div>
+
+<div class="body-wrap">
+
+<div class="alert-banner">
+  <strong>ASCO 2026, Chicago — May 31, 2026:</strong>
+  Full Phase 3 results for daraxonrasib are being presented today. Topline results were first announced April 13, 2026. The drug nearly doubled survival time compared with chemotherapy in previously treated pancreatic cancer.
+  <a href="https://ir.revmed.com/news-releases/news-release-details/daraxonrasib-demonstrates-unprecedented-overall-survival-benefit" target="_blank" style="color:#fff;text-decoration:underline;font-family:var(--mono);font-size:10px">[Source]</a>
+</div>
+
+
+<!-- ── THE NEWS ── -->
+<h2>What Happened This Week</h2>
+
+<p>On April 13, 2026, Revolution Medicines announced that a drug called <strong>daraxonrasib</strong> had passed its Phase 3 clinical trial — the largest, most rigorous kind of trial — in patients with advanced pancreatic cancer who had already received chemotherapy. Today, May 31, the full results are being formally presented at the American Society of Clinical Oncology annual meeting in Chicago by Dr Brian Wolpin of Dana-Farber Cancer Institute at Harvard.</p>
+
+<div class="result-box">
+  <div class="result-box-label">The Phase 3 Trial Result — RASolute 302</div>
+
+  <div class="result-row">
+    <div class="result-number pos">13.2</div>
+    <div class="result-desc"><strong>months median survival</strong> for patients who took daraxonrasib — an oral pill taken once a day at home</div>
+  </div>
+  <hr class="result-divider">
+  <div class="result-row">
+    <div class="result-number neg">6.7</div>
+    <div class="result-desc"><strong>months median survival</strong> for patients who received standard chemotherapy given intravenously at a clinic</div>
+  </div>
+  <hr class="result-divider">
+  <div class="result-row">
+    <div class="result-number accent">60%</div>
+    <div class="result-desc"><strong>reduction in the risk of death</strong> with daraxonrasib compared with chemotherapy (hazard ratio 0.40, p&lt;0.0001)</div>
+  </div>
+  <div style="border-top:1px solid var(--border);margin-top:14px;padding-top:10px;font-family:var(--mono);font-size:9px;color:var(--text-lt);line-height:1.8">
+    <strong style="color:var(--text-dim)">Phase 3 trial:</strong> RASolute 302 &nbsp;&middot;&nbsp; ClinicalTrials.gov
+    <a href="https://clinicaltrials.gov/study/NCT06625320" target="_blank" style="color:var(--accent)">NCT06625320</a>
+    &nbsp;&middot;&nbsp;
+    <strong style="color:var(--text-dim)">Phase 1/2 published results:</strong> Wolpin BM et al., N Engl J Med 2026;394:1790&ndash;1802 &nbsp;&middot;&nbsp;
+    <a href="https://www.nejm.org/doi/10.1056/NEJMoa2505783" target="_blank" style="color:var(--accent)">doi:10.1056/NEJMoa2505783</a>
+    &nbsp;&middot;&nbsp;
+    <strong style="color:var(--text-dim)">Topline press release:</strong>
+    <a href="https://ir.revmed.com/news-releases/news-release-details/daraxonrasib-demonstrates-unprecedented-overall-survival-benefit" target="_blank" style="color:var(--accent)">Revolution Medicines April 13, 2026</a>
+    &nbsp;&middot;&nbsp; <span style="color:var(--pos);font-weight:700">Sources verified May 31, 2026</span>
+  </div>
+</div>
+
+<div class="callout callout-pos">
+  <div class="callout-label">Why This Matters</div>
+  <p>Until now, no targeted drug had ever been shown to help patients with pancreatic cancer live longer in a large, rigorous clinical trial. One drug &mdash; olaparib, approved in 2019 for a small group of patients with a specific gene mutation &mdash; did slow the cancer down, but did not extend overall survival. For patients whose cancer had already been treated with chemotherapy and stopped responding, the best available options typically extended life by about 6 to 7 months on average.</p>
+  <p style="margin-top:10px;margin-bottom:0">Daraxonrasib changed that. In the RASolute 302 trial, patients who took it lived a median of 13.2 months &mdash; nearly twice as long as those on chemotherapy. If these results hold up as the full data are reviewed, this would be one of the biggest steps forward in pancreatic cancer treatment in many years.</p>
+</div>
+<p class="source-note">&#9432; Sources: Revolution Medicines press release April 13, 2026; OncLive May 2026; CancerNetwork May 2026; ClinicalTrials.gov NCT06625320; NEJM 2026;394:1790&ndash;1802; FDA approval olaparib December 27, 2019 (fda.gov) &mdash; PFS benefit only, no OS benefit in POLO trial; ASCO Post January 2020 &mdash; POLO trial results &nbsp;&middot;&nbsp; <span style="color:var(--pos);font-weight:700">Sources verified May 31, 2026</span></p>
+
+
+<!-- ── WHAT IS KRAS ── -->
+<h2>The Science — Explained Simply</h2>
+
+<h3>What is KRAS, and why does it matter for pancreatic cancer?</h3>
+
+<p>Every cell in your body has genes that control how the cell grows and divides. One of the most important is a gene called KRAS. In a healthy cell, KRAS acts like a light switch — it turns on to signal the cell to divide, and then turns off again.</p>
+
+<p>In more than <strong>90% of pancreatic cancers</strong>, the KRAS gene is mutated — it gets stuck in the ON position and never turns off. This means the cancer cells receive a constant signal to grow and multiply, which is what makes pancreatic cancer so aggressive. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11055996/" target="_blank" style="font-family:var(--mono);font-size:11px;color:var(--accent)">[PMC11055996]</a></p>
+
+<div class="explainer">
+  <div class="explainer-label">Plain Language</div>
+  <p>Think of KRAS like a gas pedal in a car. In normal cells, you press it when you need to go and release it when you need to stop. In pancreatic cancer, the gas pedal gets jammed down permanently. The cell never stops accelerating.</p>
+  <p>Daraxonrasib is a drug designed to reach into that mechanism and release the stuck pedal.</p>
+</div>
+
+<h3>Why did it take so long to find a drug that targets KRAS?</h3>
+
+<p>Scientists identified KRAS as a driver of cancer in human cells in 1982. For <strong>over 30 years</strong>, drug developers tried and failed to block it. The KRAS protein binds to GTP with extremely high affinity, and its surface lacks the deep binding pockets that most small molecule drugs require. The scientific and pharmaceutical communities largely concluded that KRAS could not be targeted directly.</p>
+
+<p>That changed in 2013 when a team at the University of California San Francisco identified a small groove — called the switch II pocket — that is accessible on the G12C mutant form of KRAS when the protein is in its inactive state. This opened the door to a new generation of drugs — and eventually to daraxonrasib.</p>
+
+<p class="source-note">&#9432; <strong>Facts sourced:</strong> KRAS mutation frequency in pancreatic cancer (&gt;90%): <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11055996/" target="_blank" style="color:var(--accent)">PMC11055996</a>. KRAS identified as human oncogene in 1982: Der CJ et al., Science 1982. Switch II pocket discovery: Ostrem JM et al., Nature 2013. Undruggable characterisation: Signal Transduction and Targeted Therapy, Nature 2021 (<a href="https://www.nature.com/articles/s41392-021-00780-4" target="_blank" style="color:var(--accent)">s41392-021-00780-4</a>). Comprehensive PDAC review: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11055996/" target="_blank" style="color:var(--accent)">PMC11055996</a>.
+&nbsp;&middot;&nbsp; <strong>Plain-language explanations</strong> (light switch analogy, gas pedal analogy): author's original writing based on cited sources, not extracted from any source document.
+&nbsp;&middot;&nbsp; <span style="color:var(--pos);font-weight:700">Sources verified May 31, 2026</span></p>
+
+
+<!-- ── YOUR MUTATION ── -->
+<h2>Does This Apply to You? — Understanding Your Test Results</h2>
+
+<p>If you have pancreatic cancer, your tumour may have been tested for gene mutations. The most important thing to understand is which KRAS mutation your tumour carries — because different drugs target different mutations.</p>
+
+<div class="callout callout-warn">
+  <div class="callout-label">Ask Your Doctor</div>
+  <p>If you have not had molecular testing of your tumour, ask your oncologist about it. Knowing your KRAS mutation status determines which treatments you may be eligible for — including clinical trials.</p>
+</div>
+
+<table class="drug-table">
+  <thead>
+    <tr>
+      <th>Mutation</th>
+      <th>How Common in Pancreatic Cancer</th>
+      <th>What It Means for Treatment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>KRAS G12D</strong></td>
+      <td>35–44% of patients</td>
+      <td>Targeted by daraxonrasib (Phase 3 ✓) and zoldonrasib (Phase 1 — promising early results). Most common mutation in pancreatic cancer.</td>
+    </tr>
+    <tr>
+      <td><strong>KRAS G12V</strong></td>
+      <td>20–34% of patients</td>
+      <td>Targeted by daraxonrasib (Phase 3 ✓). Second most common.</td>
+    </tr>
+    <tr>
+      <td><strong>KRAS G12R</strong></td>
+      <td>10–20% of patients</td>
+      <td>Targeted by daraxonrasib (Phase 3 ✓).</td>
+    </tr>
+    <tr>
+      <td><strong>KRAS G12C</strong></td>
+      <td>1–3% of patients</td>
+      <td>Targeted by sotorasib and adagrasib — both FDA approved in lung cancer, active in Phase 1/2 for pancreatic cancer.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Important:</strong> the Phase 3 daraxonrasib trial enrolled patients with all KRAS mutations — not just one specific type. This is significant because it means the majority of pancreatic cancer patients could potentially benefit, not just those with a rare subtype.</p>
+
+<p>If your tumour has a <strong>KRAS G12C mutation or is KRAS wild-type</strong> (no KRAS mutation), other targeted options and trials exist — ask your oncologist specifically about those and whether additional molecular tests are appropriate for your situation.</p>
+
+<p style="font-family:var(--mono);font-size:10px;color:var(--text-lt);margin-top:4px">
+&#9432; Mutation frequency ranges vary by study and patient population. G12D: 35–44%; G12V: 20–34%; G12R: 10–20% — figures drawn from
+<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11055996/" target="_blank" style="color:var(--accent)">PMC11055996</a>
+(2024 comprehensive review),
+<a href="https://www.nature.com/articles/s41698-024-00505-0" target="_blank" style="color:var(--accent)">npj Precision Oncology 2024</a>
+(MD Anderson 803 patients), and OncLive 2026. G12C: 1–3% consistently across studies.
+&nbsp;&middot;&nbsp; <span style="color:var(--pos);font-weight:700">Sources verified May 31, 2026</span>
+</p>
+
+<p class="source-note">&#9432; Sources: Witkiewicz AK et al., Nat Commun 2015; PMC11055996; Revolution Medicines RASolute 302 press release April 13, 2026 &nbsp;&middot;&nbsp; <span style="color:var(--pos);font-weight:700">Sources verified May 31, 2026</span></p>
+
+
+<!-- ── THE DRUGS ── -->
+<h2>The Drugs in Development — Where Things Stand</h2>
+
+<p>There are now several drugs targeting KRAS in pancreatic cancer at different stages of development. Here is a plain-language summary of the most important ones.</p>
+
+<table class="drug-table">
+  <thead>
+    <tr>
+      <th>Drug Name</th>
+      <th>How It Is Taken</th>
+      <th>Stage</th>
+      <th>What the Results Show</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <div class="drug-name-cell">Daraxonrasib</div>
+        <div style="font-family:var(--mono);font-size:10px;color:var(--text-lt)">RMC-6236 &middot; Revolution Medicines</div>
+      </td>
+      <td>Oral pill, once daily</td>
+      <td><span class="drug-stage stage-green">Phase 3 — completed ✓</span></td>
+      <td>13.2 vs 6.7 months median overall survival in previously treated patients (HR 0.40, p&lt;0.0001). NDA submission to FDA intended under the Commissioner's National Priority Voucher pathway. No filing date publicly announced. Expanded access programme open as of May 1, 2026.</td>
+    </tr>
+    <tr>
+      <td>
+        <div class="drug-name-cell">Zoldonrasib</div>
+        <div style="font-family:var(--mono);font-size:10px;color:var(--text-lt)">RMC-9805 &middot; Revolution Medicines</div>
+      </td>
+      <td>Oral pill, once daily</td>
+      <td><span class="drug-stage stage-amber">Phase 1/1b — enrolling</span></td>
+      <td>30% of patients had their tumours shrink. 80% had their disease controlled. Specifically targets the G12D mutation (the most common in pancreatic cancer). FDA Breakthrough Therapy Designation granted January 2026.</td>
+    </tr>
+    <tr>
+      <td>
+        <div class="drug-name-cell">Sotorasib</div>
+        <div style="font-family:var(--mono);font-size:10px;color:var(--text-lt)">Lumakras &middot; Amgen</div>
+      </td>
+      <td>Oral pill, once daily</td>
+      <td><span class="drug-stage stage-blue">Phase 1/2 in PDAC</span></td>
+      <td>21% response rate, 84% disease control in G12C pancreatic cancer (rare — only 1–3% of patients). Already FDA approved for G12C lung cancer.</td>
+    </tr>
+    <tr>
+      <td>
+        <div class="drug-name-cell">Adagrasib</div>
+        <div style="font-family:var(--mono);font-size:10px;color:var(--text-lt)">Krazati &middot; Mirati/BMS</div>
+      </td>
+      <td>Oral pill, twice daily</td>
+      <td><span class="drug-stage stage-blue">Phase 1/2 in PDAC</span></td>
+      <td>33% response rate, 81% disease control in G12C pancreatic cancer (21 patients, KRYSTAL-1 updated dataset). An earlier cohort of 10 evaluable patients showed 50%/100% — that number is real but from a very small cut. Larger dataset used here. G12C patients only.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="source-note">&#9432; Sources: NEJM 388:33 (2023) sotorasib PDAC CodeBreak 100 (n=38); KRYSTAL-1 updated PDAC dataset ASCO 2023 Abstract 425082 (n=21, ORR 33%, DCR 81%); earlier KRYSTAL-1 cohort JCO 2022;40(4_suppl):519 (n=10, ORR 50%, DCR 100%); OncLive October 2024 zoldonrasib PDAC (n=40, ORR 30%, DCR 80%, data cutoff Sep 2, 2024); CancerNetwork January 2026 zoldonrasib BTD; Revolution Medicines press releases &nbsp;&middot;&nbsp; <span style="color:var(--pos);font-weight:700">Sources verified May 31, 2026</span></p>
+
+
+<!-- ── WHAT THIS MEANS FOR YOU ── -->
+<h2>What Does This Mean for You?</h2>
+
+<p>This depends on where you are in your treatment journey. Three situations:</p>
+
+<h3>If you have already had first-line chemotherapy and your cancer has progressed</h3>
+
+<p>This is the patient population that the Phase 3 daraxonrasib trial enrolled. The drug is not yet FDA approved. Revolution Medicines has announced its intention to submit a New Drug Application to the FDA under the Commissioner's National Priority Voucher pathway — a programme designed to accelerate review of treatments for high-priority health conditions. The FDA approved a two-day turnaround on Revolution Medicines' expanded access request on April 30, 2026, signalling urgency. No NDA submission date or expected approval date has been publicly announced by the company or the FDA as of this report.</p>
+<p class="source-note">&#9432; Sources: Revolution Medicines press release April 13, 2026 — NDA intent under CNPV; FDA.gov May 1, 2026 — expanded access safe-to-proceed letter; OncLive May 2026 — CNPV pathway and Breakthrough Therapy Designation; PanCAN pancan.org April 2026 — expanded access programme announcement. No publicly stated NDA submission date or approval date as of May 31, 2026. &nbsp;&middot;&nbsp; <span style="color:var(--pos);font-weight:700">Sources verified May 31, 2026</span></p>
+
+<p>In the meantime, ask your oncologist whether you are eligible for a clinical trial of daraxonrasib or zoldonrasib. Clinical trials are often the best way to access new drugs before approval.</p>
+
+<h3>If you are currently on first-line chemotherapy</h3>
+
+<p>Daraxonrasib is also being studied as a first-line treatment — before chemotherapy. Early data presented at the AACR 2026 conference showed activity in previously untreated patients. A separate Phase 3 first-line trial for zoldonrasib in G12D-mutated PDAC — called RASolute 305 — was initiated in early 2026. Your oncologist can tell you whether any first-line clinical trial might be appropriate for your situation.</p>
+<p class="source-note">&#9432; Sources: OncLive May 2026 — daraxonrasib first-line AACR 2026 data; Revolution Medicines February 25, 2026 financial results (SEC filing) — RASolute 305 initiated for zoldonrasib first-line G12D PDAC; ClinicalTrials.gov &nbsp;&middot;&nbsp; <span style="color:var(--pos);font-weight:700">Sources verified May 31, 2026</span></p>
+
+<h3>If you have just been diagnosed</h3>
+
+<p>Ask your oncologist to arrange <strong>molecular testing</strong> of your tumour. Knowing your KRAS mutation status before you start any treatment gives you the most options — including eligibility for targeted therapies and clinical trials that may not be available without a confirmed mutation profile.
+PanCAN's free <a href="https://www.pancan.org/facing-pancreatic-cancer/learn-about-pancreatic-cancer/know-your-tumor/" target="_blank" style="color:var(--accent)">Know Your Tumor®</a> programme can arrange comprehensive molecular testing and help interpret the results in the context of available treatments.
+</p>
+
+<div class="callout callout-pos">
+  <div class="callout-label">The Most Important Thing You Can Do Today</div>
+  <p>Ask your oncologist: <em>"Has my tumour been tested for KRAS mutations, and am I eligible for any clinical trials of KRAS inhibitors?"</em> If you have not had molecular testing, ask for it specifically. If your oncologist is not familiar with these trials, a second opinion at a National Cancer Institute (NCI) designated comprehensive cancer centre can help —
+  <a href="https://www.cancer.gov/research/infrastructure/cancer-centers/find" target="_blank" style="color:var(--pos)">find an NCI cancer centre near you</a>.</p>
+</div>
+
+
+<!-- ── QUESTIONS TO ASK ── -->
+<h2>Questions to Ask Your Oncologist</h2>
+
+<ul class="question-list">
+  <li>Has my tumour been tested for KRAS mutations? What mutation do I have?</li>
+  <li>Am I eligible for daraxonrasib — either through the expanded access programme now, through a clinical trial, or once it receives FDA approval?</li>
+  <li>Is there a clinical trial of a KRAS inhibitor I could join at this stage of my treatment?</li>
+  <li>Should I be seen at an NCI-designated comprehensive cancer centre that specialises in pancreatic cancer?</li>
+  <li>What is my BRCA status? Olaparib (Lynparza) is
+  <a href="https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-olaparib-gbrcam-metastatic-pancreatic-adenocarcinoma" target="_blank" style="color:var(--accent)">FDA approved since December 2019</a>
+  as maintenance treatment for germline BRCA-mutated metastatic pancreatic cancer that has not progressed on at least 16 weeks of first-line platinum chemotherapy.</li>
+  <li>Are there any other molecular markers in my tumour — MSI-H, NTRK, HER2 — that might open additional treatment options?</li>
+</ul>
+
+
+<!-- ── WHAT IS A CLINICAL TRIAL ── -->
+<h2>What Is a Clinical Trial?</h2>
+
+<p>A clinical trial is a carefully supervised research study that tests whether a new treatment is safe and effective. Trials have phases:</p>
+
+<ul>
+  <li><strong>Phase 1</strong> — a small number of patients, focused on safety and finding the right dose. Often the first time a drug has been given to humans.</li>
+  <li><strong>Phase 2</strong> — a larger group, looking at whether the drug works and gathering more safety data.</li>
+  <li><strong>Phase 3</strong> — a large, randomised trial comparing the new drug directly against the current standard of care. This is what daraxonrasib just completed — and passed.</li>
+</ul>
+
+<p>Joining a clinical trial is not a last resort. For many patients with pancreatic cancer, a clinical trial is the best available option — it provides access to drugs that are not yet commercially available and is supervised by specialists who focus specifically on your cancer type.</p>
+
+<p>To find trials you may be eligible for, visit <strong>clinicaltrials.gov</strong> and search for "pancreatic cancer KRAS." You can filter by your location and stage.</p>
+
+
+<!-- ── RESOURCES ── -->
+<h2>Where to Get More Help</h2>
+
+<div class="resource-grid">
+  <div class="resource-card">
+    <div class="resource-name">Pancreatic Cancer Action Network (PanCAN)</div>
+    <div class="resource-desc">Free case management services, clinical trial matching, and patient navigation. pancan.org &middot; 1-877-272-6226</div>
+  </div>
+  <div class="resource-card">
+    <div class="resource-name">Lustgarten Foundation</div>
+    <div class="resource-desc">Research funding and patient resources specifically for pancreatic cancer. lustgarten.org</div>
+  </div>
+  <div class="resource-card">
+    <div class="resource-name">ClinicalTrials.gov</div>
+    <div class="resource-desc">Official US registry of all clinical trials. Search "pancreatic cancer KRAS" to find open trials near you. clinicaltrials.gov</div>
+  </div>
+  <div class="resource-card">
+    <div class="resource-name">NCI Cancer Centers</div>
+    <div class="resource-desc">National Cancer Institute list of designated cancer centres with specialist expertise. cancer.gov/research/infrastructure/cancer-centers</div>
+  </div>
+  <div class="resource-card">
+    <div class="resource-name">Know Your Tumor&reg; (PanCAN)</div>
+    <div class="resource-desc">PanCAN's molecular profiling service — arranges comprehensive tumour testing and interprets results in the context of treatment options.</div>
+  </div>
+  <div class="resource-card">
+    <div class="resource-name">Revolution Medicines — RASolute 302</div>
+    <div class="resource-desc">Information about the daraxonrasib Phase 3 trial and upcoming trials. revmed.com</div>
+  </div>
+</div>
+
+
+<!-- ── SOURCES ── -->
+<h2>Sources</h2>
+<p style="font-family:var(--mono);font-size:10px;color:var(--text-lt);line-height:2.1">
+  Revolution Medicines press release, April 13, 2026 — RASolute 302 Phase 3 topline results; NDA intent under CNPV<br>
+  Revolution Medicines Q4/FY2025 financial results, February 25, 2026 (SEC) — RASolute 305 initiated for zoldonrasib first-line G12D PDAC<br>
+  Revolution Medicines press release, January 8, 2026 — Zoldonrasib FDA Breakthrough Therapy Designation<br>
+  Revolution Medicines press release, October 25, 2024 — Zoldonrasib Phase 1 PDAC data (ORR 30%, DCR 80%, n=40, data cutoff Sep 2, 2024)<br>
+  Wolpin BM et al., N Engl J Med 2026;394:1790–1802 — daraxonrasib Phase 1/2 in PDAC<br>
+  Strickler JH et al., N Engl J Med 2023;388:33–43 — sotorasib in G12C PDAC (CodeBreak 100, n=38, ORR 21%, DCR 84%)<br>
+  KRYSTAL-1 updated dataset, ASCO 2023 Abstract 425082 — adagrasib in G12C PDAC (n=21, ORR 33%, DCR 81%)<br>
+  OncLive / CancerNetwork / Targeted Oncology, May 2026 — ASCO 2026 daraxonrasib coverage<br>
+  FDA.gov May 1, 2026 — expanded access safe-to-proceed letter for daraxonrasib<br>
+  PanCAN pancan.org April 2026 — expanded access programme announcement<br>
+  PanCAN press release January 16, 2025 — 5-year survival rate 13%; 67,440 diagnoses, 51,980 deaths in 2025<br>
+  American Cancer Society Cancer Statistics 2025 — pancreatic cancer incidence, mortality, survival rates<br>
+  PMC11055996 — Targeting KRAS in pancreatic cancer, 2024 comprehensive review; mutation frequencies G12D 44%, G12V 34%, G12R 20%<br>
+  npj Precision Oncology 2024 (s41698-024-00505-0) — MD Anderson 803-patient study; G12D 35%, G12V 20–30%, G12R 10–20%<br>
+  OncLive 2026 — KRAS mutation frequency in PDAC<br>
+  Signal Transduction and Targeted Therapy, Nature 2021 (s41392-021-00780-4) — KRAS history, undruggable characterisation<br>
+  Der CJ et al., Science 1982 — KRAS identified as human oncogene<br>
+  Ostrem JM et al., Nature 2013 — switch II pocket discovery<br>
+  Conroy T et al., N Engl J Med 2011;364:1817 — FOLFIRINOX vs gemcitabine, median OS 11.1 vs 6.8 months<br>
+  Von Hoff DD et al., N Engl J Med 2013;369:1691 — nab-paclitaxel + gemcitabine, median OS 8.5 vs 6.7 months; FDA approved 2013<br>
+  FDA approval olaparib (Lynparza), December 27, 2019 — germline BRCA-mutated metastatic pancreatic adenocarcinoma maintenance; POLO trial PFS 7.4 vs 3.8 months, no OS benefit<br>
+  ClinicalTrials.gov NCT06625320 (RASolute 302) &middot; NCT06040541 (zoldonrasib)
+</p>
+
+</div><!-- end body-wrap -->
+
+
+
+<div class="footer">
+  <div class="footer-inner">
+    <div class="footer-disclaimer">
+      <strong>Important:</strong> This report is for information and education only. It is not medical advice and should not be used to make treatment decisions. Every person's cancer and situation is different. Please discuss the information here with your oncologist before taking any action.
+    </div>
+    <div class="free-band-inner" style="margin:16px 0;">
+      <div class="free-band-rule"></div>
+      <p class="free-band-text">
+        Share it, print it, pass it on. Licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"
+        style="color:var(--accent);font-style:normal;font-family:var(--mono);font-size:11px">CC BY 4.0</a>
+        — free to use, reprint, and adapt with attribution.
+      </p>
+      <div class="free-band-rule"></div>
+    </div>
+    <div>
+      Pancreatic Cancer &middot; KRAS Inhibition Patient Brief &nbsp;&middot;&nbsp; May 31, 2026 &nbsp;&middot;&nbsp;
+      &copy; 2026 Randy Hinton &nbsp;&middot;&nbsp;
+      <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"
+         style="color:var(--accent)">CC BY 4.0</a>
+      &nbsp;&middot;&nbsp;
+      Free to use, reprint, and adapt with attribution &nbsp;&middot;&nbsp;
+      Sources: NEJM &middot; OncLive &middot; CancerNetwork &middot; ClinicalTrials.gov &middot; Revolution Medicines
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

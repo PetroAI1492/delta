@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Chokepoints</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:       #0f1117;
+    --surface:  #171b24;
+    --border:   #252b38;
+    --text:     #d4d8e2;
+    --muted:    #6b7280;
+    --accent:   #3b82f6;
+    --high:     #ef4444;
+    --medium:   #f59e0b;
+    --low:      #10b981;
+    --heading:  #f1f5f9;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: linear-gradient(135deg, #0a0e1a 0%, #0f1928 60%, #0a1520 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 32px 48px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 10% 50%, rgba(59,130,246,0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 90% 20%, rgba(239,68,68,0.06) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .masthead-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .masthead-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .masthead h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(22px, 3vw, 32px);
+    color: var(--heading);
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .masthead-sub {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .masthead-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    text-align: right;
+    line-height: 1.8;
+  }
+
+  /* ── SUMMARY BAR ── */
+  .summary-bar {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 24px;
+  }
+  .summary-item {
+    flex: 1;
+    padding: 12px 20px;
+    border-right: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+  }
+  .summary-item:last-child { border-right: none; }
+  .summary-val {
+    font-family: 'DM Mono', monospace;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--heading);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .summary-label {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── MAIN CONTENT ── */
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 48px 64px;
+  }
+
+  /* ── CHOKEPOINT CARD ── */
+  .chokepoint-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .chokepoint-card:hover { border-color: #353d52; }
+
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid var(--border);
+    gap: 16px;
+  }
+  .card-title-block h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    color: var(--heading);
+    margin-bottom: 6px;
+  }
+  .why-text {
+    font-size: 12px;
+    color: var(--muted);
+    max-width: 600px;
+    line-height: 1.5;
+  }
+  .stress-block {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .stress-score {
+    font-family: 'DM Mono', monospace;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 2px;
+  }
+  .stress-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .stress-sub {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── TABLE ── */
+  .table-wrap { overflow-x: auto; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  thead {
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid var(--border);
+  }
+  thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  tbody tr {
+    border-bottom: 1px solid rgba(37,43,56,0.6);
+    transition: background 0.15s;
+  }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: rgba(255,255,255,0.02); }
+  tbody td {
+    padding: 10px 16px;
+    vertical-align: top;
+  }
+  .col-time  { width: 140px; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); white-space: nowrap; }
+  .col-headline { min-width: 280px; }
+  .col-headline a { color: var(--text); text-decoration: none; line-height: 1.4; }
+  .col-headline a:hover { color: var(--accent); }
+  .col-source { width: 140px; font-size: 12px; color: var(--muted); }
+  .col-cats  { width: 200px; }
+  .col-signal { width: 90px; text-align: center; }
+  .no-data { padding: 20px 16px; color: var(--muted); font-style: italic; text-align: center; }
+
+  /* ── BADGES ── */
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .badge-high   { background: rgba(239,68,68,0.15);   color: #ef4444; border: 1px solid rgba(239,68,68,0.3);   }
+  .badge-medium { background: rgba(245,158,11,0.15);  color: #f59e0b; border: 1px solid rgba(245,158,11,0.3);  }
+  .badge-low    { background: rgba(16,185,129,0.12);  color: #10b981; border: 1px solid rgba(16,185,129,0.25); }
+
+  /* ── CATEGORY TAGS ── */
+  .cat {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 10px;
+    margin: 1px 2px 1px 0;
+    white-space: nowrap;
+  }
+  .cat-energy   { background: rgba(251,191,36,0.1);  color: #fbbf24; }
+  .cat-maritime { background: rgba(59,130,246,0.1);  color: #60a5fa; }
+  .cat-geo      { background: rgba(239,68,68,0.1);   color: #f87171; }
+  .cat-infra    { background: rgba(167,139,250,0.1); color: #a78bfa; }
+  .cat-other    { background: rgba(107,114,128,0.1); color: #9ca3af; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 20px 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  @media (max-width: 768px) {
+    .masthead, .content { padding-left: 20px; padding-right: 20px; }
+    .card-header { flex-direction: column; }
+    .stress-block { text-align: left; }
+    .masthead-top { flex-direction: column; }
+    .masthead-meta { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="masthead-top">
+      <div>
+        <p class="masthead-sub">Global Petroleum Intelligence</p>
+        <h1>Chokepoint Signal Dashboard</h1>
+      </div>
+      <div class="masthead-meta">
+        Generated: June 09, 2026  12:15 UTC<br>
+        Window: Last 24 hours<br>
+        Logic: Deterministic · No AI inference
+      </div>
+    </div>
+    <div class="summary-bar">
+      <div class="summary-item">
+        <div class="summary-val">6</div>
+        <div class="summary-label">Chokepoints Monitored</div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-val">76</div>
+        <div class="summary-label">Signals Detected</div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-val" style="color:#ef4444">3</div>
+        <div class="summary-label">High Severity</div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-val" style="color:#f59e0b">1</div>
+        <div class="summary-label">Elevated Zones</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+  
+        <section class="chokepoint-card">
+          <div class="card-header">
+            <div class="card-title-block">
+              <h2>Strait of Hormuz</h2>
+              <p class="why-text">Moderate signal activity. Emerging monitoring conditions.</p>
+            </div>
+            <div class="stress-block">
+              <div class="stress-score" style="color:#e67e22">36</div>
+              <div class="stress-label" style="color:#e67e22">MODERATE</div>
+              <div class="stress-sub">24h Stress Index</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th class="col-time">Published</th>
+                  <th class="col-headline">Headline</th>
+                  <th class="col-source">Source</th>
+                  <th class="col-cats">Categories</th>
+                  <th class="col-signal">Signal</th>
+                </tr>
+              </thead>
+              <tbody>
+            <tr>
+              <td class="col-time">2026-06-09 08:39 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiigJBVV95cUxNNnFBQWM5Z19sT24tV19YTGptNHRtRUhJLWNjX2E5YklIWndpTi10OWN3SDhpUmM5bEVIV2hfMVRUYVE4MkI2SGVyVURlRVhRelRZTkZzVlpRbWh1a0N4SVQ4TEM1R1hGdWRtQ2lOMlN4Yk1ZeFU3c3o4RVlwYWh1RWpNY0tkN2pzYzM4WlZQdzBfS3JLa3VtSXdNS1ItVDhvYmF6RzZ2R1ZnOEZEc3BQVVNNSjMxSjdWV1FHVTVwQ2VWMUk0OExQb2RKc3dJYlNiN1hNb3dVekNTYkdxZXJvLWR0eXZQVTQxNDJMWmZjOEZPaHp6UldURjliQ3hkRzdGZE9jdFZYTEtVZ9IBjwJBVV95cUxPZm5IMWtucVM2RVFkT2wweTU3eGh3c19rNW5VTWF0a3hBMTFpR0NkMlJOSEdjN015a1NpLTVZNnozWVRQWmlGU1UtWWNHaDlaZEUwaXhISU84RGxQeGYzbXFGX05ISkdiN3I1OHUzdXhHWmphbFg3anNNenhVMDhFQWxIdlZEVS1SR0JWZ1JNSC1aRmQwd3gxUzQ4ZjJQZVB4Ni1DMjBEeV94LVBRMWMxT3dzanB0Q3VXdTlOM29kUnZQN0I1VmdVWmJHQTNQalczN3h4eTRsejV2VGIwbjBDY20xVHZaWnFhY1VQVno2eHpoeElvOF9TUmdTbVM0STFxZ0tGR0dWUDhPVTZ0UjZN?oc=5" target="_blank" rel="noopener">Strait of Hormuz closure: Why high oil prices may be a temporary shock only - explained - The Times of India</a></td>
+              <td class="col-source">The Times of India</td>
+              <td class="col-cats"><span class="cat cat-energy">Energy Markets</span></td>
+              <td class="col-signal"><span class="badge badge-high">HIGH</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 11:46 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMi2gFBVV95cUxQem5JYXZBOTRwdlJoNFB0Y293ZGtodzJpbldQclAwVnlvclpJZDV1M1dndVJhbmVZSTNxS21RZ3hVdWM2SXFIOEhCSTBPYmtKX2NuTFdOcTVwZFQwekdvMURZQnRfdzJ2WGJQTzJ1NV9pZVJTaFBnUWtxcXZEbnZBSTJRY196X0NVcHU2bms5akN4cDlwUzhwNXVGU0NYcEM5LUhIaHFOaEZBYXVXMUZlNl9yWU1rLTdaVnIxTXZLaVhaWGp5NENxSS1hX2REM2RyWkw5RUxTMk5zd9IB3wFBVV95cUxObFZHRW1DSDgtdDZTVmt1cFVrLUNnSkJjcnlyNlBfSDlGTWdnVDEzZVNQV25GLVhYeVpNenVEV0toSmF2dDJUdVBSNVQ0SWxxQnFkVVlKbnlLNzhlN0kxRjQ0aXItTWVKR1JsZW1YMVduZ1l1RUNjN0lNYk9IS1dhTWU0dURZWVNZX2lUUmc3Ui1kSEc4eW1FcFg0eGNlUlZ3TXdMcVdfUEdCRE1ZQzhmeFRsdVV0WXFNeTZBRVZPbHZmcXMxRUR5Wi1nbk1SdC12Ml93bGZMVVVDaEVkNTVR?oc=5" target="_blank" rel="noopener">US Navy drone rescues Apache helicopter crew after crash in Strait of Hormuz, Trump says - Malay Mail</a></td>
+              <td class="col-source">Malay Mail</td>
+              <td class="col-cats"><span class="cat cat-geo">Geopolitics / Security</span></td>
+              <td class="col-signal"><span class="badge badge-high">HIGH</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 10:25 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxPX29vcEFLTnlSdVpGcl84TFZFRkRMX3dmaDF3MGVOSkU4S3I3UnFNMkh0blhSb2kwLXJBbnIxeXVVbDV0Vnp0MFc4RUZrTENjUlZnTWd3S1NEY1pKU3hqbnRVLUN4NURuQTg1V0dQUG9RMWpKQm1qYUhBaHJmUThTT1V2T2RYY2RWRlAyVEJVMUtweTZjeTlZV0lvU3piMlIxd1pFcDgwVEdpWUxWcV9z?oc=5" target="_blank" rel="noopener">AM Markets Need to Know: Strait of Hormuz disruptions, OpenAI IPO, and more (SP500:) - Seeking Alpha</a></td>
+              <td class="col-source">Seeking Alpha</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-medium">MEDIUM</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 09:22 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMi0wFBVV95cUxNakZKaVNRdXJsTEhUSE9waXhFTVpYWGtMQWk1em1rS2YwSmhfNHJNNkt4NzNhbjJhQTJEdGFKWUR3eng4Z0RzaE1DNXNhUm8wc3RZZDEwVmZXYVZ6UUkzMGI2VEQxZ0gxWDFqa2dLMEdUUm05TXZMOHRBbmJsLVdMTlpJZ2czdjdmaC1waExvcFE1UkpzX2RfcmdPREx2MmtpbFdUeG5qY1ItNExFc2JLQnVQaXAxZkdUZ284Nlp4QUJRcnpRMkt4bnFjRVU2TWE5a3hV0gHYAUFVX3lxTE1LNjRXSnZZdUtSOFlNOThJY0p2N1FNUkRpUXdjY1p2YWNnR21fVTZjanpZYVcwbXBtSFVvMlZJcGt3V3NabDZSV1BDSnpQa1k0TElidUNIT3ZNaDc5OTVBMTFZWUt2d1dST08wcVhuamhRWllaSEdMWmxzbDhfLS1RY3pYVWxqMFJzNXRLdmphbVNHRlo1b1BFZE9KUXJoOE8wMGZFUG84N3Y0cUk3RmNpVEw0THBRaVJsOURnVWNUZC01QTJieFhVcld1LUhIX20xdGszMjdObQ?oc=5" target="_blank" rel="noopener">Should Strait of Hormuz Fertilizer Disruptions and Cheap US Gas Require Action From CF (CF) Investors? - simplywall.st</a></td>
+              <td class="col-source">simplywall.st</td>
+              <td class="col-cats"><span class="cat cat-energy">Energy Markets</span></td>
+              <td class="col-signal"><span class="badge badge-medium">MEDIUM</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 11:29 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxOWW5XbmdxRXY4ZzkyRFltQm50eXk5UTZBNy1remRvREZMZURwX2dSTHRUU1FJOTdqNnVLMmJDdThGaE8zZEpubThhNE54c3JGMnJWbjBVV2hQbnVWV0RFYnp4Rm41b3o3Z1R4bURLa0pvZHAwMVZZLU1sQVh2TTljWHBIc01pejZsSGc?oc=5" target="_blank" rel="noopener">Crew Is Rescued After U.S. Helicopter Goes Down Near Strait of Hormuz - The New York Times</a></td>
+              <td class="col-source">The New York Times</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 07:40 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE1ma0UxSVVRSVlHV09ObTZzVjIwV2dNcTZCVTA1ZzNlZTMyNHdyaHdjZHd1ZU9nZ0JWbnBEYl9ZTTFzazZBUDcxSHNkcEExNW1mMC02dklIVWVxc29IaTY2Q2Z5c3hKa3NDS1lBYnhB0gFzQVVfeXFMUDdQVldkVzBhcDVzcWFXeG00dW9kaHA2aDBSZGp1Zk96MzZWMFlDd040d3hvaGFldFEzVGUya3BhUmVWWXV1RFBqZlRndnBEbnZHZzB1NVZMWUJObV91dWktSG00UEtMX2F5Y0hINGk2WlEyTQ?oc=5" target="_blank" rel="noopener">Trump says Iran deal could be reached in 'two or three days' and Strait of Hormuz will reopen 'immediately' - CNBC</a></td>
+              <td class="col-source">CNBC</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 12:03 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxOUDZqWXQxNGRlaFJpNDlfVUhQNWN2bHhvWkJVRTlsWEVwSzg1Z08ySGpRT2VJRmJjYkw5bjVqc2ktOFhHTnh4SDhWSnl4aG51QUZBUnBUMXBBU2RkVDY0QjZsS01KOFl0MmRrMTJpbjVvWTc1c1hxcTd5N3BNSlVSSE5YUFVzc2xvYk1nYlg5NmI3bEphRzQzWWhxOHU?oc=5" target="_blank" rel="noopener">U.S. investigating Apache crash near Strait of Hormuz after military's first sea drone rescue - CBS News</a></td>
+              <td class="col-source">CBS News</td>
+              <td class="col-cats"><span class="cat cat-geo">Geopolitics / Security</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 11:51 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxNTXlDTUphdmtWNnJYbW45RjJOYUYyVlVicFZtbTdFbVp5X3N4aS0tdFlxVE9zMDV6cU9JRGptX3RhYkI5cGx2WElrVlRwNWdROEpBaXJ0WXZfRWQ3QWhPclV4czVKOFNwcktHejdCcWtyanpEaWVVX3NGZi1qb1RMYjZtbE1ZM0FDVDdnbjB1QVpvZ2toR1I3bkQ0akVBdm55N0dQQm1FYXRLd9IBrwFBVV95cUxNSERoTVlBdVFtd3U3ekxNSjA0S1lFVGJCSm5fTzdXYUNCOXpXNkk4RUJjcE9Zc3BjT1BnZ0FQanVWRDlEbW9obi16eTh4cmdDMzBqZFByTUVwWDZrNGtKSlgyNGhmVkxxNUVTSnhfRkU5N3g0NWx0d29DbVZFNDZXY0M1aXFVcTk4TmdrYTdoX2Y5UEEzM2tDZ1JXNG81MnNFQ1QwVENFMkpFRUxVWmkw?oc=5" target="_blank" rel="noopener">Trump says pilots ‘fine’ after helicopter crash near Strait of Hormuz - The Hill</a></td>
+              <td class="col-source">The Hill</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 11:25 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMi9AJBVV95cUxNSWJZOWN1NWpVbi0wWFpoREE5ZGFMcUdoVW1LSzJXRUZOaTlaQm5Xd1ZUdFF3ZHYzSXZxUFNLdjhKREZkbV9qVDNwd3lMd3hGY0lyekx5QXA1SlRnZ1NyT2xnZFIwYnp3bVp1RFR2QUVMbjNLWi0zTUwxQy1MTjVqR2tSMUhHSV9LcG9EMmdDSGxmSWQ4dTF3X0JnOVVNbTZya3MwSE5aUjF2VWowT0wwcnpveWFTcWhwcnJidkJKYWxVU2FPMDJUWmZNT2UxMGxyMFNTVWtlNDNiczZ4a2pKVUxQRUw4SUphYVZCLW5SSW1PT1Naa2dIdmRfcWc1NWQwOXlsR0pzR2NwRUN1WlNxMGQwcEhzclVIZElsZmVBRDE3RlVRNmlqR3RPNnFtR1NWbE9yREpGbm1BSE9pMDVtdWs0OWFCdkxyRjZyN2JFd1lSMXRzNW9vYjN0emZfT2wtYUZ1Q3VFQXdWT2pCcmZFMFpaVjk?oc=5" target="_blank" rel="noopener">Trump: Apache crew safe after US helicopter crash near Strait of Hormuz - KOMO</a></td>
+              <td class="col-source">KOMO</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 08:00 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxOUXhQTEFIM2dZMHZWS3VJWVFsdW9mR2QtQmVXQXpGX2RROWZmaVZGRFBKMzlTcm9JTHNCcHQzQTNBNk81QjJhSnpYZTYxUkZ1M2Y0U0RwdzlCVi0yNTZnTEJzdnQ1OW1qblFSSkNxMjMzc2hmZDhBaGRPZWNzQ2tmSmZn?oc=5" target="_blank" rel="noopener">The Strait of Hormuz is ‘leaking’ oil - CNN</a></td>
+              <td class="col-source">CNN</td>
+              <td class="col-cats"><span class="cat cat-energy">Energy Markets</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 05:58 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxOWGZKeW81Zk5SeFFRa0s2TWRGZWR4czJsM1ZkUlR4M0xMbWdpNER1UndNRFJmTEtYZEZST0JQSUtCemFXQjN2Z3R4ZnUzemZadUYwakxFTWUyY0ZCZWpQWFhLa1Y4NjN2T1MtTW1XMU1OYTE5M3hwUEpZZ3dOXzlobUVzazRrM3ZyOEhiWUdyM2JUdkRINVZJREFUWDFLSG5hUGRjWGhIX1JnbUdqTHNYUGY1R1ZqdDNMa0hybkptaw?oc=5" target="_blank" rel="noopener">US helicopter crew who went down in Strait of Hormuz rescued by drone - Reuters</a></td>
+              <td class="col-source">Reuters</td>
+              <td class="col-cats"><span class="cat cat-geo">Geopolitics / Security</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 06:01 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxQaHNnOE1XRjhhSXRKMDdRby1fRElpUWQxRFJyV1lqZmVWZlhwQ0ZXYlVCdDZoWVEzY3AzQTZreGllM0l5U0Q3TGN1YlR5UkJKdzhWdjNrM2FidENXRGhLblZ6NUdGR1lTMmlrVHZCOXpXRC1RTHY3Rk1xWnVRZEZvaFE3WVNXMm5jRHZOaDNYMW9QQTVqcE02Y3EySU9IbjgyeUxnTnNuWTlGYjA?oc=5" target="_blank" rel="noopener">Strait of Hormuz 'could open in two or three days', Trump claims - Sky News</a></td>
+              <td class="col-source">Sky News</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 11:43 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxNS0lCdGM4alVyQVVLYXZyaWZVX3Fha3NZc1lVdHRwN2lxeV9XVnlDWGV4cURyWDRTeU9rUHE2ajZBUlJQd0dYQW4yR1NBM0poblhmQXhLTkhPMTBUTVRCazJXMllnVGJ5Z3V0dGxYbWRJcDRFUFZrVDBCOWJoMllEeE01YUxOQXFkM2FVVXM0d3BWVGpGMGdwZG5ZYkRabG1KQ05WRWVQdmpMUQ?oc=5" target="_blank" rel="noopener">Two crew members rescued after military helicopter goes down near Strait of Hormuz, U.S. says - NBC News</a></td>
+              <td class="col-source">NBC News</td>
+              <td class="col-cats"><span class="cat cat-geo">Geopolitics / Security</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 05:48 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxOaDFTQ2hNUE5qb24xTS1OMkJ6Rkl1UGE5YXpNOE5UbEdveU9EZ0p3TGVfc2ZCLVNEZ3o2OGtxQk54XzRfYUdoWHZIYi1lWnFoV2RPNFpYa2RVODcwUEwzcDFFd0hreTVJRTJ4cTY0MGMySDFnc0FCbkQ1bzlWSGhoVmxkTQ?oc=5" target="_blank" rel="noopener">Trump says pilots are fine after U.S. helicopter crashes near Strait of Hormuz - NPR</a></td>
+              <td class="col-source">NPR</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 01:30 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxNNFJpQU9nVG5QTlp4TEpydkNEREJPVS1FLUtMQ2hzYVg2cnZEYWc4WDJkcUxyeUp1YWlXRG0tUTE1QTliUmtoR2RIYVRlQzF3aWloa28xdDFXUFhDbzFrNmxnUm52U0FVdzZNVlJYa2NqNzRTRElEbGlGMEYtY1V3MVc5WWNWZE05VVl1Mi1ucFN2UEdJVzJxejBTR0ktQnAyYzZQTTRHTlRkb1k3cVpJYzQyVkkyZE0?oc=5" target="_blank" rel="noopener">Will Iran give up on ceasefire talks as strait of Hormuz blockade continues? - The Guardian</a></td>
+              <td class="col-source">The Guardian</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 10:56 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTFA2eEVCaml0Q2xTVlVnWUwxaFdXOE90Y2NTeGhOZGFnQUZxbEdYeXdMYldndHp5WU9YaG5PX2RsbWdDOThBMzN2eVB2LURMNy0xVkF4YmRCTmtNcnJWa3hZ?oc=5" target="_blank" rel="noopener">US military helicopter crashes near Strait of Hormuz, crew rescued - The Jerusalem Post</a></td>
+              <td class="col-source">The Jerusalem Post</td>
+              <td class="col-cats"><span class="cat cat-geo">Geopolitics / Security</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 08:01 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxQdGQ4ZTRseFdBQ3RnaTZ1Y0hibHNLbU5CeGltdnRrRHVsRE45UkltUURrMUZIUGQ2RW12U3Nqa3NEVzd2QS1xQXVkRTUteFRCWWJNVFJ6TDRzWWNudzF5NFAyNWFPeW42SEdldmJBUVN2REIxTERhcmJRZGROeEFuM2s3d2NUNHkxdzUwZS1CM1dYQVVVRWhpWUNweGd2WEQ1SGRlbGdKZG1qWDc2T0pJ0gG0AUFVX3lxTE5hR3FUamxORkNnWTkyX2RNa2JHM2JibWQ2dFBlU0o2Sm5VQnRlNUhLaHgyaTB0ekNsX0IzaGY5Wm1ndmMtTmh3NUdlX2M0SVBVWjV5S0Y5eWgxdkllLTh0a01LZk5aa0ZmbWI3WHFKQVNrb3VyYTFwdXN2OUlzVmdjZzRvclhYZkZEVDhVQmJOOFhXempYbEltU3NBQXRPNFpaVHJXblhvNnY4MC1sX2N4OXRpZQ?oc=5" target="_blank" rel="noopener">Trump says US in ‘final throes’ of Iran deal, Hormuz strait to open in days - Al Jazeera</a></td>
+              <td class="col-source">Al Jazeera</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 04:23 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxQLUwxdWctVnZpeWFzS29Vei1BZEVXREQzbDNKOFJtbHcxb2tBdWNXQkV6dHluTjFWYTNQZldhLUN3YXN1a19BT0ZZY25hMlVReEFWcENra3N3d0xneEdHdmFIb3lxaDJwdlYwQWttQzdabDN2dEJpWmRLbFkwVkVBOHNOQUZranZWbTgxZDAwbzc1SHRIaldxWVhRQ2JpS0hoZTdNZEdBZzdzZ1JoTnhDNmdCNVJxWFA0VUt4R3hUcHVaXzFibUVV?oc=5" target="_blank" rel="noopener">Report: US military helicopter went down near Strait of Hormuz; crew members rescued - The Times of Israel</a></td>
+              <td class="col-source">The Times of Israel</td>
+              <td class="col-cats"><span class="cat cat-maritime">Maritime / Shipping</span><span class="cat cat-geo">Geopolitics / Security</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 04:23 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxOWGVWa1puZVVCa0M4amszU1l6Y0VSd2gxNkFEWVA3WlhjVzFQWFlhVWEyRGZLRDVZOTFwT3ctRmtmTFBlUHJSd0kwSUJPdWZtd3RTNzlwdDlBaDIzNTB5dlJ6bzY1cWZJcV9VeFJVQzRSTTl1Q2ZLLUxBZnM0NzhRUHhfdzRYZEEwaHI4VkdidVNFcDctWHk2RUU5YldhM0RWeW1PZmJ0cXlYSzNLR2R6U3A2OFNqVmM?oc=5" target="_blank" rel="noopener">US Army Apache Helicopter Goes Down Near Strait Of Hormuz - i24NEWS</a></td>
+              <td class="col-source">i24NEWS</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 11:17 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxOaFJURWtLY2NZTEc4a2FQbUlrNkRWWmNSelZJaXFWSUxjbzMxdDFHM3BxYXNkQ2t4Q1J3UUVJWW9iTUlEdmY1QVR3R2E1djBiLU56bjIxaGtCTF9FeXdvN0lPWTFwOUNuX3BQVW5hVzJuMjIxeDJ0a3BNTzNDOWxwQTVEbUtERFZlc3VvWkxhbkdiUzA3TlhQVVN0Rlp1dndWVEVvZndxcTEyWnM?oc=5" target="_blank" rel="noopener">US Apache helicopter crashes near the Strait of Hormuz - The Independent</a></td>
+              <td class="col-source">The Independent</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 11:09 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxPbDdWWjRhZ1U5MlR5Ym43bnF3NGUySEpKNV93aE1Wb0I2dDNPSGI4MTF2d250SWJWUEptODd1a3RBNzZKeUVMa05IS2dYdDlMa2lXZUNSc2w2Q3JiMF9HX3MzMVpmWmx2MlUtVHR6OHJYMldHRDRXbDVaMWR2QTdBekt3MGJ1YzRnVWJhVDhWUFE0RXZwNHFkRjlLajQtNTI1eDllSjlDWnFZUmtJT2xIQ2pERFoxREpFLU1waExYQQ?oc=5" target="_blank" rel="noopener">U.S. Apache Helicopter Crashes Near Strait of Hormuz, Prompting at-Sea Rescue - WSJ</a></td>
+              <td class="col-source">WSJ</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-08 15:48 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxOQm1Pbk13TFdWQ3Q3RzNDLXJSTjAyTVp2MTAxdWF5SFhtaXB6alZJZTFvMUFGRFJ3NWs5U29WdF9WZDREQTNFUFlnRExKaldCZFQwdG50QTJUNklHd0NSTmROVEJBdk5uU2pFNHpCWmppbURrbVRnck5pbjZLU1V0QWkzYmwtWFFrcnlKanlraFFwRmowVW9YclJaRkVHR3pJVWJ0T2NDeXdLVms2Qm5lMUpBTWlPN1JR0gG-AUFVX3lxTE0zMlF3d2dRbjhhRXFpSWtHLU52aGdXdWdOTDJvd0I0aV9PbGRGajdoN0RoNmlVa3JpNmJrS2w2dzVtZndES1prUlpud1NJZHBfek5LS25NZmZXa0JlOVNxQlIwczlzd1pIVHNoa0lDSXc3S203WU42bkdBbjNWWENzLUxIYWo1eUtxaWdmQnU2REdfVklSYjIwdi04bVdMRHNJd3d3b1VuYjhhVGxNTEQ1VldKSFQwZ1ZoX0g1VGc?oc=5" target="_blank" rel="noopener">Kalshi traders say Strait of Hormuz traffic won't return to normal before January - CNBC</a></td>
+              <td class="col-source">CNBC</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 06:08 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxNaEdpLWxzclE0eWNfSExOanhWZWVLTDJncnZRc2dESWFMZVdZaENGZks2SGxyQlN5TmJ6RGJqVnU2cm5rNHJ1SEd3Rmx1M0l2VkF5VjBjX3RRcmlwX3VVRFhwSklYWXdlU0NwSEM0b0sxTXNEdU1oUy04VXBiTnRxbDQwRkFvVEhJVzViYXlKODVFcjBJbGh4RUk0dnFXcTdDcEViOGlGZng3MzRhUmtnaFMwZFI?oc=5" target="_blank" rel="noopener">U.S. pilots rescued after helicopter goes down near Strait of Hormuz - NBC News</a></td>
+              <td class="col-source">NBC News</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 03:34 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxONU5YY2V5VVM4RVNwSzVfSXMwOTNucW4xemJjaVU3VnZ0QXFsTGgySzE1OWJrLTJaS2J6V0xxc1EtVEdyb3N5U2RITmlfNGcxWHIyUVNNNG9PRS1lMm9TNnBqQ3BhS0daNjc4VXdaQkQzSjZjYlM5OGxKVGZVbzFCWUx2SXZ6ZHR2M3ZkTXNKMVJCY3lkWFNQSWs0U1lNVVVxbzNPRDloS19GUnZQ?oc=5" target="_blank" rel="noopener">Fifth Qatari-controlled LNG tanker exits Hormuz strait - Reuters</a></td>
+              <td class="col-source">Reuters</td>
+              <td class="col-cats"><span class="cat cat-energy">Energy Markets</span><span class="cat cat-maritime">Maritime / Shipping</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 04:59 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxNRmwwQjQyUjZpLWZDQndVeWlFd3ktWGpUWi0yNHJSYkZSR1pDV2RxTG5Xa0tLVVVueHlaR0wzcHZwMk9hX09xSGd4RWZpbFVGZFk0bkZSb3VVeGRiNjBLdW1wRW9XalI2R0RVZ3JjTUtlT25lVHNQTFVMNHZ2Rk5iYjg1Wjdld9IBiwFBVV95cUxPTk1ObTFSbEtHZEJIZFpzUjd2QnZCMzF1WUZCVmNkU2czUWdSdHpfaF9UYVBTbWVGX0F5bU5kaDU2cWRGNjl4U3VCQXFkaTAyWXlwS0E3Q2daQ3cya3BRamdzMFBiQV9la2VELWN4VU0zV3lUNTFqS0hwNy1zekw1NmFiSU5kOWhPZnVV?oc=5" target="_blank" rel="noopener">Iraq and UAE race to establish alternative oil pipelines as exports through Hormuz dry up - CNBC</a></td>
+              <td class="col-source">CNBC</td>
+              <td class="col-cats"><span class="cat cat-energy">Energy Markets</span><span class="cat cat-maritime">Maritime / Shipping</span><span class="cat cat-infra">Infrastructure / Operations</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 11:02 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxOeHhYNnhaZlVrb2pZNXN5SUR5cjhRWVl4dFYzTUp4c2JiRHNjQS1KS21qVG80bm5vbVNROEZRUWFTVmdnbldvOHhsMTY1TjhoWXB6Z0cxc0hRZjRJTEpOa2JlV3ktVjFUcUFrRWZCckpBQlctQklobjhaTUQ4NllHeVlEbmxpVW84Rng3T3RjazA4cmhQM3BYUmVCTdIBoAFBVV95cUxNTU05ZG5xTWpscW5oZ1BTN2s1MjlBRS1KVmVDdmZUcEJxcjJmRFRTdnQwTlMzS25yWHF6YzhydWcwU205bWpkQWF2SHNEUFUyRWc1WExxZkx1OTMxNEhRVmxpUDllSEV4cVRfVkViZ0owcWZGOXZUa2pxYUxlQWdWUXpqR0xPRDRNcDJrYW9MRXBhU3F0SEZJR2Rnb1owOWx0?oc=5" target="_blank" rel="noopener">Crew rescued after Army helicopter crashes near Strait of Hormuz: Reports - NewsNation</a></td>
+              <td class="col-source">NewsNation</td>
+              <td class="col-cats"><span class="cat cat-maritime">Maritime / Shipping</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 11:19 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxNNTRPR213VFhwMkM5cUZuc051el9WeW9xeUFuaEtvZS0wUGxYb0tEVUl6MUxCWVpwQ2kxaGk1ejNJdURJTWNLc1lBTkxXZnBFLUE3NktIZU9xZ2JvY0dxSGhkTmZzdHRsdWx0SmtxcUlsa19iV1lzVEhCTTdCUVE0YlZGVktvWHZWTS15VG8wUlBzaUp1bzZ6c3hmOGU?oc=5" target="_blank" rel="noopener">Crew Rescued After US Helicopter Crashes Near Strait of Hormuz - TODAY.com</a></td>
+              <td class="col-source">TODAY.com</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 05:43 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMi1gFBVV95cUxOM2p6MTZtRTN3WDUtZGh0VmNuYVJLWUJlZW5tNDhUenh6TXZFdjBjaHpBLXRGNW9tRU1QNXBxN1VLZWFVVklJWVBUOUlqSTlXNkN1clBxWFpNdmI3dUd4R0pydFFPaHRIY3o0ZXFjbFpGN0dBdzQ3LWYtQnVnaFZ5MnZVMFhkZnV2VnFuYnh4c0lNOWtRZHRTU29pUG1MUkYtUWpEMHROQmlQUkx2b2NBekFQSENDakgxSm4wN3FKbXlEQnQzdVF1OWN4M1RHYkNPMUJlbU1n0gHeAUFVX3lxTE4wdlhQWkRPaXR4bkFQNTM1VzctZlVtM0hrNmpOZFROV0RRYUphRHg1VWtfanphZkRtZEl5bHJiUWpHbEl6eGtwNkZVZ194cVBXdm92T0NTVjVSWDRoN0lRcUo3YmRrWDJQamR1Q2lSU01EYmlTLVl2VU1aWkdOUUlwVXFwV2kydHRFMVdYMV9IOU9lWmxmVmJ5NTZyeVZJc2hReExaSHNyQXRGMmNqXzFBWnUzVVFHbVV3V3FEN0pkUVBrX09ZZmVCT29lSHl2dGhSVmlGZDQtY0ctdlhJUQ?oc=5" target="_blank" rel="noopener">Trump says pilots ‘are fine' after U.S. military helicopter goes down over Strait of Hormuz - NBC10 Philadelphia</a></td>
+              <td class="col-source">NBC10 Philadelphia</td>
+              <td class="col-cats"><span class="cat cat-geo">Geopolitics / Security</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 09:09 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxOLWl2WlZOcTlaWW5YalB2SzRSRmVvNXVRR0FUS2VXRGlTVTFXQlppR2xYRjVyQmw3eTYxSE5pQ1NvamJFRjh1bDN4MWxidWRfTmlVU2VPbFdWUUUxZWxYRmF5cW5VSEZlXzFyRktQc2IxNnZ2QldseXViSU9UdG5rUURtd1BfSmJxQU1CMVZtU2hKUXRhUGFjX1BzTTRNSUZX?oc=5" target="_blank" rel="noopener">Crew rescued after Apache helicopter goes down near Strait of Hormuz - Stars and Stripes</a></td>
+              <td class="col-source">Stars and Stripes</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 11:41 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMi-AFBVV95cUxNQS1ydng5WEs3TS1kOW9Yd2x3MTltWGRGT3pRaHFKb0tYTjNXcGlyc0U4Y1l0b0FoLXMxdlgxTnhNdGVfdDBfbExCZUlWa1VmSW55Yi16R3RUcWJyZExoTHAzLWJMSEJwUlZPSTF2czFtR3dSOWtzelNYS1hvYld4My1RbTVBdnRGdlQwQXNZeGprYkNiaGpoc0JpNV9CRDlkMkNGZndiZHZkWUF6a2M4aUdySHBhV3RrcFpvaGwwZ1FZOEJ3Y0VXVVJfX2hfWHN3SGdxOW5wdWE5X1dhdzE1aXVmZ0JEUWFETVdfQUE5YXdiXzcwcnJFOA?oc=5" target="_blank" rel="noopener">Two pilots rescued after US helicopter crashes over Strait of Hormuz as Trump claims Iran deal ‘two or three days’ away - New York Post</a></td>
+              <td class="col-source">New York Post</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 06:27 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxQcFpQMDlWTnRsRDF3bnJ3WVF4WWdoLU41OXdfUU5JZmZ5UWFoTUw2ck4zWEZYWFNNUjBHVXczbUt5dXQyNnJ2NTNOSy1FMko4VTgwLWszT3cxSWtrUWFDbWs1R0owajA3UDViNzRvVGhJOGdJR3dlUVhtbVpZZEVYSFhOMDhBc3RSQkJoNUluOEN0dTVTQUVRWl90ZWhKZDlQRnNyTDVDaTRuSTNTTGplUDJWQQ?oc=5" target="_blank" rel="noopener">Trump says US helicopter pilots who went down in Strait of Hormuz are fine - Al-Monitor</a></td>
+              <td class="col-source">Al-Monitor</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 11:23 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMi7wJBVV95cUxOWm1KYm0zS2JQTGc5NVFvMnRnRGNqZEdYR3ZZUC1LdDFsMHNxVEZiNjI5U0RybW9EYlNLZ2QwREZYMkNGaTgyb2ZqZV9oQUVlREc0WTNjYkVHQjlDd2hhcE0xWFNyckJ1d09lQ3pTNGZ1Wi1LdmVNcWdRelR2TVVTZExGMlZGeWVTWHY1TUhTVUlkbVNScERMYmtkUmJVcWZLNmJVcXVjaGFfTkJPaG5mQkdoZWx0YmJaaExrYXNqcnJCRGpwTjVhY1hMbGJOZXJaQkwtSlhzTGdlYWp6MTNDTTY0Mkd5V3RzWEtvVGE3RUtvZXI2TFNKOFRialBTMzhDcW1CcTFtN21PRzFPSWR1dDNDamUyZUpKdTA4UEt1ZGFxOXNIMHJxTDAwMG5RanJjR1AxdVV6NldJckktX0VjVXE4ZkNhZU9xWjVvMW5EUlJRUkhpQzhmOTdmb3JWR3FRWnoxOGp1YTdpVzRoS1VZ?oc=5" target="_blank" rel="noopener">Trump: Apache crew safe after US helicopter crash near Strait of Hormuz - WPDE</a></td>
+              <td class="col-source">WPDE</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 07:51 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxOYmwtdURITHhZWEdIakJNMXFzUDlhX0FNYU1NN0FMSVg5WEUtM216X3RLbXplUVNURFg5MTdBbVdvaldBb1BiVjNuZE5nQ053N0ZJVmZ2dFJRTXVPQ1E1TXU3NmdFRHpwUWpuWm0wT1lrc1ljLTJsVnUyLTA0dl9HQmFwem9aZ25fZFAyNl9uRjdnWjFaSVoyb3pCRVNXMHRBaGJZSEFwdlZKQUVKOV95dUZXaDRWZTdmNVNKSkZXenh1UlBNcnhFZA?oc=5" target="_blank" rel="noopener">U.S. Army Helicopter Crashes Near Strait Of Hormuz—Trump Says ‘Pilots Are Fine’ - Forbes</a></td>
+              <td class="col-source">Forbes</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 11:23 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxQMWdvRUJXeEttQUppc3Z2YnF1ZEdwLXNBN085ekR4SUhDaXZocVNJQ3BnRlZPUWNOMHBxNHJzSmxGZExnU1VleDJNQm1uYlpNNkJsT3VXeHZGWTAtYjQ1NFAzM1VuNGwwWEsyRHBydzl6ZkFvTl9WQU1CN19rQ0xuWkZZcmFhNkM3SEtybU9FNUtYTDdzemVweW5FZkR1aDRBc0xaaUFBZTBSUnd2SkxNam8zZ01xemE3Rmx6YVpULV83b3ByZXZMVw?oc=5" target="_blank" rel="noopener">Trump says pilots ‘fine’ after helicopter went down near Strait of Hormuz - The Washington Post</a></td>
+              <td class="col-source">The Washington Post</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 05:48 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxOTEdDX1o2TXdBbG9lUkM4MDVnTmlBcFVRYjhsSkRvUjFzVTB0ajJNQ2hLclE1Szk3ekhKMU5abV9ucF9vNFhGRUQ0anBFVS1FRzRUOHprVDhKR3I1cEVIQlVXTE44X2tteUQ2SG5xejhfZVQ0YmM3akk2MFNQLTNJcWJGOVpEQ1pYeWxWMmJVdFhvdV93MzFiOUlvTFFvUWN0V1lv?oc=5" target="_blank" rel="noopener">Pilots 'fine' after US helicopter goes down near Strait of Hormuz - Australian Broadcasting Corporation</a></td>
+              <td class="col-source">Australian Broadcasting Corporation</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 05:37 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQUy16T3M5UUpmTENvZ2VSTF9mWHJ1QmJNRFZmR0NadDlIZHo3RHZua3NwVi1mbkpkX0tMYmM0d29TY1lFYlR0amJhSEFBaFFfMmlCVXBxcXczbHE1ZkVNd0dVM0x5QTd4SHotNUwyYnlTTFo4T1V3NXJUNFlaUGkyZGxzdG41VmpoUWRWWmFwXzE1QzdwYW9EU2dlcnBFSTE2Q2hJRGpoQS10UdIBrwFBVV95cUxON1hnMEtKeEpoUkpfeTB4dEg5OWF2TmdWNGEzRW9FWi1JZFJZMHJSOVhDSEpYZ0J0NGd6ZTFBcnpCSU80c2V4enBTQnA2UDBSUGU0TDQycllLbmNsRlpXZmxtZFduaVdVVFNvaEhGaDBCYXJxRmNmamdnVF9tYjZpMUkxYm9xZkFkVEd0eHhkajNVR0lTZFVqUU1VdGJfX2NKWGt1R1UxSm5mb0FyUDc4?oc=5" target="_blank" rel="noopener">More LNG Tankers Slip Through the Strait of Hormuz - Crude Oil Prices Today | OilPrice.com</a></td>
+              <td class="col-source">Crude Oil Prices Today | OilPrice.com</td>
+              <td class="col-cats"><span class="cat cat-energy">Energy Markets</span><span class="cat cat-maritime">Maritime / Shipping</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 11:54 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxPbFJEUmM5anZCaGJMWFEwdWJtMDl5d2d2YmJsTXJXUDVsVFFQb2RNOUpGZ3dlX1VNazhjcGJjYlVBOUFiZjJVZC1qMzZCLVZ0ajk2UWhfcVltQXBEUkxQd0Vtb0JZNW9wVm03U1pzUU85LVREU29YV1YtdHdYVGRkVW9PYUFzSE00MDJlSUI5TWlJMzUtOHBMeDlyZEgtV3BIRmlkSk5wZDE?oc=5" target="_blank" rel="noopener">US helicopter crew rescued after Apache goes down near Strait of Hormuz - JNS.org</a></td>
+              <td class="col-source">JNS.org</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 09:17 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxPLWN3NFdYaVpXMExzU1BhTTU5M0p5R2JGRC1Ga1BnYUVVMExmWDVXbVk5UHBRLTlzLWp0WUtNcUlDWlRKVlBzWEZBSnNRQUN3SjFTTjAzZ2tfTHZWXzhlVWw5dUVmOG1aMGVvSDhBY0hCaHZ4TndYN0p0cmZLTWFtRXozak1LM2xUbld3VG9uUmY0bDN5?oc=5" target="_blank" rel="noopener">EU sanctions IRGC-linked entities over Strait of Hormuz operations - safety4sea</a></td>
+              <td class="col-source">safety4sea</td>
+              <td class="col-cats"><span class="cat cat-geo">Geopolitics / Security</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 10:11 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxONWpHdEEzdDdabUtPUDV1UV9mOVk0WlRHRWNIbzR1X0pwcnNTQWZoS3lpbkNxYUFxRUl4WkFhY0ZQUThtYk9walVNUm9ROGFxcTFwSzVqRDRmdHdpWWRNVHRLSVlzZEpqeGt0cDNYYV82QkRJZzM2bDR6VlhWTGpwaWhnLS1KSEhLNUwxVlpTNUhHOVd0WVU2QkxLNFlZWHpXQzhHWkZGdzlJTmtVRzVnZjFlMEnSAbwBQVVfeXFMTjBJUGw3REdOZTIxV3NVWWdpTldMLXhCd3Bfc2k1VGIyaUEwQzlnWktUZUZyZy1IVDdRNDdlUE10akdwNkNfMFREa0lGVWRKNVNqdHJoRHNjU3lkWjhiRnBkZDJmNTd5YzJIRDM2SWlZUTUwemRJak5ZdDJmZ0tLSG5pT1FaVndHRFVnUmtfQkVPMkFHd1g0alhPNnlZYVlYUkZ5dXNJUm5KejY4QTdjb0JrTFpGWWdtTXNBczE?oc=5" target="_blank" rel="noopener">U.S. military helicopter goes down over Strait of Hormuz - NBC Boston</a></td>
+              <td class="col-source">NBC Boston</td>
+              <td class="col-cats"><span class="cat cat-geo">Geopolitics / Security</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 11:13 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiY0FVX3lxTE9SWngyQXM0OWl6b1BSakFYNmZPWGYweFBRQkFFa0xwcXRHZlJiMGRtMms5b19DQUgtSmphYWlvSmlQWGdzclQxVkRZaG1OamRKSURJaFY4WktxMVBWVVRGS25GZ9IBaEFVX3lxTE1SSHEtZVhFdUdhYi1ZZkZTNUVVVFNJbE52ek5rM2Zvck5HV0pfMUNYMUJub2FkRmFteUQwYTh5a3Nlcy1Vclg5ckRRWTQ3MVRHaW9GT1F1cFE5Ri1RTmZCNGR5Szk1OGdQ?oc=5" target="_blank" rel="noopener">US army helicopter goes down near Strait of Hormuz - LiveNOW from FOX</a></td>
+              <td class="col-source">LiveNOW from FOX</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 04:53 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxQRWh1NW5fMzhNcDVpMEtaNFRIWU1EU055bmRaX1JIM0loQ0IxdEdUZUFIck40S1RjeU85OGxlMnJnVTc2QUtEQXU3bnNFWDM1RU1mNm9TWkhqelF3WWdmWnZIMmtkZmdoR2RGb3ZuSHByeExYMm41alRXM1VDT3RjYUhqZWJSY0JiWFYwT0ItQ29kS0hJbG9wd0VfSkxtZGpGRVBwNjJVUnpMYkh2UnVN0gHDAUFVX3lxTE8wM3hzMHpFQlllTzBpTFdwY2pZc1g3RzJzWjgyS21xRER5emNWYzJxTXFqT2VpMnhYd1pwcjQ1dlJtTHFzSm9RczZWMXd4RksydnRjLTZiclZnOUhEY3BIN04tbkZtZXNJTlFnd1pybVJrTkNPSWlPQnVxbkJOYWNMLVJJQlRRdHhzSDJvY25qbkp6ODYxalMtVThlVk1Fc0VPUUx1TGN6R3NkbmRxUm5heFc4YThWZ1lKSTNRbzBieVdzaw?oc=5" target="_blank" rel="noopener">Trump says pilots are fine after US helicopter crashes near Strait of Hormuz - AZ Family</a></td>
+              <td class="col-source">AZ Family</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 11:44 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMizwFBVV95cUxNZlo0REZsdFZodTMtcHh5RVdkdEV2V1FVenVRdVR2cWNTNHpoSFBIWDdfMHlGY29oeUtiOXBJMlB3dTQ5bkc3WGtGREdTSkFxRGVERFpkVzlmNlFwU1pNWFJKekFDQzZMdlRoWjVkUEFad2diWFIwOVROSlFsbGlyZnoxNlFKSGxKZTNRZkVWYjBWZEpadGRZcU9uX1JHTlJPQ3I5bTdfOG9VSHEzQW9KUjNGdWpQU1VaTUVHTU1BVUJSUFFIbmJtVUpIdkpXajQ?oc=5" target="_blank" rel="noopener">Two pilots safe after crash over the Strait of Hormuz - WBIR</a></td>
+              <td class="col-source">WBIR</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 11:54 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMi0AFBVV95cUxNbmZFbURzbFQ0eXFGdWhSaGFlVEpXa2hTNXJyMWtXN0YxV2pyc3NkdHlZbV9sRnI3RnZrVjRpVDVGM215NDFUaFBlM19zdkwxX2lqUG5CcGZjSlktTGhsUENxbEZZOXYzZV9IZDRzM3IyOFM0U0dGUlROOGQzRnRBSlc0OHhXNkI3cElTYWRNcnRuRG0yVktmNTU4QkpMSUY5U1ZJVkVwRjlwdFlLMnN5U3VKbGRGSnhOclRHbWlnTDRHZHMtdFZSYlk5bm5kVW5l?oc=5" target="_blank" rel="noopener">Sinokor poised to cash in from Strait of Hormuz reopening as tankers flock to region - TradeWinds News</a></td>
+              <td class="col-source">TradeWinds News</td>
+              <td class="col-cats"><span class="cat cat-maritime">Maritime / Shipping</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 11:26 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiTEFVX3lxTE8wSGowbXB0Wl95T1hnbDVfV1lLRXc0UHR2bS00SlpmcXMxT3BLdE5kdC1GaTBfOUdPUnV6YkJYQ3h4TGZkVjMyME84Mjc?oc=5" target="_blank" rel="noopener">Video US Army helicopter crashes near Strait of Hormuz - ABC News - Breaking News, Latest News and Videos</a></td>
+              <td class="col-source">ABC News - Breaking News, Latest News and Videos</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 08:05 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxObzZPTHNsRWYteUo4LVh4aXpkWDczZXdRQk0xTGwyMjQwem91eW9CbGJDcEY1TXB2MmRTQjY2N2MwRmcxVUFGTDdXU2dUbENvZVlZOEJhSGFnTVlEVjlxZGxLdm1QajFGa2l5UGpuNVIxODcwZDV0cEphZEtvT3dpaDU1WEFQZ3dQc0gzTG9YbVBkckQzWGZscWw0SU03MnFEeWgzSmZORzJEQdIBrwFBVV95cUxOQlFtQWt4MWUyNjZJb2NNd1VTR1FSNk5BRzZzNUdsRGN4WFFKZHdiWUhVS0loWFNjTVBTTFFRTTIxVnRQdmp4MFJtRWl5Z2ZVRjRqVzZTNlp6bkQ0QmV0OFQtcHBCMkc1WnFDbjU4aGxyWjJQWUNUVG1EeFFhTmcyWEFJX3J5dnVBOE1NNE5QOUhsaUpucThrT0x6WlplaG1YaTFjX0piekNnNkdHWUk4?oc=5" target="_blank" rel="noopener">US Army helicopter crashes near Strait of Hormuz; Trump says two pilots ‘fine’ - The Times of Israel</a></td>
+              <td class="col-source">The Times of Israel</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 08:27 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxQMnhqQTVJZWxrQUgyck41LU5xay1Gd0psbUE5aVR2d0lKRWVkb1ZDeWZZYzRnekVkV1BrVGVrMk5paEFoRko4UXZDY0c1ekZjUlQ5NGh5d0pGckJheDJzRnJIaF9VWXhYWVlrN0gzSXl1WXBmbnhvMXAzeW1obG1ydmpESzlteE14cDRBakF0X2JlNTl3?oc=5" target="_blank" rel="noopener">U.S. AH-64 Goes Down Near Strait of Hormuz, Crew Safe - The Aviationist</a></td>
+              <td class="col-source">The Aviationist</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 05:00 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxQU1N1ekFaZ3VieDlUdWQwamZNTFFCS2lhX09tMDBPZHF0Qzd2ZHZzUlpuWlI4aURDNXdTTm5TTU5UT2x0Y1ktRjJhVjg3V0ZTQTdhQXZpWHY4enN2U1BuQmpPLU9md3c1Vzc4cHBqLThXLUpBdjJkTTZvZE5nY1IxdFB3cVhjUUh0VkdoMElXTVdDZV9wcmZCV3VaUi16dDkwREdUX2M4UDVVd2NPVVZZdnd0Y0ZsbjJiQW9ONUxiSS00UUNPTVE?oc=5" target="_blank" rel="noopener">US helicopter crew rescued after aircraft goes down near Strait of Hormuz - Middle East Eye</a></td>
+              <td class="col-source">Middle East Eye</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 05:33 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMivgFBVV95cUxNYVdEbk9ZZjM4UUdFUUlfZVpreE0zT1NNU25TTGRtNkpjSThkTVpaM2hENXBUT0lHal9vV2c2TDhkX05uVWZpNjhFbXhHSTBzTmRKNURBT19BRzJoMzlWTkNpRG10ZkpIRDRGZ09zak1CUGFzSk5SQzRfX0NWeEtpd2o1R0NvWjcxbkNGcnNRaFhWeWVPX0VNZG9CLVR6SzNLSVJLMTRCT091OHFkVWEzbU5Ob3JiRmFZVTQwQzd3?oc=5" target="_blank" rel="noopener">Trump: Pilots of US helicopter that went down near Strait of Hormuz ‘are fine’ - The Times of Israel</a></td>
+              <td class="col-source">The Times of Israel</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 11:26 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMi0gFBVV95cUxNWnFobjBQdlhVb1hCUDJPbHNfbW40TzVxXzcxRjdoWkJmM0xVUy1xdGV1ajNlU0VJb2Z5QTNWVnhiZjFraDBjTFhZY3lqZURhMm5EMVFHNm40RzJRZHMwWi0xVGJZbTU2VUZ5NW5UWExRaXk3U203dDA2V1pKWXhjbE5XTkkzdEFiSTllSEt3VUozX0NMV195VnMzdzdiLV9RZ3Z3ZXFNV0RwVzhSdHg4dDRSbThsZ1ZhOHl5ekRxbFdPMS1qU0pYWVBUdmpPbjZRZ3c?oc=5" target="_blank" rel="noopener">Trump says Iran deal could be reached in ‘two or three days’ and Strait of Hormuz will reopen ‘immediately’ - CNBC Africa</a></td>
+              <td class="col-source">CNBC Africa</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 08:26 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMizgFBVV95cUxQWjk3dXZGREhpLXpkWnNxd2tCYUdLZWJIOXR1X3c5YjRrYV9CQjJFTjVWcWozdnY1bV83UVhuajdodlhwenZXWlNuNUtHb2g4ZGw1TF9ZWU9tVXVMRlFwd0dUendyT1dZRmIya1RUV2xiZ1pTaEpPY2diZlBNUkNFdGRlVTFwMDVMb3BBRW9XRkZYT0VCQVludDA4N2tDeUpJVW9vMWRCNzloNV9pSlRZbUlqX0cwNGpORXRHa0xGNEctOUVVbDk4b0hzM1JUdw?oc=5" target="_blank" rel="noopener">Trump says pilots of US helicopter that crashed in Strait of Hormuz are ‘fine’ - The Irish Times</a></td>
+              <td class="col-source">The Irish Times</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-08 21:59 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxPYURRbGdPMDMtdW9lc3laclQxRnY5eWpPc1lSaGE1T3hoTWowaUs3NlllanJtNV9zYXNYNnQxSVY0T0c5R3FEdmdsVFpyaEdmNHdrdjVKTjc3UUptbTBkVVU0a2tEWEFJaXZPTGN6bUVkdmR1V0U1ZG9BVWppQTh0X0RONm5jdGZpejVSYUR5aVJwS0U?oc=5" target="_blank" rel="noopener">Commentary: Brace for a flood of oil as soon as Hormuz reopens - CNA</a></td>
+              <td class="col-source">CNA</td>
+              <td class="col-cats"><span class="cat cat-energy">Energy Markets</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 06:07 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiekFVX3lxTE83T1drRi1xa2kyZUJKcnZ3QVFnbzBGakFBS1RaaWhhem1WYTEzS0dsc1g0MjVTYjlVdVlSeEF5U3RJSkdxRnhZUUJoM3J3RGdKM0VvaHA4d1psdXNkY0Y5RmYzdGV3NjdFR2FvNnh0bzFZVjRhZGZnOFR3?oc=5" target="_blank" rel="noopener">Iran announces reopening of Strait of Hormuz under new conditions, and crypto markets are watching closely - Crypto Briefing</a></td>
+              <td class="col-source">Crypto Briefing</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 10:35 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxPaDdtSkNobEdUUVRXQk11ZkxnNVFRbThsdkkybWVkTFlCY3YyY29QaURFSHdDM0JlQzV6bDVGal9WMTM3U0prTXY3S2xZdllaUU5sYmc4N01ibDA0RjBFd3YxVlZzNkVXZEV4eF96VHU5S3Y3QS1Ibjd6RUZzSHFORHF4Nk1oUk1SOERuOEY4VHdLOXV6cUVhYlNZbUhQU01ScHEwS1JmSE9Kd9IBrwFBVV95cUxQb0ZTaEhVSC1uWkNjMW9yVmJKZ2xKSloyYUY3aWpBWUFBZzdkZ1BTUzI3aVJrWWxJbkRtRjh3bk8tdVUxMllTRkhIZXZTV240R2JFd2xnVXdwWTRoekplU0puZGM4X01qRU5GNTZaVWUyOWJOUERoU09HbEdKcVBCYjF2V2VtYVRZTkZuUFAtZHN1UzM3bjRwRG5HMFpNeThTNUxBbjlrMjQwMXJSMkJv?oc=5" target="_blank" rel="noopener">Trump says US helicopter pilots who went down in Strait of Hormuz are fine - The Business Standard</a></td>
+              <td class="col-source">The Business Standard</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 11:23 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE1Tc3dQcjlWd0lrWS1WZS1NZGVSNDRKU1U2cFJhMjEwVjlRRFZtcTg3MllRRFI2SkZaaWh0OHFYaXpaeE1SUWMxVnpMWjBLOW9KdVNwMVZGcUtzekczY1VCVXZRTUVxVEY1VGNLdUdwMDZwMjlVVTRTMTJ2a01Icjg?oc=5" target="_blank" rel="noopener">Trump says pilots fine after U.S. helicopter crashes near Strait of Hormuz | CBC News - CBC</a></td>
+              <td class="col-source">CBC</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 08:29 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMidEFVX3lxTFBrVjQ4cDJiV1lscUdoRUlZZndLUXdTOFNkUy14LUxGakR3eU5FdFRQZG1XUUJPSHpueFNUS0hXOEZzOFlGM3ktRzNnTld4MXF1T1RVSGoxRm1VdzJsZV9ValRZMFFrQ2RlS0Rzc3VsYnRXTFZE?oc=5" target="_blank" rel="noopener">US Apache helicopter crashed near Strait of Hormuz as cause remains unclear - mezha.net</a></td>
+              <td class="col-source">mezha.net</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 11:45 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxQVzVXYlBkaWtMbmNray1QT2VMVnRaRmZ4SkRJOWpCTnN2WW9neExEVnBTeHUtMUZadWV5YVUzWFhscFhKaHBRc3RMSGN0YzFodEFGbnZ3cHFzQ2ViSlNaMXcyZFJ5VDhOcG02dVkyMG5vVkt3Wi1TNWRaNGNId212aWJId0NfS1FiRXdGenJWMTRUYXpWR25kVkZjdTF4QmZzNnZydUU1SUllVWktb3BxSWVlUEhVOFZLY0E?oc=5" target="_blank" rel="noopener">Trump Says Deal With Iran Can Be Reached This Week And Hormuz Strait Will Reopen 'Immediately' After - International Business Times</a></td>
+              <td class="col-source">International Business Times</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 11:05 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxNNHBEdzlKYk5rVDB1NkF2TnZWR3JkNm1UV1FxWERaT1B4Nm1yR1FJbURMS0kxNmFpLWtoa2pZXzM3OEQybWtmY1FGZEtXLXJSR080b3djNFBZdzl2eU1WY1A4Y0dwX2FQY1JldVU2V20zN0ZQaWJwT01QcWtPWTNwZS1QOXMwWndtUkVRZzIzZGNUZTRMSmVwLUFJeEotU0hXN3M1VEJlOGh1b0NyVHZwZXBhVGNOYzQ?oc=5" target="_blank" rel="noopener">Two crew members rescued after U.S. Army helicopter goes down near Strait of Hormuz - Washington Times</a></td>
+              <td class="col-source">Washington Times</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 07:46 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMi0gFBVV95cUxPZGZodHRyc1hJbW0xOWF2VDJ0cTdZYS1LVzhkanZSRUhqV0lLdTcwUFRFeW54cnlLYUJSSkNiME9wZUZqdENhREp6ZkxINHMwYjNkSGNFbVVJMElCOFZHSVgwUDJJczZEcTB6bGc5Y2hvaDFYblVBbHhTOGFrOXQ5cWxpYUg4R3dqR1lpRl8xeGFDaDNlTDRKX214ZldmdXpUTUdfLU50UlNxMFIydjRNRnc1Z1dGVkdwbzRuUFgwTnBNdHBGRGJTdVZSTXA4SG40SVHSAdcBQVVfeXFMTm5ndGZqR2luRWpwbnIyd3VOOGxQQmlRUlJRcndvUWV6dEJ1QXhjV3VtWFVTdkJtVmM2SW8zQWxLenQ1Nzh1VkR1cnlEb25lVU12cEsySlRlRXhsTHBoeDZpS252dno2b3RSbDFjZzQwR24wY2I5cUxVTGREZXdYRTNzSHByRzAtakNnVzNEMDh2X3hTemc1Tk1FM0VSU19iMjNqRzBrTU02QVAyU2FhNjdjU2JpckVucWoxM0c3Q3JZNGlaYjhCZFRUSF9ySHA2Sml3V3NDWDA?oc=5" target="_blank" rel="noopener">Trump says US military helicopter goes down near Strait of Hormuz, pilots unharmed - Malay Mail</a></td>
+              <td class="col-source">Malay Mail</td>
+              <td class="col-cats"><span class="cat cat-geo">Geopolitics / Security</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 11:27 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxOeGtsd29RRU9aSUhhdmVGTTVfZm5Na2xPbEJwZ0dhOHM0enhmcURhWDE2WEZlemFLM3B2a0pYcU91T3RTNm5ZZlBfcHZRajRJd0VQekpvZks1ZVhmNk1wbXRicTYxYUwxalN6S2Z6enZ0SkRaVm4zZE9pR1hzdHVQbHhIZ0NpTVZPQi1TelVHQWNyLUVzSlI5VE9FbmtTaE1LenBBTHF4WTN2VGF0ZEF1TG1jMDFwaEZVTzlkSXh6MA?oc=5" target="_blank" rel="noopener">Reuters: Crew of US Helicopter Rescued After Crashing Near Strait of Hormuz - jordannews.jo</a></td>
+              <td class="col-source">jordannews.jo</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 10:38 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxPcjIxV3htRmg0WG5kNUtyckJqZEFwc0FZMUhYOWQ2UFZFMWYtVWxGZTNoaFljT0N2TlhZX1puRWVyQVg4SzkxdGx4UmNhX2xRdEFZRUlEUkhsNEVfVXpDR3JrZk9PMXBNdThwZzI2RUE3NlJoQmVUNm1zdXZPeE1rRFlQdFNvdV9LQTkyUmF3ajI1OXZISWxQX1hCSURTUTBBSVBYOVpLX2hxWXlH?oc=5" target="_blank" rel="noopener">U.S. pilots of downed helicopter near Strait of Hormuz ‘are fine’: Trump - CTV News</a></td>
+              <td class="col-source">CTV News</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 11:54 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMi3wFBVV95cUxOQUJTWHdLTkstVVpDM3JmMEV2T2l4R3FULTYtTlI3NjV6OV9OREZ5RS1vRlhCeGxnSGMzWGRRdXFJSzY1RkxJT3dNSnpFb0RhOG5pV3Rmc2xyWnZaOWFWdGdjRHJnUXRXZWNpNlg2cHZLUG9VOEtlNjJkOW9Vc2tlaGFCM0dFM1YzWExzQVBySDluYjc1QVBheER0bjBaNGI3R3IySDNIQnlUZ1dyNGpGOGNCMW80S3AxS3NLaU85U0d0R2ZhZVZyeE9GYkRPN3Z2MnBYM1EtajhhM3cxZHAw?oc=5" target="_blank" rel="noopener">Beyond Strait of Hormuz: How the Oman-Gujarat deep-sea pipeline could transform India's energy imports - WION</a></td>
+              <td class="col-source">WION</td>
+              <td class="col-cats"><span class="cat cat-maritime">Maritime / Shipping</span><span class="cat cat-infra">Infrastructure / Operations</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 05:09 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMingFBVV95cUxNMWxLbmh4YWJEMmJWQUg3dHJEbUs5Q00wWDB3RzBHWlZoUnVXRmMzNjFiZGJtcS1jR0dpOW5YZTlaTmlnTHBPZ3lqQzBEMGFIbmpMUW1Hd2ctaEItOHdUZ0NUUzdCV0g0T21QdHpKVXU2S2c2TjFKd0MxVkxKVVBVS3Z5Q1ktTkdCTFhnZFNIVnNvMWxOdV9MdllLUVZOZw?oc=5" target="_blank" rel="noopener">Trump says pilots are fine after US helicopter crashes near Strait of Hormuz - CNA</a></td>
+              <td class="col-source">CNA</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="chokepoint-card">
+          <div class="card-header">
+            <div class="card-title-block">
+              <h2>Strait of Malacca</h2>
+              <p class="why-text">No significant signals detected for Strait of Malacca in the last 24 hours.</p>
+            </div>
+            <div class="stress-block">
+              <div class="stress-score" style="color:#27ae60">0</div>
+              <div class="stress-label" style="color:#27ae60">NOMINAL</div>
+              <div class="stress-sub">24h Stress Index</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th class="col-time">Published</th>
+                  <th class="col-headline">Headline</th>
+                  <th class="col-source">Source</th>
+                  <th class="col-cats">Categories</th>
+                  <th class="col-signal">Signal</th>
+                </tr>
+              </thead>
+              <tbody><tr><td colspan="5" class="no-data">No qualifying signals in the last 24 hours.</td></tr></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="chokepoint-card">
+          <div class="card-header">
+            <div class="card-title-block">
+              <h2>Suez Canal</h2>
+              <p class="why-text">Moderate signal activity. Emerging monitoring conditions.</p>
+            </div>
+            <div class="stress-block">
+              <div class="stress-score" style="color:#e67e22">40</div>
+              <div class="stress-label" style="color:#e67e22">MODERATE</div>
+              <div class="stress-sub">24h Stress Index</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th class="col-time">Published</th>
+                  <th class="col-headline">Headline</th>
+                  <th class="col-source">Source</th>
+                  <th class="col-cats">Categories</th>
+                  <th class="col-signal">Signal</th>
+                </tr>
+              </thead>
+              <tbody>
+            <tr>
+              <td class="col-time">2026-06-09 09:44 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE5uMHZyUnh4MC16aDBKU1c1SFlFWGVhX1IwMGkxT3ljR1FyVkotOHpsaUNtT1NIRTI0elZnUzB5cGNYTUxUbHY5aWM0Mld3UmhqQlBpUGQ2SW9qYkxjMDlaR2VrQ1BaTmxkbXhoNDNB?oc=5" target="_blank" rel="noopener">Egypt Joins UAE, Saudi Arabia, Qatar, Germany, France, Italy, China and Others as Iran-Backed Houthi Red Sea Blockade Threat Triggers Fears of Suez Canal Crisis, Oil Price Shock, Shipping Chaos, Tourism Fallout and Global Economic Disruption - Travel And Tour World</a></td>
+              <td class="col-source">Travel And Tour World</td>
+              <td class="col-cats"><span class="cat cat-energy">Energy Markets</span><span class="cat cat-maritime">Maritime / Shipping</span></td>
+              <td class="col-signal"><span class="badge badge-medium">MEDIUM</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 07:33 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxPdG5ncTZxWnZ3aUpwS2xHLWwzLWY1Mnk4N0Vfa0Y5aWNudmRqUldxZmhUa25sWmQySEY2cjhqNEJTamRPRGVsblVIVVhaQW9oNHNzLThqSURLWFU1bUEzM1ZoYkZVZ043a3l3ejVaMFdLS2VPMnZkMm5oTXR0ME4zaWNsN0dfZ0lT?oc=5" target="_blank" rel="noopener">Suez Canal to impose steeper transit charges from mid-July - Splash247</a></td>
+              <td class="col-source">Splash247</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 12:05 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE5YU19RdnNNcWxJbkZjSzdHUEVfU01vOGpIVjJ2RWpSU0dIMnRKbU93cUNWZ3VZNUFubEd3SjU2R0ZIeEZDZ1c5U3pMYkw3ZlJEcndmMklzZ1cwX3ZuUDZuZ3Y1REMyYUtlaFFqNFVR?oc=5" target="_blank" rel="noopener">Suez Canal Cruise Tourism Gains Global Momentum as Egypt Transforms Historic Waterway into a Must-Experience Travel Route for 2026 - Travel And Tour World</a></td>
+              <td class="col-source">Travel And Tour World</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 02:55 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxPSExvTTRkMTZvR3JFakdQWHhURkpnRFNWMFg1cU5DQXBNdHAxTTdSYkRxajZpQUFkX2tfWi1pM2pERTJUa2dpM1pwcXFveGtkNzFCaV9LWlNOeFVEY3Z5RG94Tm1Kdkd4Y01PUTFQR18yXzdRMFRwOGhqWVl3RWVJX0Y1ZDM0NkVJSWlEU3d5MXdzeFkzVlpNQw?oc=5" target="_blank" rel="noopener">Why a Suez Canal leadership cruise could spark a new era of floating conferences - Arabian Business</a></td>
+              <td class="col-source">Arabian Business</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 07:40 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTFBOb2E0YkhFYXEwd0YxdjJPV3NNcWN4Si1ReU1JejNYZ2pKZHFkTHZnQXZJdWdGXzQ1Sy1wZXc4ZEdmQTcxV1YwcGZ6UXFZV3hfekFvZURQMXNXSTY0TzYzSFB1aXVKOHBETTdTdUJR?oc=5" target="_blank" rel="noopener">Egypt Enters Global Events Spotlight As Suez Canal Cruise Shows How Maritime Tourism Can Transform Conferences - Travel And Tour World</a></td>
+              <td class="col-source">Travel And Tour World</td>
+              <td class="col-cats"><span class="cat cat-maritime">Maritime / Shipping</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="chokepoint-card">
+          <div class="card-header">
+            <div class="card-title-block">
+              <h2>Bab el-Mandeb</h2>
+              <p class="why-text">Elevated signal density. Concentrated operational or geopolitical risk indicators present.</p>
+            </div>
+            <div class="stress-block">
+              <div class="stress-score" style="color:#c0392b">60</div>
+              <div class="stress-label" style="color:#c0392b">ELEVATED</div>
+              <div class="stress-sub">24h Stress Index</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th class="col-time">Published</th>
+                  <th class="col-headline">Headline</th>
+                  <th class="col-source">Source</th>
+                  <th class="col-cats">Categories</th>
+                  <th class="col-signal">Signal</th>
+                </tr>
+              </thead>
+              <tbody>
+            <tr>
+              <td class="col-time">2026-06-09 02:02 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMi3AFBVV95cUxNNGlUVzZ2YWpRRWpXOFNKaVVtV1E1RnhONGtURGpJV1Y0MWFHSzUwSTJFOVYybk92TkJ3NFFNYmtPZjJzTm5icXBabnF0Z3U3bjNBM2NPR0NzaUlYakRFSWhuS0M0ZlVHemtpQnR5eDBKdnVBSXdQN2tLRndhQ1d4X3NZQVNZY2J5ekNXN2RBOFhWTUg1VHFqRE1SM0lNQnNHbHJwTzBobFNqMWhYZ0ttWEpnUjdab0NPbENjWmcwV2RWUVpHUnN2OHpTbzFET3pHbnVjUVVGT3hpd1NG?oc=5" target="_blank" rel="noopener">Analysts warn Bab el-Mandeb closure could trigger record oil spike - MSN</a></td>
+              <td class="col-source">MSN</td>
+              <td class="col-cats"><span class="cat cat-energy">Energy Markets</span></td>
+              <td class="col-signal"><span class="badge badge-high">HIGH</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 02:41 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMi5wFBVV95cUxOYXJvTWgtUHRXOHZ0NzA3UHBkRlcxWTBkZVo3em1ZWlN5SVlnbzY1QVcyY2NBWFVhQW1wODRnWkNyQzg1WU9xZm9PeVF3b1FEMERkTXprY3pWVXgxNzRkMnoxSjhYQ0c4eFNhQlc1MHZwUGJVcHBSUnlfMXR3RVdzS2wzMUFMZUVrb25PZWIzeVI1aGZ4NV9uUTc4VnFYUXRYUjNwR05fenBDdTNlY2ZwdmZwUGQzV1J0SDBaa0hFdmE1dWxGZVVRWTRUNEhMakFEXzlSUVlCeU8xQm9VWlRJNm5zVy12cXfSAe8BQVVfeXFMT3ltYUx1cjlXdXNER2FZdGdOQUEzM0lhLWI3VnUxSV9Ma3prRWhGXzQtQWVlRU8yb2VhREE1UXg0Z1JxRnozX2FFMUhPOHhjVEtPQ1JkT2huZjdEZ2s0d2RrLUVkdUpDZ2Uzay13U2lmTWpqeGJwcEwzV21pSzFqZ3I3QVpqYWpvd1gtcGEyT1pQb1ZXZ29pMFNpM2ZXS0ozYUQyMGFPZUFJRm5GU2FzVkZXd0YxM1B3LUYwdXFiUUt0b2tuS3BBVllyeTJMVndXdmdqdEZURlEydkRBb3c2QUJZcEs4TURlTjYzaTQxYzA?oc=5" target="_blank" rel="noopener">New Maritime Flashpoint? Tehran Eyes HormuzBab al-Mandeb Security Corridor Amid Rising Tensions - NDTV Profit</a></td>
+              <td class="col-source">NDTV Profit</td>
+              <td class="col-cats"><span class="cat cat-maritime">Maritime / Shipping</span></td>
+              <td class="col-signal"><span class="badge badge-medium">MEDIUM</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-08 23:51 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTzNfTXhMTWNQS3BvaDhkVVZNSVlZQkRtZ0I1c3pKLV9IakU0NTl5N3U4amJXYkU2ckJwR29zNmQ3NGp1WUxIeG9NLWxGdjE4TFhDSGNnWkJydUtaOFYwSlBIOGh3RUV4d29YTFBzSlZwWG96clNkdEpVcnVoZmlXQl9jdnpWRlQw?oc=5" target="_blank" rel="noopener">Bab el-Mandeb Oil Export Disruption: The 2026 Crisis Explained - Discovery Alert</a></td>
+              <td class="col-source">Discovery Alert</td>
+              <td class="col-cats"><span class="cat cat-energy">Energy Markets</span><span class="cat cat-maritime">Maritime / Shipping</span></td>
+              <td class="col-signal"><span class="badge badge-medium">MEDIUM</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 09:49 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiygFBVV95cUxQaEwxMjVzd29Qa0N1N3FlbkRfdXFhUndFanBra0thM1lCNmdKN1padXp1cnBXWTRZYmVGY2lacmpkb0c2Q0dZRVM0NjI0VFJHVHIwX1pfS1FubG9ZblF0WUU2R0xxbURiVHRhNFJGRnJYYUVpZDdrSUVOcFFqTzFOSG93S1ZNc214ZTNFbHJRSkMzZFVpNXZCd3U5TF82bEhPTVFnWTBETWhiVUVRRHNBSThkeTFCVTZ1SHJFTlZnNlhseV9Xb0dIOFVn?oc=5" target="_blank" rel="noopener">Houthis threaten Bab el-Mandeb as oil chokepoint risks grow - MSN</a></td>
+              <td class="col-source">MSN</td>
+              <td class="col-cats"><span class="cat cat-energy">Energy Markets</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-08 13:00 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxNUk1LYlJMaVVaN1UxcmtWQkVYLWxENnZZR0c1amlfSWFxUGxscWUwLUV6ZjVUVUdha21yYVhJQUdhNW5kaVNwTHdaM2ktNW8wMzE0UDhULUI2d0VOQ2xERC1WOWlVQ0VlUC1kN3luZk9pbkxLWklYQVMxZ0pWR0dwdm1iNWJYRzRhQWQ4WjA5UHJFWjNBM1BjeUc3R2NOeWdvM0tMeU9LTUc4enU1YVFFS1hab3loczZtQ3YtT0JBRmZQQQ?oc=5" target="_blank" rel="noopener">Crude Oil Prices Today: Brent, WTI Rise as Iran-Backed Houthis Block Bab el-Mandeb Route - CryptoRank</a></td>
+              <td class="col-source">CryptoRank</td>
+              <td class="col-cats"><span class="cat cat-energy">Energy Markets</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="chokepoint-card">
+          <div class="card-header">
+            <div class="card-title-block">
+              <h2>Turkish Straits</h2>
+              <p class="why-text">No significant signals detected for Turkish Straits in the last 24 hours.</p>
+            </div>
+            <div class="stress-block">
+              <div class="stress-score" style="color:#27ae60">0</div>
+              <div class="stress-label" style="color:#27ae60">NOMINAL</div>
+              <div class="stress-sub">24h Stress Index</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th class="col-time">Published</th>
+                  <th class="col-headline">Headline</th>
+                  <th class="col-source">Source</th>
+                  <th class="col-cats">Categories</th>
+                  <th class="col-signal">Signal</th>
+                </tr>
+              </thead>
+              <tbody><tr><td colspan="5" class="no-data">No qualifying signals in the last 24 hours.</td></tr></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="chokepoint-card">
+          <div class="card-header">
+            <div class="card-title-block">
+              <h2>Panama Canal</h2>
+              <p class="why-text">Moderate signal activity. Emerging monitoring conditions.</p>
+            </div>
+            <div class="stress-block">
+              <div class="stress-score" style="color:#e67e22">33</div>
+              <div class="stress-label" style="color:#e67e22">MODERATE</div>
+              <div class="stress-sub">24h Stress Index</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th class="col-time">Published</th>
+                  <th class="col-headline">Headline</th>
+                  <th class="col-source">Source</th>
+                  <th class="col-cats">Categories</th>
+                  <th class="col-signal">Signal</th>
+                </tr>
+              </thead>
+              <tbody>
+            <tr>
+              <td class="col-time">2026-06-09 00:46 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxQU192TXpzall2NnRRMDFvek1CNkFlMXFjQ1dCUEo5aGQwRkRXTFh3OHJiMGRwWWFsU2dPQVBTQm0wMWQ2TXRRX0IxRzRKSG9yRDN3Y3ZTRU1EU0czcHdkRmVaZzU4SzNRQndFam41YkluMkE2M0Z2UHN6YkM4dlEyZ25naXdWNUwyZkdFcHlJYThOSE5kV3JNNHBjREJCNUFGRm9td1pLcUluOHNVa1NrRUt0dlo?oc=5" target="_blank" rel="noopener">Panama Canal reduces draft at Neopanamax locks amid El Niño - Shipping Telegraph</a></td>
+              <td class="col-source">Shipping Telegraph</td>
+              <td class="col-cats"><span class="cat cat-maritime">Maritime / Shipping</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-08 14:50 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxQU19YVUpVN0dUQ0tSRFg3eklxZVg0NGo2YUI1dllrTjMwZ3VNcnhud0RsaFdIZW1lUFgzOFJVdU5scjN3UFZkRzFjeHdYZlA0UG95S3FIal9wZ2tCUDBDbmx5dkdhTkg3clJyRl91WlhVemRoT2xWQkpJOFZ1YzlaVU9NQjVzdEdaVGMzNzZFa3FuSFdqTnZvXzRqUGpIcHhy?oc=5" target="_blank" rel="noopener">From the Panama Canal to Quantum Computing: David R. Shedd’s Summer Agenda - WashingtonExec</a></td>
+              <td class="col-source">WashingtonExec</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-09 11:03 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxNNWZYNDgycjNJYjk2RnVrWlJXbEZFM0RrRXBUalZlT0k4a0ZZclhzYlQ1ZUpKUEc4ZENSNUt2bWFrWHRad09DR2tBVXZqdzdwY3Z3dENuMFlzNF91Z25UMTE0LVNrNkNLRDRSaGd0MlVfMDktVmhxRHRnZXh5X1FqelJIa1ZuM0ZTVjJiQXR1TVJQUjctNEFFLTBqY1pPc25VYmFyLTMtYXlCUDBieG5iNW52QlVzRWVvV3lISnk4Z2JJajY3cUJYVA?oc=5" target="_blank" rel="noopener">Executive Moves - Panama Canal Authority names Ilya Espino de Marotta administrator through 2033 - rivieramm.com</a></td>
+              <td class="col-source">rivieramm.com</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-08 14:54 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxNV0p5STlGczNxakVjbTFxTHZSenViRU91dzNlUGNBQzZrcnBoVk81RG94T3MweXFsbEh1QTduVUxJcjB6MGdfVUQtZTRTNnNTczQ0SU5CQUtPYkZuRmtpTUVvYkhvb3BfVXZpcUNHSGRNQlFVTnV6RnZ5bk8wWDhYck91bmRZa3U3elNDdW1ONFZUYUxJUmQzWngwdTJVeG40V3E0YWp3?oc=5" target="_blank" rel="noopener">Panama Canal to reduce Neopanamax draft limit amid El Niño concerns - engine.online</a></td>
+              <td class="col-source">engine.online</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr></tbody>
+            </table>
+          </div>
+        </section>
+</main>
+
+<footer>
+  © 2026 Randy Hinton. All rights reserved. &nbsp;·&nbsp;
+  Deterministic rule-based signal classification. No AI inference. &nbsp;·&nbsp;
+  For informational use only. &nbsp;·&nbsp;
+  Data sourced from public RSS feeds via Google News.
+</footer>
+
+</body>
+</html>
