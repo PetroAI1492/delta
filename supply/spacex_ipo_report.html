@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpaceX IPO — What You Should Know</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --void:    #05080f;
+    --surface: #0d1220;
+    --panel:   #111828;
+    --border:  #1c2540;
+    --border2: #253060;
+    --text:    #dce8ff;
+    --text2:   #7a90be;
+    --text3:   #3a4f7a;
+    --launch:  #e8572a;
+    --orbit:   #3a8eff;
+    --go:      #2ecc71;
+    --warn:    #f0b429;
+    --stop:    #e05050;
+    --mono:    'Space Mono', monospace;
+    --sans:    'Space Grotesk', sans-serif;
+  }
+
+  body { font-family: var(--sans); background: var(--void); color: var(--text); line-height: 1.65; font-size: 15px; }
+
+  .hero {
+    background: radial-gradient(ellipse at 50% 0%, #1a2a5a 0%, #05080f 65%);
+    border-bottom: 1px solid var(--border2);
+    padding: 64px 48px 52px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='22' r='1' fill='%23ffffff08'/%3E%3Ccircle cx='88' cy='67' r='1.5' fill='%23ffffff05'/%3E%3Ccircle cx='144' cy='12' r='1' fill='%23ffffff08'/%3E%3Ccircle cx='198' cy='88' r='1' fill='%23ffffff06'/%3E%3Ccircle cx='267' cy='34' r='1.5' fill='%23ffffff04'/%3E%3Ccircle cx='320' cy='78' r='1' fill='%23ffffff07'/%3E%3Ccircle cx='376' cy='19' r='1' fill='%23ffffff05'/%3E%3Ccircle cx='55' cy='155' r='1' fill='%23ffffff06'/%3E%3Ccircle cx='110' cy='198' r='1.5' fill='%23ffffff04'/%3E%3Ccircle cx='222' cy='144' r='1' fill='%23ffffff08'/%3E%3Ccircle cx='299' cy='167' r='1' fill='%23ffffff05'/%3E%3Ccircle cx='345' cy='122' r='1.5' fill='%23ffffff06'/%3E%3C/svg%3E") repeat;
+    pointer-events: none;
+  }
+  .hero-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--launch); margin-bottom: 16px; }
+  .hero-title { font-size: clamp(32px, 5vw, 56px); font-weight: 700; color: #fff; letter-spacing: -.02em; line-height: 1.1; margin-bottom: 12px; }
+  .hero-title span { color: var(--launch); }
+  .hero-sub { font-size: 16px; color: var(--text2); max-width: 600px; margin: 0 auto 36px; }
+  .hero-stats {
+    display: flex; justify-content: center; flex-wrap: wrap;
+    max-width: 850px; margin: 0 auto;
+    border: 1px solid var(--border2); border-radius: 12px; overflow: hidden;
+    background: rgba(13,18,32,.7); backdrop-filter: blur(8px);
+  }
+  .hstat { flex: 1; min-width: 140px; padding: 20px 16px; border-right: 1px solid var(--border); text-align: center; }
+  .hstat:last-child { border-right: none; }
+  .hstat-val { font-family: var(--mono); font-size: 22px; font-weight: 700; color: var(--launch); line-height: 1; margin-bottom: 4px; }
+  .hstat-lbl { font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--text3); }
+  .hstat-src { font-size: 9px; color: var(--text3); margin-top: 3px; font-style: italic; }
+
+  .disclaimer {
+    background: #1a1205; border: 1px solid #4a3a0a; border-radius: 8px;
+    padding: 14px 24px; margin: 24px auto; max-width: 1100px;
+    font-size: 12px; color: #c8a030; line-height: 1.7;
+  }
+  .disclaimer strong { color: #e8c040; }
+
+  .body { padding: 0 48px 64px; max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--launch);
+    margin: 48px 0 16px; display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .fact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 14px; margin-bottom: 8px; }
+  .fact-card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; }
+  .fact-label { font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--text3); margin-bottom: 6px; }
+  .fact-val { font-family: var(--mono); font-size: 20px; font-weight: 700; color: var(--orbit); line-height: 1.1; margin-bottom: 4px; }
+  .fact-note { font-size: 11px; color: var(--text2); line-height: 1.5; }
+  .fact-src { font-size: 10px; color: var(--text3); margin-top: 6px; font-style: italic; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+
+  .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 22px; }
+  .panel-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--text2); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+
+  /* Source tag inline */
+  .src-tag { display: inline-block; font-size: 9px; font-family: var(--mono); color: var(--text3); background: #151c2a; border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; margin-left: 6px; vertical-align: middle; white-space: nowrap; }
+
+  /* Fact/Opinion/Unknown label system */
+  .label-fact    { display: inline-block; font-size: 9px; font-weight: 700; font-family: var(--mono); letter-spacing: .08em; color: var(--go);   background: #0a2a15; border: 1px solid #0f4a25; border-radius: 3px; padding: 2px 7px; margin-bottom: 5px; }
+  .label-opinion { display: inline-block; font-size: 9px; font-weight: 700; font-family: var(--mono); letter-spacing: .08em; color: var(--warn); background: #2a2005; border: 1px solid #4a3a08; border-radius: 3px; padding: 2px 7px; margin-bottom: 5px; }
+  .label-unknown { display: inline-block; font-size: 9px; font-weight: 700; font-family: var(--mono); letter-spacing: .08em; color: var(--text2); background: #151c2a; border: 1px solid var(--border2); border-radius: 3px; padding: 2px 7px; margin-bottom: 5px; }
+
+  .fou-item { padding: 12px 0; border-bottom: 1px solid var(--border); }
+  .fou-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .fou-text { font-size: 12px; color: var(--text2); line-height: 1.6; margin-top: 4px; }
+  .fou-text strong { color: var(--text); }
+
+  .risk-item { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+  .risk-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .risk-badge { flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 9px; font-weight: 700; margin-top: 2px; text-align: center; line-height: 1.2; }
+  .risk-high   { background: #3a100a; color: var(--stop); border: 1px solid #5a180f; }
+  .risk-medium { background: #2a2005; color: var(--warn); border: 1px solid #4a3a08; }
+  .risk-title  { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .risk-desc   { font-size: 12px; color: var(--text2); line-height: 1.6; }
+  .risk-src    { font-size: 10px; color: var(--text3); margin-top: 4px; font-style: italic; }
+
+  .timeline-item { display: flex; gap: 16px; margin-bottom: 16px; }
+  .tl-date { font-family: var(--mono); font-size: 11px; color: var(--launch); min-width: 80px; padding-top: 3px; flex-shrink: 0; }
+  .tl-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--launch); flex-shrink: 0; margin-top: 7px; box-shadow: 0 0 8px var(--launch); }
+  .tl-dot.done  { background: var(--text3); box-shadow: none; }
+  .tl-dot.today { background: var(--go); box-shadow: 0 0 10px var(--go); }
+  .tl-content { font-size: 13px; color: var(--text2); padding-top: 1px; }
+  .tl-content strong { color: var(--text); }
+
+  .comp-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .comp-table th { text-align: left; padding: 8px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--text3); border-bottom: 1px solid var(--border2); font-weight: 600; }
+  .comp-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); color: var(--text2); vertical-align: top; }
+  .comp-table td:first-child { color: var(--text); font-weight: 500; }
+  .comp-table tr:last-child td { border-bottom: none; }
+  .val-pos { color: var(--go);  font-family: var(--mono); }
+  .val-neg { color: var(--stop); font-family: var(--mono); }
+  .val-neu { color: var(--warn); font-family: var(--mono); }
+
+  .checklist-item { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text2); align-items: flex-start; }
+  .checklist-item:last-child { border-bottom: none; }
+  .check-icon { color: var(--orbit); flex-shrink: 0; font-size: 14px; margin-top: 1px; }
+  .warn-icon  { color: var(--warn);  flex-shrink: 0; font-size: 14px; margin-top: 1px; }
+  .stop-icon  { color: var(--stop);  flex-shrink: 0; font-size: 14px; margin-top: 1px; }
+
+  .verdict-box { background: linear-gradient(135deg, #0d1a0a, #0a1a08); border: 1px solid #1e4a15; border-radius: 12px; padding: 28px 32px; }
+  .verdict-title { font-family: var(--mono); font-size: 11px; letter-spacing: .15em; text-transform: uppercase; color: var(--go); margin-bottom: 12px; }
+  .verdict-text { font-size: 14px; color: #a8d8a0; line-height: 1.8; }
+  .verdict-text strong { color: #c8f0c0; }
+
+  .morningstar-note {
+    background: #0d1825; border: 1px solid var(--border2); border-radius: 8px;
+    padding: 14px 18px; margin-top: 12px; font-size: 11px; color: var(--text2); line-height: 1.7;
+  }
+  .morningstar-note strong { color: var(--warn); }
+
+  .report-footer { border-top: 1px solid var(--border); padding: 20px 48px; font-size: 11px; color: var(--text3); background: var(--surface); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
+  a { color: var(--orbit); text-decoration: none; }
+  a:hover { color: #79b8ff; }
+
+  @media (max-width: 700px) {
+    .hero { padding: 40px 20px 32px; }
+    .body { padding: 0 20px 40px; }
+    .disclaimer { margin: 16px 20px; }
+    .two-col { grid-template-columns: 1fr; }
+    .report-footer { padding: 16px 20px; flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">SpaceX &nbsp;·&nbsp; Nasdaq: SPCX &nbsp;·&nbsp; June 12, 2026</div>
+  <h1 class="hero-title">What You Should Know<br>Before the <span>SpaceX IPO</span></h1>
+  <p class="hero-sub">SpaceX is targeting the largest IPO by proceeds in US market history. Pricing is tonight, June 11. Trading begins June 12. Here is what every investor should understand first.</p>
+  <div class="hero-stats">
+    <div class="hstat">
+      <div class="hstat-val">$135</div>
+      <div class="hstat-lbl">IPO Price Per Share</div>
+      <div class="hstat-src">Source: SpaceX S-1, Jun 3 2026</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-val">$1.77T</div>
+      <div class="hstat-lbl">Market Cap at IPO</div>
+      <div class="hstat-src">Source: SpaceX S-1</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-val">$75B</div>
+      <div class="hstat-lbl">Amount Being Raised</div>
+      <div class="hstat-src">Source: Reuters, Jun 3 2026</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-val">30%</div>
+      <div class="hstat-lbl">Retail Allocation</div>
+      <div class="hstat-src">Source: Reuters, Jun 3 2026</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-val">85%</div>
+      <div class="hstat-lbl">Musk Voting Control</div>
+      <div class="hstat-src">Source: SpaceX S-1</div>
+    </div>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <strong>Important Disclaimer:</strong>
+  This report is for <strong>informational and educational purposes only</strong>.
+  It does not constitute investment advice and should not be relied upon as such.
+  This report aggregates publicly available information for reference purposes only.
+  Readers are encouraged to discuss the content with a qualified financial advisor who can interpret its relevance to their individual circumstances.
+  Financial figures are sourced from the SpaceX S-1 registration statement (SEC EDGAR, May 20, 2026) unless otherwise noted.
+  Analyst opinions and third-party estimates are clearly labeled and represent the views of those sources, not independently verified facts.
+  IPO investing involves substantial risk including potential total loss of principal.
+  <strong>Always consult a qualified financial advisor before making investment decisions.</strong>
+</div>
+
+<div class="body">
+
+  <!-- BASICS -->
+  <div class="section-label">The basics — sourced from SpaceX S-1, SEC EDGAR</div>
+  <div class="fact-grid">
+    <div class="fact-card">
+      <div class="fact-label">Company</div>
+      <div class="fact-val" style="font-size:16px;color:#dce8ff">Space Exploration Technologies Corp.</div>
+      <div class="fact-note">Founded 2002 by Elon Musk. Privately held until June 12, 2026. Internally referred to as "Project Apex."</div>
+      <div class="fact-src">Source: SpaceX S-1 (SEC EDGAR, May 20, 2026)</div>
+    </div>
+    <div class="fact-card">
+      <div class="fact-label">IPO Price</div>
+      <div class="fact-val">$135</div>
+      <div class="fact-note">Fixed price — no range. SpaceX announced a single take-it-or-leave-it price rather than the standard process of setting a range and adjusting based on demand.</div>
+      <div class="fact-src">Source: Reuters, June 3, 2026</div>
+    </div>
+    <div class="fact-card">
+      <div class="fact-label">Valuation at IPO</div>
+      <div class="fact-val">$1.77T</div>
+      <div class="fact-note">At $1.77T, SpaceX would rank among the five largest companies by market capitalization at listing — based on comparable company valuations as of June 2026.</div>
+      <div class="fact-src">Source: SpaceX S-1; market cap comparisons as of June 2026</div>
+    </div>
+    <div class="fact-card">
+      <div class="fact-label">Revenue (FY2025)</div>
+      <div class="fact-val">$18.67B</div>
+      <div class="fact-note">Implies a 96× price-to-sales ratio at the IPO price. For context, Amazon went public at approximately 4× sales in 1997 and Nvidia trades at approximately 25× sales today.</div>
+      <div class="fact-src">Source: SpaceX S-1; Amazon/Nvidia P/S from public filings</div>
+    </div>
+    <div class="fact-card">
+      <div class="fact-label">Net Loss (FY2025)</div>
+      <div class="fact-val" style="color:var(--stop)">−$4.94B</div>
+      <div class="fact-note">SpaceX has not reported a profitable fiscal year. The xAI merger (February 2026) added approximately $2.5B per quarter in AI-related losses to the consolidated income statement.</div>
+      <div class="fact-src">Source: SpaceX S-1; xAI merger disclosed in S-1 risk factors</div>
+    </div>
+    <div class="fact-card">
+      <div class="fact-label">Ticker / Exchange</div>
+      <div class="fact-val" style="font-size:16px">SPCX / Nasdaq</div>
+      <div class="fact-note">Potentially eligible for Nasdaq-100 index inclusion as early as July 7, 2026 — which would require passive index funds tracking the index to purchase shares.</div>
+      <div class="fact-src">Source: Reuters; Nasdaq-100 eligibility criteria</div>
+    </div>
+  </div>
+
+  <!-- WHAT MAKES THIS DIFFERENT -->
+  <div class="section-label">What makes this offering unusual</div>
+  <div class="two-col">
+    <div class="panel">
+      <div class="panel-title">Five features unlike prior large IPOs</div>
+      <div class="checklist-item">
+        <span class="warn-icon">◆</span>
+        <div>
+          <strong style="color:var(--text)">Fixed price, no range.</strong>
+          <span class="src-tag">S-1 / Reuters Jun 3</span>
+          Standard IPOs set a range and adjust based on institutional demand. SpaceX set $135 as a final price — not a floor, not a ceiling.
+        </div>
+      </div>
+      <div class="checklist-item">
+        <span class="warn-icon">◆</span>
+        <div>
+          <strong style="color:var(--text)">30% retail allocation.</strong>
+          <span class="src-tag">Reuters Jun 3</span>
+          Typical large IPOs reserve 5–10% for retail investors. SpaceX is allocating approximately 30% through Fidelity, Schwab, Robinhood, SoFi, and Morgan Stanley E*Trade.
+        </div>
+      </div>
+      <div class="checklist-item">
+        <span class="warn-icon">◆</span>
+        <div>
+          <strong style="color:var(--text)">~3% initial float.</strong>
+          <span class="src-tag">S-1; WEEX analysis</span>
+          556.6 million shares are being offered of approximately 13 billion total shares outstanding. A small float against large demand can cause significant first-day price volatility.
+        </div>
+      </div>
+      <div class="checklist-item">
+        <span class="warn-icon">◆</span>
+        <div>
+          <strong style="color:var(--text)">Friends and family: no lockup.</strong>
+          <span class="src-tag">S-1 prospectus</span>
+          Musk and top executives face approximately one year lockup. Shares distributed to friends and family are not subject to any lockup restriction and may be sold on day one.
+        </div>
+      </div>
+      <div class="checklist-item">
+        <span class="warn-icon">◆</span>
+        <div>
+          <strong style="color:var(--text)">$2,000 minimum.</strong>
+          <span class="src-tag">Fidelity, Jun 4 2026</span>
+          An unusually low barrier for retail participation in an offering of this scale. Designed for broad retail access, including international investors.
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">The underwriter syndicate <span class="src-tag">Reuters / MEXC</span></div>
+      <div class="checklist-item">
+        <span class="check-icon">▸</span>
+        <div><strong style="color:var(--text)">21 banks total</strong> — the largest IPO underwriting syndicate assembled for a single offering</div>
+      </div>
+      <div class="checklist-item">
+        <span class="check-icon">▸</span>
+        <div><strong style="color:var(--text)">Lead bookrunners:</strong> Goldman Sachs, Morgan Stanley, JPMorgan, Bank of America, Citigroup</div>
+      </div>
+      <div class="checklist-item">
+        <span class="check-icon">▸</span>
+        <div><strong style="color:var(--text)">Retail platforms:</strong> Morgan Stanley E*Trade (smaller retail), Bank of America (wealthier US clients), Fidelity, Schwab, Robinhood, SoFi (general retail)</div>
+      </div>
+      <div class="checklist-item">
+        <span class="check-icon">▸</span>
+        <div><strong style="color:var(--text)">International access</strong> for retail investors in US, UK, EU, Australia, Canada, Japan, and South Korea</div>
+      </div>
+      <div class="checklist-item">
+        <span class="check-icon">▸</span>
+        <div><strong style="color:var(--text)">Note:</strong> All 21 underwriting banks are being compensated for distributing shares. Their research and price targets published around the IPO reflect a financial conflict of interest. Independent research should be weighted accordingly.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUSINESS -->
+  <div class="section-label">What SpaceX actually is — Source: SpaceX S-1</div>
+  <div class="two-col">
+    <div class="panel">
+      <div class="panel-title">Two revenue streams</div>
+      <div style="margin-bottom:16px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <span style="font-size:13px;color:var(--text);font-weight:600">Starlink — Satellite Internet</span>
+          <span style="font-family:var(--mono);font-size:12px;color:var(--orbit)">~58% of revenue</span>
+        </div>
+        <div style="background:#21262d;border-radius:4px;height:10px;overflow:hidden">
+          <div style="width:58%;background:var(--orbit);height:100%;border-radius:4px"></div>
+        </div>
+        <div style="font-size:11px;color:var(--text2);margin-top:6px">
+          43M+ subscribers as of the S-1 filing. One of the world's largest satellite broadband networks. The primary driver of SpaceX's growth narrative and a central component of the $1.77T valuation.
+          <span class="src-tag">S-1, May 2026</span>
+        </div>
+      </div>
+      <div style="margin-bottom:16px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <span style="font-size:13px;color:var(--text);font-weight:600">Launch Services — Falcon 9 / Starship</span>
+          <span style="font-family:var(--mono);font-size:12px;color:var(--launch)">~42% of revenue</span>
+        </div>
+        <div style="background:#21262d;border-radius:4px;height:10px;overflow:hidden">
+          <div style="width:42%;background:var(--launch);height:100%;border-radius:4px"></div>
+        </div>
+        <div style="font-size:11px;color:var(--text2);margin-top:6px">Handles the majority of global orbital launches. Falcon 9 is the proven high-cadence workhorse. Starship is the next-generation heavy-lift system — still in development, not yet revenue-generating at scale.</div>
+      </div>
+      <div style="font-size:11px;color:var(--text3);padding-top:10px;border-top:1px solid var(--border)">
+        xAI (Musk's AI company) was merged into SpaceX in February 2026. AI losses of approximately $2.5B per quarter are now consolidated on SpaceX's income statement. <span class="src-tag">S-1</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Valuation in context</div>
+      <table class="comp-table">
+        <tr>
+          <th>Company</th>
+          <th>Market Cap</th>
+          <th>Revenue</th>
+          <th>P/S</th>
+          <th>Source</th>
+        </tr>
+        <tr>
+          <td>SpaceX (IPO)</td>
+          <td class="val-neg">$1.77T</td>
+          <td>$18.7B</td>
+          <td class="val-neg">96×</td>
+          <td style="font-size:10px;color:var(--text3)">S-1</td>
+        </tr>
+        <tr>
+          <td>Amazon (1997 IPO)</td>
+          <td>$0.4B</td>
+          <td>$0.1B</td>
+          <td class="val-neu">4×</td>
+          <td style="font-size:10px;color:var(--text3)">SEC filings</td>
+        </tr>
+        <tr>
+          <td>Tesla (Jun 2026)</td>
+          <td>$1.5T</td>
+          <td>$97B</td>
+          <td class="val-neu">15×</td>
+          <td style="font-size:10px;color:var(--text3)">Public filings</td>
+        </tr>
+        <tr>
+          <td>Nvidia (Jun 2026)</td>
+          <td>$3.3T</td>
+          <td>$130B</td>
+          <td class="val-pos">25×</td>
+          <td style="font-size:10px;color:var(--text3)">Public filings</td>
+        </tr>
+        <tr>
+          <td>Morningstar fair value</td>
+          <td class="val-pos">~$63/share</td>
+          <td>—</td>
+          <td style="color:var(--warn);font-family:var(--mono)">~54% below IPO</td>
+          <td style="font-size:10px;color:var(--text3)">Morningstar, Jun 5</td>
+        </tr>
+      </table>
+      <div class="morningstar-note">
+        <strong>On the Morningstar estimate:</strong> The $63/share figure is Morningstar's discounted cash flow model based on their specific assumptions about Starlink growth rates, discount rates, and terminal value. It is one analytical framework — not an objective truth. Other models using different assumptions will produce different results. It is cited here because Morningstar has no financial interest in this offering, unlike the 21 underwriting banks. <em>It should not be interpreted as a definitive valuation.</em>
+      </div>
+    </div>
+  </div>
+
+  <!-- RISKS -->
+  <div class="section-label">Six risks every investor should understand</div>
+  <div class="two-col">
+    <div class="panel">
+      <div class="panel-title">Structural risks</div>
+      <div class="risk-item">
+        <div class="risk-badge risk-high">HIGH</div>
+        <div>
+          <div class="risk-title">Valuation — 96× price-to-sales <span class="src-tag">S-1 / public filings</span></div>
+          <div class="risk-desc">At $135/share, SpaceX is priced for substantial future growth. The 96× price-to-sales ratio is among the highest for any company at IPO at this scale. Among all companies currently valued above $1T, none generates less than $58B in annual revenue. SpaceX generates $18.7B. The valuation is pricing a future state, not the current business.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge risk-high">HIGH</div>
+        <div>
+          <div class="risk-title">Musk controls 85% of votes <span class="src-tag">S-1</span></div>
+          <div class="risk-desc">Class A shareholders (public investors) hold minimal governance rights. SpaceX qualifies as a "controlled company" under Nasdaq listing rules, which exempts it from certain standard corporate governance requirements. Musk can direct major strategic decisions without shareholder approval.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge risk-high">HIGH</div>
+        <div>
+          <div class="risk-title">Tesla — what we know vs what is speculation</div>
+          <div class="risk-desc">
+            <div class="fou-item" style="border:none;padding:6px 0 4px">
+              <span class="label-fact">FACT</span>
+              <div class="fou-text">Tesla is mentioned 87 times in the SpaceX S-1. The filing grants SpaceX authority to pursue future acquisitions. SpaceX and Tesla already have documented financial relationships including $697M in Megapack and Cybertruck purchases. <span class="src-tag">S-1</span></div>
+            </div>
+            <div class="fou-item" style="border:none;padding:4px 0 4px">
+              <span class="label-opinion">ANALYST OPINION</span>
+              <div class="fou-text">Wedbush analyst Dan Ives has publicly stated an 80–90% merger probability within a year of the IPO. This is one analyst's view and not confirmed by either company. <span class="src-tag">Wedbush, May 2026</span></div>
+            </div>
+            <div class="fou-item" style="border:none;padding:4px 0 0">
+              <span class="label-unknown">UNKNOWN</span>
+              <div class="fou-text">Whether management intends to pursue a Tesla acquisition, on what timeline, at what price, and on what terms for SpaceX public shareholders. Readers should review the S-1 risk factors and capital structure sections directly for disclosed governance provisions.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Operational risks</div>
+      <div class="risk-item">
+        <div class="risk-badge risk-high">HIGH</div>
+        <div>
+          <div class="risk-title">Persistent and accelerating losses <span class="src-tag">S-1</span></div>
+          <div class="risk-desc">FY2025 net loss: $4.94B. Q1 2026 net loss: $4.28B — annualizing at approximately $17B per year. SpaceX has not reported a profitable fiscal year in its history. The xAI integration is contributing approximately $2.5B per quarter in AI-related losses.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge risk-high">HIGH</div>
+        <div>
+          <div class="risk-title">Tiny float — day-one price risk <span class="src-tag">S-1 / WEEX</span></div>
+          <div class="risk-desc">Approximately 3% of total shares are being offered publicly (556.6M of ~13B). Investors who cannot obtain IPO allocation at $135 and buy at market open on June 12 may pay a significant premium. Friends and family share recipients face no lockup and can sell immediately at open.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge risk-medium">MED</div>
+        <div>
+          <div class="risk-title">Regulatory, spectrum, and launch risk <span class="src-tag">S-1 risk factors</span></div>
+          <div class="risk-desc">Starship development requires continued FAA launch approvals. Starlink operations depend on spectrum rights and regulatory approvals in dozens of international markets. These risks are disclosed in the S-1 risk factors section and should be read directly.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="section-label">Key dates — Sources: SEC EDGAR, Reuters, Fidelity</div>
+  <div class="panel" style="max-width:640px">
+    <div class="panel-title">IPO Timeline</div>
+    <div class="timeline-item">
+      <div class="tl-date">Apr 1</div>
+      <div class="tl-dot done"></div>
+      <div class="tl-content"><strong>S-1 filed with SEC</strong> — Initial registration, $2T valuation target, $75B raise</div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-date">May 20</div>
+      <div class="tl-dot done"></div>
+      <div class="tl-content"><strong>S-1 made public</strong> — $18.67B FY2025 revenue and $4.94B net loss disclosed</div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-date">Jun 3</div>
+      <div class="tl-dot done"></div>
+      <div class="tl-content"><strong>$135/share confirmed</strong> — Fixed price set; $75B raise, 556.6M shares offered</div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-date">Jun 8–10</div>
+      <div class="tl-dot done"></div>
+      <div class="tl-content"><strong>Roadshow week</strong> — 125 analysts from 21 banks meet SpaceX management</div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-date">Jun 11</div>
+      <div class="tl-dot today"></div>
+      <div class="tl-content"><strong style="color:var(--go)">Pricing after market close.</strong> Retail investor event at SpaceX for 1,500 participants.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-date">Jun 12</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content"><strong>First day of trading</strong> — SPCX begins trading on Nasdaq</div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-date">~Jul 7</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content"><strong>Possible Nasdaq-100 inclusion</strong> — Would trigger required purchases by passive index funds</div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-date">~Jun 2027</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content"><strong>Executive lockup expires</strong> — Approximately one year after IPO. Friends and family recipients have no lockup.</div>
+    </div>
+  </div>
+
+  <!-- CHECKLIST + VERDICT -->
+  <div class="section-label">Questions to ask before deciding</div>
+  <div class="two-col">
+    <div class="panel">
+      <div class="panel-title">Due diligence checklist</div>
+      <div class="checklist-item">
+        <span class="check-icon">→</span>
+        <div>Signing a Client Certification under FINRA Rule 5130 confirms your eligibility to receive IPO shares — it does <strong style="color:var(--text)">not</strong> obligate you to purchase. You may decline any allocation offered.</div>
+      </div>
+      <div class="checklist-item">
+        <span class="check-icon">→</span>
+        <div>Ask your broker: <strong style="color:var(--text)">what is my allocation size, is there a lockup on my shares, and what is the minimum commitment amount?</strong></div>
+      </div>
+      <div class="checklist-item">
+        <span class="check-icon">→</span>
+        <div>If you decline IPO allocation, SPCX will trade on the open market on June 12. The opening price may differ significantly from $135 due to the small float and expected demand imbalance.</div>
+      </div>
+      <div class="checklist-item">
+        <span class="warn-icon">→</span>
+        <div><strong style="color:var(--text)">Anti-flipping rules vary by broker.</strong> At Fidelity, selling within 15 days of the IPO may restrict participation in future IPO offerings through that platform. <span class="src-tag">Fidelity, Jun 4</span></div>
+      </div>
+      <div class="checklist-item">
+        <span class="warn-icon">→</span>
+        <div>Read the S-1 risk factors directly — particularly the sections on <strong style="color:var(--text)">"controlled company" status</strong>, the Tesla cross-references, and the xAI loss disclosures. The S-1 is publicly available at SEC EDGAR.</div>
+      </div>
+      <div class="checklist-item">
+        <span class="stop-icon">→</span>
+        <div>The underwriting banks publishing positive research and price targets are being compensated for selling this deal. Independent research — including analysts with no role in the offering — should be weighted more heavily.</div>
+      </div>
+    </div>
+
+    <div class="verdict-box">
+      <div class="verdict-title">Questions worth discussing with your advisor</div>
+      <div class="verdict-text">
+        The right question is not <strong>"will SpaceX succeed?"</strong> — it may well succeed at some level.
+        The right questions are: <strong>"at what price does that success justify this valuation?"</strong>
+        and <strong>"what happens to my position if a Tesla transaction occurs at terms unfavorable to SpaceX public shareholders?"</strong>
+        <br><br>
+        Morningstar's independent fair value model estimates <strong>$63/share</strong> — 54% below the IPO price.
+        This is one model, built on specific assumptions, and other analysts will reach different conclusions.
+        It is included here because Morningstar has no financial stake in this offering.
+        The gap between $63 and $135 represents the premium being charged for Starlink's projected growth,
+        Starship's long-term potential, and Musk's execution track record — none of which are guaranteed.
+        <br><br>
+        A disciplined approach: <strong>understand the specific terms of your allocation before committing,
+        seek out independent research alongside underwriter analysis,
+        and consider waiting for quarterly financial filings after the IPO
+        before making a larger capital commitment.</strong>
+        The stock will be available after June 12.
+        Missing the first day of trading is not the same as missing the investment.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="report-footer">
+  <span>Prepared by Randy Hinton &nbsp;·&nbsp; SpaceX IPO Report &nbsp;·&nbsp; June 9, 2026 &nbsp;·&nbsp; © 2026 Randy Hinton</span>
+  <span>Sources: SpaceX S-1 (SEC EDGAR) &nbsp;·&nbsp; Reuters &nbsp;·&nbsp; CNBC &nbsp;·&nbsp; Morningstar &nbsp;·&nbsp; Fidelity &nbsp;·&nbsp; Wedbush</span>
+  <span>For informational purposes only. Not investment advice.</span>
+</div>
+
+</body>
+</html>

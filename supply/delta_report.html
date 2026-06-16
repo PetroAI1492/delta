@@ -1,0 +1,2290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DELTA &mdash; What Changed?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #ffffff;
+  --bg-rule:   #f5f5f5;
+  --bg-stripe: #fafafa;
+  --border:    #e0e0e0;
+  --border-hvy:#1a1a1a;
+  --text:      #1a1a1a;
+  --text-dim:  #555555;
+  --text-lt:   #999999;
+  --accent:    #e8650a;
+  --accent-lt: #fff3eb;
+  --pos:       #1a7a3f;
+  --pos-lt:    #eef7f2;
+  --neg:       #c0250a;
+  --neg-lt:    #fdf0ee;
+  --serif:     'PT Serif', Georgia, serif;
+  --sans:      'PT Sans', Arial, sans-serif;
+  --mono:      'IBM Plex Mono', 'Courier New', monospace;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:var(--sans); font-size:13px; line-height:1.5; }
+
+/* TOP RULE */
+.top-rule { height:3px; background:var(--accent); }
+
+/* MASTHEAD */
+.masthead { padding:16px 48px 14px; border-bottom:1px solid var(--border-hvy); }
+.masthead-grid { display:flex; align-items:baseline; justify-content:space-between; gap:32px; flex-wrap:wrap; }
+.masthead h1 { font-family:var(--serif); font-size:34px; font-weight:700; color:var(--text); line-height:1; letter-spacing:-0.02em; }
+.masthead h1 .ds { color:var(--accent); }
+.masthead-sub { font-family:var(--serif); font-size:13px; font-style:italic; color:var(--text-dim); margin-top:3px; }
+.masthead-right { text-align:right; font-family:var(--mono); font-size:10px; color:var(--text-dim); line-height:1.9; }
+.masthead-right .gen-date { font-size:12px; color:var(--text); font-weight:500; }
+
+/* NAV */
+.nav-bar { border-bottom:1px solid var(--border); padding:0 48px; display:flex; background:var(--bg-rule); overflow-x:auto; }
+.nav-item { padding:8px 14px; font-family:var(--sans); font-size:11px; font-weight:700; letter-spacing:0.05em; color:var(--text-dim); text-transform:uppercase; border-bottom:2px solid transparent; white-space:nowrap; text-decoration:none; }
+.nav-item:hover { color:var(--text); }
+.nav-item.active { color:var(--accent); border-bottom-color:var(--accent); }
+
+/* LAYOUT */
+.main { padding:32px 48px 80px; max-width:1440px; }
+
+/* SECTION */
+.section { margin-bottom:48px; }
+.section-title { font-family:var(--sans); font-size:9px; font-weight:700; letter-spacing:0.18em; color:var(--text-dim); text-transform:uppercase; padding-bottom:8px; border-bottom:1px solid var(--border-hvy); margin-bottom:20px; }
+.section-title .ta { color:var(--accent); margin-right:8px; }
+.empty { color:var(--text-lt); font-style:italic; padding:12px 0; font-family:var(--serif); font-size:13px; }
+
+/* TOP SIGNALS TABLE */
+.top-table { width:100%; border-collapse:collapse; font-size:12px; margin-top:2px; }
+.top-table th { text-align:left; padding:7px 12px; font-family:var(--sans); font-size:9px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-lt); background:var(--bg-rule); border-bottom:1px solid var(--border); }
+.top-table td { padding:10px 12px; border-bottom:1px solid var(--border); vertical-align:middle; }
+.top-table tr:hover td { background:var(--accent-lt); }
+.rank-num { font-family:var(--serif); font-size:15px; font-weight:700; color:var(--accent); width:28px; }
+.top-label { font-family:var(--serif); font-size:13px; font-weight:700; color:var(--text); }
+.top-freq { font-family:var(--mono); font-size:9px; color:var(--text-lt); letter-spacing:0.06em; margin-top:2px; }
+.score-cell { font-family:var(--mono); font-size:12px; color:var(--text-dim); }
+.z-cell { font-family:var(--mono); font-size:12px; font-weight:500; }
+.assess-cell { font-family:var(--mono); font-size:9px; letter-spacing:0.06em; text-transform:uppercase; }
+.source-tag { font-family:var(--mono); font-size:8px; color:var(--text-lt); vertical-align:middle; }
+.formula-note { font-family:var(--mono); font-size:9px; color:var(--text-lt); padding:5px 0 12px; }
+.pos { color:var(--pos); font-weight:700; }
+.neg { color:var(--neg); font-weight:700; }
+
+/* CARDS */
+.cards-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 380px)); gap:12px; }
+.card { background:var(--bg); border:1px solid var(--border); border-top:2px solid var(--border); padding:16px 18px; }
+.card:hover { border-top-color:var(--accent); background:var(--accent-lt); }
+.card-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:5px; }
+.domain-tag { font-family:var(--sans); font-size:8px; font-weight:700; letter-spacing:0.14em; color:var(--text-lt); text-transform:uppercase; }
+.series-id { font-family:var(--mono); font-size:8px; color:var(--text-lt); max-width:140px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.card-title { font-family:var(--serif); font-size:15px; font-weight:700; color:var(--text); margin-bottom:1px; line-height:1.2; }
+.card-unit { font-family:var(--mono); font-size:8px; color:var(--text-lt); margin-bottom:14px; }
+.card-values { display:flex; align-items:center; gap:10px; margin-bottom:14px; padding-bottom:12px; border-bottom:1px solid var(--border); }
+.val-block { flex:1; min-width:0; }
+.val-label { font-family:var(--sans); font-size:8px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-lt); margin-bottom:2px; }
+.val-number { font-family:var(--mono); font-size:14px; font-weight:500; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.val-period { font-family:var(--mono); font-size:8px; color:var(--text-lt); margin-top:2px; }
+.val-arrow { font-family:var(--mono); font-size:12px; font-weight:500; text-align:center; min-width:64px; padding:5px 6px; border:1px solid var(--border); flex-shrink:0; }
+.val-arrow.pos { color:var(--pos); border-color:#b8ddc8; background:var(--pos-lt); }
+.val-arrow.neg { color:var(--neg); border-color:#e8c0b8; background:var(--neg-lt); }
+.metrics-row { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-bottom:10px; }
+.metric-label { font-family:var(--sans); font-size:8px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-lt); }
+.metric-value { font-family:var(--mono); font-size:11px; color:var(--text); margin-top:2px; }
+.score-bar-track { height:3px; background:var(--border); margin-bottom:8px; }
+.score-bar-fill { height:100%; }
+.assessment { font-family:var(--sans); font-size:8px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; text-align:right; }
+.assessment.assess-pos { color:var(--pos); }
+.assessment.assess-neg { color:var(--neg); }
+.assessment.assess-neu { color:var(--text-lt); }
+
+/* CONFLUENCE */
+.confluence-section { margin-bottom:48px; }
+.conf-grid { display:flex; flex-direction:column; gap:6px; }
+.conf-block { padding:13px 16px; border:1px solid var(--border); border-left:3px solid var(--border); }
+.conf-block.conf-is-neg { border-left-color:var(--neg); background:var(--neg-lt); }
+.conf-block.conf-is-pos { border-left-color:var(--pos); background:var(--pos-lt); }
+.conf-header { display:flex; align-items:baseline; gap:14px; margin-bottom:6px; flex-wrap:wrap; }
+.conf-domain { font-family:var(--sans); font-size:9px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); min-width:90px; }
+.conf-dir { font-family:var(--sans); font-size:12px; font-weight:700; }
+.conf-pos { color:var(--pos); }
+.conf-neg { color:var(--neg); }
+.conf-strength { font-family:var(--mono); font-size:9px; color:var(--text-lt); }
+.conf-signals { font-family:var(--sans); font-size:12px; color:var(--text-dim); line-height:1.7; }
+.conf-z { font-family:var(--mono); font-size:10px; color:var(--text); }
+
+/* META TABLE */
+.meta-table { width:100%; border-collapse:collapse; font-family:var(--mono); font-size:11px; }
+.meta-table th { text-align:left; padding:7px 10px; font-family:var(--sans); font-size:9px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-lt); background:var(--bg-rule); border-bottom:1px solid var(--border); }
+.meta-table td { padding:7px 10px; border-bottom:1px solid var(--border); color:var(--text); }
+.meta-table tr:nth-child(even) td { background:var(--bg-stripe); }
+.meta-table tr:hover td { background:var(--accent-lt); }
+
+/* SUPPRESSED NOTE */
+.suppressed-note { font-family:var(--mono); font-size:9px; color:var(--text-lt); padding:8px 0 0; margin-top:10px; border-top:1px solid var(--border); }
+
+/* FOOTER */
+.footer {
+  border-top: 1px solid var(--border-hvy);
+  background: var(--bg-rule);
+}
+.footer-main {
+  padding: 16px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.footer-col {}
+.footer-col-center { text-align: center; }
+.footer-col-right { text-align: right; }
+.footer-title {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.footer-generated {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.footer-meta {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--text-lt);
+  line-height: 1.8;
+}
+.footer-copy {
+  border-top: 1px solid var(--border);
+  padding: 8px 48px;
+  font-family: var(--mono);
+  font-size: 8px;
+  color: var(--text-lt);
+  letter-spacing: 0.03em;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width:5px; height:5px; }
+::-webkit-scrollbar-track { background:var(--bg-rule); }
+::-webkit-scrollbar-thumb { background:var(--border); }
+
+@media (max-width:768px) {
+  .masthead { padding:14px 20px; }
+  .masthead h1 { font-size:26px; }
+  .main { padding:20px 16px 48px; }
+  .nav-bar { padding:0 16px; }
+  .footer-main { grid-template-columns:1fr; padding:14px 20px; }
+  .footer-col-center, .footer-col-right { text-align:left; }
+  .footer-copy { padding:8px 20px; }
+}
+
+/* EI APPENDIX */
+.ei-section { margin-bottom: 48px; }
+.ei-scroll { overflow-x: auto; }
+.ei-table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 11px; white-space: nowrap; }
+.ei-table th { text-align: left; padding: 6px 10px; font-family: var(--sans); font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-lt); background: var(--bg-rule); border-bottom: 2px solid var(--border-hvy); }
+.ei-table th.ei-num { text-align: right; }
+.ei-table td { padding: 7px 10px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.ei-table tr:nth-child(even) td { background: var(--bg-stripe); }
+.ei-table tr:hover td { background: var(--accent-lt); }
+.ei-label { font-family: var(--serif); font-size: 13px; font-weight: 700; color: var(--text); min-width: 200px; }
+.ei-unit { font-family: var(--mono); font-size: 10px; color: var(--text-lt); min-width: 60px; }
+.ei-num { text-align: right; font-variant-numeric: tabular-nums; }
+.ei-pos { color: var(--pos); font-weight: 700; }
+.ei-neg { color: var(--neg); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="top-rule"></div>
+
+<div class="masthead">
+  <div class="masthead-grid">
+    <div>
+      <h1><span class="ds">&#916;</span> DELTA</h1>
+      <div class="masthead-sub">What changed the most &mdash; Energy &middot; Treasury &middot; Economy &middot; Markets</div>
+    </div>
+    <div class="masthead-right">
+      <div class="gen-date">2026-06-11 15:54:22 UTC</div>
+      <div>41 series &nbsp;&middot;&nbsp; 2,022,102 observations</div>
+    </div>
+  </div>
+</div>
+
+<div class="nav-bar">
+  <a class="nav-item active" href="#top-signals">Top Signals</a>
+  <a class="nav-item" href="#confluence">Confluence</a>
+  <a class="nav-item" href="#daily">Daily</a>
+  <a class="nav-item" href="#weekly">Weekly</a>
+  <a class="nav-item" href="#monthly">Monthly</a>
+  <a class="nav-item" href="#quarterly">Quarterly</a>
+  
+  <a class="nav-item" href="#global-energy">Global Energy</a>
+</div>
+
+<div class="main">
+
+<div id="top-signals">
+<div class="top-signals">
+  <div class="section-title"><span class="ta">&#9650;</span> Top Signals by Delta Score</div>
+  <div class="formula-note">Δ Score&nbsp;=&nbsp;|Z|&nbsp;×&nbsp;log(freq/yr)&nbsp;×&nbsp;weight&nbsp;&nbsp;·&nbsp;&nbsp;Top Signals ranked by |Z| × weight across all frequencies</div>
+  <table class="top-table">
+    <thead>
+      <tr>
+        <th>#</th><th>Series</th><th>Current</th>
+        <th>Chg%</th><th>Hist Rank</th><th>Z-Score</th><th>Δ Score</th><th>Assessment</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr>
+  <td class="rank-num">#1</td>
+  <td><span class="top-label">Industrials Sector ETF</span> <span class="source-tag">[yfinance]</span><br><span class="top-freq">DAILY · Equity</span></td>
+  <td>174.310</td>
+  <td class="pos">+2.74%</td>
+  <td style="color:#cc0000">97th pct</td>
+  <td class="z-cell">+2.03σ</td>
+  <td class="score-cell">78.5</td>
+  <td class="assess-cell">Extreme Positive</td>
+</tr>
+<tr>
+  <td class="rank-num">#2</td>
+  <td><span class="top-label">Emerging Markets ETF</span> <span class="source-tag">[yfinance]</span><br><span class="top-freq">DAILY · Equity</span></td>
+  <td>66.710</td>
+  <td class="pos">+3.17%</td>
+  <td style="color:#cc0000">97th pct</td>
+  <td class="z-cell">+1.83σ</td>
+  <td class="score-cell">70.7</td>
+  <td class="assess-cell">Strong Positive</td>
+</tr>
+<tr>
+  <td class="rank-num">#3</td>
+  <td><span class="top-label">US Crude Oil Stocks</span> <span class="source-tag">[EIA]</span><br><span class="top-freq">WEEKLY · Energy</span></td>
+  <td>433,712.0</td>
+  <td class="neg">-1.81%</td>
+  <td style="color:#0044cc">7th pct</td>
+  <td class="z-cell">-1.37σ</td>
+  <td class="score-cell">43.3</td>
+  <td class="assess-cell">Strong Negative</td>
+</tr>
+<tr>
+  <td class="rank-num">#4</td>
+  <td><span class="top-label">Technology Sector ETF</span> <span class="source-tag">[yfinance]</span><br><span class="top-freq">DAILY · Equity</span></td>
+  <td>180.980</td>
+  <td class="pos">+2.46%</td>
+  <td style="color:#cc0000">94th pct</td>
+  <td class="z-cell">+1.47σ</td>
+  <td class="score-cell">57.0</td>
+  <td class="assess-cell">Strong Positive</td>
+</tr>
+<tr>
+  <td class="rank-num">#5</td>
+  <td><span class="top-label">Developed ex-US ETF</span> <span class="source-tag">[yfinance]</span><br><span class="top-freq">DAILY · Equity</span></td>
+  <td>103.875</td>
+  <td class="pos">+2.27%</td>
+  <td style="color:#cc0000">96th pct</td>
+  <td class="z-cell">+1.71σ</td>
+  <td class="score-cell">56.6</td>
+  <td class="assess-cell">Strong Positive</td>
+</tr>
+<tr>
+  <td class="rank-num">#6</td>
+  <td><span class="top-label">Brent Crude Futures</span> <span class="source-tag">[yfinance]</span><br><span class="top-freq">DAILY · Energy</span></td>
+  <td>$90.30</td>
+  <td class="neg">-3.01%</td>
+  <td style="color:#0044cc">7th pct</td>
+  <td class="z-cell">-1.27σ</td>
+  <td class="score-cell">56.0</td>
+  <td class="assess-cell">Strong Negative</td>
+</tr>
+<tr>
+  <td class="rank-num">#7</td>
+  <td><span class="top-label">20yr Treasury ETF</span> <span class="source-tag">[yfinance]</span><br><span class="top-freq">DAILY · Fixed Income</span></td>
+  <td>85.860</td>
+  <td class="pos">+1.15%</td>
+  <td style="color:#cc0000">92nd pct</td>
+  <td class="z-cell">+1.26σ</td>
+  <td class="score-cell">55.8</td>
+  <td class="assess-cell">Strong Positive</td>
+</tr>
+<tr>
+  <td class="rank-num">#8</td>
+  <td><span class="top-label">Materials Sector ETF</span> <span class="source-tag">[yfinance]</span><br><span class="top-freq">DAILY · Equity</span></td>
+  <td>50.845</td>
+  <td class="pos">+2.51%</td>
+  <td style="color:#cc0000">96th pct</td>
+  <td class="z-cell">+1.66σ</td>
+  <td class="score-cell">55.1</td>
+  <td class="assess-cell">Strong Positive</td>
+</tr></tbody>
+  </table>
+</div></div>
+
+<div id="confluence">
+<div class="section confluence-section">
+  <div class="section-title"><span class="ta">&#9670;</span> Confluence &mdash; Multiple Signals, Same Direction</div>
+  <div class="conf-grid">
+<div class="conf-block conf-is-pos">
+  <div class="conf-header">
+    <span class="conf-domain">▲ Equity</span>
+    <span class="conf-dir conf-pos">▲ Positive</span>
+    <span class="conf-strength">11.3σ combined &nbsp;·&nbsp; 8 signals</span>
+  </div>
+  <div class="conf-signals">▲&thinsp;Industrials Sector ETF <span class="conf-z">+2.03σ</span> &nbsp;·&nbsp; ▲&thinsp;Emerging Markets ETF <span class="conf-z">+1.83σ</span> &nbsp;·&nbsp; ▲&thinsp;Developed ex-US ETF <span class="conf-z">+1.71σ</span> &nbsp;·&nbsp; ▲&thinsp;Materials Sector ETF <span class="conf-z">+1.66σ</span></div>
+</div>
+<div class="conf-block conf-is-neg">
+  <div class="conf-header">
+    <span class="conf-domain">◆ Energy</span>
+    <span class="conf-dir conf-neg">▼ Negative</span>
+    <span class="conf-strength">5.3σ combined &nbsp;·&nbsp; 5 signals</span>
+  </div>
+  <div class="conf-signals">▼&thinsp;US Crude Oil Stocks <span class="conf-z">-1.37σ</span> &nbsp;·&nbsp; ▼&thinsp;Heating Oil Futures <span class="conf-z">-1.28σ</span> &nbsp;·&nbsp; ▼&thinsp;Brent Crude Futures <span class="conf-z">-1.27σ</span> &nbsp;·&nbsp; ▼&thinsp;Natural Gas Futures <span class="conf-z">-0.80σ</span></div>
+</div>
+<div class="conf-block conf-is-pos">
+  <div class="conf-header">
+    <span class="conf-domain">▣ Fixed Income</span>
+    <span class="conf-dir conf-pos">▲ Positive</span>
+    <span class="conf-strength">4.4σ combined &nbsp;·&nbsp; 4 signals</span>
+  </div>
+  <div class="conf-signals">▲&thinsp;7-10yr Treasury ETF <span class="conf-z">+1.28σ</span> &nbsp;·&nbsp; ▲&thinsp;Invest. Grade Corp ETF <span class="conf-z">+1.28σ</span> &nbsp;·&nbsp; ▲&thinsp;20yr Treasury ETF <span class="conf-z">+1.26σ</span> &nbsp;·&nbsp; ▲&thinsp;High Yield Bond ETF <span class="conf-z">+0.57σ</span></div>
+</div>
+<div class="conf-block conf-is-pos">
+  <div class="conf-header">
+    <span class="conf-domain">◉ Markets</span>
+    <span class="conf-dir conf-pos">▲ Positive</span>
+    <span class="conf-strength">3.2σ combined &nbsp;·&nbsp; 4 signals</span>
+  </div>
+  <div class="conf-signals">▲&thinsp;Gold Futures <span class="conf-z">+1.21σ</span> &nbsp;·&nbsp; ▲&thinsp;Bitcoin <span class="conf-z">+0.83σ</span> &nbsp;·&nbsp; ▲&thinsp;VIX Volatility Index <span class="conf-z">+0.60σ</span> &nbsp;·&nbsp; ▲&thinsp;High-Yield Credit Spread <span class="conf-z">+0.54σ</span></div>
+</div>
+<div class="conf-block conf-is-pos">
+  <div class="conf-header">
+    <span class="conf-domain">◆ Energy</span>
+    <span class="conf-dir conf-pos">▲ Positive</span>
+    <span class="conf-strength">1.9σ combined &nbsp;·&nbsp; 2 signals</span>
+  </div>
+  <div class="conf-signals">▲&thinsp;US Crude Exports <span class="conf-z">+1.23σ</span> &nbsp;·&nbsp; ▲&thinsp;US Distillate Stocks <span class="conf-z">+0.69σ</span></div>
+</div></div>
+</div></div>
+
+<div id="daily">
+<div class="section">
+  <div class="section-title">◉ DAILY MOVERS</div>
+  <div class="cards-grid">
+<div class="card" data-score="78.51">
+  <div class="card-header">
+    <span class="domain-tag">▲ Equity</span>
+    <span class="series-id">XLI</span>
+  </div>
+  <div class="card-title">Industrials Sector ETF <span class="source-tag">[yfinance]</span></div>
+  <div class="card-unit">$</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">174.310</div>
+      <div class="val-period">2026-06-11</div>
+    </div>
+    <div class="val-arrow pos">+2.74%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">169.660</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#cc0000">97th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 2.03 × 5.53 × 7">78.5</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+2.03σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">6909</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:52.33703430041101%; background:#cc0000"></div>
+  </div>
+  <div class="assessment assess-pos">EXTREME POSITIVE</div>
+</div>
+<div class="card" data-score="70.72">
+  <div class="card-header">
+    <span class="domain-tag">▲ Equity</span>
+    <span class="series-id">EEM</span>
+  </div>
+  <div class="card-title">Emerging Markets ETF <span class="source-tag">[yfinance]</span></div>
+  <div class="card-unit">$</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">66.710</div>
+      <div class="val-period">2026-06-11</div>
+    </div>
+    <div class="val-arrow pos">+3.17%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">64.660</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#cc0000">97th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 1.83 × 5.53 × 7">70.7</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+1.83σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">5828</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:47.148925397830304%; background:#cc0000"></div>
+  </div>
+  <div class="assessment assess-pos">STRONG POSITIVE</div>
+</div>
+<div class="card" data-score="57.04">
+  <div class="card-header">
+    <span class="domain-tag">▲ Equity</span>
+    <span class="series-id">XLK</span>
+  </div>
+  <div class="card-title">Technology Sector ETF <span class="source-tag">[yfinance]</span></div>
+  <div class="card-unit">$</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">180.980</div>
+      <div class="val-period">2026-06-11</div>
+    </div>
+    <div class="val-arrow pos">+2.46%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">176.630</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#cc0000">94th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 1.47 × 5.53 × 7">57.0</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+1.47σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">6909</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:38.02622614281559%; background:#cc0000"></div>
+  </div>
+  <div class="assessment assess-pos">STRONG POSITIVE</div>
+</div>
+<div class="card" data-score="56.59">
+  <div class="card-header">
+    <span class="domain-tag">▲ Equity</span>
+    <span class="series-id">EFA</span>
+  </div>
+  <div class="card-title">Developed ex-US ETF <span class="source-tag">[yfinance]</span></div>
+  <div class="card-unit">$</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">103.875</div>
+      <div class="val-period">2026-06-11</div>
+    </div>
+    <div class="val-arrow pos">+2.27%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">101.570</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#cc0000">96th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 1.71 × 5.53 × 6">56.6</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+1.71σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">6234</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:37.72799762037389%; background:#cc0000"></div>
+  </div>
+  <div class="assessment assess-pos">STRONG POSITIVE</div>
+</div>
+<div class="card" data-score="56.05">
+  <div class="card-header">
+    <span class="domain-tag">◆ Energy</span>
+    <span class="series-id">BZ=F</span>
+  </div>
+  <div class="card-title">Brent Crude Futures <span class="source-tag">[yfinance]</span></div>
+  <div class="card-unit">$/bbl</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">$90.30</div>
+      <div class="val-period">2026-06-11</div>
+    </div>
+    <div class="val-arrow neg">-3.01%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">$93.10</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#0044cc">7th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 1.27 × 5.53 × 8">56.0</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">-1.27σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">4699</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:37.36368717379168%; background:#0044cc"></div>
+  </div>
+  <div class="assessment assess-neg">STRONG NEGATIVE</div>
+</div>
+<div class="card" data-score="55.77">
+  <div class="card-header">
+    <span class="domain-tag">▣ Fixed Income</span>
+    <span class="series-id">TLT</span>
+  </div>
+  <div class="card-title">20yr Treasury ETF <span class="source-tag">[yfinance]</span></div>
+  <div class="card-unit">$</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">85.860</div>
+      <div class="val-period">2026-06-11</div>
+    </div>
+    <div class="val-arrow pos">+1.15%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">84.880</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#cc0000">92nd pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 1.26 × 5.53 × 8">55.8</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+1.26σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">6006</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:37.179820825345026%; background:#cc0000"></div>
+  </div>
+  <div class="assessment assess-pos">STRONG POSITIVE</div>
+</div>
+<div class="card" data-score="55.09">
+  <div class="card-header">
+    <span class="domain-tag">▲ Equity</span>
+    <span class="series-id">XLB</span>
+  </div>
+  <div class="card-title">Materials Sector ETF <span class="source-tag">[yfinance]</span></div>
+  <div class="card-unit">$</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">50.845</div>
+      <div class="val-period">2026-06-11</div>
+    </div>
+    <div class="val-arrow pos">+2.51%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">49.600</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#cc0000">96th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 1.66 × 5.53 × 6">55.1</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+1.66σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">6909</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:36.724158731676795%; background:#cc0000"></div>
+  </div>
+  <div class="assessment assess-pos">STRONG POSITIVE</div>
+</div>
+<div class="card" data-score="53.67">
+  <div class="card-header">
+    <span class="domain-tag">◉ Markets</span>
+    <span class="series-id">GC=F</span>
+  </div>
+  <div class="card-title">Gold Futures <span class="source-tag">[yfinance]</span></div>
+  <div class="card-unit">$/oz</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">4,166.1</div>
+      <div class="val-period">2026-06-11</div>
+    </div>
+    <div class="val-arrow pos">+1.41%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">4,108.2</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#cc0000">91st pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 1.21 × 5.53 × 8">53.7</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+1.21σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">6472</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:35.78056439896665%; background:#cc0000"></div>
+  </div>
+  <div class="assessment assess-pos">STRONG POSITIVE</div>
+</div>
+<div class="card" data-score="49.72">
+  <div class="card-header">
+    <span class="domain-tag">▣ Fixed Income</span>
+    <span class="series-id">IEF</span>
+  </div>
+  <div class="card-title">7-10yr Treasury ETF <span class="source-tag">[yfinance]</span></div>
+  <div class="card-unit">$</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">94.220</div>
+      <div class="val-period">2026-06-11</div>
+    </div>
+    <div class="val-arrow pos">+0.57%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">93.690</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#cc0000">92nd pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 1.28 × 5.53 × 7">49.7</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+1.28σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">6006</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:33.14489490944328%; background:#cc0000"></div>
+  </div>
+  <div class="assessment assess-pos">STRONG POSITIVE</div>
+</div>
+<div class="card" data-score="49.66">
+  <div class="card-header">
+    <span class="domain-tag">◆ Energy</span>
+    <span class="series-id">HO=F</span>
+  </div>
+  <div class="card-title">Heating Oil Futures <span class="source-tag">[yfinance]</span></div>
+  <div class="card-unit">$/gal</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">3.505</div>
+      <div class="val-period">2026-06-11</div>
+    </div>
+    <div class="val-arrow neg">-2.98%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">3.613</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#0044cc">7th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 1.28 × 5.53 × 7">49.7</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">-1.28σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">6475</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:33.10639581198628%; background:#0044cc"></div>
+  </div>
+  <div class="assessment assess-neg">STRONG NEGATIVE</div>
+</div>
+<div class="card" data-score="49.61">
+  <div class="card-header">
+    <span class="domain-tag">▣ Fixed Income</span>
+    <span class="series-id">LQD</span>
+  </div>
+  <div class="card-title">Invest. Grade Corp ETF <span class="source-tag">[yfinance]</span></div>
+  <div class="card-unit">$</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">108.910</div>
+      <div class="val-period">2026-06-11</div>
+    </div>
+    <div class="val-arrow pos">+0.69%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">108.160</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#cc0000">95th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 1.28 × 5.53 × 7">49.6</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+1.28σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">6006</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:33.07076770218289%; background:#cc0000"></div>
+  </div>
+  <div class="assessment assess-pos">STRONG POSITIVE</div>
+</div>
+<div class="card" data-score="35.26">
+  <div class="card-header">
+    <span class="domain-tag">◆ Energy</span>
+    <span class="series-id">NG=F</span>
+  </div>
+  <div class="card-title">Natural Gas Futures <span class="source-tag">[yfinance]</span></div>
+  <div class="card-unit">$/MMBtu</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">3.089</div>
+      <div class="val-period">2026-06-11</div>
+    </div>
+    <div class="val-arrow neg">-3.01%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">3.185</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#0044cc">16th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 0.80 × 5.53 × 8">35.3</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">-0.80σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">6478</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:23.506308671809574%; background:#0044cc"></div>
+  </div>
+  <div class="assessment assess-neg">MODERATE NEGATIVE</div>
+</div>
+<div class="card" data-score="33.52">
+  <div class="card-header">
+    <span class="domain-tag">▲ Equity</span>
+    <span class="series-id">XLY</span>
+  </div>
+  <div class="card-title">Consumer Discret. ETF <span class="source-tag">[yfinance]</span></div>
+  <div class="card-unit">$</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">115.180</div>
+      <div class="val-period">2026-06-11</div>
+    </div>
+    <div class="val-arrow pos">+1.49%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">113.490</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#cc6600">89th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 1.01 × 5.53 × 6">33.5</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+1.01σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">6909</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:22.346569876128957%; background:#cc6600"></div>
+  </div>
+  <div class="assessment assess-pos">STRONG POSITIVE</div>
+</div>
+<div class="card" data-score="33.43">
+  <div class="card-header">
+    <span class="domain-tag">▲ Equity</span>
+    <span class="series-id">XLV</span>
+  </div>
+  <div class="card-title">Health Care Sector ETF <span class="source-tag">[yfinance]</span></div>
+  <div class="card-unit">$</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">154.640</div>
+      <div class="val-period">2026-06-11</div>
+    </div>
+    <div class="val-arrow pos">+1.17%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">152.850</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#cc6600">89th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 1.01 × 5.53 × 6">33.4</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+1.01σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">6909</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:22.28981272506147%; background:#cc6600"></div>
+  </div>
+  <div class="assessment assess-pos">STRONG POSITIVE</div>
+</div>
+<div class="card" data-score="29.80">
+  <div class="card-header">
+    <span class="domain-tag">◉ Markets</span>
+    <span class="series-id">VIXCLS</span>
+  </div>
+  <div class="card-title">VIX Volatility Index <span class="source-tag">[FRED]</span></div>
+  <div class="card-unit">Points</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">19.870</div>
+      <div class="val-period">2026-06-09</div>
+    </div>
+    <div class="val-arrow pos">+5.02%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">18.920</div>
+      <div class="val-period">2026-06-08</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#cc6600">81st pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 0.60 × 5.53 × 9">29.8</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+0.60σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">1294</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:19.86491771592776%; background:#cc6600"></div>
+  </div>
+  <div class="assessment assess-pos">MODERATE POSITIVE</div>
+</div>
+<div class="card" data-score="27.83">
+  <div class="card-header">
+    <span class="domain-tag">◆ Energy</span>
+    <span class="series-id">CL=F</span>
+  </div>
+  <div class="card-title">WTI Crude Futures <span class="source-tag">[yfinance]</span></div>
+  <div class="card-unit">$/bbl</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">$87.60</div>
+      <div class="val-period">2026-06-11</div>
+    </div>
+    <div class="val-arrow neg">-2.70%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">$90.03</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#0044cc">10th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 0.56 × 5.53 × 9">27.8</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">-0.56σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">6481</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:18.555314459072275%; background:#0044cc"></div>
+  </div>
+  <div class="assessment assess-neg">MODERATE NEGATIVE</div>
+</div>
+<div class="card" data-score="27.48">
+  <div class="card-header">
+    <span class="domain-tag">◉ Markets</span>
+    <span class="series-id">BTC-USD</span>
+  </div>
+  <div class="card-title">Bitcoin <span class="source-tag">[yfinance]</span></div>
+  <div class="card-unit">$</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">63,334.0</div>
+      <div class="val-period">2026-06-11</div>
+    </div>
+    <div class="val-arrow pos">+3.07%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">61,449.3</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#cc6600">86th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 0.83 × 5.53 × 6">27.5</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+0.83σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">4286</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:18.320726336755076%; background:#cc6600"></div>
+  </div>
+  <div class="assessment assess-pos">MODERATE POSITIVE</div>
+</div>
+<div class="card" data-score="25.37">
+  <div class="card-header">
+    <span class="domain-tag">▣ Fixed Income</span>
+    <span class="series-id">HYG</span>
+  </div>
+  <div class="card-title">High Yield Bond ETF <span class="source-tag">[yfinance]</span></div>
+  <div class="card-unit">$</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">79.800</div>
+      <div class="val-period">2026-06-11</div>
+    </div>
+    <div class="val-arrow pos">+0.42%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">79.470</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#cc6600">85th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 0.57 × 5.53 × 8">25.4</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+0.57σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">4824</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:16.910644562552296%; background:#cc6600"></div>
+  </div>
+  <div class="assessment assess-pos">MODERATE POSITIVE</div>
+</div>
+<div class="card" data-score="23.56">
+  <div class="card-header">
+    <span class="domain-tag">▲ Equity</span>
+    <span class="series-id">XLE</span>
+  </div>
+  <div class="card-title">Energy Sector ETF <span class="source-tag">[yfinance]</span></div>
+  <div class="card-unit">$</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">57.640</div>
+      <div class="val-period">2026-06-11</div>
+    </div>
+    <div class="val-arrow neg">-1.05%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">58.250</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#0044cc">20th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 0.61 × 5.53 × 7">23.6</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">-0.61σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">6909</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:15.703433054849745%; background:#0044cc"></div>
+  </div>
+  <div class="assessment assess-neg">MODERATE NEGATIVE</div>
+</div>
+<div class="card" data-score="20.83">
+  <div class="card-header">
+    <span class="domain-tag">◉ Markets</span>
+    <span class="series-id">BAMLH0A0HYM2</span>
+  </div>
+  <div class="card-title">High-Yield Credit Spread <span class="source-tag">[FRED]</span></div>
+  <div class="card-unit">%</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">2.78%</div>
+      <div class="val-period">2026-06-09</div>
+    </div>
+    <div class="val-arrow pos">+1.09%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">2.75%</div>
+      <div class="val-period">2026-06-08</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#cc6600">77th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 0.54 × 5.53 × 7">20.8</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+0.54σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">800</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:13.884447888155426%; background:#cc6600"></div>
+  </div>
+  <div class="assessment assess-pos">MODERATE POSITIVE</div>
+</div>
+<div class="card" data-score="20.44">
+  <div class="card-header">
+    <span class="domain-tag">▲ Equity</span>
+    <span class="series-id">XLU</span>
+  </div>
+  <div class="card-title">Utilities Sector ETF <span class="source-tag">[yfinance]</span></div>
+  <div class="card-unit">$</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">44.345</div>
+      <div class="val-period">2026-06-11</div>
+    </div>
+    <div class="val-arrow pos">+0.78%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">44.000</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#cc6600">78th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 0.62 × 5.53 × 6">20.4</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+0.62σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">6909</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:13.623988061282297%; background:#cc6600"></div>
+  </div>
+  <div class="assessment assess-pos">MODERATE POSITIVE</div>
+</div>
+<div class="card" data-score="17.80">
+  <div class="card-header">
+    <span class="domain-tag">▲ Equity</span>
+    <span class="series-id">XLF</span>
+  </div>
+  <div class="card-title">Financials Sector ETF <span class="source-tag">[yfinance]</span></div>
+  <div class="card-unit">$</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">52.625</div>
+      <div class="val-period">2026-06-11</div>
+    </div>
+    <div class="val-arrow pos">+0.76%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">52.230</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#887700">74th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 0.40 × 5.53 × 8">17.8</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+0.40σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">6909</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:11.869208400413777%; background:#887700"></div>
+  </div>
+  <div class="assessment assess-neu">NEUTRAL / WITHIN RANGE</div>
+</div>
+<div class="card" data-score="16.48">
+  <div class="card-header">
+    <span class="domain-tag">▲ Equity</span>
+    <span class="series-id">XLC</span>
+  </div>
+  <div class="card-title">Comm. Services Sector ETF <span class="source-tag">[yfinance]</span></div>
+  <div class="card-unit">$</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">111.840</div>
+      <div class="val-period">2026-06-11</div>
+    </div>
+    <div class="val-arrow pos">+0.75%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">111.010</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#887700">74th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 0.50 × 5.53 × 6">16.5</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+0.50σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">2006</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:10.98800958454616%; background:#887700"></div>
+  </div>
+  <div class="assessment assess-neu">NEUTRAL / WITHIN RANGE</div>
+</div>
+<div class="card" data-score="13.54">
+  <div class="card-header">
+    <span class="domain-tag">◇ Treasury</span>
+    <span class="series-id">TREASURY.DTS.DEBT_SUBJECT_TO_LIMIT.DEBT_PUBLIC</span>
+  </div>
+  <div class="card-title">Debt Subject to Limit <span class="source-tag">[Treasury]</span></div>
+  <div class="card-unit">$T</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">$31.595T</div>
+      <div class="val-period">2026-06-09</div>
+    </div>
+    <div class="val-arrow neg">-0.01%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">$31.600T</div>
+      <div class="val-period">2026-06-08</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#0044cc">18th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 0.31 × 5.53 × 8">13.5</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">-0.31σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">5195</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:9.024446470956251%; background:#0044cc"></div>
+  </div>
+  <div class="assessment assess-neu">NEUTRAL / WITHIN RANGE</div>
+</div>
+<div class="card" data-score="13.17">
+  <div class="card-header">
+    <span class="domain-tag">◆ Energy</span>
+    <span class="series-id">DCOILWTICO</span>
+  </div>
+  <div class="card-title">WTI Crude Oil Price <span class="source-tag">[EIA]</span></div>
+  <div class="card-unit">$/bbl</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">$95.00</div>
+      <div class="val-period">2026-06-08</div>
+    </div>
+    <div class="val-arrow pos">+0.72%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">$94.32</div>
+      <div class="val-period">2026-06-05</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#887700">61st pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 0.26 × 5.53 × 9">13.2</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+0.26σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">1259</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:8.776769872807742%; background:#887700"></div>
+  </div>
+  <div class="assessment assess-neu">NEUTRAL / WITHIN RANGE</div>
+</div>
+<div class="card" data-score="9.81">
+  <div class="card-header">
+    <span class="domain-tag">◉ Markets</span>
+    <span class="series-id">BDRY</span>
+  </div>
+  <div class="card-title">Dry Bulk Shipping (BDRY) <span class="source-tag">[yfinance]</span></div>
+  <div class="card-unit">$</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">12.630</div>
+      <div class="val-period">2026-06-11</div>
+    </div>
+    <div class="val-arrow pos">+1.04%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">12.500</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#887700">63rd pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 0.25 × 5.53 × 7">9.8</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+0.25σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">2067</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:6.538680337378852%; background:#887700"></div>
+  </div>
+  <div class="assessment assess-neu">NEUTRAL / WITHIN RANGE</div>
+</div>
+<div class="card" data-score="9.75">
+  <div class="card-header">
+    <span class="domain-tag">◇ Treasury</span>
+    <span class="series-id">TREASURY.DTS.OPERATING_CASH_BALANCE.CLOSE_TODAY</span>
+  </div>
+  <div class="card-title">Treasury Operating Cash <span class="source-tag">[Treasury]</span></div>
+  <div class="card-unit">$T</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">$0.830T</div>
+      <div class="val-period">2026-06-09</div>
+    </div>
+    <div class="val-arrow neg">-1.64%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">$0.844T</div>
+      <div class="val-period">2026-06-08</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#0066aa">34th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 0.20 × 5.53 × 9">9.8</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">-0.20σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">1038</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:6.501969699700017%; background:#0066aa"></div>
+  </div>
+  <div class="assessment assess-neu">NEUTRAL / WITHIN RANGE</div>
+</div>
+<div class="card" data-score="6.28">
+  <div class="card-header">
+    <span class="domain-tag">◉ Markets</span>
+    <span class="series-id">T10Y2Y</span>
+  </div>
+  <div class="card-title">10Y-2Y Treasury Spread <span class="source-tag">[FRED]</span></div>
+  <div class="card-unit">%</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">0.42%</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+    <div class="val-arrow pos">+5.00%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">0.40%</div>
+      <div class="val-period">2026-06-09</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#887700">74th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 0.14 × 5.53 × 8">6.3</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+0.14σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">1262</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:4.1860209495892455%; background:#887700"></div>
+  </div>
+  <div class="assessment assess-neu">NEUTRAL / WITHIN RANGE</div>
+</div>
+<div class="card" data-score="3.92">
+  <div class="card-header">
+    <span class="domain-tag">◉ Markets</span>
+    <span class="series-id">DX-Y.NYB</span>
+  </div>
+  <div class="card-title">US Dollar Index <span class="source-tag">[yfinance]</span></div>
+  <div class="card-unit">Index</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">99.911</div>
+      <div class="val-period">2026-06-11</div>
+    </div>
+    <div class="val-arrow neg">-0.04%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">99.950</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#0066aa">44th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 0.08 × 5.53 × 9">3.9</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">-0.08σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">14081</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:2.6103650695297103%; background:#0066aa"></div>
+  </div>
+  <div class="assessment assess-neu">NEUTRAL / WITHIN RANGE</div>
+</div>
+<div class="card" data-score="3.08">
+  <div class="card-header">
+    <span class="domain-tag">▲ Equity</span>
+    <span class="series-id">XLRE</span>
+  </div>
+  <div class="card-title">Real Estate Sector ETF <span class="source-tag">[yfinance]</span></div>
+  <div class="card-unit">$</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">45.060</div>
+      <div class="val-period">2026-06-11</div>
+    </div>
+    <div class="val-arrow pos">+0.16%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">44.990</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#888888">53rd pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 0.09 × 5.53 × 6">3.1</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+0.09σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">2684</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:2.0551318475494122%; background:#888888"></div>
+  </div>
+  <div class="assessment assess-neu">NEUTRAL / WITHIN RANGE</div>
+</div>
+<div class="card" data-score="2.58">
+  <div class="card-header">
+    <span class="domain-tag">▲ Equity</span>
+    <span class="series-id">XLP</span>
+  </div>
+  <div class="card-title">Consumer Staples ETF <span class="source-tag">[yfinance]</span></div>
+  <div class="card-unit">$</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">85.580</div>
+      <div class="val-period">2026-06-11</div>
+    </div>
+    <div class="val-arrow pos">+0.11%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">85.490</div>
+      <div class="val-period">2026-06-10</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#888888">53rd pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 0.08 × 5.53 × 6">2.6</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+0.08σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">6909</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:1.71859756364658%; background:#888888"></div>
+  </div>
+  <div class="assessment assess-neu">NEUTRAL / WITHIN RANGE</div>
+</div></div>
+  
+</div></div>
+
+<div id="weekly">
+<div class="section">
+  <div class="section-title">◈ WEEKLY MOVERS</div>
+  <div class="cards-grid">
+<div class="card" data-score="43.33">
+  <div class="card-header">
+    <span class="domain-tag">◆ Energy</span>
+    <span class="series-id">PET.WCESTUS1.W</span>
+  </div>
+  <div class="card-title">US Crude Oil Stocks <span class="source-tag">[EIA]</span></div>
+  <div class="card-unit">Mbbl</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">433,712.0</div>
+      <div class="val-period">2026-05-29</div>
+    </div>
+    <div class="val-arrow neg">-1.81%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">441,686.0</div>
+      <div class="val-period">2026-05-22</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#0044cc">7th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 1.37 × 3.95 × 8">43.3</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">-1.37σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">2279</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:28.887383371612373%; background:#0044cc"></div>
+  </div>
+  <div class="assessment assess-neg">STRONG NEGATIVE</div>
+</div>
+<div class="card" data-score="34.15">
+  <div class="card-header">
+    <span class="domain-tag">◆ Energy</span>
+    <span class="series-id">PET.WCREXUS2.W</span>
+  </div>
+  <div class="card-title">US Crude Exports <span class="source-tag">[EIA]</span></div>
+  <div class="card-unit">kb/d</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">5,874 kb/d</div>
+      <div class="val-period">2026-05-29</div>
+    </div>
+    <div class="val-arrow pos">+32.30%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">4,440 kb/d</div>
+      <div class="val-period">2026-05-22</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#cc0000">95th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 1.23 × 3.95 × 7">34.2</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+1.23σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">1843</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:22.767924797008607%; background:#cc0000"></div>
+  </div>
+  <div class="assessment assess-pos">STRONG POSITIVE</div>
+</div>
+<div class="card" data-score="19.04">
+  <div class="card-header">
+    <span class="domain-tag">◆ Energy</span>
+    <span class="series-id">PET.WDISTUS1.W</span>
+  </div>
+  <div class="card-title">US Distillate Stocks <span class="source-tag">[EIA]</span></div>
+  <div class="card-unit">Mbbl</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">102,301.0</div>
+      <div class="val-period">2026-05-29</div>
+    </div>
+    <div class="val-arrow pos">+1.49%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">100,799.0</div>
+      <div class="val-period">2026-05-22</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#cc6600">77th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 0.69 × 3.95 × 7">19.0</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+0.69σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">2279</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:12.692648380072574%; background:#cc6600"></div>
+  </div>
+  <div class="assessment assess-pos">MODERATE POSITIVE</div>
+</div>
+<div class="card" data-score="1.25">
+  <div class="card-header">
+    <span class="domain-tag">◆ Energy</span>
+    <span class="series-id">PET.WCRFPUS2.W</span>
+  </div>
+  <div class="card-title">US Crude Production <span class="source-tag">[EIA]</span></div>
+  <div class="card-unit">kb/d</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">13,707 kb/d</div>
+      <div class="val-period">2026-05-29</div>
+    </div>
+    <div class="val-arrow neg">-0.06%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">13,715 kb/d</div>
+      <div class="val-period">2026-05-22</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#0066aa">34th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 0.05 × 3.95 × 6">1.3</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">-0.05σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">2262</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:0.8336514070529105%; background:#0066aa"></div>
+  </div>
+  <div class="assessment assess-neu">NEUTRAL / WITHIN RANGE</div>
+</div>
+<div class="card" data-score="0.10">
+  <div class="card-header">
+    <span class="domain-tag">◆ Energy</span>
+    <span class="series-id">PET.WPULEUS3.W</span>
+  </div>
+  <div class="card-title">US Propane Stocks <span class="source-tag">[EIA]</span></div>
+  <div class="card-unit">Mbbl</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">98.100</div>
+      <div class="val-period">2026-05-29</div>
+    </div>
+    <div class="val-arrow pos">+0.10%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">98.000</div>
+      <div class="val-period">2026-05-22</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#888888">46th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 0.00 × 3.95 × 6">0.1</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+0.00σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">835</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:0.06763428585458557%; background:#888888"></div>
+  </div>
+  <div class="assessment assess-neu">NEUTRAL / WITHIN RANGE</div>
+</div></div>
+  
+</div></div>
+
+<div id="monthly">
+<div class="section">
+  <div class="section-title">◆ MONTHLY MOVERS</div>
+  <div class="cards-grid">
+<div class="card" data-score="21.24">
+  <div class="card-header">
+    <span class="domain-tag">◈ Economy</span>
+    <span class="series-id">UMCSENT</span>
+  </div>
+  <div class="card-title">Consumer Sentiment (U-Mich) <span class="source-tag">[FRED]</span></div>
+  <div class="card-unit">Index</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">49.800</div>
+      <div class="val-period">2026-04-01</div>
+    </div>
+    <div class="val-arrow neg">-6.57%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">53.300</div>
+      <div class="val-period">2026-03-01</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#0044cc">9th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 1.22 × 2.48 × 7">21.2</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">-1.22σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">672</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:14.157723312993502%; background:#0044cc"></div>
+  </div>
+  <div class="assessment assess-neg">STRONG NEGATIVE</div>
+</div>
+<div class="card" data-score="6.59">
+  <div class="card-header">
+    <span class="domain-tag">◈ Economy</span>
+    <span class="series-id">HOUST</span>
+  </div>
+  <div class="card-title">Housing Starts <span class="source-tag">[FRED]</span></div>
+  <div class="card-unit">000s Units</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">1,465.0</div>
+      <div class="val-period">2026-04-01</div>
+    </div>
+    <div class="val-arrow neg">-2.79%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">1,507.0</div>
+      <div class="val-period">2026-03-01</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#0066aa">34th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 0.38 × 2.48 × 7">6.6</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">-0.38σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">808</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:4.3947754253896365%; background:#0066aa"></div>
+  </div>
+  <div class="assessment assess-neu">NEUTRAL / WITHIN RANGE</div>
+</div>
+<div class="card" data-score="4.96">
+  <div class="card-header">
+    <span class="domain-tag">◈ Economy</span>
+    <span class="series-id">INDPRO</span>
+  </div>
+  <div class="card-title">Industrial Production <span class="source-tag">[FRED]</span></div>
+  <div class="card-unit">Index (2017=100)</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">102.496</div>
+      <div class="val-period">2026-04-01</div>
+    </div>
+    <div class="val-arrow pos">+0.68%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">101.806</div>
+      <div class="val-period">2026-03-01</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#887700">69th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 0.22 × 2.48 × 9">5.0</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">+0.22σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">1288</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:3.3045924679838716%; background:#887700"></div>
+  </div>
+  <div class="assessment assess-neu">NEUTRAL / WITHIN RANGE</div>
+</div>
+<div class="card" data-score="0.58">
+  <div class="card-header">
+    <span class="domain-tag">◈ Economy</span>
+    <span class="series-id">UNRATE</span>
+  </div>
+  <div class="card-title">Unemployment Rate <span class="source-tag">[FRED]</span></div>
+  <div class="card-unit">%</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">4.30%</div>
+      <div class="val-period">2026-05-01</div>
+    </div>
+    <div class="val-arrow pos">+0.00%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">4.30%</div>
+      <div class="val-period">2026-04-01</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#888888">53rd pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 0.03 × 2.48 × 9">0.6</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">-0.03σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">940</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:0.3891399640607116%; background:#888888"></div>
+  </div>
+  <div class="assessment assess-neu">NEUTRAL / WITHIN RANGE</div>
+</div></div>
+  
+</div></div>
+
+<div id="quarterly">
+<div class="section">
+  <div class="section-title">◇ QUARTERLY MOVERS</div>
+  <div class="cards-grid">
+<div class="card" data-score="1.98">
+  <div class="card-header">
+    <span class="domain-tag">◈ Economy</span>
+    <span class="series-id">GDP</span>
+  </div>
+  <div class="card-title">Gross Domestic Product <span class="source-tag">[FRED]</span></div>
+  <div class="card-unit">$B SAAR</div>
+  <div class="card-values">
+    <div class="val-block">
+      <div class="val-label">CURRENT</div>
+      <div class="val-number">$31,856.3B</div>
+      <div class="val-period">2026-01-01</div>
+    </div>
+    <div class="val-arrow pos">+1.38%</div>
+    <div class="val-block">
+      <div class="val-label">PREVIOUS</div>
+      <div class="val-number">$31,422.5B</div>
+      <div class="val-period">2025-10-01</div>
+    </div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-label">HIST RANK</div>
+      <div class="metric-value" style="color:#888888">45th pct</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Δ SCORE</div>
+      <div class="metric-value" title="Δ Score = |Z| × log(freq/yr) × weight = 0.14 × 1.39 × 10">2.0</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Z-SCORE</div>
+      <div class="metric-value">-0.14σ</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">N OBS</div>
+      <div class="metric-value">317</div>
+    </div>
+  </div>
+  <div class="score-bar-track">
+    <div class="score-bar-fill" style="width:1.317175218096254%; background:#888888"></div>
+  </div>
+  <div class="assessment assess-neu">NEUTRAL / WITHIN RANGE</div>
+</div></div>
+  
+</div></div>
+
+<div id="inventory"></div>
+
+
+<div class="section ei-section" id="global-energy">
+  <div class="section-title"><span class="ta">&#9670;</span> Global Energy &mdash; Structural Context (Energy Institute)</div>
+  <div class="formula-note">
+    Source: Energy Institute Statistical Review of World Energy 2025 &nbsp;&middot;&nbsp;
+    Annual data &nbsp;&middot;&nbsp; World totals &nbsp;&middot;&nbsp;
+    Hist Rank = YoY % change ranked against full 60-year distribution &nbsp;&middot;&nbsp;
+    Data copyright &copy; Energy Institute 2025
+  </div>
+  <div class="ei-scroll">
+  <table class="ei-table">
+    <thead>
+      <tr>
+        <th>Series</th>
+        <th>Unit</th>
+        <th class="ei-num">2024</th>
+        <th class="ei-num">YoY</th>
+        <th class="ei-num">Hist Rank</th>
+        <th class='ei-num'>2015</th><th class='ei-num'>2016</th><th class='ei-num'>2017</th><th class='ei-num'>2018</th><th class='ei-num'>2019</th><th class='ei-num'>2020</th><th class='ei-num'>2021</th><th class='ei-num'>2022</th><th class='ei-num'>2023</th><th class='ei-num'>2024</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class='ei-label'>Total Energy Supply</td>
+          <td class='ei-unit'>EJ</td>
+          <td class='ei-num'>592.22</td>
+          <td class='ei-num ei-pos'>+2.1%</td>
+          <td class='ei-num' style='color:#888888'>48th pct</td>
+          <td class='ei-num'>524.27</td><td class='ei-num'>529.47</td><td class='ei-num'>540.19</td><td class='ei-num'>553.65</td><td class='ei-num'>559.00</td><td class='ei-num'>536.07</td><td class='ei-num'>563.26</td><td class='ei-num'>571.04</td><td class='ei-num'>580.28</td><td class='ei-num'>592.22</td>
+        </tr>
+        <tr>
+          <td class='ei-label'>CO₂ Emissions</td>
+          <td class='ei-unit'>Mt CO₂</td>
+          <td class='ei-num'>35,492</td>
+          <td class='ei-num ei-pos'>+1.3%</td>
+          <td class='ei-num' style='color:#0066aa'>39th pct</td>
+          <td class='ei-num'>32,832</td><td class='ei-num'>32,880</td><td class='ei-num'>33,396</td><td class='ei-num'>34,084</td><td class='ei-num'>34,142</td><td class='ei-num'>32,368</td><td class='ei-num'>34,016</td><td class='ei-num'>34,597</td><td class='ei-num'>35,024</td><td class='ei-num'>35,492</td>
+        </tr>
+        <tr>
+          <td class='ei-label'>Electricity Generation</td>
+          <td class='ei-unit'>TWh</td>
+          <td class='ei-num'>31,256</td>
+          <td class='ei-num ei-pos'>+4.3%</td>
+          <td class='ei-num' style='color:#cc6600'>80th pct</td>
+          <td class='ei-num'>24,304</td><td class='ei-num'>24,977</td><td class='ei-num'>25,730</td><td class='ei-num'>26,777</td><td class='ei-num'>27,139</td><td class='ei-num'>27,017</td><td class='ei-num'>28,544</td><td class='ei-num'>29,204</td><td class='ei-num'>29,963</td><td class='ei-num'>31,256</td>
+        </tr>
+        <tr>
+          <td class='ei-label'>Oil Consumption</td>
+          <td class='ei-unit'>EJ</td>
+          <td class='ei-num'>199.05</td>
+          <td class='ei-num ei-pos'>+0.8%</td>
+          <td class='ei-num' style='color:#0066aa'>27th pct</td>
+          <td class='ei-num'>184.66</td><td class='ei-num'>188.33</td><td class='ei-num'>191.75</td><td class='ei-num'>193.65</td><td class='ei-num'>194.39</td><td class='ei-num'>176.76</td><td class='ei-num'>186.65</td><td class='ei-num'>192.82</td><td class='ei-num'>197.42</td><td class='ei-num'>199.05</td>
+        </tr>
+        <tr>
+          <td class='ei-label'>Gas Consumption</td>
+          <td class='ei-unit'>EJ</td>
+          <td class='ei-num'>148.60</td>
+          <td class='ei-num ei-pos'>+2.8%</td>
+          <td class='ei-num' style='color:#888888'>51st pct</td>
+          <td class='ei-num'>125.21</td><td class='ei-num'>128.10</td><td class='ei-num'>131.77</td><td class='ei-num'>137.94</td><td class='ei-num'>140.59</td><td class='ei-num'>139.33</td><td class='ei-num'>144.81</td><td class='ei-num'>144.21</td><td class='ei-num'>144.54</td><td class='ei-num'>148.60</td>
+        </tr>
+        <tr>
+          <td class='ei-label'>Coal Consumption</td>
+          <td class='ei-unit'>EJ</td>
+          <td class='ei-num'>165.06</td>
+          <td class='ei-num ei-pos'>+1.2%</td>
+          <td class='ei-num' style='color:#888888'>48th pct</td>
+          <td class='ei-num'>157.30</td><td class='ei-num'>153.96</td><td class='ei-num'>155.61</td><td class='ei-num'>158.03</td><td class='ei-num'>157.06</td><td class='ei-num'>152.34</td><td class='ei-num'>160.71</td><td class='ei-num'>161.74</td><td class='ei-num'>163.15</td><td class='ei-num'>165.06</td>
+        </tr>
+        <tr>
+          <td class='ei-label'>Renewables (excl hydro)</td>
+          <td class='ei-unit'>EJ</td>
+          <td class='ei-num'>27.81</td>
+          <td class='ei-num ei-pos'>+10.3%</td>
+          <td class='ei-num' style='color:#887700'>70th pct</td>
+          <td class='ei-num'>11.81</td><td class='ei-num'>12.73</td><td class='ei-num'>14.20</td><td class='ei-num'>15.75</td><td class='ei-num'>17.13</td><td class='ei-num'>18.76</td><td class='ei-num'>20.99</td><td class='ei-num'>23.13</td><td class='ei-num'>25.22</td><td class='ei-num'>27.81</td>
+        </tr>
+        <tr>
+          <td class='ei-label'>Nuclear</td>
+          <td class='ei-unit'>EJ</td>
+          <td class='ei-num'>30.74</td>
+          <td class='ei-num ei-pos'>+2.9%</td>
+          <td class='ei-num' style='color:#888888'>46th pct</td>
+          <td class='ei-num'>28.09</td><td class='ei-num'>28.51</td><td class='ei-num'>28.77</td><td class='ei-num'>29.46</td><td class='ei-num'>30.50</td><td class='ei-num'>29.33</td><td class='ei-num'>30.58</td><td class='ei-num'>29.23</td><td class='ei-num'>29.86</td><td class='ei-num'>30.74</td>
+        </tr>
+        <tr>
+          <td class='ei-label'>Hydro</td>
+          <td class='ei-unit'>EJ</td>
+          <td class='ei-num'>16.03</td>
+          <td class='ei-num ei-pos'>+4.5%</td>
+          <td class='ei-num' style='color:#cc6600'>77th pct</td>
+          <td class='ei-num'>13.96</td><td class='ei-num'>14.46</td><td class='ei-num'>14.65</td><td class='ei-num'>15.08</td><td class='ei-num'>15.27</td><td class='ei-num'>15.69</td><td class='ei-num'>15.46</td><td class='ei-num'>15.61</td><td class='ei-num'>15.34</td><td class='ei-num'>16.03</td>
+        </tr></tbody>
+  </table>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-main">
+    <div class="footer-col">
+      <div class="footer-title">Project Delta &nbsp;&middot;&nbsp; Thor Storehouse &nbsp;&middot;&nbsp; R. Hinton</div>
+      <div class="footer-meta">Sources: FRED (Federal Reserve Bank of St. Louis) &nbsp;&middot;&nbsp; U.S. Energy Information Administration (EIA) &nbsp;&middot;&nbsp; U.S. Treasury Bureau of the Fiscal Service &nbsp;&middot;&nbsp; Yahoo Finance &nbsp;&middot;&nbsp; Energy Institute Statistical Review of World Energy</div>
+    </div>
+    <div class="footer-col footer-col-center">
+      <div class="footer-meta">&#916; Score = |Z| &times; log(freq/yr) &times; weight &nbsp;&middot;&nbsp; Z = (current&nbsp;&minus;&nbsp;mean) / &sigma; of historical period-over-period changes</div>
+      <div class="footer-meta">|Z| &ge; 2.0 Extreme &nbsp;&middot;&nbsp; &ge; 1.0 Strong &nbsp;&middot;&nbsp; &ge; 0.5 Moderate &nbsp;&middot;&nbsp; &lt; 0.5 Neutral &nbsp;&middot;&nbsp; Signals ranked within frequency group</div>
+    </div>
+    <div class="footer-col footer-col-right">
+      <div class="footer-generated">2026-06-11 15:54:22 UTC</div>
+      <div class="footer-meta">Deterministic &nbsp;&middot;&nbsp; No forecasts &nbsp;&middot;&nbsp; No AI summaries &nbsp;&middot;&nbsp; For informational purposes only</div>
+    </div>
+  </div>
+  <div class="footer-copy">
+    &copy; 2026 Randy Hinton. Report methodology and structure licensed CC BY 4.0.
+    Source data remains property of respective publishers. Energy Institute data copyright &copy; Energy Institute 2025. This report does not constitute investment advice.
+  </div>
+</div>
+
+</body>
+</html>
