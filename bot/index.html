@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thor Storehouse — Intelligence Bot</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red:     #e8111a;
+    --black:   #1a1a1a;
+    --gray:    #666666;
+    --rule:    #cccccc;
+    --bg:      #ffffff;
+    --bg-soft: #f9f9f9;
+    --bg-msg:  #fff8f8;
+  }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: var(--bg);
+    color: var(--black);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Masthead ── */
+  .masthead {
+    border-top: 4px solid var(--red);
+    border-bottom: 1px solid var(--rule);
+    padding: .5rem 2rem .4rem;
+    display: flex;
+    align-items: baseline;
+    gap: 1.2rem;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 100;
+  }
+  .masthead .brand {
+    font-family: Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--red);
+    letter-spacing: -.5px;
+    text-transform: uppercase;
+  }
+  .masthead .section-label {
+    font-family: Arial, sans-serif;
+    font-size: .72rem;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    border-left: 1px solid var(--rule);
+    padding-left: 1rem;
+  }
+
+  /* ── API key bar ── */
+  .api-bar {
+    background: var(--bg-soft);
+    border-bottom: 1px solid var(--rule);
+    padding: .5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    font-family: Arial, sans-serif;
+    font-size: .78rem;
+    color: var(--gray);
+  }
+  .api-bar input {
+    flex: 1;
+    max-width: 340px;
+    padding: .3rem .6rem;
+    border: 1px solid var(--rule);
+    font-family: 'Courier New', monospace;
+    font-size: .75rem;
+    color: var(--black);
+    background: var(--bg);
+  }
+  .api-bar input:focus { outline: 1px solid var(--red); }
+  .api-status { font-size: .72rem; }
+  .api-status.ok  { color: #1a7a3c; }
+  .api-status.err { color: var(--red); }
+
+  /* ── Main layout ── */
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 860px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.5rem 2rem 0;
+  }
+
+  /* ── Report index ── */
+  .report-index {
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .report-index h2 {
+    font-family: Arial, sans-serif;
+    font-size: .7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--gray);
+    margin-bottom: .6rem;
+  }
+  .report-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+  }
+  .pill {
+    font-family: Arial, sans-serif;
+    font-size: .72rem;
+    padding: .25rem .6rem;
+    border: 1px solid var(--rule);
+    color: var(--gray);
+    cursor: pointer;
+    background: var(--bg);
+    transition: border-color .15s, color .15s;
+    white-space: nowrap;
+  }
+  .pill:hover { border-color: var(--red); color: var(--red); }
+
+  /* ── Chat window ── */
+  .chat-window {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 320px;
+    max-height: 480px;
+    border: 1px solid var(--rule);
+    background: var(--bg-soft);
+    padding: 1rem;
+    margin-bottom: .75rem;
+    scroll-behavior: smooth;
+  }
+
+  .msg {
+    display: flex;
+    gap: .75rem;
+    margin-bottom: 1rem;
+    align-items: flex-start;
+  }
+  .msg-avatar {
+    font-family: Arial, sans-serif;
+    font-size: .65rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--bg);
+    background: var(--black);
+    padding: .2rem .4rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: .15rem;
+  }
+  .msg-avatar.thor { background: var(--red); }
+
+  .msg-body {
+    font-family: Georgia, serif;
+    font-size: .88rem;
+    line-height: 1.6;
+    color: var(--black);
+  }
+  .msg-body.user-body { color: var(--gray); font-style: italic; }
+
+  .msg-body a {
+    color: var(--red);
+    text-decoration: none;
+    border-bottom: 1px solid #f5a0a3;
+  }
+  .msg-body a:hover { border-bottom-color: var(--red); }
+
+  .msg-body .finding {
+    background: var(--bg-msg);
+    border-left: 3px solid var(--red);
+    padding: .5rem .75rem;
+    margin: .5rem 0;
+    font-size: .84rem;
+    line-height: 1.55;
+  }
+
+  .msg-body .report-link {
+    display: inline-block;
+    margin-top: .5rem;
+    font-family: Arial, sans-serif;
+    font-size: .75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--red);
+    border: 1px solid var(--red);
+    padding: .25rem .6rem;
+    text-decoration: none;
+    border-bottom: 1px solid var(--red);
+  }
+  .msg-body .report-link:hover { background: var(--red); color: var(--bg); }
+
+  .typing {
+    font-family: Arial, sans-serif;
+    font-size: .78rem;
+    color: var(--gray);
+    font-style: italic;
+    padding: .25rem 0;
+  }
+
+  /* ── Input bar ── */
+  .input-bar {
+    display: flex;
+    gap: .5rem;
+    padding-bottom: 1.5rem;
+  }
+  .input-bar input {
+    flex: 1;
+    padding: .55rem .75rem;
+    border: 1px solid var(--rule);
+    border-bottom: 2px solid var(--black);
+    font-family: Georgia, serif;
+    font-size: .88rem;
+    color: var(--black);
+    background: var(--bg);
+  }
+  .input-bar input:focus {
+    outline: none;
+    border-color: var(--red);
+    border-bottom-color: var(--red);
+  }
+  .input-bar button {
+    padding: .55rem 1.25rem;
+    background: var(--black);
+    color: var(--bg);
+    border: none;
+    font-family: Arial, sans-serif;
+    font-size: .75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    cursor: pointer;
+    transition: background .15s;
+  }
+  .input-bar button:hover { background: var(--red); }
+  .input-bar button:disabled { background: var(--rule); cursor: not-allowed; }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: .5rem 2rem;
+    font-family: Arial, sans-serif;
+    font-size: .68rem;
+    color: var(--gray);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <span class="brand">Thor Storehouse</span>
+  <span class="section-label">Intelligence Bot</span>
+</div>
+
+<div class="api-bar">
+  <label for="apiKey">OpenAI API Key:</label>
+  <input type="password" id="apiKey" placeholder="sk-..." autocomplete="off"
+         oninput="saveKey(this.value)">
+  <span class="api-status" id="apiStatus"></span>
+</div>
+
+<div class="main">
+
+  <div class="report-index">
+    <h2>Available Reports</h2>
+    <div class="report-pills">
+      <span class="pill" onclick="ask('Show me the drug shortage report')">Drug Shortage</span>
+      <span class="pill" onclick="ask('Show me the DTS brief')">DTS Brief</span>
+      <span class="pill" onclick="ask('Show me the INDPRO report')">Industrial Production</span>
+      <span class="pill" onclick="ask('Show me the Iran gas report')">Iran Gas</span>
+      <span class="pill" onclick="ask('Show me the TGA seasonal report')">TGA Seasonal</span>
+      <span class="pill" onclick="ask('Show me the energy tripwire')">Energy Tripwire</span>
+    </div>
+  </div>
+
+  <div class="chat-window" id="chatWindow">
+    <div class="msg">
+      <div class="msg-avatar thor">Thor</div>
+      <div class="msg-body">
+        Ask me about any report — drug shortages, industrial production, Iran gas, 
+        TGA seasonal patterns, or live energy market signals. 
+        I'll surface the key findings and link you to the full report.
+      </div>
+    </div>
+  </div>
+
+  <div class="input-bar">
+    <input type="text" id="userInput" placeholder="Ask about any report..."
+           onkeydown="if(event.key==='Enter') sendMessage()">
+    <button onclick="sendMessage()" id="sendBtn">Send</button>
+  </div>
+
+</div>
+
+<footer>
+  Thor Storehouse Intelligence Bot &nbsp;·&nbsp; 
+  Powered by OpenAI gpt-4o-mini &nbsp;·&nbsp; 
+  Data: FRED · SEC · CISA · NOAA · U.S. Treasury &nbsp;·&nbsp;
+  #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+</footer>
+
+<script>
+// ── Report registry ──────────────────────────────────────────────────────────
+const GITHUB_BASE = "https://petroai1492.github.io/delta";
+
+const REPORTS = [
+  {
+    id: "drug_shortage",
+    title: "Drug Shortage Report",
+    file: "drug_shortage_report.pdf",
+    path: `${GITHUB_BASE}/finance/drug_shortage_report.pdf`,
+    keywords: ["drug", "shortage", "pharmaceutical", "medicine", "fda", "supply"],
+    description: "FDA drug shortage tracking — active shortages, discontinuations, and supply chain signals."
+  },
+  {
+    id: "dts_brief",
+    title: "DTS Brief",
+    file: "dts_brief.pdf",
+    path: `${GITHUB_BASE}/finance/dts_brief.pdf`,
+    keywords: ["dts", "treasury", "daily", "cash", "tga", "deposit", "withdrawal", "spending"],
+    description: "U.S. Treasury Daily Treasury Statement brief — federal cash flows, TGA balance, and spending signals."
+  },
+  {
+    id: "indpro",
+    title: "Industrial Production Report",
+    file: "indpro_report.pdf",
+    path: `${GITHUB_BASE}/finance/indpro_report.pdf`,
+    keywords: ["industrial", "production", "indpro", "manufacturing", "capacity", "utilization", "factory"],
+    description: "Federal Reserve industrial production and capacity utilization — manufacturing, mining, and utilities."
+  },
+  {
+    id: "iran_gas",
+    title: "Iran Gas Report",
+    file: "iran_gas_report.pdf",
+    path: `${GITHUB_BASE}/finance/iran_gas_report.pdf`,
+    keywords: ["iran", "gas", "natural gas", "geopolitical", "energy", "sanctions", "middle east"],
+    description: "Iran natural gas production, export, and geopolitical signals cross-referenced against energy markets."
+  },
+  {
+    id: "tga_seasonal",
+    title: "TGA Seasonal Report",
+    file: "tga_seasonal.pdf",
+    path: `${GITHUB_BASE}/finance/tga_seasonal.pdf`,
+    keywords: ["tga", "seasonal", "treasury general account", "tax", "pattern", "quarterly"],
+    description: "Treasury General Account seasonal patterns — tax inflows, seasonal spending cycles, and liquidity signals."
+  },
+  {
+    id: "energy_tripwire",
+    title: "Energy Tripwire",
+    file: "index.html",
+    path: `${GITHUB_BASE}/`,
+    keywords: ["energy", "tripwire", "wti", "crude", "oil", "brent", "natural gas", "vix", "alert", "monitoring", "live"],
+    description: "Live energy market tripwire — monitors WTI, Brent, natural gas, VIX, and yields every 30 minutes. Alerts on high-severity tightening events."
+  }
+];
+
+// ── OpenAI system prompt ─────────────────────────────────────────────────────
+const SYSTEM_PROMPT = `You are the Thor Storehouse Intelligence Bot — a precise, data-focused assistant 
+built by Randy Hinton. You help users navigate a portfolio of financial and economic intelligence reports.
+
+Your job:
+1. Understand what report the user is asking about
+2. Return a JSON object with this exact structure:
+{
+  "report_id": "<id from the list below, or null if no match>",
+  "confidence": "high|medium|low",
+  "summary": "<2-3 sentence plain-English summary of what this report covers and its key finding>",
+  "follow_up": "<one clarifying question if the request was ambiguous, else null>"
+}
+
+Available reports and their IDs:
+- drug_shortage: FDA drug shortage tracking
+- dts_brief: U.S. Treasury Daily Treasury Statement cash flows
+- indpro: Federal Reserve industrial production and capacity utilization
+- iran_gas: Iran natural gas and geopolitical energy signals
+- tga_seasonal: Treasury General Account seasonal patterns
+- energy_tripwire: Live energy market monitoring — WTI, Brent, natural gas, VIX, yields, 30-min refresh
+
+Key findings to use in summaries:
+- indpro: Tracks manufacturing, mining, utilities capacity utilization — leading economic indicator.
+- dts_brief: Federal daily cash flows — TGA balance, tax deposits, spending withdrawals.
+
+Always respond with valid JSON only. No preamble, no markdown, no explanation outside the JSON.`;
+
+// ── Key management ───────────────────────────────────────────────────────────
+function saveKey(val) {
+  if (val.startsWith('sk-')) {
+    sessionStorage.setItem('oai_key', val);
+    document.getElementById('apiStatus').textContent = '✓ Key saved';
+    document.getElementById('apiStatus').className = 'api-status ok';
+  } else if (val.length > 0) {
+    document.getElementById('apiStatus').textContent = 'Invalid key format';
+    document.getElementById('apiStatus').className = 'api-status err';
+  }
+}
+
+function getKey() {
+  const stored = sessionStorage.getItem('oai_key');
+  if (stored) {
+    document.getElementById('apiKey').value = stored;
+    document.getElementById('apiStatus').textContent = '✓ Key saved';
+    document.getElementById('apiStatus').className = 'api-status ok';
+  }
+  return stored;
+}
+
+// ── Chat helpers ─────────────────────────────────────────────────────────────
+function addMessage(role, html) {
+  const win = document.getElementById('chatWindow');
+  const div = document.createElement('div');
+  div.className = 'msg';
+  const label = role === 'user' ? 'You' : 'Thor';
+  const avatarClass = role === 'user' ? 'msg-avatar' : 'msg-avatar thor';
+  const bodyClass = role === 'user' ? 'msg-body user-body' : 'msg-body';
+  div.innerHTML = `<div class="${avatarClass}">${label}</div><div class="${bodyClass}">${html}</div>`;
+  win.appendChild(div);
+  win.scrollTop = win.scrollHeight;
+  return div;
+}
+
+function addTyping() {
+  const win = document.getElementById('chatWindow');
+  const div = document.createElement('div');
+  div.className = 'msg';
+  div.id = 'typingIndicator';
+  div.innerHTML = `<div class="msg-avatar thor">Thor</div><div class="typing">Pulling report data…</div>`;
+  win.appendChild(div);
+  win.scrollTop = win.scrollHeight;
+}
+
+function removeTyping() {
+  const el = document.getElementById('typingIndicator');
+  if (el) el.remove();
+}
+
+function ask(text) {
+  document.getElementById('userInput').value = text;
+  sendMessage();
+}
+
+// ── Find report by ID ────────────────────────────────────────────────────────
+function getReport(id) {
+  return REPORTS.find(r => r.id === id) || null;
+}
+
+// ── Main send ────────────────────────────────────────────────────────────────
+async function sendMessage() {
+  const input = document.getElementById('userInput');
+  const btn   = document.getElementById('sendBtn');
+  const text  = input.value.trim();
+  if (!text) return;
+
+  const key = getKey() || sessionStorage.getItem('oai_key');
+  if (!key) {
+    addMessage('thor', '<span style="color:var(--red)">Please enter your OpenAI API key above to continue.</span>');
+    return;
+  }
+
+  addMessage('user', text);
+  input.value = '';
+  btn.disabled = true;
+  addTyping();
+
+  try {
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${key}`
+      },
+      body: JSON.stringify({
+        model: 'gpt-4o-mini',
+        max_tokens: 400,
+        temperature: 0.2,
+        messages: [
+          { role: 'system', content: SYSTEM_PROMPT },
+          { role: 'user',   content: text }
+        ]
+      })
+    });
+
+    const data = await response.json();
+
+    if (data.error) {
+      removeTyping();
+      addMessage('thor', `<span style="color:var(--red)">API error: ${data.error.message}</span>`);
+      btn.disabled = false;
+      return;
+    }
+
+    const raw = data.choices[0].message.content.trim();
+    let parsed;
+    try {
+      parsed = JSON.parse(raw);
+    } catch {
+      removeTyping();
+      addMessage('thor', raw);
+      btn.disabled = false;
+      return;
+    }
+
+    removeTyping();
+
+    // Build response HTML
+    const report = parsed.report_id ? getReport(parsed.report_id) : null;
+
+    let html = '';
+
+    if (parsed.summary) {
+      html += `<div class="finding">${parsed.summary}</div>`;
+    }
+
+    if (report) {
+      html += `<a class="report-link" href="${report.path}" target="_blank">
+        View Full Report: ${report.title} ↗
+      </a>`;
+    } else if (parsed.confidence === 'low' || !parsed.report_id) {
+      html += `<div style="margin-top:.5rem;font-family:Arial,sans-serif;font-size:.78rem;color:var(--gray)">
+        No matching report found. Try one of the quick links above.
+      </div>`;
+    }
+
+    if (parsed.follow_up) {
+      html += `<div style="margin-top:.75rem;font-family:Arial,sans-serif;font-size:.78rem;color:var(--gray);font-style:italic">
+        ${parsed.follow_up}
+      </div>`;
+    }
+
+    addMessage('thor', html || 'I could not find a matching report for that query.');
+
+  } catch (err) {
+    removeTyping();
+    addMessage('thor', `<span style="color:var(--red)">Network error: ${err.message}</span>`);
+  }
+
+  btn.disabled = false;
+  input.focus();
+}
+
+// ── Init ─────────────────────────────────────────────────────────────────────
+window.onload = () => {
+  getKey();
+  document.getElementById('userInput').focus();
+};
+</script>
+</body>
+</html>
