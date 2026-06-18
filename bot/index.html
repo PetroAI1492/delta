@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thor Storehouse — Intelligence Bot</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --red: #e8111a; --black: #1a1a1a; --gray: #666;
+    --rule: #ccc; --bg: #fff; --bg-soft: #f9f9f9; --bg-msg: #fff8f8;
+  }
+  body { font-family: Georgia, serif; background: var(--bg); color: var(--black);
+          min-height: 100vh; display: flex; flex-direction: column; }
+  .masthead { border-top: 4px solid var(--red); border-bottom: 1px solid var(--rule);
+               padding: .5rem 2rem .4rem; display: flex; align-items: baseline;
+               gap: 1.2rem; position: sticky; top: 0; background: var(--bg); z-index: 100; }
+  .brand { font-family: Georgia, serif; font-size: 1.2rem; font-weight: bold;
+            color: var(--red); letter-spacing: -.5px; text-transform: uppercase; }
+  .section-label { font-family: Arial, sans-serif; font-size: .72rem; color: var(--gray);
+                    text-transform: uppercase; letter-spacing: .08em;
+                    border-left: 1px solid var(--rule); padding-left: 1rem; }
+  .main { flex: 1; display: flex; flex-direction: column; max-width: 860px;
+           width: 100%; margin: 0 auto; padding: 1.5rem 2rem 0; }
+  .report-index { border-bottom: 1px solid var(--rule); padding-bottom: 1rem; margin-bottom: 1.25rem; }
+  .report-index h2 { font-family: Arial, sans-serif; font-size: .7rem; font-weight: bold;
+                      text-transform: uppercase; letter-spacing: .08em;
+                      color: var(--gray); margin-bottom: .75rem; }
+  .domain-group { margin-bottom: .65rem; }
+  .domain-label { font-family: Arial, sans-serif; font-size: .68rem; font-weight: bold;
+                   text-transform: uppercase; letter-spacing: .08em;
+                   color: var(--red); margin-bottom: .3rem; }
+  .report-pills { display: flex; flex-wrap: wrap; gap: .4rem; }
+  .pill { font-family: Arial, sans-serif; font-size: .72rem; padding: .25rem .6rem;
+           border: 1px solid var(--rule); color: var(--gray); cursor: pointer;
+           background: var(--bg); transition: border-color .15s, color .15s; white-space: nowrap; }
+  .pill:hover { border-color: var(--red); color: var(--red); }
+  .chat-window { flex: 1; overflow-y: auto; min-height: 320px; max-height: 480px;
+                  border: 1px solid var(--rule); background: var(--bg-soft);
+                  padding: 1rem; margin-bottom: .75rem; scroll-behavior: smooth; }
+  .msg { display: flex; gap: .75rem; margin-bottom: 1rem; align-items: flex-start; }
+  .msg-avatar { font-family: Arial, sans-serif; font-size: .65rem; font-weight: bold;
+                 text-transform: uppercase; letter-spacing: .06em; color: var(--bg);
+                 background: var(--black); padding: .2rem .4rem;
+                 white-space: nowrap; flex-shrink: 0; margin-top: .15rem; }
+  .msg-avatar.thor { background: var(--red); }
+  .msg-body { font-family: Georgia, serif; font-size: .88rem; line-height: 1.6; color: var(--black); }
+  .msg-body.user-body { color: var(--gray); font-style: italic; }
+  .msg-body a { color: var(--red); text-decoration: none; border-bottom: 1px solid #f5a0a3; }
+  .msg-body a:hover { border-bottom-color: var(--red); }
+  .finding { background: var(--bg-msg); border-left: 3px solid var(--red);
+              padding: .5rem .75rem; margin: .5rem 0; font-size: .84rem; line-height: 1.55; }
+  .report-link { display: inline-block; margin-top: .5rem; font-family: Arial, sans-serif;
+                  font-size: .75rem; font-weight: bold; text-transform: uppercase;
+                  letter-spacing: .06em; color: var(--red); border: 1px solid var(--red);
+                  padding: .25rem .6rem; text-decoration: none; }
+  .report-link:hover { background: var(--red); color: var(--bg); }
+  .input-bar { display: flex; gap: .5rem; padding-bottom: 1.5rem; }
+  .input-bar input { flex: 1; padding: .55rem .75rem; border: 1px solid var(--rule);
+                      border-bottom: 2px solid var(--black); font-family: Georgia, serif;
+                      font-size: .88rem; color: var(--black); background: var(--bg); }
+  .input-bar input:focus { outline: none; border-color: var(--red); border-bottom-color: var(--red); }
+  .input-bar button { padding: .55rem 1.25rem; background: var(--black); color: var(--bg);
+                       border: none; font-family: Arial, sans-serif; font-size: .75rem;
+                       font-weight: bold; text-transform: uppercase; letter-spacing: .08em;
+                       cursor: pointer; transition: background .15s; }
+  .input-bar button:hover { background: var(--red); }
+  footer { border-top: 1px solid var(--rule); padding: .5rem 2rem;
+            font-family: Arial, sans-serif; font-size: .68rem;
+            color: var(--gray); text-align: center; }
+</style>
+</head>
+<body>
+<div class="masthead">
+  <span class="brand">Thor Storehouse</span>
+  <span class="section-label">Intelligence Bot</span>
+</div>
+<div class="main">
+  <div class="report-index">
+    <h2>Browse by Domain</h2>
+    
+    <div class="domain-group">
+      <div class="domain-label">Energy</div>
+      <div class="report-pills">
+        <span class="pill" data-id="energy_tripwire">Energy Tripwire</span>
+      </div>
+    </div>
+    <div class="domain-group">
+      <div class="domain-label">Geopolitics</div>
+      <div class="report-pills">
+        <span class="pill" data-id="iran_gas_report">Iran Gas Report</span>
+      </div>
+    </div>
+    <div class="domain-group">
+      <div class="domain-label">Economy</div>
+      <div class="report-pills">
+        <span class="pill" data-id="industrial_production_report_indpro">Industrial Production Report (INDPRO)</span>
+      </div>
+    </div>
+    <div class="domain-group">
+      <div class="domain-label">Federal</div>
+      <div class="report-pills">
+        <span class="pill" data-id="dts_brief">DTS Brief</span>
+        <span class="pill" data-id="tga_seasonal_report">TGA Seasonal Report</span>
+      </div>
+    </div>
+    <div class="domain-group">
+      <div class="domain-label">Health</div>
+      <div class="report-pills">
+        <span class="pill" data-id="drug_shortage_report">Drug Shortage Report</span>
+      </div>
+    </div>
+  </div>
+  <div class="chat-window" id="chatWindow">
+    <div class="msg">
+      <div class="msg-avatar thor">Thor</div>
+      <div class="msg-body">Ask me about any report — energy markets, industrial
+        production, federal cash flows, drug shortages, or geopolitical signals.
+        I'll surface the key findings and link you to the full report.</div>
+    </div>
+  </div>
+  <div class="input-bar">
+    <input type="text" id="userInput" placeholder="Ask about any report..."
+           onkeydown="if(event.key==='Enter') sendMessage()">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+<footer>
+  Thor Storehouse Intelligence Bot &nbsp;·&nbsp; Taxonomy-driven routing &nbsp;·&nbsp;
+  Generated: 2026-06-18 15:02 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+</footer>
+<script>
+const REPORTS = [
+  {
+    "title": "Energy Tripwire",
+    "file": "index.html",
+    "published": true,
+    "url": "`petroai1492.github.io/delta/`",
+    "auto_published": true,
+    "primary_domain": "Energy",
+    "secondary_domains": [
+      "Economy",
+      "Finance"
+    ],
+    "entities": [
+      "WTI crude",
+      "Brent crude",
+      "natural gas",
+      "VIX",
+      "10Y Treasury yield",
+      "U.S. Dollar"
+    ],
+    "data_sources": [
+      "Live market feeds"
+    ],
+    "update_frequency": "Every 30 minutes",
+    "key_signals": [
+      "Price levels and % change for WTI, Brent, nat gas, VIX, yields, USD",
+      "tightening event detection",
+      "trigger threshold alerts"
+    ],
+    "intent_phrases": [
+      "what is oil doing",
+      "crude price",
+      "energy alert",
+      "is there a tripwire",
+      "WTI today",
+      "Brent crude",
+      "natural gas price",
+      "VIX level",
+      "energy market now",
+      "live energy"
+    ],
+    "id": "energy_tripwire",
+    "path": "https://petroai1492.github.io/delta/index.html"
+  },
+  {
+    "title": "Iran Gas Report",
+    "file": "finance/iran_gas_report.pdf",
+    "published": true,
+    "url": "`petroai1492.github.io/delta/finance/iran_gas_report.pdf`",
+    "auto_published": true,
+    "primary_domain": "Geopolitics",
+    "secondary_domains": [
+      "Energy",
+      "Finance"
+    ],
+    "entities": [
+      "Iran",
+      "NIOC (National Iranian Oil Company)",
+      "JCPOA",
+      "U.S. Treasury OFAC",
+      "natural gas",
+      "LNG",
+      "Persian Gulf",
+      "Strait of Hormuz"
+    ],
+    "data_sources": [
+      "FRED",
+      "public trade data"
+    ],
+    "update_frequency": "Auto-published",
+    "key_signals": [
+      "Iran natural gas production levels, export volumes, sanction status, geopolitical risk indicators, price correlation with energy markets"
+    ],
+    "intent_phrases": [
+      "Iran",
+      "Iranian gas",
+      "Persian Gulf",
+      "Hormuz",
+      "sanctions",
+      "JCPOA",
+      "Middle East energy",
+      "geopolitical risk",
+      "nat gas supply disruption",
+      "NIOC"
+    ],
+    "id": "iran_gas_report",
+    "path": "https://petroai1492.github.io/delta/finance/iran_gas_report.pdf"
+  },
+  {
+    "title": "Industrial Production Report (INDPRO)",
+    "file": "finance/indpro_report.pdf",
+    "published": true,
+    "url": "`petroai1492.github.io/delta/finance/indpro_report.pdf`",
+    "auto_published": true,
+    "primary_domain": "Economy",
+    "secondary_domains": [
+      "Energy",
+      "Finance"
+    ],
+    "entities": [
+      "Federal Reserve",
+      "FRED",
+      "INDPRO",
+      "manufacturing sector",
+      "mining sector",
+      "utilities sector"
+    ],
+    "data_sources": [
+      "FRED (INDPRO",
+      "capacity utilization series)"
+    ],
+    "update_frequency": "Monthly (Fed release)",
+    "key_signals": [
+      "Industrial production index level and YoY change, capacity utilization rate, manufacturing vs. mining vs. utilities breakdown, recession signals"
+    ],
+    "intent_phrases": [
+      "industrial production",
+      "INDPRO",
+      "manufacturing output",
+      "capacity utilization",
+      "factory output",
+      "mining production",
+      "utilities output",
+      "Fed industrial",
+      "economic output",
+      "production index"
+    ],
+    "id": "industrial_production_report_indpro",
+    "path": "https://petroai1492.github.io/delta/finance/indpro_report.pdf"
+  },
+  {
+    "title": "DTS Brief",
+    "file": "finance/dts_brief.pdf",
+    "published": true,
+    "url": "`petroai1492.github.io/delta/finance/dts_brief.pdf`",
+    "auto_published": true,
+    "primary_domain": "Federal",
+    "secondary_domains": [
+      "Economy",
+      "Finance"
+    ],
+    "entities": [
+      "U.S. Treasury",
+      "TGA (Treasury General Account)",
+      "Federal Reserve",
+      "IRS",
+      "Social Security Administration",
+      "Department of Defense"
+    ],
+    "data_sources": [
+      "U.S. Treasury Daily Treasury Statement (DTS)",
+      "fiscaldata.treasury.gov"
+    ],
+    "update_frequency": "Daily",
+    "key_signals": [
+      "TGA balance, daily tax deposits, daily withdrawals, net cash position, spending pace vs. prior year, debt issuance signals"
+    ],
+    "intent_phrases": [
+      "DTS",
+      "daily treasury",
+      "TGA balance",
+      "federal cash",
+      "Treasury deposits",
+      "government spending today",
+      "Treasury withdrawals",
+      "federal liquidity",
+      "how much cash does Treasury have",
+      "IRS deposits"
+    ],
+    "id": "dts_brief",
+    "path": "https://petroai1492.github.io/delta/finance/dts_brief.pdf"
+  },
+  {
+    "title": "TGA Seasonal Report",
+    "file": "finance/tga_seasonal.pdf",
+    "published": true,
+    "url": "`petroai1492.github.io/delta/finance/tga_seasonal.pdf`",
+    "auto_published": true,
+    "primary_domain": "Federal",
+    "secondary_domains": [
+      "Economy",
+      "Finance"
+    ],
+    "entities": [
+      "U.S. Treasury",
+      "TGA",
+      "Federal Reserve",
+      "IRS",
+      "quarterly tax payments"
+    ],
+    "data_sources": [
+      "FRED (WTREGEN)",
+      "U.S. Treasury DTS"
+    ],
+    "update_frequency": "Quarterly refresh",
+    "key_signals": [
+      "TGA seasonal balance patterns, April/June/September/December tax inflow spikes, spending troughs, liquidity cycle timing, deviation from seasonal norm"
+    ],
+    "intent_phrases": [
+      "TGA seasonal",
+      "Treasury seasonal",
+      "tax season",
+      "quarterly pattern",
+      "April tax",
+      "TGA cycle",
+      "seasonal liquidity",
+      "Treasury balance pattern",
+      "when does TGA fill up",
+      "seasonal spending"
+    ],
+    "id": "tga_seasonal_report",
+    "path": "https://petroai1492.github.io/delta/finance/tga_seasonal.pdf"
+  },
+  {
+    "title": "Drug Shortage Report",
+    "file": "finance/drug_shortage_report.pdf",
+    "published": true,
+    "url": "`petroai1492.github.io/delta/finance/drug_shortage_report.pdf`",
+    "auto_published": true,
+    "primary_domain": "Health",
+    "secondary_domains": [
+      "Federal",
+      "Economy"
+    ],
+    "entities": [
+      "FDA",
+      "HHS",
+      "pharmaceutical manufacturers",
+      "generic drug market",
+      "ASHP (American Society of Health-System Pharmacists)"
+    ],
+    "data_sources": [
+      "FDA drug shortage database"
+    ],
+    "update_frequency": "Auto-published",
+    "key_signals": [
+      "Active shortage count, new shortages, resolved shortages, discontinued drugs, therapeutic category breakdown, shortage duration trends"
+    ],
+    "intent_phrases": [
+      "drug shortage",
+      "pharmaceutical shortage",
+      "medicine supply",
+      "FDA shortage",
+      "drug supply chain",
+      "medication unavailable",
+      "generic drug shortage",
+      "hospital drug supply",
+      "HHS drug",
+      "prescription shortage"
+    ],
+    "id": "drug_shortage_report",
+    "path": "https://petroai1492.github.io/delta/finance/drug_shortage_report.pdf"
+  }
+];
+const CROSS_DOMAIN = [
+  {
+    "query_type": "Energy + Geopolitics",
+    "primary_report": "Iran Gas",
+    "secondary_report": "Energy Tripwire"
+  },
+  {
+    "query_type": "Federal spending + Health",
+    "primary_report": "Gov Financial",
+    "secondary_report": "Drug Shortage"
+  },
+  {
+    "query_type": "Economy + Energy",
+    "primary_report": "INDPRO",
+    "secondary_report": "Energy Tripwire"
+  },
+  {
+    "query_type": "Federal liquidity + timing",
+    "primary_report": "TGA Seasonal",
+    "secondary_report": "DTS Brief"
+  },
+  {
+    "query_type": "Disaster + Energy",
+    "primary_report": "Disaster Report",
+    "secondary_report": "Energy Tripwire"
+  },
+  {
+    "query_type": "Cyber + Finance",
+    "primary_report": "Cyber KEV",
+    "secondary_report": null
+  },
+  {
+    "query_type": "Federal + Economy",
+    "primary_report": "DTS Brief",
+    "secondary_report": "Gov Financial"
+  }
+];
+
+document.querySelectorAll('.pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    const report = REPORTS.find(r => r.id === pill.dataset.id);
+    if (report) showReport(report);
+  });
+});
+
+function routeQuery(text) {
+  const q = text.toLowerCase();
+  let best = null, bestScore = 0;
+  for (const r of REPORTS) {
+    let score = 0;
+    for (const p of (r.intent_phrases || [])) { if (q.includes(p.toLowerCase())) score += 3; }
+    for (const e of (r.entities || []))       { if (q.includes(e.toLowerCase())) score += 2; }
+    if (q.includes(r.primary_domain.toLowerCase())) score += 1;
+    for (const sd of (r.secondary_domains || [])) { if (q.includes(sd.toLowerCase())) score += 1; }
+    if (score > bestScore) { bestScore = score; best = r; }
+  }
+  return bestScore > 0 ? best : null;
+}
+
+function checkCrossDomain(text) {
+  const q = text.toLowerCase();
+  for (const entry of CROSS_DOMAIN) {
+    const terms = entry.query_type.toLowerCase().split('+').map(s => s.trim());
+    if (terms.every(t => q.includes(t))) {
+      const primary   = REPORTS.find(r => r.title.toLowerCase().includes(entry.primary_report.toLowerCase()));
+      const secondary = entry.secondary_report
+        ? REPORTS.find(r => r.title.toLowerCase().includes(entry.secondary_report.toLowerCase()))
+        : null;
+      if (primary) return { primary, secondary };
+    }
+  }
+  return null;
+}
+
+function addMessage(role, html) {
+  const win = document.getElementById('chatWindow');
+  const div = document.createElement('div');
+  div.className = 'msg';
+  const label      = role === 'user' ? 'You' : 'Thor';
+  const avatarCls  = role === 'user' ? 'msg-avatar' : 'msg-avatar thor';
+  const bodyCls    = role === 'user' ? 'msg-body user-body' : 'msg-body';
+  div.innerHTML = `<div class="${avatarCls}">${label}</div><div class="${bodyCls}">${html}</div>`;
+  win.appendChild(div);
+  win.scrollTop = win.scrollHeight;
+}
+
+function reportCard(r) {
+  const signals = (r.key_signals || []).slice(0, 3).join(' · ');
+  return `<div class="finding">${signals}</div>
+    <a class="report-link" href="${r.path}" target="_blank">View Full Report: ${r.title} ↗</a>`;
+}
+
+function showReport(r) { addMessage('thor', reportCard(r)); }
+
+function sendMessage() {
+  const input = document.getElementById('userInput');
+  const text  = input.value.trim();
+  if (!text) return;
+  addMessage('user', text);
+  input.value = '';
+  const cross = checkCrossDomain(text);
+  if (cross) {
+    let html = reportCard(cross.primary);
+    if (cross.secondary) {
+      html += '<div style="margin-top:.75rem;font-family:Arial,sans-serif;font-size:.75rem;color:var(--gray)">Also relevant:</div>';
+      html += reportCard(cross.secondary);
+    }
+    addMessage('thor', html);
+  } else {
+    const r = routeQuery(text);
+    if (r) { showReport(r); }
+    else {
+      addMessage('thor', '<div style="font-family:Arial,sans-serif;font-size:.78rem;color:var(--gray)">No matching report found. Try browsing by domain above.</div>');
+    }
+  }
+  input.focus();
+}
+
+window.onload = () => document.getElementById('userInput').focus();
+</script>
+</body>
+</html>
