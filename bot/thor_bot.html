@@ -104,6 +104,15 @@
     white-space: nowrap;
   }
   .pill:hover { border-color: var(--red); color: var(--red); }
+  .domain-label {
+    font-family: Arial, sans-serif;
+    font-size: .68rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--red);
+    margin-bottom: .3rem;
+  }
 
   /* ── Chat window ── */
   .chat-window {
@@ -247,15 +256,38 @@
 <div class="main">
 
   <div class="report-index">
-    <h2>Available Reports</h2>
-    <div class="report-pills">
-      <span class="pill" onclick="ask('Show me the drug shortage report')">Drug Shortage</span>
-      <span class="pill" onclick="ask('Show me the DTS brief')">DTS Brief</span>
-      <span class="pill" onclick="ask('Show me the INDPRO report')">Industrial Production</span>
-      <span class="pill" onclick="ask('Show me the Iran gas report')">Iran Gas</span>
-      <span class="pill" onclick="ask('Show me the TGA seasonal report')">TGA Seasonal</span>
-      <span class="pill" onclick="ask('Show me the energy tripwire')">Energy Tripwire</span>
+    <h2>Browse by Domain</h2>
+
+    <div style="margin-bottom:.75rem">
+      <div class="domain-label">Energy</div>
+      <div class="report-pills">
+        <span class="pill" onclick="ask('Show me the energy tripwire')">Energy Tripwire</span>
+        <span class="pill" onclick="ask('Show me the Iran gas report')">Iran Gas</span>
+      </div>
     </div>
+
+    <div style="margin-bottom:.75rem">
+      <div class="domain-label">Economy</div>
+      <div class="report-pills">
+        <span class="pill" onclick="ask('Show me the INDPRO report')">Industrial Production</span>
+      </div>
+    </div>
+
+    <div style="margin-bottom:.75rem">
+      <div class="domain-label">Federal</div>
+      <div class="report-pills">
+        <span class="pill" onclick="ask('Show me the DTS brief')">DTS Brief</span>
+        <span class="pill" onclick="ask('Show me the TGA seasonal report')">TGA Seasonal</span>
+      </div>
+    </div>
+
+    <div style="margin-bottom:.75rem">
+      <div class="domain-label">Health</div>
+      <div class="report-pills">
+        <span class="pill" onclick="ask('Show me the drug shortage report')">Drug Shortage</span>
+      </div>
+    </div>
+
   </div>
 
   <div class="chat-window" id="chatWindow">
