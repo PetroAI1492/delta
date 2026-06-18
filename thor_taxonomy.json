@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-18T22:21:30Z",
+  "generated": "2026-06-18T22:25:24Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -58,9 +58,9 @@
     {
       "title": "Iran Gas Report",
       "file": "finance/iran_gas_report.pdf",
-      "published": true,
-      "url": "`petroai1492.github.io/delta/finance/iran_gas_report.pdf`",
-      "auto_published": true,
+      "published": false,
+      "url": null,
+      "auto_published": false,
       "primary_domain": "Geopolitics",
       "secondary_domains": [
         "Energy",
