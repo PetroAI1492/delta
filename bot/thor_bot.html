@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thor Storehouse — Intelligence Bot</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red:     #e8111a;
+    --black:   #1a1a1a;
+    --gray:    #666666;
+    --rule:    #cccccc;
+    --bg:      #ffffff;
+    --bg-soft: #f9f9f9;
+    --bg-msg:  #fff8f8;
+  }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: var(--bg);
+    color: var(--black);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Masthead ── */
+  .masthead {
+    border-top: 4px solid var(--red);
+    border-bottom: 1px solid var(--rule);
+    padding: .5rem 2rem .4rem;
+    display: flex;
+    align-items: baseline;
+    gap: 1.2rem;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 100;
+  }
+  .masthead .brand {
+    font-family: Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--red);
+    letter-spacing: -.5px;
+    text-transform: uppercase;
+  }
+  .masthead .section-label {
+    font-family: Arial, sans-serif;
+    font-size: .72rem;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    border-left: 1px solid var(--rule);
+    padding-left: 1rem;
+  }
+
+
+
+  /* ── Main layout ── */
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 860px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.5rem 2rem 0;
+  }
+
+  /* ── Report index ── */
+  .report-index {
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .report-index h2 {
+    font-family: Arial, sans-serif;
+    font-size: .7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--gray);
+    margin-bottom: .6rem;
+  }
+  .report-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+  }
+  .pill {
+    font-family: Arial, sans-serif;
+    font-size: .72rem;
+    padding: .25rem .6rem;
+    border: 1px solid var(--rule);
+    color: var(--gray);
+    cursor: pointer;
+    background: var(--bg);
+    transition: border-color .15s, color .15s;
+    white-space: nowrap;
+  }
+  .pill:hover { border-color: var(--red); color: var(--red); }
+
+  /* ── Chat window ── */
+  .chat-window {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 320px;
+    max-height: 480px;
+    border: 1px solid var(--rule);
+    background: var(--bg-soft);
+    padding: 1rem;
+    margin-bottom: .75rem;
+    scroll-behavior: smooth;
+  }
+
+  .msg {
+    display: flex;
+    gap: .75rem;
+    margin-bottom: 1rem;
+    align-items: flex-start;
+  }
+  .msg-avatar {
+    font-family: Arial, sans-serif;
+    font-size: .65rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--bg);
+    background: var(--black);
+    padding: .2rem .4rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: .15rem;
+  }
+  .msg-avatar.thor { background: var(--red); }
+
+  .msg-body {
+    font-family: Georgia, serif;
+    font-size: .88rem;
+    line-height: 1.6;
+    color: var(--black);
+  }
+  .msg-body.user-body { color: var(--gray); font-style: italic; }
+
+  .msg-body a {
+    color: var(--red);
+    text-decoration: none;
+    border-bottom: 1px solid #f5a0a3;
+  }
+  .msg-body a:hover { border-bottom-color: var(--red); }
+
+  .msg-body .finding {
+    background: var(--bg-msg);
+    border-left: 3px solid var(--red);
+    padding: .5rem .75rem;
+    margin: .5rem 0;
+    font-size: .84rem;
+    line-height: 1.55;
+  }
+
+  .msg-body .report-link {
+    display: inline-block;
+    margin-top: .5rem;
+    font-family: Arial, sans-serif;
+    font-size: .75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--red);
+    border: 1px solid var(--red);
+    padding: .25rem .6rem;
+    text-decoration: none;
+    border-bottom: 1px solid var(--red);
+  }
+  .msg-body .report-link:hover { background: var(--red); color: var(--bg); }
+
+  .typing {
+    font-family: Arial, sans-serif;
+    font-size: .78rem;
+    color: var(--gray);
+    font-style: italic;
+    padding: .25rem 0;
+  }
+
+  /* ── Input bar ── */
+  .input-bar {
+    display: flex;
+    gap: .5rem;
+    padding-bottom: 1.5rem;
+  }
+  .input-bar input {
+    flex: 1;
+    padding: .55rem .75rem;
+    border: 1px solid var(--rule);
+    border-bottom: 2px solid var(--black);
+    font-family: Georgia, serif;
+    font-size: .88rem;
+    color: var(--black);
+    background: var(--bg);
+  }
+  .input-bar input:focus {
+    outline: none;
+    border-color: var(--red);
+    border-bottom-color: var(--red);
+  }
+  .input-bar button {
+    padding: .55rem 1.25rem;
+    background: var(--black);
+    color: var(--bg);
+    border: none;
+    font-family: Arial, sans-serif;
+    font-size: .75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    cursor: pointer;
+    transition: background .15s;
+  }
+  .input-bar button:hover { background: var(--red); }
+  .input-bar button:disabled { background: var(--rule); cursor: not-allowed; }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: .5rem 2rem;
+    font-family: Arial, sans-serif;
+    font-size: .68rem;
+    color: var(--gray);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <span class="brand">Thor Storehouse</span>
+  <span class="section-label">Intelligence Bot · Test Mode</span>
+</div>
+
+
+
+<div class="main">
+
+  <div class="report-index">
+    <h2>Available Reports</h2>
+    <div class="report-pills">
+      <span class="pill" onclick="ask('Show me the drug shortage report')">Drug Shortage</span>
+      <span class="pill" onclick="ask('Show me the DTS brief')">DTS Brief</span>
+      <span class="pill" onclick="ask('Show me the INDPRO report')">Industrial Production</span>
+      <span class="pill" onclick="ask('Show me the Iran gas report')">Iran Gas</span>
+      <span class="pill" onclick="ask('Show me the TGA seasonal report')">TGA Seasonal</span>
+      <span class="pill" onclick="ask('Show me the energy tripwire')">Energy Tripwire</span>
+    </div>
+  </div>
+
+  <div class="chat-window" id="chatWindow">
+    <div class="msg">
+      <div class="msg-avatar thor">Thor</div>
+      <div class="msg-body">
+        Ask me about any report — drug shortages, industrial production, Iran gas, 
+        TGA seasonal patterns, or live energy market signals. 
+        I'll surface the key findings and link you to the full report.
+      </div>
+    </div>
+  </div>
+
+  <div class="input-bar">
+    <input type="text" id="userInput" placeholder="Ask about any report..."
+           onkeydown="if(event.key==='Enter') sendMessage()">
+    <button onclick="sendMessage()" id="sendBtn">Send</button>
+  </div>
+
+</div>
+
+<footer>
+  Thor Storehouse Intelligence Bot &nbsp;·&nbsp; Keyword routing (test mode) &nbsp;·&nbsp; 
+  Data: FRED · SEC · CISA · NOAA · U.S. Treasury &nbsp;·&nbsp;
+  #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+</footer>
+
+<script>
+// ── Report registry ──────────────────────────────────────────────────────────
+const GITHUB_BASE = "https://petroai1492.github.io/delta";
+
+const REPORTS = [
+  {
+    id: "drug_shortage",
+    title: "Drug Shortage Report",
+    file: "drug_shortage_report.pdf",
+    path: `${GITHUB_BASE}/finance/drug_shortage_report.pdf`,
+    keywords: ["drug", "shortage", "pharmaceutical", "medicine", "fda", "supply"],
+    description: "FDA drug shortage tracking — active shortages, discontinuations, and supply chain signals."
+  },
+  {
+    id: "dts_brief",
+    title: "DTS Brief",
+    file: "dts_brief.pdf",
+    path: `${GITHUB_BASE}/finance/dts_brief.pdf`,
+    keywords: ["dts", "treasury", "daily", "cash", "tga", "deposit", "withdrawal", "spending"],
+    description: "U.S. Treasury Daily Treasury Statement brief — federal cash flows, TGA balance, and spending signals."
+  },
+  {
+    id: "indpro",
+    title: "Industrial Production Report",
+    file: "indpro_report.pdf",
+    path: `${GITHUB_BASE}/finance/indpro_report.pdf`,
+    keywords: ["industrial", "production", "indpro", "manufacturing", "capacity", "utilization", "factory"],
+    description: "Federal Reserve industrial production and capacity utilization — manufacturing, mining, and utilities."
+  },
+  {
+    id: "iran_gas",
+    title: "Iran Gas Report",
+    file: "iran_gas_report.pdf",
+    path: `${GITHUB_BASE}/finance/iran_gas_report.pdf`,
+    keywords: ["iran", "gas", "natural gas", "geopolitical", "energy", "sanctions", "middle east"],
+    description: "Iran natural gas production, export, and geopolitical signals cross-referenced against energy markets."
+  },
+  {
+    id: "tga_seasonal",
+    title: "TGA Seasonal Report",
+    file: "tga_seasonal.pdf",
+    path: `${GITHUB_BASE}/finance/tga_seasonal.pdf`,
+    keywords: ["tga", "seasonal", "treasury general account", "tax", "pattern", "quarterly"],
+    description: "Treasury General Account seasonal patterns — tax inflows, seasonal spending cycles, and liquidity signals."
+  },
+  {
+    id: "energy_tripwire",
+    title: "Energy Tripwire",
+    file: "index.html",
+    path: `${GITHUB_BASE}/`,
+    keywords: ["energy", "tripwire", "wti", "crude", "oil", "brent", "natural gas", "vix", "alert", "monitoring", "live"],
+    description: "Live energy market tripwire — monitors WTI, Brent, natural gas, VIX, and yields every 30 minutes. Alerts on high-severity tightening events."
+  }
+];
+
+
+
+
+// ── Chat helpers ─────────────────────────────────────────────────────────────
+function addMessage(role, html) {
+  const win = document.getElementById('chatWindow');
+  const div = document.createElement('div');
+  div.className = 'msg';
+  const label = role === 'user' ? 'You' : 'Thor';
+  const avatarClass = role === 'user' ? 'msg-avatar' : 'msg-avatar thor';
+  const bodyClass = role === 'user' ? 'msg-body user-body' : 'msg-body';
+  div.innerHTML = `<div class="${avatarClass}">${label}</div><div class="${bodyClass}">${html}</div>`;
+  win.appendChild(div);
+  win.scrollTop = win.scrollHeight;
+  return div;
+}
+
+function addTyping() {
+  const win = document.getElementById('chatWindow');
+  const div = document.createElement('div');
+  div.className = 'msg';
+  div.id = 'typingIndicator';
+  div.innerHTML = `<div class="msg-avatar thor">Thor</div><div class="typing">Pulling report data…</div>`;
+  win.appendChild(div);
+  win.scrollTop = win.scrollHeight;
+}
+
+function removeTyping() {
+  const el = document.getElementById('typingIndicator');
+  if (el) el.remove();
+}
+
+function ask(text) {
+  document.getElementById('userInput').value = text;
+  sendMessage();
+}
+
+// ── Find report by ID ────────────────────────────────────────────────────────
+function getReport(id) {
+  return REPORTS.find(r => r.id === id) || null;
+}
+
+// ── Main send ────────────────────────────────────────────────────────────────
+function routeByKeyword(text) {
+  const q = text.toLowerCase();
+  let best = null;
+  let bestScore = 0;
+  for (const report of REPORTS) {
+    let score = 0;
+    for (const kw of report.keywords) {
+      if (q.includes(kw)) score++;
+    }
+    if (score > bestScore) { bestScore = score; best = report; }
+  }
+  return bestScore > 0 ? best : null;
+}
+
+function sendMessage() {
+  const input = document.getElementById('userInput');
+  const btn   = document.getElementById('sendBtn');
+  const text  = input.value.trim();
+  if (!text) return;
+
+  addMessage('user', text);
+  input.value = '';
+
+  const report = routeByKeyword(text);
+  let html = '';
+
+  if (report) {
+    html += `<div class="finding">${report.description}</div>`;
+    html += `<a class="report-link" href="${report.path}" target="_blank">
+      View Full Report: ${report.title} ↗
+    </a>`;
+  } else {
+    html = `<div style="margin-top:.5rem;font-family:Arial,sans-serif;font-size:.78rem;color:var(--gray)">
+      No matching report found. Try one of the quick links above.
+    </div>`;
+  }
+
+  addMessage('thor', html);
+  btn.disabled = false;
+  input.focus();
+}
+
+// ── Init ─────────────────────────────────────────────────────────────────────
+window.onload = () => {
+  document.getElementById('userInput').focus();
+};
+</script>
+</body>
+</html>
