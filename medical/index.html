@@ -243,7 +243,7 @@
 <footer>
   Thor Medical &nbsp;·&nbsp; FDA Drug Shortages · Cancer Early Detection Signals &nbsp;·&nbsp;
   Sources: openFDA · NCI · ASCO · AACR · Reuters &nbsp;·&nbsp;
-  Generated: 2026-06-19 13:18 &nbsp;·&nbsp;
+  Generated: 2026-06-19 13:24 &nbsp;·&nbsp;
   #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 
@@ -367,23 +367,25 @@ function addMessage(role, html) {
 function searchSignals(query) {
   const q = query.toLowerCase().trim();
   if (!q || SIGNALS.length === 0) return [];
+  const tokens = q.split(/\s+/).filter(t => t.length > 1);
   return SIGNALS.filter(s => {
-    const title    = (s.title || s.headline || '').toLowerCase();
-    const summary  = (s.summary || s.description || s.text || '').toLowerCase();
-    const cancer   = (s.cancer_type || s.cancer || '').toLowerCase();
-    const sigtype  = (s.signal_type || s.type || '').toLowerCase();
-    return title.includes(q) || summary.includes(q) ||
-           cancer.includes(q) || sigtype.includes(q);
+    const title   = (s.title   || '').toLowerCase();
+    const trail   = (s.trail   || '').toLowerCase();
+    const cancer  = (s.cancer_type || '').toLowerCase();
+    const sigtype = (s.sig_type    || '').toLowerCase();
+    const combined = title + ' ' + trail + ' ' + cancer + ' ' + sigtype;
+    // Match if all tokens appear somewhere in combined text
+    return tokens.every(t => combined.includes(t));
   }).slice(0, 5);
 }
 
 function signalCard(s) {
-  const title    = s.title || s.headline || 'Untitled';
-  const cancer   = s.cancer_type || s.cancer || '';
-  const sigtype  = s.signal_type || s.type || '';
-  const url      = s.url || s.link || '#';
-  const source   = s.source || '';
-  const date     = s.date || s.published || '';
+  const title   = s.title      || 'Untitled';
+  const cancer  = s.cancer_type || '';
+  const sigtype = s.sig_type   || '';
+  const url     = s.url        || '#';
+  const source  = s.publisher  || '';
+  const date    = s.pub_date   || '';
   return `
     <div class="drug-card" style="border-left-color:#a371f7">
       <div class="drug-name" style="font-size:.85rem">
