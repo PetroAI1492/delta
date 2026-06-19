@@ -243,33 +243,49 @@
 <footer>
   Thor Medical &nbsp;·&nbsp; FDA Drug Shortage Data &nbsp;·&nbsp;
   Source: openFDA (api.fda.gov/drug/shortages.json) &nbsp;·&nbsp;
-  Generated: 2026-06-19 09:12 &nbsp;·&nbsp;
+  Generated: 2026-06-19 10:57 &nbsp;·&nbsp;
   #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 
 <script>
 // ── Data ─────────────────────────────────────────────────────────────────────
-const DATA_URL = 'https://petroai1492.github.io/delta/medical/data.json';
-let DRUGS = [];
+const DATA_URL      = 'https://petroai1492.github.io/delta/medical/data.json';
+const EARLY_DET_URL = 'https://petroai1492.github.io/delta/medical/early_detection.json';
+let DRUGS    = [];
+let SIGNALS  = [];
 
 // ── Load data ─────────────────────────────────────────────────────────────────
 async function loadData() {
   try {
-    const resp = await fetch(DATA_URL);
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-    const data = await resp.json();
-    DRUGS = data.drugs || [];
-    document.getElementById('totalLoaded').textContent = DRUGS.length;
+    // Load both datasets in parallel
+    const [drugResp, earlyResp] = await Promise.allSettled([
+      fetch(DATA_URL),
+      fetch(EARLY_DET_URL),
+    ]);
+
+    if (drugResp.status === 'fulfilled' && drugResp.value.ok) {
+      const data = await drugResp.value.json();
+      DRUGS = data.drugs || [];
+    }
+
+    if (earlyResp.status === 'fulfilled' && earlyResp.value.ok) {
+      const data = await earlyResp.value.json();
+      SIGNALS = data.signals || data.articles || data.items || [];
+    }
+
+    const total = DRUGS.length + SIGNALS.length;
+    document.getElementById('totalLoaded').textContent = total;
     document.getElementById('welcomeMsg').innerHTML =
-      `Drug shortage data loaded — <strong>${DRUGS.length} cancer-related drugs</strong> tracked. ` +
-      `Type a drug name, category (<em>chemotherapy</em>, <em>supportive care</em>), ` +
-      `or availability status (<em>available</em>, <em>unavailable</em>).`;
+      `<strong>${DRUGS.length} drug shortage records</strong> and ` +
+      `<strong>${SIGNALS.length} early detection signals</strong> loaded. ` +
+      `Search by drug name, cancer type, signal type (<em>biomarker</em>, <em>imaging</em>, <em>genetic</em>), ` +
+      `or topic (<em>BRCA</em>, <em>liquid biopsy</em>, <em>mammogram</em>).`;
     document.getElementById('userInput').disabled = false;
     document.getElementById('sendBtn').disabled = false;
     document.getElementById('userInput').focus();
   } catch(e) {
     document.getElementById('welcomeMsg').innerHTML =
-      `<span style="color:var(--red)">Could not load drug shortage data: ${e.message}</span>`;
+      `<span style="color:var(--red)">Could not load data: ${e.message}</span>`;
   }
 }
 
@@ -347,6 +363,42 @@ function addMessage(role, html) {
   win.scrollTop = win.scrollHeight;
 }
 
+// ── Signal search ────────────────────────────────────────────────────────────
+function searchSignals(query) {
+  const q = query.toLowerCase().trim();
+  if (!q || SIGNALS.length === 0) return [];
+  return SIGNALS.filter(s => {
+    const title    = (s.title || s.headline || '').toLowerCase();
+    const summary  = (s.summary || s.description || s.text || '').toLowerCase();
+    const cancer   = (s.cancer_type || s.cancer || '').toLowerCase();
+    const sigtype  = (s.signal_type || s.type || '').toLowerCase();
+    return title.includes(q) || summary.includes(q) ||
+           cancer.includes(q) || sigtype.includes(q);
+  }).slice(0, 5);
+}
+
+function signalCard(s) {
+  const title    = s.title || s.headline || 'Untitled';
+  const cancer   = s.cancer_type || s.cancer || '';
+  const sigtype  = s.signal_type || s.type || '';
+  const url      = s.url || s.link || '#';
+  const source   = s.source || '';
+  const date     = s.date || s.published || '';
+  return `
+    <div class="drug-card" style="border-left-color:#a371f7">
+      <div class="drug-name" style="font-size:.85rem">
+        <a href="${url}" target="_blank" style="color:var(--black);text-decoration:none;
+           border-bottom:1px solid #ccc;">${title}</a>
+      </div>
+      <div class="drug-meta">
+        ${sigtype ? `<span class="cat-badge" style="background:#e8d5ff;border-color:#a371f7;color:#6e40c9">${sigtype}</span>` : ''}
+        ${cancer  ? `<span class="cat-badge">${cancer}</span>` : ''}
+        ${source  ? `<span style="color:var(--gray);font-size:.72rem">${source}</span>` : ''}
+        ${date    ? `<span style="color:var(--gray);font-size:.72rem">${date}</span>` : ''}
+      </div>
+    </div>`;
+}
+
 // ── Send ──────────────────────────────────────────────────────────────────────
 function sendMessage() {
   const input = document.getElementById('userInput');
@@ -356,9 +408,10 @@ function sendMessage() {
   addMessage('user', text);
   input.value = '';
 
-  const results = searchDrugs(text);
+  const drugResults   = searchDrugs(text);
+  const signalResults = searchSignals(text);
 
-  if (results.length === 0) {
+  if (drugResults.length === 0 && signalResults.length === 0) {
     // Check if query looks like a drug name — give specific FDA response
     const q = text.toLowerCase().trim();
     const looksLikeDrug = q.length > 3 && !/^(available|unavailable|chemotherapy|supportive|critical|injection|tablet|capsule)$/.test(q);
@@ -383,12 +436,22 @@ function sendMessage() {
     }
     addMessage('thor', noMatchMsg);
   } else {
-    const header = results.length === 1
-      ? `Found <strong>1 drug</strong> matching "<strong>${text}</strong>":`
-      : `Found <strong>${results.length} drugs</strong> matching "<strong>${text}</strong>":`;
-    const cards = results.map(drugCard).join('');
-    addMessage('thor', `<div style="font-family:Arial,sans-serif;font-size:.78rem;
-      color:var(--gray);margin-bottom:.4rem">${header}</div>${cards}`);
+    let html = '';
+    if (drugResults.length > 0) {
+      const header = drugResults.length === 1
+        ? `<strong>1 drug shortage</strong> matching "<strong>${text}</strong>":`
+        : `<strong>${drugResults.length} drug shortages</strong> matching "<strong>${text}</strong>":`;
+      html += `<div style="font-family:Arial,sans-serif;font-size:.78rem;color:var(--gray);margin-bottom:.4rem">${header}</div>`;
+      html += drugResults.map(drugCard).join('');
+    }
+    if (signalResults.length > 0) {
+      const header = signalResults.length === 1
+        ? `<strong>1 early detection signal</strong> matching "<strong>${text}</strong>":`
+        : `<strong>${signalResults.length} early detection signals</strong> matching "<strong>${text}</strong>":`;
+      html += `<div style="font-family:Arial,sans-serif;font-size:.78rem;color:var(--gray);margin:.75rem 0 .4rem">${header}</div>`;
+      html += signalResults.map(signalCard).join('');
+    }
+    addMessage('thor', html);
   }
 
   input.focus();
