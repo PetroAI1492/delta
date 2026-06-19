@@ -243,7 +243,7 @@
 <footer>
   Thor Medical &nbsp;·&nbsp; FDA Drug Shortages · Cancer Early Detection Signals &nbsp;·&nbsp;
   Sources: openFDA · NCI · ASCO · AACR · Reuters &nbsp;·&nbsp;
-  Generated: 2026-06-19 13:24 &nbsp;·&nbsp;
+  Generated: 2026-06-19 13:29 &nbsp;·&nbsp;
   #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 
@@ -373,7 +373,8 @@ function searchSignals(query) {
     const trail   = (s.trail   || '').toLowerCase();
     const cancer  = (s.cancer_type || '').toLowerCase();
     const sigtype = (s.sig_type    || '').toLowerCase();
-    const combined = title + ' ' + trail + ' ' + cancer + ' ' + sigtype;
+    const ai      = (s.ai || '').toLowerCase();
+    const combined = title + ' ' + trail + ' ' + cancer + ' ' + sigtype + ' ' + ai;
     // Match if all tokens appear somewhere in combined text
     return tokens.every(t => combined.includes(t));
   }).slice(0, 5);
