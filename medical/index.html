@@ -191,7 +191,11 @@
 
 <div class="masthead">
   <span class="brand">Thor Medical</span>
-
+  <span style="font-family:Arial,sans-serif;font-size:.72rem;color:var(--gray);
+               text-transform:uppercase;letter-spacing:.08em;
+               border-left:1px solid var(--rule);padding-left:1rem;">
+    For Healthcare Professionals &amp; Researchers
+  </span>
 </div>
 
 <div class="main">
@@ -239,7 +243,7 @@
 <footer>
   Thor Medical &nbsp;·&nbsp; FDA Drug Shortage Data &nbsp;·&nbsp;
   Source: openFDA (api.fda.gov/drug/shortages.json) &nbsp;·&nbsp;
-  Generated: 2026-06-19 09:05 &nbsp;·&nbsp;
+  Generated: 2026-06-19 09:12 &nbsp;·&nbsp;
   #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 
@@ -355,9 +359,29 @@ function sendMessage() {
   const results = searchDrugs(text);
 
   if (results.length === 0) {
-    addMessage('thor', `<div class="no-match">No matching drugs found for "<strong>${text}</strong>". ` +
-      `Try a generic drug name (e.g. <em>cisplatin</em>, <em>methotrexate</em>) ` +
-      `or a category (<em>chemotherapy</em>, <em>available</em>).</div>`);
+    // Check if query looks like a drug name — give specific FDA response
+    const q = text.toLowerCase().trim();
+    const looksLikeDrug = q.length > 3 && !/^(available|unavailable|chemotherapy|supportive|critical|injection|tablet|capsule)$/.test(q);
+    let noMatchMsg = '';
+    if (looksLikeDrug) {
+      noMatchMsg = `<div class="no-match">
+        <strong>${text}</strong> is not currently listed in the FDA Drug Shortage Database
+        for cancer and oncology-related drugs.
+        <div style="margin-top:.4rem;color:var(--gray)">
+          This may mean the shortage was resolved, the drug was never in shortage,
+          or it is not classified as an oncology drug in the FDA database.
+          <a href="https://www.accessdata.fda.gov/scripts/drugshortages/" target="_blank"
+             style="color:var(--red);border-bottom:1px solid #f5a0a3;">
+            Verify on FDA Drug Shortages Database ↗
+          </a>
+        </div>
+      </div>`;
+    } else {
+      noMatchMsg = `<div class="no-match">No results for "<strong>${text}</strong>". ` +
+        `Try a drug name, category (<em>chemotherapy</em>, <em>supportive care</em>), ` +
+        `or status (<em>available</em>, <em>unavailable</em>).</div>`;
+    }
+    addMessage('thor', noMatchMsg);
   } else {
     const header = results.length === 1
       ? `Found <strong>1 drug</strong> matching "<strong>${text}</strong>":`
