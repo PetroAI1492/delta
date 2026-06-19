@@ -1,0 +1,38 @@
+{
+  "run_id": "1909076e-95c3-4fb6-bbfd-100234d0b247",
+  "generated_utc": "2026-06-19 14:54:37 UTC",
+  "lookback_days": 7,
+  "signal_count": 2,
+  "noise_count": 3,
+  "type_counts": {
+    "BIOMARKER": 1,
+    "GENERAL": 1
+  },
+  "cancer_counts": {
+    "General": 2
+  },
+  "signals": [
+    {
+      "title": "Interpretation of Survival Outcomes in Multicancer Early Detection Testing Requires Caution",
+      "trail": "&nbsp;&nbsp;ascopubs.org",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9kbGxzLUc1VjByeWlnQTZ0MkdQbHcyWkp0cWFIZ3U5QXU4RHlUdWVibm5rZURhQzh3dTNJQXc2OHB2UnNhN1U5RDBDX3c3OVlJU2lxTk55V2NacVpZ?oc=5",
+      "pub_date": "2026-06-18",
+      "publisher": "JCO",
+      "section_id": "jco",
+      "sig_type": "BIOMARKER",
+      "cancer_type": null,
+      "ai": "The caution in interpreting survival outcomes from multicancer early detection testing highlights the need for careful evaluation of biomarkers used in these tests to ensure accurate screening results."
+    },
+    {
+      "title": "On the Distinction Between Prognostic and Predictive Inference in Multicancer Early Detection",
+      "trail": "&nbsp;&nbsp;ascopubs.org",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5XM0pqRVQzT09LRUdzbHJvUFJjcTlWWVJxOHM5X1RuOHYyU3M1dURGRkZVQ0xNblNvbnBBSzBMNTE3djFkXzRKMlpKa1NXWlVqWFhqQkZTOA?oc=5",
+      "pub_date": "2026-06-18",
+      "publisher": "JCO",
+      "section_id": "jco",
+      "sig_type": "GENERAL",
+      "cancer_type": null,
+      "ai": "The study clarifies the distinction between prognostic and predictive inference in multicancer early detection, enhancing the accuracy of liquid biopsy tests for identifying cancer biomarkers."
+    }
+  ]
+}
