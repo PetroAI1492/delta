@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thor Medical — Drug Shortage Search</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --red:    #e8111a;
+    --black:  #1a1a1a;
+    --gray:   #666666;
+    --rule:   #cccccc;
+    --bg:     #ffffff;
+    --soft:   #f9f9f9;
+    --msg:    #fff8f8;
+    --green:  #1a7a3c;
+    --amber:  #b45309;
+    --critical: #c0392b;
+  }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: var(--bg);
+    color: var(--black);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Masthead ── */
+  .masthead {
+    border-top: 4px solid var(--red);
+    border-bottom: 1px solid var(--rule);
+    padding: .5rem 2rem .4rem;
+    display: flex;
+    align-items: baseline;
+    gap: 1.2rem;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 100;
+  }
+  .brand { font-family: Georgia, serif; font-size: 1.2rem; font-weight: bold;
+            color: var(--red); letter-spacing: -.5px; text-transform: uppercase; }
+  .section-label { font-family: Arial, sans-serif; font-size: .72rem; color: var(--gray);
+                    text-transform: uppercase; letter-spacing: .08em;
+                    border-left: 1px solid var(--rule); padding-left: 1rem; }
+
+  /* ── Main ── */
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.5rem 2rem 0;
+  }
+
+  /* ── Disclaimer ── */
+  .disclaimer {
+    background: #fff3cd;
+    border-left: 3px solid #b45309;
+    padding: .55rem .85rem;
+    font-family: Arial, sans-serif;
+    font-size: .75rem;
+    color: #7c4a00;
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+  }
+  .disclaimer strong { color: #5a3300; }
+
+  /* ── Stats bar ── */
+  .stats-bar {
+    display: flex;
+    gap: 2rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: .85rem;
+    margin-bottom: 1.25rem;
+    font-family: Arial, sans-serif;
+  }
+  .stat { display: flex; flex-direction: column; }
+  .stat-value { font-size: 1.4rem; font-weight: bold; color: var(--red); line-height: 1; }
+  .stat-label { font-size: .68rem; color: var(--gray); text-transform: uppercase;
+                 letter-spacing: .06em; margin-top: .2rem; }
+
+  /* ── Chat window ── */
+  .chat-window {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 360px;
+    max-height: 520px;
+    border: 1px solid var(--rule);
+    background: var(--soft);
+    padding: 1rem;
+    margin-bottom: .75rem;
+    scroll-behavior: smooth;
+  }
+
+  .msg { display: flex; gap: .75rem; margin-bottom: 1rem; align-items: flex-start; }
+  .msg-avatar { font-family: Arial, sans-serif; font-size: .65rem; font-weight: bold;
+                 text-transform: uppercase; letter-spacing: .06em; color: var(--bg);
+                 background: var(--black); padding: .2rem .4rem;
+                 white-space: nowrap; flex-shrink: 0; margin-top: .15rem; }
+  .msg-avatar.thor { background: var(--red); }
+  .msg-body { font-family: Georgia, serif; font-size: .88rem;
+               line-height: 1.6; color: var(--black); flex: 1; }
+  .msg-body.user-body { color: var(--gray); font-style: italic; }
+
+  /* ── Drug card ── */
+  .drug-card {
+    background: var(--msg);
+    border-left: 3px solid var(--red);
+    padding: .6rem .85rem;
+    margin: .4rem 0;
+    font-family: Arial, sans-serif;
+    font-size: .82rem;
+    line-height: 1.55;
+  }
+  .drug-name { font-weight: bold; font-size: .92rem; color: var(--black);
+                font-family: Georgia, serif; margin-bottom: .2rem; }
+  .drug-meta { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: .3rem; }
+  .drug-meta span { font-size: .75rem; }
+  .avail-available  { color: var(--green); font-weight: bold; }
+  .avail-unavailable { color: var(--critical); font-weight: bold; }
+  .avail-limited    { color: var(--amber); font-weight: bold; }
+  .dur-critical { color: var(--critical); font-weight: bold; }
+  .dur-moderate { color: var(--amber); font-weight: bold; }
+  .dur-recent   { color: var(--green); }
+  .cat-badge {
+    font-size: .68rem;
+    padding: .1rem .4rem;
+    background: #f0f0f0;
+    border: 1px solid var(--rule);
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: .05em;
+  }
+
+  /* ── No match ── */
+  .no-match {
+    font-family: Arial, sans-serif;
+    font-size: .78rem;
+    color: var(--gray);
+    padding: .4rem 0;
+  }
+
+  /* ── Input bar ── */
+  .input-bar { display: flex; gap: .5rem; padding-bottom: 1.5rem; }
+  .input-bar input {
+    flex: 1;
+    padding: .55rem .75rem;
+    border: 1px solid var(--rule);
+    border-bottom: 2px solid var(--black);
+    font-family: Georgia, serif;
+    font-size: .88rem;
+    color: var(--black);
+    background: var(--bg);
+  }
+  .input-bar input:focus {
+    outline: none;
+    border-color: var(--red);
+    border-bottom-color: var(--red);
+  }
+  .input-bar button {
+    padding: .55rem 1.25rem;
+    background: var(--black);
+    color: var(--bg);
+    border: none;
+    font-family: Arial, sans-serif;
+    font-size: .75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    cursor: pointer;
+    transition: background .15s;
+  }
+  .input-bar button:hover { background: var(--red); }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: .5rem 2rem;
+    font-family: Arial, sans-serif;
+    font-size: .68rem;
+    color: var(--gray);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <span class="brand">Thor Medical</span>
+  <span class="section-label">Drug Shortage Intelligence</span>
+</div>
+
+<div class="main">
+
+  <div class="disclaimer">
+    <strong>Medical Disclaimer:</strong> This tool is for informational purposes only
+    and does not constitute medical advice. Data sourced from the FDA Drug Shortage
+    Database via openFDA. Consult a licensed healthcare provider for treatment decisions.
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat">
+      <span class="stat-value">36</span>
+      <span class="stat-label">Cancer drugs in shortage</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value" id="totalLoaded">—</span>
+      <span class="stat-label">Records loaded</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value" style="font-size:.9rem;padding-top:.2rem">2026-03-21</span>
+      <span class="stat-label">FDA data as of</span>
+    </div>
+  </div>
+
+  <div class="chat-window" id="chatWindow">
+    <div class="msg">
+      <div class="msg-avatar thor">Thor</div>
+      <div class="msg-body" id="welcomeMsg">
+        Loading drug shortage data...
+      </div>
+    </div>
+  </div>
+
+  <div class="input-bar">
+    <input type="text" id="userInput"
+           placeholder="Search by drug name, category, or availability..."
+           onkeydown="if(event.key==='Enter') sendMessage()"
+           disabled>
+    <button onclick="sendMessage()" id="sendBtn" disabled>Search</button>
+  </div>
+
+</div>
+
+<footer>
+  Thor Medical &nbsp;·&nbsp; FDA Drug Shortage Data &nbsp;·&nbsp;
+  Source: openFDA (api.fda.gov/drug/shortages.json) &nbsp;·&nbsp;
+  Generated: 2026-06-19 08:47 &nbsp;·&nbsp;
+  #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+</footer>
+
+<script>
+// ── Data ─────────────────────────────────────────────────────────────────────
+const DATA_URL = 'https://petroai1492.github.io/delta/medical/data.json';
+let DRUGS = [];
+
+// ── Load data ─────────────────────────────────────────────────────────────────
+async function loadData() {
+  try {
+    const resp = await fetch(DATA_URL);
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const data = await resp.json();
+    DRUGS = data.drugs || [];
+    document.getElementById('totalLoaded').textContent = DRUGS.length;
+    document.getElementById('welcomeMsg').innerHTML =
+      `Drug shortage data loaded — <strong>${DRUGS.length} cancer-related drugs</strong> tracked. ` +
+      `Type a drug name, category (<em>chemotherapy</em>, <em>supportive care</em>), ` +
+      `or availability status (<em>available</em>, <em>unavailable</em>).`;
+    document.getElementById('userInput').disabled = false;
+    document.getElementById('sendBtn').disabled = false;
+    document.getElementById('userInput').focus();
+  } catch(e) {
+    document.getElementById('welcomeMsg').innerHTML =
+      `<span style="color:var(--red)">Could not load drug shortage data: ${e.message}</span>`;
+  }
+}
+
+// ── Search ────────────────────────────────────────────────────────────────────
+function searchDrugs(query) {
+  const q = query.toLowerCase().trim();
+  if (!q) return [];
+
+  const tokens = q.split(/\s+/).filter(t => t.length > 1);
+
+  return DRUGS.filter(drug => {
+    const name     = drug.name.toLowerCase();
+    const avail    = drug.availability.toLowerCase();
+    const category = drug.category.toLowerCase();
+    const form     = (drug.dosage_form || '').toLowerCase();
+    const severity = drug.severity.toLowerCase();
+
+    // Direct matches
+    if (name.includes(q)) return true;
+    if (avail.includes(q)) return true;
+    if (category.includes(q)) return true;
+    if (form.includes(q)) return true;
+    if (severity.includes(q)) return true;
+
+    // Token matches
+    return tokens.every(token =>
+      name.includes(token) ||
+      avail.includes(token) ||
+      category.includes(token) ||
+      form.includes(token) ||
+      severity.includes(token)
+    );
+  }).slice(0, 10); // cap at 10 results
+}
+
+// ── Render drug card ──────────────────────────────────────────────────────────
+function availClass(avail) {
+  const a = avail.toLowerCase();
+  if (a.includes('unavail')) return 'avail-unavailable';
+  if (a.includes('limited')) return 'avail-limited';
+  return 'avail-available';
+}
+
+function durClass(severity) {
+  if (severity === 'critical') return 'dur-critical';
+  if (severity === 'moderate') return 'dur-moderate';
+  return 'dur-recent';
+}
+
+function drugCard(drug) {
+  return `
+    <div class="drug-card">
+      <div class="drug-name">${drug.name}</div>
+      <div class="drug-meta">
+        <span class="${availClass(drug.availability)}">${drug.availability}</span>
+        <span class="${durClass(drug.severity)}">${drug.duration_label}</span>
+        <span class="cat-badge">${drug.category}</span>
+        <span style="color:var(--gray)">${drug.dosage_form}</span>
+        <span style="color:var(--gray)">Since ${drug.first_reported}</span>
+      </div>
+    </div>`;
+}
+
+// ── Chat helpers ──────────────────────────────────────────────────────────────
+function addMessage(role, html) {
+  const win = document.getElementById('chatWindow');
+  const div = document.createElement('div');
+  div.className = 'msg';
+  const label     = role === 'user' ? 'You' : 'Thor';
+  const avatarCls = role === 'user' ? 'msg-avatar' : 'msg-avatar thor';
+  const bodyCls   = role === 'user' ? 'msg-body user-body' : 'msg-body';
+  div.innerHTML = `<div class="${avatarCls}">${label}</div>
+                   <div class="${bodyCls}">${html}</div>`;
+  win.appendChild(div);
+  win.scrollTop = win.scrollHeight;
+}
+
+// ── Send ──────────────────────────────────────────────────────────────────────
+function sendMessage() {
+  const input = document.getElementById('userInput');
+  const text  = input.value.trim();
+  if (!text || DRUGS.length === 0) return;
+
+  addMessage('user', text);
+  input.value = '';
+
+  const results = searchDrugs(text);
+
+  if (results.length === 0) {
+    addMessage('thor', `<div class="no-match">No matching drugs found for "<strong>${text}</strong>". ` +
+      `Try a generic drug name (e.g. <em>cisplatin</em>, <em>methotrexate</em>) ` +
+      `or a category (<em>chemotherapy</em>, <em>available</em>).</div>`);
+  } else {
+    const header = results.length === 1
+      ? `Found <strong>1 drug</strong> matching "<strong>${text}</strong>":`
+      : `Found <strong>${results.length} drugs</strong> matching "<strong>${text}</strong>":`;
+    const cards = results.map(drugCard).join('');
+    addMessage('thor', `<div style="font-family:Arial,sans-serif;font-size:.78rem;
+      color:var(--gray);margin-bottom:.4rem">${header}</div>${cards}`);
+  }
+
+  input.focus();
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+window.onload = loadData;
+</script>
+</body>
+</html>
