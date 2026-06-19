@@ -241,9 +241,9 @@
 </div>
 
 <footer>
-  Thor Medical &nbsp;·&nbsp; FDA Drug Shortage Data &nbsp;·&nbsp;
-  Source: openFDA (api.fda.gov/drug/shortages.json) &nbsp;·&nbsp;
-  Generated: 2026-06-19 10:57 &nbsp;·&nbsp;
+  Thor Medical &nbsp;·&nbsp; FDA Drug Shortages · Cancer Early Detection Signals &nbsp;·&nbsp;
+  Sources: openFDA · NCI · ASCO · AACR · Reuters &nbsp;·&nbsp;
+  Generated: 2026-06-19 13:18 &nbsp;·&nbsp;
   #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 
@@ -412,17 +412,16 @@ function sendMessage() {
   const signalResults = searchSignals(text);
 
   if (drugResults.length === 0 && signalResults.length === 0) {
-    // Check if query looks like a drug name — give specific FDA response
     const q = text.toLowerCase().trim();
-    const looksLikeDrug = q.length > 3 && !/^(available|unavailable|chemotherapy|supportive|critical|injection|tablet|capsule)$/.test(q);
+    const looksLikeDrug = q.length > 3 &&
+      !/^(available|unavailable|chemotherapy|supportive|critical|injection|tablet|capsule|biomarker|imaging|genetic|trial|guideline|screening|liquid|biopsy|cancer|tumor|tumour)$/.test(q) &&
+      !q.includes(' ');
     let noMatchMsg = '';
     if (looksLikeDrug) {
       noMatchMsg = `<div class="no-match">
-        <strong>${text}</strong> is not currently listed in the FDA Drug Shortage Database
-        for cancer and oncology-related drugs.
+        <strong>${text}</strong> was not found in drug shortage records or early detection signals.
         <div style="margin-top:.4rem;color:var(--gray)">
-          This may mean the shortage was resolved, the drug was never in shortage,
-          or it is not classified as an oncology drug in the FDA database.
+          If searching for a drug shortage, it may not be listed or may have been resolved.
           <a href="https://www.accessdata.fda.gov/scripts/drugshortages/" target="_blank"
              style="color:var(--red);border-bottom:1px solid #f5a0a3;">
             Verify on FDA Drug Shortages Database ↗
@@ -431,8 +430,8 @@ function sendMessage() {
       </div>`;
     } else {
       noMatchMsg = `<div class="no-match">No results for "<strong>${text}</strong>". ` +
-        `Try a drug name, category (<em>chemotherapy</em>, <em>supportive care</em>), ` +
-        `or status (<em>available</em>, <em>unavailable</em>).</div>`;
+        `Try a drug name, signal type (<em>biomarker</em>, <em>imaging</em>, <em>genetic</em>), ` +
+        `cancer type (<em>lung</em>, <em>breast</em>), or topic (<em>liquid biopsy</em>, <em>BRCA</em>).</div>`;
     }
     addMessage('thor', noMatchMsg);
   } else {
