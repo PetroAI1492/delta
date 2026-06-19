@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thor Query — Daily Briefing</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --red: #e8111a; --black: #1a1a1a; --gray: #666666;
+    --rule: #cccccc; --bg: #ffffff; --soft: #f9f9f9;
+  }
+  body { font-family: Georgia, 'Times New Roman', serif; background: var(--bg);
+          color: var(--black); max-width: 900px; margin: 0 auto; padding: 0 2rem 3rem; }
+  .masthead { border-top: 4px solid var(--red); border-bottom: 1px solid var(--rule);
+               padding: .5rem 0 .4rem; margin-bottom: 1.5rem; display: flex;
+               align-items: baseline; gap: 1.2rem; }
+  .brand { font-family: Georgia, serif; font-size: 1.2rem; font-weight: bold;
+            color: var(--red); letter-spacing: -.5px; text-transform: uppercase; }
+  .section-label { font-family: Arial, sans-serif; font-size: .72rem; color: var(--gray);
+                     text-transform: uppercase; letter-spacing: .08em;
+                     border-left: 1px solid var(--rule); padding-left: 1rem; }
+  .meta-bar { font-family: Arial, sans-serif; font-size: .75rem; color: var(--gray);
+               border-bottom: 1px solid var(--rule); padding-bottom: .75rem; margin-bottom: 1.5rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+           gap: 1rem; }
+  .metric-card { background: var(--soft); border-left: 3px solid var(--red);
+                   padding: .85rem 1rem; }
+  .metric-label { font-family: Arial, sans-serif; font-size: .72rem; font-weight: bold;
+                    text-transform: uppercase; letter-spacing: .05em; color: var(--gray);
+                    margin-bottom: .35rem; }
+  .metric-value { font-family: Georgia, serif; font-size: 1.5rem; font-weight: bold;
+                    line-height: 1.1; margin-bottom: .35rem; }
+  .metric-meta { font-family: Arial, sans-serif; font-size: .68rem; color: var(--gray); }
+  .src-badge { font-size: .62rem; padding: .05rem .35rem; background: #fff;
+                border: 1px solid var(--rule); text-transform: uppercase; letter-spacing: .04em; }
+  footer { border-top: 1px solid var(--rule); margin-top: 2.5rem; padding-top: .5rem;
+            font-family: Arial, sans-serif; font-size: .68rem; color: var(--gray); }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <span class="brand">Thor Query</span>
+  <span class="section-label">Daily Briefing</span>
+</div>
+
+<div class="meta-bar">
+  Deterministic snapshot &nbsp;·&nbsp; No AI routing &nbsp;·&nbsp;
+  Sources: FRED &middot; EIA &middot; yfinance &middot; Treasury &nbsp;·&nbsp;
+  Generated: 2026-06-19 19:28
+</div>
+
+<div class="grid">
+
+    <div class="metric-card">
+      <div class="metric-label">WTI Crude Oil (Futures)</div>
+      <div class="metric-value" style="color:var(--black)">76.54</div>
+      <div class="metric-meta">USD per barrel &nbsp;·&nbsp; as of 2026-06-19 &nbsp;·&nbsp; <span class="src-badge">yfinance</span></div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Brent Crude Oil (Futures)</div>
+      <div class="metric-value" style="color:var(--black)">80.59</div>
+      <div class="metric-meta">USD per barrel &nbsp;·&nbsp; as of 2026-06-19 &nbsp;·&nbsp; <span class="src-badge">yfinance</span></div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Industrial Production</div>
+      <div class="metric-value" style="color:var(--black)">102.6</div>
+      <div class="metric-meta">Index &nbsp;·&nbsp; as of 2026-05-01 &nbsp;·&nbsp; <span class="src-badge">fred</span></div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">10Y-2Y Treasury Spread</div>
+      <div class="metric-value" style="color:var(--black)">0.27%</div>
+      <div class="metric-meta">Percent &nbsp;·&nbsp; as of 2026-06-18 &nbsp;·&nbsp; <span class="src-badge">fred</span></div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">VIX (Market Stress)</div>
+      <div class="metric-value" style="color:var(--black)">18.4</div>
+      <div class="metric-meta">Index &nbsp;·&nbsp; as of 2026-06-17 &nbsp;·&nbsp; <span class="src-badge">fred</span></div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Commercial Crude Stocks (US)</div>
+      <div class="metric-value" style="color:var(--black)">426,485.0</div>
+      <div class="metric-meta">Million barrels &nbsp;·&nbsp; as of 2026-06-05 &nbsp;·&nbsp; <span class="src-badge">eia</span></div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Treasury Cash Balance (TGA)</div>
+      <div class="metric-value" style="color:var(--black)">956,502.0</div>
+      <div class="metric-meta">USD millions &nbsp;·&nbsp; as of 2026-06-17 &nbsp;·&nbsp; <span class="src-badge">treasury</span></div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">TGA Deposits Today</div>
+      <div class="metric-value" style="color:var(--black)">26,126.0</div>
+      <div class="metric-meta">USD millions &nbsp;·&nbsp; as of 2026-06-17 &nbsp;·&nbsp; <span class="src-badge">treasury</span></div>
+    </div>
+</div>
+
+<footer>
+  Thor Query &nbsp;·&nbsp; Storehouse Daily Briefing &nbsp;·&nbsp;
+  #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+</footer>
+
+</body>
+</html>
