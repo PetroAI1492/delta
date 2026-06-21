@@ -1,0 +1,177 @@
+{
+  "generated_at": "2026-06-21 13:05",
+  "war_start": "2026-02-28",
+  "pre_war_price": 2.796,
+  "pre_war_date": "2026-02-23",
+  "peak_price": 4.353,
+  "peak_date": "2026-05-11",
+  "latest_price": 3.908,
+  "latest_date": "2026-06-15",
+  "increase_at_peak": 1.557,
+  "increase_pct_peak": 55.7,
+  "increase_current": 1.112,
+  "increase_pct_now": 39.8,
+  "daily_extra_peak": 0.58,
+  "daily_extra_current": 0.41,
+  "total_extra_b": 46.0,
+  "year_ago_avg": 3.003,
+  "yoy_increase": 0.905,
+  "yoy_pct": 30.1,
+  "gas_series": [
+    [
+      "2026-03-02",
+      2.884
+    ],
+    [
+      "2026-03-09",
+      3.364
+    ],
+    [
+      "2026-03-16",
+      3.566
+    ],
+    [
+      "2026-03-23",
+      3.788
+    ],
+    [
+      "2026-03-30",
+      3.814
+    ],
+    [
+      "2026-04-06",
+      3.947
+    ],
+    [
+      "2026-04-13",
+      3.962
+    ],
+    [
+      "2026-04-20",
+      3.885
+    ],
+    [
+      "2026-04-27",
+      3.948
+    ],
+    [
+      "2026-05-04",
+      4.305
+    ],
+    [
+      "2026-05-11",
+      4.353
+    ],
+    [
+      "2026-05-18",
+      4.334
+    ],
+    [
+      "2026-05-25",
+      4.327
+    ],
+    [
+      "2026-06-01",
+      4.138
+    ],
+    [
+      "2026-06-08",
+      3.986
+    ],
+    [
+      "2026-06-15",
+      3.908
+    ]
+  ],
+  "stock_stats": {
+    "XOM": {
+      "name": "ExxonMobil",
+      "start_date": "2026-03-02",
+      "start_price": 153.18,
+      "end_date": "2026-06-18",
+      "end_price": 137.81,
+      "peak_date": "2026-03-30",
+      "peak_price": 170.31,
+      "change": -15.37,
+      "change_pct": -10.0,
+      "peak_change": 17.13,
+      "peak_pct": 11.2,
+      "mcap_change": -63.6
+    },
+    "CVX": {
+      "name": "Chevron",
+      "start_date": "2026-03-02",
+      "start_price": 187.88,
+      "end_date": "2026-06-18",
+      "end_price": 173.63,
+      "peak_date": "2026-03-27",
+      "peak_price": 209.23,
+      "change": -14.25,
+      "change_pct": -7.6,
+      "peak_change": 21.35,
+      "peak_pct": 11.4,
+      "mcap_change": -25.9
+    },
+    "SHEL": {
+      "name": "Shell",
+      "start_date": "2026-03-02",
+      "start_price": 83.46,
+      "end_date": "2026-06-18",
+      "end_price": 78.81,
+      "peak_date": "2026-04-07",
+      "peak_price": 93.3,
+      "change": -4.65,
+      "change_pct": -5.6,
+      "peak_change": 9.84,
+      "peak_pct": 11.8,
+      "mcap_change": -28.8
+    },
+    "BP": {
+      "name": "BP",
+      "start_date": "2026-03-02",
+      "start_price": 39.02,
+      "end_date": "2026-06-18",
+      "end_price": 39.1,
+      "peak_date": "2026-04-16",
+      "peak_price": 47.09,
+      "change": 0.08,
+      "change_pct": 0.2,
+      "peak_change": 8.07,
+      "peak_pct": 20.7,
+      "mcap_change": 1.2
+    },
+    "COP": {
+      "name": "ConocoPhillips",
+      "start_date": "2026-03-02",
+      "start_price": 117.37,
+      "end_date": "2026-06-18",
+      "end_price": 107.74,
+      "peak_date": "2026-03-27",
+      "peak_price": 132.81,
+      "change": -9.63,
+      "change_pct": -8.2,
+      "peak_change": 15.45,
+      "peak_pct": 13.2,
+      "mcap_change": -11.8
+    },
+    "TTE": {
+      "name": "TotalEnergies",
+      "start_date": "2026-03-02",
+      "start_price": 80.21,
+      "end_date": "2026-06-18",
+      "end_price": 80.43,
+      "peak_date": "2026-05-05",
+      "peak_price": 93.6,
+      "change": 0.22,
+      "change_pct": 0.3,
+      "peak_change": 13.39,
+      "peak_pct": 16.7,
+      "mcap_change": 0.5
+    }
+  },
+  "total_mcap_change": -128.4,
+  "mcap_per_day": -1712.0,
+  "oxfam_claim_b": 23.5,
+  "oxfam_per_day": 313.0,
+  "oxfam_days": 75
+}
