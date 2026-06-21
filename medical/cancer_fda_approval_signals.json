@@ -1,15 +1,26 @@
 {
-  "run_id": "32310ba7-c5cb-4ccd-96b0-7e30160158e4",
-  "generated_at": "2026-06-21 13:28:08 UTC",
-  "lookback_days": 7,
-  "signal_count": 2,
-  "noise_count": 21,
+  "run_id": "7d580052-d07c-416d-80ff-df3536d01768",
+  "generated_at": "2026-06-21 13:32:48 UTC",
+  "lookback_days": 14,
+  "signal_count": 7,
+  "noise_count": 23,
   "type_counts": {
-    "GENERAL": 1,
-    "APPROVED": 1
+    "GENERAL": 3,
+    "APPROVED": 3,
+    "BREAKTHROUGH": 1
   },
-  "sources_active": 2,
+  "sources_active": 3,
   "signals": [
+    {
+      "title": "Pharmalittle: We're reading about an FDA review of Moderna's flu shot, J&J's focus on cancer, and more",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNVF9EM2FoTWxVUkE3cWJyai1tZno4RDhBQUc5TUlwX2VMTVlKYjg1VlRsOHY5dnVXNkthSTBGd0hWQkZjSlFNLWdhVlFEUmljbmhoRFhTazJHNVBQOXlNMURTUGJXbHVIMEdveTB5Sjkzc0NlbG55MmN0enFpU0pIMFB0VkdVQ3FqNzJCWkFnNnN0VGtldGtUNWlnS3RrSW8?oc=5",
+      "pub_date": "2026-06-18",
+      "publisher": "STAT News",
+      "section_id": "stat",
+      "sig_type": "GENERAL",
+      "ai": "The FDA has not made a specific decision regarding a cancer drug in this context, so no direct implications for patient access can be stated."
+    },
     {
       "title": "Disruptions in Availability of Breast Biopsy Needles - Letter to Health Care Providers - fda.gov",
       "trail": "Disruptions in Availability of Breast Biopsy Needles - Letter to Health Care Providers&nbsp;&nbsp;fda.gov",
@@ -28,7 +39,47 @@
       "publisher": "BioSpace",
       "section_id": "biospace",
       "sig_type": "APPROVED",
-      "ai": "Roche's FDA approval of the first companion diagnostic for assessing PTEN protein in prostate cancer means enhanced patient access to targeted therapies, improving treatment personalization and outcomes for individuals with this cancer type."
+      "ai": "Roche's FDA approval of the first companion diagnostic for assessing PTEN protein in prostate cancer means patients can now receive more personalized treatment options based on their specific biomarker status."
+    },
+    {
+      "title": "FDA approves capivasertib with abiraterone and prednisone for PTEN-def - fda.gov",
+      "trail": "approves capivasertib with abiraterone and prednisone for PTEN-def&nbsp;&nbsp;fda.gov",
+      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNN1JGcTZTbVc4SVlESDVXOHFtSUhmb3NTOVREU20yS0ZxTU9XeXk0SjVMS0J4Q3pKUTZSU19VbnY4NGxMQ2hEMEhQNTdxZS1PUm5HZVZnTnVrX1Q2WXlsS25mMDhpSVEyRGdBLW9fZWE1VFo2eVRDSzVHVGxJTnJRdFk1eHRuN2Rxa2tXUDJVZmxBMVVOX3ZJOTFJa0Z2RUVLMkdrTU96MUxTcUlLQmFzajQzM1d3alZITEZEc3AzdjR0NE1oNGllUFFtR1dvbFhOMUp3NTlaZ1dyc0h4aE1ISHRwdEtWaGl2ZEY2WFdQdw?oc=5",
+      "pub_date": "2026-06-12",
+      "publisher": "FDA",
+      "section_id": "fda",
+      "sig_type": "APPROVED",
+      "ai": "The FDA approved capivasertib in combination with abiraterone and prednisone for patients with PTEN-deficient prostate cancer, enhancing treatment options and access for this specific patient population."
+    },
+    {
+      "title": "FDA approves belzutifan with pembrolizumab for adjuvant treatment of renal cell carcinoma - fda.gov",
+      "trail": "approves belzutifan with pembrolizumab for adjuvant treatment of renal cell carcinoma&nbsp;&nbsp;fda.gov",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPTkJzVHV5NGZGazZ1VmRRTy1Xd3hLdU5zdVJIQ3lEcXBjbTVvRFRrSlVWSHJmdHZlcVlTVDBaSWRuM1FwMjIwQ1ltZjRHck9acmU3eVNoUlMycDVJVzcyQk85MlpBTmh6dHdsbWFsTElNWk1sN05xVHduemg0ZlhObjRTWVo0YlJ0cWRtbW5ETGRFNEZ1X2lUNW4tNC0tS0JHaGVzQ1ZYZXdhN0JLeU5ZUmRVYmZKRFFUNWVRSjZxamlCcFdfbkNTLWNqWWN4WWdWRnFJNElVWQ?oc=5",
+      "pub_date": "2026-06-12",
+      "publisher": "FDA",
+      "section_id": "fda",
+      "sig_type": "APPROVED",
+      "ai": "The FDA approval of belzutifan with pembrolizumab for adjuvant treatment of renal cell carcinoma enhances patient access to a new therapeutic option that may improve outcomes for individuals with this cancer type."
+    },
+    {
+      "title": "FDA grants Priority Review for Roche’s Tecentriq for a certain type of stage III colon cancer",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQbkN4dzdWS1NraTl4MVZNcFZtM2o0Z3FjOE53NjlJdXV2dk5reVlIVmN3bjZxMy1ZVnRhX3VIM1JfLXhQT3hhWU9KSkc0b0hUdldFSGc4ZmdZVzRCRW03aUhLeWlKSzhTSlF1a0daVG9IQXNZamNFTWhkUGY1Y3M2VVFPLW42TnRyVmxMeEd6bmI0blc4TVJxdnN1YTBvb0laNmZncTJXQ0M5OXRWd2wtUzN1Ml93NUhkRGEyalNPRDRQTllXSGJQakNXcEs?oc=5",
+      "pub_date": "2026-06-11",
+      "publisher": "BioSpace",
+      "section_id": "biospace",
+      "sig_type": "BREAKTHROUGH",
+      "ai": "The FDA granted Priority Review for Roche’s Tecentriq for stage III colon cancer, meaning faster access to this potentially life-saving treatment for patients with this specific cancer type."
+    },
+    {
+      "title": "RadioMedix Announces Receiving FDA Approval of its Generic Ga-68 PSMA-11 Radiodiagnostic for Prostate Cancer",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPbWFDTW5xX1hSZUlCZ2x6V3c5VnRQcVBJR3AyY1F2S3lWWTNnN09TcVZqN1hsaVl4OWlfSkxBeFVXWGo0bkI1YnpBZXJlandFNGJHOGViZHhzcGZhQWFWNHdxZHdKc3REQWFpb0NheUd0UTVaQzB1c09NUjNQLXZycmVFbXJNSGtUNERjRThVVVd6QWVGdTFWUVgtVmpBdXpSSFlDM3Z2c0RNcFg1TTh1VUFJUmkwWXRSMkRURmtEekM4Z3lfN0JadlQ4Y3J4N2xKZ2VnOHBUMklyeTJ2RHFqOHNn?oc=5",
+      "pub_date": "2026-06-10",
+      "publisher": "BioSpace",
+      "section_id": "biospace",
+      "sig_type": "GENERAL",
+      "ai": "The FDA approved RadioMedix's generic Ga-68 PSMA-11 for prostate cancer, enhancing patient access to a crucial radiodiagnostic tool for improved detection and management of the disease."
     }
   ]
 }
