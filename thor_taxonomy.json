@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-21T14:13:57Z",
+  "generated": "2026-06-21T14:39:21Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -94,15 +94,15 @@
           "weight": 10
         },
         {
-          "keyword": "oil supply",
+          "keyword": "u.s. consumers",
+          "weight": 9
+        },
+        {
+          "keyword": "oil companies",
           "weight": 9
         },
         {
           "keyword": "strait of hormuz",
-          "weight": 9
-        },
-        {
-          "keyword": "u.s. consumers",
           "weight": 8
         },
         {
@@ -130,6 +130,10 @@
           "weight": 8
         },
         {
+          "keyword": "gasoline",
+          "weight": 8
+        },
+        {
           "keyword": "market cap",
           "weight": 7
         },
@@ -138,43 +142,39 @@
           "weight": 7
         },
         {
-          "keyword": "billionaires",
+          "keyword": "consumer spending",
           "weight": 7
         },
         {
-          "keyword": "consumer spend",
+          "keyword": "war impact",
           "weight": 7
         },
         {
-          "keyword": "gasoline",
+          "keyword": "oil supply",
           "weight": 7
         },
         {
           "keyword": "eia",
-          "weight": 7
+          "weight": 6
         },
         {
-          "keyword": "retail gasoline",
+          "keyword": "gas price spike",
+          "weight": 6
+        },
+        {
+          "keyword": "financial report",
+          "weight": 6
+        },
+        {
+          "keyword": "market value",
+          "weight": 6
+        },
+        {
+          "keyword": "billionaires",
           "weight": 6
         },
         {
           "keyword": "stock prices",
-          "weight": 6
-        },
-        {
-          "keyword": "war impact",
-          "weight": 6
-        },
-        {
-          "keyword": "oil companies",
-          "weight": 6
-        },
-        {
-          "keyword": "u.s. gas prices",
-          "weight": 6
-        },
-        {
-          "keyword": "2026",
           "weight": 6
         },
         {
@@ -218,27 +218,19 @@
           "weight": 5
         },
         {
-          "keyword": "market value",
+          "keyword": "daily consumption",
           "weight": 5
         },
         {
-          "keyword": "price spike",
+          "keyword": "price increase",
           "weight": 5
         },
         {
-          "keyword": "consumer impact",
+          "keyword": "2026",
           "weight": 5
         },
         {
-          "keyword": "gasoline prices",
-          "weight": 5
-        },
-        {
-          "keyword": "oil market",
-          "weight": 5
-        },
-        {
-          "keyword": "financial report",
+          "keyword": "middle east",
           "weight": 5
         },
         {
@@ -246,7 +238,31 @@
           "weight": 5
         },
         {
-          "keyword": "middle east",
+          "keyword": "oil market",
+          "weight": 5
+        },
+        {
+          "keyword": "u.s. oil",
+          "weight": 5
+        },
+        {
+          "keyword": "gasoline price",
+          "weight": 5
+        },
+        {
+          "keyword": "consumer impact",
+          "weight": 5
+        },
+        {
+          "keyword": "financial analysis",
+          "weight": 5
+        },
+        {
+          "keyword": "stock market",
+          "weight": 5
+        },
+        {
+          "keyword": "war in iran",
           "weight": 5
         },
         {
@@ -258,23 +274,35 @@
           "weight": 4
         },
         {
-          "keyword": "u.s. economy",
-          "weight": 4
-        },
-        {
           "keyword": "inflation",
           "weight": 4
         },
         {
-          "keyword": "stock market",
+          "keyword": "economic impact",
           "weight": 4
         },
         {
-          "keyword": "gasoline consumption",
+          "keyword": "oil revenue",
           "weight": 4
         },
         {
-          "keyword": "daily consumption",
+          "keyword": "gasoline demand",
+          "weight": 4
+        },
+        {
+          "keyword": "u.s. economy",
+          "weight": 4
+        },
+        {
+          "keyword": "price trends",
+          "weight": 4
+        },
+        {
+          "keyword": "financial gains",
+          "weight": 4
+        },
+        {
+          "keyword": "wealth distribution",
           "weight": 4
         },
         {
@@ -282,59 +310,27 @@
           "weight": 4
         },
         {
-          "keyword": "price increase",
+          "keyword": "oil crisis",
           "weight": 4
         },
         {
-          "keyword": "financial analysis",
+          "keyword": "energy crisis",
           "weight": 4
         },
         {
-          "keyword": "wealth transfer",
+          "keyword": "market fluctuations",
           "weight": 3
         },
         {
-          "keyword": "oil price",
+          "keyword": "pension funds",
           "weight": 3
         },
         {
-          "keyword": "economic impact",
+          "keyword": "401(k)",
           "weight": 3
         },
         {
-          "keyword": "shareholders",
-          "weight": 3
-        },
-        {
-          "keyword": "financial data",
-          "weight": 3
-        },
-        {
-          "keyword": "oil revenue",
-          "weight": 3
-        },
-        {
-          "keyword": "gasoline market",
-          "weight": 3
-        },
-        {
-          "keyword": "eia data",
-          "weight": 3
-        },
-        {
-          "keyword": "market analysis",
-          "weight": 3
-        },
-        {
-          "keyword": "war economics",
-          "weight": 3
-        },
-        {
-          "keyword": "u.s. drivers",
-          "weight": 3
-        },
-        {
-          "keyword": "oil wealth",
+          "keyword": "index funds",
           "weight": 3
         },
         {
@@ -342,59 +338,55 @@
           "weight": 3
         },
         {
-          "keyword": "price trends",
+          "keyword": "price volatility",
           "weight": 3
         },
         {
-          "keyword": "economic report",
+          "keyword": "supply chain",
+          "weight": 3
+        },
+        {
+          "keyword": "economic analysis",
+          "weight": 3
+        },
+        {
+          "keyword": "consumer behavior",
           "weight": 3
         },
         {
           "keyword": "financial metrics",
+          "weight": 3
+        },
+        {
+          "keyword": "oil prices",
+          "weight": 3
+        },
+        {
+          "keyword": "market analysis",
+          "weight": 3
+        },
+        {
+          "keyword": "global oil",
+          "weight": 3
+        },
+        {
+          "keyword": "u.s. drivers",
           "weight": 2
         },
         {
-          "keyword": "oil industry",
+          "keyword": "gasoline supply",
           "weight": 2
         },
         {
-          "keyword": "geopolitical analysis",
+          "keyword": "price comparison",
           "weight": 2
         },
         {
-          "keyword": "consumer behavior",
+          "keyword": "financial reporting",
           "weight": 2
         },
         {
-          "keyword": "energy sector",
-          "weight": 2
-        },
-        {
-          "keyword": "market fluctuations",
-          "weight": 2
-        },
-        {
-          "keyword": "investment analysis",
-          "weight": 2
-        },
-        {
-          "keyword": "financial impact",
-          "weight": 2
-        },
-        {
-          "keyword": "oil prices 2026",
-          "weight": 2
-        },
-        {
-          "keyword": "gas price trends",
-          "weight": 2
-        },
-        {
-          "keyword": "economic analysis",
-          "weight": 2
-        },
-        {
-          "keyword": "financial intelligence",
+          "keyword": "economic report",
           "weight": 2
         },
         {
@@ -402,35 +394,47 @@
           "weight": 2
         },
         {
-          "keyword": "oil supply chain",
+          "keyword": "oil wealth",
           "weight": 2
         },
         {
-          "keyword": "global oil market",
+          "keyword": "wealth gains",
           "weight": 2
         },
         {
-          "keyword": "consumer spending",
+          "keyword": "consumer data",
           "weight": 2
         },
         {
-          "keyword": "financial insights",
+          "keyword": "financial implications",
+          "weight": 2
+        },
+        {
+          "keyword": "oil sector",
+          "weight": 2
+        },
+        {
+          "keyword": "energy market",
+          "weight": 2
+        },
+        {
+          "keyword": "u.s. market",
           "weight": 1
         },
         {
-          "keyword": "energy intelligence",
+          "keyword": "oil exports",
           "weight": 1
         },
         {
-          "keyword": "geopolitical risks",
+          "keyword": "gasoline taxes",
           "weight": 1
         },
         {
-          "keyword": "oil price volatility",
+          "keyword": "financial crisis",
           "weight": 1
         },
         {
-          "keyword": "market research",
+          "keyword": "global economy",
           "weight": 1
         }
       ],
@@ -487,19 +491,19 @@
           "weight": 8
         },
         {
-          "keyword": "historical data",
-          "weight": 8
-        },
-        {
           "keyword": "manufacturing",
           "weight": 8
         },
         {
           "keyword": "mining",
-          "weight": 7
+          "weight": 8
         },
         {
           "keyword": "utilities",
+          "weight": 8
+        },
+        {
+          "keyword": "historical data",
           "weight": 7
         },
         {
@@ -508,14 +512,30 @@
         },
         {
           "keyword": "great depression",
-          "weight": 6
+          "weight": 7
         },
         {
           "keyword": "global financial crisis",
-          "weight": 6
+          "weight": 7
         },
         {
           "keyword": "covid-19",
+          "weight": 7
+        },
+        {
+          "keyword": "monthly observations",
+          "weight": 6
+        },
+        {
+          "keyword": "fred",
+          "weight": 6
+        },
+        {
+          "keyword": "data analysis",
+          "weight": 6
+        },
+        {
+          "keyword": "economic indicators",
           "weight": 6
         },
         {
@@ -555,71 +575,71 @@
           "weight": 5
         },
         {
-          "keyword": "historical context",
-          "weight": 5
-        },
-        {
-          "keyword": "monthly observations",
-          "weight": 5
-        },
-        {
-          "keyword": "data analysis",
-          "weight": 5
-        },
-        {
-          "keyword": "economic indicators",
-          "weight": 5
-        },
-        {
           "keyword": "recession",
           "weight": 5
         },
         {
+          "keyword": "economic recovery",
+          "weight": 5
+        },
+        {
           "keyword": "2026",
-          "weight": 4
+          "weight": 5
         },
         {
-          "keyword": "2020",
-          "weight": 4
+          "keyword": "historical context",
+          "weight": 5
         },
         {
-          "keyword": "2026 report",
-          "weight": 4
-        },
-        {
-          "keyword": "fred",
-          "weight": 4
-        },
-        {
-          "keyword": "thor storehouse",
-          "weight": 4
+          "keyword": "output index",
+          "weight": 5
         },
         {
           "keyword": "wartime mobilization",
           "weight": 4
         },
         {
-          "keyword": "economic recovery",
+          "keyword": "index baseline",
+          "weight": 4
+        },
+        {
+          "keyword": "production trends",
+          "weight": 4
+        },
+        {
+          "keyword": "economic metrics",
+          "weight": 4
+        },
+        {
+          "keyword": "data source",
+          "weight": 4
+        },
+        {
+          "keyword": "nber",
+          "weight": 4
+        },
+        {
+          "keyword": "recovery time",
           "weight": 4
         },
         {
           "keyword": "peak production",
+          "weight": 4
+        },
+        {
+          "keyword": "economic downturn",
           "weight": 3
         },
         {
-          "keyword": "trough",
+          "keyword": "historical observations",
           "weight": 3
         },
         {
-          "keyword": "data source",
+          "keyword": "economic analysis",
           "weight": 3
         },
         {
-          "keyword": "monthly frequency",
-          "weight": 3
-        },
-        {
-          "keyword": "index value",
+          "keyword": "data visualization",
           "weight": 3
         },
         {
@@ -627,103 +647,35 @@
           "weight": 3
         },
         {
-          "keyword": "baseline",
-          "weight": 3
-        },
-        {
-          "keyword": "economic trends",
-          "weight": 3
-        },
-        {
-          "keyword": "historical observations",
-          "weight": 2
-        },
-        {
-          "keyword": "economic metrics",
-          "weight": 2
-        },
-        {
-          "keyword": "data-driven",
-          "weight": 2
-        },
-        {
-          "keyword": "economic downturn",
-          "weight": 2
-        },
-        {
-          "keyword": "industrial output",
-          "weight": 2
-        },
-        {
-          "keyword": "u.s. industrial production",
-          "weight": 2
-        },
-        {
-          "keyword": "economic fluctuations",
-          "weight": 2
-        },
-        {
-          "keyword": "historical crises",
-          "weight": 2
-        },
-        {
-          "keyword": "data visualization",
-          "weight": 2
-        },
-        {
           "keyword": "economic performance",
-          "weight": 2
-        },
-        {
-          "keyword": "nber recession",
-          "weight": 2
-        },
-        {
-          "keyword": "economic analysis",
-          "weight": 2
-        },
-        {
-          "keyword": "production trends",
-          "weight": 2
+          "weight": 3
         },
         {
           "keyword": "economic statistics",
-          "weight": 2
+          "weight": 3
         },
         {
-          "keyword": "real output",
-          "weight": 2
+          "keyword": "industrial output",
+          "weight": 3
         },
         {
-          "keyword": "historical context report",
-          "weight": 2
+          "keyword": "economic timeline",
+          "weight": 3
         },
         {
           "keyword": "data methodology",
           "weight": 2
         },
         {
-          "keyword": "economic cycles",
+          "keyword": "historical trends",
           "weight": 2
         },
         {
-          "keyword": "u.s. manufacturing",
+          "keyword": "production decline",
           "weight": 2
         },
         {
-          "keyword": "economic data",
-          "weight": 2
-        },
-        {
-          "keyword": "production metrics",
-          "weight": 2
-        },
-        {
-          "keyword": "economic history",
-          "weight": 2
-        },
-        {
-          "keyword": "data-driven insights",
+          "keyword": "economic fluctuations",
           "weight": 2
         },
         {
@@ -735,43 +687,67 @@
           "weight": 2
         },
         {
-          "keyword": "historical economic data",
-          "weight": 1
+          "keyword": "data integrity",
+          "weight": 2
         },
         {
-          "keyword": "economic recovery timeline",
-          "weight": 1
+          "keyword": "2020 recession",
+          "weight": 2
         },
         {
-          "keyword": "economic impact",
-          "weight": 1
+          "keyword": "economic cycles",
+          "weight": 2
         },
         {
-          "keyword": "industrial trends",
-          "weight": 1
-        },
-        {
-          "keyword": "u.s. economic indicators",
-          "weight": 1
-        },
-        {
-          "keyword": "economic growth",
-          "weight": 1
-        },
-        {
-          "keyword": "economic resilience",
-          "weight": 1
-        },
-        {
-          "keyword": "production decline",
-          "weight": 1
+          "keyword": "data reporting",
+          "weight": 2
         },
         {
           "keyword": "production recovery",
+          "weight": 2
+        },
+        {
+          "keyword": "economic growth",
+          "weight": 2
+        },
+        {
+          "keyword": "industrial trends",
+          "weight": 2
+        },
+        {
+          "keyword": "historical context report",
+          "weight": 1
+        },
+        {
+          "keyword": "economic downturns",
+          "weight": 1
+        },
+        {
+          "keyword": "production metrics",
+          "weight": 1
+        },
+        {
+          "keyword": "economic projections",
           "weight": 1
         },
         {
           "keyword": "historical performance",
+          "weight": 1
+        },
+        {
+          "keyword": "data analysis report",
+          "weight": 1
+        },
+        {
+          "keyword": "economic data",
+          "weight": 1
+        },
+        {
+          "keyword": "u.s. industrial sector",
+          "weight": 1
+        },
+        {
+          "keyword": "financial intelligence",
           "weight": 1
         }
       ],
@@ -816,10 +792,6 @@
           "weight": 10
         },
         {
-          "keyword": "federal reserve",
-          "weight": 10
-        },
-        {
           "keyword": "u.s. treasury",
           "weight": 10
         },
@@ -828,15 +800,19 @@
           "weight": 10
         },
         {
-          "keyword": "treasury statement",
-          "weight": 9
-        },
-        {
           "keyword": "market liquidity",
           "weight": 9
         },
         {
           "keyword": "debt ceiling",
+          "weight": 9
+        },
+        {
+          "keyword": "debt outstanding",
+          "weight": 9
+        },
+        {
+          "keyword": "cash balance",
           "weight": 9
         },
         {
@@ -848,11 +824,7 @@
           "weight": 9
         },
         {
-          "keyword": "debt outstanding",
-          "weight": 8
-        },
-        {
-          "keyword": "cash balance",
+          "keyword": "federal reserve",
           "weight": 8
         },
         {
@@ -860,11 +832,15 @@
           "weight": 8
         },
         {
-          "keyword": "deposits",
+          "keyword": "sofr",
           "weight": 8
         },
         {
-          "keyword": "withdrawals",
+          "keyword": "reserve balances",
+          "weight": 8
+        },
+        {
+          "keyword": "balance sheet",
           "weight": 8
         },
         {
@@ -876,7 +852,7 @@
           "weight": 8
         },
         {
-          "keyword": "treasury data",
+          "keyword": "treasury market",
           "weight": 8
         },
         {
@@ -884,11 +860,19 @@
           "weight": 7
         },
         {
-          "keyword": "sofr",
+          "keyword": "vix",
           "weight": 7
         },
         {
-          "keyword": "overnight rrp",
+          "keyword": "deposits",
+          "weight": 7
+        },
+        {
+          "keyword": "withdrawals",
+          "weight": 7
+        },
+        {
+          "keyword": "fiscal data",
           "weight": 7
         },
         {
@@ -896,23 +880,15 @@
           "weight": 7
         },
         {
-          "keyword": "balance sheet",
-          "weight": 7
-        },
-        {
-          "keyword": "liquidity",
-          "weight": 7
-        },
-        {
           "keyword": "intragovernmental holdings",
           "weight": 7
         },
         {
-          "keyword": "vix",
+          "keyword": "interest rates",
           "weight": 6
         },
         {
-          "keyword": "interest rates",
+          "keyword": "financial intelligence",
           "weight": 6
         },
         {
@@ -920,19 +896,19 @@
           "weight": 6
         },
         {
-          "keyword": "cash flow",
-          "weight": 6
-        },
-        {
           "keyword": "debt growth",
           "weight": 6
         },
         {
-          "keyword": "cash reserves",
+          "keyword": "2-year treasury",
           "weight": 6
         },
         {
-          "keyword": "weekly growth",
+          "keyword": "10-year treasury",
+          "weight": 6
+        },
+        {
+          "keyword": "treasury data",
           "weight": 6
         },
         {
@@ -976,15 +952,15 @@
           "weight": 5
         },
         {
+          "keyword": "treasury statement",
+          "weight": 5
+        },
+        {
           "keyword": "treasury cash",
           "weight": 5
         },
         {
-          "keyword": "financial data",
-          "weight": 5
-        },
-        {
-          "keyword": "fiscal data",
+          "keyword": "financial metrics",
           "weight": 5
         },
         {
@@ -1000,31 +976,27 @@
           "weight": 5
         },
         {
-          "keyword": "financial markets",
+          "keyword": "cash flow",
           "weight": 5
+        },
+        {
+          "keyword": "banking system",
+          "weight": 5
+        },
+        {
+          "keyword": "financial data",
+          "weight": 5
+        },
+        {
+          "keyword": "liquidity trends",
+          "weight": 5
+        },
+        {
+          "keyword": "economic growth",
+          "weight": 4
         },
         {
           "keyword": "financial stability",
-          "weight": 5
-        },
-        {
-          "keyword": "debt management",
-          "weight": 5
-        },
-        {
-          "keyword": "financial intelligence",
-          "weight": 5
-        },
-        {
-          "keyword": "debt analysis",
-          "weight": 5
-        },
-        {
-          "keyword": "market liquidity conditions",
-          "weight": 5
-        },
-        {
-          "keyword": "u.s. economy",
           "weight": 4
         },
         {
@@ -1032,35 +1004,11 @@
           "weight": 4
         },
         {
-          "keyword": "economic growth",
+          "keyword": "financial markets",
           "weight": 4
         },
         {
-          "keyword": "financial metrics",
-          "weight": 4
-        },
-        {
-          "keyword": "market conditions",
-          "weight": 4
-        },
-        {
-          "keyword": "financial outlook",
-          "weight": 4
-        },
-        {
-          "keyword": "cash management",
-          "weight": 4
-        },
-        {
-          "keyword": "financial trends",
-          "weight": 4
-        },
-        {
-          "keyword": "financial insights",
-          "weight": 4
-        },
-        {
-          "keyword": "financial performance",
+          "keyword": "economic outlook",
           "weight": 4
         },
         {
@@ -1068,31 +1016,23 @@
           "weight": 4
         },
         {
-          "keyword": "treasury operations",
+          "keyword": "debt management",
           "weight": 4
         },
         {
-          "keyword": "economic forecasts",
-          "weight": 3
+          "keyword": "debt analysis",
+          "weight": 4
         },
         {
-          "keyword": "risk assessment",
-          "weight": 3
-        },
-        {
-          "keyword": "economic data",
-          "weight": 3
-        },
-        {
-          "keyword": "market volatility",
-          "weight": 3
+          "keyword": "treasury statistics",
+          "weight": 4
         },
         {
           "keyword": "investment strategy",
           "weight": 3
         },
         {
-          "keyword": "debt sustainability",
+          "keyword": "financial forecasting",
           "weight": 3
         },
         {
@@ -1100,40 +1040,80 @@
           "weight": 3
         },
         {
-          "keyword": "financial reporting",
-          "weight": 3
-        },
-        {
-          "keyword": "debt service",
-          "weight": 3
-        },
-        {
-          "keyword": "financial conditions",
-          "weight": 3
-        },
-        {
           "keyword": "government finance",
           "weight": 3
         },
         {
-          "keyword": "debt issuance",
+          "keyword": "financial reporting",
           "weight": 3
         },
         {
-          "keyword": "financial regulations",
+          "keyword": "market conditions",
           "weight": 3
         },
         {
-          "keyword": "debt obligations",
+          "keyword": "financial performance",
           "weight": 3
+        },
+        {
+          "keyword": "financial insights",
+          "weight": 3
+        },
+        {
+          "keyword": "market forecasts",
+          "weight": 3
+        },
+        {
+          "keyword": "financial trends",
+          "weight": 3
+        },
+        {
+          "keyword": "economic data",
+          "weight": 3
+        },
+        {
+          "keyword": "debt ceiling analysis",
+          "weight": 3
+        },
+        {
+          "keyword": "financial indicators",
+          "weight": 3
+        },
+        {
+          "keyword": "economic research",
+          "weight": 2
+        },
+        {
+          "keyword": "financial systems",
+          "weight": 2
+        },
+        {
+          "keyword": "government statistics",
+          "weight": 2
+        },
+        {
+          "keyword": "financial news",
+          "weight": 2
         },
         {
           "keyword": "financial stability report",
-          "weight": 3
+          "weight": 2
         },
         {
-          "keyword": "economic analysis",
-          "weight": 3
+          "keyword": "market volatility",
+          "weight": 2
+        },
+        {
+          "keyword": "economic metrics",
+          "weight": 2
+        },
+        {
+          "keyword": "financial risks",
+          "weight": 2
+        },
+        {
+          "keyword": "government reports",
+          "weight": 2
         }
       ],
       "id": "dts_brief",
@@ -1168,20 +1148,16 @@
       ],
       "intent_phrases": [
         {
-          "keyword": "treasury",
+          "keyword": "tga",
           "weight": 10
         },
         {
-          "keyword": "tga",
+          "keyword": "u.s. treasury",
           "weight": 10
         },
         {
           "keyword": "treasury general account",
           "weight": 10
-        },
-        {
-          "keyword": "u.s. treasury",
-          "weight": 9
         },
         {
           "keyword": "seasonal report",
@@ -1192,43 +1168,55 @@
           "weight": 9
         },
         {
+          "keyword": "financial intelligence",
+          "weight": 8
+        },
+        {
           "keyword": "cash regime",
           "weight": 8
         },
         {
-          "keyword": "financial report",
+          "keyword": "seasonal deviation",
           "weight": 8
         },
         {
-          "keyword": "cash flow analysis",
-          "weight": 8
-        },
-        {
-          "keyword": "fiscal data",
-          "weight": 7
-        },
-        {
-          "keyword": "cash buffer",
-          "weight": 7
-        },
-        {
-          "keyword": "financial trends",
+          "keyword": "buffer",
           "weight": 7
         },
         {
           "keyword": "2026",
+          "weight": 7
+        },
+        {
+          "keyword": "2026 ytd",
+          "weight": 7
+        },
+        {
+          "keyword": "fiscal data",
           "weight": 6
         },
         {
-          "keyword": "deviation",
+          "keyword": "cash accumulation",
           "weight": 6
         },
         {
-          "keyword": "historical data",
+          "keyword": "cash position",
           "weight": 6
         },
         {
-          "keyword": "economic report",
+          "keyword": "weeks above average",
+          "weight": 6
+        },
+        {
+          "keyword": "financial report",
+          "weight": 6
+        },
+        {
+          "keyword": "treasury statement",
+          "weight": 6
+        },
+        {
+          "keyword": "cash buffer",
           "weight": 6
         },
         {
@@ -1237,6 +1225,10 @@
         },
         {
           "keyword": "Treasury seasonal",
+          "weight": 5
+        },
+        {
+          "keyword": "treasury",
           "weight": 5
         },
         {
@@ -1280,31 +1272,63 @@
           "weight": 5
         },
         {
+          "keyword": "z-score",
+          "weight": 5
+        },
+        {
+          "keyword": "standard deviation",
+          "weight": 5
+        },
+        {
           "keyword": "weekly statistics",
           "weight": 5
         },
         {
+          "keyword": "cash reserves",
+          "weight": 5
+        },
+        {
+          "keyword": "historical range",
+          "weight": 5
+        },
+        {
+          "keyword": "fiscal response",
+          "weight": 5
+        },
+        {
+          "keyword": "covid fiscal response",
+          "weight": 5
+        },
+        {
+          "keyword": "historical data",
+          "weight": 5
+        },
+        {
+          "keyword": "week 24",
+          "weight": 5
+        },
+        {
+          "keyword": "week 17",
+          "weight": 5
+        },
+        {
+          "keyword": "cash balance",
+          "weight": 5
+        },
+        {
+          "keyword": "financial metrics",
+          "weight": 4
+        },
+        {
           "keyword": "liquidity",
-          "weight": 5
-        },
-        {
-          "keyword": "fiscal year",
-          "weight": 5
-        },
-        {
-          "keyword": "treasury statement",
-          "weight": 5
-        },
-        {
-          "keyword": "banking system",
           "weight": 4
         },
         {
-          "keyword": "cash position",
+          "keyword": "percentile",
           "weight": 4
         },
         {
-          "keyword": "financial intelligence",
+          "keyword": "weekly average",
           "weight": 4
         },
         {
@@ -1312,144 +1336,128 @@
           "weight": 4
         },
         {
-          "keyword": "financial reserves",
+          "keyword": "banking system",
           "weight": 4
         },
         {
-          "keyword": "budget surplus",
+          "keyword": "spending",
           "weight": 4
         },
         {
-          "keyword": "z-score",
-          "weight": 3
+          "keyword": "week 14",
+          "weight": 4
         },
         {
-          "keyword": "seasonal average",
-          "weight": 3
+          "keyword": "week 1",
+          "weight": 4
         },
         {
-          "keyword": "cash accumulation",
-          "weight": 3
+          "keyword": "week 2",
+          "weight": 4
         },
         {
-          "keyword": "historical range",
-          "weight": 3
+          "keyword": "week 3",
+          "weight": 4
         },
         {
-          "keyword": "government spending",
-          "weight": 3
+          "keyword": "week 4",
+          "weight": 4
         },
         {
-          "keyword": "financial forecasting",
-          "weight": 3
+          "keyword": "week 5",
+          "weight": 4
         },
         {
-          "keyword": "cash balance",
-          "weight": 3
+          "keyword": "week 6",
+          "weight": 4
         },
         {
-          "keyword": "fiscal response",
-          "weight": 2
+          "keyword": "week 7",
+          "weight": 4
         },
         {
-          "keyword": "economic analysis",
-          "weight": 2
+          "keyword": "week 8",
+          "weight": 4
         },
         {
-          "keyword": "government finance",
-          "weight": 2
+          "keyword": "week 9",
+          "weight": 4
         },
         {
-          "keyword": "cash management",
-          "weight": 2
+          "keyword": "week 10",
+          "weight": 4
         },
         {
-          "keyword": "financial metrics",
-          "weight": 2
+          "keyword": "week 11",
+          "weight": 4
         },
         {
-          "keyword": "week 24",
-          "weight": 2
+          "keyword": "week 12",
+          "weight": 4
         },
         {
-          "keyword": "2026 ytd",
-          "weight": 2
+          "keyword": "week 13",
+          "weight": 4
         },
         {
-          "keyword": "cash reserves",
-          "weight": 2
+          "keyword": "week 15",
+          "weight": 4
         },
         {
-          "keyword": "fiscal analysis",
-          "weight": 2
+          "keyword": "week 16",
+          "weight": 4
         },
         {
-          "keyword": "government revenue",
-          "weight": 2
+          "keyword": "week 18",
+          "weight": 4
         },
         {
-          "keyword": "financial reporting",
-          "weight": 2
+          "keyword": "week 19",
+          "weight": 4
         },
         {
-          "keyword": "economic stability",
-          "weight": 2
+          "keyword": "week 20",
+          "weight": 4
         },
         {
-          "keyword": "budgeting",
-          "weight": 1
+          "keyword": "week 21",
+          "weight": 4
         },
         {
-          "keyword": "spending trends",
-          "weight": 1
+          "keyword": "week 22",
+          "weight": 4
         },
         {
-          "keyword": "financial stability",
-          "weight": 1
-        },
-        {
-          "keyword": "economic indicators",
-          "weight": 1
-        },
-        {
-          "keyword": "fiscal policy",
-          "weight": 1
-        },
-        {
-          "keyword": "government cash flow",
-          "weight": 1
-        },
-        {
-          "keyword": "treasury cash position",
-          "weight": 1
-        },
-        {
-          "keyword": "financial overview",
-          "weight": 1
-        },
-        {
-          "keyword": "government budget",
-          "weight": 1
-        },
-        {
-          "keyword": "economic performance",
-          "weight": 1
-        },
-        {
-          "keyword": "treasury cash levels",
-          "weight": 1
-        },
-        {
-          "keyword": "financial summary",
-          "weight": 1
-        },
-        {
-          "keyword": "fiscal trends",
-          "weight": 1
+          "keyword": "week 23",
+          "weight": 4
         },
         {
           "keyword": "financial analysis",
-          "weight": 1
+          "weight": 4
+        },
+        {
+          "keyword": "historical low",
+          "weight": 3
+        },
+        {
+          "keyword": "historical high",
+          "weight": 3
+        },
+        {
+          "keyword": "economic indicators",
+          "weight": 3
+        },
+        {
+          "keyword": "fiscal policy",
+          "weight": 3
+        },
+        {
+          "keyword": "government finance",
+          "weight": 3
+        },
+        {
+          "keyword": "financial trends",
+          "weight": 3
         }
       ],
       "id": "tga_seasonal_report",
@@ -1496,15 +1504,15 @@
           "weight": 9
         },
         {
+          "keyword": "oncology drugs",
+          "weight": 8
+        },
+        {
           "keyword": "heparin sodium injection",
           "weight": 8
         },
         {
-          "keyword": "dexamethasone sodium phosphate injection",
-          "weight": 8
-        },
-        {
-          "keyword": "oncology drugs",
+          "keyword": "dexamethasone sodium phosphate",
           "weight": 8
         },
         {
@@ -1512,23 +1520,27 @@
           "weight": 7
         },
         {
-          "keyword": "hospira",
-          "weight": 7
-        },
-        {
-          "keyword": "pfizer",
-          "weight": 7
-        },
-        {
           "keyword": "drug report",
+          "weight": 7
+        },
+        {
+          "keyword": "healthcare",
           "weight": 6
         },
         {
-          "keyword": "drug metrics",
+          "keyword": "pharmaceuticals",
           "weight": 6
         },
         {
-          "keyword": "drug duration",
+          "keyword": "drug companies",
+          "weight": 6
+        },
+        {
+          "keyword": "hospira",
+          "weight": 6
+        },
+        {
+          "keyword": "teva pharmaceuticals",
           "weight": 6
         },
         {
@@ -1568,11 +1580,11 @@
           "weight": 5
         },
         {
-          "keyword": "health report",
+          "keyword": "fresenius kabi",
           "weight": 5
         },
         {
-          "keyword": "drug companies",
+          "keyword": "drug duration",
           "weight": 5
         },
         {
@@ -1580,75 +1592,95 @@
           "weight": 5
         },
         {
-          "keyword": "fresenius kabi",
+          "keyword": "drug shortages in usa",
           "weight": 5
         },
         {
-          "keyword": "teva pharmaceuticals",
+          "keyword": "methylprednisolone acetate",
           "weight": 5
         },
         {
-          "keyword": "cancer treatment",
+          "keyword": "azacitidine",
           "weight": 5
         },
         {
-          "keyword": "drug shortages 2026",
-          "weight": 4
-        },
-        {
-          "keyword": "drug supply",
-          "weight": 4
-        },
-        {
-          "keyword": "drug manufacturers",
-          "weight": 4
-        },
-        {
-          "keyword": "azacitidine injection",
-          "weight": 4
-        },
-        {
-          "keyword": "methylprednisolone acetate injection",
-          "weight": 4
-        },
-        {
-          "keyword": "desmopressin acetate spray",
-          "weight": 4
-        },
-        {
-          "keyword": "streptozocin powder",
-          "weight": 4
+          "keyword": "desmopressin acetate",
+          "weight": 5
         },
         {
           "keyword": "flurazepam hydrochloride",
           "weight": 4
         },
         {
-          "keyword": "methotrexate sodium injection",
+          "keyword": "methotrexate",
           "weight": 4
         },
         {
-          "keyword": "carboplatin injection",
+          "keyword": "gemcitabine",
           "weight": 4
         },
         {
-          "keyword": "drug statistics",
+          "keyword": "pemetrexed",
+          "weight": 4
+        },
+        {
+          "keyword": "fondaparinux",
+          "weight": 4
+        },
+        {
+          "keyword": "drug metrics",
+          "weight": 4
+        },
+        {
+          "keyword": "drug first reported",
+          "weight": 4
+        },
+        {
+          "keyword": "drug companies usa",
+          "weight": 4
+        },
+        {
+          "keyword": "drug injection",
+          "weight": 4
+        },
+        {
+          "keyword": "drug spray",
+          "weight": 4
+        },
+        {
+          "keyword": "drug capsule",
+          "weight": 4
+        },
+        {
+          "keyword": "drug powder",
+          "weight": 4
+        },
+        {
+          "keyword": "sagent pharmaceuticals",
           "weight": 3
         },
         {
-          "keyword": "drug shortages usa",
+          "keyword": "chartwell molecular",
           "weight": 3
         },
         {
-          "keyword": "drug recall",
+          "keyword": "jiangsu hengrui",
           "weight": 3
         },
         {
-          "keyword": "drug inventory",
+          "keyword": "drug shortages statistics",
           "weight": 3
         },
         {
-          "keyword": "drug production",
+          "keyword": "fda updates",
+          "weight": 3
+        },
+        {
+          "keyword": "health report",
+          "weight": 3
+        },
+        {
+          "keyword": "drug industry",
           "weight": 3
         },
         {
@@ -1656,23 +1688,15 @@
           "weight": 3
         },
         {
-          "keyword": "drug approval",
-          "weight": 3
-        },
-        {
-          "keyword": "availability report",
-          "weight": 3
-        },
-        {
-          "keyword": "healthcare supply chain",
-          "weight": 3
-        },
-        {
-          "keyword": "patient access",
-          "weight": 3
-        },
-        {
           "keyword": "drug market",
+          "weight": 3
+        },
+        {
+          "keyword": "drug availability report",
+          "weight": 3
+        },
+        {
+          "keyword": "drug shortages 2026",
           "weight": 3
         },
         {
@@ -1680,87 +1704,63 @@
           "weight": 2
         },
         {
-          "keyword": "drug shortages statistics",
+          "keyword": "drug shortage causes",
           "weight": 2
         },
         {
-          "keyword": "drug distribution",
+          "keyword": "drug shortage solutions",
           "weight": 2
         },
         {
-          "keyword": "drug therapy",
+          "keyword": "drug shortage trends",
           "weight": 2
         },
         {
-          "keyword": "drug efficacy",
-          "weight": 2
-        },
-        {
-          "keyword": "drug safety",
-          "weight": 2
-        },
-        {
-          "keyword": "oncology",
-          "weight": 2
-        },
-        {
-          "keyword": "drug side effects",
-          "weight": 2
-        },
-        {
-          "keyword": "drug formulation",
-          "weight": 2
-        },
-        {
-          "keyword": "drug access",
-          "weight": 2
-        },
-        {
-          "keyword": "healthcare report",
-          "weight": 2
-        },
-        {
-          "keyword": "drug information",
-          "weight": 2
-        },
-        {
-          "keyword": "drug shortages causes",
-          "weight": 2
-        },
-        {
-          "keyword": "drug therapy options",
-          "weight": 2
-        },
-        {
-          "keyword": "drug usage",
-          "weight": 2
-        },
-        {
-          "keyword": "drug analysis",
-          "weight": 2
-        },
-        {
-          "keyword": "drug trends",
-          "weight": 2
-        },
-        {
-          "keyword": "drug research",
-          "weight": 2
-        },
-        {
-          "keyword": "drug policy",
-          "weight": 2
-        },
-        {
-          "keyword": "drug market analysis",
-          "weight": 2
-        },
-        {
-          "keyword": "drug availability updates",
+          "keyword": "drug shortage impact",
           "weight": 2
         },
         {
           "keyword": "drug shortage news",
+          "weight": 2
+        },
+        {
+          "keyword": "drug shortage analysis",
+          "weight": 2
+        },
+        {
+          "keyword": "drug shortage overview",
+          "weight": 2
+        },
+        {
+          "keyword": "drug shortage statistics",
+          "weight": 2
+        },
+        {
+          "keyword": "drug shortage report 2026",
+          "weight": 2
+        },
+        {
+          "keyword": "drug shortage history",
+          "weight": 2
+        },
+        {
+          "keyword": "drug shortage effects",
+          "weight": 2
+        },
+        {
+          "keyword": "drug shortage prevention",
+          "weight": 2
+        },
+        {
+          "keyword": "drug shortage awareness",
+          "weight": 2
+        },
+        {
+          "keyword": "drug shortage resources",
+          "weight": 2
+        },
+        {
+          "keyword": "drug shortage management",
           "weight": 2
         }
       ],
@@ -1971,11 +1971,11 @@
           "weight": 9
         },
         {
-          "keyword": "screening",
+          "keyword": "oncology",
           "weight": 8
         },
         {
-          "keyword": "oncology",
+          "keyword": "screening",
           "weight": 8
         },
         {
@@ -1995,7 +1995,31 @@
           "weight": 6
         },
         {
-          "keyword": "prevention",
+          "keyword": "nhs",
+          "weight": 6
+        },
+        {
+          "keyword": "aacr",
+          "weight": 6
+        },
+        {
+          "keyword": "jco",
+          "weight": 6
+        },
+        {
+          "keyword": "stat news",
+          "weight": 6
+        },
+        {
+          "keyword": "esmo",
+          "weight": 6
+        },
+        {
+          "keyword": "jama oncology",
+          "weight": 6
+        },
+        {
+          "keyword": "galleri",
           "weight": 6
         },
         {
@@ -2055,7 +2079,7 @@
           "weight": 5
         },
         {
-          "keyword": "nhs",
+          "keyword": "cancer prevention",
           "weight": 5
         },
         {
@@ -2063,39 +2087,27 @@
           "weight": 5
         },
         {
-          "keyword": "galleri",
+          "keyword": "prostate cancer",
           "weight": 5
         },
         {
-          "keyword": "jco",
-          "weight": 5
-        },
-        {
-          "keyword": "aacr",
-          "weight": 5
-        },
-        {
-          "keyword": "stat news",
-          "weight": 5
-        },
-        {
-          "keyword": "esmo",
-          "weight": 5
-        },
-        {
-          "keyword": "jama oncology",
-          "weight": 5
-        },
-        {
-          "keyword": "lancet oncology",
+          "keyword": "colorectal cancer",
           "weight": 5
         },
         {
           "keyword": "cancer interception",
-          "weight": 4
+          "weight": 5
         },
         {
           "keyword": "population screening",
+          "weight": 5
+        },
+        {
+          "keyword": "research",
+          "weight": 5
+        },
+        {
+          "keyword": "healthcare",
           "weight": 4
         },
         {
@@ -2103,27 +2115,15 @@
           "weight": 4
         },
         {
-          "keyword": "diagnostic delay",
+          "keyword": "diagnostic test",
           "weight": 4
         },
         {
-          "keyword": "healthcare",
+          "keyword": "cancer risk",
           "weight": 4
         },
         {
-          "keyword": "research",
-          "weight": 4
-        },
-        {
-          "keyword": "test results",
-          "weight": 4
-        },
-        {
-          "keyword": "risk factors",
-          "weight": 4
-        },
-        {
-          "keyword": "treatment",
+          "keyword": "cancer treatment",
           "weight": 4
         },
         {
@@ -2131,11 +2131,11 @@
           "weight": 4
         },
         {
-          "keyword": "cancer types",
-          "weight": 3
+          "keyword": "patient outcomes",
+          "weight": 4
         },
         {
-          "keyword": "patient outcomes",
+          "keyword": "health technology",
           "weight": 3
         },
         {
@@ -2143,7 +2143,7 @@
           "weight": 3
         },
         {
-          "keyword": "cancer prevention",
+          "keyword": "cancer biomarkers",
           "weight": 3
         },
         {
@@ -2151,7 +2151,19 @@
           "weight": 3
         },
         {
-          "keyword": "biomarkers",
+          "keyword": "oncologist",
+          "weight": 3
+        },
+        {
+          "keyword": "cancer awareness",
+          "weight": 3
+        },
+        {
+          "keyword": "health survey",
+          "weight": 3
+        },
+        {
+          "keyword": "early diagnosis",
           "weight": 3
         },
         {
@@ -2159,27 +2171,11 @@
           "weight": 3
         },
         {
-          "keyword": "health trends",
+          "keyword": "symptom investigation",
           "weight": 3
         },
         {
-          "keyword": "international studies",
-          "weight": 3
-        },
-        {
-          "keyword": "cancer awareness",
-          "weight": 2
-        },
-        {
-          "keyword": "patient engagement",
-          "weight": 2
-        },
-        {
-          "keyword": "early intervention",
-          "weight": 2
-        },
-        {
-          "keyword": "preventive measures",
+          "keyword": "cancer statistics",
           "weight": 2
         },
         {
@@ -2187,87 +2183,15 @@
           "weight": 2
         },
         {
+          "keyword": "cancer types",
+          "weight": 2
+        },
+        {
           "keyword": "medical guidelines",
           "weight": 2
         },
         {
-          "keyword": "treatment options",
-          "weight": 2
-        },
-        {
-          "keyword": "clinical evidence",
-          "weight": 2
-        },
-        {
-          "keyword": "population health",
-          "weight": 2
-        },
-        {
-          "keyword": "cancer statistics",
-          "weight": 2
-        },
-        {
-          "keyword": "health education",
-          "weight": 2
-        },
-        {
-          "keyword": "oncology research",
-          "weight": 2
-        },
-        {
-          "keyword": "diagnostic tests",
-          "weight": 2
-        },
-        {
-          "keyword": "patient care",
-          "weight": 2
-        },
-        {
-          "keyword": "healthcare access",
-          "weight": 2
-        },
-        {
-          "keyword": "cancer initiatives",
-          "weight": 2
-        },
-        {
-          "keyword": "healthcare systems",
-          "weight": 2
-        },
-        {
-          "keyword": "medical advancements",
-          "weight": 2
-        },
-        {
-          "keyword": "community health",
-          "weight": 2
-        },
-        {
-          "keyword": "health disparities",
-          "weight": 2
-        },
-        {
-          "keyword": "cancer funding",
-          "weight": 2
-        },
-        {
-          "keyword": "cancer treatment",
-          "weight": 2
-        },
-        {
-          "keyword": "health research",
-          "weight": 2
-        },
-        {
-          "keyword": "cancer policy",
-          "weight": 2
-        },
-        {
-          "keyword": "health metrics",
-          "weight": 2
-        },
-        {
-          "keyword": "disease prevention",
+          "keyword": "patient engagement",
           "weight": 2
         },
         {
@@ -2275,12 +2199,72 @@
           "weight": 2
         },
         {
-          "keyword": "patient support",
+          "keyword": "treatment options",
           "weight": 2
         },
         {
-          "keyword": "oncology trials",
+          "keyword": "public health",
           "weight": 2
+        },
+        {
+          "keyword": "health education",
+          "weight": 2
+        },
+        {
+          "keyword": "cancer funding",
+          "weight": 2
+        },
+        {
+          "keyword": "research findings",
+          "weight": 2
+        },
+        {
+          "keyword": "clinical implications",
+          "weight": 2
+        },
+        {
+          "keyword": "health disparities",
+          "weight": 2
+        },
+        {
+          "keyword": "cancer prevention strategies",
+          "weight": 1
+        },
+        {
+          "keyword": "cancer screening guidelines",
+          "weight": 1
+        },
+        {
+          "keyword": "health interventions",
+          "weight": 1
+        },
+        {
+          "keyword": "cancer mortality",
+          "weight": 1
+        },
+        {
+          "keyword": "healthcare access",
+          "weight": 1
+        },
+        {
+          "keyword": "cancer treatment advancements",
+          "weight": 1
+        },
+        {
+          "keyword": "oncology news",
+          "weight": 1
+        },
+        {
+          "keyword": "patient education",
+          "weight": 1
+        },
+        {
+          "keyword": "cancer clinical trials",
+          "weight": 1
+        },
+        {
+          "keyword": "cancer research funding",
+          "weight": 1
         }
       ],
       "id": "cancer_early_detection_signal_report",
@@ -2344,27 +2328,71 @@
           "weight": 9
         },
         {
-          "keyword": "moderna",
+          "keyword": "fda cancer",
+          "weight": 9
+        },
+        {
+          "keyword": "fda cancer drugs",
+          "weight": 9
+        },
+        {
+          "keyword": "fda cancer approval",
+          "weight": 9
+        },
+        {
+          "keyword": "fda cancer signals",
+          "weight": 9
+        },
+        {
+          "keyword": "drugs",
           "weight": 8
+        },
+        {
+          "keyword": "oncology",
+          "weight": 8
+        },
+        {
+          "keyword": "cancer treatment",
+          "weight": 8
+        },
+        {
+          "keyword": "cancer drugs",
+          "weight": 8
+        },
+        {
+          "keyword": "oncology drugs",
+          "weight": 8
+        },
+        {
+          "keyword": "fda prostate cancer",
+          "weight": 8
+        },
+        {
+          "keyword": "fda cancer treatments",
+          "weight": 8
+        },
+        {
+          "keyword": "fda oncology approval",
+          "weight": 8
+        },
+        {
+          "keyword": "fda oncology drugs",
+          "weight": 8
+        },
+        {
+          "keyword": "fda oncology signals",
+          "weight": 8
+        },
+        {
+          "keyword": "moderna",
+          "weight": 7
         },
         {
           "keyword": "johnson & johnson",
-          "weight": 8
+          "weight": 7
         },
         {
           "keyword": "roche",
-          "weight": 8
-        },
-        {
-          "keyword": "biopsy",
-          "weight": 7
-        },
-        {
-          "keyword": "diagnostic",
-          "weight": 7
-        },
-        {
-          "keyword": "pten",
           "weight": 7
         },
         {
@@ -2372,32 +2400,36 @@
           "weight": 7
         },
         {
-          "keyword": "belzutifan",
-          "weight": 7
+          "keyword": "drug approval",
+          "weight": 6
+        },
+        {
+          "keyword": "abiraterone",
+          "weight": 6
         },
         {
           "keyword": "pembrolizumab",
-          "weight": 7
+          "weight": 6
         },
         {
           "keyword": "renal cell carcinoma",
           "weight": 6
         },
         {
-          "keyword": "prostate cancer",
+          "keyword": "pten",
           "weight": 6
         },
         {
-          "keyword": "priority review",
+          "keyword": "fda breast cancer",
           "weight": 6
         },
         {
-          "keyword": "tecentriq",
+          "keyword": "fda renal cancer",
           "weight": 6
         },
         {
-          "keyword": "drug approval",
-          "weight": 5
+          "keyword": "fda cancer therapy",
+          "weight": 6
         },
         {
           "keyword": "breakthrough therapy",
@@ -2440,23 +2472,15 @@
           "weight": 5
         },
         {
-          "keyword": "oncology",
+          "keyword": "biopsy",
           "weight": 5
         },
         {
-          "keyword": "radiodiagnostic",
+          "keyword": "prostate cancer",
           "weight": 5
         },
         {
-          "keyword": "breast cancer",
-          "weight": 5
-        },
-        {
-          "keyword": "clinical trial",
-          "weight": 5
-        },
-        {
-          "keyword": "healthcare",
+          "keyword": "priority review",
           "weight": 5
         },
         {
@@ -2464,39 +2488,55 @@
           "weight": 5
         },
         {
-          "keyword": "cancer treatment",
+          "keyword": "diagnostic",
           "weight": 5
+        },
+        {
+          "keyword": "fda oncology",
+          "weight": 5
+        },
+        {
+          "keyword": "fda prostate",
+          "weight": 5
+        },
+        {
+          "keyword": "fda treatment",
+          "weight": 5
+        },
+        {
+          "keyword": "fda cancer research",
+          "weight": 5
+        },
+        {
+          "keyword": "fda prostate treatment",
+          "weight": 5
+        },
+        {
+          "keyword": "clinical trial",
+          "weight": 4
+        },
+        {
+          "keyword": "radiodiagnostic",
+          "weight": 4
+        },
+        {
+          "keyword": "generic",
+          "weight": 4
+        },
+        {
+          "keyword": "breast cancer",
+          "weight": 4
         },
         {
           "keyword": "fda news",
           "weight": 4
         },
         {
-          "keyword": "fda guidelines",
+          "keyword": "biospace",
           "weight": 4
         },
         {
-          "keyword": "cancer drugs",
-          "weight": 4
-        },
-        {
-          "keyword": "biopharmaceutical",
-          "weight": 4
-        },
-        {
-          "keyword": "medical news",
-          "weight": 4
-        },
-        {
-          "keyword": "fda regulations",
-          "weight": 4
-        },
-        {
-          "keyword": "health news",
-          "weight": 4
-        },
-        {
-          "keyword": "drug development",
+          "keyword": "stat news",
           "weight": 4
         },
         {
@@ -2504,27 +2544,59 @@
           "weight": 4
         },
         {
-          "keyword": "fda cancer",
+          "keyword": "fda approvals 2026",
+          "weight": 4
+        },
+        {
+          "keyword": "fda drug news",
+          "weight": 4
+        },
+        {
+          "keyword": "fda drug trials",
+          "weight": 4
+        },
+        {
+          "keyword": "fda cancer news",
+          "weight": 4
+        },
+        {
+          "keyword": "fda cancer developments",
+          "weight": 4
+        },
+        {
+          "keyword": "fda cancer treatments 2026",
+          "weight": 4
+        },
+        {
+          "keyword": "fda cancer approvals 2026",
+          "weight": 4
+        },
+        {
+          "keyword": "fda cancer updates",
+          "weight": 4
+        },
+        {
+          "keyword": "fda cancer innovations",
+          "weight": 4
+        },
+        {
+          "keyword": "fda cancer research 2026",
+          "weight": 4
+        },
+        {
+          "keyword": "healthcare",
           "weight": 3
         },
         {
-          "keyword": "fda oncology",
+          "keyword": "fda guidelines",
           "weight": 3
         },
         {
-          "keyword": "fda prostate cancer",
+          "keyword": "fda regulations",
           "weight": 3
         },
         {
-          "keyword": "fda renal cancer",
-          "weight": 3
-        },
-        {
-          "keyword": "fda breast cancer",
-          "weight": 3
-        },
-        {
-          "keyword": "fda approval process",
+          "keyword": "fda updates",
           "weight": 3
         },
         {
@@ -2532,132 +2604,40 @@
           "weight": 3
         },
         {
-          "keyword": "oncology drugs",
-          "weight": 3
-        },
-        {
-          "keyword": "cancer research",
-          "weight": 3
-        },
-        {
           "keyword": "drug efficacy",
           "weight": 3
         },
         {
-          "keyword": "fda updates",
-          "weight": 2
+          "keyword": "fda announcements",
+          "weight": 3
         },
         {
-          "keyword": "healthcare providers",
-          "weight": 2
+          "keyword": "health news",
+          "weight": 3
         },
         {
-          "keyword": "medical devices",
-          "weight": 2
+          "keyword": "fda news articles",
+          "weight": 3
         },
         {
-          "keyword": "drug safety",
-          "weight": 2
+          "keyword": "fda research",
+          "weight": 3
         },
         {
-          "keyword": "patient care",
-          "weight": 2
+          "keyword": "fda health updates",
+          "weight": 3
         },
         {
-          "keyword": "drug interactions",
-          "weight": 2
+          "keyword": "fda cancer statistics",
+          "weight": 3
         },
         {
-          "keyword": "treatment guidelines",
-          "weight": 2
+          "keyword": "fda cancer metrics",
+          "weight": 3
         },
         {
-          "keyword": "biotech",
-          "weight": 2
-        },
-        {
-          "keyword": "therapeutics",
-          "weight": 2
-        },
-        {
-          "keyword": "health policy",
-          "weight": 2
-        },
-        {
-          "keyword": "clinical outcomes",
-          "weight": 2
-        },
-        {
-          "keyword": "cancer statistics",
-          "weight": 2
-        },
-        {
-          "keyword": "health technology",
-          "weight": 2
-        },
-        {
-          "keyword": "drug trials",
-          "weight": 2
-        },
-        {
-          "keyword": "cancer awareness",
-          "weight": 2
-        },
-        {
-          "keyword": "patient advocacy",
-          "weight": 2
-        },
-        {
-          "keyword": "medical research",
-          "weight": 2
-        },
-        {
-          "keyword": "oncology research",
-          "weight": 2
-        },
-        {
-          "keyword": "cancer care",
-          "weight": 2
-        },
-        {
-          "keyword": "biomarkers",
-          "weight": 2
-        },
-        {
-          "keyword": "treatment efficacy",
-          "weight": 2
-        },
-        {
-          "keyword": "health outcomes",
-          "weight": 2
-        },
-        {
-          "keyword": "drug market",
-          "weight": 2
-        },
-        {
-          "keyword": "cancer prevention",
-          "weight": 1
-        },
-        {
-          "keyword": "patient education",
-          "weight": 1
-        },
-        {
-          "keyword": "cancer survival",
-          "weight": 1
-        },
-        {
-          "keyword": "health trends",
-          "weight": 1
-        },
-        {
-          "keyword": "medical advancements",
-          "weight": 1
-        },
-        {
-          "keyword": "oncology clinics",
-          "weight": 1
+          "keyword": "fda cancer news articles",
+          "weight": 3
         }
       ],
       "id": "cancer_fda_approval_signals",
@@ -2723,11 +2703,7 @@
           "weight": 9
         },
         {
-          "keyword": "clinical trials",
-          "weight": 9
-        },
-        {
-          "keyword": "cancer treatment",
+          "keyword": "cancer drugs",
           "weight": 9
         },
         {
@@ -2751,11 +2727,15 @@
           "weight": 8
         },
         {
+          "keyword": "metastatic cancer",
+          "weight": 8
+        },
+        {
           "keyword": "tumor treating fields",
           "weight": 8
         },
         {
-          "keyword": "oncology drugs",
+          "keyword": "cancer vaccine",
           "weight": 8
         },
         {
@@ -2767,11 +2747,19 @@
           "weight": 7
         },
         {
-          "keyword": "cancer research uk",
+          "keyword": "cervical cancer",
           "weight": 7
         },
         {
-          "keyword": "metastatic cancer",
+          "keyword": "clinical research",
+          "weight": 7
+        },
+        {
+          "keyword": "treatment",
+          "weight": 7
+        },
+        {
+          "keyword": "oncology trials",
           "weight": 7
         },
         {
@@ -2783,11 +2771,7 @@
           "weight": 7
         },
         {
-          "keyword": "combination therapy",
-          "weight": 7
-        },
-        {
-          "keyword": "cancer vaccine",
+          "keyword": "tumor",
           "weight": 7
         },
         {
@@ -2799,23 +2783,19 @@
           "weight": 6
         },
         {
-          "keyword": "biologics",
-          "weight": 6
-        },
-        {
           "keyword": "head and neck cancer",
           "weight": 6
         },
         {
-          "keyword": "clinical research",
+          "keyword": "biospace",
           "weight": 6
         },
         {
-          "keyword": "treatment",
+          "keyword": "cancer research uk",
           "weight": 6
         },
         {
-          "keyword": "cervical cancer",
+          "keyword": "drug development",
           "weight": 6
         },
         {
@@ -2823,11 +2803,23 @@
           "weight": 6
         },
         {
-          "keyword": "patient survival",
+          "keyword": "research study",
           "weight": 6
         },
         {
-          "keyword": "clinical trial results",
+          "keyword": "drug combination",
+          "weight": 6
+        },
+        {
+          "keyword": "clinical data",
+          "weight": 6
+        },
+        {
+          "keyword": "treatment response",
+          "weight": 6
+        },
+        {
+          "keyword": "patient outcomes",
           "weight": 6
         },
         {
@@ -2863,7 +2855,23 @@
           "weight": 5
         },
         {
+          "keyword": "stat news",
+          "weight": 5
+        },
+        {
+          "keyword": "reuters",
+          "weight": 5
+        },
+        {
           "keyword": "fda",
+          "weight": 5
+        },
+        {
+          "keyword": "clinical trials.gov",
+          "weight": 5
+        },
+        {
+          "keyword": "biologics",
           "weight": 5
         },
         {
@@ -2871,27 +2879,7 @@
           "weight": 5
         },
         {
-          "keyword": "drug development",
-          "weight": 5
-        },
-        {
-          "keyword": "research study",
-          "weight": 5
-        },
-        {
           "keyword": "treatment options",
-          "weight": 5
-        },
-        {
-          "keyword": "therapeutic agents",
-          "weight": 5
-        },
-        {
-          "keyword": "clinical data",
-          "weight": 5
-        },
-        {
-          "keyword": "drug approval",
           "weight": 5
         },
         {
@@ -2899,11 +2887,11 @@
           "weight": 5
         },
         {
-          "keyword": "medical research",
+          "keyword": "pediatric oncology",
           "weight": 5
         },
         {
-          "keyword": "treatment regimen",
+          "keyword": "healthcare",
           "weight": 5
         },
         {
@@ -2911,55 +2899,7 @@
           "weight": 5
         },
         {
-          "keyword": "treatment response",
-          "weight": 5
-        },
-        {
-          "keyword": "treatment strategies",
-          "weight": 5
-        },
-        {
-          "keyword": "biotech",
-          "weight": 4
-        },
-        {
-          "keyword": "healthcare",
-          "weight": 4
-        },
-        {
-          "keyword": "research findings",
-          "weight": 4
-        },
-        {
-          "keyword": "pharmaceuticals",
-          "weight": 4
-        },
-        {
-          "keyword": "clinical guidelines",
-          "weight": 4
-        },
-        {
-          "keyword": "drug safety",
-          "weight": 4
-        },
-        {
-          "keyword": "patient care",
-          "weight": 4
-        },
-        {
-          "keyword": "health outcomes",
-          "weight": 4
-        },
-        {
-          "keyword": "pharmaceutical research",
-          "weight": 4
-        },
-        {
-          "keyword": "clinical trial design",
-          "weight": 4
-        },
-        {
-          "keyword": "drug efficacy",
+          "keyword": "research funding",
           "weight": 4
         },
         {
@@ -2968,22 +2908,38 @@
         },
         {
           "keyword": "cancer statistics",
-          "weight": 3
+          "weight": 4
         },
         {
           "keyword": "biomedical research",
-          "weight": 3
+          "weight": 4
+        },
+        {
+          "keyword": "therapeutic agents",
+          "weight": 4
+        },
+        {
+          "keyword": "clinical endpoints",
+          "weight": 4
+        },
+        {
+          "keyword": "treatment protocols",
+          "weight": 4
+        },
+        {
+          "keyword": "drug approval",
+          "weight": 4
+        },
+        {
+          "keyword": "cancer prevention",
+          "weight": 4
         },
         {
           "keyword": "cancer awareness",
           "weight": 3
         },
         {
-          "keyword": "research collaboration",
-          "weight": 3
-        },
-        {
-          "keyword": "cancer prevention",
+          "keyword": "health policy",
           "weight": 3
         },
         {
@@ -2991,7 +2947,35 @@
           "weight": 3
         },
         {
-          "keyword": "clinical trial phases",
+          "keyword": "research ethics",
+          "weight": 3
+        },
+        {
+          "keyword": "health outcomes",
+          "weight": 3
+        },
+        {
+          "keyword": "clinical trial design",
+          "weight": 3
+        },
+        {
+          "keyword": "biostatistics",
+          "weight": 3
+        },
+        {
+          "keyword": "healthcare innovation",
+          "weight": 3
+        },
+        {
+          "keyword": "oncology guidelines",
+          "weight": 3
+        },
+        {
+          "keyword": "drug safety",
+          "weight": 3
+        },
+        {
+          "keyword": "treatment landscape",
           "weight": 3
         },
         {
@@ -2999,35 +2983,27 @@
           "weight": 3
         },
         {
-          "keyword": "treatment protocols",
+          "keyword": "therapeutic efficacy",
           "weight": 3
         },
         {
-          "keyword": "clinical trial registry",
-          "weight": 3
-        },
-        {
-          "keyword": "patient outcomes",
-          "weight": 3
-        },
-        {
-          "keyword": "health policy",
+          "keyword": "patient advocacy",
           "weight": 2
         },
         {
-          "keyword": "cancer advocacy",
+          "keyword": "health disparities",
           "weight": 2
         },
         {
-          "keyword": "healthcare policy",
+          "keyword": "cancer research funding",
           "weight": 2
         },
         {
-          "keyword": "drug interactions",
+          "keyword": "biomedical innovation",
           "weight": 2
         },
         {
-          "keyword": "research ethics",
+          "keyword": "clinical trial recruitment",
           "weight": 2
         }
       ],
