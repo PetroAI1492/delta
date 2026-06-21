@@ -1,0 +1,61 @@
+{
+  "generated_at": "2026-06-21 14:57",
+  "first_date": "2005-10-03",
+  "last_date": "2026-06-17",
+  "n_years": 21,
+  "first_year": 2005,
+  "last_year": 2026,
+  "dataset_label": "Oct 2005 \u2013 Jun 2026",
+  "current_year": 2026,
+  "last_val": 956.5,
+  "last_week": 25,
+  "current_avg": 361.6,
+  "current_min": 4.8,
+  "current_max": 1635.5,
+  "vs_avg": 594.9,
+  "ytd_dev": 544.8,
+  "weeks_above": 25,
+  "weeks_total": 25,
+  "streak_above": 25,
+  "dev_rank": 2,
+  "dev_pct_rank": 95,
+  "week_std": 392.0,
+  "week_zscore": 1.52,
+  "top_deviations": [
+    [
+      2020,
+      1273.9,
+      1635.5
+    ],
+    [
+      2026,
+      594.9,
+      956.5
+    ],
+    [
+      2024,
+      401.8,
+      763.4
+    ],
+    [
+      2022,
+      396.9,
+      758.5
+    ],
+    [
+      2021,
+      371.6,
+      733.2
+    ]
+  ],
+  "pre_covid_avg": 143.1,
+  "covid_peak": 1635.5,
+  "post_covid_avg": 644.5,
+  "cash_regime": "EXTREME BUFFER",
+  "cash_regime_color": "#DC2626",
+  "pct_above_avg": 164.5,
+  "peak_week_num": 17,
+  "peak_avg_val": 374.6,
+  "pct_of_peak": 255.0,
+  "narrative": "This report shows the seasonal pattern of the U.S. Treasury General Account (TGA) closing balance using 21 years of daily data (2005\u20132026), sourced from the Daily Treasury Statement published by the U.S. Treasury. Historical averages include the extraordinary Treasury cash accumulation during 2020\u20132021 (COVID fiscal response) and the pre-GFC era of minimal cash buffers (2005\u20132008), making the full-sample average a structurally informative but wide baseline.\n\nAs of 2026-06-17 (ISO week 25), the TGA closed at $956.5B, $594.9B above the 21-year seasonal average of $361.6B \u2014 ranked #2 of 21 years (95th percentile). The seasonal standard deviation for week 25 is $392.0B; the current value is 1.52 standard deviations above the historical average (Z-score: +1.52). Notably, the current TGA of $956.5B represents 255% of the 21-year seasonal peak average of $374.6B \u2014 which itself typically occurs in week 17. Based on its deviation from seasonal norms, the current Treasury cash position is classified as: EXTREME BUFFER (+164% above the 21-year average). The more significant signal is the year-to-date picture: across all 25 weeks of 2026, the TGA has averaged $544.8B above the seasonal norm, ranging from a low of $+418.9B in week 1 to a high of $+641.9B in week 16. This sustained deviation suggests Treasury has been carrying an unusually elevated cash buffer for most of the year, not just at this point in the calendar. The TGA has been above the seasonal average in 25 of 25 weeks (100%) so far in 2026, with a current streak of 25 consecutive weeks above the norm.\n\nBased on the available history, the TGA seasonal average peaks in week 17 at $374.6B and troughs in week 14 at $234.0B \u2014 a seasonal swing of $140.6B. The current reporting date is 8 weeks past the seasonal peak (week 17). The TGA remains historically elevated, but the recent trend has been relatively stable, suggesting continued reserve drain until spending patterns shift. Each $100B decline in the TGA injects approximately $100B of reserves into the banking system."
+}
