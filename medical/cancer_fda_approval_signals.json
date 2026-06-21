@@ -1,0 +1,34 @@
+{
+  "run_id": "32310ba7-c5cb-4ccd-96b0-7e30160158e4",
+  "generated_at": "2026-06-21 13:28:08 UTC",
+  "lookback_days": 7,
+  "signal_count": 2,
+  "noise_count": 21,
+  "type_counts": {
+    "GENERAL": 1,
+    "APPROVED": 1
+  },
+  "sources_active": 2,
+  "signals": [
+    {
+      "title": "Disruptions in Availability of Breast Biopsy Needles - Letter to Health Care Providers - fda.gov",
+      "trail": "Disruptions in Availability of Breast Biopsy Needles - Letter to Health Care Providers&nbsp;&nbsp;fda.gov",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQaFFvQzBmU1NHTUt2Z3JmNnRwSTRIaDhSNFhJR1IzTzJiaC12ejFRYlUwZm05VzB6NXZzY2xiQmYtbzBvS09IeG5VazJxTXRFQ093V3JuR2JNWUhzUk1ZMVRpcTB4eTNrd2ZnbmIyT2VzQU9uUXpPSTNGLUN5bkE1Z3RpQzZCZlBiVG5vbFc0S3c4ZHJVeWUxblpPcjhpSFZLNG85ZEt5UmlwNW4yWnhtMDJZN1J4cVdMZHc0MEdIbTV5QVF3eUFFOHpVbWdId0hhSU1qdVJEMUU?oc=5",
+      "pub_date": "2026-06-16",
+      "publisher": "FDA",
+      "section_id": "fda",
+      "sig_type": "GENERAL",
+      "ai": "The FDA's letter regarding disruptions in the availability of breast biopsy needles indicates potential delays in diagnostic procedures for breast cancer patients, impacting timely access to necessary biopsies for accurate diagnosis and treatment planning."
+    },
+    {
+      "title": "Roche receives FDA approval for the first companion diagnostic to assess PTEN protein in people living with prostate cancer",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQdEZ1TktBQXpCRkx6NlZiaUdxWWtsQU5COHp2OXdDdUFZR0I4bC1fMGZXM2ZGSG5EYWh0cElZdEdobXh5WDBmelJtNXN5akg2S0dFOV9USVRPS244MHE4WGF0V2tNam1KeHM4cnVJbUxyS3VlYmx6V1p0SlBNQmJRdDBCRV9hbVppR0RPMnJpc0cydTZrVmRWbmxPVzZDUkZsNGpyclhWN0xJYjVnVXZoX3VMWWlEUTdWZkpadFhmUUpCazU4QjMzRmpfblBLWUVkN0hEdnVkN0hrel96VHNqMFNaU2U1WXB2TmVERDBsbFE1Q2NRZVE?oc=5",
+      "pub_date": "2026-06-15",
+      "publisher": "BioSpace",
+      "section_id": "biospace",
+      "sig_type": "APPROVED",
+      "ai": "Roche's FDA approval of the first companion diagnostic for assessing PTEN protein in prostate cancer means enhanced patient access to targeted therapies, improving treatment personalization and outcomes for individuals with this cancer type."
+    }
+  ]
+}
