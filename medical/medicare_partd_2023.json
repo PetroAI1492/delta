@@ -1,0 +1,154 @@
+{
+  "generated_at": "2026-06-21 12:37",
+  "data_year": 2023,
+  "total_spend_b": 275.92,
+  "top5_spend_b": 49.98,
+  "top20_spend_b": 97.8,
+  "glp1_diabetes_spend_b": 51.85,
+  "glp1_diabetes_pct_of_total": 18.8,
+  "glp1_diabetes_growth_2019_2023_pct": 126.5,
+  "cancer_drug_spend_b": 23.0,
+  "cancer_drug_pct_of_total": 8.3,
+  "top_drugs": [
+    {
+      "brand": "Eliquis",
+      "generic": "Apixaban",
+      "category": "Anticoagulant",
+      "spend_b": 18.27,
+      "growth_2019_2023_pct": 150.2
+    },
+    {
+      "brand": "Ozempic",
+      "generic": "Semaglutide",
+      "category": "GLP-1",
+      "spend_b": 9.19,
+      "growth_2019_2023_pct": 1564.4
+    },
+    {
+      "brand": "Jardiance",
+      "generic": "Empagliflozin",
+      "category": "SGLT-2 / Diabetes",
+      "spend_b": 8.84,
+      "growth_2019_2023_pct": 510.7
+    },
+    {
+      "brand": "Trulicity",
+      "generic": "Dulaglutide",
+      "category": "GLP-1",
+      "spend_b": 7.36,
+      "growth_2019_2023_pct": 224.0
+    },
+    {
+      "brand": "Xarelto",
+      "generic": "Rivaroxaban",
+      "category": "Anticoagulant",
+      "spend_b": 6.31,
+      "growth_2019_2023_pct": 54.8
+    },
+    {
+      "brand": "Trelegy Ellipta",
+      "generic": "Fluticasone/Umeclidin/Vilanter",
+      "category": "Other",
+      "spend_b": 4.46,
+      "growth_2019_2023_pct": 442.5
+    },
+    {
+      "brand": "Humira(Cf) Pen",
+      "generic": "Adalimumab",
+      "category": "Immunology",
+      "spend_b": 4.42,
+      "growth_2019_2023_pct": 266.6
+    },
+    {
+      "brand": "Farxiga",
+      "generic": "Dapagliflozin Propanediol",
+      "category": "SGLT-2 / Diabetes",
+      "spend_b": 4.34,
+      "growth_2019_2023_pct": 754.6
+    },
+    {
+      "brand": "Januvia",
+      "generic": "Sitagliptin Phosphate",
+      "category": "DPP-4 / Diabetes",
+      "spend_b": 4.09,
+      "growth_2019_2023_pct": 15.7
+    },
+    {
+      "brand": "Revlimid",
+      "generic": "Lenalidomide",
+      "category": "Cancer (Hematology)",
+      "spend_b": 3.86,
+      "growth_2019_2023_pct": -17.4
+    },
+    {
+      "brand": "Entresto",
+      "generic": "Sacubitril/Valsartan",
+      "category": "Other",
+      "spend_b": 3.43,
+      "growth_2019_2023_pct": 322.5
+    },
+    {
+      "brand": "Lantus Solostar",
+      "generic": "Insulin Glargine,Hum.Rec.Anlog",
+      "category": "Insulin",
+      "spend_b": 3.16,
+      "growth_2019_2023_pct": 26.5
+    },
+    {
+      "brand": "Biktarvy",
+      "generic": "Bictegrav/Emtricit/Tenofov Ala",
+      "category": "HIV Antiviral",
+      "spend_b": 3.15,
+      "growth_2019_2023_pct": 181.6
+    },
+    {
+      "brand": "Stelara*",
+      "generic": "Ustekinumab",
+      "category": "Immunology",
+      "spend_b": 2.99,
+      "growth_2019_2023_pct": 275.3
+    },
+    {
+      "brand": "Xtandi",
+      "generic": "Enzalutamide",
+      "category": "Cancer (Solid Tumor)",
+      "spend_b": 2.6,
+      "growth_2019_2023_pct": 83.1
+    },
+    {
+      "brand": "Myrbetriq",
+      "generic": "Mirabegron",
+      "category": "Other",
+      "spend_b": 2.51,
+      "growth_2019_2023_pct": 73.7
+    },
+    {
+      "brand": "Imbruvica",
+      "generic": "Ibrutinib",
+      "category": "Cancer (Hematology)",
+      "spend_b": 2.37,
+      "growth_2019_2023_pct": -2.8
+    },
+    {
+      "brand": "Mounjaro",
+      "generic": "Tirzepatide",
+      "category": "GLP-1",
+      "spend_b": 2.36,
+      "growth_2019_2023_pct": null
+    },
+    {
+      "brand": "Enbrel Sureclick",
+      "generic": "Etanercept",
+      "category": "Immunology",
+      "spend_b": 2.05,
+      "growth_2019_2023_pct": 59.1
+    },
+    {
+      "brand": "Ibrance",
+      "generic": "Palbociclib",
+      "category": "Cancer (Solid Tumor)",
+      "spend_b": 2.02,
+      "growth_2019_2023_pct": 10.7
+    }
+  ]
+}

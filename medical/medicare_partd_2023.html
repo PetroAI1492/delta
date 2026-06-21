@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medicare Part D Drug Spending — 2023</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1a1a; --ink-light: #4a4a4a; --ink-muted: #888;
+    --rule: #d4c5b0; --rule-heavy: #8b7355;
+    --bg: #faf8f4; --bg-alt: #f3f0ea;
+    --blue: #1a3a5c; --green: #1a6b3a; --red: #8b1a1a;
+  }
+  body { font-family: 'Source Serif 4', Georgia, serif; background: var(--bg); color: var(--ink); line-height: 1.5; }
+  .page { max-width: 980px; margin: 0 auto; padding: 0 24px 48px; }
+  .nameplate { border-top: 5px solid var(--ink); padding: 28px 0 20px; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--rule-heavy); }
+  .pub-name { font-size: 11px; font-weight: 700; letter-spacing: 0.20em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 4px; font-family: 'Playfair Display', serif; }
+  .headline { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 900; line-height: 1.1; }
+  .headline em { font-style: italic; color: var(--blue); }
+  .dateline { font-size: 11px; color: var(--ink-muted); margin-top: 8px; text-transform: uppercase; }
+  .badge { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; background: var(--blue); padding: 3px 10px; display: inline-block; }
+  .source-line { font-size: 11px; color: var(--ink-muted); text-align: right; line-height: 1.7; }
+  hr.heavy { border: none; border-top: 2px solid var(--rule-heavy); margin: 0; }
+  .intro { background: #eaf0f6; border-left: 4px solid var(--blue); padding: 16px 20px; margin: 20px 0; font-size: 13px; color: var(--ink-light); line-height: 1.75; }
+  .intro strong { color: var(--ink); }
+  .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 20px 0; }
+  .stat-box { background: var(--bg-alt); border: 1px solid var(--rule); padding: 16px; }
+  .stat-label { font-size: 9px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 6px; }
+  .stat-value { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 900; color: var(--ink); }
+  .stat-sub { font-size: 10px; color: var(--ink-muted); margin-top: 3px; }
+  .section-label { font-size: 10px; font-weight: 700; letter-spacing: 0.20em; text-transform: uppercase; color: var(--ink-muted); border-bottom: 1px solid var(--rule); padding-bottom: 6px; margin: 28px 0 0; }
+  .section-desc { font-size: 11px; color: var(--ink-muted); margin: 5px 0 10px; font-style: italic; }
+  .insight { font-size: 13px; color: #1a3a1a; background: #eaf3eb; border: 1px solid #7fb37f; border-left: 4px solid var(--green); padding: 10px 14px; margin: 8px 0 12px; line-height: 1.7; }
+  .warning { font-size: 13px; color: #5d1a1a; background: #f3eaea; border: 1px solid #b37f7f; border-left: 4px solid var(--red); padding: 10px 14px; margin: 8px 0 12px; line-height: 1.7; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 6px; }
+  thead tr { border-top: 2px solid var(--ink); border-bottom: 1px solid var(--ink); }
+  thead th { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); padding: 8px; text-align: right; white-space: nowrap; }
+  thead th:first-child { text-align: left; }
+  tbody tr { border-bottom: 1px solid var(--rule); }
+  tbody tr:hover { background: var(--bg-alt); }
+  tbody tr.alt { background: #f7f4ee; }
+  td { padding: 8px; }
+  td.rank { color: var(--ink-muted); font-size: 11px; text-align: center; width: 36px; }
+  td.drug-name { font-family: 'Source Serif 4', serif; width: 28%; }
+  td.amount { font-family: 'Source Code Pro', monospace; font-size: 12px; font-weight: 600; text-align: right; }
+  td.bar-col { width: 120px; padding: 8px 12px; }
+  td.chg { text-align: right; font-size: 11px; }
+  .legend { font-size: 10px; color: var(--ink-muted); margin: 4px 0 0; }
+  .footer { margin-top: 32px; padding-top: 14px; border-top: 2px solid var(--rule-heavy); font-size: 10px; color: var(--ink-muted); line-height: 1.85; }
+  .footer strong { color: var(--ink-light); }
+  @media (max-width: 640px) { .stat-grid { grid-template-columns: 1fr 1fr; } .headline { font-size: 22px; } .nameplate { flex-direction: column; } .bar-col { display: none; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="nameplate">
+    <div>
+      <div class="pub-name">Medicare Part D Drug Spending</div>
+      <h1 class="headline">The <em>Most Expensive</em> Drugs in Medicare</h1>
+      <div class="dateline">June 21, 2026 &nbsp;&middot;&nbsp; data.cms.gov &mdash; fetched 2026-06-21 12:37 UTC</div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;">
+      <div class="badge">CMS Official Data</div>
+      <div class="source-line" style="margin-top:6px;">data.cms.gov<br>Medicare Part D Spending by Drug<br>Calendar Year 2023</div>
+    </div>
+  </div>
+  <hr class="heavy">
+
+  <div class="intro">
+    <p><strong>What this report shows:</strong> The 20 drugs that cost Medicare
+    Part D the most in 2023 &mdash; ranked by total gross drug cost including
+    Medicare, plan, and beneficiary payments. Figures do not reflect manufacturer
+    rebates (CMS is prohibited from disclosing rebate amounts).</p>
+    <p><strong>Why Part D spending is surging:</strong> GLP-1 receptor agonists
+    &mdash; originally diabetes drugs, now widely used for weight loss &mdash; have
+    driven an extraordinary increase in Part D spending. Ozempic alone went from
+    $0.6B in 2019 to $9.2B in 2023, a 1,564% increase in four years. Medicare Part D
+    does not cover drugs prescribed solely for weight loss &mdash; only for
+    FDA-approved indications such as type 2 diabetes.</p>
+  </div>
+
+  <!-- Key stats -->
+  <div class="stat-grid">
+    <div class="stat-box">
+      <div class="stat-label">Total Part D Spending 2023</div>
+      <div class="stat-value">$275.92B</div>
+      <div class="stat-sub">All drugs, all beneficiaries</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">GLP-1 / Diabetes Drugs</div>
+      <div class="stat-value" style="color:var(--green);">$51.85B</div>
+      <div class="stat-sub">18.8% of total &nbsp;&middot;&nbsp; <span style="color:#1a6b3a">&#9650; +126.5%</span> vs 2019</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">Cancer Drugs</div>
+      <div class="stat-value" style="color:var(--red);">$23.00B</div>
+      <div class="stat-sub">8.3% of total &nbsp;&middot;&nbsp; 36 drugs identified</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">Top Drug: Eliquis</div>
+      <div class="stat-value" style="color:var(--blue);">$18.27B</div>
+      <div class="stat-sub">Blood thinner &nbsp;&middot;&nbsp; 3.93M beneficiaries</div>
+    </div>
+  </div>
+
+  <!-- Section 1: Top 20 -->
+  <div class="section-label">Top 20 Medicare Part D Drugs by Total Spending &mdash; 2023</div>
+  <div class="section-desc">Ranked by gross drug cost including Medicare, plan, and beneficiary payments &mdash; rebates not reflected</div>
+  <div class="insight">
+    &#9642; <strong>Spending concentration:</strong>
+    The top 5 drugs account for <strong>$49.98B</strong> &mdash;
+    <strong>18.1%</strong> of all Part D spending.
+    Five drugs drive nearly 1 in 5 Part D dollars.
+    The top 20 account for <strong>$97.80B</strong> &mdash;
+    <strong>35.4%</strong> of total Part D spending.
+  </div>
+  <div class="insight">
+    &#9642; <strong>Diabetes drugs dominate the growth story.</strong>
+    GLP-1, SGLT-2, DPP-4, and insulin drugs combined spent
+    <strong>$39.35B</strong>
+    among the top 20 alone. Ozempic (+1,564%), Jardiance (+511%), and Mounjaro (new in 2022)
+    reflect a fundamental shift in Medicare Part D&rsquo;s cost structure driven by
+    diabetes and weight-loss drug adoption.
+  </div>
+  <table>
+    <thead><tr>
+      <th style="text-align:center;">#</th>
+      <th style="text-align:left;">Drug</th>
+      <th style="text-align:left;">Category</th>
+      <th>2023 Spending</th>
+      <th></th>
+      <th>Beneficiaries</th>
+      <th>Cost/Beneficiary</th>
+      <th>Change vs 2019</th>
+    </tr></thead>
+    <tbody>
+        <tr class="">
+          <td class="rank">#1</td>
+          <td class="drug-name">
+            <strong>Eliquis</strong><br>
+            <span style="font-size:10px;color:#888;">Apixaban</span>
+          </td>
+          <td style="padding:8px;"><span style="font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1a3a5c;background:#1a3a5c18;padding:1px 6px;border-radius:2px;">Anticoagulant</span></td>
+          <td class="amount">$18.27B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#1a3a5c;width:100%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">3.93M</td>
+          <td class="amount" style="font-size:11px;color:var(--ink-muted);">$4,652</td>
+          <td class="chg"><span style="color:#1a6b3a">&#9650; +150.2%</span></td>
+        </tr>
+        <tr class="alt">
+          <td class="rank">#2</td>
+          <td class="drug-name">
+            <strong>Ozempic</strong><br>
+            <span style="font-size:10px;color:#888;">Semaglutide</span>
+          </td>
+          <td style="padding:8px;"><span style="font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1a6b3a;background:#1a6b3a18;padding:1px 6px;border-radius:2px;">GLP-1</span></td>
+          <td class="amount">$9.19B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#1a3a5c;width:50%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">1.46M</td>
+          <td class="amount" style="font-size:11px;color:var(--ink-muted);">$6,278</td>
+          <td class="chg"><span style="color:#1a6b3a">&#9650; +1564.4%</span></td>
+        </tr>
+        <tr class="">
+          <td class="rank">#3</td>
+          <td class="drug-name">
+            <strong>Jardiance</strong><br>
+            <span style="font-size:10px;color:#888;">Empagliflozin</span>
+          </td>
+          <td style="padding:8px;"><span style="font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#2e7d32;background:#2e7d3218;padding:1px 6px;border-radius:2px;">SGLT-2 / Diabetes</span></td>
+          <td class="amount">$8.84B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#1a3a5c;width:48%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">1.88M</td>
+          <td class="amount" style="font-size:11px;color:var(--ink-muted);">$4,695</td>
+          <td class="chg"><span style="color:#1a6b3a">&#9650; +510.7%</span></td>
+        </tr>
+        <tr class="alt">
+          <td class="rank">#4</td>
+          <td class="drug-name">
+            <strong>Trulicity</strong><br>
+            <span style="font-size:10px;color:#888;">Dulaglutide</span>
+          </td>
+          <td style="padding:8px;"><span style="font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1a6b3a;background:#1a6b3a18;padding:1px 6px;border-radius:2px;">GLP-1</span></td>
+          <td class="amount">$7.36B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#1a3a5c;width:40%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">939K</td>
+          <td class="amount" style="font-size:11px;color:var(--ink-muted);">$7,844</td>
+          <td class="chg"><span style="color:#1a6b3a">&#9650; +224.0%</span></td>
+        </tr>
+        <tr class="">
+          <td class="rank">#5</td>
+          <td class="drug-name">
+            <strong>Xarelto</strong><br>
+            <span style="font-size:10px;color:#888;">Rivaroxaban</span>
+          </td>
+          <td style="padding:8px;"><span style="font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1a3a5c;background:#1a3a5c18;padding:1px 6px;border-radius:2px;">Anticoagulant</span></td>
+          <td class="amount">$6.31B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#1a3a5c;width:34%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">1.32M</td>
+          <td class="amount" style="font-size:11px;color:var(--ink-muted);">$4,765</td>
+          <td class="chg"><span style="color:#1a6b3a">&#9650; +54.8%</span></td>
+        </tr>
+        <tr class="alt">
+          <td class="rank">#6</td>
+          <td class="drug-name">
+            <strong>Trelegy Ellipta</strong><br>
+            <span style="font-size:10px;color:#888;">Fluticasone/Umeclidin/Vilanter</span>
+          </td>
+          <td style="padding:8px;"><span style="font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#888;background:#88818;padding:1px 6px;border-radius:2px;">Other</span></td>
+          <td class="amount">$4.46B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#1a3a5c;width:24%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">1.05M</td>
+          <td class="amount" style="font-size:11px;color:var(--ink-muted);">$4,241</td>
+          <td class="chg"><span style="color:#1a6b3a">&#9650; +442.5%</span></td>
+        </tr>
+        <tr class="">
+          <td class="rank">#7</td>
+          <td class="drug-name">
+            <strong>Humira(Cf) Pen</strong><br>
+            <span style="font-size:10px;color:#888;">Adalimumab</span>
+          </td>
+          <td style="padding:8px;"><span style="font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#5d4000;background:#5d400018;padding:1px 6px;border-radius:2px;">Immunology</span></td>
+          <td class="amount">$4.42B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#1a3a5c;width:24%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">61K</td>
+          <td class="amount" style="font-size:11px;color:var(--ink-muted);">$71,898</td>
+          <td class="chg"><span style="color:#1a6b3a">&#9650; +266.6%</span></td>
+        </tr>
+        <tr class="alt">
+          <td class="rank">#8</td>
+          <td class="drug-name">
+            <strong>Farxiga</strong><br>
+            <span style="font-size:10px;color:#888;">Dapagliflozin Propanediol</span>
+          </td>
+          <td style="padding:8px;"><span style="font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#2e7d32;background:#2e7d3218;padding:1px 6px;border-radius:2px;">SGLT-2 / Diabetes</span></td>
+          <td class="amount">$4.34B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#1a3a5c;width:23%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">994K</td>
+          <td class="amount" style="font-size:11px;color:var(--ink-muted);">$4,369</td>
+          <td class="chg"><span style="color:#1a6b3a">&#9650; +754.6%</span></td>
+        </tr>
+        <tr class="">
+          <td class="rank">#9</td>
+          <td class="drug-name">
+            <strong>Januvia</strong><br>
+            <span style="font-size:10px;color:#888;">Sitagliptin Phosphate</span>
+          </td>
+          <td style="padding:8px;"><span style="font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#388e3c;background:#388e3c18;padding:1px 6px;border-radius:2px;">DPP-4 / Diabetes</span></td>
+          <td class="amount">$4.09B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#1a3a5c;width:22%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">843K</td>
+          <td class="amount" style="font-size:11px;color:var(--ink-muted);">$4,850</td>
+          <td class="chg"><span style="color:#1a6b3a">&#9650; +15.7%</span></td>
+        </tr>
+        <tr class="alt">
+          <td class="rank">#10</td>
+          <td class="drug-name">
+            <strong>Revlimid</strong><br>
+            <span style="font-size:10px;color:#888;">Lenalidomide</span>
+          </td>
+          <td style="padding:8px;"><span style="font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#8b1a1a;background:#8b1a1a18;padding:1px 6px;border-radius:2px;">Cancer (Hematology)</span></td>
+          <td class="amount">$3.86B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#1a3a5c;width:21%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">37K</td>
+          <td class="amount" style="font-size:11px;color:var(--ink-muted);">$104,412</td>
+          <td class="chg"><span style="color:#c41e3a">&#9660; 17.4%</span></td>
+        </tr>
+        <tr class="">
+          <td class="rank">#11</td>
+          <td class="drug-name">
+            <strong>Entresto</strong><br>
+            <span style="font-size:10px;color:#888;">Sacubitril/Valsartan</span>
+          </td>
+          <td style="padding:8px;"><span style="font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#888;background:#88818;padding:1px 6px;border-radius:2px;">Other</span></td>
+          <td class="amount">$3.43B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#1a3a5c;width:18%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">664K</td>
+          <td class="amount" style="font-size:11px;color:var(--ink-muted);">$5,170</td>
+          <td class="chg"><span style="color:#1a6b3a">&#9650; +322.5%</span></td>
+        </tr>
+        <tr class="alt">
+          <td class="rank">#12</td>
+          <td class="drug-name">
+            <strong>Lantus Solostar</strong><br>
+            <span style="font-size:10px;color:#888;">Insulin Glargine,Hum.Rec.Anlog</span>
+          </td>
+          <td style="padding:8px;"><span style="font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#43a047;background:#43a04718;padding:1px 6px;border-radius:2px;">Insulin</span></td>
+          <td class="amount">$3.16B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#1a3a5c;width:17%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">1.20M</td>
+          <td class="amount" style="font-size:11px;color:var(--ink-muted);">$2,635</td>
+          <td class="chg"><span style="color:#1a6b3a">&#9650; +26.5%</span></td>
+        </tr>
+        <tr class="">
+          <td class="rank">#13</td>
+          <td class="drug-name">
+            <strong>Biktarvy</strong><br>
+            <span style="font-size:10px;color:#888;">Bictegrav/Emtricit/Tenofov Ala</span>
+          </td>
+          <td style="padding:8px;"><span style="font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#6a1a6a;background:#6a1a6a18;padding:1px 6px;border-radius:2px;">HIV Antiviral</span></td>
+          <td class="amount">$3.15B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#1a3a5c;width:17%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">84K</td>
+          <td class="amount" style="font-size:11px;color:var(--ink-muted);">$37,597</td>
+          <td class="chg"><span style="color:#1a6b3a">&#9650; +181.6%</span></td>
+        </tr>
+        <tr class="alt">
+          <td class="rank">#14</td>
+          <td class="drug-name">
+            <strong>Stelara*</strong><br>
+            <span style="font-size:10px;color:#888;">Ustekinumab</span>
+          </td>
+          <td style="padding:8px;"><span style="font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#5d4000;background:#5d400018;padding:1px 6px;border-radius:2px;">Immunology</span></td>
+          <td class="amount">$2.99B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#1a3a5c;width:16%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">23K</td>
+          <td class="amount" style="font-size:11px;color:var(--ink-muted);">$130,300</td>
+          <td class="chg"><span style="color:#1a6b3a">&#9650; +275.3%</span></td>
+        </tr>
+        <tr class="">
+          <td class="rank">#15</td>
+          <td class="drug-name">
+            <strong>Xtandi</strong><br>
+            <span style="font-size:10px;color:#888;">Enzalutamide</span>
+          </td>
+          <td style="padding:8px;"><span style="font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#a52020;background:#a5202018;padding:1px 6px;border-radius:2px;">Cancer (Solid Tumor)</span></td>
+          <td class="amount">$2.60B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#1a3a5c;width:14%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">29K</td>
+          <td class="amount" style="font-size:11px;color:var(--ink-muted);">$90,778</td>
+          <td class="chg"><span style="color:#1a6b3a">&#9650; +83.1%</span></td>
+        </tr>
+        <tr class="alt">
+          <td class="rank">#16</td>
+          <td class="drug-name">
+            <strong>Myrbetriq</strong><br>
+            <span style="font-size:10px;color:#888;">Mirabegron</span>
+          </td>
+          <td style="padding:8px;"><span style="font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#888;background:#88818;padding:1px 6px;border-radius:2px;">Other</span></td>
+          <td class="amount">$2.51B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#1a3a5c;width:13%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">770K</td>
+          <td class="amount" style="font-size:11px;color:var(--ink-muted);">$3,260</td>
+          <td class="chg"><span style="color:#1a6b3a">&#9650; +73.7%</span></td>
+        </tr>
+        <tr class="">
+          <td class="rank">#17</td>
+          <td class="drug-name">
+            <strong>Imbruvica</strong><br>
+            <span style="font-size:10px;color:#888;">Ibrutinib</span>
+          </td>
+          <td style="padding:8px;"><span style="font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#8b1a1a;background:#8b1a1a18;padding:1px 6px;border-radius:2px;">Cancer (Hematology)</span></td>
+          <td class="amount">$2.37B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#1a3a5c;width:12%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">17K</td>
+          <td class="amount" style="font-size:11px;color:var(--ink-muted);">$138,707</td>
+          <td class="chg"><span style="color:#c41e3a">&#9660; 2.8%</span></td>
+        </tr>
+        <tr class="alt">
+          <td class="rank">#18</td>
+          <td class="drug-name">
+            <strong>Mounjaro</strong><br>
+            <span style="font-size:10px;color:#888;">Tirzepatide</span>
+          </td>
+          <td style="padding:8px;"><span style="font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1a6b3a;background:#1a6b3a18;padding:1px 6px;border-radius:2px;">GLP-1</span></td>
+          <td class="amount">$2.36B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#1a3a5c;width:12%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">370K</td>
+          <td class="amount" style="font-size:11px;color:var(--ink-muted);">$6,379</td>
+          <td class="chg"><span style="color:#888">New</span></td>
+        </tr>
+        <tr class="">
+          <td class="rank">#19</td>
+          <td class="drug-name">
+            <strong>Enbrel Sureclick</strong><br>
+            <span style="font-size:10px;color:#888;">Etanercept</span>
+          </td>
+          <td style="padding:8px;"><span style="font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#5d4000;background:#5d400018;padding:1px 6px;border-radius:2px;">Immunology</span></td>
+          <td class="amount">$2.05B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#1a3a5c;width:11%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">34K</td>
+          <td class="amount" style="font-size:11px;color:var(--ink-muted);">$59,931</td>
+          <td class="chg"><span style="color:#1a6b3a">&#9650; +59.1%</span></td>
+        </tr>
+        <tr class="alt">
+          <td class="rank">#20</td>
+          <td class="drug-name">
+            <strong>Ibrance</strong><br>
+            <span style="font-size:10px;color:#888;">Palbociclib</span>
+          </td>
+          <td style="padding:8px;"><span style="font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#a52020;background:#a5202018;padding:1px 6px;border-radius:2px;">Cancer (Solid Tumor)</span></td>
+          <td class="amount">$2.02B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#1a3a5c;width:11%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">16K</td>
+          <td class="amount" style="font-size:11px;color:var(--ink-muted);">$126,188</td>
+          <td class="chg"><span style="color:#1a6b3a">&#9650; +10.7%</span></td>
+        </tr></tbody>
+  </table>
+  <div class="legend">
+    Gross drug cost &middot; Rebates not reflected &middot;
+    Cost/Beneficiary = annual gross cost per Part D enrollee using this drug &middot;
+    Change = 2023 vs 2019 &middot; &ldquo;New&rdquo; = drug not available in 2019 &middot;
+    Other = cardiovascular, respiratory, urologic, and other drugs not in primary classes shown
+  </div>
+
+  <!-- Section 2: 5-year trend -->
+  <div class="section-label">5-Year Spending Trend &mdash; Top 10 Drugs (2019&ndash;2023, $B)</div>
+  <div class="section-desc">How spending has shifted for the 10 highest-cost drugs</div>
+  <table>
+    <thead><tr>
+      <th style="text-align:left;">Drug</th>
+      <th>2019</th><th>2020</th><th>2021</th><th>2022</th><th>2023</th>
+      <th>Change 2019&rarr;2023</th>
+    </tr></thead>
+    <tbody>
+        <tr class="">
+          <td style="padding:6px 8px;font-size:12px;">
+            <strong style="color:#1a3a5c;">Eliquis</strong>
+          </td>
+          <td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$7.30B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$9.94B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$12.58B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$15.22B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;font-weight:700;">$18.27B</td>
+          <td style="text-align:right;padding:6px 8px;"><span style="color:#1a6b3a">&#9650; +150.2%</span></td>
+        </tr>
+        <tr class="alt">
+          <td style="padding:6px 8px;font-size:12px;">
+            <strong style="color:#1a3a5c;">Ozempic</strong>
+          </td>
+          <td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$552M</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$1.46B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$2.62B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$4.63B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;font-weight:700;">$9.19B</td>
+          <td style="text-align:right;padding:6px 8px;"><span style="color:#1a6b3a">&#9650; +1564.4%</span></td>
+        </tr>
+        <tr class="">
+          <td style="padding:6px 8px;font-size:12px;">
+            <strong style="color:#1a3a5c;">Jardiance</strong>
+          </td>
+          <td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$1.45B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$2.38B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$3.74B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$5.85B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;font-weight:700;">$8.84B</td>
+          <td style="text-align:right;padding:6px 8px;"><span style="color:#1a6b3a">&#9650; +510.7%</span></td>
+        </tr>
+        <tr class="alt">
+          <td style="padding:6px 8px;font-size:12px;">
+            <strong style="color:#1a3a5c;">Trulicity</strong>
+          </td>
+          <td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$2.27B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$3.28B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$4.70B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$6.23B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;font-weight:700;">$7.36B</td>
+          <td style="text-align:right;padding:6px 8px;"><span style="color:#1a6b3a">&#9650; +224.0%</span></td>
+        </tr>
+        <tr class="">
+          <td style="padding:6px 8px;font-size:12px;">
+            <strong style="color:#1a3a5c;">Xarelto</strong>
+          </td>
+          <td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$4.08B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$4.70B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$5.23B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$5.77B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;font-weight:700;">$6.31B</td>
+          <td style="text-align:right;padding:6px 8px;"><span style="color:#1a6b3a">&#9650; +54.8%</span></td>
+        </tr>
+        <tr class="alt">
+          <td style="padding:6px 8px;font-size:12px;">
+            <strong style="color:#1a3a5c;">Trelegy Ellipta</strong>
+          </td>
+          <td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$821M</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$1.49B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$2.39B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$3.34B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;font-weight:700;">$4.46B</td>
+          <td style="text-align:right;padding:6px 8px;"><span style="color:#1a6b3a">&#9650; +442.5%</span></td>
+        </tr>
+        <tr class="">
+          <td style="padding:6px 8px;font-size:12px;">
+            <strong style="color:#1a3a5c;">Humira(Cf) Pen</strong>
+          </td>
+          <td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$1.21B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$2.17B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$2.91B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$3.69B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;font-weight:700;">$4.42B</td>
+          <td style="text-align:right;padding:6px 8px;"><span style="color:#1a6b3a">&#9650; +266.6%</span></td>
+        </tr>
+        <tr class="alt">
+          <td style="padding:6px 8px;font-size:12px;">
+            <strong style="color:#1a3a5c;">Farxiga</strong>
+          </td>
+          <td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$508M</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$737M</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$1.42B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$2.58B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;font-weight:700;">$4.34B</td>
+          <td style="text-align:right;padding:6px 8px;"><span style="color:#1a6b3a">&#9650; +754.6%</span></td>
+        </tr>
+        <tr class="">
+          <td style="padding:6px 8px;font-size:12px;">
+            <strong style="color:#1a3a5c;">Januvia</strong>
+          </td>
+          <td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$3.54B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$3.87B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$4.06B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$4.10B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;font-weight:700;">$4.09B</td>
+          <td style="text-align:right;padding:6px 8px;"><span style="color:#1a6b3a">&#9650; +15.7%</span></td>
+        </tr>
+        <tr class="alt">
+          <td style="padding:6px 8px;font-size:12px;">
+            <strong style="color:#1a3a5c;">Revlimid</strong>
+          </td>
+          <td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$4.67B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$5.36B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$5.89B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;">$5.94B</td><td style="text-align:right;padding:6px 8px;font-family:monospace;font-size:11px;font-weight:700;">$3.86B</td>
+          <td style="text-align:right;padding:6px 8px;"><span style="color:#c41e3a">&#9660; 17.4%</span></td>
+        </tr></tbody>
+  </table>
+
+  <!-- Section 3: Cancer drugs -->
+  <div class="section-label">Cancer Drugs in Medicare Part D &mdash; 2023</div>
+  <div class="section-desc">Oncology and hematology drugs ranked by Part D spending</div>
+  <div class="warning">
+    &#9888; <strong>Cancer drug spending context:</strong>
+    Cancer drugs in Part D are typically self-administered oral medications.
+    Many high-cost infused cancer drugs (chemotherapy given in clinics)
+    are billed under Medicare Part B, not Part D, and do not appear here.
+    This list reflects oral/self-administered cancer drugs only.
+  </div>
+  <table>
+    <thead><tr>
+      <th style="text-align:center;">#</th>
+      <th style="text-align:left;">Drug</th>
+      <th>2023 Spending</th>
+      <th></th>
+      <th>Beneficiaries</th>
+      <th>Change vs 2019</th>
+    </tr></thead>
+    <tbody>
+        <tr class="">
+          <td class="rank">#1</td>
+          <td class="drug-name">
+            <strong>Revlimid</strong><br>
+            <span style="font-size:10px;color:#888;">Lenalidomide</span>
+          </td>
+          <td class="amount">$3.86B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#8b1a1a;width:100%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">37K</td>
+          <td class="chg"><span style="color:#c41e3a">&#9660; 17.4%</span></td>
+        </tr>
+        <tr class="alt">
+          <td class="rank">#2</td>
+          <td class="drug-name">
+            <strong>Xtandi</strong><br>
+            <span style="font-size:10px;color:#888;">Enzalutamide</span>
+          </td>
+          <td class="amount">$2.60B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#8b1a1a;width:67%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">29K</td>
+          <td class="chg"><span style="color:#1a6b3a">&#9650; +83.1%</span></td>
+        </tr>
+        <tr class="">
+          <td class="rank">#3</td>
+          <td class="drug-name">
+            <strong>Imbruvica</strong><br>
+            <span style="font-size:10px;color:#888;">Ibrutinib</span>
+          </td>
+          <td class="amount">$2.37B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#8b1a1a;width:61%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">17K</td>
+          <td class="chg"><span style="color:#c41e3a">&#9660; 2.8%</span></td>
+        </tr>
+        <tr class="alt">
+          <td class="rank">#4</td>
+          <td class="drug-name">
+            <strong>Ibrance</strong><br>
+            <span style="font-size:10px;color:#888;">Palbociclib</span>
+          </td>
+          <td class="amount">$2.02B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#8b1a1a;width:52%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">16K</td>
+          <td class="chg"><span style="color:#1a6b3a">&#9650; +10.7%</span></td>
+        </tr>
+        <tr class="">
+          <td class="rank">#5</td>
+          <td class="drug-name">
+            <strong>Jakafi</strong><br>
+            <span style="font-size:10px;color:#888;">Ruxolitinib Phosphate</span>
+          </td>
+          <td class="amount">$1.94B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#8b1a1a;width:50%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">14K</td>
+          <td class="chg"><span style="color:#1a6b3a">&#9650; +72.5%</span></td>
+        </tr>
+        <tr class="alt">
+          <td class="rank">#6</td>
+          <td class="drug-name">
+            <strong>Pomalyst</strong><br>
+            <span style="font-size:10px;color:#888;">Pomalidomide</span>
+          </td>
+          <td class="amount">$1.71B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#8b1a1a;width:44%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">13K</td>
+          <td class="chg"><span style="color:#1a6b3a">&#9650; +43.4%</span></td>
+        </tr>
+        <tr class="">
+          <td class="rank">#7</td>
+          <td class="drug-name">
+            <strong>Calquence</strong><br>
+            <span style="font-size:10px;color:#888;">Acalabrutinib Maleate</span>
+          </td>
+          <td class="amount">$1.29B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#8b1a1a;width:33%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">12K</td>
+          <td class="chg"><span style="color:#888">New</span></td>
+        </tr>
+        <tr class="alt">
+          <td class="rank">#8</td>
+          <td class="drug-name">
+            <strong>Tagrisso</strong><br>
+            <span style="font-size:10px;color:#888;">Osimertinib Mesylate</span>
+          </td>
+          <td class="amount">$1.23B</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#8b1a1a;width:31%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">9K</td>
+          <td class="chg"><span style="color:#1a6b3a">&#9650; +92.3%</span></td>
+        </tr>
+        <tr class="">
+          <td class="rank">#9</td>
+          <td class="drug-name">
+            <strong>Abiraterone Acetate</strong><br>
+            <span style="font-size:10px;color:#888;">Abiraterone Acetate</span>
+          </td>
+          <td class="amount">$877M</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#8b1a1a;width:22%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">46K</td>
+          <td class="chg"><span style="color:#1a6b3a">&#9650; +211.7%</span></td>
+        </tr>
+        <tr class="alt">
+          <td class="rank">#10</td>
+          <td class="drug-name">
+            <strong>Venclexta</strong><br>
+            <span style="font-size:10px;color:#888;">Venetoclax</span>
+          </td>
+          <td class="amount">$815M</td>
+          <td class="bar-col"><div style="background:#e8e4dc;border-radius:2px;height:8px;"><div style="background:#8b1a1a;width:21%;height:8px;border-radius:2px;"></div></div></td>
+          <td class="amount">19K</td>
+          <td class="chg"><span style="color:#1a6b3a">&#9650; +137.7%</span></td>
+        </tr></tbody>
+  </table>
+
+  <div class="footer">
+    <strong>Data source:</strong>
+    CMS Medicare Part D Spending by Drug dataset &mdash;
+    data.cms.gov, dataset UUID 7e0b4365-fd63-4a29-8f5e-e0ac9f66a81b<br>
+    <strong>Coverage:</strong>
+    Calendar year 2023 &middot; Gross drug cost (Medicare + plan + beneficiary payments) &middot;
+    Manufacturer rebates not reflected &middot; "Overall" rows only (excludes manufacturer-level detail)<br>
+    <strong>GLP-1 / Cancer classification:</strong>
+    Drugs classified by brand name matching against known therapeutic categories.
+    Classification is indicative, not clinical. Some drugs treat multiple conditions.<br>
+    <strong>Not affiliated with CMS or HHS.</strong>
+    Compiled by Randy Hinton &nbsp;&middot;&nbsp;
+    &copy; 2026 Randy Hinton &nbsp;&middot;&nbsp;
+    CC BY 4.0 &nbsp;&middot;&nbsp;
+    Not medical or investment advice &nbsp;&middot;&nbsp;
+    Generated June 21, 2026
+  </div>
+
+</div>
+</body>
+</html>
