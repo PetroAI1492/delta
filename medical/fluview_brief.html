@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FluView Brief — 2026-06-06</title>
+<style>
+    @page { size: Letter; margin: 0.6in; }
+    body { background:#FFFFFF; color:#1A1A1A;
+            font-family: Calibri, Arial, sans-serif;
+            font-size:10.5pt; line-height:1.45; margin:0; padding:0; }
+    .page { max-width:7.3in; margin:0 auto; }
+    .report-header { border-bottom:3px solid #003366;
+                      padding-bottom:10px; margin-bottom:18px; }
+    h1 { font-size:22pt; font-weight:600; color:#003366; margin:0 0 3px 0; }
+    .meta { color:#666666; font-size:8.5pt; }
+
+    /* KPI grid */
+    .kpi-section { background:#F5F7FA; border-left:4px solid #003366;
+                    padding:14px; margin-bottom:18px; }
+    .kpi-section h2 { font-size:11pt; color:#003366; margin:0 0 12px 0;
+                       text-transform:uppercase; letter-spacing:0.5px; }
+    .kpi-grid { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:12px; }
+    .kpi-card { background:#FFFFFF; border:1px solid #D1D5DB; padding:10px; }
+    .kpi-label { font-size:8pt; color:#6B7280; text-transform:uppercase;
+                  letter-spacing:0.3px; margin-bottom:3px; }
+    .kpi-value { font-size:20pt; font-weight:700; color:#1A1A1A;
+                  line-height:1.1; margin-bottom:3px; }
+    .kpi-sub   { font-size:8pt; color:#9CA3AF; margin-bottom:4px; }
+    .kpi-badge { font-size:9pt; margin-bottom:3px; }
+    .kpi-pctl  { font-size:8pt; color:#4B5563; margin-top:3px; }
+
+    /* Activity note */
+    .act-note { padding:10px 14px; margin-bottom:18px;
+                 border-left:4px solid #059669;
+                 background:#DCFCE7;
+                 font-size:9.5pt; line-height:1.5; }
+
+    /* Tables */
+    .block { margin-bottom:20px; }
+    .section-title { font-size:11pt; font-weight:600; color:#003366;
+                      margin:0 0 4px 0; padding-bottom:5px;
+                      border-bottom:2px solid #E5E7EB; }
+    .section-subtitle { font-size:9pt; color:#6B7280; margin:0 0 8px 0; }
+    table { width:100%; border-collapse:collapse; font-size:9.5pt;
+             table-layout:fixed; }
+    thead { background:#F3F4F6; }
+    th { color:#374151; font-weight:600; text-align:left;
+          padding:7px 10px; border-bottom:2px solid #D1D5DB;
+          white-space:nowrap; }
+    td { padding:6px 10px; border-bottom:1px solid #E5E7EB;
+          white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    td:nth-child(2),td:nth-child(3),td:nth-child(4),
+    td:nth-child(5),td:nth-child(6) { text-align:right; }
+    tbody tr:nth-child(even) { background:#FAFAFA; }
+    .period { font-family:'Consolas','Courier New',monospace;
+               font-size:8.5pt; color:#6B7280; }
+
+    /* Two-col layout */
+    .two-col { display:table; width:100%; margin-bottom:20px; }
+    .two-col-left  { display:table-cell; width:55%; vertical-align:top;
+                      padding-right:14px; }
+    .two-col-right { display:table-cell; width:45%; vertical-align:top;
+                      padding-left:14px; }
+
+    /* Footer */
+    .footer { margin-top:28px; padding-top:14px;
+               border-top:1px solid #9CA3AF;
+               font-size:7pt; color:#6B7280; line-height:1.4; }
+    .footer-sources,.footer-disclaimer { margin-bottom:6px; text-align:justify; }
+    .footer-legal { display:flex; justify-content:space-between;
+                     padding-top:6px; border-top:1px solid #E5E7EB;
+                     font-weight:600; color:#4B5563; }
+    @media print { .page { margin:0; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- Header -->
+<div class="report-header">
+    <h1>FluView ILI Surveillance Brief</h1>
+    <div class="meta">
+        Week ending: 2026-06-06 &nbsp;|&nbsp;
+        Season: 2025-26 &nbsp;|&nbsp;
+        Generated: 2026-06-21 12:16 &nbsp;|&nbsp;
+        Source: CDC FluView / Delphi CMU Epidata via Thor Storehouse
+    </div>
+</div>
+
+<!-- KPI Cards -->
+<div class="kpi-section">
+    <h2>At a Glance</h2>
+    <div class="kpi-grid">
+        
+        <div class="kpi-card">
+            <div class="kpi-label">National wILI — 2025-26</div>
+            <div class="kpi-value">1.4%</div>
+            <div class="kpi-sub">Baseline: 3.1%</div>
+            <div class="kpi-badge"><span style="background:#DCFCE7;color:#059669;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">LOW</span></div>
+            <div class="kpi-pctl"><span style="color:#6B7280;">30th</span> %ile 10Y</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">Week-over-Week Change</div>
+            <div class="kpi-value">-0.17%</div>
+            <div class="kpi-sub">4-week avg: 1.8%</div>
+            <div class="kpi-badge"><span style="color:#059669;font-weight:600;">↓</span></div>
+            <div class="kpi-pctl"><span style="color:#9CA3AF;">N/A</span> %ile 10Y</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">Weeks Above Baseline</div>
+            <div class="kpi-value">15</div>
+            <div class="kpi-sub">Season 2025-26</div>
+            <div class="kpi-badge"><span style="background:#F3F4F6;color:#003366;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">THIS SEASON</span></div>
+            <div class="kpi-pctl"><span style="color:#9CA3AF;">N/A</span> %ile 10Y</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">Season Peak wILI</div>
+            <div class="kpi-value">8.3%</div>
+            <div class="kpi-sub">Week of 2025-12-27</div>
+            <div class="kpi-badge"><span style="background:#FEE2E2;color:#DC2626;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">PEAK</span></div>
+            <div class="kpi-pctl"><span style="color:#DC2626;font-weight:600;">100th</span> %ile 10Y</div>
+        </div>
+    </div>
+</div>
+
+<!-- Activity Note -->
+<div class="act-note">
+    <strong>Activity Status:</strong> National ILI activity is <b>LOW</b> at 1.4% — below the national baseline of 3.1%. Flu season activity is winding down. <span style='font-weight:400;color:#6B7280;font-size:8.5pt;'>ILI captures outpatient visits for fever + cough/sore throat — not laboratory-confirmed influenza. RSV, COVID, and other respiratory pathogens may contribute to the reported percentage.</span>
+</div>
+
+<!-- Virologic Surveillance -->
+
+    <div class="block">
+        <div class="section-title">Virologic Surveillance</div>
+        <div class="section-subtitle">
+            Laboratory-confirmed influenza from NREVSS clinical labs &nbsp;|&nbsp;
+            National only &nbsp;|&nbsp; Source: CDC FluView Clinical
+        </div>
+        <div style="font-size:8pt;color:#6B7280;margin-bottom:6px;font-style:italic;">
+            &#9432; Unlike ILI (syndromic), these figures reflect laboratory-confirmed
+            influenza specimens. Confirms whether elevated ILI is driven by actual
+            influenza or other respiratory pathogens.
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width:35%">Signal</th>
+                    <th style="width:15%;text-align:right">Latest</th>
+                    <th style="width:15%;text-align:right">WoW</th>
+                    <th style="width:15%;text-align:right">10Y %ile</th>
+                    <th style="width:20%;text-align:right">Note</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="font-weight:600;">
+                    <td>% Specimens Positive (any flu)</td>
+                    <td>0.9%</td>
+                    <td><span style="color:#059669;font-weight:600;">-0.5%</span></td>
+                    <td><span style="color:#6B7280;">27th</span></td>
+                    <td style="font-size:8pt;color:#6B7280;">Lab-confirmed</td>
+                </tr>
+                <tr>
+                    <td>% Positive — Influenza A</td>
+                    <td>0.3%</td>
+                    <td><span style="color:#059669;font-weight:600;">-0.1%</span></td>
+                    <td><span style="color:#059669;font-weight:600;">16th</span></td>
+                    <td style="font-size:8pt;color:#6B7280;">Flu A</td>
+                </tr>
+                <tr>
+                    <td>% Positive — Influenza B</td>
+                    <td>0.6%</td>
+                    <td><span style="color:#059669;font-weight:600;">-0.4%</span></td>
+                    <td><span style="color:#6B7280;">56th</span></td>
+                    <td style="font-size:8pt;color:#6B7280;">Flu B</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+<!-- Regional ILI Table -->
+<div class="block">
+    <div class="section-title">ILI Activity by HHS Region</div>
+    <div class="section-subtitle">
+        Weighted ILI % vs 2025-26 regional baselines &nbsp;|&nbsp;
+        Percentiles vs trailing 10-year history &nbsp;|&nbsp;
+        Source: ILINet
+    </div>
+    <div style="font-size:8pt;color:#6B7280;margin-bottom:6px;font-style:italic;">
+        &#9432; Regions within 0.2 percentage points of their baseline are statistically
+        near baseline — small margins may reflect normal weekly variation rather than
+        meaningful activity differences. Covers outpatient visits only; does not include
+        emergency department or hospitalization data.
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th style="width:28%">Region</th>
+                <th style="width:9%;text-align:right">wILI%</th>
+                <th style="width:9%;text-align:right">Baseline</th>
+                <th style="width:10%;text-align:right">vs Base</th>
+                <th style="width:6%;text-align:right">Trend</th>
+                <th style="width:9%;text-align:right">10Y %ile</th>
+                <th style="width:16%;text-align:right">Status</th>
+                <th style="width:13%;text-align:right">Period</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr style="font-weight:600;background:#F0F4FF;">
+                <td>National</td>
+                <td>1.4%</td>
+                <td>3.1%</td>
+                <td><span style="color:#059669;font-weight:600;">-1.71%</span></td>
+                <td><span style="color:#059669;font-weight:600;">↓</span></td>
+                <td><span style="color:#6B7280;">30th</span></td>
+                <td><span style="background:#DCFCE7;color:#059669;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">LOW</span></td>
+                <td class="period">2026-06-06</td>
+            </tr>
+            <tr style="">
+                <td>Region 1 — New England</td>
+                <td>0.9%</td>
+                <td>2.2%</td>
+                <td><span style="color:#059669;font-weight:600;">-1.33%</span></td>
+                <td><span style="color:#059669;font-weight:600;">↓</span></td>
+                <td><span style="color:#6B7280;">32nd</span></td>
+                <td><span style="background:#DCFCE7;color:#059669;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">LOW</span></td>
+                <td class="period">2026-06-06</td>
+            </tr>
+            <tr style="">
+                <td>Region 2 — NY/NJ</td>
+                <td>2.0%</td>
+                <td>4.5%</td>
+                <td><span style="color:#059669;font-weight:600;">-2.47%</span></td>
+                <td><span style="color:#059669;font-weight:600;">↓</span></td>
+                <td><span style="color:#6B7280;">33rd</span></td>
+                <td><span style="background:#DCFCE7;color:#059669;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">LOW</span></td>
+                <td class="period">2026-06-06</td>
+            </tr>
+            <tr style="">
+                <td>Region 3 — Mid-Atlantic</td>
+                <td>1.1%</td>
+                <td>2.7%</td>
+                <td><span style="color:#059669;font-weight:600;">-1.58%</span></td>
+                <td><span style="color:#059669;font-weight:600;">↓</span></td>
+                <td><span style="color:#6B7280;">31st</span></td>
+                <td><span style="background:#DCFCE7;color:#059669;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">LOW</span></td>
+                <td class="period">2026-06-06</td>
+            </tr>
+            <tr style="">
+                <td>Region 4 — Southeast</td>
+                <td>1.4%</td>
+                <td>2.8%</td>
+                <td><span style="color:#059669;font-weight:600;">-1.38%</span></td>
+                <td><span style="color:#059669;font-weight:600;">↓</span></td>
+                <td><span style="color:#6B7280;">26th</span></td>
+                <td><span style="background:#DCFCE7;color:#059669;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">LOW</span></td>
+                <td class="period">2026-06-06</td>
+            </tr>
+            <tr style="">
+                <td>Region 5 — Midwest</td>
+                <td>0.8%</td>
+                <td>2.5%</td>
+                <td><span style="color:#059669;font-weight:600;">-1.71%</span></td>
+                <td><span style="color:#059669;font-weight:600;">↓</span></td>
+                <td><span style="color:#6B7280;">21st</span></td>
+                <td><span style="background:#DCFCE7;color:#059669;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">LOW</span></td>
+                <td class="period">2026-06-06</td>
+            </tr>
+            <tr style="">
+                <td>Region 6 — South Central</td>
+                <td>1.4%</td>
+                <td>3.8%</td>
+                <td><span style="color:#059669;font-weight:600;">-2.41%</span></td>
+                <td><span style="color:#059669;font-weight:600;">↓</span></td>
+                <td><span style="color:#059669;font-weight:600;">16th</span></td>
+                <td><span style="background:#DCFCE7;color:#059669;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">LOW</span></td>
+                <td class="period">2026-06-06</td>
+            </tr>
+            <tr style="">
+                <td>Region 7 — Great Plains</td>
+                <td>0.6%</td>
+                <td>2.3%</td>
+                <td><span style="color:#059669;font-weight:600;">-1.72%</span></td>
+                <td><span style="color:#059669;font-weight:600;">↓</span></td>
+                <td><span style="color:#059669;font-weight:600;">18th</span></td>
+                <td><span style="background:#DCFCE7;color:#059669;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">LOW</span></td>
+                <td class="period">2026-06-06</td>
+            </tr>
+            <tr style="">
+                <td>Region 8 — Rocky Mountain</td>
+                <td>1.1%</td>
+                <td>2.1%</td>
+                <td><span style="color:#059669;font-weight:600;">-0.98%</span></td>
+                <td><span style="color:#6B7280;">→</span></td>
+                <td><span style="color:#6B7280;">38th</span></td>
+                <td><span style="background:#DCFCE7;color:#059669;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">LOW</span></td>
+                <td class="period">2026-06-06</td>
+            </tr>
+            <tr style="">
+                <td>Region 9 — West</td>
+                <td>2.3%</td>
+                <td>2.6%</td>
+                <td><span style="color:#059669;font-weight:600;">-0.30%</span></td>
+                <td><span style="color:#059669;font-weight:600;">↓</span></td>
+                <td><span style="color:#6B7280;">58th</span></td>
+                <td><span style="background:#F3F4F6;color:#6B7280;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">NEAR BASELINE</span></td>
+                <td class="period">2026-06-06</td>
+            </tr>
+            <tr style="">
+                <td>Region 10 — Pacific Northwest</td>
+                <td>1.0%</td>
+                <td>2.4%</td>
+                <td><span style="color:#059669;font-weight:600;">-1.42%</span></td>
+                <td><span style="color:#059669;font-weight:600;">↓</span></td>
+                <td><span style="color:#6B7280;">42nd</span></td>
+                <td><span style="background:#DCFCE7;color:#059669;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">LOW</span></td>
+                <td class="period">2026-06-06</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Two-column: history + season comparison -->
+<div class="two-col">
+    <div class="two-col-left">
+        <div class="block">
+            <div class="section-title">National wILI — 20-Week History</div>
+            <div class="section-subtitle">
+                National weighted ILI % vs 3.1% baseline
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:30%">Week Ending</th>
+                        <th style="width:20%;text-align:right">wILI%</th>
+                        <th style="width:22%;text-align:right">vs Baseline</th>
+                        <th style="width:28%;text-align:right">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+            <tr>
+                <td class="period">2026-06-06</td>
+                <td>1.4%</td>
+                <td style="color:#059669;font-weight:600;">-1.71%</td>
+                <td><span style="background:#DCFCE7;color:#059669;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">LOW</span></td>
+            </tr>
+            <tr>
+                <td class="period">2026-05-30</td>
+                <td>1.6%</td>
+                <td style="color:#059669;font-weight:600;">-1.53%</td>
+                <td><span style="background:#DCFCE7;color:#059669;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">LOW</span></td>
+            </tr>
+            <tr>
+                <td class="period">2026-05-23</td>
+                <td>1.6%</td>
+                <td style="color:#059669;font-weight:600;">-1.52%</td>
+                <td><span style="background:#DCFCE7;color:#059669;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">LOW</span></td>
+            </tr>
+            <tr>
+                <td class="period">2026-05-16</td>
+                <td>1.7%</td>
+                <td style="color:#059669;font-weight:600;">-1.35%</td>
+                <td><span style="background:#DCFCE7;color:#059669;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">LOW</span></td>
+            </tr>
+            <tr>
+                <td class="period">2026-05-09</td>
+                <td>1.8%</td>
+                <td style="color:#059669;font-weight:600;">-1.34%</td>
+                <td><span style="background:#DCFCE7;color:#059669;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">LOW</span></td>
+            </tr>
+            <tr>
+                <td class="period">2026-05-02</td>
+                <td>1.8%</td>
+                <td style="color:#059669;font-weight:600;">-1.34%</td>
+                <td><span style="background:#DCFCE7;color:#059669;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">LOW</span></td>
+            </tr>
+            <tr>
+                <td class="period">2026-04-25</td>
+                <td>1.8%</td>
+                <td style="color:#059669;font-weight:600;">-1.28%</td>
+                <td><span style="background:#DCFCE7;color:#059669;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">LOW</span></td>
+            </tr>
+            <tr>
+                <td class="period">2026-04-18</td>
+                <td>1.9%</td>
+                <td style="color:#059669;font-weight:600;">-1.22%</td>
+                <td><span style="background:#DCFCE7;color:#059669;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">LOW</span></td>
+            </tr>
+            <tr>
+                <td class="period">2026-04-11</td>
+                <td>2.1%</td>
+                <td style="color:#059669;font-weight:600;">-1.01%</td>
+                <td><span style="background:#DCFCE7;color:#059669;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">LOW</span></td>
+            </tr>
+            <tr>
+                <td class="period">2026-04-04</td>
+                <td>2.4%</td>
+                <td style="color:#059669;font-weight:600;">-0.73%</td>
+                <td><span style="background:#F3F4F6;color:#6B7280;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">NEAR BASELINE</span></td>
+            </tr>
+            <tr>
+                <td class="period">2026-03-28</td>
+                <td>2.7%</td>
+                <td style="color:#059669;font-weight:600;">-0.44%</td>
+                <td><span style="background:#F3F4F6;color:#6B7280;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">NEAR BASELINE</span></td>
+            </tr>
+            <tr>
+                <td class="period">2026-03-21</td>
+                <td>2.9%</td>
+                <td style="color:#059669;font-weight:600;">-0.20%</td>
+                <td><span style="background:#F3F4F6;color:#6B7280;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">NEAR BASELINE</span></td>
+            </tr>
+            <tr>
+                <td class="period">2026-03-14</td>
+                <td>3.3%</td>
+                <td style="color:#DC2626;font-weight:600;">+0.17%</td>
+                <td><span style="background:#FFF9C4;color:#F59E0B;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">ABOVE BASELINE</span></td>
+            </tr>
+            <tr>
+                <td class="period">2026-03-07</td>
+                <td>3.7%</td>
+                <td style="color:#DC2626;font-weight:600;">+0.61%</td>
+                <td><span style="background:#FFF9C4;color:#F59E0B;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">ABOVE BASELINE</span></td>
+            </tr>
+            <tr>
+                <td class="period">2026-02-28</td>
+                <td>3.9%</td>
+                <td style="color:#DC2626;font-weight:600;">+0.77%</td>
+                <td><span style="background:#FFF9C4;color:#F59E0B;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">ABOVE BASELINE</span></td>
+            </tr>
+            <tr>
+                <td class="period">2026-02-21</td>
+                <td>4.4%</td>
+                <td style="color:#DC2626;font-weight:600;">+1.32%</td>
+                <td><span style="background:#FFF9C4;color:#F59E0B;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">ABOVE BASELINE</span></td>
+            </tr>
+            <tr>
+                <td class="period">2026-02-14</td>
+                <td>4.6%</td>
+                <td style="color:#DC2626;font-weight:600;">+1.47%</td>
+                <td><span style="background:#FFF9C4;color:#F59E0B;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">ABOVE BASELINE</span></td>
+            </tr>
+            <tr>
+                <td class="period">2026-02-07</td>
+                <td>4.6%</td>
+                <td style="color:#DC2626;font-weight:600;">+1.51%</td>
+                <td><span style="background:#FFF9C4;color:#F59E0B;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">ABOVE BASELINE</span></td>
+            </tr>
+            <tr>
+                <td class="period">2026-01-31</td>
+                <td>4.4%</td>
+                <td style="color:#DC2626;font-weight:600;">+1.33%</td>
+                <td><span style="background:#FFF9C4;color:#F59E0B;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">ABOVE BASELINE</span></td>
+            </tr>
+            <tr>
+                <td class="period">2026-01-24</td>
+                <td>4.7%</td>
+                <td style="color:#DC2626;font-weight:600;">+1.63%</td>
+                <td><span style="background:#FEF3C7;color:#D97706;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">ELEVATED</span></td>
+            </tr></tbody>
+            </table>
+        </div>
+    </div>
+    <div class="two-col-right">
+        <div class="block">
+            <div class="section-title">Season Comparison</div>
+            <div class="section-subtitle">
+                Same week: current vs prior 3 seasons
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:22%">Season</th>
+                        <th style="width:18%;text-align:right">wILI%</th>
+                        <th style="width:18%;text-align:right">Baseline</th>
+                        <th style="width:18%;text-align:right">vs Base</th>
+                        <th style="width:24%;text-align:right">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+        <tr style="font-weight:600;background:#F0F4FF;">
+            <td>2025-26 (current)</td>
+            <td>1.4%</td>
+            <td>3.1%</td>
+            <td><span style="color:#059669;font-weight:600;">-1.71%</span></td>
+            <td><span style="background:#DCFCE7;color:#059669;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">LOW</span></td>
+        </tr>
+            <tr>
+                <td>2024-25</td>
+                <td>1.6%</td>
+                <td>3.1%</td>
+                <td><span style="color:#059669;font-weight:600;">-1.50%</span></td>
+                <td><span style="background:#DCFCE7;color:#059669;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">LOW</span></td>
+            </tr>
+            <tr>
+                <td>2023-24</td>
+                <td>1.7%</td>
+                <td>3.1%</td>
+                <td><span style="color:#059669;font-weight:600;">-1.44%</span></td>
+                <td><span style="background:#DCFCE7;color:#059669;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">LOW</span></td>
+            </tr>
+            <tr>
+                <td>2022-23</td>
+                <td>1.6%</td>
+                <td>3.1%</td>
+                <td><span style="color:#059669;font-weight:600;">-1.52%</span></td>
+                <td><span style="background:#DCFCE7;color:#059669;padding:2px 8px;border-radius:3px;font-size:8pt;font-weight:600;">LOW</span></td>
+            </tr></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <div class="footer-sources">
+        <strong>Data Sources:</strong>
+        Influenza-like illness (ILI) surveillance data sourced from the U.S. Outpatient
+        Influenza-like Illness Surveillance Network (ILINet) via the Delphi CMU Epidata API
+        (api.delphi.cmu.edu/epidata/fluview) and stored in the Thor Storehouse
+        (source: 'fluview'). ILI is defined as fever (&ge;100&deg;F) plus cough and/or
+        sore throat. Weighted ILI (wILI) is state-population-weighted to produce a
+        representative regional and national estimate. Data is updated weekly by CDC
+        on Fridays after 11 AM ET. All data are preliminary and subject to revision.
+        Baselines for the 2025-26 season published by CDC FluView.
+        Percentiles computed against trailing 10-year weekly history.
+    </div>
+    <div class="footer-disclaimer">
+        <strong>Disclaimer:</strong>
+        All numerical values originate from deterministic, timestamped sources
+        (CDC FluView / ILINet). No AI-generated content. ILI is a syndromic
+        definition — it captures visits for flu-like symptoms regardless of
+        laboratory confirmation and may include other respiratory pathogens.
+        This report is for informational purposes only and does not constitute
+        medical advice. Data subject to CDC revision.
+    </div>
+    <div class="footer-legal">
+        <span>&copy; 2026 Randy Hinton. All rights reserved.</span>
+        <span>FluView ILI Surveillance Brief | 2026-06-21</span>
+    </div>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-06-21 12:16",
+  "as_of": "2026-06-06",
+  "season_label": "2025-26",
+  "nat_wili": 1.39229,
+  "nat_baseline": 3.1,
+  "nat_wow": -0.17,
+  "nat_pctl": 30,
+  "nat_status": "LOW",
+  "weeks_above_baseline": 15,
+  "season_peak_value": 8.28045,
+  "season_peak_period": "2025-12-27",
+  "pct_positive": 0.878793,
+  "pct_positive_wow": -0.5,
+  "pct_a": 0.258664,
+  "pct_b": 0.620129,
+  "has_virology": true,
+  "prior_seasons": [
+    [
+      "2024-25",
+      1.6042
+    ],
+    [
+      "2023-24",
+      1.66065
+    ],
+    [
+      "2022-23",
+      1.57748
+    ]
+  ]
+}
