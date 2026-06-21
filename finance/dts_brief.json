@@ -1,0 +1,314 @@
+{
+  "generated_at": "2026-06-21 14:53",
+  "report_date": "2026-06-17",
+  "as_of": "2026-06-17",
+  "tga_close_bil": 956.5,
+  "tga_open_bil": 981.1,
+  "tga_net_daily_bil": -24.6,
+  "tga_wow_bil": 112.3,
+  "tga_30d_avg_daily_bil": 2.2,
+  "tga_slope_days": 42,
+  "tga_yoy_bil": 409.1,
+  "tga_yoy_chg_bil": 547.4,
+  "threshold_bil": 500,
+  "days_to_threshold": null,
+  "deposits_bil": 26.1,
+  "withdrawals_bil": 50.7,
+  "net_flow_bil": -24.6,
+  "dep_7d_avg_bil": 169.6,
+  "dep_vs_7d_avg_pct": -84.6,
+  "dep_7d_total_bil": 1187.2,
+  "dep_yoy_bil": 206.4,
+  "wit_7d_avg_bil": 147.4,
+  "wit_vs_7d_avg_pct": -65.6,
+  "wit_7d_total_bil": 1031.6,
+  "debt_pub_bil": 31643.3,
+  "debt_ig_bil": 7639.7,
+  "total_debt_bil": 39283.1,
+  "debt_limit_bil": 41104.0,
+  "headroom_bil": 1820.9,
+  "debt_weekly_growth_bil": 47.2,
+  "debt_weekly_growth_stdev_bil": 29.0,
+  "weeks_to_limit": 38,
+  "debt_yoy_chg_bil": 2758.5,
+  "tga_pct_of_limit": 2.3,
+  "tga_history": [
+    [
+      "2026-06-17",
+      956.5
+    ],
+    [
+      "2026-06-16",
+      981.1
+    ],
+    [
+      "2026-06-15",
+      979.8
+    ],
+    [
+      "2026-06-12",
+      816.0
+    ],
+    [
+      "2026-06-11",
+      799.5
+    ],
+    [
+      "2026-06-10",
+      801.1
+    ],
+    [
+      "2026-06-09",
+      830.4
+    ],
+    [
+      "2026-06-08",
+      844.2
+    ],
+    [
+      "2026-06-05",
+      825.5
+    ],
+    [
+      "2026-06-04",
+      844.5
+    ],
+    [
+      "2026-06-03",
+      845.7
+    ],
+    [
+      "2026-06-02",
+      866.1
+    ],
+    [
+      "2026-06-01",
+      856.8
+    ],
+    [
+      "2026-05-29",
+      903.9
+    ],
+    [
+      "2026-05-28",
+      849.7
+    ],
+    [
+      "2026-05-27",
+      842.7
+    ],
+    [
+      "2026-05-26",
+      881.3
+    ],
+    [
+      "2026-05-22",
+      825.5
+    ],
+    [
+      "2026-05-21",
+      785.9
+    ],
+    [
+      "2026-05-20",
+      782.0
+    ],
+    [
+      "2026-05-19",
+      822.3
+    ],
+    [
+      "2026-05-18",
+      785.9
+    ],
+    [
+      "2026-05-15",
+      758.8
+    ],
+    [
+      "2026-05-14",
+      802.4
+    ],
+    [
+      "2026-05-13",
+      807.4
+    ],
+    [
+      "2026-05-12",
+      844.0
+    ],
+    [
+      "2026-05-11",
+      854.6
+    ],
+    [
+      "2026-05-08",
+      839.2
+    ],
+    [
+      "2026-05-07",
+      846.6
+    ],
+    [
+      "2026-05-06",
+      862.8
+    ]
+  ],
+  "dep_history": [
+    [
+      "2026-06-17",
+      26.1
+    ],
+    [
+      "2026-06-16",
+      271.4
+    ],
+    [
+      "2026-06-15",
+      234.5
+    ],
+    [
+      "2026-06-12",
+      46.7
+    ],
+    [
+      "2026-06-11",
+      321.5
+    ],
+    [
+      "2026-06-10",
+      27.2
+    ],
+    [
+      "2026-06-09",
+      247.5
+    ],
+    [
+      "2026-06-08",
+      38.3
+    ],
+    [
+      "2026-06-05",
+      15.6
+    ],
+    [
+      "2026-06-04",
+      266.1
+    ],
+    [
+      "2026-06-03",
+      24.7
+    ],
+    [
+      "2026-06-02",
+      263.3
+    ],
+    [
+      "2026-06-01",
+      280.3
+    ],
+    [
+      "2026-05-29",
+      68.3
+    ]
+  ],
+  "wit_history": [
+    [
+      "2026-06-17",
+      50.7
+    ],
+    [
+      "2026-06-16",
+      270.1
+    ],
+    [
+      "2026-06-15",
+      70.8
+    ],
+    [
+      "2026-06-12",
+      30.2
+    ],
+    [
+      "2026-06-11",
+      323.1
+    ],
+    [
+      "2026-06-10",
+      56.5
+    ],
+    [
+      "2026-06-09",
+      261.3
+    ],
+    [
+      "2026-06-08",
+      19.6
+    ],
+    [
+      "2026-06-05",
+      34.6
+    ],
+    [
+      "2026-06-04",
+      267.3
+    ],
+    [
+      "2026-06-03",
+      45.1
+    ],
+    [
+      "2026-06-02",
+      254.0
+    ],
+    [
+      "2026-06-01",
+      327.3
+    ],
+    [
+      "2026-05-29",
+      14.1
+    ]
+  ],
+  "walcl_bil": 6736.4,
+  "walcl_wow_bil": 11.0,
+  "walcl_dt": "2026-06-17",
+  "wtregen_bil": 880.7,
+  "wtregen_wow_bil": 52.6,
+  "wtregen_dt": "2026-06-17",
+  "liq_score": -1,
+  "liq_label": "TIGHTENING",
+  "liq_color": "#D97706",
+  "liq_signals": {
+    "tga": -1,
+    "reserves": -1,
+    "rrp": 1,
+    "fed_bs": 0
+  },
+  "reserves_bil": 3033.4,
+  "reserves_wow_bil": -47.3,
+  "reserves_dt": "2026-06-17",
+  "rrp_bil": 0.3,
+  "rrp_wow_bil": -6.6,
+  "rrp_dt": "2026-06-18",
+  "sofr_pct": 3.63,
+  "sofr_chg_bps": 0.0,
+  "sofr_dt": "2026-06-17",
+  "dgs2_pct": 4.2,
+  "dgs2_wow_bps": 5.0,
+  "dgs2_dt": "2026-06-17",
+  "dgs10_pct": 4.49,
+  "dgs10_wow_bps": -7.0,
+  "dgs10_dt": "2026-06-17",
+  "t10y2y_pct": 0.27,
+  "t10y2y_bps": 27.0,
+  "t10y3m_pct": 0.63,
+  "t10y3m_bps": 63.0,
+  "dfii10_pct": 2.23,
+  "t10yie_pct": 2.25,
+  "vix": 18.44,
+  "vix_wow": -0.48,
+  "vix_30d_avg": 17.53,
+  "vix_dt": "2026-06-17",
+  "narrative": "The Treasury General Account closed at $956.5B, versus an opening balance of $981.1B, for a net daily change of -$24.6B. On a week-over-week basis, the TGA increased by $112.3B. A year ago the TGA stood at $409.1B, leaving the current balance $547.4B above that prior-year level.\n\nTotal deposits for the day were $26.1B against withdrawals of $50.7B, producing a net flow of -$24.6B. Deposits were well below the 7-day average (-84.6%), compared to a 7-day rolling average of $169.6B. Withdrawals were well below the 7-day average (-65.6%), relative to a 7-day average of $147.4B. Over the prior 7 trading days (excluding today), cumulative deposits totaled $1,187.2B versus withdrawals of $1,031.6B, a net flow of +$155.6B.\n\nTotal debt outstanding stands at $39,283.1B, comprising $31,643.3B held by the public and $7,639.7B in intragovernmental holdings. Remaining headroom under the statutory limit of $41,104.0B is $1,820.9B. At the current average weekly growth rate of $47.2B, the limit would be reached in approximately 38 weeks. Weekly debt growth has been volatile, with a standard deviation of $29.0B against the 38-week average. Debt held by the public is $2,758.5B higher than one year ago.\n\nThe TGA has been rising at an average of $2.2B per day over the past 42 calendar days, draining reserves from the banking system at that pace. The current TGA balance of $956.5B represents 2.3% of the statutory debt limit. Continued accumulation at this rate would sustain reserve drain until issuance patterns or spending shift.\n\nReserve balances held at the Federal Reserve stood at $3,033.4B, down $47.3B week-over-week. The Federal Reserve balance sheet stood at $6,736.4B, up $11.0B week-over-week. Overnight reverse repo (RRP) usage was $0.3B, down $6.6B day-over-day, a low level that indicates money funds are deploying cash into markets. SOFR fixed at 3.630%, down 0.0 bps day-over-day. The composite Liquidity Score is -1/4 (TIGHTENING), driven by TGA accumulation draining reserves, falling reserve balances.\n\nThe 2-year Treasury yielded 4.200% (\u25b25bps WoW) and the 10-year yielded 4.490% (\u25bc7bps WoW). The 2s10s curve was +27bps (normal). The 10Y-3M spread, the Fed's preferred recession indicator, stood at +63bps (normal). The 10-year real yield was 2.23% with breakeven inflation at 2.25%. VIX closed at 18.44, down 0.48 week-over-week, signaling low stress vs. a 30-day average of 17.5."
+}
