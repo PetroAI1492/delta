@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-22 16:45",
+  "generated_at": "2026-06-22 16:55",
   "session": "AFTER HOURS",
   "signals": [
     {
@@ -21,23 +21,31 @@
     {
       "label": "DOLLAR",
       "state": "STABLE"
+    },
+    {
+      "label": "CURVE +83bps",
+      "state": "NORMAL"
+    },
+    {
+      "label": "WTI-BRENT",
+      "state": "$-3.94"
     }
   ],
   "quotes": {
     "ES=F": {
-      "price": 7541.25,
+      "price": 7541.75,
       "prior_close": 7516.0,
       "chg_pct": 0.34
     },
     "NQ=F": {
-      "price": 30652.0,
+      "price": 30654.25,
       "prior_close": 30355.75,
       "chg_pct": 0.98
     },
     "YM=F": {
-      "price": 52160.0,
+      "price": 52179.0,
       "prior_close": 51760.0,
-      "chg_pct": 0.77
+      "chg_pct": 0.81
     },
     "^VIX": {
       "price": 17.280000686645508,
@@ -54,35 +62,40 @@
       "prior_close": 4.224999904632568,
       "chg_pct": 1.47
     },
+    "^IRX": {
+      "price": 3.679999828338623,
+      "prior_close": 3.6580002307891846,
+      "chg_pct": 0.6
+    },
     "CL=F": {
-      "price": 74.0199966430664,
+      "price": 74.02999877929688,
       "prior_close": 77.68000030517578,
-      "chg_pct": -4.71
+      "chg_pct": -4.7
     },
     "BZ=F": {
-      "price": 77.93000030517578,
+      "price": 77.97000122070312,
       "prior_close": 81.5999984741211,
-      "chg_pct": -4.5
+      "chg_pct": -4.45
     },
     "NG=F": {
-      "price": 3.2679998874664307,
+      "price": 3.2690000534057617,
       "prior_close": 3.197999954223633,
-      "chg_pct": 2.19
+      "chg_pct": 2.22
     },
     "GC=F": {
-      "price": 4209.2001953125,
+      "price": 4211.2998046875,
       "prior_close": 4157.0,
-      "chg_pct": 1.26
+      "chg_pct": 1.31
     },
     "DX-Y.NYB": {
-      "price": 101.01200103759766,
+      "price": 101.01799774169922,
       "prior_close": 100.85199737548828,
       "chg_pct": 0.16
     },
     "BTC-USD": {
-      "price": 64391.19921875,
+      "price": 64366.19921875,
       "prior_close": 63240.73828125,
-      "chg_pct": 1.82
+      "chg_pct": 1.78
     }
   }
 }
