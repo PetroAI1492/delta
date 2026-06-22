@@ -1,0 +1,91 @@
+{
+  "generated_at": "2026-06-22 06:30",
+  "as_of": "2026-06-18",
+  "curve": {
+    "3-Month": {
+      "label": "3-Month",
+      "tenor": 0.25,
+      "level": 3.6580002307891846,
+      "period": "2026-06-18",
+      "source": "yfinance",
+      "d1": 1.1,
+      "d7": 3.5,
+      "d365": -56.5,
+      "pctl": 37
+    },
+    "2-Year": {
+      "label": "2-Year",
+      "tenor": 2.0,
+      "level": 4.2,
+      "period": "2026-06-17",
+      "source": "fred",
+      "d1": 0.0,
+      "d7": 15.0,
+      "d365": 26.0,
+      "pctl": 64
+    },
+    "5-Year": {
+      "label": "5-Year",
+      "tenor": 5.0,
+      "level": 4.224999904632568,
+      "period": "2026-06-18",
+      "source": "yfinance",
+      "d1": -0.4,
+      "d7": 3.5,
+      "d365": 23.2,
+      "pctl": 79
+    },
+    "10-Year": {
+      "label": "10-Year",
+      "tenor": 10.0,
+      "level": 4.450999736785889,
+      "period": "2026-06-18",
+      "source": "yfinance",
+      "d1": -1.2,
+      "d7": -1.2,
+      "d365": 5.4,
+      "pctl": 88
+    },
+    "30-Year": {
+      "label": "30-Year",
+      "tenor": 30.0,
+      "level": 4.901000022888184,
+      "period": "2026-06-18",
+      "source": "yfinance",
+      "d1": -2.5,
+      "d7": -5.0,
+      "d365": 0.6,
+      "pctl": 91
+    }
+  },
+  "spreads": {
+    "T10Y2Y": {
+      "label": "10Y - 2Y Spread",
+      "level": 0.27,
+      "period": "2026-06-18",
+      "d1": -2.0,
+      "d7": -13.0,
+      "d365": -17.0,
+      "pctl": 56
+    },
+    "T10Y3M": {
+      "label": "10Y - 3M Spread",
+      "level": 0.63,
+      "period": "2026-06-18",
+      "d1": -3.0,
+      "d7": -4.0,
+      "d365": 67.0,
+      "pctl": 75
+    },
+    "DFII10": {
+      "label": "10Y Real Yield",
+      "level": 2.23,
+      "period": "2026-06-17",
+      "d1": 0.0,
+      "d7": 7.0,
+      "d365": 16.0,
+      "pctl": 96
+    }
+  },
+  "breakeven_10y": 2.22
+}
