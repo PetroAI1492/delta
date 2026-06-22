@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-22T10:36:00Z",
+  "generated": "2026-06-22T12:06:15Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -53,7 +53,8 @@
         "live energy"
       ],
       "id": "energy_tripwire",
-      "path": "https://petroai1492.github.io/delta/index.html"
+      "path": "https://petroai1492.github.io/delta/index.html",
+      "last_generated": null
     },
     {
       "title": "Iran Gas Report",
@@ -1835,7 +1836,8 @@
         "COVID spending spike"
       ],
       "id": "u_s_government_financial_report",
-      "path": "https://petroai1492.github.io/delta/finance/fed_financial_report.html"
+      "path": "https://petroai1492.github.io/delta/finance/fed_financial_report.html",
+      "last_generated": null
     },
     {
       "title": "Disaster Cross-Reference Report",
@@ -1883,7 +1885,8 @@
         "disaster cross reference"
       ],
       "id": "disaster_cross_reference_report",
-      "path": "https://petroai1492.github.io/delta/finance/disaster/disaster_report.html"
+      "path": "https://petroai1492.github.io/delta/finance/disaster/disaster_report.html",
+      "last_generated": null
     },
     {
       "title": "Cyber KEV Market Signals Report",
@@ -1933,7 +1936,8 @@
         "CISA exploited vulnerabilities market"
       ],
       "id": "cyber_kev_market_signals_report",
-      "path": "https://petroai1492.github.io/delta/finance/cyber/cyber_report.html"
+      "path": "https://petroai1492.github.io/delta/finance/cyber/cyber_report.html",
+      "last_generated": null
     },
     {
       "title": "Cancer Early Detection Signal Report",
@@ -4837,6 +4841,387 @@
       "id": "yield_curve_brief",
       "path": "https://petroai1492.github.io/delta/federal/yield_curve_brief.pdf",
       "last_generated": "2026-06-22 06:30"
+    },
+    {
+      "title": "NCI Cancer Grant Awards Report",
+      "file": "medical/nci_awards_fy2024.html",
+      "json_file": "medical/nci_awards_fy2024.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/medical/nci_awards_fy2024.html`",
+      "auto_published": true,
+      "primary_domain": "Health",
+      "secondary_domains": [
+        "Federal",
+        "Finance"
+      ],
+      "entities": [
+        "NCI",
+        "NIH",
+        "USASpending.gov",
+        "Fred Hutchinson Cancer Center",
+        "Dana-Farber Cancer Institute",
+        "Johns Hopkins University",
+        "MD Anderson Cancer Center",
+        "St. Jude Children's Research Hospital"
+      ],
+      "data_sources": [
+        "api.usaspending.gov \u2014 NCI CFDA programs 93.393\u201393.398 (live API",
+        "no AI)"
+      ],
+      "update_frequency": "Annual (USASpending.gov data release, run with --fy flag)",
+      "key_signals": [
+        "FY2024 total NCI obligations $2.9B across 5 programs",
+        "Cancer Treatment largest at $872M",
+        "Cancer Centers Support $604M",
+        "Cancer Cause & Prevention $725M",
+        "top recipient Fred Hutchinson $526M",
+        "Dana-Farber $455M",
+        "Johns Hopkins $401M",
+        "California #1 state $472M",
+        "49 states funded",
+        "top 20 recipients and state distribution"
+      ],
+      "intent_phrases": [
+        {
+          "keyword": "cancer",
+          "weight": 10
+        },
+        {
+          "keyword": "nci",
+          "weight": 9
+        },
+        {
+          "keyword": "fred hutchinson cancer center",
+          "weight": 9
+        },
+        {
+          "keyword": "dana-farber cancer institute",
+          "weight": 9
+        },
+        {
+          "keyword": "cancer research",
+          "weight": 9
+        },
+        {
+          "keyword": "cancer funding",
+          "weight": 9
+        },
+        {
+          "keyword": "cancer research funding",
+          "weight": 8
+        },
+        {
+          "keyword": "grant",
+          "weight": 8
+        },
+        {
+          "keyword": "awards",
+          "weight": 8
+        },
+        {
+          "keyword": "johns hopkins university",
+          "weight": 8
+        },
+        {
+          "keyword": "cancer awards",
+          "weight": 8
+        },
+        {
+          "keyword": "cancer grants",
+          "weight": 8
+        },
+        {
+          "keyword": "oncology",
+          "weight": 7
+        },
+        {
+          "keyword": "research",
+          "weight": 7
+        },
+        {
+          "keyword": "mayo clinic",
+          "weight": 7
+        },
+        {
+          "keyword": "st jude children's research hospital",
+          "weight": 7
+        },
+        {
+          "keyword": "oncology funding",
+          "weight": 7
+        },
+        {
+          "keyword": "cancer research institutions",
+          "weight": 7
+        },
+        {
+          "keyword": "cancer treatment funding",
+          "weight": 6
+        },
+        {
+          "keyword": "funding",
+          "weight": 6
+        },
+        {
+          "keyword": "health",
+          "weight": 6
+        },
+        {
+          "keyword": "california",
+          "weight": 6
+        },
+        {
+          "keyword": "new york",
+          "weight": 6
+        },
+        {
+          "keyword": "university of california",
+          "weight": 6
+        },
+        {
+          "keyword": "ecog-acrin",
+          "weight": 6
+        },
+        {
+          "keyword": "sloan-kettering",
+          "weight": 6
+        },
+        {
+          "keyword": "research funding",
+          "weight": 6
+        },
+        {
+          "keyword": "medical research",
+          "weight": 6
+        },
+        {
+          "keyword": "cancer centers",
+          "weight": 6
+        },
+        {
+          "keyword": "cancer treatment",
+          "weight": 6
+        },
+        {
+          "keyword": "research grants",
+          "weight": 6
+        },
+        {
+          "keyword": "research awards",
+          "weight": 6
+        },
+        {
+          "keyword": "oncology research",
+          "weight": 6
+        },
+        {
+          "keyword": "NCI grants",
+          "weight": 5
+        },
+        {
+          "keyword": "NCI awards",
+          "weight": 5
+        },
+        {
+          "keyword": "cancer grant",
+          "weight": 5
+        },
+        {
+          "keyword": "NIH cancer funding",
+          "weight": 5
+        },
+        {
+          "keyword": "cancer research budget",
+          "weight": 5
+        },
+        {
+          "keyword": "NCI budget",
+          "weight": 5
+        },
+        {
+          "keyword": "cancer center funding",
+          "weight": 5
+        },
+        {
+          "keyword": "Fred Hutchinson",
+          "weight": 5
+        },
+        {
+          "keyword": "Dana-Farber",
+          "weight": 5
+        },
+        {
+          "keyword": "MD Anderson",
+          "weight": 5
+        },
+        {
+          "keyword": "St. Jude",
+          "weight": 5
+        },
+        {
+          "keyword": "USASpending cancer",
+          "weight": 5
+        },
+        {
+          "keyword": "federal cancer funding",
+          "weight": 5
+        },
+        {
+          "keyword": "NCI obligations",
+          "weight": 5
+        },
+        {
+          "keyword": "usa spending",
+          "weight": 5
+        },
+        {
+          "keyword": "texas",
+          "weight": 5
+        },
+        {
+          "keyword": "massachusetts",
+          "weight": 5
+        },
+        {
+          "keyword": "icahn school of medicine",
+          "weight": 5
+        },
+        {
+          "keyword": "nrg oncology",
+          "weight": 5
+        },
+        {
+          "keyword": "university of southern california",
+          "weight": 5
+        },
+        {
+          "keyword": "university of pittsburgh",
+          "weight": 5
+        },
+        {
+          "keyword": "top recipients",
+          "weight": 5
+        },
+        {
+          "keyword": "top states",
+          "weight": 5
+        },
+        {
+          "keyword": "healthcare",
+          "weight": 5
+        },
+        {
+          "keyword": "federal grants",
+          "weight": 5
+        },
+        {
+          "keyword": "public health",
+          "weight": 5
+        },
+        {
+          "keyword": "research institutions",
+          "weight": 5
+        },
+        {
+          "keyword": "cancer initiatives",
+          "weight": 5
+        },
+        {
+          "keyword": "cancer organizations",
+          "weight": 5
+        },
+        {
+          "keyword": "medical funding",
+          "weight": 5
+        },
+        {
+          "keyword": "federal funding",
+          "weight": 5
+        },
+        {
+          "keyword": "cancer programs",
+          "weight": 5
+        },
+        {
+          "keyword": "health research",
+          "weight": 5
+        },
+        {
+          "keyword": "cancer care",
+          "weight": 5
+        },
+        {
+          "keyword": "pennsylvania",
+          "weight": 4
+        },
+        {
+          "keyword": "north carolina",
+          "weight": 4
+        },
+        {
+          "keyword": "fiscal year 2024",
+          "weight": 4
+        },
+        {
+          "keyword": "funding amount",
+          "weight": 4
+        },
+        {
+          "keyword": "medical institutions",
+          "weight": 4
+        },
+        {
+          "keyword": "funding distribution",
+          "weight": 4
+        },
+        {
+          "keyword": "health metrics",
+          "weight": 4
+        },
+        {
+          "keyword": "health statistics",
+          "weight": 4
+        },
+        {
+          "keyword": "cancer statistics",
+          "weight": 4
+        },
+        {
+          "keyword": "health agencies",
+          "weight": 4
+        },
+        {
+          "keyword": "health funding",
+          "weight": 4
+        },
+        {
+          "keyword": "cancer research metrics",
+          "weight": 4
+        },
+        {
+          "keyword": "cancer funding sources",
+          "weight": 4
+        },
+        {
+          "keyword": "cancer epidemiology",
+          "weight": 3
+        },
+        {
+          "keyword": "cancer policy",
+          "weight": 3
+        },
+        {
+          "keyword": "cancer awareness",
+          "weight": 3
+        },
+        {
+          "keyword": "cancer prevention",
+          "weight": 3
+        }
+      ],
+      "id": "nci_cancer_grant_awards_report",
+      "path": "https://petroai1492.github.io/delta/medical/nci_awards_fy2024.html",
+      "last_generated": "2026-06-22 07:59"
     }
   ],
   "cross_domain_matrix": [
