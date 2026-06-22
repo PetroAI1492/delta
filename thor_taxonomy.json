@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-22T17:06:55Z",
+  "generated": "2026-06-22T17:27:44Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -5720,6 +5720,401 @@
       "id": "market_watch",
       "path": "https://petroai1492.github.io/delta/finance/market_watch.html",
       "last_generated": "2026-06-22 13:04"
+    },
+    {
+      "title": "Global Chokepoint Signal Report",
+      "file": "energy/choke_point.html",
+      "description": "Daily news signals across 6 global shipping chokepoints \u2014 stress scores, signal categories, and top articles for Hormuz, Malacca, Suez, Bab el-Mandeb, Turkish Straits, and Panama Canal",
+      "json_file": "energy/choke_point.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/energy/choke_point.html`",
+      "auto_published": true,
+      "primary_domain": "Geopolitics",
+      "secondary_domains": [
+        "Energy",
+        "Finance"
+      ],
+      "entities": [
+        "Strait of Hormuz",
+        "Strait of Malacca",
+        "Suez Canal",
+        "Bab el-Mandeb",
+        "Turkish Straits (Bosphorus/Dardanelles)",
+        "Panama Canal",
+        "Iran",
+        "CNBC",
+        "France 24",
+        "Seatrade Maritime"
+      ],
+      "data_sources": [
+        "Google News RSS feeds \u2014 real-time article classification by chokepoint keyword matching (no AI",
+        "deterministic signal scoring)"
+      ],
+      "update_frequency": "Daily",
+      "key_signals": [
+        "Per-chokepoint stress score (0\u2013100) and label (NOMINAL/MODERATE/ELEVATED/CRITICAL)",
+        "article count",
+        "top 5 signals by strength",
+        "signal categories: Energy Markets, Maritime/Shipping, Geopolitics/Security, Infrastructure/Operations",
+        "current: Hormuz MODERATE (48, Iran closure announcement), Malacca MODERATE (33), Suez/Bab el-Mandeb/Turkish Straits/Panama NOMINAL"
+      ],
+      "intent_phrases": [
+        {
+          "keyword": "chokepoint",
+          "weight": 10
+        },
+        {
+          "keyword": "geopolitics",
+          "weight": 10
+        },
+        {
+          "keyword": "global trade",
+          "weight": 9
+        },
+        {
+          "keyword": "supply chain",
+          "weight": 9
+        },
+        {
+          "keyword": "international relations",
+          "weight": 8
+        },
+        {
+          "keyword": "logistics",
+          "weight": 8
+        },
+        {
+          "keyword": "economic sanctions",
+          "weight": 7
+        },
+        {
+          "keyword": "shipping routes",
+          "weight": 7
+        },
+        {
+          "keyword": "maritime security",
+          "weight": 6
+        },
+        {
+          "keyword": "trade routes",
+          "weight": 6
+        },
+        {
+          "keyword": "asia",
+          "weight": 6
+        },
+        {
+          "keyword": "middle east",
+          "weight": 6
+        },
+        {
+          "keyword": "Strait of Hormuz",
+          "weight": 5
+        },
+        {
+          "keyword": "Suez Canal",
+          "weight": 5
+        },
+        {
+          "keyword": "Bab el-Mandeb",
+          "weight": 5
+        },
+        {
+          "keyword": "Strait of Malacca",
+          "weight": 5
+        },
+        {
+          "keyword": "Panama Canal",
+          "weight": 5
+        },
+        {
+          "keyword": "Bosphorus",
+          "weight": 5
+        },
+        {
+          "keyword": "shipping lane",
+          "weight": 5
+        },
+        {
+          "keyword": "maritime risk",
+          "weight": 5
+        },
+        {
+          "keyword": "supply chain disruption",
+          "weight": 5
+        },
+        {
+          "keyword": "Iran closure",
+          "weight": 5
+        },
+        {
+          "keyword": "shipping stress",
+          "weight": 5
+        },
+        {
+          "keyword": "tanker route",
+          "weight": 5
+        },
+        {
+          "keyword": "global shipping",
+          "weight": 5
+        },
+        {
+          "keyword": "geopolitical supply risk",
+          "weight": 5
+        },
+        {
+          "keyword": "bottleneck",
+          "weight": 5
+        },
+        {
+          "keyword": "strategic interests",
+          "weight": 5
+        },
+        {
+          "keyword": "china",
+          "weight": 5
+        },
+        {
+          "keyword": "united states",
+          "weight": 5
+        },
+        {
+          "keyword": "russia",
+          "weight": 5
+        },
+        {
+          "keyword": "europe",
+          "weight": 5
+        },
+        {
+          "keyword": "oil supply",
+          "weight": 4
+        },
+        {
+          "keyword": "trade agreements",
+          "weight": 4
+        },
+        {
+          "keyword": "economic impact",
+          "weight": 4
+        },
+        {
+          "keyword": "transportation",
+          "weight": 4
+        },
+        {
+          "keyword": "security threats",
+          "weight": 4
+        },
+        {
+          "keyword": "infrastructure",
+          "weight": 4
+        },
+        {
+          "keyword": "military presence",
+          "weight": 3
+        },
+        {
+          "keyword": "regional stability",
+          "weight": 3
+        },
+        {
+          "keyword": "foreign policy",
+          "weight": 3
+        },
+        {
+          "keyword": "conflict zones",
+          "weight": 3
+        },
+        {
+          "keyword": "trade wars",
+          "weight": 3
+        },
+        {
+          "keyword": "global economy",
+          "weight": 3
+        },
+        {
+          "keyword": "economic growth",
+          "weight": 3
+        },
+        {
+          "keyword": "shipping industry",
+          "weight": 3
+        },
+        {
+          "keyword": "port congestion",
+          "weight": 2
+        },
+        {
+          "keyword": "emerging markets",
+          "weight": 2
+        },
+        {
+          "keyword": "resource allocation",
+          "weight": 2
+        },
+        {
+          "keyword": "international trade",
+          "weight": 2
+        },
+        {
+          "keyword": "political tensions",
+          "weight": 2
+        },
+        {
+          "keyword": "supply disruptions",
+          "weight": 2
+        },
+        {
+          "keyword": "trade policies",
+          "weight": 2
+        },
+        {
+          "keyword": "economic resilience",
+          "weight": 2
+        },
+        {
+          "keyword": "globalization",
+          "weight": 2
+        },
+        {
+          "keyword": "trade deficits",
+          "weight": 2
+        },
+        {
+          "keyword": "investment risks",
+          "weight": 2
+        },
+        {
+          "keyword": "shipping costs",
+          "weight": 2
+        },
+        {
+          "keyword": "strategic chokepoints",
+          "weight": 2
+        },
+        {
+          "keyword": "resource management",
+          "weight": 2
+        },
+        {
+          "keyword": "global supply chain",
+          "weight": 2
+        },
+        {
+          "keyword": "trade imbalance",
+          "weight": 2
+        },
+        {
+          "keyword": "economic vulnerabilities",
+          "weight": 2
+        },
+        {
+          "keyword": "global markets",
+          "weight": 2
+        },
+        {
+          "keyword": "transport networks",
+          "weight": 2
+        },
+        {
+          "keyword": "trade facilitation",
+          "weight": 2
+        },
+        {
+          "keyword": "geoeconomic strategy",
+          "weight": 2
+        },
+        {
+          "keyword": "critical infrastructure",
+          "weight": 2
+        },
+        {
+          "keyword": "international cooperation",
+          "weight": 2
+        },
+        {
+          "keyword": "economic diplomacy",
+          "weight": 2
+        },
+        {
+          "keyword": "national security",
+          "weight": 2
+        },
+        {
+          "keyword": "trade negotiations",
+          "weight": 2
+        },
+        {
+          "keyword": "economic policy",
+          "weight": 2
+        },
+        {
+          "keyword": "global competition",
+          "weight": 2
+        },
+        {
+          "keyword": "regional trade",
+          "weight": 2
+        },
+        {
+          "keyword": "trade barriers",
+          "weight": 2
+        },
+        {
+          "keyword": "global challenges",
+          "weight": 2
+        },
+        {
+          "keyword": "economic stability",
+          "weight": 2
+        },
+        {
+          "keyword": "foreign investments",
+          "weight": 2
+        },
+        {
+          "keyword": "market access",
+          "weight": 2
+        },
+        {
+          "keyword": "trade relations",
+          "weight": 2
+        },
+        {
+          "keyword": "economic strategies",
+          "weight": 2
+        },
+        {
+          "keyword": "global partnerships",
+          "weight": 2
+        },
+        {
+          "keyword": "trade conflicts",
+          "weight": 2
+        },
+        {
+          "keyword": "economic forecasts",
+          "weight": 2
+        },
+        {
+          "keyword": "trade dynamics",
+          "weight": 2
+        },
+        {
+          "keyword": "supply chain management",
+          "weight": 2
+        },
+        {
+          "keyword": "global risks",
+          "weight": 2
+        }
+      ],
+      "id": "global_chokepoint_signal_report",
+      "path": "https://petroai1492.github.io/delta/energy/choke_point.html",
+      "last_generated": "2026-06-22 13:25"
     }
   ],
   "cross_domain_matrix": [
