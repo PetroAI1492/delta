@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CISA KEV × Cyber Market Signals</title>
+<style>
+  /* ── Reuters aesthetic ─────────────────────────────────────────────────── */
+  @import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: #ffffff;
+    color: #1a1a1a;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 2rem 2.5rem;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  /* ── Masthead ── */
+  .masthead {
+    border-top: 4px solid #e8111a;      /* Reuters orange-red */
+    border-bottom: 1px solid #cccccc;
+    padding: .5rem 0 .4rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: baseline;
+    gap: 1.2rem;
+  }
+  .masthead .brand {
+    font-family: Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: bold;
+    color: #e8111a;
+    letter-spacing: -.5px;
+    text-transform: uppercase;
+  }
+  .masthead .section-label {
+    font-size: .75rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    border-left: 1px solid #ccc;
+    padding-left: 1rem;
+  }
+
+  /* ── Headline ── */
+  h1 {
+    font-family: Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin: 0 0 .3rem;
+    line-height: 1.2;
+    border: none;
+  }
+
+  /* ── Section headers ── */
+  h2 {
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    border-bottom: 2px solid #e8111a;
+    padding-bottom: .25rem;
+    margin: 2.5rem 0 .75rem;
+  }
+
+  /* ── Meta dateline ── */
+  p.meta {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .75rem;
+    color: #666666;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: .6rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: .02em;
+  }
+  p.meta strong { color: #333; }
+
+  /* ── Tables ── */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .78rem;
+    margin-top: .5rem;
+  }
+  thead tr {
+    border-top: 2px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+  }
+  th {
+    background: #ffffff;
+    color: #1a1a1a;
+    font-weight: bold;
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    padding: .45rem .55rem;
+    text-align: left;
+    white-space: nowrap;
+  }
+  td {
+    padding: .38rem .55rem;
+    border-bottom: 1px solid #e8e8e8;
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: #f9f9f9; }
+  tr:hover td { background: #fff3f3; }   /* faint red tint on hover */
+  tbody tr:last-child td { border-bottom: 2px solid #1a1a1a; }
+
+  /* ── Signal colors ── */
+  .pos  { color: #1a7a3c; font-weight: bold; }   /* Reuters green */
+  .neg  { color: #c0392b; font-weight: bold; }   /* Reuters red   */
+  .flat { color: #888888; }
+  .na   { color: #bbbbbb; }
+
+  /* ── CVE pill ── */
+  .cve {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: .72rem;
+    color: #555;
+    white-space: nowrap;
+  }
+
+  p.finding {
+    font-family: Georgia, serif;
+    font-size: .92rem;
+    color: #1a1a1a;
+    background: #fff8f8;
+    border-left: 4px solid #e8111a;
+    padding: .65rem 1rem;
+    margin: .75rem 0 1rem;
+    line-height: 1.6;
+  }
+
+  section { margin-bottom: 2.5rem; }
+
+  /* ── Excess return additions ── */
+  .spy-row td { background: #f5f5f5; color: #555; font-style: italic; }
+  p.explainer {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .78rem;
+    color: #444;
+    background: #fafafa;
+    border-left: 3px solid #e8111a;
+    padding: .5rem .75rem;
+    margin: .5rem 0 .75rem;
+    line-height: 1.5;
+  }
+
+  /* ── Footer rule ── */
+  footer {
+    border-top: 1px solid #ccc;
+    margin-top: 3rem;
+    padding-top: .5rem;
+    font-family: Arial, sans-serif;
+    font-size: .7rem;
+    color: #999;
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <span class="brand">Thor Storehouse</span>
+  <span class="section-label">Cybersecurity &amp; Market Signals</span>
+</div>
+
+<h1>CISA KEV × Cyber Market Signals</h1>
+<p class="finding">
+  <strong>Key Finding:</strong> CrowdStrike outperformed the S&amp;P 500 by an average of +0.46%
+  around 675 CISA KEV additions over three years, while cybersecurity ETFs showed little
+  consistent excess return. The effect is statistically detectable but likely reflects
+  CrowdStrike&rsquo;s high market beta rather than a cyber-specific bid. The market does not
+  appear to price individual vulnerability disclosures as sector-level events.
+</p>
+<p class="meta">
+  <strong>Generated:</strong> 2026-06-22 13:53 &nbsp;·&nbsp;
+  <strong>KEV events:</strong> 672 &nbsp;·&nbsp;
+  <strong>Lookback:</strong> 3 years &nbsp;·&nbsp;
+  <strong>Window:</strong> ±3 trading days &nbsp;·&nbsp;
+  <strong>Tickers:</strong> CRWD, CIBR, BUG, HACK, ^VIX (benchmark: SPY) &nbsp;·&nbsp;
+  Source: CISA Known Exploited Vulnerabilities Catalog
+</p>
+
+
+    <section>
+      <h2>Summary: Average Price Reaction ±3 Days After KEV Addition</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Security</th><th>Ticker</th><th>Avg Reaction</th>
+            <th>Rose</th><th>Fell</th><th>Flat</th><th>Events</th>
+          </tr>
+        </thead>
+        <tbody><tr><td>CrowdStrike</td><td>CRWD</td><td>+0.84%</td><td>406</td><td>264</td><td>2</td><td>672</td></tr><tr><td>ETF: First Trust Cyber</td><td>CIBR</td><td>+0.46%</td><td>390</td><td>282</td><td>0</td><td>672</td></tr><tr><td>ETF: Global X Cyber</td><td>BUG</td><td>+0.26%</td><td>357</td><td>309</td><td>6</td><td>672</td></tr><tr><td>ETF: ETFMG Cyber</td><td>HACK</td><td>+0.47%</td><td>391</td><td>277</td><td>4</td><td>672</td></tr><tr><td>CBOE Volatility Index</td><td>^VIX</td><td>-0.37%</td><td>302</td><td>369</td><td>1</td><td>672</td></tr></tbody>
+      </table>
+    </section>
+    
+    <section>
+      <h2>Excess Return vs. S&amp;P 500 — Market-Adjusted Signal</h2>
+      <p class='explainer'><strong>How to read this:</strong> Excess return = ticker return minus SPY return over the same ±3 trading-day window. A positive number means the cyber stock <em>outperformed</em> the broad market around that KEV addition — the signal is specific to cybersecurity, not just a rising tide. A negative number means it lagged. This strips out days where everything went up or down together.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Security</th><th>Ticker</th><th>Avg Excess Return</th>
+            <th>Beat Market</th><th>Lagged Market</th><th>Flat</th><th>Events</th>
+          </tr>
+        </thead>
+        <tbody><tr class='spy-row'><td>S&amp;P 500 (benchmark)</td><td>SPY</td><td>+0.37%</td><td>—</td><td colspan='3' style='color:#888;font-style:italic'>baseline — excess return is measured against this</td></tr><tr><td>CrowdStrike</td><td>CRWD</td><td class='pos'>+0.47%</td><td>383</td><td>289</td><td>0</td><td>672</td></tr><tr><td>ETF: First Trust Cyber</td><td>CIBR</td><td class='pos'>+0.09%</td><td>353</td><td>319</td><td>0</td><td>672</td></tr><tr><td>ETF: Global X Cyber</td><td>BUG</td><td class='neg'>-0.11%</td><td>313</td><td>359</td><td>0</td><td>672</td></tr><tr><td>ETF: ETFMG Cyber</td><td>HACK</td><td class='pos'>+0.10%</td><td>356</td><td>316</td><td>0</td><td>672</td></tr></tbody>
+      </table>
+    </section>
+    
+
+<footer>
+  <strong>Data Sources:</strong> Known Exploited Vulnerabilities (KEV) catalog sourced from the
+  Cybersecurity and Infrastructure Security Agency (CISA), published at cisa.gov. Equity prices
+  for CRWD, CIBR, BUG, HACK, ^VIX, and SPY sourced via yfinance (Yahoo Finance adjusted close).
+  All KEV records stored in the Thor Storehouse database (storehouse.db).
+  Excess return computed as ticker return minus SPY return over the same ±3 trading-day window.
+  <br><br>
+  <strong>Methodology:</strong> All price reactions and excess returns are computed deterministically
+  from timestamped CISA KEV addition dates cross-referenced against market closing prices.
+  No AI model is involved in the computation. Same input data always produces identical output.
+  Signal reflects average behavior across 672 events and does not imply predictive capability
+  for any individual event.
+  <br><br>
+  <strong>Disclaimer:</strong> This report is for informational purposes only and does not constitute
+  investment advice. Past performance does not guarantee future results. Price data is believed
+  accurate but not warranted and is subject to revision by the data provider.
+  &copy; 2026 Randy Hinton. All rights reserved.
+  &nbsp;&nbsp;|&nbsp;&nbsp; CISA KEV &times; Cyber Market Signals &nbsp;&nbsp;|&nbsp;&nbsp; 2026-06-22 13:53
+  &nbsp;&nbsp;|&nbsp;&nbsp; #FollowTheData
+</footer>
+
+</body>
+</html>

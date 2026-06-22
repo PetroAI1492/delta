@@ -1,0 +1,51 @@
+{
+  "generated_at": "2026-06-22 13:53",
+  "total_events": 672,
+  "years": 3,
+  "window_days": 3,
+  "benchmark": "SPY",
+  "benchmark_avg_pct": 0.372,
+  "ransomware_linked": 103,
+  "signals": {
+    "CRWD": {
+      "label": "CrowdStrike",
+      "avg_pct": 0.839,
+      "up": 406,
+      "down": 264,
+      "flat": 2,
+      "excess_avg": 0.468
+    },
+    "CIBR": {
+      "label": "ETF: First Trust Cyber",
+      "avg_pct": 0.464,
+      "up": 390,
+      "down": 282,
+      "flat": 0,
+      "excess_avg": 0.093
+    },
+    "BUG": {
+      "label": "ETF: Global X Cyber",
+      "avg_pct": 0.26,
+      "up": 357,
+      "down": 309,
+      "flat": 6,
+      "excess_avg": -0.112
+    },
+    "HACK": {
+      "label": "ETF: ETFMG Cyber",
+      "avg_pct": 0.47,
+      "up": 391,
+      "down": 277,
+      "flat": 4,
+      "excess_avg": 0.099
+    },
+    "^VIX": {
+      "label": "CBOE Volatility Index",
+      "avg_pct": -0.368,
+      "up": 302,
+      "down": 369,
+      "flat": 1,
+      "excess_avg": null
+    }
+  }
+}
