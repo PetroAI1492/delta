@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-22T20:48:13Z",
+  "generated": "2026-06-22T20:48:38Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -7122,23 +7122,15 @@
       ],
       "intent_phrases": [
         {
-          "keyword": "futures",
-          "weight": 10
-        },
-        {
           "keyword": "finance",
           "weight": 10
         },
         {
-          "keyword": "market",
+          "keyword": "futures",
           "weight": 9
         },
         {
-          "keyword": "after hours",
-          "weight": 9
-        },
-        {
-          "keyword": "financial report",
+          "keyword": "market trends",
           "weight": 9
         },
         {
@@ -7146,27 +7138,19 @@
           "weight": 8
         },
         {
-          "keyword": "trading",
-          "weight": 8
-        },
-        {
-          "keyword": "market signals",
-          "weight": 8
-        },
-        {
-          "keyword": "market analysis",
-          "weight": 8
-        },
-        {
-          "keyword": "market report",
-          "weight": 8
-        },
-        {
-          "keyword": "investment report",
-          "weight": 8
-        },
-        {
           "keyword": "volatility",
+          "weight": 8
+        },
+        {
+          "keyword": "yields",
+          "weight": 8
+        },
+        {
+          "keyword": "dollar",
+          "weight": 8
+        },
+        {
+          "keyword": "after hours",
           "weight": 7
         },
         {
@@ -7174,47 +7158,19 @@
           "weight": 7
         },
         {
-          "keyword": "financial analysis",
+          "keyword": "economic signals",
           "weight": 7
         },
         {
-          "keyword": "trends",
+          "keyword": "financial report",
           "weight": 7
         },
         {
-          "keyword": "financial markets",
-          "weight": 7
-        },
-        {
-          "keyword": "economic report",
-          "weight": 7
-        },
-        {
-          "keyword": "market trends",
-          "weight": 7
-        },
-        {
-          "keyword": "oil prices",
-          "weight": 7
-        },
-        {
-          "keyword": "yields",
+          "keyword": "trading",
           "weight": 6
         },
         {
-          "keyword": "dollar",
-          "weight": 6
-        },
-        {
-          "keyword": "stocks",
-          "weight": 6
-        },
-        {
-          "keyword": "positive trends",
-          "weight": 6
-        },
-        {
-          "keyword": "stable market",
+          "keyword": "stock market",
           "weight": 6
         },
         {
@@ -7222,19 +7178,7 @@
           "weight": 6
         },
         {
-          "keyword": "financial data",
-          "weight": 6
-        },
-        {
-          "keyword": "financial signals",
-          "weight": 6
-        },
-        {
-          "keyword": "market volatility",
-          "weight": 6
-        },
-        {
-          "keyword": "market overview",
+          "keyword": "financial analysis",
           "weight": 6
         },
         {
@@ -7294,11 +7238,11 @@
           "weight": 5
         },
         {
-          "keyword": "economy",
+          "keyword": "market summary",
           "weight": 5
         },
         {
-          "keyword": "falling prices",
+          "keyword": "price trends",
           "weight": 5
         },
         {
@@ -7310,15 +7254,11 @@
           "weight": 5
         },
         {
-          "keyword": "price movements",
+          "keyword": "investment strategies",
           "weight": 5
         },
         {
-          "keyword": "currency",
-          "weight": 5
-        },
-        {
-          "keyword": "economic outlook",
+          "keyword": "portfolio management",
           "weight": 5
         },
         {
@@ -7326,67 +7266,11 @@
           "weight": 5
         },
         {
-          "keyword": "financial insights",
-          "weight": 5
-        },
-        {
-          "keyword": "market conditions",
-          "weight": 5
-        },
-        {
-          "keyword": "investment analysis",
-          "weight": 5
-        },
-        {
-          "keyword": "financial trends",
-          "weight": 5
-        },
-        {
-          "keyword": "market insights",
-          "weight": 5
-        },
-        {
-          "keyword": "market performance",
-          "weight": 5
-        },
-        {
-          "keyword": "investment strategies",
+          "keyword": "currency exchange",
           "weight": 4
         },
         {
-          "keyword": "financial stability",
-          "weight": 4
-        },
-        {
-          "keyword": "economic trends",
-          "weight": 4
-        },
-        {
-          "keyword": "global markets",
-          "weight": 4
-        },
-        {
-          "keyword": "investment outlook",
-          "weight": 4
-        },
-        {
-          "keyword": "market fluctuations",
-          "weight": 4
-        },
-        {
-          "keyword": "risk factors",
-          "weight": 4
-        },
-        {
-          "keyword": "price analysis",
-          "weight": 4
-        },
-        {
-          "keyword": "financial performance",
-          "weight": 4
-        },
-        {
-          "keyword": "economic performance",
+          "keyword": "market volatility",
           "weight": 4
         },
         {
@@ -7394,47 +7278,43 @@
           "weight": 4
         },
         {
-          "keyword": "economic stability",
+          "keyword": "hedging",
           "weight": 4
         },
         {
-          "keyword": "currency trends",
+          "keyword": "capital markets",
           "weight": 4
         },
         {
-          "keyword": "market predictions",
+          "keyword": "economic outlook",
           "weight": 4
         },
         {
-          "keyword": "economic signals",
+          "keyword": "bull market",
           "weight": 4
         },
         {
-          "keyword": "market research",
+          "keyword": "bear market",
           "weight": 4
         },
         {
-          "keyword": "financial outlook",
+          "keyword": "investment risk",
           "weight": 4
         },
         {
-          "keyword": "economic analysis",
-          "weight": 4
+          "keyword": "financial forecasting",
+          "weight": 3
         },
         {
-          "keyword": "market activity",
-          "weight": 4
+          "keyword": "price fluctuations",
+          "weight": 3
         },
         {
-          "keyword": "market sentiment",
-          "weight": 4
+          "keyword": "market analysis",
+          "weight": 3
         },
         {
-          "keyword": "market dynamics",
-          "weight": 4
-        },
-        {
-          "keyword": "trading hours",
+          "keyword": "financial performance",
           "weight": 3
         },
         {
@@ -7442,23 +7322,27 @@
           "weight": 3
         },
         {
-          "keyword": "financial forecasting",
+          "keyword": "economic growth",
           "weight": 3
         },
         {
-          "keyword": "investment metrics",
+          "keyword": "interest rates",
           "weight": 3
         },
         {
-          "keyword": "financial sectors",
+          "keyword": "financial stability",
           "weight": 3
         },
         {
-          "keyword": "financial strategies",
+          "keyword": "market research",
           "weight": 3
         },
         {
-          "keyword": "trading volume",
+          "keyword": "asset management",
+          "weight": 3
+        },
+        {
+          "keyword": "financial trends",
           "weight": 3
         },
         {
@@ -7466,21 +7350,113 @@
           "weight": 3
         },
         {
-          "keyword": "financial climate",
-          "weight": 3
+          "keyword": "financial sectors",
+          "weight": 2
         },
         {
-          "keyword": "investment climate",
-          "weight": 3
+          "keyword": "market predictions",
+          "weight": 2
         },
         {
-          "keyword": "financial conditions",
-          "weight": 3
+          "keyword": "global markets",
+          "weight": 2
+        },
+        {
+          "keyword": "economic policy",
+          "weight": 2
+        },
+        {
+          "keyword": "financial institutions",
+          "weight": 2
+        },
+        {
+          "keyword": "market dynamics",
+          "weight": 2
+        },
+        {
+          "keyword": "economic recovery",
+          "weight": 2
+        },
+        {
+          "keyword": "financial crisis",
+          "weight": 2
+        },
+        {
+          "keyword": "stock analysis",
+          "weight": 2
+        },
+        {
+          "keyword": "financial technology",
+          "weight": 2
+        },
+        {
+          "keyword": "investment funds",
+          "weight": 2
+        },
+        {
+          "keyword": "economic stability",
+          "weight": 2
+        },
+        {
+          "keyword": "financial projections",
+          "weight": 2
+        },
+        {
+          "keyword": "market conditions",
+          "weight": 2
+        },
+        {
+          "keyword": "financial insights",
+          "weight": 2
+        },
+        {
+          "keyword": "market sentiment",
+          "weight": 2
+        },
+        {
+          "keyword": "financial regulations",
+          "weight": 2
+        },
+        {
+          "keyword": "trading volume",
+          "weight": 2
+        },
+        {
+          "keyword": "financial literacy",
+          "weight": 1
+        },
+        {
+          "keyword": "economic theories",
+          "weight": 1
+        },
+        {
+          "keyword": "financial education",
+          "weight": 1
+        },
+        {
+          "keyword": "market psychology",
+          "weight": 1
+        },
+        {
+          "keyword": "financial literacy programs",
+          "weight": 1
+        },
+        {
+          "keyword": "investment blogs",
+          "weight": 1
+        },
+        {
+          "keyword": "financial podcasts",
+          "weight": 1
+        },
+        {
+          "keyword": "economic history",
+          "weight": 1
         }
       ],
       "id": "morning_pulse",
       "path": "https://petroai1492.github.io/delta/finance/morning_pulse.html",
-      "last_generated": "2026-06-22 16:35"
+      "last_generated": "2026-06-22 16:45"
     }
   ],
   "cross_domain_matrix": [
