@@ -1,0 +1,174 @@
+{
+  "generated_at": "2026-06-22 07:59",
+  "fiscal_year": 2024,
+  "data_source": "api.usaspending.gov",
+  "program_total_m": 2904.6,
+  "cfda_programs": {
+    "93.393": {
+      "label": "Cancer Cause & Prevention",
+      "fy_amount": 724830394.0
+    },
+    "93.394": {
+      "label": "Cancer Detection & Diagnosis",
+      "fy_amount": 468119303.0
+    },
+    "93.395": {
+      "label": "Cancer Treatment",
+      "fy_amount": 871843445.0
+    },
+    "93.397": {
+      "label": "Cancer Centers Support",
+      "fy_amount": 603769525.0
+    },
+    "93.398": {
+      "label": "Cancer Research Manpower",
+      "fy_amount": 236007359.0
+    }
+  },
+  "top_recipients": [
+    {
+      "name": "Fred Hutchinson Cancer Center",
+      "amount_m": 525.7,
+      "awards": 6
+    },
+    {
+      "name": "Dana-Farber Cancer Institute, Inc.",
+      "amount_m": 455.2,
+      "awards": 6
+    },
+    {
+      "name": "Public Health Institute",
+      "amount_m": 422.5,
+      "awards": 3
+    },
+    {
+      "name": "The Johns Hopkins University",
+      "amount_m": 400.6,
+      "awards": 7
+    },
+    {
+      "name": "Ecog-Acrin Medical Research Foundation, Inc.",
+      "amount_m": 369.4,
+      "awards": 3
+    },
+    {
+      "name": "Sloan-Kettering Institute For Cancer Research",
+      "amount_m": 369.1,
+      "awards": 4
+    },
+    {
+      "name": "Icahn School Of Medicine At Mount Sinai",
+      "amount_m": 351.9,
+      "awards": 4
+    },
+    {
+      "name": "Nrg Oncology Foundation Inc",
+      "amount_m": 344.3,
+      "awards": 3
+    },
+    {
+      "name": "Regents Of The University Of California, San Francisco, The",
+      "amount_m": 333.8,
+      "awards": 5
+    },
+    {
+      "name": "University Of Pittsburgh - Of The Commonwealth System Of Higher Education",
+      "amount_m": 304.2,
+      "awards": 4
+    },
+    {
+      "name": "The Univeristy Of Texas M.D. Anderson Cancer Center",
+      "amount_m": 301.5,
+      "awards": 4
+    },
+    {
+      "name": "St Jude Children'S Research Hospital Inc",
+      "amount_m": 282.0,
+      "awards": 4
+    },
+    {
+      "name": "Mayo Clinic",
+      "amount_m": 273.3,
+      "awards": 4
+    },
+    {
+      "name": "University Of Southern California",
+      "amount_m": 268.9,
+      "awards": 3
+    },
+    {
+      "name": "University Of North Carolina At Chapel Hill",
+      "amount_m": 266.7,
+      "awards": 4
+    },
+    {
+      "name": "Oregon Health & Science University",
+      "amount_m": 248.4,
+      "awards": 3
+    },
+    {
+      "name": "University Of Alabama At Birmingham",
+      "amount_m": 227.6,
+      "awards": 3
+    },
+    {
+      "name": "Vanderbilt University Medical Center",
+      "amount_m": 221.8,
+      "awards": 4
+    },
+    {
+      "name": "Trustees Of The University Of Pennsylvania, The",
+      "amount_m": 220.2,
+      "awards": 2
+    },
+    {
+      "name": "University Of Chicago",
+      "amount_m": 217.4,
+      "awards": 2
+    }
+  ],
+  "top_states": [
+    {
+      "state": "California",
+      "amount_m": 472.4
+    },
+    {
+      "state": "New York",
+      "amount_m": 367.5
+    },
+    {
+      "state": "Massachusetts",
+      "amount_m": 303.5
+    },
+    {
+      "state": "Texas",
+      "amount_m": 255.3
+    },
+    {
+      "state": "Pennsylvania",
+      "amount_m": 194.1
+    },
+    {
+      "state": "Washington",
+      "amount_m": 132.0
+    },
+    {
+      "state": "North Carolina",
+      "amount_m": 113.4
+    },
+    {
+      "state": "Ohio",
+      "amount_m": 108.0
+    },
+    {
+      "state": "Illinois",
+      "amount_m": 104.5
+    },
+    {
+      "state": "Maryland",
+      "amount_m": 100.7
+    }
+  ],
+  "recipient_total_m": 6404.3,
+  "state_total_m": 3217.7
+}

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NCI Cancer Grant Awards — FY2024</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1a1a; --ink-light: #4a4a4a; --ink-muted: #888;
+    --rule: #d4c5b0; --rule-heavy: #8b7355;
+    --bg: #faf8f4; --bg-alt: #f3f0ea;
+    --accent: #1a5276; --up: #1a6b3a; --down: #c41e3a;
+    --est: #7d6608;
+  }
+  body { font-family: 'Source Serif 4', Georgia, serif; background: var(--bg); color: var(--ink); line-height: 1.6; }
+  .page { max-width: 960px; margin: 0 auto; padding: 0 24px 48px; }
+  .nameplate { border-top: 4px solid var(--ink); border-bottom: 1px solid var(--rule-heavy); padding: 28px 0 20px; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+  .pub-name { font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 4px; }
+  .headline { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.1; color: var(--ink); }
+  .headline em { font-style: italic; color: var(--accent); }
+  .dateline { font-size: 11px; color: var(--ink-muted); text-transform: uppercase; margin-top: 10px; }
+  .agency-badge { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; background: var(--accent); padding: 4px 10px; display: inline-block; margin-bottom: 6px; }
+  .source-line { font-size: 11px; color: var(--ink-muted); text-align: right; line-height: 1.6; }
+  hr.rule-heavy { border: none; border-top: 2px solid var(--rule-heavy); margin: 0; }
+  .intro-box { background: #eaf0f6; border-left: 4px solid var(--accent); padding: 16px 20px; margin: 20px 0; font-size: 14px; color: var(--ink-light); line-height: 1.7; }
+  .intro-box strong { color: var(--ink); }
+  .section-label { font-size: 10px; font-weight: 700; letter-spacing: 0.20em; text-transform: uppercase; color: var(--ink-muted); border-bottom: 1px solid var(--rule); padding-bottom: 6px; margin: 28px 0 0; }
+  .section-desc { font-size: 12px; color: var(--ink-muted); margin: 6px 0 12px; font-style: italic; }
+  .funding-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 6px; }
+  .funding-table thead tr { border-top: 2px solid var(--ink); border-bottom: 1px solid var(--ink); }
+  .funding-table thead th { font-size: 10px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--ink); padding: 8px 10px; text-align: right; white-space: nowrap; }
+  .funding-table thead th:first-child { text-align: left; }
+  .funding-table tbody tr { border-bottom: 1px solid var(--rule); }
+  .funding-table tbody tr:hover { background: var(--bg-alt); }
+  .funding-table tbody tr.alt { background: #f7f4ee; }
+  .funding-table tbody tr.total-row { border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); background: var(--bg-alt); }
+  .funding-table td { padding: 9px 10px; text-align: right; font-family: 'Source Code Pro', monospace; font-size: 12px; }
+  .funding-table td.label { text-align: left; font-family: 'Source Serif 4', serif; font-size: 13px; padding-left: 0; }
+  .funding-table td.cfda-num { color: var(--ink-muted); font-size: 10px; text-align: left; }
+  .funding-table td.total-cell { font-weight: 700; }
+  .funding-table td.pct { color: var(--ink-light); font-size: 11px; }
+  .funding-table td.est { color: var(--est); }
+  .funding-table td.rank { color: var(--ink-muted); font-size: 11px; width: 40px; text-align: center; }
+  .funding-table td.amount { font-weight: 600; }
+  .funding-table td.awards-col { color: var(--ink-light); font-size: 11px; }
+  .funding-table td.bar-cell { width: 160px; padding: 9px 10px; }
+  .bar { height: 10px; background: var(--accent); opacity: 0.6; border-radius: 2px; }
+  .funding-table td.per-cap { font-size: 11px; color: var(--ink-muted); }
+  .up { color: var(--up); font-size: 11px; }
+  .down { color: var(--down); font-size: 11px; }
+  .flat { color: var(--ink-muted); font-size: 11px; }
+  .legend { font-size: 11px; color: var(--ink-muted); margin: 5px 0 4px; }
+  .est-note { font-size: 11px; color: var(--est); margin: 8px 0 4px; background: #fefce8; border: 1px solid #d4a017; padding: 8px 12px; }
+  .warning-box { font-size: 13px; color: #5d3a1a; background: #fdf3e7; border: 1px solid #e59866; border-left: 4px solid #e59866; padding: 12px 16px; margin: 10px 0 14px; line-height: 1.7; }
+  .insight-box { font-size: 13px; color: #1a3a5c; background: #eaf3fb; border: 1px solid #7fb3d3; border-left: 4px solid var(--accent); padding: 10px 14px; margin: 8px 0 12px; line-height: 1.7; }
+  .footer { margin-top: 32px; padding-top: 16px; border-top: 2px solid var(--rule-heavy); font-size: 11px; color: var(--ink-muted); line-height: 1.85; }
+  .footer strong { color: var(--ink-light); }
+  .footer a { color: var(--ink-light); }
+  @media (max-width: 640px) { .headline { font-size: 22px; } .nameplate { flex-direction: column; } .bar-cell { display: none; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="nameplate">
+    <div>
+      <div class="pub-name">Source: USASpending.gov &mdash; US Treasury DATA Act</div>
+      <h1 class="headline">NCI Cancer Grant <em>Awards</em> &mdash; FY2024</h1>
+      <div class="dateline">June 22, 2026 &nbsp;&middot;&nbsp; api.usaspending.gov &mdash; fetched 2026-06-22 07:59 UTC</div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;">
+      <div class="agency-badge">Live API Data</div>
+      <div class="source-line">api.usaspending.gov<br>No authentication required</div>
+    </div>
+  </div>
+  <hr class="rule-heavy">
+
+  <div class="intro-box">
+    <p><strong>What this report shows:</strong> How NCI cancer research grant money flows
+    to institutions, states, and programs &mdash; sourced directly from the US Treasury
+    USASpending.gov API. This is award-level data reported to Congress under the DATA Act.</p>
+    <p><strong>How this differs from the NCI Fact Book report:</strong> The Fact Book shows
+    spending <em>by cancer type</em> (breast, lung, pancreatic). This report shows spending
+    <em>by institution and program</em> (who gets the grants, which states, which programs).
+    The two reports are complementary &mdash; not duplicates.</p>
+    <p><strong>FY2024 data:</strong> Covers October 2023 through September 2024.
+    All figures are obligations &mdash; funds committed to grantees, not necessarily disbursed.</p>
+  </div>
+
+  <!-- Section 1: Program obligations -->
+  <div class="section-label">NCI Cancer Program Obligations &mdash; USD Millions</div>
+  <div class="section-desc">Annual obligations by NCI CFDA program number &mdash; figures reported to Congress in SAM.gov</div>
+  <div class="insight-box">&#9642; <strong>Program mix:</strong> <strong>Cancer Treatment</strong> was the largest NCI program category in FY2024, accounting for <strong>$872M</strong> — <strong>30.0%</strong> of total NCI cancer program obligations.</div>
+  <table class="funding-table">
+    <thead><tr>
+      <th>Program</th>
+      <th style="text-align:left">CFDA</th>
+      <th>2019</th><th>2020</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th>
+      <th>% (2024)</th>
+      <th>Change<br>2019&rarr;2024</th>
+    </tr></thead>
+    <tbody>
+        <tr class="total-row">
+            <td class="label"><strong>All NCI Cancer Programs</strong></td>
+            <td class="cfda-num"></td>
+            <td class="total-cell">$2.44B</td><td class="total-cell">$2.69B</td><td class="total-cell">$2.53B</td><td class="total-cell">$2.67B</td><td class="total-cell">$2.83B</td><td class="total-cell est">$2.90B</td><td class="total-cell est">$3.25B</td>
+            <td class="pct total-cell">100%</td>
+            <td class="yoy"><span class="up">&#9650; 19.0%</span></td>
+        </tr>
+        <tr class="">
+            <td class="label">Cancer Cause & Prevention</td>
+            <td class="cfda-num">93.393</td>
+            <td>$596M</td><td>$707M</td><td>$623M</td><td>$674M</td><td>$694M</td><td class="est">$725M</td><td class="est">$796M</td>
+            <td class="pct">25.0%</td>
+            <td class="yoy"><span class="up">&#9650; 21.7%</span></td>
+        </tr>
+        <tr class="alt">
+            <td class="label">Cancer Detection & Diagnosis</td>
+            <td class="cfda-num">93.394</td>
+            <td>$390M</td><td>$704M</td><td>$412M</td><td>$412M</td><td>$448M</td><td class="est">$468M</td><td class="est">$514M</td>
+            <td class="pct">16.1%</td>
+            <td class="yoy"><span class="up">&#9650; 20.0%</span></td>
+        </tr>
+        <tr class="">
+            <td class="label">Cancer Treatment</td>
+            <td class="cfda-num">93.395</td>
+            <td>$607M</td><td>$420M</td><td>$704M</td><td>$766M</td><td>$835M</td><td class="est">$872M</td><td class="est">$957M</td>
+            <td class="pct">30.0%</td>
+            <td class="yoy"><span class="up">&#9650; 43.7%</span></td>
+        </tr>
+        <tr class="alt">
+            <td class="label">Cancer Centers Support</td>
+            <td class="cfda-num">93.397</td>
+            <td>$656M</td><td>$655M</td><td>$576M</td><td>$592M</td><td>$634M</td><td class="est">$604M</td><td class="est">$742M</td>
+            <td class="pct">20.8%</td>
+            <td class="yoy"><span class="down">&#9660; 8.0%</span></td>
+        </tr>
+        <tr class="">
+            <td class="label">Cancer Research Manpower</td>
+            <td class="cfda-num">93.398</td>
+            <td>$192M</td><td>$208M</td><td>$213M</td><td>$224M</td><td>$224M</td><td class="est">$236M</td><td class="est">$236M</td>
+            <td class="pct">8.1%</td>
+            <td class="yoy"><span class="up">&#9650; 22.6%</span></td>
+        </tr></tbody>
+  </table>
+  <div class="est-note">&#9432; 2024, 2025: figures are estimates as reported in SAM.gov CFDA records. Final obligated amounts are subject to revision.</div>
+  <div class="legend">Obligations in millions USD &middot; Est = estimated figures from SAM.gov CFDA records &middot; Change = 2019 to 2024</div>
+
+  <!-- Section 2: Top recipients -->
+  <div class="section-label">Top NCI Grant Recipients &mdash; FY2024</div>
+  <div class="section-desc">Institutions receiving the largest NCI cancer research grants</div>
+  <div class="warning-box">
+    &#9888;&nbsp; <strong>Important:</strong> The dollar amounts below are
+    <strong>cumulative lifetime values</strong> of multi-year grants active during FY2024
+    &mdash; not what each institution received in FY2024 alone. A 5-year $500M grant
+    signed in 2020 still appears at $500M here. These figures show the <em>scale of
+    institutional commitment</em>, not annual cash flow. For annual spending by program,
+    see the table above.
+  </div>
+  <div class="insight-box">&#9642; <strong>Funding concentration:</strong> The top 10 institutions accounted for <strong>$3.88B</strong> — <strong>61%</strong> of the active NCI grant value across the 20 institutions shown.</div>
+  <table class="funding-table">
+    <thead><tr>
+      <th style="text-align:center;width:40px;">#</th>
+      <th>Institution</th>
+      <th>Lifetime Award Value</th>
+      <th>Active Grants</th>
+    </tr></thead>
+    <tbody>
+        <tr class="">
+            <td class="rank">#1</td>
+            <td class="label">Fred Hutchinson Cancer Center</td>
+            <td class="amount">$526M</td>
+            <td class="awards-col">6</td>
+        </tr>
+        <tr class="alt">
+            <td class="rank">#2</td>
+            <td class="label">Dana-Farber Cancer Institute, Inc.</td>
+            <td class="amount">$455M</td>
+            <td class="awards-col">6</td>
+        </tr>
+        <tr class="">
+            <td class="rank">#3</td>
+            <td class="label">Public Health Institute</td>
+            <td class="amount">$423M</td>
+            <td class="awards-col">3</td>
+        </tr>
+        <tr class="alt">
+            <td class="rank">#4</td>
+            <td class="label">The Johns Hopkins University</td>
+            <td class="amount">$401M</td>
+            <td class="awards-col">7</td>
+        </tr>
+        <tr class="">
+            <td class="rank">#5</td>
+            <td class="label">Ecog-Acrin Medical Research Foundation, Inc.</td>
+            <td class="amount">$369M</td>
+            <td class="awards-col">3</td>
+        </tr>
+        <tr class="alt">
+            <td class="rank">#6</td>
+            <td class="label">Sloan-Kettering Institute For Cancer Research</td>
+            <td class="amount">$369M</td>
+            <td class="awards-col">4</td>
+        </tr>
+        <tr class="">
+            <td class="rank">#7</td>
+            <td class="label">Icahn School Of Medicine At Mount Sinai</td>
+            <td class="amount">$352M</td>
+            <td class="awards-col">4</td>
+        </tr>
+        <tr class="alt">
+            <td class="rank">#8</td>
+            <td class="label">Nrg Oncology Foundation Inc</td>
+            <td class="amount">$344M</td>
+            <td class="awards-col">3</td>
+        </tr>
+        <tr class="">
+            <td class="rank">#9</td>
+            <td class="label">Regents Of The University Of California, San Francisco, The</td>
+            <td class="amount">$334M</td>
+            <td class="awards-col">5</td>
+        </tr>
+        <tr class="alt">
+            <td class="rank">#10</td>
+            <td class="label">University Of Pittsburgh - Of The Commonwealth System Of Higher Education</td>
+            <td class="amount">$304M</td>
+            <td class="awards-col">4</td>
+        </tr>
+        <tr class="">
+            <td class="rank">#11</td>
+            <td class="label">The Univeristy Of Texas M.D. Anderson Cancer Center</td>
+            <td class="amount">$302M</td>
+            <td class="awards-col">4</td>
+        </tr>
+        <tr class="alt">
+            <td class="rank">#12</td>
+            <td class="label">St Jude Children'S Research Hospital Inc</td>
+            <td class="amount">$282M</td>
+            <td class="awards-col">4</td>
+        </tr>
+        <tr class="">
+            <td class="rank">#13</td>
+            <td class="label">Mayo Clinic</td>
+            <td class="amount">$273M</td>
+            <td class="awards-col">4</td>
+        </tr>
+        <tr class="alt">
+            <td class="rank">#14</td>
+            <td class="label">University Of Southern California</td>
+            <td class="amount">$269M</td>
+            <td class="awards-col">3</td>
+        </tr>
+        <tr class="">
+            <td class="rank">#15</td>
+            <td class="label">University Of North Carolina At Chapel Hill</td>
+            <td class="amount">$267M</td>
+            <td class="awards-col">4</td>
+        </tr>
+        <tr class="alt">
+            <td class="rank">#16</td>
+            <td class="label">Oregon Health & Science University</td>
+            <td class="amount">$248M</td>
+            <td class="awards-col">3</td>
+        </tr>
+        <tr class="">
+            <td class="rank">#17</td>
+            <td class="label">University Of Alabama At Birmingham</td>
+            <td class="amount">$228M</td>
+            <td class="awards-col">3</td>
+        </tr>
+        <tr class="alt">
+            <td class="rank">#18</td>
+            <td class="label">Vanderbilt University Medical Center</td>
+            <td class="amount">$222M</td>
+            <td class="awards-col">4</td>
+        </tr>
+        <tr class="">
+            <td class="rank">#19</td>
+            <td class="label">Trustees Of The University Of Pennsylvania, The</td>
+            <td class="amount">$220M</td>
+            <td class="awards-col">2</td>
+        </tr>
+        <tr class="alt">
+            <td class="rank">#20</td>
+            <td class="label">University Of Chicago</td>
+            <td class="amount">$217M</td>
+            <td class="awards-col">2</td>
+        </tr></tbody>
+  </table>
+  <div class="legend">Lifetime Award Value = cumulative value of active NCI grants at this institution &middot; Active Grants = number of NCI grants active in FY2024</div>
+
+  <!-- Section 3: State distribution -->
+  <div class="section-label">NCI Grant Obligations by State &mdash; FY2024</div>
+  <div class="section-desc">Where NCI cancer research dollars flow geographically &mdash; top 15 states by total obligations</div>
+  <div class="insight-box">&#9642; <strong>Geographic concentration:</strong> The top 5 states (CA, NY, MA, TX, PA) received <strong>$1.59B</strong> — <strong>49%</strong> of all FY2024 NCI grant obligations. The remaining 44 states shared the other 51%.</div>
+  <table class="funding-table">
+    <thead><tr>
+      <th style="text-align:center;width:40px;">#</th>
+      <th>State</th>
+      <th>Obligations</th>
+      <th></th>
+      <th>Per Capita</th>
+    </tr></thead>
+    <tbody>
+        <tr class="">
+            <td class="rank">#1</td>
+            <td class="label">California</td>
+            <td class="amount">$472M</td>
+            <td class="bar-cell">
+                <div class="bar" style="width:100%"></div>
+            </td>
+            <td class="per-cap">$11.95</td>
+        </tr>
+        <tr class="alt">
+            <td class="rank">#2</td>
+            <td class="label">New York</td>
+            <td class="amount">$368M</td>
+            <td class="bar-cell">
+                <div class="bar" style="width:77%"></div>
+            </td>
+            <td class="per-cap">$18.19</td>
+        </tr>
+        <tr class="">
+            <td class="rank">#3</td>
+            <td class="label">Massachusetts</td>
+            <td class="amount">$303M</td>
+            <td class="bar-cell">
+                <div class="bar" style="width:64%"></div>
+            </td>
+            <td class="per-cap">$43.17</td>
+        </tr>
+        <tr class="alt">
+            <td class="rank">#4</td>
+            <td class="label">Texas</td>
+            <td class="amount">$255M</td>
+            <td class="bar-cell">
+                <div class="bar" style="width:54%"></div>
+            </td>
+            <td class="per-cap">$8.76</td>
+        </tr>
+        <tr class="">
+            <td class="rank">#5</td>
+            <td class="label">Pennsylvania</td>
+            <td class="amount">$194M</td>
+            <td class="bar-cell">
+                <div class="bar" style="width:41%"></div>
+            </td>
+            <td class="per-cap">$14.92</td>
+        </tr>
+        <tr class="alt">
+            <td class="rank">#6</td>
+            <td class="label">Washington</td>
+            <td class="amount">$132M</td>
+            <td class="bar-cell">
+                <div class="bar" style="width:27%"></div>
+            </td>
+            <td class="per-cap">$17.13</td>
+        </tr>
+        <tr class="">
+            <td class="rank">#7</td>
+            <td class="label">North Carolina</td>
+            <td class="amount">$113M</td>
+            <td class="bar-cell">
+                <div class="bar" style="width:24%"></div>
+            </td>
+            <td class="per-cap">$10.86</td>
+        </tr>
+        <tr class="alt">
+            <td class="rank">#8</td>
+            <td class="label">Ohio</td>
+            <td class="amount">$108M</td>
+            <td class="bar-cell">
+                <div class="bar" style="width:22%"></div>
+            </td>
+            <td class="per-cap">$9.16</td>
+        </tr>
+        <tr class="">
+            <td class="rank">#9</td>
+            <td class="label">Illinois</td>
+            <td class="amount">$104M</td>
+            <td class="bar-cell">
+                <div class="bar" style="width:22%"></div>
+            </td>
+            <td class="per-cap">$8.15</td>
+        </tr>
+        <tr class="alt">
+            <td class="rank">#10</td>
+            <td class="label">Maryland</td>
+            <td class="amount">$101M</td>
+            <td class="bar-cell">
+                <div class="bar" style="width:21%"></div>
+            </td>
+            <td class="per-cap">$16.31</td>
+        </tr>
+        <tr class="">
+            <td class="rank">#11</td>
+            <td class="label">Minnesota</td>
+            <td class="amount">$95M</td>
+            <td class="bar-cell">
+                <div class="bar" style="width:20%"></div>
+            </td>
+            <td class="per-cap">$16.63</td>
+        </tr>
+        <tr class="alt">
+            <td class="rank">#12</td>
+            <td class="label">Tennessee</td>
+            <td class="amount">$91M</td>
+            <td class="bar-cell">
+                <div class="bar" style="width:19%"></div>
+            </td>
+            <td class="per-cap">$13.10</td>
+        </tr>
+        <tr class="">
+            <td class="rank">#13</td>
+            <td class="label">Michigan</td>
+            <td class="amount">$79M</td>
+            <td class="bar-cell">
+                <div class="bar" style="width:16%"></div>
+            </td>
+            <td class="per-cap">$7.81</td>
+        </tr>
+        <tr class="alt">
+            <td class="rank">#14</td>
+            <td class="label">Florida</td>
+            <td class="amount">$76M</td>
+            <td class="bar-cell">
+                <div class="bar" style="width:16%"></div>
+            </td>
+            <td class="per-cap">$3.53</td>
+        </tr>
+        <tr class="">
+            <td class="rank">#15</td>
+            <td class="label">Missouri</td>
+            <td class="amount">$73M</td>
+            <td class="bar-cell">
+                <div class="bar" style="width:15%"></div>
+            </td>
+            <td class="per-cap">$11.93</td>
+        </tr></tbody>
+  </table>
+  <div class="legend">Per capita = obligations divided by state population (2020 Census) &middot; Reflects place of performance</div>
+
+  <div class="footer">
+    <strong>Data source:</strong>
+    USASpending.gov API &mdash;
+    <a href="https://api.usaspending.gov">api.usaspending.gov</a> &middot;
+    US Department of the Treasury &middot; DATA Act public data &middot;
+    CFDA programs: 93.393, 93.394, 93.395, 93.397, 93.398<br>
+
+    <strong>CFDA obligations:</strong>
+    Annual program totals sourced from SAM.gov Assistance Listings via the
+    USASpending award detail endpoint. FY2024+ figures are estimates subject to revision.<br>
+
+    <strong>Award amounts vs obligations:</strong>
+    Recipient award amounts reflect cumulative lifetime grant values.
+    State obligations reflect annual transaction-level spending.
+    These use different methodologies and should not be compared directly.<br>
+
+    <strong>Not affiliated with NCI, NIH, or USASpending.gov.</strong>
+    Compiled by Randy Hinton &nbsp;&middot;&nbsp;
+    &copy; 2026 Randy Hinton &nbsp;&middot;&nbsp;
+    <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> &nbsp;&middot;&nbsp;
+    Not medical or investment advice &nbsp;&middot;&nbsp;
+    Generated June 22, 2026
+  </div>
+
+</div>
+</body>
+</html>
