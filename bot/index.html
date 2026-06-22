@@ -147,7 +147,7 @@
 </div>
 <footer>
   Thor Storehouse Report Assistant &nbsp;·&nbsp; Taxonomy-driven routing &nbsp;·&nbsp;
-  Generated: 2026-06-22 16:59 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+  Generated: 2026-06-22 18:33 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 <script>
 const REPORTS = [
@@ -7179,7 +7179,7 @@ const REPORTS = [
   {
     "title": "Morning Pulse",
     "file": "finance/morning_pulse.html",
-    "description": "Live pre-market and intraday snapshot \u2014 S&P/Nasdaq/Dow futures, VIX, Treasury yields, crude, gold, dollar, and Bitcoin, refreshed every 30 minutes",
+    "description": "Live pre-market and intraday snapshot \u2014 S&P/Nasdaq/Dow futures, VIX, Treasury yields, crude, gold, dollar, and Bitcoin, refreshed every hour",
     "json_file": "finance/morning_pulse.json",
     "published": true,
     "url": "`petroai1492.github.io/delta/finance/morning_pulse.html`",
@@ -7197,6 +7197,7 @@ const REPORTS = [
       "VIX",
       "10Y Treasury (^TNX)",
       "5Y Treasury (^FVX)",
+      "3M T-Bill (^IRX)",
       "WTI (CL=F)",
       "Brent (BZ=F)",
       "Henry Hub (NG=F)",
@@ -7208,12 +7209,12 @@ const REPORTS = [
       "Yahoo Finance (yfinance) \u2014 live fetch at run time",
       "no Storehouse dependency"
     ],
-    "update_frequency": "Every 30 minutes (Windows Task Scheduler)",
+    "update_frequency": "Every hour (Windows Task Scheduler)",
     "key_signals": [
-      "12 tickers",
+      "13 tickers",
       "session label (PRE-MARKET/MARKET OPEN/AFTER HOURS/OVERNIGHT)",
-      "price and % change vs prior close for all series",
-      "current: ES=F +0.27%, NQ=F +0.72%, WTI -4.63%, Brent -4.28%, Gold +1.25%, VIX +3.93%, BTC +1.63%"
+      "7 interpretive signals: FUTURES, OIL, VOLATILITY, YIELDS, DOLLAR, CURVE (10Y-3M spread in bps), WTI-BRENT spread",
+      "price and % change vs prior close for all series"
     ],
     "intent_phrases": [
       {
@@ -7560,6 +7561,396 @@ const REPORTS = [
     "id": "morning_pulse",
     "path": "https://petroai1492.github.io/delta/finance/morning_pulse.html",
     "last_generated": "2026-06-22 16:55"
+  },
+  {
+    "title": "EIA Energy Digest",
+    "file": "energy/eia_digest.html",
+    "description": "Weekly cross-energy digest \u2014 crude and product prices, inventory levels, rig counts, PADD regional stocks, Dallas Fed energy survey, and macro backdrop (yields, VIX, dollar, industrial production)",
+    "json_file": "energy/eia_digest.json",
+    "published": true,
+    "url": "`petroai1492.github.io/delta/energy/eia_digest.html`",
+    "auto_published": true,
+    "primary_domain": "Energy",
+    "secondary_domains": [
+      "Economy",
+      "Finance",
+      "Federal"
+    ],
+    "entities": [
+      "EIA",
+      "FRED",
+      "Baker Hughes",
+      "Dallas Fed",
+      "WTI (DCOILWTICO)",
+      "Brent (DCOILBRENTEU)",
+      "SPR",
+      "Cushing OK",
+      "PADD 1-5"
+    ],
+    "data_sources": [
+      "Thor Storehouse \u2014 EIA Weekly Petroleum Status Report",
+      "EIA Natural Gas Storage",
+      "FRED (yields",
+      "macro)",
+      "Baker Hughes rig count",
+      "Dallas Fed Energy Survey (43 series total",
+      "no AI)"
+    ],
+    "update_frequency": "Weekly (Wednesdays after EIA release)",
+    "key_signals": [
+      "WTI $84.65/bbl (-4.48% WoW, 75th %ile 5Y)",
+      "Brent $84.36/bbl",
+      "gasoline $4.05/gal (88th %ile)",
+      "crude stocks 426,485 Mbbl (42nd %ile)",
+      "SPR 349,192 Mbbl (3rd %ile \u2014 historically depleted)",
+      "field production 13,799 kb/d (96th %ile)",
+      "PADD 3 refinery utilization 97.4% (93rd %ile)",
+      "nat gas 2,205 Bcf (22nd %ile)",
+      "US total rig count 562",
+      "10Y-2Y spread +27bps",
+      "VIX 18.44"
+    ],
+    "intent_phrases": [
+      {
+        "keyword": "energy digest",
+        "weight": 10
+      },
+      {
+        "keyword": "eia",
+        "weight": 10
+      },
+      {
+        "keyword": "oil",
+        "weight": 9
+      },
+      {
+        "keyword": "petroleum",
+        "weight": 9
+      },
+      {
+        "keyword": "padd",
+        "weight": 8
+      },
+      {
+        "keyword": "gulf coast",
+        "weight": 8
+      },
+      {
+        "keyword": "east coast",
+        "weight": 8
+      },
+      {
+        "keyword": "midwest",
+        "weight": 8
+      },
+      {
+        "keyword": "rocky mountains",
+        "weight": 8
+      },
+      {
+        "keyword": "west coast",
+        "weight": 8
+      },
+      {
+        "keyword": "mbbl",
+        "weight": 7
+      },
+      {
+        "keyword": "latest data",
+        "weight": 7
+      },
+      {
+        "keyword": "weekly change",
+        "weight": 6
+      },
+      {
+        "keyword": "pctile 5y",
+        "weight": 6
+      },
+      {
+        "keyword": "energy report",
+        "weight": 6
+      },
+      {
+        "keyword": "oil production",
+        "weight": 6
+      },
+      {
+        "keyword": "EIA digest",
+        "weight": 5
+      },
+      {
+        "keyword": "crude price",
+        "weight": 5
+      },
+      {
+        "keyword": "gasoline price",
+        "weight": 5
+      },
+      {
+        "keyword": "crude stocks",
+        "weight": 5
+      },
+      {
+        "keyword": "rig count",
+        "weight": 5
+      },
+      {
+        "keyword": "Baker Hughes",
+        "weight": 5
+      },
+      {
+        "keyword": "Dallas Fed energy",
+        "weight": 5
+      },
+      {
+        "keyword": "SPR level",
+        "weight": 5
+      },
+      {
+        "keyword": "Cushing stocks",
+        "weight": 5
+      },
+      {
+        "keyword": "PADD regional",
+        "weight": 5
+      },
+      {
+        "keyword": "refinery utilization",
+        "weight": 5
+      },
+      {
+        "keyword": "energy macro",
+        "weight": 5
+      },
+      {
+        "keyword": "WTI Brent",
+        "weight": 5
+      },
+      {
+        "keyword": "nat gas storage",
+        "weight": 5
+      },
+      {
+        "keyword": "energy statistics",
+        "weight": 5
+      },
+      {
+        "keyword": "energy trends",
+        "weight": 5
+      },
+      {
+        "keyword": "oil reserves",
+        "weight": 5
+      },
+      {
+        "keyword": "energy consumption",
+        "weight": 5
+      },
+      {
+        "keyword": "u.s. energy",
+        "weight": 5
+      },
+      {
+        "keyword": "fuel",
+        "weight": 5
+      },
+      {
+        "keyword": "energy sector",
+        "weight": 5
+      },
+      {
+        "keyword": "energy market",
+        "weight": 5
+      },
+      {
+        "keyword": "data analysis",
+        "weight": 4
+      },
+      {
+        "keyword": "oil prices",
+        "weight": 4
+      },
+      {
+        "keyword": "energy forecast",
+        "weight": 4
+      },
+      {
+        "keyword": "energy policy",
+        "weight": 4
+      },
+      {
+        "keyword": "oil supply",
+        "weight": 4
+      },
+      {
+        "keyword": "energy resources",
+        "weight": 4
+      },
+      {
+        "keyword": "regional data",
+        "weight": 4
+      },
+      {
+        "keyword": "energy production",
+        "weight": 4
+      },
+      {
+        "keyword": "oil demand",
+        "weight": 4
+      },
+      {
+        "keyword": "energy efficiency",
+        "weight": 3
+      },
+      {
+        "keyword": "renewable energy",
+        "weight": 3
+      },
+      {
+        "keyword": "natural gas",
+        "weight": 3
+      },
+      {
+        "keyword": "energy infrastructure",
+        "weight": 3
+      },
+      {
+        "keyword": "energy analysis",
+        "weight": 3
+      },
+      {
+        "keyword": "market trends",
+        "weight": 3
+      },
+      {
+        "keyword": "oil industry",
+        "weight": 3
+      },
+      {
+        "keyword": "energy statistics report",
+        "weight": 3
+      },
+      {
+        "keyword": "energy supply chain",
+        "weight": 2
+      },
+      {
+        "keyword": "environmental impact",
+        "weight": 2
+      },
+      {
+        "keyword": "oil exports",
+        "weight": 2
+      },
+      {
+        "keyword": "energy consumption patterns",
+        "weight": 2
+      },
+      {
+        "keyword": "energy outlook",
+        "weight": 2
+      },
+      {
+        "keyword": "oil trade",
+        "weight": 2
+      },
+      {
+        "keyword": "energy pricing",
+        "weight": 2
+      },
+      {
+        "keyword": "energy data",
+        "weight": 2
+      },
+      {
+        "keyword": "oil market",
+        "weight": 2
+      },
+      {
+        "keyword": "energy overview",
+        "weight": 2
+      },
+      {
+        "keyword": "padd 1",
+        "weight": 2
+      },
+      {
+        "keyword": "padd 2",
+        "weight": 2
+      },
+      {
+        "keyword": "padd 3",
+        "weight": 2
+      },
+      {
+        "keyword": "padd 4",
+        "weight": 2
+      },
+      {
+        "keyword": "padd 5",
+        "weight": 2
+      },
+      {
+        "keyword": "energy insights",
+        "weight": 2
+      },
+      {
+        "keyword": "oil metrics",
+        "weight": 2
+      },
+      {
+        "keyword": "energy developments",
+        "weight": 2
+      },
+      {
+        "keyword": "oil statistics",
+        "weight": 2
+      },
+      {
+        "keyword": "energy news",
+        "weight": 1
+      },
+      {
+        "keyword": "energy resources report",
+        "weight": 1
+      },
+      {
+        "keyword": "oil and gas",
+        "weight": 1
+      },
+      {
+        "keyword": "energy challenges",
+        "weight": 1
+      },
+      {
+        "keyword": "energy consumption data",
+        "weight": 1
+      },
+      {
+        "keyword": "oil field",
+        "weight": 1
+      },
+      {
+        "keyword": "energy supply",
+        "weight": 1
+      },
+      {
+        "keyword": "energy issues",
+        "weight": 1
+      },
+      {
+        "keyword": "oil and energy",
+        "weight": 1
+      },
+      {
+        "keyword": "energy sector analysis",
+        "weight": 1
+      }
+    ],
+    "id": "eia_energy_digest",
+    "path": "https://petroai1492.github.io/delta/energy/eia_digest.html",
+    "last_generated": null
   }
 ];
 const CROSS_DOMAIN = [
