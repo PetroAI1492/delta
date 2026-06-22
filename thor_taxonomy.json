@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-22T16:45:21Z",
+  "generated": "2026-06-22T17:06:55Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -5312,6 +5312,414 @@
       "id": "treasury_health_spending_signal",
       "path": "https://petroai1492.github.io/delta/federal/treasury_signal.html",
       "last_generated": "2026-06-22 12:40"
+    },
+    {
+      "title": "Market Watch",
+      "file": "finance/market_watch.html",
+      "description": "Weekly cross-asset market snapshot \u2014 U.S. and international equities, S&P sectors, bonds, Treasury yields, crude, gold, VIX, dollar, Bitcoin, and TGA balance",
+      "json_file": "finance/market_watch.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/finance/market_watch.html`",
+      "auto_published": true,
+      "primary_domain": "Finance",
+      "secondary_domains": [
+        "Economy",
+        "Federal",
+        "Energy"
+      ],
+      "entities": [
+        "S&P 500 (SPY)",
+        "Nasdaq (NDX)",
+        "Dow (DIA)",
+        "Russell 2000 (RUT)",
+        "EFA",
+        "EEM",
+        "TLT",
+        "HYG",
+        "VIX",
+        "WTI crude (CL=F)",
+        "gold (GC=F)",
+        "U.S. Dollar Index (DXY)",
+        "Bitcoin (BTC-USD)",
+        "U.S. Treasury TGA"
+      ],
+      "data_sources": [
+        "Yahoo Finance (yfinance) via Thor Storehouse \u2014 weekly/YTD/12-month/5-year returns for all series; U.S. Treasury DTS for TGA and debt data"
+      ],
+      "update_frequency": "Weekly",
+      "key_signals": [
+        "SPY -0.82% WoW, +9.6% YTD",
+        "Nasdaq +20.6% YTD",
+        "EEM +1.49% WoW (+25.9% YTD)",
+        "best sector Industrials (XLI) +1.25% WoW",
+        "worst sector Energy (XLE) -3.2% WoW",
+        "10Y yield 4.45%",
+        "30Y yield 4.90%",
+        "gold $4,173/oz",
+        "WTI $76.54/bbl (-5.2% WoW)",
+        "VIX 16.78",
+        "DXY 100.85",
+        "BTC $63,880 (-36.7% 12-mo)",
+        "TGA $956.5B",
+        "total debt $39.3T"
+      ],
+      "intent_phrases": [
+        {
+          "keyword": "finance",
+          "weight": 10
+        },
+        {
+          "keyword": "market",
+          "weight": 9
+        },
+        {
+          "keyword": "watch",
+          "weight": 9
+        },
+        {
+          "keyword": "stocks",
+          "weight": 8
+        },
+        {
+          "keyword": "investment",
+          "weight": 8
+        },
+        {
+          "keyword": "trends",
+          "weight": 7
+        },
+        {
+          "keyword": "analysis",
+          "weight": 7
+        },
+        {
+          "keyword": "report",
+          "weight": 6
+        },
+        {
+          "keyword": "economy",
+          "weight": 6
+        },
+        {
+          "keyword": "forecasts",
+          "weight": 6
+        },
+        {
+          "keyword": "market watch",
+          "weight": 5
+        },
+        {
+          "keyword": "stock market",
+          "weight": 5
+        },
+        {
+          "keyword": "S&P 500",
+          "weight": 5
+        },
+        {
+          "keyword": "market performance",
+          "weight": 5
+        },
+        {
+          "keyword": "sector performance",
+          "weight": 5
+        },
+        {
+          "keyword": "bond market",
+          "weight": 5
+        },
+        {
+          "keyword": "Treasury yields",
+          "weight": 5
+        },
+        {
+          "keyword": "gold price",
+          "weight": 5
+        },
+        {
+          "keyword": "VIX",
+          "weight": 5
+        },
+        {
+          "keyword": "dollar index",
+          "weight": 5
+        },
+        {
+          "keyword": "Bitcoin",
+          "weight": 5
+        },
+        {
+          "keyword": "emerging markets",
+          "weight": 5
+        },
+        {
+          "keyword": "weekly market",
+          "weight": 5
+        },
+        {
+          "keyword": "equity returns",
+          "weight": 5
+        },
+        {
+          "keyword": "cross asset",
+          "weight": 5
+        },
+        {
+          "keyword": "financial",
+          "weight": 5
+        },
+        {
+          "keyword": "data",
+          "weight": 5
+        },
+        {
+          "keyword": "performance",
+          "weight": 5
+        },
+        {
+          "keyword": "2026",
+          "weight": 5
+        },
+        {
+          "keyword": "weekly",
+          "weight": 5
+        },
+        {
+          "keyword": "summary",
+          "weight": 4
+        },
+        {
+          "keyword": "insights",
+          "weight": 4
+        },
+        {
+          "keyword": "analysis report",
+          "weight": 4
+        },
+        {
+          "keyword": "market trends",
+          "weight": 4
+        },
+        {
+          "keyword": "economic indicators",
+          "weight": 4
+        },
+        {
+          "keyword": "financial markets",
+          "weight": 4
+        },
+        {
+          "keyword": "investment strategies",
+          "weight": 4
+        },
+        {
+          "keyword": "risk assessment",
+          "weight": 3
+        },
+        {
+          "keyword": "portfolio",
+          "weight": 3
+        },
+        {
+          "keyword": "bull market",
+          "weight": 3
+        },
+        {
+          "keyword": "bear market",
+          "weight": 3
+        },
+        {
+          "keyword": "capital",
+          "weight": 3
+        },
+        {
+          "keyword": "equities",
+          "weight": 3
+        },
+        {
+          "keyword": "bonds",
+          "weight": 3
+        },
+        {
+          "keyword": "dividends",
+          "weight": 3
+        },
+        {
+          "keyword": "financial analysis",
+          "weight": 3
+        },
+        {
+          "keyword": "market capitalization",
+          "weight": 3
+        },
+        {
+          "keyword": "economic growth",
+          "weight": 3
+        },
+        {
+          "keyword": "inflation",
+          "weight": 3
+        },
+        {
+          "keyword": "interest rates",
+          "weight": 3
+        },
+        {
+          "keyword": "currency",
+          "weight": 2
+        },
+        {
+          "keyword": "commodities",
+          "weight": 2
+        },
+        {
+          "keyword": "real estate",
+          "weight": 2
+        },
+        {
+          "keyword": "hedge funds",
+          "weight": 2
+        },
+        {
+          "keyword": "mutual funds",
+          "weight": 2
+        },
+        {
+          "keyword": "financial news",
+          "weight": 2
+        },
+        {
+          "keyword": "market analysis",
+          "weight": 2
+        },
+        {
+          "keyword": "investment opportunities",
+          "weight": 2
+        },
+        {
+          "keyword": "economic policy",
+          "weight": 2
+        },
+        {
+          "keyword": "financial stability",
+          "weight": 2
+        },
+        {
+          "keyword": "trading",
+          "weight": 2
+        },
+        {
+          "keyword": "market volatility",
+          "weight": 2
+        },
+        {
+          "keyword": "asset management",
+          "weight": 2
+        },
+        {
+          "keyword": "financial planning",
+          "weight": 2
+        },
+        {
+          "keyword": "wealth management",
+          "weight": 2
+        },
+        {
+          "keyword": "financial forecasting",
+          "weight": 2
+        },
+        {
+          "keyword": "market research",
+          "weight": 2
+        },
+        {
+          "keyword": "economic outlook",
+          "weight": 2
+        },
+        {
+          "keyword": "financial metrics",
+          "weight": 2
+        },
+        {
+          "keyword": "financial reports",
+          "weight": 2
+        },
+        {
+          "keyword": "investment risk",
+          "weight": 2
+        },
+        {
+          "keyword": "financial growth",
+          "weight": 2
+        },
+        {
+          "keyword": "financial sector",
+          "weight": 2
+        },
+        {
+          "keyword": "market insights",
+          "weight": 2
+        },
+        {
+          "keyword": "financial trends",
+          "weight": 2
+        },
+        {
+          "keyword": "market data",
+          "weight": 2
+        },
+        {
+          "keyword": "economic analysis",
+          "weight": 2
+        },
+        {
+          "keyword": "financial services",
+          "weight": 2
+        },
+        {
+          "keyword": "market conditions",
+          "weight": 2
+        },
+        {
+          "keyword": "financial strategies",
+          "weight": 2
+        },
+        {
+          "keyword": "market outlook",
+          "weight": 2
+        },
+        {
+          "keyword": "financial risks",
+          "weight": 2
+        },
+        {
+          "keyword": "investment analysis",
+          "weight": 2
+        },
+        {
+          "keyword": "financial performance",
+          "weight": 2
+        },
+        {
+          "keyword": "market fluctuations",
+          "weight": 2
+        },
+        {
+          "keyword": "market opportunities",
+          "weight": 2
+        },
+        {
+          "keyword": "financial projections",
+          "weight": 2
+        },
+        {
+          "keyword": "market intelligence",
+          "weight": 2
+        }
+      ],
+      "id": "market_watch",
+      "path": "https://petroai1492.github.io/delta/finance/market_watch.html",
+      "last_generated": "2026-06-22 13:04"
     }
   ],
   "cross_domain_matrix": [
