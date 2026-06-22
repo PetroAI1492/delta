@@ -147,7 +147,7 @@
 </div>
 <footer>
   Thor Storehouse Report Assistant &nbsp;·&nbsp; Taxonomy-driven routing &nbsp;·&nbsp;
-  Generated: 2026-06-22 15:32 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+  Generated: 2026-06-22 15:33 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 <script>
 const REPORTS = [
@@ -7204,25 +7204,322 @@ const REPORTS = [
       "current: ES=F +0.27%, NQ=F +0.72%, WTI -4.63%, Brent -4.28%, Gold +1.25%, VIX +3.93%, BTC +1.63%"
     ],
     "intent_phrases": [
-      "morning pulse",
-      "pre-market",
-      "futures",
-      "S&P futures",
-      "Nasdaq futures",
-      "market open",
-      "what are futures doing",
-      "overnight markets",
-      "pre-market movers",
-      "VIX today",
-      "crude this morning",
-      "gold today",
-      "Bitcoin now",
-      "dollar index",
-      "Treasury yield today"
+      {
+        "keyword": "market open",
+        "weight": 10
+      },
+      {
+        "keyword": "finance",
+        "weight": 10
+      },
+      {
+        "keyword": "market",
+        "weight": 9
+      },
+      {
+        "keyword": "stocks",
+        "weight": 8
+      },
+      {
+        "keyword": "trading",
+        "weight": 8
+      },
+      {
+        "keyword": "investment",
+        "weight": 8
+      },
+      {
+        "keyword": "economy",
+        "weight": 7
+      },
+      {
+        "keyword": "financial report",
+        "weight": 7
+      },
+      {
+        "keyword": "market trends",
+        "weight": 6
+      },
+      {
+        "keyword": "analysis",
+        "weight": 6
+      },
+      {
+        "keyword": "financial analysis",
+        "weight": 6
+      },
+      {
+        "keyword": "morning pulse",
+        "weight": 5
+      },
+      {
+        "keyword": "pre-market",
+        "weight": 5
+      },
+      {
+        "keyword": "futures",
+        "weight": 5
+      },
+      {
+        "keyword": "S&P futures",
+        "weight": 5
+      },
+      {
+        "keyword": "Nasdaq futures",
+        "weight": 5
+      },
+      {
+        "keyword": "what are futures doing",
+        "weight": 5
+      },
+      {
+        "keyword": "overnight markets",
+        "weight": 5
+      },
+      {
+        "keyword": "pre-market movers",
+        "weight": 5
+      },
+      {
+        "keyword": "VIX today",
+        "weight": 5
+      },
+      {
+        "keyword": "crude this morning",
+        "weight": 5
+      },
+      {
+        "keyword": "gold today",
+        "weight": 5
+      },
+      {
+        "keyword": "Bitcoin now",
+        "weight": 5
+      },
+      {
+        "keyword": "dollar index",
+        "weight": 5
+      },
+      {
+        "keyword": "Treasury yield today",
+        "weight": 5
+      },
+      {
+        "keyword": "summary",
+        "weight": 5
+      },
+      {
+        "keyword": "data",
+        "weight": 5
+      },
+      {
+        "keyword": "performance",
+        "weight": 5
+      },
+      {
+        "keyword": "forecasts",
+        "weight": 5
+      },
+      {
+        "keyword": "financial metrics",
+        "weight": 4
+      },
+      {
+        "keyword": "economic indicators",
+        "weight": 4
+      },
+      {
+        "keyword": "reporting",
+        "weight": 4
+      },
+      {
+        "keyword": "market overview",
+        "weight": 4
+      },
+      {
+        "keyword": "trends",
+        "weight": 4
+      },
+      {
+        "keyword": "financial markets",
+        "weight": 4
+      },
+      {
+        "keyword": "june 2026",
+        "weight": 3
+      },
+      {
+        "keyword": "generated at",
+        "weight": 3
+      },
+      {
+        "keyword": "session",
+        "weight": 3
+      },
+      {
+        "keyword": "financial news",
+        "weight": 3
+      },
+      {
+        "keyword": "investor sentiment",
+        "weight": 3
+      },
+      {
+        "keyword": "market analysis",
+        "weight": 3
+      },
+      {
+        "keyword": "stock market",
+        "weight": 3
+      },
+      {
+        "keyword": "bull market",
+        "weight": 2
+      },
+      {
+        "keyword": "bear market",
+        "weight": 2
+      },
+      {
+        "keyword": "financial data",
+        "weight": 2
+      },
+      {
+        "keyword": "economic report",
+        "weight": 2
+      },
+      {
+        "keyword": "financial summary",
+        "weight": 2
+      },
+      {
+        "keyword": "market insights",
+        "weight": 2
+      },
+      {
+        "keyword": "financial performance",
+        "weight": 2
+      },
+      {
+        "keyword": "investment strategies",
+        "weight": 2
+      },
+      {
+        "keyword": "market conditions",
+        "weight": 2
+      },
+      {
+        "keyword": "financial outlook",
+        "weight": 2
+      },
+      {
+        "keyword": "trading session",
+        "weight": 2
+      },
+      {
+        "keyword": "financial trends",
+        "weight": 2
+      },
+      {
+        "keyword": "market updates",
+        "weight": 2
+      },
+      {
+        "keyword": "financial sectors",
+        "weight": 1
+      },
+      {
+        "keyword": "economic growth",
+        "weight": 1
+      },
+      {
+        "keyword": "market fluctuations",
+        "weight": 1
+      },
+      {
+        "keyword": "financial stability",
+        "weight": 1
+      },
+      {
+        "keyword": "capital markets",
+        "weight": 1
+      },
+      {
+        "keyword": "market performance",
+        "weight": 1
+      },
+      {
+        "keyword": "financial risks",
+        "weight": 1
+      },
+      {
+        "keyword": "investment analysis",
+        "weight": 1
+      },
+      {
+        "keyword": "market predictions",
+        "weight": 1
+      },
+      {
+        "keyword": "financial strategies",
+        "weight": 1
+      },
+      {
+        "keyword": "economic forecasts",
+        "weight": 1
+      },
+      {
+        "keyword": "market research",
+        "weight": 1
+      },
+      {
+        "keyword": "financial insights",
+        "weight": 1
+      },
+      {
+        "keyword": "market behavior",
+        "weight": 1
+      },
+      {
+        "keyword": "financial planning",
+        "weight": 1
+      },
+      {
+        "keyword": "market volatility",
+        "weight": 1
+      },
+      {
+        "keyword": "financial institutions",
+        "weight": 1
+      },
+      {
+        "keyword": "market analysis tools",
+        "weight": 1
+      },
+      {
+        "keyword": "financial technology",
+        "weight": 1
+      },
+      {
+        "keyword": "market participants",
+        "weight": 1
+      },
+      {
+        "keyword": "financial cycles",
+        "weight": 1
+      },
+      {
+        "keyword": "market strategies",
+        "weight": 1
+      },
+      {
+        "keyword": "financial benchmarks",
+        "weight": 1
+      }
     ],
     "id": "morning_pulse",
     "path": "https://petroai1492.github.io/delta/finance/morning_pulse.html",
-    "last_generated": null
+    "last_generated": "2026-06-22 15:27"
   }
 ];
 const CROSS_DOMAIN = [
