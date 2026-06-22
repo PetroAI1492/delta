@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-22T17:57:27Z",
+  "generated": "2026-06-22T19:32:02Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -1976,11 +1976,11 @@
           "weight": 10
         },
         {
-          "keyword": "total events",
-          "weight": 9
+          "keyword": "report",
+          "weight": 10
         },
         {
-          "keyword": "total cost",
+          "keyword": "cross-reference",
           "weight": 9
         },
         {
@@ -1989,6 +1989,18 @@
         },
         {
           "keyword": "wti",
+          "weight": 9
+        },
+        {
+          "keyword": "oil prices",
+          "weight": 9
+        },
+        {
+          "keyword": "total events",
+          "weight": 8
+        },
+        {
+          "keyword": "total cost",
           "weight": 8
         },
         {
@@ -1996,11 +2008,39 @@
           "weight": 8
         },
         {
+          "keyword": "death toll",
+          "weight": 8
+        },
+        {
+          "keyword": "disaster events",
+          "weight": 8
+        },
+        {
           "keyword": "economic impact",
           "weight": 7
         },
         {
-          "keyword": "natural disasters",
+          "keyword": "financial report",
+          "weight": 7
+        },
+        {
+          "keyword": "wti average",
+          "weight": 7
+        },
+        {
+          "keyword": "gas average",
+          "weight": 7
+        },
+        {
+          "keyword": "cost of disasters",
+          "weight": 7
+        },
+        {
+          "keyword": "energy prices",
+          "weight": 7
+        },
+        {
+          "keyword": "disaster statistics",
           "weight": 7
         },
         {
@@ -2008,11 +2048,47 @@
           "weight": 6
         },
         {
-          "keyword": "financial report",
+          "keyword": "cost analysis",
           "weight": 6
         },
         {
-          "keyword": "cost analysis",
+          "keyword": "industry metrics",
+          "weight": 6
+        },
+        {
+          "keyword": "financial losses",
+          "weight": 6
+        },
+        {
+          "keyword": "wti up",
+          "weight": 6
+        },
+        {
+          "keyword": "wti down",
+          "weight": 6
+        },
+        {
+          "keyword": "wti flat",
+          "weight": 6
+        },
+        {
+          "keyword": "financial analysis",
+          "weight": 6
+        },
+        {
+          "keyword": "death statistics",
+          "weight": 6
+        },
+        {
+          "keyword": "oil market",
+          "weight": 6
+        },
+        {
+          "keyword": "gas market",
+          "weight": 6
+        },
+        {
+          "keyword": "event impact",
           "weight": 6
         },
         {
@@ -2056,180 +2132,152 @@
           "weight": 5
         },
         {
-          "keyword": "risk assessment",
-          "weight": 5
-        },
-        {
-          "keyword": "insurance claims",
-          "weight": 5
-        },
-        {
-          "keyword": "disaster recovery",
-          "weight": 5
-        },
-        {
-          "keyword": "oil prices",
-          "weight": 5
-        },
-        {
-          "keyword": "wti average",
-          "weight": 4
-        },
-        {
-          "keyword": "gas average",
-          "weight": 4
-        },
-        {
-          "keyword": "economic losses",
-          "weight": 4
-        },
-        {
-          "keyword": "death toll",
-          "weight": 4
-        },
-        {
           "keyword": "data analysis",
-          "weight": 4
+          "weight": 5
+        },
+        {
+          "keyword": "economic data",
+          "weight": 5
         },
         {
           "keyword": "financial metrics",
-          "weight": 3
-        },
-        {
-          "keyword": "event statistics",
-          "weight": 3
+          "weight": 5
         },
         {
           "keyword": "disaster management",
-          "weight": 3
-        },
-        {
-          "keyword": "cost of disasters",
-          "weight": 3
-        },
-        {
-          "keyword": "energy prices",
-          "weight": 3
+          "weight": 5
         },
         {
           "keyword": "wti eligible",
-          "weight": 2
-        },
-        {
-          "keyword": "wti up",
-          "weight": 2
-        },
-        {
-          "keyword": "wti down",
-          "weight": 2
-        },
-        {
-          "keyword": "wti flat",
-          "weight": 2
-        },
-        {
-          "keyword": "pre-1986 data",
-          "weight": 2
-        },
-        {
-          "keyword": "no data",
-          "weight": 2
-        },
-        {
-          "keyword": "indicators",
-          "weight": 2
-        },
-        {
-          "keyword": "financial analysis",
-          "weight": 2
+          "weight": 5
         },
         {
           "keyword": "event count",
-          "weight": 2
+          "weight": 5
         },
         {
-          "keyword": "economic indicators",
-          "weight": 2
+          "keyword": "impact assessment",
+          "weight": 5
         },
         {
-          "keyword": "disaster statistics",
-          "weight": 2
+          "keyword": "cost estimates",
+          "weight": 5
+        },
+        {
+          "keyword": "market trends",
+          "weight": 5
+        },
+        {
+          "keyword": "economic analysis",
+          "weight": 5
         },
         {
           "keyword": "cost per event",
-          "weight": 2
+          "weight": 5
+        },
+        {
+          "keyword": "total metrics",
+          "weight": 5
+        },
+        {
+          "keyword": "financial summary",
+          "weight": 5
         },
         {
           "keyword": "financial impact",
-          "weight": 2
+          "weight": 5
         },
         {
-          "keyword": "risk factors",
-          "weight": 2
+          "keyword": "economic losses",
+          "weight": 5
         },
         {
-          "keyword": "data trends",
-          "weight": 2
-        },
-        {
-          "keyword": "report generation",
-          "weight": 1
+          "keyword": "pre-1986 data",
+          "weight": 4
         },
         {
           "keyword": "financial forecasting",
-          "weight": 1
+          "weight": 4
         },
         {
-          "keyword": "loss assessment",
-          "weight": 1
+          "keyword": "financial implications",
+          "weight": 4
         },
         {
-          "keyword": "policy implications",
-          "weight": 1
+          "keyword": "wti n",
+          "weight": 4
         },
         {
-          "keyword": "government response",
-          "weight": 1
+          "keyword": "gas n",
+          "weight": 4
         },
         {
-          "keyword": "emergency management",
-          "weight": 1
+          "keyword": "ind n",
+          "weight": 4
         },
         {
-          "keyword": "public safety",
-          "weight": 1
+          "keyword": "disaster response",
+          "weight": 4
         },
         {
-          "keyword": "environmental impact",
-          "weight": 1
+          "keyword": "cost analysis report",
+          "weight": 4
         },
         {
-          "keyword": "community resilience",
-          "weight": 1
-        },
-        {
-          "keyword": "financial stability",
-          "weight": 1
-        },
-        {
-          "keyword": "loss of life",
-          "weight": 1
-        },
-        {
-          "keyword": "disaster preparedness",
-          "weight": 1
-        },
-        {
-          "keyword": "economic recovery",
-          "weight": 1
-        },
-        {
-          "keyword": "data reporting",
-          "weight": 1
+          "keyword": "disaster recovery",
+          "weight": 4
         },
         {
           "keyword": "financial risk",
-          "weight": 1
+          "weight": 4
+        },
+        {
+          "keyword": "event data",
+          "weight": 4
+        },
+        {
+          "keyword": "disaster finance",
+          "weight": 4
+        },
+        {
+          "keyword": "no data",
+          "weight": 3
+        },
+        {
+          "keyword": "cost-benefit analysis",
+          "weight": 3
+        },
+        {
+          "keyword": "financial risk assessment",
+          "weight": 3
+        },
+        {
+          "keyword": "cost projections",
+          "weight": 3
+        },
+        {
+          "keyword": "data trends",
+          "weight": 3
+        },
+        {
+          "keyword": "financial overview",
+          "weight": 3
+        },
+        {
+          "keyword": "event tracking",
+          "weight": 3
+        },
+        {
+          "keyword": "economic evaluation",
+          "weight": 3
+        },
+        {
+          "keyword": "disaster cost",
+          "weight": 3
+        },
+        {
+          "keyword": "financial data",
+          "weight": 3
         }
       ],
       "id": "disaster_cross_reference_report",
@@ -6744,6 +6792,65 @@
       "id": "global_chokepoint_signal_report",
       "path": "https://petroai1492.github.io/delta/energy/choke_point.html",
       "last_generated": "2026-06-22 13:25"
+    },
+    {
+      "title": "Morning Pulse",
+      "file": "finance/morning_pulse.html",
+      "description": "Live pre-market and intraday snapshot \u2014 S&P/Nasdaq/Dow futures, VIX, Treasury yields, crude, gold, dollar, and Bitcoin, refreshed every 30 minutes",
+      "json_file": "finance/morning_pulse.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/finance/morning_pulse.html`",
+      "auto_published": true,
+      "primary_domain": "Finance",
+      "secondary_domains": [
+        "Energy",
+        "Economy",
+        "Federal"
+      ],
+      "entities": [
+        "S&P 500 Futures (ES=F)",
+        "Nasdaq Futures (NQ=F)",
+        "Dow Futures (YM=F)",
+        "VIX",
+        "10Y Treasury (^TNX)",
+        "5Y Treasury (^FVX)",
+        "WTI (CL=F)",
+        "Brent (BZ=F)",
+        "Henry Hub (NG=F)",
+        "Gold (GC=F)",
+        "U.S. Dollar Index (DX-Y.NYB)",
+        "Bitcoin (BTC-USD)"
+      ],
+      "data_sources": [
+        "Yahoo Finance (yfinance) \u2014 live fetch at run time",
+        "no Storehouse dependency"
+      ],
+      "update_frequency": "Every 30 minutes (Windows Task Scheduler)",
+      "key_signals": [
+        "12 tickers",
+        "session label (PRE-MARKET/MARKET OPEN/AFTER HOURS/OVERNIGHT)",
+        "price and % change vs prior close for all series",
+        "current: ES=F +0.27%, NQ=F +0.72%, WTI -4.63%, Brent -4.28%, Gold +1.25%, VIX +3.93%, BTC +1.63%"
+      ],
+      "intent_phrases": [
+        "morning pulse",
+        "pre-market",
+        "futures",
+        "S&P futures",
+        "Nasdaq futures",
+        "market open",
+        "what are futures doing",
+        "overnight markets",
+        "pre-market movers",
+        "VIX today",
+        "crude this morning",
+        "gold today",
+        "Bitcoin now",
+        "dollar index",
+        "Treasury yield today"
+      ],
+      "id": "morning_pulse",
+      "path": "https://petroai1492.github.io/delta/finance/morning_pulse.html"
     }
   ],
   "cross_domain_matrix": [
