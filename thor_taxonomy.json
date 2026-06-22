@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-22T17:48:26Z",
+  "generated": "2026-06-22T17:57:00Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -1972,104 +1972,52 @@
           "weight": 10
         },
         {
-          "keyword": "disaster report",
+          "keyword": "finance",
+          "weight": 10
+        },
+        {
+          "keyword": "total events",
           "weight": 9
         },
         {
-          "keyword": "finance",
+          "keyword": "total cost",
+          "weight": 9
+        },
+        {
+          "keyword": "total deaths",
           "weight": 9
         },
         {
           "keyword": "wti",
-          "weight": 9
-        },
-        {
-          "keyword": "cross-reference",
           "weight": 8
-        },
-        {
-          "keyword": "total deaths",
-          "weight": 8
-        },
-        {
-          "keyword": "death toll",
-          "weight": 8
-        },
-        {
-          "keyword": "total events",
-          "weight": 7
-        },
-        {
-          "keyword": "total cost",
-          "weight": 7
-        },
-        {
-          "keyword": "oil prices",
-          "weight": 7
-        },
-        {
-          "keyword": "financial report",
-          "weight": 7
-        },
-        {
-          "keyword": "death statistics",
-          "weight": 7
-        },
-        {
-          "keyword": "financial impact",
-          "weight": 7
         },
         {
           "keyword": "gas prices",
-          "weight": 6
+          "weight": 8
         },
         {
           "keyword": "economic impact",
+          "weight": 7
+        },
+        {
+          "keyword": "natural disasters",
+          "weight": 7
+        },
+        {
+          "keyword": "event analysis",
           "weight": 6
         },
         {
-          "keyword": "wti up",
+          "keyword": "financial report",
           "weight": 6
         },
         {
-          "keyword": "wti down",
+          "keyword": "cost analysis",
           "weight": 6
         },
         {
-          "keyword": "wti flat",
-          "weight": 6
-        },
-        {
-          "keyword": "event count",
-          "weight": 6
-        },
-        {
-          "keyword": "energy market",
-          "weight": 6
-        },
-        {
-          "keyword": "cost of disasters",
-          "weight": 6
-        },
-        {
-          "keyword": "disaster statistics",
-          "weight": 6
-        },
-        {
-          "keyword": "financial analysis",
-          "weight": 6
-        },
-        {
-          "keyword": "oil market",
-          "weight": 6
-        },
-        {
-          "keyword": "disaster analysis",
-          "weight": 6
-        },
-        {
-          "keyword": "disaster costs",
-          "weight": 6
+          "keyword": "disaster report",
+          "weight": 5
         },
         {
           "keyword": "hurricane oil price",
@@ -2108,95 +2056,35 @@
           "weight": 5
         },
         {
-          "keyword": "event analysis",
+          "keyword": "risk assessment",
           "weight": 5
         },
         {
-          "keyword": "cost analysis",
+          "keyword": "insurance claims",
           "weight": 5
         },
         {
-          "keyword": "average wti",
+          "keyword": "disaster recovery",
           "weight": 5
         },
         {
-          "keyword": "gas average",
+          "keyword": "oil prices",
           "weight": 5
         },
         {
-          "keyword": "industry average",
-          "weight": 5
-        },
-        {
-          "keyword": "cost burden",
-          "weight": 5
-        },
-        {
-          "keyword": "disaster economics",
-          "weight": 5
-        },
-        {
-          "keyword": "event metrics",
-          "weight": 5
-        },
-        {
-          "keyword": "financial metrics",
-          "weight": 5
-        },
-        {
-          "keyword": "economic data",
-          "weight": 5
-        },
-        {
-          "keyword": "disaster management",
-          "weight": 5
-        },
-        {
-          "keyword": "financial losses",
-          "weight": 5
-        },
-        {
-          "keyword": "impact assessment",
-          "weight": 5
-        },
-        {
-          "keyword": "disaster response",
-          "weight": 5
-        },
-        {
-          "keyword": "market fluctuations",
-          "weight": 5
-        },
-        {
-          "keyword": "gas market",
-          "weight": 5
-        },
-        {
-          "keyword": "energy prices",
-          "weight": 5
-        },
-        {
-          "keyword": "financial implications",
-          "weight": 5
-        },
-        {
-          "keyword": "oil price trends",
-          "weight": 5
-        },
-        {
-          "keyword": "gas price trends",
-          "weight": 5
-        },
-        {
-          "keyword": "economic losses",
-          "weight": 5
-        },
-        {
-          "keyword": "wti eligible",
+          "keyword": "wti average",
           "weight": 4
         },
         {
-          "keyword": "pre-1986 data",
+          "keyword": "gas average",
+          "weight": 4
+        },
+        {
+          "keyword": "economic losses",
+          "weight": 4
+        },
+        {
+          "keyword": "death toll",
           "weight": 4
         },
         {
@@ -2204,76 +2092,144 @@
           "weight": 4
         },
         {
-          "keyword": "risk assessment",
-          "weight": 4
+          "keyword": "financial metrics",
+          "weight": 3
         },
         {
-          "keyword": "financial trends",
-          "weight": 4
+          "keyword": "event statistics",
+          "weight": 3
         },
         {
-          "keyword": "cost estimation",
-          "weight": 4
+          "keyword": "disaster management",
+          "weight": 3
         },
         {
-          "keyword": "event tracking",
-          "weight": 4
+          "keyword": "cost of disasters",
+          "weight": 3
         },
         {
-          "keyword": "economic recovery",
-          "weight": 4
+          "keyword": "energy prices",
+          "weight": 3
         },
         {
-          "keyword": "cost-benefit analysis",
-          "weight": 4
+          "keyword": "wti eligible",
+          "weight": 2
         },
         {
-          "keyword": "event severity",
-          "weight": 4
+          "keyword": "wti up",
+          "weight": 2
         },
         {
-          "keyword": "disaster trends",
-          "weight": 4
+          "keyword": "wti down",
+          "weight": 2
         },
         {
-          "keyword": "cost implications",
-          "weight": 4
+          "keyword": "wti flat",
+          "weight": 2
+        },
+        {
+          "keyword": "pre-1986 data",
+          "weight": 2
+        },
+        {
+          "keyword": "no data",
+          "weight": 2
+        },
+        {
+          "keyword": "indicators",
+          "weight": 2
+        },
+        {
+          "keyword": "financial analysis",
+          "weight": 2
+        },
+        {
+          "keyword": "event count",
+          "weight": 2
         },
         {
           "keyword": "economic indicators",
-          "weight": 4
+          "weight": 2
         },
         {
-          "keyword": "disaster frequency",
-          "weight": 4
+          "keyword": "disaster statistics",
+          "weight": 2
         },
         {
-          "keyword": "event outcomes",
-          "weight": 4
+          "keyword": "cost per event",
+          "weight": 2
         },
         {
-          "keyword": "financial statistics",
-          "weight": 4
+          "keyword": "financial impact",
+          "weight": 2
         },
         {
-          "keyword": "cost projections",
-          "weight": 4
+          "keyword": "risk factors",
+          "weight": 2
         },
         {
-          "keyword": "wti no data",
-          "weight": 3
+          "keyword": "data trends",
+          "weight": 2
         },
         {
-          "keyword": "data reporting",
-          "weight": 3
-        },
-        {
-          "keyword": "cost recovery",
-          "weight": 3
+          "keyword": "report generation",
+          "weight": 1
         },
         {
           "keyword": "financial forecasting",
-          "weight": 3
+          "weight": 1
+        },
+        {
+          "keyword": "loss assessment",
+          "weight": 1
+        },
+        {
+          "keyword": "policy implications",
+          "weight": 1
+        },
+        {
+          "keyword": "government response",
+          "weight": 1
+        },
+        {
+          "keyword": "emergency management",
+          "weight": 1
+        },
+        {
+          "keyword": "public safety",
+          "weight": 1
+        },
+        {
+          "keyword": "environmental impact",
+          "weight": 1
+        },
+        {
+          "keyword": "community resilience",
+          "weight": 1
+        },
+        {
+          "keyword": "financial stability",
+          "weight": 1
+        },
+        {
+          "keyword": "loss of life",
+          "weight": 1
+        },
+        {
+          "keyword": "disaster preparedness",
+          "weight": 1
+        },
+        {
+          "keyword": "economic recovery",
+          "weight": 1
+        },
+        {
+          "keyword": "data reporting",
+          "weight": 1
+        },
+        {
+          "keyword": "financial risk",
+          "weight": 1
         }
       ],
       "id": "disaster_cross_reference_report",
@@ -2282,10 +2238,12 @@
     },
     {
       "title": "Cyber KEV Market Signals Report",
-      "file": "finance/cyber/cyber_report.html",
-      "published": false,
-      "url": null,
-      "auto_published": false,
+      "file": "finance/cyber_report.html",
+      "description": "CISA KEV catalog cross-referenced against cyber sector market reactions \u2014 672 events, CRWD excess return +0.468% vs SPY, ETFs near zero, market does not consistently price KEV additions",
+      "json_file": "finance/cyber_report.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/finance/cyber_report.html`",
+      "auto_published": true,
       "primary_domain": "Cybersecurity",
       "secondary_domains": [
         "Finance"
@@ -2307,11 +2265,13 @@
       ],
       "update_frequency": "Continuous (KEV updated daily by CISA)",
       "key_signals": [
-        "675 KEV events analyzed",
-        "CRWD excess return +0.46% vs SPY",
-        "ETFs near zero excess return",
-        "BUG -0.11% (underperforms)",
-        "VIX -0.30%",
+        "672 KEV events analyzed (3-year window, \u00b13 trading days)",
+        "CRWD avg +0.839% raw / +0.468% excess vs SPY (beat benchmark 383/672)",
+        "CIBR +0.093% excess",
+        "BUG -0.112% excess",
+        "HACK +0.099% excess",
+        "VIX avg -0.368%",
+        "103 ransomware-linked events",
         "finding: market does not price KEV additions as sector events",
         "CRWD signal likely beta not pure cyber bid"
       ],
@@ -2328,7 +2288,7 @@
         "CISA exploited vulnerabilities market"
       ],
       "id": "cyber_kev_market_signals_report",
-      "path": "https://petroai1492.github.io/delta/finance/cyber/cyber_report.html",
+      "path": "https://petroai1492.github.io/delta/finance/cyber_report.html",
       "last_generated": null
     },
     {
