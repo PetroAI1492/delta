@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-22T20:47:54Z",
+  "generated": "2026-06-22T20:48:13Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -2353,15 +2353,11 @@
           "weight": 8
         },
         {
-          "keyword": "cyber attacks",
-          "weight": 8
-        },
-        {
           "keyword": "ransomware attacks",
           "weight": 8
         },
         {
-          "keyword": "spy",
+          "keyword": "cyber attacks",
           "weight": 7
         },
         {
@@ -2369,19 +2365,19 @@
           "weight": 7
         },
         {
-          "keyword": "cyber incidents",
+          "keyword": "malware",
           "weight": 7
         },
         {
-          "keyword": "cybercrime",
+          "keyword": "cybersecurity threats",
           "weight": 7
         },
         {
-          "keyword": "events",
+          "keyword": "spy",
           "weight": 6
         },
         {
-          "keyword": "total events",
+          "keyword": "cyber incidents",
           "weight": 6
         },
         {
@@ -2389,19 +2385,23 @@
           "weight": 6
         },
         {
-          "keyword": "malware",
-          "weight": 6
-        },
-        {
           "keyword": "vulnerabilities",
           "weight": 6
         },
         {
-          "keyword": "cyber risk",
+          "keyword": "cybersecurity market",
           "weight": 6
         },
         {
-          "keyword": "cybersecurity threats",
+          "keyword": "cybersecurity metrics",
+          "weight": 6
+        },
+        {
+          "keyword": "malicious software",
+          "weight": 6
+        },
+        {
+          "keyword": "cybersecurity incidents",
           "weight": 6
         },
         {
@@ -2445,15 +2445,19 @@
           "weight": 5
         },
         {
-          "keyword": "security benchmarks",
+          "keyword": "events",
           "weight": 5
         },
         {
-          "keyword": "financial metrics",
+          "keyword": "total events",
           "weight": 5
         },
         {
-          "keyword": "average percentage",
+          "keyword": "cyber risk",
+          "weight": 5
+        },
+        {
+          "keyword": "security metrics",
           "weight": 5
         },
         {
@@ -2461,7 +2465,7 @@
           "weight": 5
         },
         {
-          "keyword": "incident response",
+          "keyword": "cybersecurity trends",
           "weight": 5
         },
         {
@@ -2469,11 +2473,7 @@
           "weight": 5
         },
         {
-          "keyword": "cybersecurity trends",
-          "weight": 5
-        },
-        {
-          "keyword": "cybersecurity metrics",
+          "keyword": "security vulnerabilities",
           "weight": 5
         },
         {
@@ -2485,27 +2485,31 @@
           "weight": 5
         },
         {
-          "keyword": "data security",
+          "keyword": "cybersecurity risks",
           "weight": 5
         },
         {
-          "keyword": "information security",
+          "keyword": "cybersecurity landscape",
           "weight": 5
         },
         {
-          "keyword": "cybersecurity incidents",
-          "weight": 5
+          "keyword": "incident response",
+          "weight": 4
         },
         {
-          "keyword": "security breaches",
-          "weight": 5
+          "keyword": "security benchmarks",
+          "weight": 4
+        },
+        {
+          "keyword": "financial metrics",
+          "weight": 4
         },
         {
           "keyword": "attack vectors",
           "weight": 4
         },
         {
-          "keyword": "security incidents",
+          "keyword": "data security",
           "weight": 4
         },
         {
@@ -2513,39 +2517,19 @@
           "weight": 4
         },
         {
-          "keyword": "security vulnerabilities",
+          "keyword": "cybersecurity strategies",
           "weight": 4
         },
         {
-          "keyword": "cybersecurity framework",
-          "weight": 4
-        },
-        {
-          "keyword": "incident statistics",
-          "weight": 4
-        },
-        {
-          "keyword": "security measures",
-          "weight": 4
-        },
-        {
-          "keyword": "cybersecurity best practices",
-          "weight": 4
-        },
-        {
-          "keyword": "digital threats",
-          "weight": 4
-        },
-        {
-          "keyword": "cybersecurity landscape",
-          "weight": 4
-        },
-        {
-          "keyword": "cybersecurity challenges",
+          "keyword": "cybersecurity tools",
           "weight": 4
         },
         {
           "keyword": "cybersecurity solutions",
+          "weight": 4
+        },
+        {
+          "keyword": "cybersecurity best practices",
           "weight": 4
         },
         {
@@ -2557,43 +2541,7 @@
           "weight": 4
         },
         {
-          "keyword": "cybersecurity statistics",
-          "weight": 4
-        },
-        {
-          "keyword": "cybersecurity market analysis",
-          "weight": 4
-        },
-        {
-          "keyword": "cybersecurity incident analysis",
-          "weight": 4
-        },
-        {
-          "keyword": "cybersecurity event analysis",
-          "weight": 4
-        },
-        {
-          "keyword": "cybersecurity risk assessment",
-          "weight": 4
-        },
-        {
-          "keyword": "security compliance",
-          "weight": 3
-        },
-        {
-          "keyword": "cybersecurity awareness",
-          "weight": 3
-        },
-        {
-          "keyword": "security policies",
-          "weight": 3
-        },
-        {
-          "keyword": "cybersecurity tools",
-          "weight": 3
-        },
-        {
-          "keyword": "cybersecurity policies",
+          "keyword": "cyber insurance",
           "weight": 3
         },
         {
@@ -2601,7 +2549,7 @@
           "weight": 3
         },
         {
-          "keyword": "cybersecurity audits",
+          "keyword": "cybersecurity policies",
           "weight": 3
         },
         {
@@ -2609,40 +2557,100 @@
           "weight": 3
         },
         {
+          "keyword": "cybersecurity awareness",
+          "weight": 3
+        },
+        {
           "keyword": "cybersecurity investments",
           "weight": 3
         },
         {
-          "keyword": "cybersecurity regulations",
+          "keyword": "cybersecurity statistics",
           "weight": 3
         },
         {
-          "keyword": "cybersecurity workforce",
+          "keyword": "cybersecurity case studies",
           "weight": 3
         },
         {
-          "keyword": "cybersecurity education",
+          "keyword": "cybersecurity incidents analysis",
           "weight": 3
         },
         {
-          "keyword": "cybersecurity training",
+          "keyword": "cybersecurity trends analysis",
+          "weight": 3
+        },
+        {
+          "keyword": "cybersecurity risk management",
           "weight": 3
         },
         {
           "keyword": "cybersecurity awareness training",
-          "weight": 3
+          "weight": 2
         },
         {
-          "keyword": "cybersecurity investment trends",
-          "weight": 3
+          "keyword": "cybersecurity certifications",
+          "weight": 2
         },
         {
-          "keyword": "cybersecurity performance",
-          "weight": 3
+          "keyword": "cybersecurity professionals",
+          "weight": 2
+        },
+        {
+          "keyword": "cybersecurity workforce",
+          "weight": 2
+        },
+        {
+          "keyword": "cybersecurity education",
+          "weight": 2
+        },
+        {
+          "keyword": "cybersecurity conferences",
+          "weight": 2
+        },
+        {
+          "keyword": "cybersecurity news",
+          "weight": 2
+        },
+        {
+          "keyword": "cybersecurity updates",
+          "weight": 2
+        },
+        {
+          "keyword": "cybersecurity audits",
+          "weight": 2
+        },
+        {
+          "keyword": "cybersecurity assessments",
+          "weight": 2
+        },
+        {
+          "keyword": "cybersecurity evaluations",
+          "weight": 2
+        },
+        {
+          "keyword": "cybersecurity tools and technologies",
+          "weight": 2
+        },
+        {
+          "keyword": "cybersecurity frameworks and standards",
+          "weight": 2
+        },
+        {
+          "keyword": "cybersecurity compliance requirements",
+          "weight": 2
         },
         {
           "keyword": "cybersecurity incident response plan",
-          "weight": 3
+          "weight": 2
+        },
+        {
+          "keyword": "cybersecurity incident management",
+          "weight": 2
+        },
+        {
+          "keyword": "cybersecurity incident reporting",
+          "weight": 2
         }
       ],
       "id": "cyber_kev_market_signals_report",
