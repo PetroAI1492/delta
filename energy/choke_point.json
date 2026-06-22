@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-06-22 13:25",
+  "chokepoints": {
+    "Strait of Hormuz": {
+      "stress": 48,
+      "stress_label": "MODERATE",
+      "article_count": 59,
+      "why": "Moderate signal activity. Emerging monitoring conditions.",
+      "top_signals": [
+        {
+          "title": "Hormuz: Traffic flows despite Iran's closure announcement - France 24",
+          "chokepoint": null,
+          "categories": [],
+          "strength": 3,
+          "source": "France 24"
+        },
+        {
+          "title": "Shipping stalls in Strait of Hormuz after Iran declares key waterway closed again - CNBC",
+          "chokepoint": null,
+          "categories": [
+            "Maritime / Shipping"
+          ],
+          "strength": 3,
+          "source": "CNBC"
+        },
+        {
+          "title": "Traffic flows in Strait of Hormuz despite Iran\u2019s closure announcement - The Times of Israel",
+          "chokepoint": null,
+          "categories": [],
+          "strength": 3,
+          "source": "The Times of Israel"
+        },
+        {
+          "title": "Vessels moving in Hormuz despite Iran\u2019s threat of closure - Seatrade Maritime News",
+          "chokepoint": null,
+          "categories": [
+            "Maritime / Shipping"
+          ],
+          "strength": 3,
+          "source": "Seatrade Maritime News"
+        },
+        {
+          "title": "The U.S. says it's open. Iran says it's closed. The Strait of Hormuz remains precarious - CBC",
+          "chokepoint": null,
+          "categories": [],
+          "strength": 3,
+          "source": "CBC"
+        }
+      ]
+    },
+    "Strait of Malacca": {
+      "stress": 33,
+      "stress_label": "MODERATE",
+      "article_count": 2,
+      "why": "Moderate signal activity. Emerging monitoring conditions.",
+      "top_signals": [
+        {
+          "title": "Thailand revives US$30 billion corridor to challenge Malacca Strait - DredgeWire",
+          "chokepoint": null,
+          "categories": [],
+          "strength": 1,
+          "source": "DredgeWire"
+        },
+        {
+          "title": "China\u2019s Malacca panic jails US scholar to appease Myanmar - Asia Times",
+          "chokepoint": null,
+          "categories": [],
+          "strength": 1,
+          "source": "Asia Times"
+        }
+      ]
+    },
+    "Suez Canal": {
+      "stress": 0,
+      "stress_label": "NOMINAL",
+      "article_count": 0,
+      "why": "No significant signals detected for Suez Canal in the last 24 hours.",
+      "top_signals": []
+    },
+    "Bab el-Mandeb": {
+      "stress": 0,
+      "stress_label": "NOMINAL",
+      "article_count": 0,
+      "why": "No significant signals detected for Bab el-Mandeb in the last 24 hours.",
+      "top_signals": []
+    },
+    "Turkish Straits": {
+      "stress": 0,
+      "stress_label": "NOMINAL",
+      "article_count": 0,
+      "why": "No significant signals detected for Turkish Straits in the last 24 hours.",
+      "top_signals": []
+    },
+    "Panama Canal": {
+      "stress": 0,
+      "stress_label": "NOMINAL",
+      "article_count": 0,
+      "why": "No significant signals detected for Panama Canal in the last 24 hours.",
+      "top_signals": []
+    }
+  }
+}

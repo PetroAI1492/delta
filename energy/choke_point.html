@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Chokepoints</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:       #0f1117;
+    --surface:  #171b24;
+    --border:   #252b38;
+    --text:     #d4d8e2;
+    --muted:    #6b7280;
+    --accent:   #3b82f6;
+    --high:     #ef4444;
+    --medium:   #f59e0b;
+    --low:      #10b981;
+    --heading:  #f1f5f9;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: linear-gradient(135deg, #0a0e1a 0%, #0f1928 60%, #0a1520 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 32px 48px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 10% 50%, rgba(59,130,246,0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 90% 20%, rgba(239,68,68,0.06) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .masthead-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .masthead-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .masthead h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(22px, 3vw, 32px);
+    color: var(--heading);
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .masthead-sub {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .masthead-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    text-align: right;
+    line-height: 1.8;
+  }
+
+  /* ── SUMMARY BAR ── */
+  .summary-bar {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 24px;
+  }
+  .summary-item {
+    flex: 1;
+    padding: 12px 20px;
+    border-right: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+  }
+  .summary-item:last-child { border-right: none; }
+  .summary-val {
+    font-family: 'DM Mono', monospace;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--heading);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .summary-label {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── MAIN CONTENT ── */
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 48px 64px;
+  }
+
+  /* ── CHOKEPOINT CARD ── */
+  .chokepoint-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .chokepoint-card:hover { border-color: #353d52; }
+
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid var(--border);
+    gap: 16px;
+  }
+  .card-title-block h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    color: var(--heading);
+    margin-bottom: 6px;
+  }
+  .why-text {
+    font-size: 12px;
+    color: var(--muted);
+    max-width: 600px;
+    line-height: 1.5;
+  }
+  .stress-block {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .stress-score {
+    font-family: 'DM Mono', monospace;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 2px;
+  }
+  .stress-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .stress-sub {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── TABLE ── */
+  .table-wrap { overflow-x: auto; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  thead {
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid var(--border);
+  }
+  thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  tbody tr {
+    border-bottom: 1px solid rgba(37,43,56,0.6);
+    transition: background 0.15s;
+  }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: rgba(255,255,255,0.02); }
+  tbody td {
+    padding: 10px 16px;
+    vertical-align: top;
+  }
+  .col-time  { width: 140px; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); white-space: nowrap; }
+  .col-headline { min-width: 280px; }
+  .col-headline a { color: var(--text); text-decoration: none; line-height: 1.4; }
+  .col-headline a:hover { color: var(--accent); }
+  .col-source { width: 140px; font-size: 12px; color: var(--muted); }
+  .col-cats  { width: 200px; }
+  .col-signal { width: 90px; text-align: center; }
+  .no-data { padding: 20px 16px; color: var(--muted); font-style: italic; text-align: center; }
+
+  /* ── BADGES ── */
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .badge-high   { background: rgba(239,68,68,0.15);   color: #ef4444; border: 1px solid rgba(239,68,68,0.3);   }
+  .badge-medium { background: rgba(245,158,11,0.15);  color: #f59e0b; border: 1px solid rgba(245,158,11,0.3);  }
+  .badge-low    { background: rgba(16,185,129,0.12);  color: #10b981; border: 1px solid rgba(16,185,129,0.25); }
+
+  /* ── CATEGORY TAGS ── */
+  .cat {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 10px;
+    margin: 1px 2px 1px 0;
+    white-space: nowrap;
+  }
+  .cat-energy   { background: rgba(251,191,36,0.1);  color: #fbbf24; }
+  .cat-maritime { background: rgba(59,130,246,0.1);  color: #60a5fa; }
+  .cat-geo      { background: rgba(239,68,68,0.1);   color: #f87171; }
+  .cat-infra    { background: rgba(167,139,250,0.1); color: #a78bfa; }
+  .cat-other    { background: rgba(107,114,128,0.1); color: #9ca3af; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 20px 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  @media (max-width: 768px) {
+    .masthead, .content { padding-left: 20px; padding-right: 20px; }
+    .card-header { flex-direction: column; }
+    .stress-block { text-align: left; }
+    .masthead-top { flex-direction: column; }
+    .masthead-meta { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="masthead-top">
+      <div>
+        <p class="masthead-sub">Global Petroleum Intelligence</p>
+        <h1>Chokepoint Signal Dashboard</h1>
+      </div>
+      <div class="masthead-meta">
+        Generated: June 22, 2026  17:25 UTC<br>
+        Window: Last 24 hours<br>
+        Logic: Deterministic · No AI inference
+      </div>
+    </div>
+    <div class="summary-bar">
+      <div class="summary-item">
+        <div class="summary-val">6</div>
+        <div class="summary-label">Chokepoints Monitored</div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-val">61</div>
+        <div class="summary-label">Signals Detected</div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-val" style="color:#ef4444">10</div>
+        <div class="summary-label">High Severity</div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-val" style="color:#f59e0b">0</div>
+        <div class="summary-label">Elevated Zones</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+  
+        <section class="chokepoint-card">
+          <div class="card-header">
+            <div class="card-title-block">
+              <h2>Strait of Hormuz</h2>
+              <p class="why-text">Moderate signal activity. Emerging monitoring conditions.</p>
+            </div>
+            <div class="stress-block">
+              <div class="stress-score" style="color:#e67e22">48</div>
+              <div class="stress-label" style="color:#e67e22">MODERATE</div>
+              <div class="stress-sub">24h Stress Index</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th class="col-time">Published</th>
+                  <th class="col-headline">Headline</th>
+                  <th class="col-source">Source</th>
+                  <th class="col-cats">Categories</th>
+                  <th class="col-signal">Signal</th>
+                </tr>
+              </thead>
+              <tbody>
+            <tr>
+              <td class="col-time">2026-06-22 16:43 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxQX1Q4Vko4eWd6eXdtM0NNM1c3NVg1Sm9BT2p3WVRoTDVENmlNNHBuQkpMVXBuRDBRbEtoXzk5b0duWkFrSHJ5aU9BeXVPMzR1ak5EWGxvV25nNkJydTF0UlNEVElMOGlBV0poUldROWM5MnNtT19qTDZJalY1SnJoajZRby1oTEhEMDc1dFIyYnVfUFBhUUVWRTlSbUJ6TU92ZThNcW1B?oc=5" target="_blank" rel="noopener">Hormuz: Traffic flows despite Iran's closure announcement - France 24</a></td>
+              <td class="col-source">France 24</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-high">HIGH</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 09:02 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE9kY20xcnV4TnZiNWVDV2o3eDJfb3JnMzRvZ01zRTlrVFZmZnhzel9oX3BPZ0RqX0dLcThIX251OVFQQ3FSYnI0cHlBZFRsU2JJNDZVU1A4Qmp6QlFENHdQZ1hFX2c4T0ZrRzZfdlJOc2Mtc05uZkE3YlFab0tELVnSAYQBQVVfeXFMTnM0aWhmSklqTHN4S0xLbEl2QklKbzdvbzlUaGZEcUREZVJwb3Z1VE1fc19ITW5rRUZXeXlTOG1oMG0yakQ2LWZrSFpGcjFRbHlxeWQ2a0ZiZnRGaV9weko5OXMtUGYyckJoMTFwd2hHQnM3MHJYaXhjQlk1c0V5RDZEdjdx?oc=5" target="_blank" rel="noopener">Shipping stalls in Strait of Hormuz after Iran declares key waterway closed again - CNBC</a></td>
+              <td class="col-source">CNBC</td>
+              <td class="col-cats"><span class="cat cat-maritime">Maritime / Shipping</span></td>
+              <td class="col-signal"><span class="badge badge-high">HIGH</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 14:42 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxPS0k3Y0t4VHpyakxQbVlQbk5oU3VUbld6WjJBRk1YM2xqcHB5UlFISXFNWk9FcC1rdnA4aF9kM3RvRXpTM0pFY3ZMcS1qU2h0RGtVQTlteXFBTWN4R0g1NDdjTVBTbVR6LXB6Z3BjNXRkc3V1SGg4R19tMGNHQnM2LTZwaXJISFpZU2VWbVlFenUwckxfRjF4dG96dFNwbXZ6dWJra20zZ2tUT29kMFpnSUxwUjU?oc=5" target="_blank" rel="noopener">Traffic flows in Strait of Hormuz despite Iran’s closure announcement - The Times of Israel</a></td>
+              <td class="col-source">The Times of Israel</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-high">HIGH</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 11:20 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxOM184ODIwcWJSMmxuN3ZUVy1hOVA5RDViLWN2YjNuTTlWSFROVE5vbzVocXR5ek5acmU3dUFZZ0wzNE5jZVBnS0ZGNkFyMGlwUXlqMHl0YXN3Y1RPYzg5WjAtYWtzVGt3bDdwV19FckV1ZlVyQmpkUFhqYzBzQ05fenZVNnpkODZVTzZxVzJsUjNpSy14Tk8wVmt4Y2JzSFZ2ZUE?oc=5" target="_blank" rel="noopener">Vessels moving in Hormuz despite Iran’s threat of closure - Seatrade Maritime News</a></td>
+              <td class="col-source">Seatrade Maritime News</td>
+              <td class="col-cats"><span class="cat cat-maritime">Maritime / Shipping</span></td>
+              <td class="col-signal"><span class="badge badge-high">HIGH</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 00:06 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxQNXdDTnY3MjJRSVJpalJlTEVHUE5FamVxdFhOUFNCM05Xbkdfal8xa3VSQ283WFc0R1RpdHd2ZzczUkp3TG5TVUNlWDVheVRka3o3Qzd2S0k2THdjM294Y2IwWG1IaTRwX2xjZUp3OGI3Ml9JUlNlOTFVeS1mUFliTXhqV1BBZw?oc=5" target="_blank" rel="noopener">The U.S. says it's open. Iran says it's closed. The Strait of Hormuz remains precarious - CBC</a></td>
+              <td class="col-source">CBC</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-high">HIGH</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 16:42 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxQb1F1U3hSUDVBeGNHWkprVEpkeGlrQnU3ekI4M0FCODNTR0tnVThVUm1yUTgzVjBEbkREUWtuTlhtQTJ1NkZ1VG53dVVjaXlRNEpJdEFHWDRsTXN4SzFaYjVYMmU1MkQ4TWlWUE8zZ2R2ZEpQNmxHZWJ1UTZtelNWSjFyQWhvRllkdERRbkc1VWlLVlFxSmkxaFlB?oc=5" target="_blank" rel="noopener">Hormuz: Traffic Flows Despite Iran's Closure Announcement - Barron's</a></td>
+              <td class="col-source">Barron's</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-high">HIGH</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 06:24 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQV2hTaEVZLW5ydWg4VFZ0OFNSMHJvWm95S1pYa1FkZ2xlMWE3cnhaYXhhYnVfbnYySllqZ1g5QUJNNnJGcTE3aTdUU1hkT2k2MmlpUkR2eHZhanJ0elNJTmRpeUR6ZWhyZWFtM1B5WVYxV0NLV2t4X0VkNzlnQk0teDZCbW82RFBOSzdZczMwLV80ZlJkd3ZGcm1BQkZlTEw5NTh6ajdEQmNPQQ?oc=5" target="_blank" rel="noopener">Iran Strait of Hormuz closure sends shipping dark again - TradeWinds News</a></td>
+              <td class="col-source">TradeWinds News</td>
+              <td class="col-cats"><span class="cat cat-maritime">Maritime / Shipping</span></td>
+              <td class="col-signal"><span class="badge badge-high">HIGH</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 11:05 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxQYm0xdk5DemoyMGluaWxhYkpXUFo3MVZFRjBFYUpWTWZWcVd0aHJ3a1VwS244Nm5XMHcwVGlCZElCeER5a09NOW41a1VvM0dkd3VjNUdDc2YwQ2NtZWNldnNHNXk4RjRlNzNFYjFaUmhfVi1KOEwtNGZGNkVJYlBFS1lXZmJ4NHk5TUtTMHhzR25nMEgxRDY5eVRSZHp2ZjBhc0ppQ2JDMFVOUXpOUjc5MDJfWUVic3FGbVZr?oc=5" target="_blank" rel="noopener">Iran Strait Of Hormuz: Tensions Rise As Iran Claims Closure Of Strait Of Hormuz, U.S. Officials Dispute - Fox Rio Grande Valley</a></td>
+              <td class="col-source">Fox Rio Grande Valley</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-high">HIGH</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 02:36 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxPRzNzVnR4alFiSmwzel9qY1hhTURZRmNVLUl5LUJxcGxPSXBDOXRHTGUtTDNpeUYtX2ZvZEdmV29ZcktTU1VBNE5wZklpVUpCQWRBLThiTTVmenBmaHFTMVdYSTBZNGtpc2RQN0t0cW5ObDRGRmxsZU5XZE9HdVp6UXdGX05seDkwQ1hBbUZpaHhvSnBvekNoLUU4Slp0aUs5Q3c?oc=5" target="_blank" rel="noopener">MORNING BUSINESS REPORT: Strait of Hormuz closed, home prices rise - WFSB</a></td>
+              <td class="col-source">WFSB</td>
+              <td class="col-cats"><span class="cat cat-maritime">Maritime / Shipping</span></td>
+              <td class="col-signal"><span class="badge badge-high">HIGH</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-21 19:00 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxOQUFFVDlIX3ZPNmdpRDEyM3M1eC1hTmNsLUliX2VlRTk1dXVNQzAxcloxTUh5QUpScHJrOGxReHZyalhxYk9ZeU1RWllXdmNQZ3JSUmNUY012YlJSTU92cUU2MmttaG9xLV9CNUZnUkItUXo1bW5yUjEyem92b1R1QlZyVDVDeVZSSm1qcnBR0gGnAUFVX3lxTFBKcVFfSVF6U3RrbFhFSDVRSk5SUFZVWU9ORmJBYngxdzZpeHVhNVJNbjhNMnk0b0c5cTJuenlUYlVrSFdZU2ZNVnpIX3pDaHVtSWN6RjV1WUtObE1sdVoxYVJIblJPWjRLV3hSS3N6SEhSN3JMaXhVX2N2d2ZoaUxSNi1OVW8wQlpPek9lX0hYdkNYNHF2SVVpRGEweEk4anBlTE1mREZz?oc=5" target="_blank" rel="noopener">Long before the Strait of Hormuz closed, this Latin American nation went green - The Christian Science Monitor</a></td>
+              <td class="col-source">The Christian Science Monitor</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-high">HIGH</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 12:24 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxPZ25uYklfWnY2TFBJNFRSN1M2bFNGVENhSktXRTdNWUhLVUZtWHdpXzhvTXBpUkVvMWY4SEwtYVJXeEJFMTdTR24xVHNQSHhWTGMtaUxwbkMtS25TT1hxLTgxemNGUWhIeUJDSmZUTmdCeF8ybzFIOUozcTFPMWVveXVYM3hnR2VsdTRocldHcUtIOHBncWN6MUk5ZDVHTjNPTldPZ1NqdnN1SXlGR0FJeThpR1N1TXNTcHBIYW1KcDVqUjVCOFpGM2E4QQ?oc=5" target="_blank" rel="noopener">Strait of Hormuz tensions trigger suspected transboundary oil spill reaching Pakistan - Anadolu Ajansı</a></td>
+              <td class="col-source">Anadolu Ajansı</td>
+              <td class="col-cats"><span class="cat cat-energy">Energy Markets</span></td>
+              <td class="col-signal"><span class="badge badge-medium">MEDIUM</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 12:14 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMi5gFBVV95cUxPdExSemwxMERKTGExdnFrbTZMcU9pUVZId1pocFZxejdrTUd5SHJ0V1hEeVlKN2JWZ3Y5VGpoUWhiM3JlY1p4SUN6VDlpc2xJX2o2QWU2ZjdSMU52RFRzbmoyRUxDZ3lHU2JoU0k5SE1MQmJWSEFTLVh0ekJicDhVVzJsYVNPVXB4VkMtdHo1anNQNUR2TUhRenFtLURyZTRrTnlFQzc0OEJydEJNN3haYkNCNGdLNTVKMFE4YmxDbjk4cDExWGxGMHB0UmZwbXdBN0NjV2VjQ3lYSlFLQXpLd08tTnBLdw?oc=5" target="_blank" rel="noopener">Oil Is Starting to Flow Through Hormuz Despite Iran’s Warnings - Bloomberg.com</a></td>
+              <td class="col-source">Bloomberg.com</td>
+              <td class="col-cats"><span class="cat cat-energy">Energy Markets</span></td>
+              <td class="col-signal"><span class="badge badge-medium">MEDIUM</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 09:58 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxOSTZVenJFcjA3OTZZWklMc1lneGJzd1VkcHpCb01HZlYtMTh4Rlh2LW1iWnhCMVZkWXNzRk0xa0Q2V3R5YnNTZ1pPTGRHSThoRWRaV3gtVGl0UjNVeXkxX0QxcnFpdVMtWkVJUmtCemVoVGZaZzhubWFqVHp1OUhxY0VOOU5tZGtHSkZlaXJNUWducFdGZVpVblhrOUx6TDZWbzlmYXZOOTlHYk1VaWhr?oc=5" target="_blank" rel="noopener">Iran Mediators Offer Plan to Ease Lebanon, Hormuz Tensions - WSJ</a></td>
+              <td class="col-source">WSJ</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-medium">MEDIUM</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 11:28 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxPZWZ3OUg2ZVZHVkhKY0ZobE9GLVhrcGpITFVFZTVMaG13MHdPdVB3QXNkZ1c2bndydU5CdGhYVnBLQVQ1NGJHcEc1dF9KbmY5QV8xc3VIYkNEeVlNdnZzeHNIYjRXaWVEdl9CWHRxcFIxbFYwMFh0QjkyZGZUV2p1bXp2cHY?oc=5" target="_blank" rel="noopener">Germany’s Strait of Hormuz mission hits delay at Bundestag - Financial Times</a></td>
+              <td class="col-source">Financial Times</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-medium">MEDIUM</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 08:36 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxPR2NxREZwSWViZjhmdE1CY3NHM2RlM1NJd3NUN01LQ0k0eG1MQ3RZN3Zxa2VtaklDdG9rREVMbU5fNWpZOE5xbUlpdTYtdFVra1Q4ajRLVlRnTzl6OERjRkxDT2Q0bWdUcm1nTDQxWUdjc1lmUmV4LWhvUkhVQUdhcEQ5RDBsRlcza2hWQ3RJRlJHODBPMC1SdVRBR1FBdEt3eTdndURsbFhmNU5hUnZYZTVralhGNFk?oc=5" target="_blank" rel="noopener">US Iran Talks Make Encouraging Progress But Strait of Hormuz Tensions Persist - Modern Diplomacy</a></td>
+              <td class="col-source">Modern Diplomacy</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-medium">MEDIUM</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 16:33 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxPM2cyUmZ2bFotZFVaNm5kVHJyR01GZ0x1Wks3eEpxV2RiZERTci0zMHlQWFJPdkhrNGVMUENCUW1jQ0RSTzhsUDhBOU1Kc3NCUW1xN24xcGFzcjNma2pscEtKZEsyWmJheUF0ejV0c2hzVFczNVhDV1FoZjZTNU11MVJrN21QNjFUV3o0WU02ZWdoZkRpNFE?oc=5" target="_blank" rel="noopener">Descartes releases shipping report on Strait of Hormuz disruption - American Journal of Transportation</a></td>
+              <td class="col-source">American Journal of Transportation</td>
+              <td class="col-cats"><span class="cat cat-maritime">Maritime / Shipping</span></td>
+              <td class="col-signal"><span class="badge badge-medium">MEDIUM</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 17:08 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE9DLUpWOHRhdkN1SUFCNUdWcm9nbEpTZDdWOUNhaGJTUGllUzNmVUVIUFpSNkVkQXpudkg1NFpjZ2paX1J4ZXp4eTQtcTBHaFRoeHM5Q1dB?oc=5" target="_blank" rel="noopener">Iran THREATENS to close Hormuz Strait as oil prices drop - Fox News</a></td>
+              <td class="col-source">Fox News</td>
+              <td class="col-cats"><span class="cat cat-energy">Energy Markets</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 17:08 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxPc1VXcGhZRnBORjF6NFBrRjZDd2poZHFDOUE2ZzJIUVRXUXMxYnZrYVczUDNlcDBaN2ZLRWlBNnJpbS1YbmY3QXlCN0hrWG5fNEoxekZzNWVMR0JzbVhucUpuTWpWTzN4M29ocHlURk5zZnFXNW01cmFsQWVsbThrbTY0TEJ2emNUTmFzbkJBOXB4dG5tQVYwbFVFWkE0d2xVSGfSAacBQVVfeXFMTTM3ZVRpYWR5U0JnWE1EN0Npd3pMcTg2U3F1bnplcGlNQXZjb2dRZE5PRVNOdVlnZmxmYXlSTUJibmVUSGJ3WnUzSmdoLUJaNWwtZWVfb1dHR3FQY3p6aWhVTnFHSm1Ra1N4VVVOLXBhSXdXZDNFZ0cwU053QzgwMm9BZmw1RkcwUWRVZHFabE92c1ctc1Bhd0R1SF9EcjB2amhvNHdNZlU?oc=5" target="_blank" rel="noopener">Marco Rubio heads to Middle East to address Iran MoU, Hormuz - Al Jazeera</a></td>
+              <td class="col-source">Al Jazeera</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 15:58 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxQVlFXY3Q5YXM3OXZnWFFyeXZMUFJWcmp3Qzl0cnVoN0lrcDJKa3VBVDJmb2stNUZiUlozWHN0a3gxRmxsWk1KSnFpeU1kemhNVEZWRzA0VVNpYzVSXzBEamczM3RjWGlUbVVaeWRhckZ0NmZGNy12ay0waG14aHFyYkhIcnVmZUNNVGJlV0ZB?oc=5" target="_blank" rel="noopener">Oil falls below $75 for the first time since March as Hormuz traffic begins to recover - NBC News</a></td>
+              <td class="col-source">NBC News</td>
+              <td class="col-cats"><span class="cat cat-energy">Energy Markets</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 05:23 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxNVk92UEtzMTNiY3lnUklHTnpqUXpNSm9RZy10enFxd3BYRk1ndVhkWllWd3VuSmk0bS1nQ2p3S2ZVbXRjSjR1MjRWbVcyZnh0bmV5ZDlJM1lhWU9WRVJUX2loMzNlY0xrQU91MzliXzV0eFAzU2QzVGVxNmRYam9heGRfdzNhN3M5S0czeEpReU5QOFhSSTZSVTJINW1sUTFSOW8tQzZXdmFnNlB6UWc2dU1MTzR2a09j0gG-AUFVX3lxTE1ad2NDOXVjVTU3WV9raHhwQ2laT01nRlZJLWFPZXV6OFN4WUhfR2J1Nm1kMnRoMkJRY0gtRm5FNGRiTlRQTkVvUURRaDVFb09Rbl9BMGh6a0ZfR1NWYkNxd25pajRxZVpJY3dtYnFHYkF1MVhpMkxIMHpmeGZvQktPTm1TWVBMV05lbjl1UldpeUFMZlJMc29CTVpIQ1RDSHlSbmdPVlNsYmpVSTF6RU1vQi1DRHNpb0FrQV9RRXc?oc=5" target="_blank" rel="noopener">Shipping stalls in Strait of Hormuz after Iran declares key waterway shut - Al Jazeera</a></td>
+              <td class="col-source">Al Jazeera</td>
+              <td class="col-cats"><span class="cat cat-maritime">Maritime / Shipping</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 12:31 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxQaHlxenJFdEF1NHdsVVVwWm0yaFNYX0ZtRWxNRkZFd0dmNF9senMxQ2h6S0hrTjdsSldRMm5UbjBDckZnT1dhdktteW43WXduTkstWThMUWsyTnZ3WnVZMnM1SGF6dGRWd2FpRVlTOUg0bXB3SFFNUmF2SUVEclNDWWRYLXNWbTc0bEpwUzV4TGxiSndjaXluUjNQYXQ?oc=5" target="_blank" rel="noopener">Oil tanker traffic picks up through Hormuz - Reuters</a></td>
+              <td class="col-source">Reuters</td>
+              <td class="col-cats"><span class="cat cat-energy">Energy Markets</span><span class="cat cat-maritime">Maritime / Shipping</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 13:44 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMi5gFBVV95cUxOMmVHejgxdHBuWHE4ZTV3QUV6b1FTX0hYNWVfY0hTU0FHbFVnSE5KZll1elRQWDRXT2JFLTFhT2hvQ1ZXa04tNHFuREdNZDI1Z1g1RFB3Z0NVVUtlUS1taTVvS0w0OWx3RjdvZFl5TWxQSzFsZVk3bTJ6Qi10akdQZkpxTUtCQVFydzdQWVFCQy10djQtMjRaekw4bVhKWXFnOXlaTFFBU1kzRERNZUZKNmZnUll0MzV0ZmQzbkNWdHlOaVB3WEVkWldDQ1VJeWc2YzJIYUFQTnpQV3phRUhMZHh1SnFDQQ?oc=5" target="_blank" rel="noopener">Traffic flows through Hormuz, but escalating threats from both sides are causing 'strait jitters' - Yahoo Finance</a></td>
+              <td class="col-source">Yahoo Finance</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 16:12 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxPbWhCS0FhQWJ6aG11eWtzSTUtT2hZNjBmOUR2akJhY0FnSHRTbTBSbDFRYlNjUkc1OHl2OURjd1FxNlVCS0g0cUI1RTZLWUFaVGJoQnU4NWpQWmFmVGFWV09mdmt1SXBIRl9MV2hzWUVEWWcyODU0dFVEYW9RVmMyUEhGNHgtbzZpWVNHS2tFTE5NcTFSV1BTZ1NTeWNlSEllTUJ6Rkt4bFFOQWNraG5ETkhhUUlUYnlu0gG-AUFVX3lxTFBDZ1pyWVhwWlg4QWh4VGhMVTNSMVVJcjJaeU5RYnc2Y28zS0ZEaTFZb3FkbnVmdG5DLU1XWTZjaVRNWGxmdnBsQ2d2TnlNQXlWOHcyMHVONzBBbkpaSERnRVQ0NHo1bmhNeldCQXVTR1VNX19BYWRCTmJITnAzbEFZX1dTNG5SUndOX0hVZ0hPM25yQlNSOEZHRkxCbkFPOE1iWjkxNWJxTFlDMXhqYmwyYy1tTG93UklySllQVUE?oc=5" target="_blank" rel="noopener">Iran says it’s closing Strait of Hormuz, citing Israeli strikes on Lebanon - KLAS 8 News Now</a></td>
+              <td class="col-source">KLAS 8 News Now</td>
+              <td class="col-cats"><span class="cat cat-geo">Geopolitics / Security</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 13:12 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMi-AFBVV95cUxQSDVPbVBZeEItRVNDZUNBUXJhSUFGaG54WERjZFJPNmdZV2dSMExORXhZY2lMaGdjLTM2LWtfeE4wTmt2WElBaEtIRl9KaEN6WTNHU29aZUhUZUtjYmpybWFUWDg0VjZKbjVJMk1DUWxCTHNmMTBqVGYzeU9WYWtRN0Q1Y3YyUVg0Q3BraXQxMzRTeHc2Mkg2NFg5TjdYRTFVemhOaHk3NUN2VGZwNjB6TkxHb2JPLUdTVkhtOTBBV3Y1N01oX2xnWGlOa0tyWjlkWVpzLUVaYWtOWDhtY1p1eV9ROVpubmNweDJicnJTYU9KN3BJUENOZQ?oc=5" target="_blank" rel="noopener">President Donald Trump warns Iran after threats to close Strait of Hormuz - KVUE</a></td>
+              <td class="col-source">KVUE</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-21 17:53 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxPOU5SUHkzMERkWDFoRmFpb19jTjh6aWc5VE9kMTlHREUxbEFpT2FoTlFGQ1pmdTVDaTN1Y3VFNm94U01yV1YxTktNZzJoaHpEU2l4ZHBWV0JnR1lCY3N5RWZtMUNKamxhNnIzTFk4UTUzOG9ncHJfNDN0QWMyVHB4b3ppSlJoaEJzY1BCV29KOGFzdWZr?oc=5" target="_blank" rel="noopener">Uncertainty Remains Over the Strait of Hormuz - The New York Times</a></td>
+              <td class="col-source">The New York Times</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 13:32 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxQTjVod29tRXZ2X2kxLUJNVlBmdEpiNlhWYjhFQTNMVGZjS2VaZjBkNmFBcHlHUnRSUmVXZlg1dWhtMzNJQUVvZmluS0dtdExYUG10QW1ISmt6bzgzOGdlZW1Sd0l5Zm4tb3REUF9sMEpOemgtSE94dFZuYzF4eExRb25qbmt1aFVkbTIxY0dwZzdVamNyd1g4N21R?oc=5" target="_blank" rel="noopener">Lindsey Graham: 'Obliterate' Iran if there's Strait of Hormuz resistance - USA Today</a></td>
+              <td class="col-source">USA Today</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 01:10 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE10T3V1NUl4d0RUQXdvMkdrX190S2RVM1ZCZy1vU3IxSGVFX0R4cU4wZDZQQWJtdEExUzBJUy1NRmlSUmhGTUMtNlVTaFVZZkk0U2FJbHZ6Z1ViYTdkdlVuVDFwdnFLNFFqQXc?oc=5" target="_blank" rel="noopener">Ship traffic plunges after Iran re-closes Strait of Hormuz following Israeli strikes on Lebanon - The Jerusalem Post</a></td>
+              <td class="col-source">The Jerusalem Post</td>
+              <td class="col-cats"><span class="cat cat-geo">Geopolitics / Security</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-21 23:40 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxPSW92ZEc3ZzRkZ3lVbEtGaWYyRUxWOG5XUDZTbWx6ay1nVUFETUFLSUs0LTVwNWJUeXNoaHlGU0R0aXlaai1MeEhucnZBVnRINWxXZGpqbDYtN2VjVnNlZXpRdVplRE1pUlY4RTRqTXV4TWRoNWlrS1BZbk1OV0o5OGVGUlk5U2dvWThiTktlWUp1aF9ERVJ3M3R2c0pVWjNweXdWdU5Ia2IwaWp0RTVxSm5lQmcxdGs?oc=5" target="_blank" rel="noopener">Tanker traffic through Hormuz picks up after slower flows due to crossing concerns - Reuters</a></td>
+              <td class="col-source">Reuters</td>
+              <td class="col-cats"><span class="cat cat-maritime">Maritime / Shipping</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-21 22:12 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMingFBVV95cUxOVW5rSlhvME50bWNVSnRHVm5lZGRNSklQY202M2FPTm9PZG4yN1BfeFd3QTBJbXhxR2FDb05hOFVSVzlvODBKSHVRLVI2VFNOeEhBanNQblV2Wjd0TTlzVEZjRTVKZDBIcm5LVEVrNWhraHZrSHd6TnVGU0ZNUVcwZ2hmQkhUNVFsMExZTmtxdVlfaDktM2VDQTQtS0tNQQ?oc=5" target="_blank" rel="noopener">Oil Rises Amid Uncertainty Over Strait of Hormuz - The New York Times</a></td>
+              <td class="col-source">The New York Times</td>
+              <td class="col-cats"><span class="cat cat-energy">Energy Markets</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 00:48 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMizwFBVV95cUxNYnptR25GLUVoNTJ0Zlpva0N6X2s1S3ZhVWRobEpCakdkWmluZ2dtYVltREJqNFZSdkJmcUYwTW9pcnZPeGRFUmdybGdwZ2VzUFJ3bnVYLUhsNVFSa0JZeWpSU3dYZnhTNzNKaThkOEl6ZVhpbGR0cFFNbl9rZDIxdEFDRHlXd2ZOUmU5T3l1NHlQNzNOYVB2TmJCQ0ZjUTVkY2taQlFoZE9USU0wYm9PVFJTVFRzWDg2Wmx3b21SUjNxSHc0Tk44dmE0Mm9VV0U?oc=5" target="_blank" rel="noopener">Two South Korean-operated vessels passed through Strait of Hormuz after MOU signed - Reuters</a></td>
+              <td class="col-source">Reuters</td>
+              <td class="col-cats"><span class="cat cat-maritime">Maritime / Shipping</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 09:40 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxOeE1qeVRwdEVyN25FYktUaEMxcE9JQUtGdzdFWHFIS01iTHI4aW9VQjhaRk1HT2NUY0xnVldpN2ZWWDdzRUVGUEU2dThkb2RsU3JWalA0TVZ5VFlKclk2b0NIbTNnS0FPWlAtc2ZGWHgyeHJpN3drM1E3anJSaXl1QVprU2MzbmhkdnNMWlluX01FXzhINmt6dnIyVlRySEs0d1Y0?oc=5" target="_blank" rel="noopener">Number of ships passing through Strait of Hormuz plummets again after Iran closes waterway - The Independent</a></td>
+              <td class="col-source">The Independent</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 15:57 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE5YMldvbHpYRG9SMjFBWEQ2ZDRPVmM3NmpXSzhLQkpRcXBGY2VYU3RqVTZyVjNkekJxSUdfLVlIRHlSZ0JLbElQNDdfTDFjbVRERHRJQU0yNi1ZdXBjNE0tZm1CN21wY3Jla0E?oc=5" target="_blank" rel="noopener">Iran turning Strait of Hormuz into strategic leverage tool, expert warns - The Jerusalem Post</a></td>
+              <td class="col-source">The Jerusalem Post</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 14:55 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiXEFVX3lxTE5QWHNRal9aM2E3OThfaTFQVW8xa3ExOS1ySVlDMHdnTGlfUzNxdU53dVZwbnI0RjJnYmE4S01LVV8zOWVrQ0xwUklYcUt6MklKTmFrLUhOdDBsN3lK?oc=5" target="_blank" rel="noopener">US should have taken control of Strait of Hormuz, retired Israeli Brig.-Gen. says - interview - The Jerusalem Post</a></td>
+              <td class="col-source">The Jerusalem Post</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 00:07 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxOVTN3aXBhSEFsMWJySmdyNF9ITllTWGtJVmcwVy1NWGMyN3U1Xzh3X3B5SVh1RE1wSklnQWxwRi1VcnNEVTBmcjNEZHBpcFh3bjhWdHpkOG0zNG9lb18zclFSc1NIYk4wSlh1SDRrcDlubk03Q0FZSV8ta3BTMlQ2aGo0bzRaSnZSMEpXVFNpUGtBbmJYNGVBZUJvbENNS041WkN3VExnd19hTXFuT0J5YnZxVEZ0dw?oc=5" target="_blank" rel="noopener">Shipping slows after Iran says it has again shut the Strait of Hormuz - The Times of Israel</a></td>
+              <td class="col-source">The Times of Israel</td>
+              <td class="col-cats"><span class="cat cat-maritime">Maritime / Shipping</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 16:24 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE52c1l5ZERuQzJlblZIMDJROUM2UE9UUDgxOERXcGhWSlRMNlU2NlIxaDl0TWw2a1VZUXVjYUEtcXRNS3FPVVkzNDA5aTAtM0FLbi1ialR3?oc=5" target="_blank" rel="noopener">Iran threatens to close Strait of Hormuz, impacts global oil prices - Fox News</a></td>
+              <td class="col-source">Fox News</td>
+              <td class="col-cats"><span class="cat cat-energy">Energy Markets</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 13:34 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxPNVpNaUhzSXZIU2s4cDBWYTRUZ1g2SzMtWmtCcGt5YVNUMWJYV0ttQVJyZExoNi1Ed3FMMmZwX3BOWVVWYWVCSE4tMGotLUh2OERTcGF2elI3bkZudmU5VlFQMTlOVjd5SG1EckFwc3hzTHYyZTcwcG5ULXpMTXJQaDJzcjJhWWU3MzQ4d09DVWNGa0dFSnltYzZlVV9JbUNKejdWaW5uNHNfT2JCcHIyMlFmOA?oc=5" target="_blank" rel="noopener">Iran War: Gulf Oil Floods Through Hormuz at Fastest Pace Since War Began - Bloomberg.com</a></td>
+              <td class="col-source">Bloomberg.com</td>
+              <td class="col-cats"><span class="cat cat-energy">Energy Markets</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-21 17:36 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxNa2JBWXpaTU5TQ3NCaGVMZU1zcENFVWY1ZjJmX280X1FtZG1mbWRYZjhETnlfU2VuNjVjUXJhSnpmc3VOQVRiS29JM1dEVUJLZWxUdXhUUE5sUnFsWTNxUGtqMFNSOGZORm9sSnFuNXpya294b1lOUUZTN1NUbEU5cXlaZTlkQlQtZEhOMmRsLU15OEZJbTRLQldNenbSAaIBQVVfeXFMTnYxaVpBd28ybU9PTXFtOTZZTE1OSUJqNTdIeFVleW50ZUdzbVUySFFVanJaRTlHMG1XWXpXdU0yMTFlVy1tUjc1Mk91QzVQTE1URXJzZDZXeUV4dERaZENMUUFoYVFCZUVmcEs3dXRKYlMyZVFVTzE4QXNrd29IbU9DX0E5LURUdllaT05kSkxsbUtkaVQ3T0IxMFZXdjJSb0RR?oc=5" target="_blank" rel="noopener">What’s next in the Strait of Hormuz crisis? - Al Jazeera</a></td>
+              <td class="col-source">Al Jazeera</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 15:34 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxQY2t6RVNkRmtLam9BRTNzYVFsOEVBSGU5dE1kd1Z1Ykxoc200Z0NpaF9icEhXaE02WFhaWVV0akhRMXBHeUtLdTg3Z3RNUVdJM2V4NVZuTkxYS1FFaVRuNDhDZ05ObkM0QUlvUnI2M0U1ZzlsQmdvQ2ktM29yTzFIb3M5YTIweDdMVHJxM04zbVJVVDRLRFQ0ODA4TExjV1dQaWtYNW9NX2VERnJIQXJ3dElB?oc=5" target="_blank" rel="noopener">Iran Now Sees the Strait of Hormuz as a Cash Cow — and the Toll-Free Deal May Not Last - American Enterprise Institute - AEI</a></td>
+              <td class="col-source">American Enterprise Institute - AEI</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 11:41 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxPc1NyVWRxWjlUbVpReGR3b2tXUlRSZ3JCcWs0MWlJdlMzQ1hzR0J0TFdWalFiSkcycXMxTWlnakVacWdKTWVJNHQyWkdMczViVzd6MXo1Um5KOEozdEdSZDhvYUxUcTlqV1lDcE41MW9YcW5tVTdBVmtkOHVGZmlvNkpSUE4?oc=5" target="_blank" rel="noopener">Hundreds of ships wait outside Gulf for full opening of Hormuz Strait - Financial Times</a></td>
+              <td class="col-source">Financial Times</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 12:30 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxPX3JrVlM1QUstNjF1NUZvZ0xUZWY2ZzJEanVKUW1Vd3NmTVprS0lNNlB3cXpOd2NTY1A5SkUwQUNDR0E1bnRWUy1TWFRkSFBGLWZwcVpYYjVFbVIybEh6NjQtSUV1N3BTY0RXT3JVQlI0UFJQVVhXMUlWZ0NnYUxtVWV0cG0wVTNCRXdQMDBuT0t3RkhWY1ZReF9ZSXBJT2NyeEpzcVJOQWXSAa4BQVVfeXFMTkFrOHp2aC1NaWJqYkRFWjRyZjZjOTJ1UElMQWh5QkFBWDRiTDh2UjJMbENfNk1xUTRLV1djQVlHVWZsNVJGb1hkd053SV8wNmY5bmZBdklnc1RYSEZHVWRFdWtTMEoyMVNwMjJsYVVzYUpZS0NUY1loVmZJUGZPcnJUUFdUQXNTMmc2cER1eDZSNlNTS1FSTnhWazBrbVUtWEpNbWNqRk5XZkExbl9B?oc=5" target="_blank" rel="noopener">Iran's Oil Exports Through Hormuz Hit Wartime High - Crude Oil Prices Today | OilPrice.com</a></td>
+              <td class="col-source">Crude Oil Prices Today | OilPrice.com</td>
+              <td class="col-cats"><span class="cat cat-energy">Energy Markets</span><span class="cat cat-maritime">Maritime / Shipping</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 05:30 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMi0gFBVV95cUxOVkZNVzRKXzRFSmRVMjhDUkpOckE5R1hOVFRaVlFIV0xjTk5kOU1oTmtaSGVjTlRJWkN6MHd1aFRzc1ZuNzJQZFAyZHB5ck1vdlg2b0N2ckx3aldWV05ZT041ancyTWw1aTV0V1g4OXRwWmw0dU9idWh4YTBBanU4cjZZX3RyZzJlWl9MOVpOOTV6aTVxck9Nb0hYbi0wb3dabk5ORlhLYkhjMFBHeDJ0V25wWVlnZVlIVjZ2STNidVpMczNZMzlITmRCZXVNSzZHa2c?oc=5" target="_blank" rel="noopener">What you need to know about Strait of Hormuz as Iran and US reach a tentative deal to open waterway - WANE 15</a></td>
+              <td class="col-source">WANE 15</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 16:04 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMifkFVX3lxTE5faFUyMzZyM1ZtSy13UzdyVjJDQzAyY3A2OE1QNkNBaG5uZVlHQnFNQTlsbnRxOFBRLWFHTW1TdG9nMFk4bHNZZGllcmNLUkRtQXZoMHJseUVjaEdjNUhxY2czdDJMTTlQMzhtOTVXbnl6ekZPM01KNmxqeTE1dw?oc=5" target="_blank" rel="noopener">Tanker Traffic Through Hormuz Picks Up After Slower Flows Due to Crossing Concerns - Insurance Journal</a></td>
+              <td class="col-source">Insurance Journal</td>
+              <td class="col-cats"><span class="cat cat-maritime">Maritime / Shipping</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 08:30 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxPQmRBWTlKU3pMU0dtZHRjYWowVGJpTzJLeWRuaWEzc1BqZGFKZHozWGs1Ym1COVlTS3RMREQ5VUd2ZzB1cjZ4VHdqbi1sZkVFUkJKVk9ydTRHQjMyQWQxbjlWRUo5LXRfNkJ3eVJ5U2t2MWhSWTZ2czJKR0Q0eWpqRC14TWh1OU9vRUxDV3lxaU9aWDZpQ0hETUloWUx5MEwzRUZZZHBvWHZudVk?oc=5" target="_blank" rel="noopener">Lindsey Graham: If Negotiations Fail, U.S. Will Seize the Strait of Hormuz - IranWire</a></td>
+              <td class="col-source">IranWire</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-21 20:54 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiVkFVX3lxTFBKdmwyZ0pFVVZKSk1TV1ZDU082OC04QnhvTXpfN2ZPOWo1ZlpNUnNhX1NnckVqeHg5QWxiNTUtYkZkdFpsQjdCRWxKTHlqZkF2QnVrZWN3?oc=5" target="_blank" rel="noopener">Iran has ‘no tactical control’ over the Strait of Hormuz, national security analyst says - Fox News</a></td>
+              <td class="col-source">Fox News</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 13:41 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxQcE8tOFctWXJ0R1ZnUUx4R3N5cFBnRTROSVlqeFZZYzB6WTE4TFpON050c2JkckJsY1FUUEttWEp1ZnBUN21LSVdrLWhfdkdxU2NXdlF5elRoNms1VlJ0LTA2MXE0NVY4QWVvUE9pNnd3eDJHRjJUczdJQWg2SGVvNzRZelEzaWVfME1TUVYxWUpPbWg1ejB0cUVCQjJTMnVLUGQyaGRR?oc=5" target="_blank" rel="noopener">Iran and US make progress on Hormuz despite Trump's explosive threats - Euronews.com</a></td>
+              <td class="col-source">Euronews.com</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 15:51 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE5wRmJxZEpyc3lCaEZBbGEtUThHYzg4b0FCR2RVZXBCWjhXbUhBSEowUnVCeVgzcmpabmZsNVo2Zzd5bTIxMnc5Y3F5T21QejRnYjFtR3RuSFFJb3RKemRiRlVBSDh1cktYSDJHU004b2VCWlpvMEFYN09DREd5WnM?oc=5" target="_blank" rel="noopener">U.S.-Iran Deal Reopens Strait of Hormuz: What It Means for Oil Stocks, Energy Markets, and Your Portfolio - MarketWise</a></td>
+              <td class="col-source">MarketWise</td>
+              <td class="col-cats"><span class="cat cat-energy">Energy Markets</span><span class="cat cat-maritime">Maritime / Shipping</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 13:04 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiW0FVX3lxTFBER2tqMnVIQWpFZnk2Q1hDelpYN25kLXNGRWdxWVhUb1FzWGNDQXJidGRWTW1tZ0xyQTI3OEIwTGFPQlRyRnJHUGo4Vk9FZ2Q3aGd6SEpoVHBheGs?oc=5" target="_blank" rel="noopener">Why the Strait of Hormuz could decide the market's next move - Fox Business</a></td>
+              <td class="col-source">Fox Business</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 14:40 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxOUW53R2JCOVNEVE41d3EzSXZFZWoxeWlDekV3RHgtRTEzQ1JzaWsxLUtMbFgyNFo3OHhORnZGeHpNLWVRYkR2R2JUZVdGLUIyeFpzNTlBd0Q5UlI4cHk0S0kzdHN6N1ZGdEJYRE5FeDNpMGNVU1k2UDNVNW14d1VXSkxVNmJpNHpJZVJtVHdJX1VSbnZTVHVIeHFhWmFVR3lDS28wT283RG9NdTRsbVMxcmduSFZNcWlyakluOFR1aTU?oc=5" target="_blank" rel="noopener">Rubio to Visit Gulf States as US Seeks Iran Deal and Strait of Hormuz Reopening - Kurdistan24</a></td>
+              <td class="col-source">Kurdistan24</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 08:30 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMifkFVX3lxTE10Um1PRGtnZloyOU1oT3kxUXVpRTRWZWhfY2RkcmdtTkpuRkl2VkI5OWhSQW54TG1IX1Mya3Q2ZTM3bHNMSVJpYnYxTXZDTG50ZmdoUzUtbTktSVJRQW0tWjAyU2VBc3VlWUgwbURXZVozTUt6WC1FN1VlRUNGQQ?oc=5" target="_blank" rel="noopener">Qatari LNG Carriers Re-Enter Hormuz as Traffic Through Strait Slumps - Marine News Magazine</a></td>
+              <td class="col-source">Marine News Magazine</td>
+              <td class="col-cats"><span class="cat cat-energy">Energy Markets</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 07:11 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxPUlFRQlA5RkwwX2t0ckJIdzJEaG1Ba0xqYm9GQXpRSVB4X3IzaEZLNm1nQU5uQU1fanRwNTBqUmFLazJBSi1Bdmo0SURjb1RRVG5NSHFUUmJvdDVxN2J5Y1JjamVIMHptRFBaa0ZWS0x1anpya0ZKRncxQnpKTXk1Yks2aDE2cmN4WWtrelpEV0JqWGsxYTFZR1R2X1Nva1lqRUI0MVFwUEk?oc=5" target="_blank" rel="noopener">Expect a 'leakage', not flood, of oil through the Strait of Hormuz - CNBC</a></td>
+              <td class="col-source">CNBC</td>
+              <td class="col-cats"><span class="cat cat-energy">Energy Markets</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 13:30 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxObXJvcUdyQXZVck1uT0pWOTVNakEtSWlHVk0tV1gzVGhrQ1R0aXltMDdVODdUYXhfSVFMM1pUdWVGUG92cFVnOVY0aXNzYWE0QXZ1c1NuQnl1OGRlaEk0d2NDSnpBN0p6VlJjeTBwSDc1RWhQQzB3RUpseEcxY0NYdFRHYzdvWEpuY3VOYjhkVE8?oc=5" target="_blank" rel="noopener">Strait Of Hormuz (Video): Adaptive Oil Market, But... - Seeking Alpha</a></td>
+              <td class="col-source">Seeking Alpha</td>
+              <td class="col-cats"><span class="cat cat-energy">Energy Markets</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 13:43 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxPMVRfdk8ySXREUEJqSTd6Tlk5Q2tZczBYTlI3aXd3MXJ4V3BXUVdxLUMxNjdlQS1CRjg3QW5tVm51QUtSaGxraDBxSWFYVUZCSGdyRzlQR3I3WG9fSDlmOTFhVTRQZ2trbXp5enFlNW83N1J3RlNEUFB1UzB6aWtoTWU0WERpRWNfbDJ5VlFHZFE2RG5kSmRaMVF0SDU2ZjkxeXBWcG9VME03TWU3NkJ4SDlOSnBjdnF0N1ZrcE9ocw?oc=5" target="_blank" rel="noopener">Hochstein: Iran ‘clearly asserting control’ over Strait of Hormuz - MS NOW</a></td>
+              <td class="col-source">MS NOW</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 12:55 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxOcVAybmJ6R2VLeExKa2hWbWdIejZVeTRfTUZNbHoyTGlXd3V5VlRmVXpUN0NUOG5CRk80RTJCb3dHeXRSTTRUQnh3ZEdnd2lPWENPdkVHZ3FnY0lhc1hXaEtzM2E5NzF2aTNwbXhuWEdwd0N6akZjeGl4SnFoYVVFNU5fM3dCVElJdnJpZjJhVEVCRGZPeXFtMldqMnNyZk15Vkh2cFFGeE9EbUpQdGgwQUN2dEZ3UFNkR2t6Nkk4MXI0SzQ?oc=5" target="_blank" rel="noopener">Strait of Hormuz ‘is open’ Vance says, as tanker market waits for green light - TradeWinds News</a></td>
+              <td class="col-source">TradeWinds News</td>
+              <td class="col-cats"><span class="cat cat-maritime">Maritime / Shipping</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 11:20 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE40Y1dIUWh0NnlsSWtxcTlDSjdTZGdJRmlrZVdMNDVQdGJMWU43SEF1ZXVHQTBNLThIaVpkdF9aaGc2Nl9ObmxvOTFSMndHSUVTYjhKUUZLU0RLOWFncHVjbGk3RTFzaXBibkZoTHNPNTc5aTB4al9RNGdqSjA?oc=5" target="_blank" rel="noopener">Urgent: Vance says Strait of Hormuz open - Xinhua</a></td>
+              <td class="col-source">Xinhua</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 15:02 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxNRXBRNHI1a2lRWUpjNVRaTnMwS180bVZVY2tnZUZoRjc1YWFTTXpCQWxVa01HUFNqdmd4bUQ3cDkxUUNDTFpSY21tMkpJRTFTUDYwUy1jR0c5Q2pMUndMX0ZKZzVja1hVaGRoZUxFemNzb1FOeXRGMXU3YVpBejF3NTI4aXZnN1N4OExTMElGT2kteXJLQWJVRFNrbWZYOWVzNDFwUDBNSVJVbVVFSFNlNlIySmRCcGs?oc=5" target="_blank" rel="noopener">US Vice President JD Vance Says Strait Of Hormuz Is Open, Mines To Be Removed - Eurasia Review</a></td>
+              <td class="col-source">Eurasia Review</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 15:15 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMi9wFBVV95cUxQN0daWTJ4aGtmUnlMRXhjVHJwaXJyTnh3R2dIczlLSGZkTUJYd05zaU1PT2hUZHh1WlVDR0hDNHlvMXlaWU1qMzBfVjhLSk9seElkWTVqX01DQ0xQVWd0RUhGQ3Uwd214dWdnNXhfbWxiaUpvWVB2SkdjRmJDY0p5T3B1NE9KWmtwMzBZS0pwVUxMa3A5UGxNSVB4cmktbm9hZkZ5ejJyV3FQS19JcGV5NjdaUWRFdFd6UUJHNDhjT0ZlMFExako0MTJQOEZqTzhIVkg5dy1YR0YyZURKUVhfSlF0SklEbGgtTTI2S05iUkJaTGQzM05V?oc=5" target="_blank" rel="noopener">Ship crossings halve as Iran closes Strait of Hormuz over Israeli attacks - The National</a></td>
+              <td class="col-source">The National</td>
+              <td class="col-cats"><span class="cat cat-geo">Geopolitics / Security</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 02:18 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxPVlVnMUh2anhONUdNbFl0YXVZbUN2T1pSN1ltVUZabDY0MmFGblQwS3ltUDRNeUhuc2RhNTVVb2xXVUtVSHlYTHJUMXRaeW5udlhWeHM1QVNGY2gzdXFPckFfNEotc182ZGwxOWtrNFo4b0FnR242N0ZZVXl3NG02NWlIYXA5R19RNnYtLUg0eEtaN2FZdEF4Q3A4aHlZeHJC0gGmAUFVX3lxTE9yZF95WUFwQnlpNXllbFRCemh0NDJ2T3hsclMzdm9YOVV3ZGNtd2JJSklKNXZVQ2ZlalBVaFB3azhfVl9JWkdOREdLUjdqblJNMVR2M0d4RlJFekdXblNkRzJDbVVhUjVnRnRWeFpIT0pkMngzV1NKWVNNajJ5RFppU0lLOVF4NVNnUnE0bHhtcFZSZU5aQ1RaMTZQQlhCNTQ3SFB2T0E?oc=5" target="_blank" rel="noopener">US-Iran peace talks stall after 80 minutes amid walkout and Strait of Hormuz dispute - FOX 13 Tampa Bay</a></td>
+              <td class="col-source">FOX 13 Tampa Bay</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 16:41 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMivgFBVV95cUxOM3lvQ1JQM0NCa2gzQ211czlkTGdmRGk0dm5xRVp0N1RCbURrekRUNFJxYjVZMnJPUlpyZHRWNmEyZXJyV2lSTEQ5MXdMejV3aEJReFMwRGpKV1lPcG8xWTNVczE1TXBiVDZ1UndScUZJYjV5RzJpeEVUMTNHSW9DZDFTWGVSZmZfVjktVUNuWFNQUHpkN3M5b0E4X0dMbGRCX0F2dFFNUWNFTFhtZjZjU3kyeXV2Ulp5Zk91THpB?oc=5" target="_blank" rel="noopener">Analysis: The Strait of Hormuz is reopening, but global shipping won’t return to normal for months - McMaster News</a></td>
+              <td class="col-source">McMaster News</td>
+              <td class="col-cats"><span class="cat cat-maritime">Maritime / Shipping</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 15:04 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxNYW0wdXY5LXFPMU1Pc2hfYTM0S2lTVnJUSGZVdTY0SWtSVi1EWlhQT01jSVY4VVg0TjhldWVmYldONlFmNEFOSHhIZ25Ka3Y2bXRxdTZCaWg4dlBEUTZSZ1VTdTkzTUViTlloWFIwUXhkLTdCb0NIQ3h2YXE2RE1GNVpmVWVqWjBwZTZBRXVZdHFJUWxpaGZSaHBCTUhjMS1HWHV6ZDFBbF8?oc=5" target="_blank" rel="noopener">India-bound fertilizer ships cross Hormuz, government says - Reuters</a></td>
+              <td class="col-source">Reuters</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="chokepoint-card">
+          <div class="card-header">
+            <div class="card-title-block">
+              <h2>Strait of Malacca</h2>
+              <p class="why-text">Moderate signal activity. Emerging monitoring conditions.</p>
+            </div>
+            <div class="stress-block">
+              <div class="stress-score" style="color:#e67e22">33</div>
+              <div class="stress-label" style="color:#e67e22">MODERATE</div>
+              <div class="stress-sub">24h Stress Index</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th class="col-time">Published</th>
+                  <th class="col-headline">Headline</th>
+                  <th class="col-source">Source</th>
+                  <th class="col-cats">Categories</th>
+                  <th class="col-signal">Signal</th>
+                </tr>
+              </thead>
+              <tbody>
+            <tr>
+              <td class="col-time">2026-06-22 10:04 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxPcjBhc2tDRDB4bGNxNFlPUzZFZHZMbHA1d0diN0JpaE9PcTNwNGE5Z2ZCbUZiUVJaamxGRDJVYXhzTGxuX1NkeUZQWkh1d2IxQ0hpMlBZUXEzOU52d2lHNlA0bGpjaDZ2S0lycHc0OFRHdHllS3hsREtUQXhxemNlQlBST3pzRjdXdWVLUzA5azd3bDVT?oc=5" target="_blank" rel="noopener">Thailand revives US$30 billion corridor to challenge Malacca Strait - DredgeWire</a></td>
+              <td class="col-source">DredgeWire</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">2026-06-22 05:24 UTC</td>
+              <td class="col-headline"><a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxNdEZuZTc4OXFSNkUyYUo4elZSVjZ2MG1VYVh0OEFwOThnX3puNVRXZlBxMkpNYk9mSEx2NlQ0N0pTRWJjNGt4alVGR1RWeHBqTG1SSFE5Nm1oTTdmWXB2dDFsME1OUEloMW8xMWRxU3pybThnWlJITUkzVEUycS05NXZCUkJfYlQ3R3hxUm50T2Y?oc=5" target="_blank" rel="noopener">China’s Malacca panic jails US scholar to appease Myanmar - Asia Times</a></td>
+              <td class="col-source">Asia Times</td>
+              <td class="col-cats"><span class="cat cat-other">Uncategorized</span></td>
+              <td class="col-signal"><span class="badge badge-low">LOW</span></td>
+            </tr></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="chokepoint-card">
+          <div class="card-header">
+            <div class="card-title-block">
+              <h2>Suez Canal</h2>
+              <p class="why-text">No significant signals detected for Suez Canal in the last 24 hours.</p>
+            </div>
+            <div class="stress-block">
+              <div class="stress-score" style="color:#27ae60">0</div>
+              <div class="stress-label" style="color:#27ae60">NOMINAL</div>
+              <div class="stress-sub">24h Stress Index</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th class="col-time">Published</th>
+                  <th class="col-headline">Headline</th>
+                  <th class="col-source">Source</th>
+                  <th class="col-cats">Categories</th>
+                  <th class="col-signal">Signal</th>
+                </tr>
+              </thead>
+              <tbody><tr><td colspan="5" class="no-data">No qualifying signals in the last 24 hours.</td></tr></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="chokepoint-card">
+          <div class="card-header">
+            <div class="card-title-block">
+              <h2>Bab el-Mandeb</h2>
+              <p class="why-text">No significant signals detected for Bab el-Mandeb in the last 24 hours.</p>
+            </div>
+            <div class="stress-block">
+              <div class="stress-score" style="color:#27ae60">0</div>
+              <div class="stress-label" style="color:#27ae60">NOMINAL</div>
+              <div class="stress-sub">24h Stress Index</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th class="col-time">Published</th>
+                  <th class="col-headline">Headline</th>
+                  <th class="col-source">Source</th>
+                  <th class="col-cats">Categories</th>
+                  <th class="col-signal">Signal</th>
+                </tr>
+              </thead>
+              <tbody><tr><td colspan="5" class="no-data">No qualifying signals in the last 24 hours.</td></tr></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="chokepoint-card">
+          <div class="card-header">
+            <div class="card-title-block">
+              <h2>Turkish Straits</h2>
+              <p class="why-text">No significant signals detected for Turkish Straits in the last 24 hours.</p>
+            </div>
+            <div class="stress-block">
+              <div class="stress-score" style="color:#27ae60">0</div>
+              <div class="stress-label" style="color:#27ae60">NOMINAL</div>
+              <div class="stress-sub">24h Stress Index</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th class="col-time">Published</th>
+                  <th class="col-headline">Headline</th>
+                  <th class="col-source">Source</th>
+                  <th class="col-cats">Categories</th>
+                  <th class="col-signal">Signal</th>
+                </tr>
+              </thead>
+              <tbody><tr><td colspan="5" class="no-data">No qualifying signals in the last 24 hours.</td></tr></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="chokepoint-card">
+          <div class="card-header">
+            <div class="card-title-block">
+              <h2>Panama Canal</h2>
+              <p class="why-text">No significant signals detected for Panama Canal in the last 24 hours.</p>
+            </div>
+            <div class="stress-block">
+              <div class="stress-score" style="color:#27ae60">0</div>
+              <div class="stress-label" style="color:#27ae60">NOMINAL</div>
+              <div class="stress-sub">24h Stress Index</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th class="col-time">Published</th>
+                  <th class="col-headline">Headline</th>
+                  <th class="col-source">Source</th>
+                  <th class="col-cats">Categories</th>
+                  <th class="col-signal">Signal</th>
+                </tr>
+              </thead>
+              <tbody><tr><td colspan="5" class="no-data">No qualifying signals in the last 24 hours.</td></tr></tbody>
+            </table>
+          </div>
+        </section>
+</main>
+
+<footer>
+  © 2026 Randy Hinton. All rights reserved. &nbsp;·&nbsp;
+  Deterministic rule-based signal classification. No AI inference. &nbsp;·&nbsp;
+  For informational use only. &nbsp;·&nbsp;
+  Data sourced from public RSS feeds via Google News.
+</footer>
+
+</body>
+</html>
