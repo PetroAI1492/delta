@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="refresh" content="1800">
+<meta http-equiv="refresh" content="3600">
 <title>Morning Pulse — Thor Storehouse</title>
 <style>
   :root {
@@ -148,11 +148,12 @@
     gap: 0 3rem;
   }
   table.data-table {
-    width: 100%;
+    width: auto;
     border-collapse: collapse;
+    min-width: 320px;
   }
   table.data-table td {
-    padding: .38rem 0;
+    padding: .38rem .5rem .38rem 0;
     border-bottom: 1px solid #f0f0f0;
     vertical-align: middle;
   }
@@ -167,26 +168,26 @@
     color: var(--gray);
     border-bottom: none;
   }
-  .col-label { color: var(--black); font-size: .82rem; width: 55%; }
+  .col-label { color: var(--black); font-size: .82rem; padding-right: 1.5rem; white-space: nowrap; }
   .col-price {
     text-align: right;
     font-size: .82rem;
     font-weight: 600;
     white-space: nowrap;
-    width: 25%;
+    padding-right: .4rem;
   }
   .col-chg {
     text-align: right;
     font-size: .82rem;
     font-weight: 600;
     white-space: nowrap;
-    width: 20%;
-    padding-left: .5rem;
+    min-width: 70px;
   }
   .unit { font-size: .68rem; color: var(--gray); font-weight: normal; }
 
-  /* Futures — slightly larger */
-  .futures-table .col-label { font-size: .88rem; }
+  /* Futures — slightly larger, full width */
+  .futures-table { width: 100%; }
+  .futures-table .col-label { font-size: .88rem; width: auto; padding-right: 2rem; }
   .futures-table .col-price { font-size: .9rem; }
   .futures-table .col-chg   { font-size: .88rem; }
   .futures-table td         { padding: .5rem 0; }
@@ -212,12 +213,12 @@
 <div class="masthead">
   <span class="brand">Thor Storehouse</span>
   <span class="report-name">Morning Pulse</span>
-  <span class="masthead-time">June 22, 2026 &nbsp;&middot;&nbsp; 04:35 PM ET</span>
+  <span class="masthead-time">June 22, 2026 &nbsp;&middot;&nbsp; 04:45 PM ET</span>
 </div>
 
 <div class="session-bar">
   <span class="session-badge afterhours">AFTER HOURS</span>
-  <span class="session-note">Prices via Yahoo Finance &nbsp;&middot;&nbsp; Refreshes every 30 min &nbsp;&middot;&nbsp; 15-min delay during market hours</span>
+  <span class="session-note">Prices via Yahoo Finance &nbsp;&middot;&nbsp; Refreshes every hour &nbsp;&middot;&nbsp; 15-min delay during market hours</span>
 </div>
 
 <div class="signal-bar">
@@ -231,18 +232,18 @@
     <tbody>
       <tr>
         <td class="col-label">S&amp;P 500 Futures</td>
-        <td class="col-price">7,544.25</td>
-        <td class="col-chg"><span class="up">+0.38%</span></td>
+        <td class="col-price">7,541.25</td>
+        <td class="col-chg"><span class="up">+0.34%</span></td>
       </tr>
       <tr>
         <td class="col-label">Nasdaq Futures</td>
-        <td class="col-price">30,654</td>
+        <td class="col-price">30,652</td>
         <td class="col-chg"><span class="up">+0.98%</span></td>
       </tr>
       <tr>
         <td class="col-label">Dow Futures</td>
-        <td class="col-price">52,180</td>
-        <td class="col-chg"><span class="up">+0.81%</span></td>
+        <td class="col-price">52,160</td>
+        <td class="col-chg"><span class="up">+0.77%</span></td>
       </tr>
     </tbody>
   </table>
@@ -266,14 +267,14 @@
           <td class="col-chg"><span class="up">+1.47%</span></td></tr>
       <tr class="group-header"><td colspan="3">ENERGY</td></tr>
       <tr><td class="col-label">WTI Crude</td>
-          <td class="col-price">74.080<span class="unit"> $/bbl</span></td>
-          <td class="col-chg"><span class="down">-4.63%</span></td></tr>
+          <td class="col-price">74.020<span class="unit"> $/bbl</span></td>
+          <td class="col-chg"><span class="down">-4.71%</span></td></tr>
       <tr><td class="col-label">Brent Crude</td>
-          <td class="col-price">78.010<span class="unit"> $/bbl</span></td>
-          <td class="col-chg"><span class="down">-4.40%</span></td></tr>
+          <td class="col-price">77.930<span class="unit"> $/bbl</span></td>
+          <td class="col-chg"><span class="down">-4.50%</span></td></tr>
       <tr><td class="col-label">Henry Hub Gas</td>
-          <td class="col-price">3.265<span class="unit"> $/MMBtu</span></td>
-          <td class="col-chg"><span class="up">+2.10%</span></td></tr>
+          <td class="col-price">3.268<span class="unit"> $/MMBtu</span></td>
+          <td class="col-chg"><span class="up">+2.19%</span></td></tr>
     
         </tbody>
       </table>
@@ -285,16 +286,16 @@
           
       <tr class="group-header"><td colspan="3">METALS</td></tr>
       <tr><td class="col-label">Gold</td>
-          <td class="col-price">4,209.00<span class="unit"> $/oz</span></td>
-          <td class="col-chg"><span class="up">+1.25%</span></td></tr>
+          <td class="col-price">4,209.20<span class="unit"> $/oz</span></td>
+          <td class="col-chg"><span class="up">+1.26%</span></td></tr>
       <tr class="group-header"><td colspan="3">U.S. DOLLAR</td></tr>
       <tr><td class="col-label">Dollar Index</td>
-          <td class="col-price">101.02</td>
+          <td class="col-price">101.01</td>
           <td class="col-chg"><span class="up">+0.16%</span></td></tr>
       <tr class="group-header"><td colspan="3">CRYPTO</td></tr>
       <tr><td class="col-label">Bitcoin</td>
-          <td class="col-price">64,367<span class="unit"> $</span></td>
-          <td class="col-chg"><span class="up">+1.78%</span></td></tr>
+          <td class="col-price">64,391<span class="unit"> $</span></td>
+          <td class="col-chg"><span class="up">+1.82%</span></td></tr>
     
         </tbody>
       </table>
@@ -302,7 +303,7 @@
   </div>
 
   <div class="footer">
-    <span>Thor Storehouse Morning Pulse &nbsp;&middot;&nbsp; Yahoo Finance &nbsp;&middot;&nbsp; Generated: 2026-06-22 16:35 &nbsp;&middot;&nbsp; #FollowTheData &nbsp;&middot;&nbsp; &copy; 2026 Randy Hinton</span>
+    <span>Thor Storehouse Morning Pulse &nbsp;&middot;&nbsp; Yahoo Finance &nbsp;&middot;&nbsp; Generated: 2026-06-22 16:45 &nbsp;&middot;&nbsp; #FollowTheData &nbsp;&middot;&nbsp; &copy; 2026 Randy Hinton</span>
   </div>
 
 </div>

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-22 16:35",
+  "generated_at": "2026-06-22 16:45",
   "session": "AFTER HOURS",
   "signals": [
     {
@@ -25,19 +25,19 @@
   ],
   "quotes": {
     "ES=F": {
-      "price": 7544.25,
+      "price": 7541.25,
       "prior_close": 7516.0,
-      "chg_pct": 0.38
+      "chg_pct": 0.34
     },
     "NQ=F": {
-      "price": 30654.25,
+      "price": 30652.0,
       "prior_close": 30355.75,
       "chg_pct": 0.98
     },
     "YM=F": {
-      "price": 52180.0,
+      "price": 52160.0,
       "prior_close": 51760.0,
-      "chg_pct": 0.81
+      "chg_pct": 0.77
     },
     "^VIX": {
       "price": 17.280000686645508,
@@ -55,34 +55,34 @@
       "chg_pct": 1.47
     },
     "CL=F": {
-      "price": 74.08000183105469,
+      "price": 74.0199966430664,
       "prior_close": 77.68000030517578,
-      "chg_pct": -4.63
+      "chg_pct": -4.71
     },
     "BZ=F": {
-      "price": 78.01000213623047,
+      "price": 77.93000030517578,
       "prior_close": 81.5999984741211,
-      "chg_pct": -4.4
+      "chg_pct": -4.5
     },
     "NG=F": {
-      "price": 3.265000104904175,
+      "price": 3.2679998874664307,
       "prior_close": 3.197999954223633,
-      "chg_pct": 2.1
+      "chg_pct": 2.19
     },
     "GC=F": {
-      "price": 4209.0,
+      "price": 4209.2001953125,
       "prior_close": 4157.0,
-      "chg_pct": 1.25
+      "chg_pct": 1.26
     },
     "DX-Y.NYB": {
-      "price": 101.01799774169922,
+      "price": 101.01200103759766,
       "prior_close": 100.85199737548828,
       "chg_pct": 0.16
     },
     "BTC-USD": {
-      "price": 64367.19140625,
+      "price": 64391.19921875,
       "prior_close": 63240.73828125,
-      "chg_pct": 1.78
+      "chg_pct": 1.82
     }
   }
 }
