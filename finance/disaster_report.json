@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-06-22 13:46",
+  "total_events": 400,
+  "total_cost_b": 2912.1,
+  "total_deaths": 16941,
+  "by_category": [
+    [
+      "Tropical Cyclone",
+      {
+        "count": 67,
+        "cost": 1542970.5999999994,
+        "deaths": 7211
+      }
+    ],
+    [
+      "Severe Storm",
+      {
+        "count": 200,
+        "cost": 508548.3999999998,
+        "deaths": 2145
+      }
+    ],
+    [
+      "Drought",
+      {
+        "count": 32,
+        "cost": 367807.99999999994,
+        "deaths": 4658
+      }
+    ],
+    [
+      "Flooding",
+      {
+        "count": 45,
+        "cost": 202956.69999999998,
+        "deaths": 765
+      }
+    ],
+    [
+      "Wildfire",
+      {
+        "count": 23,
+        "cost": 148045.99999999994,
+        "deaths": 537
+      }
+    ],
+    [
+      "Winter Storm",
+      {
+        "count": 24,
+        "cost": 104438.5,
+        "deaths": 1463
+      }
+    ],
+    [
+      "Freeze",
+      {
+        "count": 9,
+        "cost": 37343.4,
+        "deaths": 162
+      }
+    ]
+  ],
+  "wti_up": 56,
+  "wti_down": 49,
+  "wti_flat": 272,
+  "wti_avg": 0.06,
+  "wti_n": 377,
+  "wti_eligible": 377,
+  "wti_pre_1986": 23,
+  "wti_no_data": 0,
+  "gas_avg": 0.39,
+  "gas_n": 363,
+  "ind_avg": 0.06,
+  "ind_n": 400
+}
