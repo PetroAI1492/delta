@@ -1,0 +1,235 @@
+{
+  "generated_at": "2026-06-21 20:02",
+  "latest_period": "2026-06-05",
+  "kpis": [
+    {
+      "label": "Crude Stocks",
+      "unit": "mb",
+      "value": 426485.0,
+      "wow": -7227.0,
+      "percentile": 42
+    },
+    {
+      "label": "Production",
+      "unit": "kb/d",
+      "value": 13799.0,
+      "wow": 92.0,
+      "percentile": 97
+    },
+    {
+      "label": "PADD 3 Util.",
+      "unit": "%",
+      "value": 97.4,
+      "wow": -0.7,
+      "percentile": 95
+    },
+    {
+      "label": "Nat Gas Storage",
+      "unit": "bcf",
+      "value": 2205.0,
+      "wow": 63.0,
+      "percentile": 22
+    }
+  ],
+  "crude_balance": [
+    {
+      "label": "Commercial Crude Stocks",
+      "unit": "mb",
+      "period": "2026-06-05",
+      "value_str": "426,485",
+      "wow_html": "<span style=\"color:#DC2626;font-weight:600;\">\u25bc -7,227</span>",
+      "yoy_str": "<span style=\"color:#059669;font-weight:600\">-9,574</span>",
+      "pctl_html": "<span style=\"color:#6B7280;\">42nd</span>",
+      "value": 426485.0,
+      "wow": -7227.0,
+      "yoy": -9574.0,
+      "percentile": 42
+    },
+    {
+      "label": "Strategic Petroleum Reserve",
+      "unit": "mb",
+      "period": "2026-06-05",
+      "value_str": "349,192",
+      "wow_html": "<span style=\"color:#DC2626;font-weight:600;\">\u25bc -7,927</span>",
+      "yoy_str": "<span style=\"color:#059669;font-weight:600\">-52,630</span>",
+      "pctl_html": "<span style=\"color:#059669;font-weight:600;\">4th</span>",
+      "value": 349192.0,
+      "wow": -7927.0,
+      "yoy": -52630.0,
+      "percentile": 4
+    },
+    {
+      "label": "Field Production",
+      "unit": "kb/d",
+      "period": "2026-06-05",
+      "value_str": "13,799",
+      "wow_html": "<span style=\"color:#059669;font-weight:600;\">\u25b2 +92</span>",
+      "yoy_str": "<span style=\"color:#DC2626;font-weight:600\">+391</span>",
+      "pctl_html": "<span style=\"color:#DC2626;font-weight:600;\">97th</span>",
+      "value": 13799.0,
+      "wow": 92.0,
+      "yoy": 391.0,
+      "percentile": 97
+    },
+    {
+      "label": "Crude Imports",
+      "unit": "kb/d",
+      "period": "2026-06-05",
+      "value_str": "5,888",
+      "wow_html": "<span style=\"color:#DC2626;font-weight:600;\">\u25bc -509</span>",
+      "yoy_str": "<span style=\"color:#059669;font-weight:600\">-458</span>",
+      "pctl_html": "<span style=\"color:#059669;font-weight:600;\">16th</span>",
+      "value": 5888.0,
+      "wow": -509.0,
+      "yoy": -458.0,
+      "percentile": 16
+    },
+    {
+      "label": "Crude Exports",
+      "unit": "kb/d",
+      "period": "2026-06-05",
+      "value_str": "4,840",
+      "wow_html": "<span style=\"color:#DC2626;font-weight:600;\">\u25bc -1,034</span>",
+      "yoy_str": "<span style=\"color:#DC2626;font-weight:600\">+933</span>",
+      "pctl_html": "<span style=\"color:#DC2626;font-weight:600;\">88th</span>",
+      "value": 4840.0,
+      "wow": -1034.0,
+      "yoy": 933.0,
+      "percentile": 88
+    },
+    {
+      "label": "Refinery Input",
+      "unit": "kb/d",
+      "period": "2026-06-05",
+      "value_str": "16,962",
+      "wow_html": "<span style=\"color:#059669;font-weight:600;\">\u25b2 +81</span>",
+      "yoy_str": "<span style=\"color:#059669;font-weight:600\">-36</span>",
+      "pctl_html": "<span style=\"color:#DC2626;font-weight:600;\">95th</span>",
+      "value": 16962.0,
+      "wow": 81.0,
+      "yoy": -36.0,
+      "percentile": 95
+    }
+  ],
+  "product_stocks": [
+    {
+      "label": "Distillate Stocks",
+      "unit": "mb",
+      "period": "2026-06-05",
+      "value_str": "102,101",
+      "wow_html": "<span style=\"color:#DC2626;font-weight:600;\">\u25bc -200</span>",
+      "yoy_str": "<span style=\"color:#059669;font-weight:600\">-5,537</span>",
+      "pctl_html": "<span style=\"color:#059669;font-weight:600;\">1st</span>",
+      "value": 102101.0,
+      "wow": -200.0,
+      "yoy": -5537.0,
+      "percentile": 1
+    },
+    {
+      "label": "Gasoline Stocks",
+      "unit": "mb",
+      "period": "2026-06-05",
+      "value_str": "215,141",
+      "wow_html": "<span style=\"color:#059669;font-weight:600;\">\u25b2 +186</span>",
+      "yoy_str": "<span style=\"color:#059669;font-weight:600\">-13,159</span>",
+      "pctl_html": "<span style=\"color:#059669;font-weight:600;\">15th</span>",
+      "value": 215141.0,
+      "wow": 186.0,
+      "yoy": -13159.0,
+      "percentile": 15
+    },
+    {
+      "label": "Jet Fuel Stocks",
+      "unit": "mb",
+      "period": "2026-06-05",
+      "value_str": "46,150",
+      "wow_html": "<span style=\"color:#059669;font-weight:600;\">\u25b2 +797</span>",
+      "yoy_str": "<span style=\"color:#DC2626;font-weight:600\">+2,496</span>",
+      "pctl_html": "<span style=\"color:#DC2626;font-weight:600;\">96th</span>",
+      "value": 46150.0,
+      "wow": 797.0,
+      "yoy": 2496.0,
+      "percentile": 96
+    }
+  ],
+  "refinery": [
+    {
+      "label": "PADD 3 Refinery Utilization",
+      "unit": "",
+      "period": "2026-06-05",
+      "value_str": "97.4%",
+      "wow_html": "<span style=\"color:#DC2626;font-weight:600;\">\u25bc -0.7%</span>",
+      "yoy_str": "<span style=\"color:#DC2626;font-weight:600\">+2.0%</span>",
+      "pctl_html": "<span style=\"color:#DC2626;font-weight:600;\">95th</span>",
+      "value": 97.4,
+      "wow": -0.7,
+      "yoy": 2.0,
+      "percentile": 95
+    }
+  ],
+  "natgas_storage": [
+    {
+      "label": "Natural Gas Working Storage",
+      "unit": "bcf",
+      "period": "2026-05-01",
+      "value_str": "2,205",
+      "wow_html": "<span style=\"color:#059669;font-weight:600;\">\u25b2 +63</span>",
+      "yoy_str": "<span style=\"color:#DC2626;font-weight:600\">+164</span>",
+      "pctl_html": "<span style=\"color:#6B7280;\">22nd</span>",
+      "value": 2205.0,
+      "wow": 63.0,
+      "yoy": 164.0,
+      "percentile": 22
+    }
+  ],
+  "padd_regional": [
+    {
+      "region": "PADD 1 (East Coast)",
+      "period": "2026-06-05",
+      "value_mb": 7816.0,
+      "wow_mb": -321.0,
+      "yoy_mb": -405.0,
+      "percentile": 38
+    },
+    {
+      "region": "PADD 2 (Midwest)",
+      "period": "2026-06-05",
+      "value_mb": 102314.0,
+      "wow_mb": -638.0,
+      "yoy_mb": -5205.0,
+      "percentile": 9
+    },
+    {
+      "region": "PADD 3 (Gulf Coast)",
+      "period": "2026-06-05",
+      "value_mb": 248644.0,
+      "wow_mb": -3856.0,
+      "yoy_mb": 3540.0,
+      "percentile": 71
+    },
+    {
+      "region": "PADD 4 (Rocky Mountain)",
+      "period": "2026-06-05",
+      "value_mb": 23858.0,
+      "wow_mb": -539.0,
+      "yoy_mb": -944.0,
+      "percentile": 40
+    },
+    {
+      "region": "PADD 5 (West Coast)",
+      "period": "2026-06-05",
+      "value_mb": 43853.0,
+      "wow_mb": -1873.0,
+      "yoy_mb": -6560.0,
+      "percentile": 2
+    }
+  ],
+  "supply_balance_check": {
+    "field_production_kbd": 13799.0,
+    "crude_imports_kbd": 5888.0,
+    "crude_exports_kbd": 4840.0,
+    "refinery_input_kbd": 16962.0,
+    "implied_weekly_change_mb": -15.0,
+    "reported_weekly_change_mb": -7227.0
+  }
+}
