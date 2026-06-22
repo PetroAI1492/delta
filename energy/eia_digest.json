@@ -1,0 +1,529 @@
+{
+  "meta": {
+    "title": "EIA Energy Digest",
+    "date": "Monday, June 22, 2026",
+    "report_date": "2026-06-18",
+    "generated_at": "2026-06-22T22:23:42.406860+00:00",
+    "source": "Thor Storehouse (EIA + FRED + Baker Hughes + Dallas Fed)",
+    "disclaimer": "No AI-generated content. Data subject to EIA revision."
+  },
+  "prices": {
+    "DCOILWTICO": {
+      "label": "WTI Crude",
+      "unit": "$/bbl",
+      "latest": 84.65,
+      "wow": -3.97,
+      "wow_pct": -4.48,
+      "yoy": 12.12,
+      "pctile_5y": 75,
+      "period": "2026-06-15",
+      "status": "current"
+    },
+    "DCOILBRENTEU": {
+      "label": "Brent Crude",
+      "unit": "$/bbl",
+      "latest": 84.36,
+      "wow": -4.28,
+      "wow_pct": -4.83,
+      "yoy": 9.31,
+      "pctile_5y": 63,
+      "period": "2026-06-15",
+      "status": "current"
+    },
+    "GASREGW": {
+      "label": "Regular Gasoline",
+      "unit": "$/gal",
+      "latest": 4.052,
+      "wow": -0.09,
+      "wow_pct": -2.17,
+      "yoy": 0.91,
+      "pctile_5y": 88,
+      "period": "2026-06-15",
+      "status": "current"
+    },
+    "GASDESW": {
+      "label": "Diesel (Retail)",
+      "unit": "$/gal",
+      "latest": 5.059,
+      "wow": -0.15,
+      "wow_pct": -2.88,
+      "yoy": 1.49,
+      "pctile_5y": 83,
+      "period": "2026-06-15",
+      "status": "current"
+    },
+    "DHOILNYH": {
+      "label": "Heating Oil NY",
+      "unit": "$/gal",
+      "latest": 3.175,
+      "wow": -0.13,
+      "wow_pct": -3.93,
+      "yoy": 0.89,
+      "pctile_5y": 79,
+      "period": "2026-06-15",
+      "status": "current"
+    },
+    "DHHNGSP": {
+      "label": "Henry Hub Nat Gas (Daily)",
+      "unit": "$/MMBtu",
+      "latest": 3.06,
+      "wow": 0.0,
+      "wow_pct": 0.0,
+      "yoy": 0.16,
+      "pctile_5y": 47,
+      "period": "2026-06-15",
+      "status": "current"
+    },
+    "DJFUELUSGULF": {
+      "label": "Jet Fuel Gulf Coast",
+      "unit": "$/gal",
+      "latest": 3.023,
+      "wow": 0.05,
+      "wow_pct": 1.68,
+      "yoy": 0.83,
+      "pctile_5y": 75,
+      "period": "2026-06-15",
+      "status": "current"
+    },
+    "DGASNYH": {
+      "label": "RBOB Gasoline (NY Harbor)",
+      "unit": "$/gal",
+      "latest": 2.945,
+      "wow": -0.08,
+      "wow_pct": -2.65,
+      "yoy": 0.72,
+      "pctile_5y": 83,
+      "period": "2026-06-15",
+      "status": "current"
+    },
+    "DDFUELNYH": {
+      "label": "ULSD (NY Harbor)",
+      "unit": "$/gal",
+      "latest": 3.278,
+      "wow": -0.13,
+      "wow_pct": -3.82,
+      "yoy": 0.88,
+      "pctile_5y": 77,
+      "period": "2026-06-15",
+      "status": "current"
+    }
+  },
+  "inventories": {
+    "PET.WCESTUS1.W": {
+      "label": "Commercial Crude Stocks",
+      "unit": "Mbbl",
+      "latest": 426485.0,
+      "wow": -7227.0,
+      "wow_pct": -1.67,
+      "yoy": -5930.0,
+      "pctile_5y": 42,
+      "period": "2026-06-05",
+      "status": "current"
+    },
+    "PET.WCSSTUS1.W": {
+      "label": "SPR Stocks",
+      "unit": "Mbbl",
+      "latest": 349192.0,
+      "wow": -7927.0,
+      "wow_pct": -2.22,
+      "yoy": -52867.0,
+      "pctile_5y": 3,
+      "period": "2026-06-05",
+      "status": "current"
+    },
+    "PET.WCESTUS2.W": {
+      "label": "Cushing OK Stocks",
+      "unit": "Mbbl",
+      "latest": 21640.0,
+      "wow": -801.0,
+      "wow_pct": -3.57,
+      "yoy": -2043.0,
+      "pctile_5y": 7,
+      "period": "2026-06-05",
+      "status": "current"
+    },
+    "PET.WCRFPUS2.W": {
+      "label": "Field Production",
+      "unit": "kb/d",
+      "latest": 13799.0,
+      "wow": 92.0,
+      "wow_pct": 0.67,
+      "yoy": 371.0,
+      "pctile_5y": 96,
+      "period": "2026-06-05",
+      "status": "current"
+    },
+    "PET.WCRIMUS2.W": {
+      "label": "Crude Imports",
+      "unit": "kb/d",
+      "latest": 5888.0,
+      "wow": -509.0,
+      "wow_pct": -7.96,
+      "yoy": -288.0,
+      "pctile_5y": 16,
+      "period": "2026-06-05",
+      "status": "current"
+    },
+    "PET.WCREXUS2.W": {
+      "label": "Crude Exports",
+      "unit": "kb/d",
+      "latest": 4840.0,
+      "wow": -1034.0,
+      "wow_pct": -17.6,
+      "yoy": 1554.0,
+      "pctile_5y": 88,
+      "period": "2026-06-05",
+      "status": "current"
+    },
+    "PET.WCRRIUS2.W": {
+      "label": "Refinery Input",
+      "unit": "kb/d",
+      "latest": 16962.0,
+      "wow": 81.0,
+      "wow_pct": 0.48,
+      "yoy": -264.0,
+      "pctile_5y": 94,
+      "period": "2026-06-05",
+      "status": "current"
+    },
+    "PET.WDISTUS1.W": {
+      "label": "Distillate Stocks",
+      "unit": "Mbbl",
+      "latest": 102101.0,
+      "wow": -200.0,
+      "wow_pct": -0.2,
+      "yoy": -6783.0,
+      "pctile_5y": 0,
+      "period": "2026-06-05",
+      "status": "current"
+    },
+    "PET.WGTSTUS1.W": {
+      "label": "Gasoline Stocks",
+      "unit": "Mbbl",
+      "latest": 215141.0,
+      "wow": 186.0,
+      "wow_pct": 0.09,
+      "yoy": -14663.0,
+      "pctile_5y": 14,
+      "period": "2026-06-05",
+      "status": "current"
+    },
+    "PET.WJFSTUS1.W": {
+      "label": "Jet Fuel Stocks",
+      "unit": "Mbbl",
+      "latest": 46150.0,
+      "wow": 797.0,
+      "wow_pct": 1.76,
+      "yoy": 2751.0,
+      "pctile_5y": 96,
+      "period": "2026-06-05",
+      "status": "current"
+    },
+    "PET.WPULEUS3.W": {
+      "label": "PADD 3 Refinery Utilization",
+      "unit": "%",
+      "latest": 97.4,
+      "wow": -0.7,
+      "wow_pct": -0.71,
+      "yoy": 2.5,
+      "pctile_5y": 93,
+      "period": "2026-06-05",
+      "status": "current"
+    },
+    "NG.NW2_EPG0_SWO_R48_BCF.W": {
+      "label": "Nat Gas Storage (L48)",
+      "unit": "Bcf",
+      "latest": 2205.0,
+      "wow": 63.0,
+      "wow_pct": 2.94,
+      "yoy": 60.0,
+      "pctile_5y": 22,
+      "period": "2026-05-01",
+      "status": "old"
+    },
+    "DALENGINDEXQQ04": {
+      "label": "Business Activity",
+      "unit": "index",
+      "latest": 21.0,
+      "wow": 27.2,
+      "wow_pct": -438.71,
+      "yoy": 17.2,
+      "pctile_5y": 63,
+      "period": "2026-01-01",
+      "status": "current"
+    },
+    "DALENGINDEXQQ02": {
+      "label": "Company Outlook",
+      "unit": "index",
+      "latest": 32.2,
+      "wow": 47.4,
+      "wow_pct": -311.84,
+      "yoy": 37.1,
+      "pctile_5y": 63,
+      "period": "2026-01-01",
+      "status": "current"
+    },
+    "DALENGINDEXQQ07": {
+      "label": "Uncertainty",
+      "unit": "index",
+      "latest": 53.7,
+      "wow": 10.3,
+      "wow_pct": 23.73,
+      "yoy": 10.6,
+      "pctile_5y": 89,
+      "period": "2026-01-01",
+      "status": "current"
+    },
+    "DALENGINDEXQQ01": {
+      "label": "Capital Expenditures",
+      "unit": "index",
+      "latest": 21.2,
+      "wow": 32.8,
+      "wow_pct": -282.76,
+      "yoy": 11.8,
+      "pctile_5y": 58,
+      "period": "2026-01-01",
+      "status": "current"
+    },
+    "DALENGINDEXQQ05": {
+      "label": "Employment",
+      "unit": "index",
+      "latest": 0.8,
+      "wow": 11.6,
+      "wow_pct": -107.41,
+      "yoy": 0.8,
+      "pctile_5y": 21,
+      "period": "2026-01-01",
+      "status": "current"
+    },
+    "BH.US.OIL.W": {
+      "label": "US Oil-Directed Rigs",
+      "unit": "rigs",
+      "latest": 433.0,
+      "wow": 2.0,
+      "wow_pct": 0.46,
+      "yoy": -6.0,
+      "pctile_5y": 25,
+      "period": "2026-06-12",
+      "status": "current"
+    },
+    "BH.US.GAS.W": {
+      "label": "US Gas-Directed Rigs",
+      "unit": "rigs",
+      "latest": 121.0,
+      "wow": -3.0,
+      "wow_pct": -2.42,
+      "yoy": 8.0,
+      "pctile_5y": 53,
+      "period": "2026-06-12",
+      "status": "current"
+    },
+    "BH.US.TOTAL.W": {
+      "label": "US Total Rig Count",
+      "unit": "rigs",
+      "latest": 562.0,
+      "wow": -1.0,
+      "wow_pct": -0.18,
+      "yoy": 7.0,
+      "pctile_5y": 28,
+      "period": "2026-06-12",
+      "status": "current"
+    },
+    "BH.CA.TOTAL.W": {
+      "label": "Canada Total Rig Count",
+      "unit": "rigs",
+      "latest": 180.0,
+      "wow": 11.0,
+      "wow_pct": 6.51,
+      "yoy": 42.0,
+      "pctile_5y": 45,
+      "period": "2026-06-12",
+      "status": "current"
+    },
+    "DGS10": {
+      "label": "10Y Treasury",
+      "unit": "%",
+      "latest": 4.49,
+      "wow": 0.06,
+      "wow_pct": 1.35,
+      "yoy": 0.1,
+      "pctile_5y": 90,
+      "period": "2026-06-17",
+      "status": "current"
+    },
+    "DGS2": {
+      "label": "2Y Treasury",
+      "unit": "%",
+      "latest": 4.2,
+      "wow": 0.15,
+      "wow_pct": 3.7,
+      "yoy": 0.26,
+      "pctile_5y": 63,
+      "period": "2026-06-17",
+      "status": "current"
+    },
+    "DGS3MO": {
+      "label": "3M T-Bill",
+      "unit": "%",
+      "latest": 3.83,
+      "wow": 0.04,
+      "wow_pct": 1.06,
+      "yoy": -0.59,
+      "pctile_5y": 37,
+      "period": "2026-06-17",
+      "status": "current"
+    },
+    "T10Y2Y": {
+      "label": "10Y-2Y Spread",
+      "unit": "bps",
+      "latest": 0.27,
+      "wow": -0.02,
+      "wow_pct": -6.9,
+      "yoy": -0.17,
+      "pctile_5y": 56,
+      "period": "2026-06-18",
+      "status": "current"
+    },
+    "T10Y3M": {
+      "label": "10Y-3M Spread",
+      "unit": "bps",
+      "latest": 0.63,
+      "wow": -0.03,
+      "wow_pct": -4.55,
+      "yoy": 0.67,
+      "pctile_5y": 75,
+      "period": "2026-06-18",
+      "status": "current"
+    },
+    "DFII10": {
+      "label": "10Y Real Yield (TIPS)",
+      "unit": "%",
+      "latest": 2.23,
+      "wow": 0.09,
+      "wow_pct": 4.21,
+      "yoy": 0.15,
+      "pctile_5y": 95,
+      "period": "2026-06-17",
+      "status": "current"
+    },
+    "T10YIE": {
+      "label": "10Y Breakeven Inflation",
+      "unit": "%",
+      "latest": 2.25,
+      "wow": -0.01,
+      "wow_pct": -0.44,
+      "yoy": -0.06,
+      "pctile_5y": 17,
+      "period": "2026-06-18",
+      "status": "current"
+    },
+    "FEDFUNDS": {
+      "label": "Fed Funds Rate",
+      "unit": "%",
+      "latest": 3.63,
+      "wow": -0.01,
+      "wow_pct": -0.27,
+      "yoy": -0.7,
+      "pctile_5y": 27,
+      "period": "2026-05-01",
+      "status": "current"
+    },
+    "INDPRO": {
+      "label": "Industrial Production",
+      "unit": "idx",
+      "latest": 102.6475,
+      "wow": 0.14,
+      "wow_pct": 0.14,
+      "yoy": 1.68,
+      "pctile_5y": 98,
+      "period": "2026-05-01",
+      "status": "current"
+    },
+    "TRUCKD11": {
+      "label": "Truck Tonnage Index",
+      "unit": "idx",
+      "latest": 116.8,
+      "wow": 1.0,
+      "wow_pct": 0.86,
+      "yoy": 3.3,
+      "pctile_5y": 84,
+      "period": "2026-03-01",
+      "status": "current"
+    },
+    "UNRATE": {
+      "label": "Unemployment Rate",
+      "unit": "%",
+      "latest": 4.3,
+      "wow": 0.0,
+      "wow_pct": 0.0,
+      "yoy": 0.0,
+      "pctile_5y": 74,
+      "period": "2026-05-01",
+      "status": "current"
+    },
+    "VIXCLS": {
+      "label": "VIX (Market Stress)",
+      "unit": "idx",
+      "latest": 18.44,
+      "wow": 2.03,
+      "wow_pct": 12.37,
+      "yoy": -3.16,
+      "pctile_5y": 54,
+      "period": "2026-06-17",
+      "status": "current"
+    },
+    "DTWEXAFEGS": {
+      "label": "USD Trade-Weighted Index",
+      "unit": "idx",
+      "latest": 112.5589,
+      "wow": -0.48,
+      "wow_pct": -0.42,
+      "yoy": 1.82,
+      "pctile_5y": 37,
+      "period": "2026-06-12",
+      "status": "current"
+    }
+  },
+  "padd": [
+    {
+      "label": "PADD 1 (East Coast)",
+      "unit": "Mbbl",
+      "latest": 7816.0,
+      "period": "2026-06-05",
+      "wow": -321.0,
+      "pctile_5y": 37
+    },
+    {
+      "label": "PADD 2 (Midwest)",
+      "unit": "Mbbl",
+      "latest": 102314.0,
+      "period": "2026-06-05",
+      "wow": -638.0,
+      "pctile_5y": 8
+    },
+    {
+      "label": "PADD 3 (Gulf Coast)",
+      "unit": "Mbbl",
+      "latest": 248644.0,
+      "period": "2026-06-05",
+      "wow": -3856.0,
+      "pctile_5y": 71
+    },
+    {
+      "label": "PADD 4 (Rocky Mtn)",
+      "unit": "Mbbl",
+      "latest": 23858.0,
+      "period": "2026-06-05",
+      "wow": -539.0,
+      "pctile_5y": 40
+    },
+    {
+      "label": "PADD 5 (West Coast)",
+      "unit": "Mbbl",
+      "latest": 43853.0,
+      "period": "2026-06-05",
+      "wow": -1873.0,
+      "pctile_5y": 2
+    }
+  ]
+}
