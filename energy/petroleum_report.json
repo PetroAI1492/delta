@@ -1,0 +1,181 @@
+{
+  "generated_at": "2026-06-22 05:55",
+  "report": "Petroleum Daily Price Report",
+  "version": "1.2.0",
+  "run_id": "cbf7cdf6-a71d-4e8f-8c6f-9b61374e3965",
+  "run_ts": "2026-06-22 09:55:58 UTC",
+  "as_of": "2026-06-22",
+  "fingerprint": "1748242f6519fab0e362fc2b40a6e93cf8b780793f475ffd3aac1b2102557dd4",
+  "database": "c:\\Thor\\storehouse.db",
+  "yf_live": {
+    "HO=F": {
+      "date": "2026-06-22",
+      "price": 3.128
+    },
+    "NG=F": {
+      "date": "2026-06-22",
+      "price": 3.323
+    },
+    "CL=F": {
+      "date": "2026-06-22",
+      "price": 75.33
+    },
+    "BZ=F": {
+      "date": "2026-06-22",
+      "price": 79.25
+    }
+  },
+  "yf_errors": [],
+  "series": [
+    {
+      "series_id": "CL=F",
+      "label": "WTI Crude",
+      "unit": "$/bbl",
+      "group": "crude",
+      "source": "yfinance",
+      "price_type": "futures",
+      "period": "2026-06-22",
+      "latest": 75.33,
+      "wow_pct": -11.01,
+      "mom_pct": -24.93,
+      "yoy_pct": -0.52,
+      "hi52": 104.69,
+      "lo52": 57.76,
+      "pos52": 37.4,
+      "wow_prior": 84.65,
+      "mom_prior": 100.35,
+      "yoy_prior": 75.72
+    },
+    {
+      "series_id": "BZ=F",
+      "label": "Brent Crude",
+      "unit": "$/bbl",
+      "group": "crude",
+      "source": "yfinance",
+      "price_type": "futures",
+      "period": "2026-06-22",
+      "latest": 79.25,
+      "wow_pct": -6.06,
+      "mom_pct": -25.87,
+      "yoy_pct": 0.66,
+      "hi52": 118.69,
+      "lo52": 61.88,
+      "pos52": 30.6,
+      "wow_prior": 84.36,
+      "mom_prior": 106.9,
+      "yoy_prior": 78.73
+    },
+    {
+      "series_id": "DJFUELUSGULF",
+      "label": "Jet Fuel",
+      "unit": "$/gal",
+      "group": "refined",
+      "source": "fred",
+      "price_type": "spot",
+      "period": "2026-06-15",
+      "latest": 3.023,
+      "wow_pct": -13.48,
+      "mom_pct": -27.9,
+      "yoy_pct": 37.28,
+      "hi52": 4.163,
+      "lo52": 1.916,
+      "pos52": 49.3,
+      "wow_prior": 3.494,
+      "mom_prior": 4.193,
+      "yoy_prior": 2.202
+    },
+    {
+      "series_id": "HO=F",
+      "label": "Heating Oil",
+      "unit": "$/gal",
+      "group": "refined",
+      "source": "yfinance",
+      "price_type": "futures",
+      "period": "2026-06-22",
+      "latest": 3.128,
+      "wow_pct": -1.48,
+      "mom_pct": -17.18,
+      "yoy_pct": 27.99,
+      "hi52": 4.057,
+      "lo52": 2.036,
+      "pos52": 54.0,
+      "wow_prior": 3.175,
+      "mom_prior": 3.777,
+      "yoy_prior": 2.444
+    },
+    {
+      "series_id": "GASREGW",
+      "label": "Regular Gasoline",
+      "unit": "$/gal",
+      "group": "refined",
+      "source": "fred",
+      "price_type": "spot",
+      "period": "2026-06-15",
+      "latest": 4.052,
+      "wow_pct": -2.27,
+      "mom_pct": -9.96,
+      "yoy_pct": 30.37,
+      "hi52": 4.475,
+      "lo52": 2.806,
+      "pos52": 74.7,
+      "wow_prior": 4.146,
+      "mom_prior": 4.5,
+      "yoy_prior": 3.108
+    },
+    {
+      "series_id": "GASDESW",
+      "label": "Diesel",
+      "unit": "$/gal",
+      "group": "refined",
+      "source": "fred",
+      "price_type": "spot",
+      "period": "2026-06-15",
+      "latest": 5.059,
+      "wow_pct": -2.9,
+      "mom_pct": -10.29,
+      "yoy_pct": 45.75,
+      "hi52": 5.639,
+      "lo52": 3.5,
+      "pos52": 72.9,
+      "wow_prior": 5.21,
+      "mom_prior": 5.639,
+      "yoy_prior": 3.471
+    },
+    {
+      "series_id": "NG=F",
+      "label": "Henry Hub Gas",
+      "unit": "$/MMBtu",
+      "group": "gas",
+      "source": "yfinance",
+      "price_type": "futures",
+      "period": "2026-06-22",
+      "latest": 3.323,
+      "wow_pct": 8.59,
+      "mom_pct": 13.8,
+      "yoy_pct": 7.54,
+      "hi52": 4.96,
+      "lo52": 2.72,
+      "pos52": 26.9,
+      "wow_prior": 3.06,
+      "mom_prior": 2.92,
+      "yoy_prior": 3.09
+    }
+  ],
+  "spreads": [
+    {
+      "label": "WTI\u2013Brent Spread",
+      "unit": "$/bbl",
+      "value": -3.92,
+      "wow_chg": -4.21,
+      "mom_chg": 2.63,
+      "yoy_chg": -0.91,
+      "note": "Negative = Brent premium (normal). Wide = U.S. supply surplus.",
+      "period": "2026-06-22"
+    }
+  ],
+  "sources": {
+    "yfinance": "Yahoo Finance via yfinance \u2014 live fetch at report generation time. Front-month futures.",
+    "fred": "Federal Reserve Bank of St. Louis FRED API via fred_loader.py. Spot prices."
+  },
+  "note": "F superscript = front-month futures price. No hardcoded values. Deterministic and auditable."
+}
