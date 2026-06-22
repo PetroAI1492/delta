@@ -7,23 +7,18 @@
 <title>Morning Pulse — Thor Storehouse</title>
 <style>
   :root {
-    --red:       #e8111a;
-    --black:     #1a1a1a;
-    --gray:      #666;
-    --rule:      #ccc;
-    --bg:        #fff;
-    --bg-soft:   #f9f9f9;
-    --up:        #059669;
-    --down:      #DC2626;
-    --neutral:   #6B7280;
-    --pre:       #d97706;
-    --open:      #059669;
-    --after:     #7c3aed;
-    --overnight: #1e40af;
+    --red:      #e8111a;
+    --black:    #1a1a1a;
+    --gray:     #666;
+    --rule:     #e0e0e0;
+    --bg:       #fff;
+    --bg-soft:  #f9f9f9;
+    --up:       #059669;
+    --down:     #DC2626;
+    --warn:     #d97706;
+    --neutral:  #6B7280;
   }
-
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
     font-family: Arial, sans-serif;
     background: var(--bg);
@@ -36,7 +31,7 @@
   .masthead {
     border-top: 4px solid var(--red);
     border-bottom: 1px solid var(--rule);
-    padding: .5rem 2rem .4rem;
+    padding: .5rem 2.5rem .4rem;
     display: flex;
     align-items: baseline;
     gap: 1.2rem;
@@ -67,104 +62,145 @@
     color: var(--gray);
   }
 
-  /* ── Session badge ── */
+  /* ── Session bar ── */
   .session-bar {
-    padding: .6rem 2rem;
+    padding: .45rem 2.5rem;
     border-bottom: 1px solid var(--rule);
+    background: var(--bg-soft);
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: var(--bg-soft);
   }
   .session-badge {
-    font-size: .65rem;
+    font-size: .62rem;
     font-weight: bold;
     letter-spacing: .12em;
-    padding: .25rem .6rem;
+    padding: .2rem .55rem;
     border-radius: 2px;
     text-transform: uppercase;
+    white-space: nowrap;
   }
-  .session-badge.premarket  { background: #fef3c7; color: var(--pre); border: 1px solid #fde68a; }
-  .session-badge.open       { background: #d1fae5; color: var(--open); border: 1px solid #6ee7b7; }
-  .session-badge.afterhours { background: #ede9fe; color: var(--after); border: 1px solid #c4b5fd; }
-  .session-badge.overnight  { background: #dbeafe; color: var(--overnight); border: 1px solid #93c5fd; }
-  .session-note {
+  .session-badge.premarket  { background:#fef3c7; color:#b45309; border:1px solid #fde68a; }
+  .session-badge.open       { background:#d1fae5; color:#065f46; border:1px solid #6ee7b7; }
+  .session-badge.afterhours { background:#ede9fe; color:#5b21b6; border:1px solid #c4b5fd; }
+  .session-badge.overnight  { background:#dbeafe; color:#1e40af; border:1px solid #93c5fd; }
+  .session-note { font-size:.7rem; color:var(--gray); }
+
+  /* ── Signal bar ── */
+  .signal-bar {
+    padding: .6rem 2.5rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    gap: .6rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .sig-badge {
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+    padding: .3rem .65rem;
+    border-radius: 3px;
+    border: 1px solid transparent;
+  }
+  .sig-label {
+    font-size: .58rem;
+    font-weight: bold;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    opacity: .75;
+  }
+  .sig-state {
     font-size: .72rem;
-    color: var(--gray);
+    font-weight: bold;
+    letter-spacing: .05em;
   }
+  .sig-up      { background:#d1fae5; color:#065f46; border-color:#6ee7b7; }
+  .sig-down    { background:#fee2e2; color:#991b1b; border-color:#fca5a5; }
+  .sig-warn    { background:#fef3c7; color:#92400e; border-color:#fde68a; }
+  .sig-neutral { background:#f3f4f6; color:#374151; border-color:#d1d5db; }
 
-  /* ── Layout ── */
+  /* ── Page layout ── */
   .page {
-    max-width: 960px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 1.5rem 2rem 3rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
-  .futures-panel {
-    grid-column: 1 / -1;
+    padding: 1.5rem 2.5rem 3rem;
   }
 
-  /* ── Panels ── */
-  .panel-title {
-    font-size: .65rem;
+  /* ── Section title ── */
+  .section-title {
+    font-size: .62rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: .1em;
     color: var(--red);
     padding-bottom: .4rem;
     border-bottom: 1px solid var(--rule);
-    margin-bottom: .5rem;
+    margin-bottom: .4rem;
+    margin-top: 1.5rem;
   }
+  .section-title:first-child { margin-top: 0; }
 
-  /* ── Tables ── */
-  .data-table {
+  /* ── Data tables ── */
+  .data-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 3rem;
+  }
+  table.data-table {
     width: 100%;
     border-collapse: collapse;
   }
-  .data-table td {
-    padding: .35rem .4rem;
+  table.data-table td {
+    padding: .38rem 0;
     border-bottom: 1px solid #f0f0f0;
     vertical-align: middle;
   }
-  .data-table tr:last-child td {
+  table.data-table tr:last-child td { border-bottom: none; }
+  table.data-table tr.group-header td {
+    padding-top: .8rem;
+    padding-bottom: .2rem;
+    font-size: .6rem;
+    font-weight: bold;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--gray);
     border-bottom: none;
   }
-  .data-table .label  { color: var(--black); font-size: .8rem; }
-  .data-table .ticker { color: var(--gray); font-size: .7rem; font-family: monospace; }
-  .data-table .price  { text-align: right; font-size: .82rem; font-weight: 600; white-space: nowrap; }
-  .data-table .unit   { font-size: .68rem; color: var(--gray); font-weight: normal; }
-  .data-table .chg    { text-align: right; font-size: .8rem; font-weight: 600; white-space: nowrap; width: 70px; }
-
-  /* ── Futures table (larger) ── */
-  .futures-table .label { font-size: .9rem; font-weight: 600; }
-  .futures-table .price { font-size: .95rem; }
-  .futures-table .chg   { font-size: .9rem; }
-  .futures-table td     { padding: .5rem .4rem; }
-
-  /* ── Spot groups ── */
-  .spot-group { margin-bottom: 1rem; }
-  .group-label {
-    font-size: .62rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: .1em;
-    color: var(--gray);
-    margin-bottom: .3rem;
+  .col-label { color: var(--black); font-size: .82rem; width: 55%; }
+  .col-price {
+    text-align: right;
+    font-size: .82rem;
+    font-weight: 600;
+    white-space: nowrap;
+    width: 25%;
   }
+  .col-chg {
+    text-align: right;
+    font-size: .82rem;
+    font-weight: 600;
+    white-space: nowrap;
+    width: 20%;
+    padding-left: .5rem;
+  }
+  .unit { font-size: .68rem; color: var(--gray); font-weight: normal; }
 
-  /* ── Colors ── */
+  /* Futures — slightly larger */
+  .futures-table .col-label { font-size: .88rem; }
+  .futures-table .col-price { font-size: .9rem; }
+  .futures-table .col-chg   { font-size: .88rem; }
+  .futures-table td         { padding: .5rem 0; }
+
   .up      { color: var(--up); }
   .down    { color: var(--down); }
   .neutral { color: var(--neutral); }
 
   /* ── Footer ── */
   .footer {
-    grid-column: 1 / -1;
-    border-top: 1px solid var(--rule);
+    margin-top: 2rem;
     padding-top: .75rem;
-    font-size: .68rem;
+    border-top: 1px solid var(--rule);
+    font-size: .67rem;
     color: var(--gray);
     display: flex;
     justify-content: space-between;
@@ -176,112 +212,98 @@
 <div class="masthead">
   <span class="brand">Thor Storehouse</span>
   <span class="report-name">Morning Pulse</span>
-  <span class="masthead-time">June 22, 2026 &nbsp;&middot;&nbsp; 03:27 PM ET</span>
+  <span class="masthead-time">June 22, 2026 &nbsp;&middot;&nbsp; 04:31 PM ET</span>
 </div>
 
 <div class="session-bar">
-  <span class="session-badge open">MARKET OPEN</span>
-  <span class="session-note">Prices via Yahoo Finance &nbsp;&middot;&nbsp; Refreshes every 30 minutes &nbsp;&middot;&nbsp; 15-min delay during market hours</span>
+  <span class="session-badge afterhours">AFTER HOURS</span>
+  <span class="session-note">Prices via Yahoo Finance &nbsp;&middot;&nbsp; Refreshes every 30 min &nbsp;&middot;&nbsp; 15-min delay during market hours</span>
+</div>
+
+<div class="signal-bar">
+  <div class="sig-badge sig-up"><span class="sig-label">FUTURES</span><span class="sig-state">POSITIVE</span></div><div class="sig-badge sig-down"><span class="sig-label">OIL</span><span class="sig-state">FALLING</span></div><div class="sig-badge sig-neutral"><span class="sig-label">VOLATILITY</span><span class="sig-state">NORMAL</span></div><div class="sig-badge sig-neutral"><span class="sig-label">YIELDS</span><span class="sig-state">STABLE</span></div><div class="sig-badge sig-neutral"><span class="sig-label">DOLLAR</span><span class="sig-state">STABLE</span></div>
 </div>
 
 <div class="page">
 
-  <!-- Futures -->
-  <div class="futures-panel">
-    <div class="panel-title">U.S. Equity Futures</div>
-    <table class="data-table futures-table">
-      <tbody>
+  <div class="section-title">U.S. Equity Futures</div>
+  <table class="data-table futures-table">
+    <tbody>
       <tr>
-        <td class="label">S&P 500 Futures</td>
-        <td class="ticker">ES=F</td>
-        <td class="price">7,536.25 <span class="unit"></span></td>
-        <td class="chg"><span class="up">+0.27%</span></td>
+        <td class="col-label">S&amp;P 500 Futures</td>
+        <td class="col-price">7,546.50</td>
+        <td class="col-chg"><span class="up">+0.41%</span></td>
       </tr>
       <tr>
-        <td class="label">Nasdaq Futures</td>
-        <td class="ticker">NQ=F</td>
-        <td class="price">30,574 <span class="unit"></span></td>
-        <td class="chg"><span class="up">+0.72%</span></td>
+        <td class="col-label">Nasdaq Futures</td>
+        <td class="col-price">30,666</td>
+        <td class="col-chg"><span class="up">+1.02%</span></td>
       </tr>
       <tr>
-        <td class="label">Dow Futures</td>
-        <td class="ticker">YM=F</td>
-        <td class="price">52,054 <span class="unit"></span></td>
-        <td class="chg"><span class="up">+0.57%</span></td>
-      </tr></tbody>
-    </table>
+        <td class="col-label">Dow Futures</td>
+        <td class="col-price">52,187</td>
+        <td class="col-chg"><span class="up">+0.82%</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="data-grid">
+    <div>
+      <div class="section-title">Markets</div>
+      <table class="data-table">
+        <tbody>
+          
+      <tr class="group-header"><td colspan="3">VOLATILITY</td></tr>
+      <tr><td class="col-label">VIX</td>
+          <td class="col-price">17.280</td>
+          <td class="col-chg"><span class="down">+2.98%</span></td></tr>
+      <tr class="group-header"><td colspan="3">TREASURY RATES</td></tr>
+      <tr><td class="col-label">10Y Treasury</td>
+          <td class="col-price">4.509<span class="unit"> %</span></td>
+          <td class="col-chg"><span class="up">+1.30%</span></td></tr>
+      <tr><td class="col-label">5Y Treasury</td>
+          <td class="col-price">4.287<span class="unit"> %</span></td>
+          <td class="col-chg"><span class="up">+1.47%</span></td></tr>
+      <tr class="group-header"><td colspan="3">ENERGY</td></tr>
+      <tr><td class="col-label">WTI Crude</td>
+          <td class="col-price">74.200<span class="unit"> $/bbl</span></td>
+          <td class="col-chg"><span class="down">-4.48%</span></td></tr>
+      <tr><td class="col-label">Brent Crude</td>
+          <td class="col-price">78.150<span class="unit"> $/bbl</span></td>
+          <td class="col-chg"><span class="down">-4.23%</span></td></tr>
+      <tr><td class="col-label">Henry Hub Gas</td>
+          <td class="col-price">3.268<span class="unit"> $/MMBtu</span></td>
+          <td class="col-chg"><span class="up">+2.19%</span></td></tr>
+    
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <div class="section-title">Commodities &amp; Other</div>
+      <table class="data-table">
+        <tbody>
+          
+      <tr class="group-header"><td colspan="3">METALS</td></tr>
+      <tr><td class="col-label">Gold</td>
+          <td class="col-price">4,209.30<span class="unit"> $/oz</span></td>
+          <td class="col-chg"><span class="up">+1.26%</span></td></tr>
+      <tr class="group-header"><td colspan="3">U.S. DOLLAR</td></tr>
+      <tr><td class="col-label">Dollar Index</td>
+          <td class="col-price">101.01</td>
+          <td class="col-chg"><span class="up">+0.16%</span></td></tr>
+      <tr class="group-header"><td colspan="3">CRYPTO</td></tr>
+      <tr><td class="col-label">Bitcoin</td>
+          <td class="col-price">64,367<span class="unit"> $</span></td>
+          <td class="col-chg"><span class="up">+1.78%</span></td></tr>
+    
+        </tbody>
+      </table>
+    </div>
   </div>
 
-  <!-- Spot left column -->
-  <div class="spot-panel">
-    <div class="panel-title">Markets</div>
-    <div class="spot-group"><div class="group-label">Volatility</div><table class="data-table"><tbody>
-      <tr>
-        <td class="label">VIX</td>
-        <td class="ticker">^VIX</td>
-        <td class="price">17.440 <span class="unit"></span></td>
-        <td class="chg"><span class="down">+3.93%</span></td>
-      </tr></tbody></table></div><div class="spot-group"><div class="group-label">Treasury Rates</div><table class="data-table"><tbody>
-      <tr>
-        <td class="label">10Y Treasury</td>
-        <td class="ticker">^TNX</td>
-        <td class="price">4.509 <span class="unit">%</span></td>
-        <td class="chg"><span class="up">+1.30%</span></td>
-      </tr>
-      <tr>
-        <td class="label">5Y Treasury</td>
-        <td class="ticker">^FVX</td>
-        <td class="price">4.287 <span class="unit">%</span></td>
-        <td class="chg"><span class="up">+1.47%</span></td>
-      </tr></tbody></table></div><div class="spot-group"><div class="group-label">Energy</div><table class="data-table"><tbody>
-      <tr>
-        <td class="label">WTI Crude</td>
-        <td class="ticker">CL=F</td>
-        <td class="price">74.080 <span class="unit">$/bbl</span></td>
-        <td class="chg"><span class="down">-4.63%</span></td>
-      </tr>
-      <tr>
-        <td class="label">Brent Crude</td>
-        <td class="ticker">BZ=F</td>
-        <td class="price">78.110 <span class="unit">$/bbl</span></td>
-        <td class="chg"><span class="down">-4.28%</span></td>
-      </tr>
-      <tr>
-        <td class="label">Henry Hub Gas</td>
-        <td class="ticker">NG=F</td>
-        <td class="price">3.277 <span class="unit">$/MMBtu</span></td>
-        <td class="chg"><span class="up">+2.47%</span></td>
-      </tr></tbody></table></div>
-  </div>
-
-  <!-- Spot right column -->
-  <div class="spot-panel">
-    <div class="panel-title">Commodities &amp; Other</div>
-    <div class="spot-group"><div class="group-label">Metals</div><table class="data-table"><tbody>
-      <tr>
-        <td class="label">Gold</td>
-        <td class="ticker">GC=F</td>
-        <td class="price">4,209.00 <span class="unit">$/oz</span></td>
-        <td class="chg"><span class="up">+1.25%</span></td>
-      </tr></tbody></table></div><div class="spot-group"><div class="group-label">U.S. Dollar</div><table class="data-table"><tbody>
-      <tr>
-        <td class="label">U.S. Dollar Index</td>
-        <td class="ticker">DX-Y.NYB</td>
-        <td class="price">101.04 <span class="unit"></span></td>
-        <td class="chg"><span class="up">+0.19%</span></td>
-      </tr></tbody></table></div><div class="spot-group"><div class="group-label">Crypto</div><table class="data-table"><tbody>
-      <tr>
-        <td class="label">Bitcoin</td>
-        <td class="ticker">BTC-USD</td>
-        <td class="price">64,272 <span class="unit">$</span></td>
-        <td class="chg"><span class="up">+1.63%</span></td>
-      </tr></tbody></table></div>
-  </div>
-
-  <!-- Footer -->
   <div class="footer">
-    <span>Thor Storehouse &nbsp;&middot;&nbsp; Morning Pulse &nbsp;&middot;&nbsp; #FollowTheData</span>
-    <span>&copy; 2026 Randy Hinton</span>
+    <span>Thor Storehouse &nbsp;&middot;&nbsp; Morning Pulse &nbsp;&middot;&nbsp; #FollowTheData &nbsp;&middot;&nbsp; &copy; 2026 Randy Hinton</span>
+    <span>Data: Yahoo Finance</span>
   </div>
 
 </div>
