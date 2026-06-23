@@ -62,7 +62,7 @@
                                          color: var(--gray); margin-left: .4rem;
                                          transition: transform .15s; display: inline-block; }
   .sidebar-domain.collapsed span.chevron { transform: rotate(-90deg); }
-  .sidebar-domain-list { max-height: 600px; overflow: hidden; transition: max-height .2s ease; }
+  .sidebar-domain-list { max-height: 2000px; overflow: hidden; transition: max-height .3s ease; }
   .sidebar-domain.collapsed .sidebar-domain-list { max-height: 0; }
   .sidebar-report { display: block; width: 100%; text-align: left; background: none;
                      border: none; cursor: pointer; font-family: Georgia, serif;
@@ -147,7 +147,7 @@
 </div>
 <footer>
   Thor Storehouse Report Assistant &nbsp;·&nbsp; Taxonomy-driven routing &nbsp;·&nbsp;
-  Generated: 2026-06-23 07:43 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+  Generated: 2026-06-23 07:53 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 <script>
 const REPORTS = [
@@ -8215,11 +8215,7 @@ const REPORTS = [
         "weight": 10
       },
       {
-        "keyword": "colonoscopy",
-        "weight": 9
-      },
-      {
-        "keyword": "cancer",
+        "keyword": "colon cancer",
         "weight": 9
       },
       {
@@ -8231,19 +8227,11 @@ const REPORTS = [
         "weight": 8
       },
       {
-        "keyword": "ct scan",
-        "weight": 8
-      },
-      {
-        "keyword": "polyp",
-        "weight": 8
-      },
-      {
-        "keyword": "health report",
+        "keyword": "cecum",
         "weight": 7
       },
       {
-        "keyword": "cecum",
+        "keyword": "transverse",
         "weight": 7
       },
       {
@@ -8251,11 +8239,7 @@ const REPORTS = [
         "weight": 7
       },
       {
-        "keyword": "cancer screening",
-        "weight": 7
-      },
-      {
-        "keyword": "polyp detection",
+        "keyword": "sigmoid",
         "weight": 7
       },
       {
@@ -8263,43 +8247,15 @@ const REPORTS = [
         "weight": 6
       },
       {
-        "keyword": "transverse colon",
+        "keyword": "morphology",
         "weight": 6
       },
       {
-        "keyword": "sigmoid colon",
+        "keyword": "medical imaging",
         "weight": 6
       },
       {
-        "keyword": "medical report",
-        "weight": 6
-      },
-      {
-        "keyword": "diagnosis",
-        "weight": 6
-      },
-      {
-        "keyword": "clinical report",
-        "weight": 6
-      },
-      {
-        "keyword": "medical imaging report",
-        "weight": 6
-      },
-      {
-        "keyword": "large lesions",
-        "weight": 6
-      },
-      {
-        "keyword": "ct imaging",
-        "weight": 6
-      },
-      {
-        "keyword": "healthcare report",
-        "weight": 6
-      },
-      {
-        "keyword": "clinical findings",
+        "keyword": "oncology",
         "weight": 6
       },
       {
@@ -8343,175 +8299,75 @@ const REPORTS = [
         "weight": 5
       },
       {
-        "keyword": "morphology",
-        "weight": 5
-      },
-      {
-        "keyword": "medical imaging",
-        "weight": 5
-      },
-      {
-        "keyword": "oncology",
-        "weight": 5
-      },
-      {
-        "keyword": "incidental findings",
-        "weight": 5
-      },
-      {
-        "keyword": "lesion size",
-        "weight": 5
-      },
-      {
-        "keyword": "healthcare",
-        "weight": 5
-      },
-      {
-        "keyword": "medical analysis",
-        "weight": 5
-      },
-      {
-        "keyword": "gastroenterology",
-        "weight": 5
-      },
-      {
-        "keyword": "diagnostic imaging",
-        "weight": 5
-      },
-      {
-        "keyword": "health analysis",
-        "weight": 5
-      },
-      {
-        "keyword": "medical findings",
-        "weight": 5
-      },
-      {
-        "keyword": "health diagnostics",
-        "weight": 5
-      },
-      {
-        "keyword": "gastrointestinal",
-        "weight": 5
-      },
-      {
-        "keyword": "medical imaging technology",
-        "weight": 5
-      },
-      {
-        "keyword": "medical evaluation",
-        "weight": 5
-      },
-      {
-        "keyword": "medical imaging analysis",
-        "weight": 5
-      },
-      {
-        "keyword": "gastrointestinal health",
+        "keyword": "cohort",
         "weight": 5
       },
       {
         "keyword": "size mm",
+        "weight": 5
+      },
+      {
+        "keyword": "health report",
+        "weight": 5
+      },
+      {
+        "keyword": "screening",
+        "weight": 5
+      },
+      {
+        "keyword": "diagnosis",
+        "weight": 5
+      },
+      {
+        "keyword": "cancer screening",
+        "weight": 5
+      },
+      {
+        "keyword": "medical report",
         "weight": 4
       },
       {
-        "keyword": "cohort",
+        "keyword": "patient_id",
         "weight": 4
       },
       {
-        "keyword": "patient data",
+        "keyword": "size_bin",
         "weight": 4
       },
       {
-        "keyword": "medical research",
+        "keyword": "large lesions",
         "weight": 4
       },
       {
-        "keyword": "health metrics",
+        "keyword": "medium lesions",
         "weight": 4
+      },
+      {
+        "keyword": "small lesions",
+        "weight": 4
+      },
+      {
+        "keyword": "incidental findings",
+        "weight": 4
+      },
+      {
+        "keyword": "healthcare",
+        "weight": 3
+      },
+      {
+        "keyword": "radiology",
+        "weight": 3
+      },
+      {
+        "keyword": "diagnostic imaging",
+        "weight": 3
       },
       {
         "keyword": "medical data",
-        "weight": 4
-      },
-      {
-        "keyword": "patient cohort",
-        "weight": 4
-      },
-      {
-        "keyword": "medical conditions",
-        "weight": 4
-      },
-      {
-        "keyword": "health technology",
-        "weight": 4
-      },
-      {
-        "keyword": "medical documentation",
-        "weight": 4
-      },
-      {
-        "keyword": "patient outcomes",
-        "weight": 4
-      },
-      {
-        "keyword": "medical statistics",
-        "weight": 4
-      },
-      {
-        "keyword": "health data",
-        "weight": 4
-      },
-      {
-        "keyword": "healthcare analytics",
-        "weight": 4
-      },
-      {
-        "keyword": "medical imaging techniques",
-        "weight": 4
-      },
-      {
-        "keyword": "healthcare outcomes",
-        "weight": 4
-      },
-      {
-        "keyword": "medical directory",
         "weight": 3
       },
       {
-        "keyword": "medical terminology",
-        "weight": 3
-      },
-      {
-        "keyword": "medical protocols",
-        "weight": 3
-      },
-      {
-        "keyword": "medical guidelines",
-        "weight": 3
-      },
-      {
-        "keyword": "healthcare practices",
-        "weight": 3
-      },
-      {
-        "keyword": "patient safety",
-        "weight": 3
-      },
-      {
-        "keyword": "medical imaging standards",
-        "weight": 3
-      },
-      {
-        "keyword": "clinical protocols",
-        "weight": 3
-      },
-      {
-        "keyword": "healthcare systems",
-        "weight": 3
-      },
-      {
-        "keyword": "medical imaging quality",
+        "keyword": "clinical report",
         "weight": 3
       },
       {
@@ -8519,8 +8375,132 @@ const REPORTS = [
         "weight": 3
       },
       {
-        "keyword": "healthcare research",
+        "keyword": "medical analysis",
         "weight": 3
+      },
+      {
+        "keyword": "health technology",
+        "weight": 3
+      },
+      {
+        "keyword": "cohort analysis",
+        "weight": 3
+      },
+      {
+        "keyword": "medical records",
+        "weight": 2
+      },
+      {
+        "keyword": "health metrics",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer diagnosis",
+        "weight": 2
+      },
+      {
+        "keyword": "patient outcomes",
+        "weight": 2
+      },
+      {
+        "keyword": "medical research",
+        "weight": 2
+      },
+      {
+        "keyword": "health statistics",
+        "weight": 2
+      },
+      {
+        "keyword": "clinical study",
+        "weight": 2
+      },
+      {
+        "keyword": "treatment options",
+        "weight": 2
+      },
+      {
+        "keyword": "medical guidelines",
+        "weight": 2
+      },
+      {
+        "keyword": "medical imaging technology",
+        "weight": 2
+      },
+      {
+        "keyword": "healthcare providers",
+        "weight": 2
+      },
+      {
+        "keyword": "medical professionals",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer treatment",
+        "weight": 2
+      },
+      {
+        "keyword": "health analysis",
+        "weight": 2
+      },
+      {
+        "keyword": "patient safety",
+        "weight": 2
+      },
+      {
+        "keyword": "health outcomes",
+        "weight": 2
+      },
+      {
+        "keyword": "medical imaging report",
+        "weight": 2
+      },
+      {
+        "keyword": "healthcare analytics",
+        "weight": 2
+      },
+      {
+        "keyword": "medical technology",
+        "weight": 1
+      },
+      {
+        "keyword": "healthcare system",
+        "weight": 1
+      },
+      {
+        "keyword": "cancer research",
+        "weight": 1
+      },
+      {
+        "keyword": "health policy",
+        "weight": 1
+      },
+      {
+        "keyword": "medical ethics",
+        "weight": 1
+      },
+      {
+        "keyword": "patient education",
+        "weight": 1
+      },
+      {
+        "keyword": "medical terminology",
+        "weight": 1
+      },
+      {
+        "keyword": "health informatics",
+        "weight": 1
+      },
+      {
+        "keyword": "clinical guidelines",
+        "weight": 1
+      },
+      {
+        "keyword": "healthcare innovation",
+        "weight": 1
+      },
+      {
+        "keyword": "medical advancements",
+        "weight": 1
       }
     ],
     "id": "ct_colonography_analysis_report",
