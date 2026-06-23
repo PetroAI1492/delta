@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-06-23 19:43",
+  "title": "Colon & Colorectal Cancer \u2014 Funding Intelligence",
+  "nonprofit_alerts": 13,
+  "sec_alerts": 15,
+  "source": "NIH Reporter, SEC EDGAR, ClinicalTrials.gov, PubMed",
+  "tables": [
+    "coloncancer_funding_alerts",
+    "coloncancer_sec_alerts",
+    "coloncancer_biomarker_alerts",
+    "coloncancer_trial_alerts",
+    "coloncancer_drug_alerts"
+  ],
+  "db_path": "C:\\Thor\\storehouse.db"
+}
