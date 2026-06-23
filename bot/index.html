@@ -147,7 +147,7 @@
 </div>
 <footer>
   Thor Storehouse Report Assistant &nbsp;·&nbsp; Taxonomy-driven routing &nbsp;·&nbsp;
-  Generated: 2026-06-23 07:53 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+  Generated: 2026-06-23 12:59 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 <script>
 const REPORTS = [
@@ -8506,6 +8506,457 @@ const REPORTS = [
     "id": "ct_colonography_analysis_report",
     "path": "https://petroai1492.github.io/delta/medical/ctc_analysis_report.html",
     "last_generated": "2026-06-22 21:11"
+  },
+  {
+    "title": "Colon Cancer Clinical Trials Timeline",
+    "file": "medical/coloncancer_clinicaltrials_timeline.html",
+    "description": "90-day colon and colorectal cancer clinical trial intelligence \u2014 1,374 trial alerts from ClinicalTrials.gov, PubMed, and FDA Drug@FDA, clustered by event type with biomarker and stage detection",
+    "json_file": "medical/coloncancer_clinicaltrials_timeline.json",
+    "published": true,
+    "url": "`petroai1492.github.io/delta/medical/coloncancer_clinicaltrials_timeline.html`",
+    "auto_published": true,
+    "primary_domain": "Health",
+    "secondary_domains": [
+      "Federal"
+    ],
+    "entities": [
+      "ClinicalTrials.gov",
+      "PubMed",
+      "FDA Drug@FDA",
+      "NCI",
+      "ASCO",
+      "ESMO",
+      "NCCN",
+      "NIH",
+      "Fight Colorectal Cancer"
+    ],
+    "data_sources": [
+      "Thor Storehouse coloncancer_trial_alerts table \u2014 ClinicalTrials.gov",
+      "PubMed",
+      "FDA Drug@FDA (1",
+      "374 alerts",
+      "90-day window",
+      "deterministic rule-based classification with AI-generated summaries grounded in source data)"
+    ],
+    "update_frequency": "Daily (90-day rolling window)",
+    "key_signals": [
+      "1,374 trial alerts in 90-day window",
+      "biomarker detection (KRAS, BRAF, MSI, HER2, VEGF, PD-L1)",
+      "stage classification (Stage I\u2013IV)",
+      "trial status (recruiting, active, completed, results)",
+      "trusted source scoring (Tier 1: ClinicalTrials.gov, NIH, NCI, FDA, ASCO, ESMO, NCCN)",
+      "patient appendix with per-trial cards",
+      "clinical summary section"
+    ],
+    "intent_phrases": [
+      {
+        "keyword": "colon cancer",
+        "weight": 10
+      },
+      {
+        "keyword": "colorectal cancer",
+        "weight": 10
+      },
+      {
+        "keyword": "clinical trials",
+        "weight": 10
+      },
+      {
+        "keyword": "cancer trials",
+        "weight": 9
+      },
+      {
+        "keyword": "fda",
+        "weight": 8
+      },
+      {
+        "keyword": "clinicaltrials.gov",
+        "weight": 8
+      },
+      {
+        "keyword": "pubmed",
+        "weight": 7
+      },
+      {
+        "keyword": "drug trials",
+        "weight": 7
+      },
+      {
+        "keyword": "cancer research",
+        "weight": 6
+      },
+      {
+        "keyword": "oncology",
+        "weight": 6
+      },
+      {
+        "keyword": "cancer treatment",
+        "weight": 6
+      },
+      {
+        "keyword": "colon cancer trial",
+        "weight": 5
+      },
+      {
+        "keyword": "colorectal cancer clinical trial",
+        "weight": 5
+      },
+      {
+        "keyword": "CRC trial",
+        "weight": 5
+      },
+      {
+        "keyword": "colorectal trial recruiting",
+        "weight": 5
+      },
+      {
+        "keyword": "colon cancer treatment trial",
+        "weight": 5
+      },
+      {
+        "keyword": "KRAS trial",
+        "weight": 5
+      },
+      {
+        "keyword": "MSI colorectal",
+        "weight": 5
+      },
+      {
+        "keyword": "colon cancer immunotherapy trial",
+        "weight": 5
+      },
+      {
+        "keyword": "colorectal cancer research",
+        "weight": 5
+      },
+      {
+        "keyword": "ClinicalTrials colorectal",
+        "weight": 5
+      },
+      {
+        "keyword": "colon cancer drug",
+        "weight": 5
+      },
+      {
+        "keyword": "colorectal chemotherapy",
+        "weight": 5
+      },
+      {
+        "keyword": "BRAF colorectal",
+        "weight": 5
+      },
+      {
+        "keyword": "HER2 colorectal",
+        "weight": 5
+      },
+      {
+        "keyword": "PD-L1 colon",
+        "weight": 5
+      },
+      {
+        "keyword": "VEGF colorectal",
+        "weight": 5
+      },
+      {
+        "keyword": "colon cancer stage 4",
+        "weight": 5
+      },
+      {
+        "keyword": "metastatic colorectal",
+        "weight": 5
+      },
+      {
+        "keyword": "rectal cancer trial",
+        "weight": 5
+      },
+      {
+        "keyword": "colorectal screening trial",
+        "weight": 5
+      },
+      {
+        "keyword": "colon cancer FDA",
+        "weight": 5
+      },
+      {
+        "keyword": "colorectal approval",
+        "weight": 5
+      },
+      {
+        "keyword": "colon cancer phase 3",
+        "weight": 5
+      },
+      {
+        "keyword": "CRC phase 2",
+        "weight": 5
+      },
+      {
+        "keyword": "colorectal immunotherapy",
+        "weight": 5
+      },
+      {
+        "keyword": "Lynch syndrome trial",
+        "weight": 5
+      },
+      {
+        "keyword": "MSI-H colorectal",
+        "weight": 5
+      },
+      {
+        "keyword": "pembrolizumab colorectal",
+        "weight": 5
+      },
+      {
+        "keyword": "oxaliplatin colorectal",
+        "weight": 5
+      },
+      {
+        "keyword": "bevacizumab trial",
+        "weight": 5
+      },
+      {
+        "keyword": "cetuximab trial",
+        "weight": 5
+      },
+      {
+        "keyword": "colon cancer biomarker",
+        "weight": 5
+      },
+      {
+        "keyword": "colorectal genetics",
+        "weight": 5
+      },
+      {
+        "keyword": "colon cancer surgery trial",
+        "weight": 5
+      },
+      {
+        "keyword": "colon cancer prevention",
+        "weight": 5
+      },
+      {
+        "keyword": "colon cancer survival",
+        "weight": 5
+      },
+      {
+        "keyword": "colorectal cancer treatment",
+        "weight": 5
+      },
+      {
+        "keyword": "colon cancer update",
+        "weight": 5
+      },
+      {
+        "keyword": "colorectal cancer news",
+        "weight": 5
+      },
+      {
+        "keyword": "colon cancer checkpoint inhibitor",
+        "weight": 5
+      },
+      {
+        "keyword": "treatment options",
+        "weight": 5
+      },
+      {
+        "keyword": "cancer drugs",
+        "weight": 5
+      },
+      {
+        "keyword": "research studies",
+        "weight": 5
+      },
+      {
+        "keyword": "trial alerts",
+        "weight": 5
+      },
+      {
+        "keyword": "cancer statistics",
+        "weight": 4
+      },
+      {
+        "keyword": "patient trials",
+        "weight": 4
+      },
+      {
+        "keyword": "drug development",
+        "weight": 4
+      },
+      {
+        "keyword": "healthcare",
+        "weight": 4
+      },
+      {
+        "keyword": "medical research",
+        "weight": 4
+      },
+      {
+        "keyword": "clinical research",
+        "weight": 4
+      },
+      {
+        "keyword": "cancer awareness",
+        "weight": 3
+      },
+      {
+        "keyword": "biomedical",
+        "weight": 3
+      },
+      {
+        "keyword": "treatment trials",
+        "weight": 3
+      },
+      {
+        "keyword": "cancer prevention",
+        "weight": 3
+      },
+      {
+        "keyword": "patient care",
+        "weight": 3
+      },
+      {
+        "keyword": "oncology drugs",
+        "weight": 3
+      },
+      {
+        "keyword": "cancer patients",
+        "weight": 3
+      },
+      {
+        "keyword": "health data",
+        "weight": 3
+      },
+      {
+        "keyword": "cancer outcomes",
+        "weight": 2
+      },
+      {
+        "keyword": "research funding",
+        "weight": 2
+      },
+      {
+        "keyword": "medical trials",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer studies",
+        "weight": 2
+      },
+      {
+        "keyword": "drug efficacy",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer registry",
+        "weight": 2
+      },
+      {
+        "keyword": "treatment guidelines",
+        "weight": 2
+      },
+      {
+        "keyword": "clinical guidelines",
+        "weight": 2
+      },
+      {
+        "keyword": "patient enrollment",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer care",
+        "weight": 2
+      },
+      {
+        "keyword": "research protocols",
+        "weight": 2
+      },
+      {
+        "keyword": "health outcomes",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer therapies",
+        "weight": 1
+      },
+      {
+        "keyword": "drug approvals",
+        "weight": 1
+      },
+      {
+        "keyword": "health policies",
+        "weight": 1
+      },
+      {
+        "keyword": "cancer advocacy",
+        "weight": 1
+      },
+      {
+        "keyword": "clinical trial phases",
+        "weight": 1
+      },
+      {
+        "keyword": "cancer biology",
+        "weight": 1
+      },
+      {
+        "keyword": "patient demographics",
+        "weight": 1
+      },
+      {
+        "keyword": "research ethics",
+        "weight": 1
+      },
+      {
+        "keyword": "cancer epidemiology",
+        "weight": 1
+      },
+      {
+        "keyword": "biostatistics",
+        "weight": 1
+      },
+      {
+        "keyword": "health technology",
+        "weight": 1
+      },
+      {
+        "keyword": "cancer incidence",
+        "weight": 1
+      },
+      {
+        "keyword": "cancer mortality",
+        "weight": 1
+      },
+      {
+        "keyword": "therapeutic areas",
+        "weight": 1
+      },
+      {
+        "keyword": "clinical trial design",
+        "weight": 1
+      },
+      {
+        "keyword": "patient outcomes",
+        "weight": 1
+      },
+      {
+        "keyword": "cancer burden",
+        "weight": 1
+      },
+      {
+        "keyword": "research impact",
+        "weight": 1
+      },
+      {
+        "keyword": "cancer innovations",
+        "weight": 1
+      },
+      {
+        "keyword": "health disparities",
+        "weight": 1
+      }
+    ],
+    "id": "colon_cancer_clinical_trials_timeline",
+    "path": "https://petroai1492.github.io/delta/medical/coloncancer_clinicaltrials_timeline.html",
+    "last_generated": "2026-06-23 12:55"
   }
 ];
 const CROSS_DOMAIN = [
