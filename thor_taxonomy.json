@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-23T17:04:39Z",
+  "generated": "2026-06-23T19:39:34Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -8956,6 +8956,392 @@
       "id": "colon_cancer_clinical_trials_timeline",
       "path": "https://petroai1492.github.io/delta/medical/coloncancer_clinicaltrials_timeline.html",
       "last_generated": "2026-06-23 12:55"
+    },
+    {
+      "title": "Colon Cancer Biomarker Timeline",
+      "file": "medical/coloncancer_biomarker_timeline.html",
+      "description": "30-day colon and colorectal cancer biomarker intelligence \u2014 38 PubMed entries covering ctDNA liquid biopsy, MSI/MMR testing, BRAF/KRAS/RAS mutations, Lynch syndrome, and precision oncology advances",
+      "json_file": "medical/coloncancer_biomarker_timeline.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/medical/coloncancer_biomarker_timeline.html`",
+      "auto_published": true,
+      "primary_domain": "Health",
+      "secondary_domains": [
+        "Federal"
+      ],
+      "entities": [
+        "PubMed",
+        "ASCO",
+        "ESMO",
+        "NCI",
+        "ClinicalTrials.gov",
+        "NCCN",
+        "American Cancer Society"
+      ],
+      "data_sources": [
+        "Thor Storehouse coloncancer_biomarker_alerts table \u2014 PubMed",
+        "ASCO Journal of Clinical Oncology",
+        "Annals of Oncology",
+        "NCI Cancer.gov (38 entries",
+        "30-day window",
+        "deterministic rule-based classification",
+        "breakthrough scoring)"
+      ],
+      "update_frequency": "Daily (30-day rolling window)",
+      "key_signals": [
+        "38 entries (30-day window)",
+        "23 biomarker entries",
+        "11 Stage IV entries",
+        "10 breakthrough-score entries",
+        "top targets: ctDNA (dominant \u2014 liquid biopsy, MRD detection, treatment monitoring), MSI/MMR (Lynch syndrome, immunotherapy selection), BRAF (V600E, encorafenib, MAPK pathway)",
+        "research activity: High",
+        "categories: Liquid Biopsy, Genomic Profiling, Research, Early Detection, Diagnostic Approval"
+      ],
+      "intent_phrases": [
+        {
+          "keyword": "colon cancer",
+          "weight": 10
+        },
+        {
+          "keyword": "biomarker",
+          "weight": 9
+        },
+        {
+          "keyword": "ctdna",
+          "weight": 9
+        },
+        {
+          "keyword": "liquid biopsy",
+          "weight": 8
+        },
+        {
+          "keyword": "early detection",
+          "weight": 8
+        },
+        {
+          "keyword": "metastatic colorectal cancer",
+          "weight": 8
+        },
+        {
+          "keyword": "braf",
+          "weight": 7
+        },
+        {
+          "keyword": "msi",
+          "weight": 7
+        },
+        {
+          "keyword": "nccn",
+          "weight": 6
+        },
+        {
+          "keyword": "oncology",
+          "weight": 6
+        },
+        {
+          "keyword": "genomic profiling",
+          "weight": 6
+        },
+        {
+          "keyword": "clinical trial",
+          "weight": 6
+        },
+        {
+          "keyword": "colorectal biomarker",
+          "weight": 5
+        },
+        {
+          "keyword": "ctDNA colorectal",
+          "weight": 5
+        },
+        {
+          "keyword": "liquid biopsy colon cancer",
+          "weight": 5
+        },
+        {
+          "keyword": "MSI colorectal",
+          "weight": 5
+        },
+        {
+          "keyword": "BRAF colorectal",
+          "weight": 5
+        },
+        {
+          "keyword": "Lynch syndrome",
+          "weight": 5
+        },
+        {
+          "keyword": "MMR deficiency",
+          "weight": 5
+        },
+        {
+          "keyword": "MSI-H colon",
+          "weight": 5
+        },
+        {
+          "keyword": "KRAS mutation colorectal",
+          "weight": 5
+        },
+        {
+          "keyword": "RAS colorectal",
+          "weight": 5
+        },
+        {
+          "keyword": "circulating tumor DNA",
+          "weight": 5
+        },
+        {
+          "keyword": "minimal residual disease colorectal",
+          "weight": 5
+        },
+        {
+          "keyword": "colon cancer precision medicine",
+          "weight": 5
+        },
+        {
+          "keyword": "colorectal genomics",
+          "weight": 5
+        },
+        {
+          "keyword": "colon cancer blood test",
+          "weight": 5
+        },
+        {
+          "keyword": "cfDNA colorectal",
+          "weight": 5
+        },
+        {
+          "keyword": "colorectal immunotherapy biomarker",
+          "weight": 5
+        },
+        {
+          "keyword": "HER2 colorectal",
+          "weight": 5
+        },
+        {
+          "keyword": "encorafenib colorectal",
+          "weight": 5
+        },
+        {
+          "keyword": "anti-EGFR colorectal",
+          "weight": 5
+        },
+        {
+          "keyword": "pubmed",
+          "weight": 5
+        },
+        {
+          "keyword": "asco",
+          "weight": 5
+        },
+        {
+          "keyword": "esmo",
+          "weight": 5
+        },
+        {
+          "keyword": "liquid biopsy tests",
+          "weight": 5
+        },
+        {
+          "keyword": "cancer therapy",
+          "weight": 5
+        },
+        {
+          "keyword": "diagnostic accuracy",
+          "weight": 5
+        },
+        {
+          "keyword": "droplet digital pcr",
+          "weight": 5
+        },
+        {
+          "keyword": "treatment outcomes",
+          "weight": 5
+        },
+        {
+          "keyword": "ras mutations",
+          "weight": 4
+        },
+        {
+          "keyword": "cancer research",
+          "weight": 4
+        },
+        {
+          "keyword": "healthcare",
+          "weight": 4
+        },
+        {
+          "keyword": "treatment guidelines",
+          "weight": 4
+        },
+        {
+          "keyword": "risk factors",
+          "weight": 4
+        },
+        {
+          "keyword": "prognostic biomarker",
+          "weight": 4
+        },
+        {
+          "keyword": "cancer prognosis",
+          "weight": 4
+        },
+        {
+          "keyword": "clinical impact",
+          "weight": 4
+        },
+        {
+          "keyword": "molecular hyperselection",
+          "weight": 3
+        },
+        {
+          "keyword": "treatment delays",
+          "weight": 3
+        },
+        {
+          "keyword": "systemic therapy",
+          "weight": 3
+        },
+        {
+          "keyword": "adverse effects",
+          "weight": 3
+        },
+        {
+          "keyword": "research study",
+          "weight": 3
+        },
+        {
+          "keyword": "treatment response",
+          "weight": 3
+        },
+        {
+          "keyword": "survival rates",
+          "weight": 3
+        },
+        {
+          "keyword": "treatment options",
+          "weight": 3
+        },
+        {
+          "keyword": "health disparities",
+          "weight": 3
+        },
+        {
+          "keyword": "cancer statistics",
+          "weight": 2
+        },
+        {
+          "keyword": "patient care",
+          "weight": 2
+        },
+        {
+          "keyword": "treatment pathways",
+          "weight": 2
+        },
+        {
+          "keyword": "biomarker discovery",
+          "weight": 2
+        },
+        {
+          "keyword": "therapeutic strategies",
+          "weight": 2
+        },
+        {
+          "keyword": "clinical outcomes",
+          "weight": 2
+        },
+        {
+          "keyword": "cancer diagnosis",
+          "weight": 2
+        },
+        {
+          "keyword": "treatment evaluation",
+          "weight": 2
+        },
+        {
+          "keyword": "health policy",
+          "weight": 2
+        },
+        {
+          "keyword": "cancer awareness",
+          "weight": 2
+        },
+        {
+          "keyword": "patient outcomes",
+          "weight": 2
+        },
+        {
+          "keyword": "treatment efficacy",
+          "weight": 2
+        },
+        {
+          "keyword": "molecular diagnostics",
+          "weight": 2
+        },
+        {
+          "keyword": "healthcare access",
+          "weight": 2
+        },
+        {
+          "keyword": "cancer screening",
+          "weight": 2
+        },
+        {
+          "keyword": "treatment innovations",
+          "weight": 2
+        },
+        {
+          "keyword": "research funding",
+          "weight": 2
+        },
+        {
+          "keyword": "clinical guidelines",
+          "weight": 2
+        },
+        {
+          "keyword": "treatment management",
+          "weight": 2
+        },
+        {
+          "keyword": "biomarker validation",
+          "weight": 2
+        },
+        {
+          "keyword": "cancer therapies",
+          "weight": 2
+        },
+        {
+          "keyword": "patient stratification",
+          "weight": 2
+        },
+        {
+          "keyword": "treatment adherence",
+          "weight": 2
+        },
+        {
+          "keyword": "cancer education",
+          "weight": 2
+        },
+        {
+          "keyword": "clinical research",
+          "weight": 2
+        },
+        {
+          "keyword": "treatment safety",
+          "weight": 2
+        },
+        {
+          "keyword": "cancer support",
+          "weight": 2
+        },
+        {
+          "keyword": "health outcomes",
+          "weight": 2
+        }
+      ],
+      "id": "colon_cancer_biomarker_timeline",
+      "path": "https://petroai1492.github.io/delta/medical/coloncancer_biomarker_timeline.html",
+      "last_generated": "2026-06-23 19:36"
     }
   ],
   "cross_domain_matrix": [
