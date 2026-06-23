@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-06-23 19:32",
+  "title": "Colon & Colorectal Cancer \u2014 FDA Approved Drugs Intelligence",
+  "total_drugs": 26,
+  "source": "FDA Drug@FDA, PubMed, ClinicalTrials.gov",
+  "table": "coloncancer_drug_alerts",
+  "metrics": {
+    "total": "26 FDA-approved drugs",
+    "biomarker": "16 require biomarker testing",
+    "immunotherapy": "3 immunotherapy agents",
+    "targeted": "16 biomarker-directed agents",
+    "breakthrough": "16 drugs scored \u2265 4",
+    "high": 16,
+    "regime": "Comprehensive"
+  }
+}
