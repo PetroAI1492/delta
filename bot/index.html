@@ -147,7 +147,7 @@
 </div>
 <footer>
   Thor Storehouse Report Assistant &nbsp;·&nbsp; Taxonomy-driven routing &nbsp;·&nbsp;
-  Generated: 2026-06-22 19:08 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+  Generated: 2026-06-22 21:03 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 <script>
 const REPORTS = [
@@ -8324,6 +8324,380 @@ const REPORTS = [
     "id": "ct_colonography_patient_report",
     "path": "https://petroai1492.github.io/delta/medical/ctc_patient_report.html",
     "last_generated": null
+  },
+  {
+    "title": "CT Colonography Analysis Report",
+    "file": "medical/ctc_analysis_report.html",
+    "description": "Statistical analysis of the TCIA ACRIN 6664 CT colonography dataset \u2014 lesion distributions by colon segment, morphology, and size; scanner summary across 3,451 series; positive and negative patient counts",
+    "json_file": "medical/ctc_analysis_data.json",
+    "published": true,
+    "url": "`petroai1492.github.io/delta/medical/ctc_analysis_report.html`",
+    "auto_published": true,
+    "primary_domain": "Health",
+    "secondary_domains": [
+      "Federal"
+    ],
+    "entities": [
+      "NCI",
+      "TCIA",
+      "ACRIN 6664",
+      "National CT Colonography Trial",
+      "Siemens",
+      "GE",
+      "Philips"
+    ],
+    "data_sources": [
+      "TCIA ACRIN 6664 Excel files \u2014 large polyp (\u226510mm)",
+      "medium polyp (6-9mm)",
+      "no-polyp",
+      "and scanner digest (3",
+      "451 series)"
+    ],
+    "update_frequency": "Static (ACRIN 6664 trial data)",
+    "key_signals": [
+      "101 positive patients",
+      "243 negative patients",
+      "344 total",
+      "115 reportable lesions (\u22656mm)",
+      "lesion distribution by colon segment (sigmoid, rectum, descending, ascending, transverse, cecum)",
+      "morphology breakdown (sessile, pedunculated, flat)",
+      "size statistics",
+      "scanner manufacturer distribution (Siemens 58.7% of series)",
+      "intra-patient deduplication audit"
+    ],
+    "intent_phrases": [
+      {
+        "keyword": "ct colonography",
+        "weight": 10
+      },
+      {
+        "keyword": "colon cancer",
+        "weight": 9
+      },
+      {
+        "keyword": "lesions",
+        "weight": 8
+      },
+      {
+        "keyword": "polypoid",
+        "weight": 7
+      },
+      {
+        "keyword": "cecum",
+        "weight": 6
+      },
+      {
+        "keyword": "transverse colon",
+        "weight": 6
+      },
+      {
+        "keyword": "rectum",
+        "weight": 6
+      },
+      {
+        "keyword": "ascending colon",
+        "weight": 6
+      },
+      {
+        "keyword": "sigmoid colon",
+        "weight": 6
+      },
+      {
+        "keyword": "CT colonography analysis",
+        "weight": 5
+      },
+      {
+        "keyword": "ACRIN 6664 statistics",
+        "weight": 5
+      },
+      {
+        "keyword": "colon polyp distribution",
+        "weight": 5
+      },
+      {
+        "keyword": "CTC lesion analysis",
+        "weight": 5
+      },
+      {
+        "keyword": "colonography dataset",
+        "weight": 5
+      },
+      {
+        "keyword": "polyp morphology",
+        "weight": 5
+      },
+      {
+        "keyword": "colon segment distribution",
+        "weight": 5
+      },
+      {
+        "keyword": "CTC scanner data",
+        "weight": 5
+      },
+      {
+        "keyword": "colonography statistics",
+        "weight": 5
+      },
+      {
+        "keyword": "TCIA ACRIN analysis",
+        "weight": 5
+      },
+      {
+        "keyword": "ct scan",
+        "weight": 5
+      },
+      {
+        "keyword": "morphology",
+        "weight": 5
+      },
+      {
+        "keyword": "size mm",
+        "weight": 5
+      },
+      {
+        "keyword": "cohort",
+        "weight": 5
+      },
+      {
+        "keyword": "medical imaging",
+        "weight": 4
+      },
+      {
+        "keyword": "oncology",
+        "weight": 4
+      },
+      {
+        "keyword": "cancer screening",
+        "weight": 4
+      },
+      {
+        "keyword": "health report",
+        "weight": 4
+      },
+      {
+        "keyword": "incidental findings",
+        "weight": 3
+      },
+      {
+        "keyword": "patient id",
+        "weight": 3
+      },
+      {
+        "keyword": "diagnosis",
+        "weight": 3
+      },
+      {
+        "keyword": "medical analysis",
+        "weight": 3
+      },
+      {
+        "keyword": "medical report",
+        "weight": 3
+      },
+      {
+        "keyword": "large lesions",
+        "weight": 3
+      },
+      {
+        "keyword": "medium lesions",
+        "weight": 2
+      },
+      {
+        "keyword": "small lesions",
+        "weight": 2
+      },
+      {
+        "keyword": "polyp",
+        "weight": 2
+      },
+      {
+        "keyword": "healthcare",
+        "weight": 2
+      },
+      {
+        "keyword": "radiology",
+        "weight": 2
+      },
+      {
+        "keyword": "medical data",
+        "weight": 2
+      },
+      {
+        "keyword": "patient care",
+        "weight": 2
+      },
+      {
+        "keyword": "clinical report",
+        "weight": 2
+      },
+      {
+        "keyword": "medical directory",
+        "weight": 2
+      },
+      {
+        "keyword": "health analysis",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer detection",
+        "weight": 2
+      },
+      {
+        "keyword": "medical imaging report",
+        "weight": 2
+      },
+      {
+        "keyword": "health metrics",
+        "weight": 2
+      },
+      {
+        "keyword": "medical findings",
+        "weight": 2
+      },
+      {
+        "keyword": "medical research",
+        "weight": 2
+      },
+      {
+        "keyword": "gastroenterology",
+        "weight": 2
+      },
+      {
+        "keyword": "cohort analysis",
+        "weight": 2
+      },
+      {
+        "keyword": "medical technology",
+        "weight": 2
+      },
+      {
+        "keyword": "health statistics",
+        "weight": 2
+      },
+      {
+        "keyword": "clinical findings",
+        "weight": 2
+      },
+      {
+        "keyword": "medical imaging technology",
+        "weight": 2
+      },
+      {
+        "keyword": "patient outcomes",
+        "weight": 2
+      },
+      {
+        "keyword": "healthcare analysis",
+        "weight": 2
+      },
+      {
+        "keyword": "diagnostic imaging",
+        "weight": 2
+      },
+      {
+        "keyword": "medical evaluation",
+        "weight": 2
+      },
+      {
+        "keyword": "health assessment",
+        "weight": 2
+      },
+      {
+        "keyword": "medical conditions",
+        "weight": 2
+      },
+      {
+        "keyword": "health records",
+        "weight": 2
+      },
+      {
+        "keyword": "medical professionals",
+        "weight": 2
+      },
+      {
+        "keyword": "medical guidelines",
+        "weight": 2
+      },
+      {
+        "keyword": "healthcare professionals",
+        "weight": 2
+      },
+      {
+        "keyword": "patient history",
+        "weight": 2
+      },
+      {
+        "keyword": "medical literature",
+        "weight": 2
+      },
+      {
+        "keyword": "healthcare data",
+        "weight": 2
+      },
+      {
+        "keyword": "medical protocols",
+        "weight": 2
+      },
+      {
+        "keyword": "medical terminology",
+        "weight": 2
+      },
+      {
+        "keyword": "healthcare metrics",
+        "weight": 2
+      },
+      {
+        "keyword": "medical imaging techniques",
+        "weight": 2
+      },
+      {
+        "keyword": "medical imaging analysis",
+        "weight": 2
+      },
+      {
+        "keyword": "healthcare technology",
+        "weight": 2
+      },
+      {
+        "keyword": "medical imaging systems",
+        "weight": 2
+      },
+      {
+        "keyword": "healthcare outcomes",
+        "weight": 2
+      },
+      {
+        "keyword": "medical imaging practices",
+        "weight": 2
+      },
+      {
+        "keyword": "healthcare quality",
+        "weight": 2
+      },
+      {
+        "keyword": "medical imaging innovations",
+        "weight": 2
+      },
+      {
+        "keyword": "healthcare research",
+        "weight": 2
+      },
+      {
+        "keyword": "medical imaging advancements",
+        "weight": 2
+      },
+      {
+        "keyword": "healthcare services",
+        "weight": 2
+      },
+      {
+        "keyword": "medical imaging applications",
+        "weight": 2
+      }
+    ],
+    "id": "ct_colonography_analysis_report",
+    "path": "https://petroai1492.github.io/delta/medical/ctc_analysis_report.html",
+    "last_generated": "2026-06-22 21:03"
   }
 ];
 const CROSS_DOMAIN = [
