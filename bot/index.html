@@ -147,7 +147,7 @@
 </div>
 <footer>
   Thor Storehouse Report Assistant &nbsp;·&nbsp; Taxonomy-driven routing &nbsp;·&nbsp;
-  Generated: 2026-06-23 15:39 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+  Generated: 2026-06-23 19:36 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 <script>
 const REPORTS = [
@@ -9387,6 +9387,384 @@ const REPORTS = [
     "id": "colon_cancer_biomarker_timeline",
     "path": "https://petroai1492.github.io/delta/medical/coloncancer_biomarker_timeline.html",
     "last_generated": "2026-06-23 19:36"
+  },
+  {
+    "title": "Colon Cancer FDA Approved Drugs",
+    "file": "medical/coloncancer_drugs_timeline.html",
+    "description": "FDA-approved colorectal cancer drug reference \u2014 26 approved drugs, 16 requiring biomarker testing, 3 immunotherapy agents, with drug class, biomarker requirements, and approval status",
+    "json_file": "medical/coloncancer_drugs_timeline.json",
+    "published": true,
+    "url": "`petroai1492.github.io/delta/medical/coloncancer_drugs_timeline.html`",
+    "auto_published": true,
+    "primary_domain": "Health",
+    "secondary_domains": [
+      "Federal"
+    ],
+    "entities": [
+      "FDA",
+      "Drug@FDA",
+      "DailyMed",
+      "PubMed",
+      "ClinicalTrials.gov",
+      "NCI"
+    ],
+    "data_sources": [
+      "Thor Storehouse coloncancer_drug_alerts table \u2014 FDA Drug@FDA",
+      "PubMed",
+      "ClinicalTrials.gov (26 FDA-approved drugs",
+      "comprehensive historical window",
+      "deterministic classification)"
+    ],
+    "update_frequency": "Daily",
+    "key_signals": [
+      "26 FDA-approved colorectal cancer drugs",
+      "16 require biomarker testing before use",
+      "16 biomarker-directed agents",
+      "3 immunotherapy (checkpoint inhibitor) agents approved for MSI-H/dMMR tumors",
+      "16 drugs scored \u22654 breakthrough",
+      "drug classes: chemotherapy, targeted therapy, immunotherapy, anti-VEGF, anti-EGFR"
+    ],
+    "intent_phrases": [
+      {
+        "keyword": "colon cancer",
+        "weight": 10
+      },
+      {
+        "keyword": "fda approved drugs",
+        "weight": 10
+      },
+      {
+        "keyword": "colorectal cancer",
+        "weight": 10
+      },
+      {
+        "keyword": "oncology drugs",
+        "weight": 9
+      },
+      {
+        "keyword": "cancer drugs",
+        "weight": 9
+      },
+      {
+        "keyword": "cancer treatment",
+        "weight": 8
+      },
+      {
+        "keyword": "drug approval",
+        "weight": 8
+      },
+      {
+        "keyword": "fda",
+        "weight": 7
+      },
+      {
+        "keyword": "clinical trials",
+        "weight": 7
+      },
+      {
+        "keyword": "pubmed",
+        "weight": 6
+      },
+      {
+        "keyword": "drug database",
+        "weight": 6
+      },
+      {
+        "keyword": "drug alerts",
+        "weight": 6
+      },
+      {
+        "keyword": "colorectal cancer drugs",
+        "weight": 5
+      },
+      {
+        "keyword": "FDA approved colon cancer drug",
+        "weight": 5
+      },
+      {
+        "keyword": "colorectal cancer treatment options",
+        "weight": 5
+      },
+      {
+        "keyword": "MSI-H drug",
+        "weight": 5
+      },
+      {
+        "keyword": "colon cancer immunotherapy",
+        "weight": 5
+      },
+      {
+        "keyword": "anti-EGFR colorectal",
+        "weight": 5
+      },
+      {
+        "keyword": "anti-VEGF colorectal",
+        "weight": 5
+      },
+      {
+        "keyword": "bevacizumab colorectal",
+        "weight": 5
+      },
+      {
+        "keyword": "cetuximab colorectal",
+        "weight": 5
+      },
+      {
+        "keyword": "pembrolizumab colorectal",
+        "weight": 5
+      },
+      {
+        "keyword": "FOLFOX",
+        "weight": 5
+      },
+      {
+        "keyword": "FOLFIRI",
+        "weight": 5
+      },
+      {
+        "keyword": "encorafenib colon",
+        "weight": 5
+      },
+      {
+        "keyword": "regorafenib colorectal",
+        "weight": 5
+      },
+      {
+        "keyword": "trifluridine colorectal",
+        "weight": 5
+      },
+      {
+        "keyword": "biomarker required drug",
+        "weight": 5
+      },
+      {
+        "keyword": "colon cancer medication",
+        "weight": 5
+      },
+      {
+        "keyword": "colorectal targeted therapy",
+        "weight": 5
+      },
+      {
+        "keyword": "colon cancer checkpoint inhibitor",
+        "weight": 5
+      },
+      {
+        "keyword": "dMMR drug approval",
+        "weight": 5
+      },
+      {
+        "keyword": "cancer research",
+        "weight": 5
+      },
+      {
+        "keyword": "healthcare",
+        "weight": 5
+      },
+      {
+        "keyword": "oncology",
+        "weight": 5
+      },
+      {
+        "keyword": "treatment options",
+        "weight": 5
+      },
+      {
+        "keyword": "drug information",
+        "weight": 5
+      },
+      {
+        "keyword": "therapeutics",
+        "weight": 4
+      },
+      {
+        "keyword": "cancer statistics",
+        "weight": 4
+      },
+      {
+        "keyword": "drug efficacy",
+        "weight": 4
+      },
+      {
+        "keyword": "fda guidelines",
+        "weight": 4
+      },
+      {
+        "keyword": "medical research",
+        "weight": 4
+      },
+      {
+        "keyword": "cancer awareness",
+        "weight": 3
+      },
+      {
+        "keyword": "drug side effects",
+        "weight": 3
+      },
+      {
+        "keyword": "health statistics",
+        "weight": 3
+      },
+      {
+        "keyword": "treatment guidelines",
+        "weight": 3
+      },
+      {
+        "keyword": "research studies",
+        "weight": 3
+      },
+      {
+        "keyword": "biopharmaceuticals",
+        "weight": 3
+      },
+      {
+        "keyword": "drug manufacturers",
+        "weight": 3
+      },
+      {
+        "keyword": "patient information",
+        "weight": 3
+      },
+      {
+        "keyword": "cancer prevention",
+        "weight": 3
+      },
+      {
+        "keyword": "clinical data",
+        "weight": 3
+      },
+      {
+        "keyword": "drug therapy",
+        "weight": 3
+      },
+      {
+        "keyword": "oncology clinical trials",
+        "weight": 3
+      },
+      {
+        "keyword": "drug safety",
+        "weight": 2
+      },
+      {
+        "keyword": "drug interactions",
+        "weight": 2
+      },
+      {
+        "keyword": "treatment research",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer types",
+        "weight": 2
+      },
+      {
+        "keyword": "health policy",
+        "weight": 2
+      },
+      {
+        "keyword": "drug classification",
+        "weight": 2
+      },
+      {
+        "keyword": "patient outcomes",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer survival rates",
+        "weight": 2
+      },
+      {
+        "keyword": "health agencies",
+        "weight": 2
+      },
+      {
+        "keyword": "drug labels",
+        "weight": 2
+      },
+      {
+        "keyword": "fda resources",
+        "weight": 2
+      },
+      {
+        "keyword": "drug approvals list",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer therapies",
+        "weight": 2
+      },
+      {
+        "keyword": "pharmaceutical industry",
+        "weight": 2
+      },
+      {
+        "keyword": "drug research",
+        "weight": 2
+      },
+      {
+        "keyword": "treatment efficacy",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer clinical trials",
+        "weight": 2
+      },
+      {
+        "keyword": "drug market",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer care",
+        "weight": 2
+      },
+      {
+        "keyword": "drug regulation",
+        "weight": 2
+      },
+      {
+        "keyword": "drug development",
+        "weight": 2
+      },
+      {
+        "keyword": "health information",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer advocacy",
+        "weight": 1
+      },
+      {
+        "keyword": "drug pricing",
+        "weight": 1
+      },
+      {
+        "keyword": "cancer demographics",
+        "weight": 1
+      },
+      {
+        "keyword": "health outcomes",
+        "weight": 1
+      },
+      {
+        "keyword": "cancer policy",
+        "weight": 1
+      },
+      {
+        "keyword": "drug usage",
+        "weight": 1
+      },
+      {
+        "keyword": "cancer organizations",
+        "weight": 1
+      },
+      {
+        "keyword": "drug studies",
+        "weight": 1
+      }
+    ],
+    "id": "colon_cancer_fda_approved_drugs",
+    "path": "https://petroai1492.github.io/delta/medical/coloncancer_drugs_timeline.html",
+    "last_generated": "2026-06-23 19:32"
   }
 ];
 const CROSS_DOMAIN = [
