@@ -62,8 +62,8 @@
                                          color: var(--gray); margin-left: .4rem;
                                          transition: transform .15s; display: inline-block; }
   .sidebar-domain.collapsed span.chevron { transform: rotate(-90deg); }
-  .sidebar-domain-list { max-height: 2000px; overflow: hidden; transition: max-height .3s ease; }
-  .sidebar-domain.collapsed .sidebar-domain-list { max-height: 0; }
+  .sidebar-domain-list { max-height: none; overflow: visible; transition: max-height .3s ease; }
+  .sidebar-domain.collapsed .sidebar-domain-list { max-height: 0; overflow: hidden; }
   .sidebar-report { display: block; width: 100%; text-align: left; background: none;
                      border: none; cursor: pointer; font-family: Georgia, serif;
                      font-size: .8rem; color: var(--black); padding: .4rem 1rem .4rem 1.4rem;
@@ -147,7 +147,7 @@
 </div>
 <footer>
   Thor Storehouse Report Assistant &nbsp;·&nbsp; Taxonomy-driven routing &nbsp;·&nbsp;
-  Generated: 2026-06-23 12:59 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+  Generated: 2026-06-23 13:04 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 <script>
 const REPORTS = [
@@ -8590,10 +8590,6 @@ const REPORTS = [
         "weight": 6
       },
       {
-        "keyword": "cancer treatment",
-        "weight": 6
-      },
-      {
         "keyword": "colon cancer trial",
         "weight": 5
       },
@@ -8754,6 +8750,10 @@ const REPORTS = [
         "weight": 5
       },
       {
+        "keyword": "cancer treatment",
+        "weight": 5
+      },
+      {
         "keyword": "treatment options",
         "weight": 5
       },
@@ -8762,11 +8762,11 @@ const REPORTS = [
         "weight": 5
       },
       {
-        "keyword": "research studies",
+        "keyword": "cancer studies",
         "weight": 5
       },
       {
-        "keyword": "trial alerts",
+        "keyword": "clinical research",
         "weight": 5
       },
       {
@@ -8774,11 +8774,15 @@ const REPORTS = [
         "weight": 4
       },
       {
-        "keyword": "patient trials",
+        "keyword": "tumor",
         "weight": 4
       },
       {
-        "keyword": "drug development",
+        "keyword": "survival rates",
+        "weight": 4
+      },
+      {
+        "keyword": "research studies",
         "weight": 4
       },
       {
@@ -8786,23 +8790,27 @@ const REPORTS = [
         "weight": 4
       },
       {
-        "keyword": "medical research",
-        "weight": 4
+        "keyword": "biomedical",
+        "weight": 3
       },
       {
-        "keyword": "clinical research",
-        "weight": 4
+        "keyword": "therapeutics",
+        "weight": 3
+      },
+      {
+        "keyword": "patient trials",
+        "weight": 3
+      },
+      {
+        "keyword": "drug development",
+        "weight": 3
       },
       {
         "keyword": "cancer awareness",
         "weight": 3
       },
       {
-        "keyword": "biomedical",
-        "weight": 3
-      },
-      {
-        "keyword": "treatment trials",
+        "keyword": "medical research",
         "weight": 3
       },
       {
@@ -8810,47 +8818,15 @@ const REPORTS = [
         "weight": 3
       },
       {
-        "keyword": "patient care",
+        "keyword": "health research",
         "weight": 3
       },
       {
-        "keyword": "oncology drugs",
+        "keyword": "treatment trials",
         "weight": 3
       },
       {
-        "keyword": "cancer patients",
-        "weight": 3
-      },
-      {
-        "keyword": "health data",
-        "weight": 3
-      },
-      {
-        "keyword": "cancer outcomes",
-        "weight": 2
-      },
-      {
-        "keyword": "research funding",
-        "weight": 2
-      },
-      {
-        "keyword": "medical trials",
-        "weight": 2
-      },
-      {
-        "keyword": "cancer studies",
-        "weight": 2
-      },
-      {
-        "keyword": "drug efficacy",
-        "weight": 2
-      },
-      {
-        "keyword": "cancer registry",
-        "weight": 2
-      },
-      {
-        "keyword": "treatment guidelines",
+        "keyword": "cancer care",
         "weight": 2
       },
       {
@@ -8858,15 +8834,7 @@ const REPORTS = [
         "weight": 2
       },
       {
-        "keyword": "patient enrollment",
-        "weight": 2
-      },
-      {
-        "keyword": "cancer care",
-        "weight": 2
-      },
-      {
-        "keyword": "research protocols",
+        "keyword": "patient care",
         "weight": 2
       },
       {
@@ -8874,84 +8842,160 @@ const REPORTS = [
         "weight": 2
       },
       {
-        "keyword": "cancer therapies",
-        "weight": 1
+        "keyword": "research funding",
+        "weight": 2
       },
       {
-        "keyword": "drug approvals",
-        "weight": 1
+        "keyword": "health policy",
+        "weight": 2
       },
       {
-        "keyword": "health policies",
-        "weight": 1
+        "keyword": "oncology drugs",
+        "weight": 2
       },
       {
-        "keyword": "cancer advocacy",
-        "weight": 1
+        "keyword": "pharmaceuticals",
+        "weight": 2
+      },
+      {
+        "keyword": "treatment efficacy",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer awareness month",
+        "weight": 2
       },
       {
         "keyword": "clinical trial phases",
-        "weight": 1
+        "weight": 2
       },
       {
-        "keyword": "cancer biology",
-        "weight": 1
+        "keyword": "patient enrollment",
+        "weight": 2
       },
       {
-        "keyword": "patient demographics",
-        "weight": 1
+        "keyword": "adverse effects",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer biomarkers",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer advocacy",
+        "weight": 2
       },
       {
         "keyword": "research ethics",
-        "weight": 1
+        "weight": 2
       },
       {
-        "keyword": "cancer epidemiology",
-        "weight": 1
+        "keyword": "clinical trial results",
+        "weight": 2
       },
       {
-        "keyword": "biostatistics",
-        "weight": 1
+        "keyword": "cancer organizations",
+        "weight": 2
       },
       {
-        "keyword": "health technology",
-        "weight": 1
+        "keyword": "cancer demographics",
+        "weight": 2
       },
       {
-        "keyword": "cancer incidence",
-        "weight": 1
+        "keyword": "cancer therapies",
+        "weight": 2
       },
       {
-        "keyword": "cancer mortality",
-        "weight": 1
-      },
-      {
-        "keyword": "therapeutic areas",
-        "weight": 1
-      },
-      {
-        "keyword": "clinical trial design",
-        "weight": 1
+        "keyword": "health statistics",
+        "weight": 2
       },
       {
         "keyword": "patient outcomes",
-        "weight": 1
+        "weight": 2
       },
       {
-        "keyword": "cancer burden",
-        "weight": 1
+        "keyword": "cancer incidence",
+        "weight": 2
       },
       {
-        "keyword": "research impact",
-        "weight": 1
+        "keyword": "cancer mortality",
+        "weight": 2
       },
       {
-        "keyword": "cancer innovations",
-        "weight": 1
+        "keyword": "cancer screening",
+        "weight": 2
       },
       {
-        "keyword": "health disparities",
-        "weight": 1
+        "keyword": "cancer awareness campaigns",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer support",
+        "weight": 2
+      },
+      {
+        "keyword": "research collaboration",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer funding",
+        "weight": 2
+      },
+      {
+        "keyword": "clinical trial registry",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer patient advocacy",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer treatment guidelines",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer clinical trials",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer care centers",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer research institutions",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer treatment research",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer clinical trial data",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer treatment advancements",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer epidemiology",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer treatment options",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer clinical trial updates",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer research funding",
+        "weight": 2
+      },
+      {
+        "keyword": "cancer clinical trial participation",
+        "weight": 2
       }
     ],
     "id": "colon_cancer_clinical_trials_timeline",
