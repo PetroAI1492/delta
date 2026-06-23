@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-23T23:35:58Z",
+  "generated": "2026-06-23T23:45:08Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -9720,6 +9720,393 @@
       "id": "colon_cancer_fda_approved_drugs",
       "path": "https://petroai1492.github.io/delta/medical/coloncancer_drugs_timeline.html",
       "last_generated": "2026-06-23 19:32"
+    },
+    {
+      "title": "Colon Cancer Funding Intelligence",
+      "file": "medical/coloncancer_funding_timeline.html",
+      "description": "Colorectal cancer funding intelligence \u2014 13 nonprofit/NIH funding alerts and 15 SEC filing signals cross-referenced against biomarker research, clinical trials, and approved drugs",
+      "json_file": "medical/coloncancer_funding_timeline.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/medical/coloncancer_funding_timeline.html`",
+      "auto_published": true,
+      "primary_domain": "Health",
+      "secondary_domains": [
+        "Federal",
+        "Finance"
+      ],
+      "entities": [
+        "NIH",
+        "NCI",
+        "SEC EDGAR",
+        "ClinicalTrials.gov",
+        "PubMed",
+        "Fight Colorectal Cancer",
+        "Colorectal Cancer Alliance",
+        "American Cancer Society"
+      ],
+      "data_sources": [
+        "Thor Storehouse \u2014 5 cross-referenced tables: coloncancer_funding_alerts (nonprofit/NIH)",
+        "coloncancer_sec_alerts (SEC filings)",
+        "coloncancer_biomarker_alerts",
+        "coloncancer_trial_alerts",
+        "coloncancer_drug_alerts"
+      ],
+      "update_frequency": "Daily",
+      "key_signals": [
+        "13 nonprofit/NIH funding alerts",
+        "15 SEC EDGAR filing signals",
+        "cross-referenced against biomarker research, active trials, and approved drugs",
+        "financial layer showing where money is flowing across CRC research, drug development, and advocacy"
+      ],
+      "intent_phrases": [
+        {
+          "keyword": "colon cancer",
+          "weight": 10
+        },
+        {
+          "keyword": "colorectal cancer",
+          "weight": 10
+        },
+        {
+          "keyword": "cancer funding",
+          "weight": 9
+        },
+        {
+          "keyword": "nih reporter",
+          "weight": 8
+        },
+        {
+          "keyword": "sec edgar",
+          "weight": 8
+        },
+        {
+          "keyword": "clinicaltrials.gov",
+          "weight": 8
+        },
+        {
+          "keyword": "pubmed",
+          "weight": 8
+        },
+        {
+          "keyword": "oncology",
+          "weight": 7
+        },
+        {
+          "keyword": "cancer research",
+          "weight": 7
+        },
+        {
+          "keyword": "funding intelligence",
+          "weight": 7
+        },
+        {
+          "keyword": "nonprofit alerts",
+          "weight": 6
+        },
+        {
+          "keyword": "sec alerts",
+          "weight": 6
+        },
+        {
+          "keyword": "health funding",
+          "weight": 6
+        },
+        {
+          "keyword": "colorectal cancer funding",
+          "weight": 5
+        },
+        {
+          "keyword": "colon cancer research funding",
+          "weight": 5
+        },
+        {
+          "keyword": "CRC NIH grant",
+          "weight": 5
+        },
+        {
+          "keyword": "colorectal cancer SEC filing",
+          "weight": 5
+        },
+        {
+          "keyword": "colon cancer investment",
+          "weight": 5
+        },
+        {
+          "keyword": "CRC nonprofit funding",
+          "weight": 5
+        },
+        {
+          "keyword": "colorectal cancer advocacy funding",
+          "weight": 5
+        },
+        {
+          "keyword": "colon cancer drug investment",
+          "weight": 5
+        },
+        {
+          "keyword": "NIH colorectal",
+          "weight": 5
+        },
+        {
+          "keyword": "SEC colorectal cancer",
+          "weight": 5
+        },
+        {
+          "keyword": "colon cancer research money",
+          "weight": 5
+        },
+        {
+          "keyword": "colorectal biotech funding",
+          "weight": 5
+        },
+        {
+          "keyword": "CRC financial signals",
+          "weight": 5
+        },
+        {
+          "keyword": "colon cancer pharma",
+          "weight": 5
+        },
+        {
+          "keyword": "colorectal cancer charity",
+          "weight": 5
+        },
+        {
+          "keyword": "cancer statistics",
+          "weight": 5
+        },
+        {
+          "keyword": "clinical trials",
+          "weight": 5
+        },
+        {
+          "keyword": "cancer treatment",
+          "weight": 5
+        },
+        {
+          "keyword": "research funding",
+          "weight": 5
+        },
+        {
+          "keyword": "healthcare",
+          "weight": 5
+        },
+        {
+          "keyword": "drug funding",
+          "weight": 5
+        },
+        {
+          "keyword": "cancer drugs",
+          "weight": 5
+        },
+        {
+          "keyword": "oncology drugs",
+          "weight": 5
+        },
+        {
+          "keyword": "health agencies",
+          "weight": 4
+        },
+        {
+          "keyword": "cancer organizations",
+          "weight": 4
+        },
+        {
+          "keyword": "government funding",
+          "weight": 4
+        },
+        {
+          "keyword": "biomedical research",
+          "weight": 4
+        },
+        {
+          "keyword": "cancer awareness",
+          "weight": 4
+        },
+        {
+          "keyword": "patient advocacy",
+          "weight": 4
+        },
+        {
+          "keyword": "cancer metrics",
+          "weight": 3
+        },
+        {
+          "keyword": "cancer survival rates",
+          "weight": 3
+        },
+        {
+          "keyword": "funding sources",
+          "weight": 3
+        },
+        {
+          "keyword": "research grants",
+          "weight": 3
+        },
+        {
+          "keyword": "health policy",
+          "weight": 3
+        },
+        {
+          "keyword": "treatment options",
+          "weight": 3
+        },
+        {
+          "keyword": "cancer prevention",
+          "weight": 3
+        },
+        {
+          "keyword": "clinical research",
+          "weight": 3
+        },
+        {
+          "keyword": "health statistics",
+          "weight": 3
+        },
+        {
+          "keyword": "cancer initiatives",
+          "weight": 3
+        },
+        {
+          "keyword": "nonprofit organizations",
+          "weight": 2
+        },
+        {
+          "keyword": "fundraising",
+          "weight": 2
+        },
+        {
+          "keyword": "healthcare funding",
+          "weight": 2
+        },
+        {
+          "keyword": "patient care",
+          "weight": 2
+        },
+        {
+          "keyword": "medical research",
+          "weight": 2
+        },
+        {
+          "keyword": "cancer advocacy",
+          "weight": 2
+        },
+        {
+          "keyword": "cancer studies",
+          "weight": 2
+        },
+        {
+          "keyword": "oncology research",
+          "weight": 2
+        },
+        {
+          "keyword": "healthcare agencies",
+          "weight": 2
+        },
+        {
+          "keyword": "cancer epidemiology",
+          "weight": 2
+        },
+        {
+          "keyword": "cancer treatment funding",
+          "weight": 2
+        },
+        {
+          "keyword": "pharmaceutical funding",
+          "weight": 2
+        },
+        {
+          "keyword": "treatment funding",
+          "weight": 2
+        },
+        {
+          "keyword": "cancer awareness campaigns",
+          "weight": 2
+        },
+        {
+          "keyword": "cancer funding programs",
+          "weight": 2
+        },
+        {
+          "keyword": "cancer funding opportunities",
+          "weight": 2
+        },
+        {
+          "keyword": "cancer research funding",
+          "weight": 2
+        },
+        {
+          "keyword": "healthcare initiatives",
+          "weight": 2
+        },
+        {
+          "keyword": "cancer research organizations",
+          "weight": 2
+        },
+        {
+          "keyword": "cancer funding analysis",
+          "weight": 2
+        },
+        {
+          "keyword": "cancer funding trends",
+          "weight": 2
+        },
+        {
+          "keyword": "cancer funding reports",
+          "weight": 2
+        },
+        {
+          "keyword": "cancer funding landscape",
+          "weight": 2
+        },
+        {
+          "keyword": "oncology funding",
+          "weight": 2
+        },
+        {
+          "keyword": "cancer funding data",
+          "weight": 1
+        },
+        {
+          "keyword": "cancer funding insights",
+          "weight": 1
+        },
+        {
+          "keyword": "cancer funding news",
+          "weight": 1
+        },
+        {
+          "keyword": "cancer funding challenges",
+          "weight": 1
+        },
+        {
+          "keyword": "cancer funding statistics",
+          "weight": 1
+        },
+        {
+          "keyword": "cancer funding updates",
+          "weight": 1
+        },
+        {
+          "keyword": "cancer funding analysis tools",
+          "weight": 1
+        },
+        {
+          "keyword": "cancer funding platforms",
+          "weight": 1
+        },
+        {
+          "keyword": "cancer funding databases",
+          "weight": 1
+        },
+        {
+          "keyword": "cancer funding resources",
+          "weight": 1
+        }
+      ],
+      "id": "colon_cancer_funding_intelligence",
+      "path": "https://petroai1492.github.io/delta/medical/coloncancer_funding_timeline.html",
+      "last_generated": "2026-06-23 19:43"
     }
   ],
   "cross_domain_matrix": [
