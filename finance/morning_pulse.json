@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-22 16:55",
-  "session": "AFTER HOURS",
+  "generated_at": "2026-06-23 10:57",
+  "session": "MARKET OPEN",
   "signals": [
     {
       "label": "FUTURES",
-      "state": "POSITIVE"
+      "state": "NEGATIVE"
     },
     {
       "label": "OIL",
@@ -20,82 +20,82 @@
     },
     {
       "label": "DOLLAR",
-      "state": "STABLE"
+      "state": "RISING"
     },
     {
-      "label": "CURVE +83bps",
+      "label": "CURVE +79bps",
       "state": "NORMAL"
     },
     {
       "label": "WTI-BRENT",
-      "state": "$-3.94"
+      "state": "$-3.69"
     }
   ],
   "quotes": {
     "ES=F": {
-      "price": 7541.75,
-      "prior_close": 7516.0,
-      "chg_pct": 0.34
+      "price": 7463.5,
+      "prior_close": 7532.0,
+      "chg_pct": -0.91
     },
     "NQ=F": {
-      "price": 30654.25,
-      "prior_close": 30355.75,
-      "chg_pct": 0.98
+      "price": 29841.25,
+      "prior_close": 30575.0,
+      "chg_pct": -2.4
     },
     "YM=F": {
-      "price": 52179.0,
-      "prior_close": 51760.0,
-      "chg_pct": 0.81
+      "price": 52083.0,
+      "prior_close": 52152.0,
+      "chg_pct": -0.13
     },
     "^VIX": {
-      "price": 17.280000686645508,
-      "prior_close": 16.780000686645508,
-      "chg_pct": 2.98
+      "price": 19.290000915527344,
+      "prior_close": 17.280000686645508,
+      "chg_pct": 11.63
     },
     "^TNX": {
-      "price": 4.508999824523926,
-      "prior_close": 4.450999736785889,
-      "chg_pct": 1.3
+      "price": 4.484999656677246,
+      "prior_close": 4.508999824523926,
+      "chg_pct": -0.53
     },
     "^FVX": {
-      "price": 4.286999702453613,
-      "prior_close": 4.224999904632568,
-      "chg_pct": 1.47
+      "price": 4.254000186920166,
+      "prior_close": 4.286999702453613,
+      "chg_pct": -0.77
     },
     "^IRX": {
-      "price": 3.679999828338623,
-      "prior_close": 3.6580002307891846,
-      "chg_pct": 0.6
+      "price": 3.695000171661377,
+      "prior_close": 3.679999828338623,
+      "chg_pct": 0.41
     },
     "CL=F": {
-      "price": 74.02999877929688,
-      "prior_close": 77.68000030517578,
-      "chg_pct": -4.7
+      "price": 73.20999908447266,
+      "prior_close": 74.16000366210938,
+      "chg_pct": -1.28
     },
     "BZ=F": {
-      "price": 77.97000122070312,
-      "prior_close": 81.5999984741211,
-      "chg_pct": -4.45
+      "price": 76.9000015258789,
+      "prior_close": 78.16999816894531,
+      "chg_pct": -1.62
     },
     "NG=F": {
-      "price": 3.2690000534057617,
-      "prior_close": 3.197999954223633,
-      "chg_pct": 2.22
+      "price": 3.2109999656677246,
+      "prior_close": 3.263000011444092,
+      "chg_pct": -1.59
     },
     "GC=F": {
-      "price": 4211.2998046875,
-      "prior_close": 4157.0,
-      "chg_pct": 1.31
+      "price": 4144.10009765625,
+      "prior_close": 4205.5,
+      "chg_pct": -1.46
     },
     "DX-Y.NYB": {
-      "price": 101.01799774169922,
-      "prior_close": 100.85199737548828,
-      "chg_pct": 0.16
+      "price": 101.33100128173828,
+      "prior_close": 101.01300048828125,
+      "chg_pct": 0.31
     },
     "BTC-USD": {
-      "price": 64366.19921875,
-      "prior_close": 63240.73828125,
-      "chg_pct": 1.78
+      "price": 62394.55859375,
+      "prior_close": 63941.171875,
+      "chg_pct": -2.42
     }
   }
 }
