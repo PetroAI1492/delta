@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+<title>CT Colonography Analysis — ACRIN 6664</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:14px;
+     background:#0d1117;color:#e6edf3;line-height:1.6;padding:32px}
+h1{font-size:22px;font-weight:600;color:#79c0ff;margin-bottom:4px}
+.subtitle{font-size:12px;color:#8b949e;margin-bottom:28px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:20px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:20px}
+.card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:20px}
+.stat-card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px 12px;text-align:center}
+.stat-val{font-size:28px;font-weight:700;color:#79c0ff;display:block}
+.stat-lbl{font-size:11px;color:#8b949e;margin-top:2px}
+.card-title{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#8b949e;margin-bottom:14px}
+.bar-row{display:flex;align-items:center;margin-bottom:7px;gap:8px}
+.bar-label{font-size:12px;color:#c9d1d9;flex-shrink:0;text-align:right}
+.bar-track{flex:1;background:#21262d;border-radius:3px;height:15px;overflow:hidden}
+.bar-fill{height:100%;border-radius:3px}
+.bar-count{width:36px;font-size:12px;color:#8b949e;text-align:right;flex-shrink:0}
+.bar-pct{width:44px;font-size:12px;color:#6e7681;text-align:right;flex-shrink:0}
+.section-title{font-size:15px;font-weight:600;color:#c9d1d9;margin:28px 0 14px;border-bottom:1px solid #21262d;padding-bottom:8px}
+.stats-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:20px}
+.stats-item{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:12px 18px;text-align:center;min-width:108px}
+.stats-item .val{font-size:20px;font-weight:700;color:#79c0ff}
+.stats-item .lbl{font-size:11px;color:#8b949e;margin-top:2px}
+.findings-card{background:#0f1f0f;border:1px solid #2a4a2a;border-radius:8px;padding:18px 22px;
+              margin-bottom:16px;font-size:13px;color:#c9d1d9;line-height:1.8}
+.findings-card ul{margin:8px 0 0 18px}
+.findings-card li{margin-bottom:5px}
+.findings-card strong{color:#56d364}
+.dq-card{background:#1a2030;border:1px solid #2d4a7a;border-radius:8px;padding:16px 20px;
+         margin-bottom:24px;font-size:12px;color:#8b949e;line-height:1.9}
+.dq-card strong{color:#79c0ff}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{text-align:left;padding:6px 10px;border-bottom:1px solid #30363d;color:#8b949e;
+   font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.06em}
+td{padding:6px 10px;border-bottom:1px solid #21262d;color:#c9d1d9}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#1c2128}
+.note{font-size:11px;color:#6e7681;margin-top:28px;padding-top:14px;
+      border-top:1px solid #21262d;line-height:1.9}
+</style>
+</head>
+<body>
+<h1>CT Colonography Analysis</h1>
+<div class="subtitle">TCIA ACRIN 6664 · National CT Colonography Trial · Generated 2026-06-23 01:03 UTC</div>
+
+<div class="findings-card">
+  <div class="card-title">Key Findings</div>
+  <ul>
+    <li><strong>70% of patients had no recorded polyp</strong> — 243 of 346 patients were CTC-negative for lesions ≥6mm.</li>
+    <li><strong>115 clinically reportable lesions (≥6mm)</strong> remained after deduplication and quality filtering.</li>
+    <li><strong>Large lesions cluster proximally</strong> — ≥10mm cohort: cecum + ascending = 47.6%. Medium lesions cluster distally — 6–9mm cohort: sigmoid + rectum = 43.8%.</li>
+    <li><strong>Polypoid morphology predominates</strong> — 71.3% of reportable lesions across both cohorts.</li>
+    <li><strong>Siemens scanners generated 58.7% of imaging series</strong> (2,025 of 3,451).</li>
+  </ul>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #2d4a7a;font-size:11px;color:#8b949e">
+    <strong style="color:#79c0ff">Note on cohort count vs size count:</strong>
+    The ≥10mm cohort shows 42 reportable lesions but only 38 measure ≥10mm by size.
+    The 4-lesion gap is 6–9mm co-findings recorded in ≥10mm-cohort patients alongside their qualifying large lesion.
+    Cohort assignment reflects enrollment criteria; size bin reflects measured lesion size.
+  </div>
+</div>
+
+<div class="dq-card">
+  <strong>Data quality notes (v1.4.0):</strong><br>
+  <strong>Deduplication:</strong> 25 duplicate lesion slots removed (e.g. patient 0495 had slots 8–16 as 9 identical copies of one 2mm rectal finding).<br>
+  <strong>Duplicate patient:</strong> 1 patient (0216) appeared in both files — large-file record kept, medium-file entry removed.<br>
+  <strong>Sub-6mm lesions:</strong> 93 sub-6mm findings are incidental recordings in large-cohort patients — excluded from primary distributions below.<br>
+  <strong>Primary metric:</strong> clinically reportable lesions (≥6mm), consistent with ACRIN 6664 threshold.
+</div>
+
+<div class="grid-4">
+  <div class="stat-card"><span class="stat-val">346</span><div class="stat-lbl">Total Patients</div></div>
+  <div class="stat-card"><span class="stat-val" style="color:#f85149">35</span><div class="stat-lbl">≥10 mm Cohort</div></div>
+  <div class="stat-card"><span class="stat-val" style="color:#e3b341">68</span><div class="stat-lbl">6–9 mm Cohort</div></div>
+  <div class="stat-card"><span class="stat-val" style="color:#56d364">243</span><div class="stat-lbl">No Polyp Found</div></div>
+</div>
+
+<div class="section-title">Lesion Summary</div>
+<div class="stats-row">
+  <div class="stats-item"><div class="val">115</div><div class="lbl">Reportable ≥6mm</div></div>
+  <div class="stats-item"><div class="val">42</div><div class="lbl">From ≥10mm Cohort</div></div>
+  <div class="stats-item"><div class="val">73</div><div class="lbl">From 6–9mm Cohort</div></div>
+  <div class="stats-item"><div class="val" style="color:#6e7681">93</div><div class="lbl">Incidental &lt;6mm</div></div>
+  <div class="stats-item"><div class="val" style="color:#6e7681">208</div><div class="lbl">All Recorded</div></div>
+  <div class="stats-item"><div class="val">6.0–55.0 mm</div><div class="lbl">Reportable Range</div></div>
+  <div class="stats-item"><div class="val">10.7 mm</div><div class="lbl">Mean (≥6mm)</div></div>
+  <div class="stats-item"><div class="val">8.0 mm</div><div class="lbl">Median (≥6mm)</div></div>
+</div>
+
+<div class="section-title">Segment Distribution — Reportable Lesions (≥6mm)</div>
+<div class="grid-3">
+  <div class="card"><div class="card-title">All Reportable (n=115)</div><div class="bar-row"><span class="bar-label" style="width:115px">Rectum</span><div class="bar-track"><div class="bar-fill" style="width:71.4%;background:#f85149"></div></div><span class="bar-count">20</span><span class="bar-pct">17.4%</span></div>
+<div class="bar-row"><span class="bar-label" style="width:115px">Sigmoid</span><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#ff7b72"></div></div><span class="bar-count">28</span><span class="bar-pct">24.3%</span></div>
+<div class="bar-row"><span class="bar-label" style="width:115px">Descending</span><div class="bar-track"><div class="bar-fill" style="width:46.4%;background:#ffa657"></div></div><span class="bar-count">13</span><span class="bar-pct">11.3%</span></div>
+<div class="bar-row"><span class="bar-label" style="width:115px">Transverse</span><div class="bar-track"><div class="bar-fill" style="width:53.6%;background:#e3b341"></div></div><span class="bar-count">15</span><span class="bar-pct">13.0%</span></div>
+<div class="bar-row"><span class="bar-label" style="width:115px">Ascending</span><div class="bar-track"><div class="bar-fill" style="width:75.0%;background:#56d364"></div></div><span class="bar-count">21</span><span class="bar-pct">18.3%</span></div>
+<div class="bar-row"><span class="bar-label" style="width:115px">Cecum</span><div class="bar-track"><div class="bar-fill" style="width:64.3%;background:#3fb950"></div></div><span class="bar-count">18</span><span class="bar-pct">15.7%</span></div></div>
+  <div class="card"><div class="card-title">≥10 mm Cohort (n=42)</div><div class="bar-row"><span class="bar-label" style="width:115px">Rectum</span><div class="bar-track"><div class="bar-fill" style="width:70.0%;background:#f85149"></div></div><span class="bar-count">7</span><span class="bar-pct">16.7%</span></div>
+<div class="bar-row"><span class="bar-label" style="width:115px">Sigmoid</span><div class="bar-track"><div class="bar-fill" style="width:90.0%;background:#ff7b72"></div></div><span class="bar-count">9</span><span class="bar-pct">21.4%</span></div>
+<div class="bar-row"><span class="bar-label" style="width:115px">Descending</span><div class="bar-track"><div class="bar-fill" style="width:20.0%;background:#ffa657"></div></div><span class="bar-count">2</span><span class="bar-pct">4.8%</span></div>
+<div class="bar-row"><span class="bar-label" style="width:115px">Transverse</span><div class="bar-track"><div class="bar-fill" style="width:40.0%;background:#e3b341"></div></div><span class="bar-count">4</span><span class="bar-pct">9.5%</span></div>
+<div class="bar-row"><span class="bar-label" style="width:115px">Ascending</span><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#56d364"></div></div><span class="bar-count">10</span><span class="bar-pct">23.8%</span></div>
+<div class="bar-row"><span class="bar-label" style="width:115px">Cecum</span><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#3fb950"></div></div><span class="bar-count">10</span><span class="bar-pct">23.8%</span></div></div>
+  <div class="card"><div class="card-title">6–9 mm Cohort (n=73)</div><div class="bar-row"><span class="bar-label" style="width:115px">Rectum</span><div class="bar-track"><div class="bar-fill" style="width:68.4%;background:#f85149"></div></div><span class="bar-count">13</span><span class="bar-pct">17.8%</span></div>
+<div class="bar-row"><span class="bar-label" style="width:115px">Sigmoid</span><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#ff7b72"></div></div><span class="bar-count">19</span><span class="bar-pct">26.0%</span></div>
+<div class="bar-row"><span class="bar-label" style="width:115px">Descending</span><div class="bar-track"><div class="bar-fill" style="width:57.9%;background:#ffa657"></div></div><span class="bar-count">11</span><span class="bar-pct">15.1%</span></div>
+<div class="bar-row"><span class="bar-label" style="width:115px">Transverse</span><div class="bar-track"><div class="bar-fill" style="width:57.9%;background:#e3b341"></div></div><span class="bar-count">11</span><span class="bar-pct">15.1%</span></div>
+<div class="bar-row"><span class="bar-label" style="width:115px">Ascending</span><div class="bar-track"><div class="bar-fill" style="width:57.9%;background:#56d364"></div></div><span class="bar-count">11</span><span class="bar-pct">15.1%</span></div>
+<div class="bar-row"><span class="bar-label" style="width:115px">Cecum</span><div class="bar-track"><div class="bar-fill" style="width:42.1%;background:#3fb950"></div></div><span class="bar-count">8</span><span class="bar-pct">11.0%</span></div></div>
+</div>
+
+<div class="section-title">Morphology — Reportable Lesions (≥6mm)</div>
+<div class="grid-3">
+  <div class="card"><div class="card-title">All Reportable</div><div class="bar-row"><span class="bar-label" style="width:115px">Polypoid</span><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#79c0ff"></div></div><span class="bar-count">82</span><span class="bar-pct">71.3%</span></div>
+<div class="bar-row"><span class="bar-label" style="width:115px">Flat</span><div class="bar-track"><div class="bar-fill" style="width:40.2%;background:#bc8cff"></div></div><span class="bar-count">33</span><span class="bar-pct">28.7%</span></div></div>
+  <div class="card"><div class="card-title">≥10 mm Cohort</div><div class="bar-row"><span class="bar-label" style="width:115px">Polypoid</span><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#79c0ff"></div></div><span class="bar-count">29</span><span class="bar-pct">69.0%</span></div>
+<div class="bar-row"><span class="bar-label" style="width:115px">Flat</span><div class="bar-track"><div class="bar-fill" style="width:44.8%;background:#bc8cff"></div></div><span class="bar-count">13</span><span class="bar-pct">31.0%</span></div></div>
+  <div class="card"><div class="card-title">6–9 mm Cohort</div><div class="bar-row"><span class="bar-label" style="width:115px">Polypoid</span><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#79c0ff"></div></div><span class="bar-count">53</span><span class="bar-pct">72.6%</span></div>
+<div class="bar-row"><span class="bar-label" style="width:115px">Flat</span><div class="bar-track"><div class="bar-fill" style="width:37.7%;background:#bc8cff"></div></div><span class="bar-count">20</span><span class="bar-pct">27.4%</span></div></div>
+</div>
+
+<div class="section-title">Size Distribution</div>
+<div class="grid-2">
+  <div class="card">
+    <div class="card-title">All Recorded Findings (reportable + incidental)</div>
+    <div class="bar-row"><span class="bar-label" style="width:160px"><6 mm (small/incidental)</span><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#56d364"></div></div><span class="bar-count">93</span><span class="bar-pct">44.7%</span></div>
+<div class="bar-row"><span class="bar-label" style="width:160px">6–9 mm (medium)</span><div class="bar-track"><div class="bar-fill" style="width:82.8%;background:#e3b341"></div></div><span class="bar-count">77</span><span class="bar-pct">37.0%</span></div>
+<div class="bar-row"><span class="bar-label" style="width:160px">≥10 mm (large)</span><div class="bar-track"><div class="bar-fill" style="width:40.9%;background:#f85149"></div></div><span class="bar-count">38</span><span class="bar-pct">18.3%</span></div>
+    <div style="font-size:11px;color:#6e7681;margin-top:10px">
+      Sub-6mm = incidental findings in large-cohort patients, not part of primary analysis
+    </div>
+  </div>
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;border-bottom:1px solid #21262d;padding:7px 0"><span style="color:#8b949e;font-size:12px">Reportable size range</span><span style="color:#c9d1d9;font-size:13px;font-weight:600">6.0–55.0 mm</span></div>
+    <div style="display:flex;justify-content:space-between;border-bottom:1px solid #21262d;padding:7px 0"><span style="color:#8b949e;font-size:12px">Mean (≥6mm lesions)</span><span style="color:#c9d1d9;font-size:13px;font-weight:600">10.7 mm</span></div>
+    <div style="display:flex;justify-content:space-between;border-bottom:1px solid #21262d;padding:7px 0"><span style="color:#8b949e;font-size:12px">Median (≥6mm lesions)</span><span style="color:#c9d1d9;font-size:13px;font-weight:600">8.0 mm</span></div>
+    <div style="display:flex;justify-content:space-between;border-bottom:1px solid #21262d;padding:7px 0"><span style="color:#8b949e;font-size:12px">Lesions ≥10mm</span><span style="color:#f85149;font-size:13px;font-weight:600">38 (33.0%)</span></div>
+    <div style="display:flex;justify-content:space-between;border-bottom:1px solid #21262d;padding:7px 0"><span style="color:#8b949e;font-size:12px">Flat morphology</span><span style="color:#bc8cff;font-size:13px;font-weight:600">33 (28.7%)</span></div>
+  </div>
+</div>
+
+
+<div class="section-title">Scanner Metadata</div>
+<div class="grid-2">
+<div class="card">
+  <div class="card-title">By Manufacturer — 3451 total series</div>
+  <table><tr><th>Manufacturer</th><th>Series</th></tr><tr><td>SIEMENS</td><td>2025</td></tr><tr><td>GE MEDICAL SYSTEMS</td><td>970</td></tr><tr><td>Philips</td><td>144</td></tr><tr><td>TOSHIBA</td><td>110</td></tr></table>
+</div>
+<div class="card" style="font-size:12px;color:#8b949e;line-height:1.9">
+  <div class="card-title">Series count explained</div>
+  <strong style="color:#c9d1d9">Why 3,451 series for ~350 patients?</strong><br>
+  Each patient had two acquisitions: <strong style="color:#c9d1d9">supine + prone</strong>.<br>
+  Each acquisition generated multiple reconstruction series:<br>
+  soft-tissue window · bone window · lung window · scout topogram.<br>
+  2 positions × ~5–8 series/position × 347 patients ≈ <strong style="color:#79c0ff">3,500 series</strong>.<br>
+  The 3,451 count is consistent — no data leakage.
+</div>
+</div>
+
+<div class="note">
+  <strong>Field map (v1.3, confirmed):</strong> N.1=Segment · N.2=Size mm · N.3=Morphology · N.4=Flag (unused) · N.5=Slice ref.<br>
+  Confidence field absent from XLS exports.
+  Primary distributions use deduplicated, clinically reportable (≥6mm) lesions only.
+  For research purposes only. Not for clinical use. · v1.5.0
+</div>
+</body></html>

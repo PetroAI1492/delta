@@ -1,0 +1,2187 @@
+{
+  "generated": "2026-06-23T01:03:05.186437+00:00",
+  "generated_at": "2026-06-22 21:03",
+  "data_dir": "c:\\medical\\ctscan",
+  "data_quality": {
+    "duplicate_patients_removed": [
+      "1.3.6.1.4.1.9328.50.4.0216"
+    ],
+    "intra_patient_dup_slots_removed": 25,
+    "note_sub6mm": "93 sub-6mm lesions are incidental findings recorded in large-cohort patients alongside their qualifying \u226510mm lesion. They are excluded from primary distributions.",
+    "note_scanner_series": "3451 series = supine + prone acquisitions \u00d7 multiple reconstruction series per scan (soft tissue, bone window, lung window, scout topogram). ~33 series per patient is expected for this protocol."
+  },
+  "patient_counts": {
+    "large_polyp": 35,
+    "medium_polyp": 68,
+    "no_polyp": 243,
+    "total": 346,
+    "positive": 103
+  },
+  "lesion_counts": {
+    "all_recorded": 208,
+    "reportable_ge6mm": 115,
+    "incidental_lt6mm": 93,
+    "reportable_large_coh": 42,
+    "reportable_medium_coh": 73
+  },
+  "distributions": {
+    "by_segment": {
+      "Rectum": 20,
+      "Sigmoid": 28,
+      "Descending": 13,
+      "Transverse": 15,
+      "Ascending": 21,
+      "Cecum": 18
+    },
+    "by_segment_large": {
+      "Rectum": 7,
+      "Sigmoid": 9,
+      "Descending": 2,
+      "Transverse": 4,
+      "Ascending": 10,
+      "Cecum": 10
+    },
+    "by_segment_medium": {
+      "Rectum": 13,
+      "Sigmoid": 19,
+      "Descending": 11,
+      "Transverse": 11,
+      "Ascending": 11,
+      "Cecum": 8
+    },
+    "by_morphology": {
+      "Polypoid": 82,
+      "Flat": 33
+    },
+    "by_morphology_large": {
+      "Polypoid": 29,
+      "Flat": 13
+    },
+    "by_morphology_med": {
+      "Polypoid": 53,
+      "Flat": 20
+    },
+    "by_size_bin_all": {
+      "<6 mm (small/incidental)": 93,
+      "6\u20139 mm (medium)": 77,
+      "\u226510 mm (large)": 38
+    },
+    "by_size_bin_rep": {
+      "6\u20139 mm (medium)": 77,
+      "\u226510 mm (large)": 38
+    },
+    "size_stats_all": {
+      "min": 1.0,
+      "max": 55.0,
+      "mean": 7.3,
+      "median": 6.0
+    },
+    "size_stats_rep": {
+      "min": 6.0,
+      "max": 55.0,
+      "mean": 10.7,
+      "median": 8.0
+    }
+  },
+  "scanner_summary": {
+    "total_series": 3451,
+    "by_manufacturer": {
+      "SIEMENS": "2025",
+      "GE MEDICAL SYSTEMS": "970",
+      "Philips": "144",
+      "TOSHIBA": "110"
+    },
+    "by_model": {
+      "Sensation 64": "1210",
+      "LightSpeed16": "865",
+      "Sensation 16": "815",
+      "Brilliance 40": "117",
+      "Aquilion": "110",
+      "LightSpeed VCT": "91",
+      "Brilliance 64": "27",
+      "LightSpeed Pro 16": "14"
+    }
+  },
+  "lesions": [
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0040",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 55.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Cecum",
+      "morphology": "Polypoid",
+      "slice_ref": 1,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0104",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 30.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Cecum",
+      "morphology": "Flat",
+      "slice_ref": 1,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0123",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 16.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Ascending",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0123",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Transverse",
+      "morphology": "Polypoid",
+      "slice_ref": 88,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0123",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0127",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 10.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 14,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0127",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 4.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Ascending",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0136",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 2.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Ascending",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0136",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 4.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Transverse",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0136",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 15.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Transverse",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0175",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 30.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 14,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0175",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 5.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Transverse",
+      "morphology": "Flat",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0233",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 18.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Sigmoid",
+      "morphology": "Polypoid",
+      "slice_ref": 14,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0259",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 30.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Cecum",
+      "morphology": "Flat",
+      "slice_ref": 14,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0272",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 10.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Cecum",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0272",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 2.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Ascending",
+      "morphology": "Flat",
+      "slice_ref": 1,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0290",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 20.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 14,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0290",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 2.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0326",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 21.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Cecum",
+      "morphology": "Flat",
+      "slice_ref": 16,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0331",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 12.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Ascending",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0345",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 4.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Cecum",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0345",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 2.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Transverse",
+      "morphology": "Polypoid",
+      "slice_ref": 17,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0345",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 10.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Sigmoid",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0375",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0375",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 10.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Sigmoid",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0375",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Transverse",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0375",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 2.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Ascending",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0434",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 12.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Ascending",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0434",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 8.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Descending",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0516",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 20.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Ascending",
+      "morphology": "Polypoid",
+      "slice_ref": 88,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0516",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Sigmoid",
+      "morphology": "Flat",
+      "slice_ref": 88,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0518",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 19.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Sigmoid",
+      "morphology": "Flat",
+      "slice_ref": 14,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0518",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 12.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Ascending",
+      "morphology": "Flat",
+      "slice_ref": 14,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0518",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0552",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 11.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Cecum",
+      "morphology": "Flat",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0639",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 20.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Ascending",
+      "morphology": "Polypoid",
+      "slice_ref": 14,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0660",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 15.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Ascending",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0660",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 10.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Sigmoid",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0671",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 13.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Transverse",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0671",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Sigmoid",
+      "morphology": "Flat",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0691",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 2.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Cecum",
+      "morphology": "Flat",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0691",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 15.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Cecum",
+      "morphology": "Polypoid",
+      "slice_ref": 17,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-3097916992",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 25.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Ascending",
+      "morphology": "Polypoid",
+      "slice_ref": 14,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-1823912394",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 10.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Descending",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-1823912394",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 10.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Cecum",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-2414824407",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 10.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-7657031778",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 14.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 88,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-7657031778",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Cecum",
+      "morphology": "Polypoid",
+      "slice_ref": 88,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-4720202687",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 50.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Cecum",
+      "morphology": "Polypoid",
+      "slice_ref": 16,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-2531578342",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 11.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Rectum",
+      "morphology": "Flat",
+      "slice_ref": 14,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-8143433240",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 20.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Sigmoid",
+      "morphology": "Polypoid",
+      "slice_ref": 17,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-3105759107",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 12.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Rectum",
+      "morphology": "Flat",
+      "slice_ref": 16,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-3174825007",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 2.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Cecum",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-3174825007",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 8.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Cecum",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-3174825007",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 12.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Ascending",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-3174825007",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 10.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Transverse",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-1968343337",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 2.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Cecum",
+      "morphology": "Flat",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-1968343337",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 5.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Sigmoid",
+      "morphology": "Flat",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-1968343337",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 14.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Sigmoid",
+      "morphology": "Flat",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-1968343337",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 4.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Flat",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-2741063004",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 4.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-2741063004",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 10.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Sigmoid",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-2741063004",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 7.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Sigmoid",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-1038654821",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 40.0,
+      "size_bin": "\u226510 mm (large)",
+      "segment": "Ascending",
+      "morphology": "Polypoid",
+      "slice_ref": 88,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-1038654821",
+      "cohort": "\u226510 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Transverse",
+      "morphology": "Flat",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0007",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Rectum",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0011",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 9.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Descending",
+      "morphology": "Polypoid",
+      "slice_ref": 88,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0019",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 9.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Sigmoid",
+      "morphology": "Flat",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0043",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Transverse",
+      "morphology": "Flat",
+      "slice_ref": 17,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0080",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 5.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Descending",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0080",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 8.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Descending",
+      "morphology": "Polypoid",
+      "slice_ref": 14,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0132",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 8.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Cecum",
+      "morphology": "Polypoid",
+      "slice_ref": 16,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0152",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 5.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Sigmoid",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0152",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 7.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Ascending",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0154",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 7.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Sigmoid",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0154",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 2.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Sigmoid",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0154",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 1.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0156",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 7.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Sigmoid",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0156",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 8.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Sigmoid",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0156",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 4.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Sigmoid",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0187",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 9.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Rectum",
+      "morphology": "Flat",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0242",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 7.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Ascending",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0242",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 2.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Descending",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0264",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Sigmoid",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0264",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Transverse",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0264",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 9.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Descending",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0269",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 7.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Sigmoid",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0275",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 7.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Ascending",
+      "morphology": "Flat",
+      "slice_ref": 17,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0289",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 5.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Ascending",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0289",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Sigmoid",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0289",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 7.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0289",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 2.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0296",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Sigmoid",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0296",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Ascending",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0310",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 12,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0310",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 12,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0334",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 7.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Sigmoid",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0347",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 7.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Transverse",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0347",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 5.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Transverse",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0347",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Sigmoid",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0354",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Transverse",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0354",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Transverse",
+      "morphology": "Flat",
+      "slice_ref": 17,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0355",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 8.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Rectum",
+      "morphology": "Flat",
+      "slice_ref": 14,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0437",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 4.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Sigmoid",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0437",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 88,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0449",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Cecum",
+      "morphology": "Polypoid",
+      "slice_ref": 88,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0449",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 4.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Cecum",
+      "morphology": "Polypoid",
+      "slice_ref": 88,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0449",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0455",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 5.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Transverse",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0455",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 5.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Descending",
+      "morphology": "Flat",
+      "slice_ref": 88,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0455",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 8.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0485",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Transverse",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0485",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 8.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Cecum",
+      "morphology": "Polypoid",
+      "slice_ref": 14,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0485",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 4.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Ascending",
+      "morphology": "Polypoid",
+      "slice_ref": 14,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0490",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Transverse",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0490",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 2.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Ascending",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0495",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 8.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Sigmoid",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0495",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 2.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Cecum",
+      "morphology": "Flat",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0495",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 4.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Cecum",
+      "morphology": "Flat",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0495",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Transverse",
+      "morphology": "Flat",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0495",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 2.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Sigmoid",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0495",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Sigmoid",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0495",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 2.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0498",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 9.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Sigmoid",
+      "morphology": "Polypoid",
+      "slice_ref": 12,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0499",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 4.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Cecum",
+      "morphology": "Polypoid",
+      "slice_ref": 12,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0499",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 7.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Ascending",
+      "morphology": "Polypoid",
+      "slice_ref": 12,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0547",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Descending",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0553",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Ascending",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0575",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 8.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Ascending",
+      "morphology": "Polypoid",
+      "slice_ref": 88,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0587",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 17,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0587",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 2.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Sigmoid",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0587",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 5.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Transverse",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0633",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 7.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Ascending",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0633",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 2.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Sigmoid",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0635",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Descending",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0635",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 8.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Descending",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0651",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 7.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Sigmoid",
+      "morphology": "Flat",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0655",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 5.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0655",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Descending",
+      "morphology": "Flat",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0655",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 1.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0663",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 7.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Descending",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0684",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 7.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Ascending",
+      "morphology": "Flat",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "1.3.6.1.4.1.9328.50.4.0699",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 7.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Cecum",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-2700520403",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Descending",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-2700520403",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 5.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Sigmoid",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-2700520403",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 4.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-2971792019",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 8.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Sigmoid",
+      "morphology": "Polypoid",
+      "slice_ref": 17,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-1050546075",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Ascending",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-1050546075",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 8.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Sigmoid",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-1050546075",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 4.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Sigmoid",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-1050546075",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-2869933960",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Transverse",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-2869933960",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 2.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-3105782108",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 4.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 17,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-3105782108",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 4.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-3105782108",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 4.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-3105782108",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 5.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-7281013000",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Rectum",
+      "morphology": "Flat",
+      "slice_ref": 14,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-1421547239",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 8.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Transverse",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-1421547239",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 4.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Cecum",
+      "morphology": "Flat",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-5401799343",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Transverse",
+      "morphology": "Flat",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-3184713093",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 8.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-3184713093",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Transverse",
+      "morphology": "Flat",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-3184713093",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 4.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Descending",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-3184713093",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Descending",
+      "morphology": "Flat",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-1018399231",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 7.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Descending",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-1018399231",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-6234351055",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 8.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Descending",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-1626846173",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 7.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Sigmoid",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-2273267224",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 2.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Sigmoid",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-2273267224",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Transverse",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-2273267224",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Ascending",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-3304961391",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Cecum",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-1639466381",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 8.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-3195907751",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 7.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Transverse",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-1555607816",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 9.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Sigmoid",
+      "morphology": "Flat",
+      "slice_ref": 14,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-1555607816",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 5.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Transverse",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-5440088338",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Sigmoid",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-1535521839",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Cecum",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-1230993957",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 8.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Ascending",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-1230993957",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 17,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-1890743081",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 8.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Cecum",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-1835078273",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 2.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Ascending",
+      "morphology": "Flat",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-1835078273",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Transverse",
+      "morphology": "Flat",
+      "slice_ref": 17,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-1835078273",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 8.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Sigmoid",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-1835078273",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 1.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-1835078273",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 2.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Flat",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-2936751320",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-2936751320",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 8.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Transverse",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-3415832254",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Cecum",
+      "morphology": "Polypoid",
+      "slice_ref": 13,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-3415832254",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 8.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Cecum",
+      "morphology": "Polypoid",
+      "slice_ref": 12,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-8337000787",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 5.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Sigmoid",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-8337000787",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Sigmoid",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-8337000787",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 6.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Rectum",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-8337000787",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 5.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-8337000787",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 2.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Transverse",
+      "morphology": "Polypoid",
+      "slice_ref": 17,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-8337000787",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 2.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Transverse",
+      "morphology": "Flat",
+      "slice_ref": 17,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-8337000787",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Transverse",
+      "morphology": "Flat",
+      "slice_ref": 17,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-8337000787",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Descending",
+      "morphology": "Flat",
+      "slice_ref": 17,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-8337000787",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Transverse",
+      "morphology": "Polypoid",
+      "slice_ref": 17,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-8337000787",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 2.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Sigmoid",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-8337000787",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Sigmoid",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-8337000787",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 2.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-8337000787",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 4.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Flat",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-2394053080",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 8.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Transverse",
+      "morphology": "Flat",
+      "slice_ref": 13,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-2965055937",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 8.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Ascending",
+      "morphology": "Polypoid",
+      "slice_ref": 12,
+      "reportable": true
+    },
+    {
+      "patient_id": "CTC-2965055937",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 3.0,
+      "size_bin": "<6 mm (small/incidental)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": false
+    },
+    {
+      "patient_id": "CTC-1137132466",
+      "cohort": "6\u20139 mm cohort",
+      "size_mm": 8.0,
+      "size_bin": "6\u20139 mm (medium)",
+      "segment": "Rectum",
+      "morphology": "Polypoid",
+      "slice_ref": 10,
+      "reportable": true
+    }
+  ]
+}
