@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-06-23 12:55",
+  "title": "Colon & Colorectal Cancer \u2014 Clinical Trials Intelligence",
+  "days_window": 90,
+  "total_trials": 1374,
+  "source": "ClinicalTrials.gov, PubMed, FDA Drug@FDA",
+  "table": "coloncancer_trial_alerts",
+  "db_path": "C:\\Thor\\storehouse.db"
+}
