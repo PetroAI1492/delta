@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-24T15:44:58Z",
+  "generated": "2026-06-24T15:45:16Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -4915,6 +4915,10 @@
           "weight": 9
         },
         {
+          "keyword": "futures",
+          "weight": 8
+        },
+        {
           "keyword": "brent",
           "weight": 8
         },
@@ -4923,11 +4927,15 @@
           "weight": 8
         },
         {
-          "keyword": "jet fuel",
+          "keyword": "gas",
           "weight": 7
         },
         {
           "keyword": "heating oil",
+          "weight": 7
+        },
+        {
+          "keyword": "jet fuel",
           "weight": 7
         },
         {
@@ -4939,15 +4947,31 @@
           "weight": 7
         },
         {
-          "keyword": "natural gas",
+          "keyword": "henry hub",
           "weight": 6
         },
         {
-          "keyword": "futures",
+          "keyword": "refined",
           "weight": 6
         },
         {
           "keyword": "spot",
+          "weight": 6
+        },
+        {
+          "keyword": "spread",
+          "weight": 6
+        },
+        {
+          "keyword": "crude oil prices",
+          "weight": 6
+        },
+        {
+          "keyword": "brent crude prices",
+          "weight": 6
+        },
+        {
+          "keyword": "wti crude prices",
           "weight": 6
         },
         {
@@ -5011,27 +5035,71 @@
           "weight": 5
         },
         {
-          "keyword": "energy",
-          "weight": 5
-        },
-        {
           "keyword": "market",
           "weight": 5
         },
         {
-          "keyword": "prices",
+          "keyword": "energy",
           "weight": 5
         },
         {
-          "keyword": "trends",
+          "keyword": "commodities",
+          "weight": 5
+        },
+        {
+          "keyword": "trading",
+          "weight": 5
+        },
+        {
+          "keyword": "price report",
+          "weight": 5
+        },
+        {
+          "keyword": "oil prices",
+          "weight": 5
+        },
+        {
+          "keyword": "energy prices",
+          "weight": 5
+        },
+        {
+          "keyword": "futures prices",
+          "weight": 5
+        },
+        {
+          "keyword": "jet fuel prices",
+          "weight": 5
+        },
+        {
+          "keyword": "heating oil prices",
+          "weight": 5
+        },
+        {
+          "keyword": "gasoline prices",
+          "weight": 5
+        },
+        {
+          "keyword": "diesel prices",
+          "weight": 5
+        },
+        {
+          "keyword": "database",
           "weight": 4
         },
         {
-          "keyword": "analysis",
+          "keyword": "yfinance",
           "weight": 4
         },
         {
-          "keyword": "spread",
+          "keyword": "fred",
+          "weight": 4
+        },
+        {
+          "keyword": "value",
+          "weight": 4
+        },
+        {
+          "keyword": "change",
           "weight": 4
         },
         {
@@ -5047,7 +5115,7 @@
           "weight": 3
         },
         {
-          "keyword": "change",
+          "keyword": "analysis",
           "weight": 3
         },
         {
@@ -5055,55 +5123,55 @@
           "weight": 3
         },
         {
-          "keyword": "reporting",
-          "weight": 2
-        },
-        {
           "keyword": "statistics",
+          "weight": 3
+        },
+        {
+          "keyword": "reporting",
+          "weight": 3
+        },
+        {
+          "keyword": "forecast",
           "weight": 2
         },
         {
-          "keyword": "source",
+          "keyword": "trends",
           "weight": 2
         },
         {
-          "keyword": "database",
+          "keyword": "supply",
           "weight": 2
         },
         {
-          "keyword": "audit",
+          "keyword": "demand",
           "weight": 2
         },
         {
-          "keyword": "yfinance",
+          "keyword": "market trends",
           "weight": 2
         },
         {
-          "keyword": "fred",
+          "keyword": "financial",
           "weight": 2
         },
         {
-          "keyword": "refined",
+          "keyword": "investment",
           "weight": 2
         },
         {
-          "keyword": "gulf",
+          "keyword": "economy",
+          "weight": 2
+        },
+        {
+          "keyword": "analysis report",
+          "weight": 2
+        },
+        {
+          "keyword": "run_id",
           "weight": 1
         },
         {
-          "keyword": "value",
-          "weight": 1
-        },
-        {
-          "keyword": "record",
-          "weight": 1
-        },
-        {
-          "keyword": "run",
-          "weight": 1
-        },
-        {
-          "keyword": "timestamp",
+          "keyword": "run_ts",
           "weight": 1
         },
         {
@@ -5111,55 +5179,19 @@
           "weight": 1
         },
         {
-          "keyword": "unit",
+          "keyword": "version",
           "weight": 1
         },
         {
-          "keyword": "series",
+          "keyword": "generated_at",
           "weight": 1
         },
         {
-          "keyword": "id",
+          "keyword": "as_of",
           "weight": 1
         },
         {
-          "keyword": "metric",
-          "weight": 1
-        },
-        {
-          "keyword": "as of",
-          "weight": 1
-        },
-        {
-          "keyword": "note",
-          "weight": 1
-        },
-        {
-          "keyword": "futures price",
-          "weight": 1
-        },
-        {
-          "keyword": "front-month",
-          "weight": 1
-        },
-        {
-          "keyword": "price type",
-          "weight": 1
-        },
-        {
-          "keyword": "gas",
-          "weight": 1
-        },
-        {
-          "keyword": "bbl",
-          "weight": 1
-        },
-        {
-          "keyword": "gal",
-          "weight": 1
-        },
-        {
-          "keyword": "mmbtu",
+          "keyword": "storehouse",
           "weight": 1
         }
       ],
