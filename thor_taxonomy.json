@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-24T15:43:59Z",
+  "generated": "2026-06-24T15:44:28Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -6342,6 +6342,130 @@
       ],
       "intent_phrases": [
         {
+          "keyword": "market",
+          "weight": 10
+        },
+        {
+          "keyword": "watch",
+          "weight": 10
+        },
+        {
+          "keyword": "finance",
+          "weight": 9
+        },
+        {
+          "keyword": "market analysis",
+          "weight": 9
+        },
+        {
+          "keyword": "report",
+          "weight": 8
+        },
+        {
+          "keyword": "market trends",
+          "weight": 8
+        },
+        {
+          "keyword": "financial report",
+          "weight": 8
+        },
+        {
+          "keyword": "investment report",
+          "weight": 8
+        },
+        {
+          "keyword": "trends",
+          "weight": 7
+        },
+        {
+          "keyword": "analysis report",
+          "weight": 7
+        },
+        {
+          "keyword": "financial markets",
+          "weight": 7
+        },
+        {
+          "keyword": "financial analysis",
+          "weight": 7
+        },
+        {
+          "keyword": "weekly report",
+          "weight": 7
+        },
+        {
+          "keyword": "market insights",
+          "weight": 7
+        },
+        {
+          "keyword": "economic report",
+          "weight": 7
+        },
+        {
+          "keyword": "market overview",
+          "weight": 7
+        },
+        {
+          "keyword": "market performance",
+          "weight": 6
+        },
+        {
+          "keyword": "analysis",
+          "weight": 6
+        },
+        {
+          "keyword": "investments",
+          "weight": 6
+        },
+        {
+          "keyword": "economy",
+          "weight": 6
+        },
+        {
+          "keyword": "financial",
+          "weight": 6
+        },
+        {
+          "keyword": "forecasts",
+          "weight": 6
+        },
+        {
+          "keyword": "market conditions",
+          "weight": 6
+        },
+        {
+          "keyword": "market data",
+          "weight": 6
+        },
+        {
+          "keyword": "trends report",
+          "weight": 6
+        },
+        {
+          "keyword": "financial outlook",
+          "weight": 6
+        },
+        {
+          "keyword": "financial trends",
+          "weight": 6
+        },
+        {
+          "keyword": "investment analysis",
+          "weight": 6
+        },
+        {
+          "keyword": "financial performance",
+          "weight": 6
+        },
+        {
+          "keyword": "market updates",
+          "weight": 6
+        },
+        {
+          "keyword": "economic analysis",
+          "weight": 6
+        },
+        {
           "keyword": "market watch",
           "weight": 5
         },
@@ -6351,10 +6475,6 @@
         },
         {
           "keyword": "S&P 500",
-          "weight": 5
-        },
-        {
-          "keyword": "market performance",
           "weight": 5
         },
         {
@@ -6400,6 +6520,178 @@
         {
           "keyword": "cross asset",
           "weight": 5
+        },
+        {
+          "keyword": "2026",
+          "weight": 5
+        },
+        {
+          "keyword": "stocks",
+          "weight": 5
+        },
+        {
+          "keyword": "data",
+          "weight": 5
+        },
+        {
+          "keyword": "investment strategies",
+          "weight": 5
+        },
+        {
+          "keyword": "economic indicators",
+          "weight": 5
+        },
+        {
+          "keyword": "trading",
+          "weight": 5
+        },
+        {
+          "keyword": "risk",
+          "weight": 5
+        },
+        {
+          "keyword": "returns",
+          "weight": 5
+        },
+        {
+          "keyword": "economic growth",
+          "weight": 5
+        },
+        {
+          "keyword": "financial news",
+          "weight": 5
+        },
+        {
+          "keyword": "financial summary",
+          "weight": 5
+        },
+        {
+          "keyword": "financial metrics",
+          "weight": 5
+        },
+        {
+          "keyword": "market research",
+          "weight": 5
+        },
+        {
+          "keyword": "financial forecasting",
+          "weight": 5
+        },
+        {
+          "keyword": "market predictions",
+          "weight": 5
+        },
+        {
+          "keyword": "economic forecast",
+          "weight": 5
+        },
+        {
+          "keyword": "market opportunities",
+          "weight": 5
+        },
+        {
+          "keyword": "investment opportunities",
+          "weight": 5
+        },
+        {
+          "keyword": "financial strategies",
+          "weight": 5
+        },
+        {
+          "keyword": "financial data",
+          "weight": 5
+        },
+        {
+          "keyword": "financial insights",
+          "weight": 5
+        },
+        {
+          "keyword": "market strategies",
+          "weight": 5
+        },
+        {
+          "keyword": "summary",
+          "weight": 4
+        },
+        {
+          "keyword": "bonds",
+          "weight": 4
+        },
+        {
+          "keyword": "performance",
+          "weight": 4
+        },
+        {
+          "keyword": "portfolio",
+          "weight": 4
+        },
+        {
+          "keyword": "capital",
+          "weight": 4
+        },
+        {
+          "keyword": "investor",
+          "weight": 4
+        },
+        {
+          "keyword": "valuation",
+          "weight": 4
+        },
+        {
+          "keyword": "data analysis",
+          "weight": 4
+        },
+        {
+          "keyword": "market volatility",
+          "weight": 4
+        },
+        {
+          "keyword": "financial stability",
+          "weight": 4
+        },
+        {
+          "keyword": "financial risks",
+          "weight": 4
+        },
+        {
+          "keyword": "capital markets",
+          "weight": 4
+        },
+        {
+          "keyword": "market sectors",
+          "weight": 4
+        },
+        {
+          "keyword": "market fluctuations",
+          "weight": 4
+        },
+        {
+          "keyword": "investment metrics",
+          "weight": 4
+        },
+        {
+          "keyword": "market capital",
+          "weight": 4
+        },
+        {
+          "keyword": "financial planning",
+          "weight": 4
+        },
+        {
+          "keyword": "market risks",
+          "weight": 4
+        },
+        {
+          "keyword": "week",
+          "weight": 3
+        },
+        {
+          "keyword": "analysis tools",
+          "weight": 3
+        },
+        {
+          "keyword": "financial sectors",
+          "weight": 3
         }
       ],
       "id": "market_watch",
