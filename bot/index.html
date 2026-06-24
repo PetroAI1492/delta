@@ -10595,24 +10595,298 @@ const REPORTS = [
       "current: 3 CVEs today, 1 High (CVE-2026-7574 Anthropic Claude Desktop Cowork VM CVSS 8.7), 2 Caliptra Core Firmware cryptographic issues"
     ],
     "intent_phrases": [
-      "CVE digest",
-      "daily CVE",
-      "NVD vulnerabilities",
-      "NIST CVE",
-      "vulnerability digest",
-      "CVSS score",
-      "critical vulnerability today",
-      "high severity CVE",
-      "CVE report",
-      "new vulnerabilities today",
-      "cybersecurity vulnerability",
-      "CVE database",
-      "NVD daily",
-      "software vulnerability",
-      "CVE lookup"
+      {
+        "keyword": "cve",
+        "weight": 10
+      },
+      {
+        "keyword": "cve daily digest",
+        "weight": 10
+      },
+      {
+        "keyword": "cybersecurity",
+        "weight": 10
+      },
+      {
+        "keyword": "vulnerability",
+        "weight": 9
+      },
+      {
+        "keyword": "high severity",
+        "weight": 8
+      },
+      {
+        "keyword": "cve-2026-7574",
+        "weight": 8
+      },
+      {
+        "keyword": "cve-2026-6458",
+        "weight": 7
+      },
+      {
+        "keyword": "cve-2026-5818",
+        "weight": 7
+      },
+      {
+        "keyword": "cvss score",
+        "weight": 6
+      },
+      {
+        "keyword": "cvss version",
+        "weight": 6
+      },
+      {
+        "keyword": "security alert",
+        "weight": 6
+      },
+      {
+        "keyword": "CVE digest",
+        "weight": 5
+      },
+      {
+        "keyword": "daily CVE",
+        "weight": 5
+      },
+      {
+        "keyword": "NVD vulnerabilities",
+        "weight": 5
+      },
+      {
+        "keyword": "NIST CVE",
+        "weight": 5
+      },
+      {
+        "keyword": "vulnerability digest",
+        "weight": 5
+      },
+      {
+        "keyword": "CVSS score",
+        "weight": 5
+      },
+      {
+        "keyword": "critical vulnerability today",
+        "weight": 5
+      },
+      {
+        "keyword": "high severity CVE",
+        "weight": 5
+      },
+      {
+        "keyword": "CVE report",
+        "weight": 5
+      },
+      {
+        "keyword": "new vulnerabilities today",
+        "weight": 5
+      },
+      {
+        "keyword": "cybersecurity vulnerability",
+        "weight": 5
+      },
+      {
+        "keyword": "CVE database",
+        "weight": 5
+      },
+      {
+        "keyword": "NVD daily",
+        "weight": 5
+      },
+      {
+        "keyword": "software vulnerability",
+        "weight": 5
+      },
+      {
+        "keyword": "CVE lookup",
+        "weight": 5
+      },
+      {
+        "keyword": "risk assessment",
+        "weight": 5
+      },
+      {
+        "keyword": "cyber threat",
+        "weight": 5
+      },
+      {
+        "keyword": "data breach",
+        "weight": 5
+      },
+      {
+        "keyword": "malware",
+        "weight": 4
+      },
+      {
+        "keyword": "exploit",
+        "weight": 4
+      },
+      {
+        "keyword": "patch",
+        "weight": 4
+      },
+      {
+        "keyword": "information security",
+        "weight": 4
+      },
+      {
+        "keyword": "security update",
+        "weight": 4
+      },
+      {
+        "keyword": "network security",
+        "weight": 3
+      },
+      {
+        "keyword": "incident response",
+        "weight": 3
+      },
+      {
+        "keyword": "vulnerability management",
+        "weight": 3
+      },
+      {
+        "keyword": "threat intelligence",
+        "weight": 3
+      },
+      {
+        "keyword": "penetration testing",
+        "weight": 3
+      },
+      {
+        "keyword": "cyber defense",
+        "weight": 3
+      },
+      {
+        "keyword": "security policy",
+        "weight": 2
+      },
+      {
+        "keyword": "risk management",
+        "weight": 2
+      },
+      {
+        "keyword": "security framework",
+        "weight": 2
+      },
+      {
+        "keyword": "cyber risk",
+        "weight": 2
+      },
+      {
+        "keyword": "vulnerability scanner",
+        "weight": 2
+      },
+      {
+        "keyword": "security compliance",
+        "weight": 2
+      },
+      {
+        "keyword": "incident management",
+        "weight": 2
+      },
+      {
+        "keyword": "it security",
+        "weight": 2
+      },
+      {
+        "keyword": "threat assessment",
+        "weight": 2
+      },
+      {
+        "keyword": "zero-day exploit",
+        "weight": 2
+      },
+      {
+        "keyword": "security vulnerability",
+        "weight": 2
+      },
+      {
+        "keyword": "cybersecurity report",
+        "weight": 2
+      },
+      {
+        "keyword": "vulnerability disclosure",
+        "weight": 2
+      },
+      {
+        "keyword": "security breach",
+        "weight": 2
+      },
+      {
+        "keyword": "security risk",
+        "weight": 2
+      },
+      {
+        "keyword": "cyber attack",
+        "weight": 2
+      },
+      {
+        "keyword": "vulnerability database",
+        "weight": 2
+      },
+      {
+        "keyword": "security incident",
+        "weight": 2
+      },
+      {
+        "keyword": "cybersecurity threats",
+        "weight": 2
+      },
+      {
+        "keyword": "cve database",
+        "weight": 1
+      },
+      {
+        "keyword": "threat landscape",
+        "weight": 1
+      },
+      {
+        "keyword": "cybersecurity trends",
+        "weight": 1
+      },
+      {
+        "keyword": "security research",
+        "weight": 1
+      },
+      {
+        "keyword": "vulnerability assessment",
+        "weight": 1
+      },
+      {
+        "keyword": "security tools",
+        "weight": 1
+      },
+      {
+        "keyword": "cybersecurity news",
+        "weight": 1
+      },
+      {
+        "keyword": "security awareness",
+        "weight": 1
+      },
+      {
+        "keyword": "security metrics",
+        "weight": 1
+      },
+      {
+        "keyword": "vulnerability report",
+        "weight": 1
+      },
+      {
+        "keyword": "cybersecurity framework",
+        "weight": 1
+      },
+      {
+        "keyword": "security best practices",
+        "weight": 1
+      },
+      {
+        "keyword": "vulnerability alerts",
+        "weight": 1
+      }
     ],
     "id": "cve_daily_digest",
-    "path": "https://petroai1492.github.io/delta/cybersecurity/cve_digest.html"
+    "path": "https://petroai1492.github.io/delta/cybersecurity/cve_digest.html",
+    "last_generated": "2026-06-23 20:21"
   }
 ];
 const CROSS_DOMAIN = [
