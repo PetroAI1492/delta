@@ -76,7 +76,7 @@
 
 <div class="masthead">
   <span class="masthead-source">Thor Security &nbsp;&middot;&nbsp; ASA Threat Assessment</span>
-  <span class="masthead-date">June 24, 2026  17:37 UTC</span>
+  <span class="masthead-date">June 24, 2026  17:39 UTC</span>
 </div>
 
 <h1 class="headline">Cisco ASA Firewall Analysis</h1>
@@ -90,11 +90,11 @@
 
 <div class="threat-banner">
   <div class="threat-level">&#9679; Overall Threat Level: HIGH</div>
-  <p class="threat-exec">The network has experienced significant scanning activity and attempts to access sensitive services, indicating potential reconnaissance and lateral movement attempts. No data exfiltration or VPN anomalies were detected, but the presence of scanning and denied access to critical ports suggests a heightened risk. Immediate attention is required to secure the network against these threats.</p>
-  <p class="threat-tech">The analysis reveals active scanning with 6 alerts and attempts to access lateral movement ports such as SMB (445) and RDP (3389), with one internal host (192.168.1.200) involved. No data exfiltration was detected, but the presence of scanning and denied access to critical ports indicates potential reconnaissance and lateral movement attempts.</p>
+  <p class="threat-exec">The network has experienced significant scanning activity and attempts to access sensitive services, indicating potential reconnaissance and lateral movement attempts. No data exfiltration or VPN anomalies were detected, but the presence of scanning and denied access to critical ports suggests a heightened risk. Immediate attention to these activities is recommended to prevent potential breaches.</p>
+  <p class="threat-tech">The analysis reveals active scanning with 6 alerts and attempts to access lateral movement ports such as SMB (445) and RDP (3389), indicating potential reconnaissance and lateral movement. One internal host, 192.168.1.200, showed suspicious behavior with denied connections on critical ports. No data exfiltration or VPN anomalies were detected, keeping the threat level at HIGH.</p>
 </div>
 
-<div class='section-label'>Immediate Actions Required</div><ol class='actions-list'><li>Review and update firewall rules to block unauthorized access attempts.</li><li>Implement network intrusion detection systems to monitor for scanning and lateral movement activities.</li><li>Conduct a security audit of internal host 192.168.1.200 to ensure it is not compromised.</li></ol>
+<div class='section-label'>Immediate Actions Required</div><ol class='actions-list'><li>Investigate and isolate internal host 192.168.1.200 for suspicious activity.</li><li>Enhance monitoring on critical ports such as 445 and 3389.</li><li>Review and update firewall ACLs to prevent unauthorized access.</li></ol>
 
 <div class="section-label">Security Findings</div>
 
@@ -103,11 +103,11 @@
             <span class="finding-category">Port Scan</span>
             <span class="finding-badge" style="background:#d97706">MEDIUM</span>
           </div>
-          <p class="finding-desc">Detected scanning activity targeting the network, indicating potential reconnaissance efforts.</p>
+          <p class="finding-desc">Detected scanning activity with 6 alerts, indicating potential reconnaissance efforts.</p>
           <div class="finding-meta">
             <div class="finding-meta-row">
               <span class="meta-lbl">Evidence</span>
-              <span class="meta-val mono-sm">6 scan alerts with a maximum burst rate of 18.</span>
+              <span class="meta-val mono-sm">733100 alerts with a max burst rate of 18.</span>
             </div>
             <div class="finding-meta-row">
               <span class="meta-lbl">Recommendation</span>
@@ -120,11 +120,11 @@
             <span class="finding-category">Lateral Movement</span>
             <span class="finding-badge" style="background:#f97316">HIGH</span>
           </div>
-          <p class="finding-desc">Attempts to access lateral movement ports such as SMB (445) and RDP (3389) were detected, suggesting potential lateral movement within the network.</p>
+          <p class="finding-desc">Attempts to access lateral movement ports such as SMB (445) and RDP (3389) were detected, suggesting potential lateral movement.</p>
           <div class="finding-meta">
             <div class="finding-meta-row">
               <span class="meta-lbl">Evidence</span>
-              <span class="meta-val mono-sm">Denied connections on ports 445 and 3389, with internal host 192.168.1.200 involved.</span>
+              <span class="meta-val mono-sm">Denied connections on ports 445 and 3389 from internal IP 192.168.1.200.</span>
             </div>
             <div class="finding-meta-row">
               <span class="meta-lbl">Recommendation</span>
@@ -137,22 +137,22 @@
             <span class="finding-category">Deny by ACL</span>
             <span class="finding-badge" style="background:#d97706">MEDIUM</span>
           </div>
-          <p class="finding-desc">Multiple denied connection attempts by external sources, indicating potential unauthorized access attempts.</p>
+          <p class="finding-desc">Multiple denied connections by ACL, indicating attempts to bypass firewall rules.</p>
           <div class="finding-meta">
             <div class="finding-meta-row">
               <span class="meta-lbl">Evidence</span>
-              <span class="meta-val mono-sm">25 denied connections by ACL, associated with MITRE TTP T1562.004.</span>
+              <span class="meta-val mono-sm">106023 Deny by ACL with 25 counts.</span>
             </div>
             <div class="finding-meta-row">
               <span class="meta-lbl">Recommendation</span>
-              <span class="meta-val">Review and tighten firewall rules to prevent unauthorized access.</span>
+              <span class="meta-val">Review and tighten ACL rules to ensure only authorized traffic is allowed.</span>
             </div>
           </div>
         </div>
 
-<div class='section-label'>Key Indicators</div><div class='ioc-grid'><div><div class='ioc-title'>External Threat Actors</div><ul class='ioc-list red'><li>198.51.100.66 - Multiple denied attempts, potential reconnaissance.</li><li>5.2.69.42 - Multiple denied attempts, potential reconnaissance.</li></ul></div><div><div class='ioc-title'>Suspicious Internal Hosts</div><ul class='ioc-list orange'><li>192.168.1.200 - Involved in denied connections on lateral movement ports.</li></ul></div></div>
+<div class='section-label'>Key Indicators</div><div class='ioc-grid'><div><div class='ioc-title'>External Threat Actors</div><ul class='ioc-list red'><li>198.51.100.66 - Multiple denied attempts</li><li>5.2.69.42 - Multiple denied attempts</li><li>45.142.212.100 - Multiple denied attempts</li></ul></div><div><div class='ioc-title'>Suspicious Internal Hosts</div><ul class='ioc-list orange'><li>192.168.1.200</li></ul></div></div>
 
-<div class='section-label'>Ongoing Monitoring</div><ul class='monitoring-list'><li>Continuously monitor for scanning activities and unauthorized access attempts.</li><li>Regularly review firewall logs for denied connections and unusual patterns.</li><li>Implement strict access controls and network segmentation to limit lateral movement opportunities.</li></ul>
+<div class='section-label'>Ongoing Monitoring</div><ul class='monitoring-list'><li>Implement continuous monitoring for scanning activities and lateral movement attempts.</li><li>Regularly review firewall logs for denied access attempts and adjust rules accordingly.</li><li>Conduct periodic security assessments to identify and mitigate vulnerabilities.</li></ul>
 
 
 
