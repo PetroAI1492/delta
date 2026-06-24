@@ -66,6 +66,7 @@
   .sidebar-report[draggable="true"] { cursor: grab; }
   .sidebar-report.dragging { opacity: .4; cursor: grabbing; }
   .chat-window.drag-over { background: var(--bg-soft); outline: 2px dashed var(--accent); }
+  .dragging-active .msg, .dragging-active .msg-avatar, .dragging-active .msg-body { pointer-events: none; }
   .sidebar-report { display: block; width: 100%; text-align: left; background: none;
                      border: none; cursor: pointer; font-family: Georgia, serif;
                      font-size: .8rem; color: var(--black); padding: .4rem 1rem .4rem 1.4rem;
@@ -150,7 +151,7 @@
 </div><!-- .layout -->
 <footer>
   THOR SIGNAL &nbsp;·&nbsp; Taxonomy-driven routing &nbsp;·&nbsp;
-  Generated: 2026-06-24 18:53 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+  Generated: 2026-06-24 19:02 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 <script>
 const REPORTS = [
@@ -2307,10 +2308,23 @@ function renderSidebar() {
   document.getElementById('sidebarBody').innerHTML = html;
 }
 
+function onReportDragStart(event, id) {
+  event.dataTransfer.setData('text/plain', id);
+  event.dataTransfer.effectAllowed = 'copy';
+  event.currentTarget.classList.add('dragging');
+  document.body.classList.add('dragging-active');
+}
+
+function onReportDragEnd(event) {
+  event.currentTarget.classList.remove('dragging');
+  document.body.classList.remove('dragging-active');
+  document.getElementById('chatWindow').classList.remove('drag-over');
+}
+
 function onChatDrop(event) {
   event.preventDefault();
   event.currentTarget.classList.remove('drag-over');
-  const id = event.dataTransfer.getData('report_id');
+  const id = event.dataTransfer.getData('text/plain');
   if (!id) return;
   const r = REPORTS.find(rep => rep.id === id);
   if (!r) return;
