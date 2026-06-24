@@ -64,6 +64,9 @@
   .sidebar-domain.collapsed span.chevron { transform: rotate(-90deg); }
   .sidebar-domain-list { max-height: none; overflow: visible; transition: max-height .3s ease; }
   .sidebar-domain.collapsed .sidebar-domain-list { max-height: 0; overflow: hidden; }
+  .sidebar-report[draggable="true"] { cursor: grab; }
+  .sidebar-report.dragging { opacity: .4; cursor: grabbing; }
+  .chat-window.drag-over { background: var(--bg-soft); outline: 2px dashed var(--accent); }
   .sidebar-report { display: block; width: 100%; text-align: left; background: none;
                      border: none; cursor: pointer; font-family: Georgia, serif;
                      font-size: .8rem; color: var(--black); padding: .4rem 1rem .4rem 1.4rem;
@@ -131,7 +134,10 @@
 </div>
 <div class="main">
 
-  <div class="chat-window" id="chatWindow">
+  <div class="chat-window" id="chatWindow"
+       ondragover="event.preventDefault(); event.currentTarget.classList.add('drag-over')"
+       ondragleave="event.currentTarget.classList.remove('drag-over')"
+       ondrop="onChatDrop(event)">
     <div class="msg">
       <div class="msg-avatar thor">Thor</div>
       <div class="msg-body">Search by keyword — cancer trials, drug shortages, crude oil, federal spending, cybersecurity, and more. I'll find the right report and link you directly to it.</div>
@@ -145,7 +151,7 @@
 </div>
 <footer>
   THOR SIGNAL &nbsp;·&nbsp; Taxonomy-driven routing &nbsp;·&nbsp;
-  Generated: 2026-06-24 17:21 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+  Generated: 2026-06-24 18:44 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 <script>
 const REPORTS = [
@@ -2291,11 +2297,26 @@ function renderSidebar() {
       <div class="sidebar-domain-list">`;
     for (const r of reps) {
       const desc = r.description ? `<span class="sidebar-report-desc">${r.description}</span>` : '';
-      html += `<button class="sidebar-report" onclick="selectSidebarReport('${r.id}')"><span class="sidebar-report-title">${r.title}</span>${desc}</button>`;
+      html += `<button class="sidebar-report" draggable="true"
+        onclick="selectSidebarReport('${r.id}')"
+        ondragstart="onReportDragStart(event, '${r.id}')"
+        ondragend="onReportDragEnd(event)">
+        <span class="sidebar-report-title">${r.title}</span>${desc}</button>`;
     }
     html += `</div></div>`;
   }
   document.getElementById('sidebarBody').innerHTML = html;
+}
+
+function onChatDrop(event) {
+  event.preventDefault();
+  event.currentTarget.classList.remove('drag-over');
+  const id = event.dataTransfer.getData('report_id');
+  if (!id) return;
+  const r = REPORTS.find(rep => rep.id === id);
+  if (!r) return;
+  closeSidebar();
+  showReport(r);
 }
 
 function toggleDomain(headerEl) {
