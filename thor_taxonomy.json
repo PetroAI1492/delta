@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-24T17:08:50Z",
+  "generated": "2026-06-24T17:41:57Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -1880,6 +1880,72 @@
       ],
       "id": "cve_daily_digest",
       "path": "https://petroai1492.github.io/delta/cybersecurity/cve_digest.html"
+    },
+    {
+      "title": "ASA Firewall Threat Assessment",
+      "file": "cybersecurity/asa_assessment.html",
+      "description": "Cisco ASA firewall log threat assessment \u2014 AI-analyzed firewall events with threat level, attacker IPs, targeted services, CVE context, lateral movement detection, and immediate action recommendations",
+      "json_file": "cybersecurity/asa_assessment.html",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/cybersecurity/asa_assessment.html`",
+      "auto_published": true,
+      "primary_domain": "Cybersecurity",
+      "secondary_domains": [
+        "Finance"
+      ],
+      "entities": [
+        "Cisco ASA",
+        "NVD",
+        "NIST",
+        "OpenAI",
+        "MITRE",
+        "ASN",
+        "EternalBlue",
+        "SMB",
+        "RDP",
+        "CVE"
+      ],
+      "data_sources": [
+        "Cisco ASA syslog file \u2014 local log analysis",
+        "ASN enrichment via ipinfo.io",
+        "CVE lookup via NVD API",
+        "AI assessment via OpenAI gpt-4o"
+      ],
+      "update_frequency": "On-demand (per log analysis run)",
+      "key_signals": [
+        "Overall threat level (LOW/MEDIUM/HIGH/CRITICAL)",
+        "ASA event count",
+        "severity breakdown (Emergency/Alert/Critical/Warning)",
+        "top attacker IPs with ASN",
+        "top targeted services with historical CVEs (SMB 445, RDP 3389, SQL 1433, MySQL 3306, Telnet 23, FTP 21)",
+        "scanning alerts, lateral movement detection, exfil evidence, VPN failures",
+        "security findings with recommendations",
+        "suspicious internal hosts"
+      ],
+      "intent_phrases": [
+        "ASA firewall",
+        "firewall threat assessment",
+        "ASA log analysis",
+        "Cisco firewall",
+        "firewall attack",
+        "firewall scan",
+        "RDP attack",
+        "SMB attack",
+        "lateral movement",
+        "port scan firewall",
+        "firewall threat level",
+        "ASA security",
+        "firewall CVE",
+        "attacker IP",
+        "firewall denial",
+        "ACL deny",
+        "firewall brute force",
+        "network intrusion",
+        "firewall report",
+        "ASA syslog"
+      ],
+      "id": "asa_firewall_threat_assessment",
+      "path": "https://petroai1492.github.io/delta/cybersecurity/asa_assessment.html"
     }
   ],
   "cross_domain_matrix": [
