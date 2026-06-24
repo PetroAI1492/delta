@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASA Threat Assessment — June 24, 2026</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{background:#fff;color:#1a1a1a;font-family:Georgia,'Times New Roman',serif;
+    font-size:15px;line-height:1.6;max-width:960px;margin:0 auto;padding:0 24px 48px}
+  .masthead{border-top:3px solid #cc0000;padding:18px 0 14px;display:flex;
+    align-items:baseline;justify-content:space-between;border-bottom:1px solid #e0e0e0;margin-bottom:28px}
+  .masthead-source{font-family:Arial,sans-serif;font-size:11px;letter-spacing:.1em;
+    text-transform:uppercase;color:#cc0000;font-weight:700}
+  .masthead-date{font-family:Arial,sans-serif;font-size:11px;color:#767676}
+  .headline{font-size:30px;font-weight:700;line-height:1.15;letter-spacing:-.01em;margin-bottom:4px}
+  .subhead{font-family:Arial,sans-serif;font-size:13px;color:#767676;
+    margin-bottom:20px;border-bottom:1px solid #e0e0e0;padding-bottom:16px}
+  .stats-bar{display:flex;gap:0;margin-bottom:28px;border:1px solid #e0e0e0;border-radius:3px;overflow:hidden}
+  .stat{flex:1;padding:12px 8px;text-align:center;border-right:1px solid #e0e0e0}
+  .stat:last-child{border-right:none}
+  .stat-val{font-family:'Courier New',monospace;font-size:18px;font-weight:700;color:#1a1a1a}
+  .stat-lbl{font-family:Arial,sans-serif;font-size:9px;text-transform:uppercase;
+    letter-spacing:.06em;color:#767676;margin-top:2px}
+  .threat-banner{border-left:4px solid #f97316;padding:16px 20px;
+    background:#f9f9f9;margin-bottom:28px;font-family:Arial,sans-serif}
+  .threat-level{font-size:11px;font-weight:700;letter-spacing:.1em;
+    text-transform:uppercase;color:#f97316;margin-bottom:6px}
+  .threat-exec{font-size:14px;color:#1a1a1a;margin-bottom:8px;font-family:Georgia,serif}
+  .threat-tech{font-size:12px;color:#4b5563;font-family:Arial,sans-serif}
+  .section-label{font-family:Arial,sans-serif;font-size:10px;font-weight:700;
+    letter-spacing:.12em;text-transform:uppercase;color:#767676;
+    margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid #e0e0e0;margin-top:28px}
+  .actions-list,.monitoring-list{font-family:Arial,sans-serif;font-size:13px;
+    margin-left:20px;color:#1a1a1a;margin-bottom:8px}
+  .actions-list li,.monitoring-list li{margin-bottom:5px}
+  .finding{border:1px solid #e0e0e0;border-left:3px solid #cc0000;
+    padding:16px 20px;margin-bottom:14px;font-family:Arial,sans-serif}
+  .finding-header{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+  .finding-category{font-size:14px;font-weight:700;color:#1a1a1a;font-family:Georgia,serif}
+  .finding-badge{font-size:10px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;padding:2px 8px;border-radius:2px}
+  .finding-desc{font-size:13px;color:#374151;margin-bottom:10px;font-family:Georgia,serif}
+  .finding-meta{border-top:1px solid #f0f0f0;padding-top:8px}
+  .finding-meta-row{display:flex;gap:12px;margin-bottom:5px;font-size:12px}
+  .meta-lbl{font-weight:700;color:#767676;min-width:110px;text-transform:uppercase;
+    font-size:10px;letter-spacing:.06em;padding-top:1px;font-family:Arial,sans-serif}
+  .meta-val{color:#374151;flex:1;font-family:Arial,sans-serif}
+  .mono{font-family:'Courier New',monospace;font-size:12px}
+  .mono-sm{font-family:'Courier New',monospace;font-size:11px}
+  .no-findings{color:#767676;font-family:Arial,sans-serif;font-size:13px}
+  .ioc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:8px}
+  .ioc-title{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    color:#767676;margin-bottom:8px;font-family:Arial,sans-serif}
+  .ioc-list{list-style:none;font-size:12px;font-family:'Courier New',monospace}
+  .ioc-list li{margin-bottom:4px}
+  .red{color:#dc2626} .orange{color:#f97316}
+  .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:8px}
+  table{width:100%;border-collapse:collapse;font-family:Arial,sans-serif;
+    font-size:12px;margin-bottom:8px}
+  thead th{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:#767676;text-align:left;padding:6px 8px;border-bottom:2px solid #1a1a1a}
+  thead th.num{text-align:right}
+  tbody tr{border-bottom:1px solid #e8e8e8}
+  tbody tr:last-child{border-bottom:2px solid #1a1a1a}
+  tbody tr:hover{background:#f9f9f9}
+  td{padding:7px 8px;vertical-align:middle}
+  td.num{text-align:right;font-family:'Courier New',monospace}
+  td.mono{font-family:'Courier New',monospace;font-size:11px}
+  td.red{color:#dc2626;font-weight:600}
+  .footer{border-top:1px solid #e0e0e0;padding-top:14px;font-family:Arial,sans-serif;
+    font-size:11px;color:#999;line-height:1.6;margin-top:40px}
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <span class="masthead-source">Thor Security &nbsp;&middot;&nbsp; ASA Threat Assessment</span>
+  <span class="masthead-date">June 24, 2026  17:37 UTC</span>
+</div>
+
+<h1 class="headline">Cisco ASA Firewall Analysis</h1>
+<p class="subhead">
+  File: <span class="mono" style="font-size:12px">asa_test.log</span>
+  &nbsp;&middot;&nbsp; 130 log lines &nbsp;&middot;&nbsp;
+  130 ASA events &nbsp;&middot;&nbsp; June 24, 2026
+</p>
+
+<div class="stats-bar"><div class='stat'><div class='stat-val'>130</div><div class='stat-lbl'>ASA Events</div></div><div class='stat'><div class='stat-val'>14</div><div class='stat-lbl'>Critical/Alert</div></div><div class='stat'><div class='stat-val'>46</div><div class='stat-lbl'>Warnings</div></div><div class='stat'><div class='stat-val'>10</div><div class='stat-lbl'>Unique Attackers</div></div><div class='stat'><div class='stat-val'>6</div><div class='stat-lbl'>Scan Alerts</div></div><div class='stat'><div class='stat-val'>0</div><div class='stat-lbl'>Land/Spoof</div></div><div class='stat'><div class='stat-val'>0</div><div class='stat-lbl'>Exfil Evidence</div></div><div class='stat'><div class='stat-val'>1</div><div class='stat-lbl'>Lateral Movement</div></div></div>
+
+<div class="threat-banner">
+  <div class="threat-level">&#9679; Overall Threat Level: HIGH</div>
+  <p class="threat-exec">The network has experienced significant scanning activity and attempts to access sensitive services, indicating potential reconnaissance and lateral movement attempts. No data exfiltration or VPN anomalies were detected, but the presence of scanning and denied access to critical ports suggests a heightened risk. Immediate attention is required to secure the network against these threats.</p>
+  <p class="threat-tech">The analysis reveals active scanning with 6 alerts and attempts to access lateral movement ports such as SMB (445) and RDP (3389), with one internal host (192.168.1.200) involved. No data exfiltration was detected, but the presence of scanning and denied access to critical ports indicates potential reconnaissance and lateral movement attempts.</p>
+</div>
+
+<div class='section-label'>Immediate Actions Required</div><ol class='actions-list'><li>Review and update firewall rules to block unauthorized access attempts.</li><li>Implement network intrusion detection systems to monitor for scanning and lateral movement activities.</li><li>Conduct a security audit of internal host 192.168.1.200 to ensure it is not compromised.</li></ol>
+
+<div class="section-label">Security Findings</div>
+
+        <div class="finding">
+          <div class="finding-header">
+            <span class="finding-category">Port Scan</span>
+            <span class="finding-badge" style="background:#d97706">MEDIUM</span>
+          </div>
+          <p class="finding-desc">Detected scanning activity targeting the network, indicating potential reconnaissance efforts.</p>
+          <div class="finding-meta">
+            <div class="finding-meta-row">
+              <span class="meta-lbl">Evidence</span>
+              <span class="meta-val mono-sm">6 scan alerts with a maximum burst rate of 18.</span>
+            </div>
+            <div class="finding-meta-row">
+              <span class="meta-lbl">Recommendation</span>
+              <span class="meta-val">Implement network intrusion detection systems to monitor and alert on scanning activities.</span>
+            </div>
+          </div>
+        </div>
+        <div class="finding">
+          <div class="finding-header">
+            <span class="finding-category">Lateral Movement</span>
+            <span class="finding-badge" style="background:#f97316">HIGH</span>
+          </div>
+          <p class="finding-desc">Attempts to access lateral movement ports such as SMB (445) and RDP (3389) were detected, suggesting potential lateral movement within the network.</p>
+          <div class="finding-meta">
+            <div class="finding-meta-row">
+              <span class="meta-lbl">Evidence</span>
+              <span class="meta-val mono-sm">Denied connections on ports 445 and 3389, with internal host 192.168.1.200 involved.</span>
+            </div>
+            <div class="finding-meta-row">
+              <span class="meta-lbl">Recommendation</span>
+              <span class="meta-val">Restrict access to critical ports and monitor internal traffic for unauthorized access attempts.</span>
+            </div>
+          </div>
+        </div>
+        <div class="finding">
+          <div class="finding-header">
+            <span class="finding-category">Deny by ACL</span>
+            <span class="finding-badge" style="background:#d97706">MEDIUM</span>
+          </div>
+          <p class="finding-desc">Multiple denied connection attempts by external sources, indicating potential unauthorized access attempts.</p>
+          <div class="finding-meta">
+            <div class="finding-meta-row">
+              <span class="meta-lbl">Evidence</span>
+              <span class="meta-val mono-sm">25 denied connections by ACL, associated with MITRE TTP T1562.004.</span>
+            </div>
+            <div class="finding-meta-row">
+              <span class="meta-lbl">Recommendation</span>
+              <span class="meta-val">Review and tighten firewall rules to prevent unauthorized access.</span>
+            </div>
+          </div>
+        </div>
+
+<div class='section-label'>Key Indicators</div><div class='ioc-grid'><div><div class='ioc-title'>External Threat Actors</div><ul class='ioc-list red'><li>198.51.100.66 - Multiple denied attempts, potential reconnaissance.</li><li>5.2.69.42 - Multiple denied attempts, potential reconnaissance.</li></ul></div><div><div class='ioc-title'>Suspicious Internal Hosts</div><ul class='ioc-list orange'><li>192.168.1.200 - Involved in denied connections on lateral movement ports.</li></ul></div></div>
+
+<div class='section-label'>Ongoing Monitoring</div><ul class='monitoring-list'><li>Continuously monitor for scanning activities and unauthorized access attempts.</li><li>Regularly review firewall logs for denied connections and unusual patterns.</li><li>Implement strict access controls and network segmentation to limit lateral movement opportunities.</li></ul>
+
+
+
+<div class="section-label">Intelligence Summary</div>
+<div class="stats-grid">
+  <div>
+    <table>
+      <thead><tr><th>Severity Level</th><th class="num">Events</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span style="color:#dc2626;font-weight:700">%ASA-1</span> &nbsp; Emergency</td>
+          <td class="num">4</td>
+        </tr>
+        <tr>
+          <td><span style="color:#dc2626;font-weight:700">%ASA-2</span> &nbsp; Alert</td>
+          <td class="num">10</td>
+        </tr>
+        <tr>
+          <td><span style="color:#f97316;font-weight:700">%ASA-3</span> &nbsp; Critical</td>
+          <td class="num">45</td>
+        </tr>
+        <tr>
+          <td><span style="color:#d97706;font-weight:700">%ASA-4</span> &nbsp; Warning</td>
+          <td class="num">46</td>
+        </tr>
+        <tr>
+          <td><span style="color:#6b7280;font-weight:700">%ASA-6</span> &nbsp; Informational</td>
+          <td class="num">25</td>
+        </tr></tbody>
+    </table>
+  </div>
+  <div>
+    <table>
+      <thead><tr><th>Top Attacker IPs &nbsp;<span style="font-weight:normal;font-size:10px">(ASN enriched)</span></th><th class="num">Denied</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="mono red">198.51.100.66</td>
+          <td class="num">3</td>
+        </tr>
+        <tr>
+          <td class="mono red">5.2.69.42</td>
+          <td class="num">3</td>
+        </tr>
+        <tr>
+          <td class="mono red">45.142.212.100</td>
+          <td class="num">2</td>
+        </tr>
+        <tr>
+          <td class="mono red">222.186.21.97</td>
+          <td class="num">2</td>
+        </tr>
+        <tr>
+          <td class="mono red">31.184.238.230</td>
+          <td class="num">2</td>
+        </tr>
+        <tr>
+          <td class="mono red">45.33.32.156</td>
+          <td class="num">2</td>
+        </tr>
+        <tr>
+          <td class="mono red">222.186.60.210</td>
+          <td class="num">2</td>
+        </tr>
+        <tr>
+          <td class="mono red">185.220.100.240</td>
+          <td class="num">1</td>
+        </tr></tbody>
+    </table>
+  </div>
+  <div>
+    <table>
+      <thead><tr><th>Top Targeted Services &nbsp;<span style="font-weight:normal;font-size:10px">(Historical Vulnerability Context)</span></th><th class="num">Hits</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="num mono">445<div style='font-size:11px;font-family:Arial,sans-serif;color:#374151;margin-top:2px'>SMB &mdash; Ransomware propagation and lateral movement. EternalBlue vector.</div></td>
+          <td class="num">3</td>
+        </tr>
+        <tr>
+          <td class="num mono">3389<div style='font-size:11px;font-family:Arial,sans-serif;color:#374151;margin-top:2px'>RDP &mdash; Ransomware entry point and remote access. Multiple critical CVEs.</div><div style='font-size:10px;font-family:Arial,sans-serif;color:#767676;margin-top:2px'>Representative CVEs: <span style='color:#dc2626;font-weight:700'>CVE-2016-0019 (8.1)</span>, <span style='color:#dc2626;font-weight:700'>CVE-2019-1326 (7.5)</span>, <span style='color:#dc2626;font-weight:700'>CVE-2019-1453 (7.5)</span></div></td>
+          <td class="num">3</td>
+        </tr>
+        <tr>
+          <td class="num mono">1433<div style='font-size:11px;font-family:Arial,sans-serif;color:#374151;margin-top:2px'>SQL Server &mdash; Database access and data theft. Credential attacks.</div><div style='font-size:10px;font-family:Arial,sans-serif;color:#767676;margin-top:2px'>Representative CVEs: <span style='color:#dc2626;font-weight:700'>CVE-2002-1872 (7.5)</span>, <span style='color:#dc2626;font-weight:700'>CVE-2012-0158 (8.8)</span>, <span style='color:#dc2626;font-weight:700'>CVE-2012-1856 (8.8)</span></div></td>
+          <td class="num">2</td>
+        </tr>
+        <tr>
+          <td class="num mono">21<div style='font-size:11px;font-family:Arial,sans-serif;color:#374151;margin-top:2px'>FTP &mdash; Legacy credentials and misconfigurations. Often unencrypted.</div><div style='font-size:10px;font-family:Arial,sans-serif;color:#767676;margin-top:2px'>Representative CVEs: <span style='color:#dc2626;font-weight:700'>CVE-2018-8206 (7.5)</span></div></td>
+          <td class="num">2</td>
+        </tr>
+        <tr>
+          <td class="num mono">3306<div style='font-size:11px;font-family:Arial,sans-serif;color:#374151;margin-top:2px'>MySQL &mdash; Database credential attacks and data exposure.</div><div style='font-size:10px;font-family:Arial,sans-serif;color:#767676;margin-top:2px'>Representative CVEs: <span style='color:#dc2626;font-weight:700'>CVE-2002-0969 (7.8)</span>, <span style='color:#dc2626;font-weight:700'>CVE-2016-3461 (7.2)</span>, <span style='color:#dc2626;font-weight:700'>CVE-2016-0635 (8.8)</span></div></td>
+          <td class="num">1</td>
+        </tr>
+        <tr>
+          <td class="num mono">4444</td>
+          <td class="num">1</td>
+        </tr>
+        <tr>
+          <td class="num mono">6666</td>
+          <td class="num">1</td>
+        </tr>
+        <tr>
+          <td class="num mono">23<div style='font-size:11px;font-family:Arial,sans-serif;color:#374151;margin-top:2px'>Telnet &mdash; Plaintext protocol. Credential theft and session hijack.</div><div style='font-size:10px;font-family:Arial,sans-serif;color:#767676;margin-top:2px'>Representative CVEs: <span style='color:#dc2626;font-weight:700'>CVE-2002-0628 (7.5)</span>, <span style='color:#dc2626;font-weight:700'>CVE-2016-4802 (7.8)</span>, <span style='color:#dc2626;font-weight:700'>CVE-2017-5495 (7.5)</span></div></td>
+          <td class="num">1</td>
+        </tr>
+        <tr>
+          <td class="num mono">69</td>
+          <td class="num">1</td>
+        </tr>
+        <tr>
+          <td class="num mono">8080<div style='font-size:11px;font-family:Arial,sans-serif;color:#374151;margin-top:2px'>HTTP Alt &mdash; Web proxy and application attacks.</div><div style='font-size:10px;font-family:Arial,sans-serif;color:#767676;margin-top:2px'>Representative CVEs: <span style='color:#dc2626;font-weight:700'>CVE-2008-3688 (7.5)</span>, <span style='color:#dc2626;font-weight:700'>CVE-2016-1296 (7.5)</span>, <span style='color:#dc2626;font-weight:700'>CVE-2016-5385 (8.1)</span></div></td>
+          <td class="num">1</td>
+        </tr></tbody>
+    </table>
+  </div>
+</div>
+<div class="stats-grid">
+  <div>
+    <table>
+      <thead><tr><th>Message ID</th><th>Description</th><th class="num">Count</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="mono">710003</td>
+          <td style="color:#767676;font-size:11px"></td>
+          <td class="num">41</td>
+        </tr>
+        <tr>
+          <td class="mono">106023</td>
+          <td style="color:#767676;font-size:11px">Deny by ACL</td>
+          <td class="num">25</td>
+        </tr>
+        <tr>
+          <td class="mono">302013</td>
+          <td style="color:#767676;font-size:11px">TCP connection built</td>
+          <td class="num">10</td>
+        </tr>
+        <tr>
+          <td class="mono">302014</td>
+          <td style="color:#767676;font-size:11px">TCP connection teardown</td>
+          <td class="num">10</td>
+        </tr>
+        <tr>
+          <td class="mono">400010</td>
+          <td style="color:#767676;font-size:11px"></td>
+          <td class="num">8</td>
+        </tr>
+        <tr>
+          <td class="mono">733100</td>
+          <td style="color:#767676;font-size:11px">Scanning rate exceeded</td>
+          <td class="num">6</td>
+        </tr>
+        <tr>
+          <td class="mono">106001</td>
+          <td style="color:#767676;font-size:11px">Inbound TCP denied</td>
+          <td class="num">5</td>
+        </tr>
+        <tr>
+          <td class="mono">106006</td>
+          <td style="color:#767676;font-size:11px"></td>
+          <td class="num">3</td>
+        </tr>
+        <tr>
+          <td class="mono">313001</td>
+          <td style="color:#767676;font-size:11px"></td>
+          <td class="num">3</td>
+        </tr>
+        <tr>
+          <td class="mono">400014</td>
+          <td style="color:#767676;font-size:11px"></td>
+          <td class="num">3</td>
+        </tr></tbody>
+    </table>
+  </div>
+  <div>
+    <table>
+      <thead><tr><th>Targeted Destinations</th><th class="num">Hits</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="mono">10.1.1.1</td>
+          <td class="num">6</td>
+        </tr>
+        <tr>
+          <td class="mono">10.1.1.5</td>
+          <td class="num">3</td>
+        </tr>
+        <tr>
+          <td class="mono">10.1.1.40</td>
+          <td class="num">2</td>
+        </tr>
+        <tr>
+          <td class="mono">10.1.1.100</td>
+          <td class="num">2</td>
+        </tr>
+        <tr>
+          <td class="mono">10.1.1.6</td>
+          <td class="num">1</td>
+        </tr></tbody>
+    </table>
+  </div>
+  <div>
+    <table>
+      <thead><tr><th>Attack Indicators</th><th class="num">Count</th></tr></thead>
+      <tbody>
+        <tr><td>Scanning alerts</td><td class="num">6</td></tr>
+        <tr><td>Max burst rate</td><td class="num">18/sec</td></tr>
+        <tr><td>Auth failures</td><td class="num">0</td></tr>
+        <tr><td>Land attacks</td><td class="num">0</td></tr>
+        <tr><td>Spoof attacks</td><td class="num">0</td></tr>
+        <tr><td>Exfil evidence (≥100MB)</td><td class="num">0</td></tr>
+        <tr><td>Lateral scanners</td><td class="num">1</td></tr>
+        <tr><td>VPN failures</td><td class="num">0</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="footer">
+  <p style="margin-bottom:5px">Analysis generated by OpenAI gpt-4o via Thor Security.
+  Pre-processing performed locally — all 130 events analyzed.
+  Log file: <span class="mono">asa_test.log</span>.</p>
+  <p style="margin-bottom:5px">This assessment is AI-generated and intended to assist —
+  not replace — professional security analysis. Findings should be verified by a
+  qualified security analyst before action is taken.</p>
+  <p>Assembled by Randy Hinton &nbsp;&middot;&nbsp; Thor Security
+  &nbsp;&middot;&nbsp; For informational purposes only</p>
+</div>
+
+</body>
+</html>
