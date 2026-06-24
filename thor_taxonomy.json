@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-24T15:45:16Z",
+  "generated": "2026-06-24T16:02:38Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -88,6 +88,10 @@
         "Iran natural gas production levels, export volumes, sanction status, geopolitical risk indicators, price correlation with energy markets"
       ],
       "intent_phrases": [
+        {
+          "keyword": "wti",
+          "weight": 5
+        },
         {
           "keyword": "Iran",
           "weight": 5
