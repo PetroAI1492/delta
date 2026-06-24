@@ -1,0 +1,72 @@
+{
+  "generated_at": "2026-06-23 20:21",
+  "meta": {
+    "title": "Daily CVE Vulnerability Digest",
+    "date": "Wednesday, June 24, 2026",
+    "source": "National Vulnerability Database (NVD/NIST)",
+    "source_url": "https://nvd.nist.gov",
+    "api_endpoint": "https://services.nvd.nist.gov/rest/json/cves/2.0",
+    "generated_at": "2026-06-24T00:21:58.313739+00:00",
+    "total_cves": 3
+  },
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 0,
+    "unscored": 2,
+    "avg_cvss": 8.7
+  },
+  "vulnerabilities": [
+    {
+      "id": "CVE-2026-7574",
+      "published": "2026-06-24T00:16:34.173",
+      "last_modified": "2026-06-24T00:16:34.173",
+      "severity": "HIGH",
+      "cvss_score": 8.7,
+      "cvss_version": "3.1",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:L",
+      "description": "Anthropic Claude Desktop Cowork VM image handling (confirmed across v1.1348.0 through v1.2278.0, including v1.1348.0, v1.1617.0, and v1.2278.0) validates only file presence and a version marker string before booting rootfs.img, but does not verify image content integrity at time-of-use. A local attacker with unprivileged code execution as the victim macOS user can modify the VM root filesystem image and have it trusted on subsequent Cowork VM boots, enabling persistent arbitrary code execution in the VM and access to host-mounted directories. The estimated CWE mapping is CWE-353 (Missing Support for Integrity Check).",
+      "affected_products": [],
+      "references": [
+        "https://cfp.recon.cx/recon-2026/talk/DZUQYU/",
+        "https://takeonme.org/gcves/GCVE-1337-2026-00000000000000000000000000000000000000000000000001110111111101011111111110000000000000000000000000000000000000000000000000000001010"
+      ],
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7574"
+    },
+    {
+      "id": "CVE-2026-6458",
+      "published": "2026-06-24T00:16:34.037",
+      "last_modified": "2026-06-24T00:16:34.037",
+      "severity": "NONE",
+      "cvss_score": null,
+      "cvss_version": null,
+      "cvss_vector": null,
+      "description": "Missing cryptographic step in Caliptra Core Firmware (aes_256_gcm_update module) results in an incorrect GCM authentication tag. When the streaming AES-256-GCM API is used with empty AAD, the hardware GHASH accumulator state is not saved after the first update call, causing the final tag to exclude the first batch of processed ciphertext. Ciphertext produced by that call may be modified without the tag reflecting the change.\n\nThis issue affects Core Runtime Firmware: from 2.0.0 through 2.0.1, 2.1.0.",
+      "affected_products": [
+        "from 2.0.0"
+      ],
+      "references": [
+        "https://github.com/chipsalliance/caliptra-sw/security/advisories/GHSA-834g-h5x6-2hqr"
+      ],
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-6458"
+    },
+    {
+      "id": "CVE-2026-5818",
+      "published": "2026-06-24T00:16:33.830",
+      "last_modified": "2026-06-24T00:16:33.830",
+      "severity": "NONE",
+      "cvss_score": null,
+      "cvss_version": null,
+      "cvss_vector": null,
+      "description": "Incorrect check of function return value in Caliptra Core Runtime Firmware (ActivateFirmwareCmd::activate_fw modules) allows bypass of Caliptra Core's verification of the MCU FW during a hitless update.\n\nThis issue affects Core Runtime Firmware: from 2.0.0 through 2.0.1, 2.1.0.",
+      "affected_products": [
+        "from 2.0.0"
+      ],
+      "references": [
+        "https://github.com/chipsalliance/caliptra-sw/security/advisories/GHSA-456r-gcjr-6rxq"
+      ],
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-5818"
+    }
+  ]
+}
