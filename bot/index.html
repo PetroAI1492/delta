@@ -145,7 +145,7 @@
 </div>
 <footer>
   THOR SIGNAL &nbsp;·&nbsp; Taxonomy-driven routing &nbsp;·&nbsp;
-  Generated: 2026-06-24 16:21 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+  Generated: 2026-06-24 17:21 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 <script>
 const REPORTS = [
@@ -2283,7 +2283,7 @@ function renderSidebar() {
   for (const domain of DOMAIN_ORDER) {
     const reps = groups[domain];
     if (!reps.length) continue;
-    html += `<div class="sidebar-domain">
+    html += `<div class="sidebar-domain collapsed">
       <button class="sidebar-domain-header" onclick="toggleDomain(this)">
         <span class="label">${domain} <span class="count">(${reps.length})</span></span>
         <span class="chevron">▾</span>
