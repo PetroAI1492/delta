@@ -1,89 +1,121 @@
 {
-  "generated_at": "2026-06-24 14:45",
+  "generated_at": "2026-06-24 14:53",
   "title": "Ransomware Activity Report",
   "source": "ransomware.live API v2",
-  "recent_victims": 48,
-  "monthly_victims": 521,
+  "recent_victims": 50,
+  "monthly_victims": 588,
   "groups_tracked": 350,
-  "top_group": "Unknown",
+  "top_group": "thegentlemen",
   "top_country": "United States",
-  "top_sector": "Not Found",
+  "top_sector": "Business Services",
   "top_groups_monthly": [
     [
-      "Unknown",
-      521
+      "thegentlemen",
+      75
+    ],
+    [
+      "qilin",
+      64
+    ],
+    [
+      "lockbit5",
+      59
+    ],
+    [
+      "akira",
+      27
+    ],
+    [
+      "nova",
+      26
+    ],
+    [
+      "incransom",
+      24
+    ],
+    [
+      "dragonforce",
+      22
+    ],
+    [
+      "nightspire",
+      21
+    ],
+    [
+      "safepay",
+      20
+    ],
+    [
+      "shinyhunters",
+      19
     ]
   ],
   "top_sectors": [
     [
-      "Not Found",
-      102
-    ],
-    [
       "Business Services",
-      81
+      97
     ],
     [
       "Manufacturing",
-      61
+      69
     ],
     [
       "Technology",
-      47
+      49
     ],
     [
       "Consumer Services",
-      39
+      42
     ],
     [
       "Healthcare",
-      36
+      40
     ],
     [
       "Agriculture and Food Production",
-      26
+      29
+    ],
+    [
+      "Transportation/Logistics",
+      22
+    ],
+    [
+      "Financial Services",
+      22
+    ],
+    [
+      "Public Sector",
+      22
     ],
     [
       "Construction",
       22
-    ],
-    [
-      "Transportation/Logistics",
-      19
-    ],
-    [
-      "Financial Services",
-      18
     ]
   ],
   "top_countries": [
     [
       "United States",
-      136
-    ],
-    [
-      "",
-      78
+      154
     ],
     [
       "Germany",
-      34
-    ],
-    [
-      "Canada",
-      17
+      39
     ],
     [
       "Brazil",
-      16
+      21
+    ],
+    [
+      "Canada",
+      18
     ],
     [
       "United Kingdom",
-      13
+      15
     ],
     [
       "India",
-      12
+      15
     ],
     [
       "Thailand",
@@ -91,11 +123,15 @@
     ],
     [
       "France",
+      12
+    ],
+    [
+      "Mexico",
       11
     ],
     [
-      "Australia",
-      10
+      "Italy",
+      11
     ]
   ]
 }
