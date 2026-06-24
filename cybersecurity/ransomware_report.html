@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ransomware Activity Report</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, serif; background: #fff; color: #1a1a1a; line-height: 1.6; }
+  .masthead { border-top: 4px solid #c0392b; border-bottom: 1px solid #ddd;
+               padding: 1rem 2rem; display: flex; justify-content: space-between;
+               align-items: baseline; }
+  .masthead-title { font-size: 1.1rem; font-weight: bold; letter-spacing: .02em; }
+  .masthead-date  { font-size: .8rem; color: #666; font-family: Arial, sans-serif; }
+  .report-header  { padding: 1.5rem 2rem .5rem; border-bottom: 1px solid #ddd; }
+  .report-header h1 { font-size: 1.6rem; font-weight: bold; }
+  .report-header .subtitle { font-size: .85rem; color: #666; font-family: Arial, sans-serif; margin-top:.3rem; }
+  .kpi-bar { display: flex; gap: 1.5rem; padding: 1rem 2rem;
+              border-bottom: 2px solid #c0392b; background: #fafafa; flex-wrap: wrap; }
+  .kpi { text-align: center; min-width: 100px; }
+  .kpi-value { font-size: 2rem; font-weight: bold; color: #c0392b; }
+  .kpi-label { font-size: .72rem; color: #666; font-family: Arial, sans-serif;
+                text-transform: uppercase; letter-spacing: .05em; }
+  .content { padding: 1.5rem 2rem; max-width: 1100px; }
+  .section-header { font-size: 1rem; font-weight: bold; text-transform: uppercase;
+                     letter-spacing: .08em; border-bottom: 1px solid #ddd;
+                     padding-bottom: .4rem; margin: 1.5rem 0 .8rem; color: #c0392b; }
+  .ai-summary { background: #fff8f8; border-left: 3px solid #c0392b;
+                 padding: 1rem 1.2rem; margin-bottom: 1rem; }
+  .ai-summary p { margin-bottom: .6rem; font-size: .92rem; line-height: 1.7; }
+  .ai-summary p:last-child { margin-bottom: 0; }
+  table { width: 100%; border-collapse: collapse; font-size: .85rem;
+           font-family: Arial, sans-serif; margin-bottom: 1.5rem; }
+  th { background: #f5f5f5; text-align: left; padding: .4rem .6rem;
+        font-size: .75rem; text-transform: uppercase; letter-spacing: .05em;
+        border-bottom: 2px solid #ddd; }
+  td { padding: .35rem .6rem; border-bottom: 1px solid #eee; vertical-align: middle; }
+  tr:hover { background: #fafafa; }
+  .group-tag { background: #c0392b; color: #fff; padding: .15rem .5rem;
+                border-radius: 3px; font-size: .75rem; white-space: nowrap; }
+  .bar { background: #c0392b; height: 10px; border-radius: 2px; min-width: 2px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  footer { border-top: 1px solid #ddd; padding: .8rem 2rem;
+            font-size: .75rem; color: #888; font-family: Arial, sans-serif;
+            margin-top: 2rem; display: flex; justify-content: space-between; }
+  @media(max-width:700px) { .two-col { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <span class="masthead-title">Thor Security &nbsp;·&nbsp; Ransomware Activity Report</span>
+  <span class="masthead-date">June 24, 2026  18:45 UTC</span>
+</div>
+
+<div class="report-header">
+  <h1>Ransomware Activity Report</h1>
+  <div class="subtitle">Source: ransomware.live &nbsp;·&nbsp; Data: Data Leak Site (DLS) monitoring &nbsp;·&nbsp; Generated: 2026-06-24 14:45</div>
+</div>
+
+<div class="kpi-bar">
+  <div class="kpi">
+    <div class="kpi-value">48</div>
+    <div class="kpi-label">Victims (48h)</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-value">521</div>
+    <div class="kpi-label">Victims (This Month)</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-value">1</div>
+    <div class="kpi-label">Active Groups (48h)</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-value">350</div>
+    <div class="kpi-label">Groups Tracked</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-value">United States</div>
+    <div class="kpi-label">Top Target Country</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-value">Unknown</div>
+    <div class="kpi-label">Most Active Group</div>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class='section-header'>Threat Brief</div><div class="ai-summary"><p>The current ransomware threat level is assessed as high, with a significant surge in activity observed over the past 48 hours, during which 48 new victims have been identified. This brings the total number of ransomware incidents this month to 521. The data indicates a persistent and widespread threat, with a large number of attacks being attributed to unidentified groups. This suggests either a rise in new threat actors or existing groups operating under new aliases. The lack of attribution complicates defensive measures and highlights the dynamic nature of the ransomware landscape.</p><p>The most active ransomware groups remain unidentified, accounting for all 48 incidents in the last 48 hours and all 521 incidents this month. This trend underscores the challenges in tracking and attributing ransomware attacks, as threat actors increasingly employ sophisticated methods to conceal their identities. The United States remains the most targeted country, with 136 incidents, followed by Germany, Canada, and Brazil. The data also reveals a broad targeting of sectors, with Business Services, Manufacturing, and Technology being the most affected. The prevalence of attacks on these sectors suggests that threat actors are focusing on industries with potentially high-value data and critical operations.</p><p>To mitigate the risk posed by these ransomware threats, organizations should prioritize enhancing their cybersecurity posture. Key recommendations include implementing robust backup and recovery processes to minimize data loss and downtime in the event of an attack. Regularly updating and patching systems can help close vulnerabilities that ransomware exploits. Additionally, organizations should invest in threat intelligence services to stay informed about emerging threats and tactics. Employee training programs are also crucial, as they can reduce the likelihood of successful phishing attacks, which are a common vector for ransomware deployment. Finally, developing and rehearsing incident response plans can ensure a swift and coordinated response to any ransomware incidents, minimizing potential damage.</p></div>
+
+  <div class="section-header">Recent Victims — Last 48 Hours</div>
+  <table>
+    <thead><tr><th>Organization</th><th>Group</th><th>Country</th><th>Sector</th><th>Date</th></tr></thead>
+    <tbody>
+        <tr>
+          <td>Unknown</td>
+          <td><span class="group-tag">Unknown</span></td>
+          <td></td>
+          <td>Not Found</td>
+          <td>2026-06-24</td>
+        </tr>
+        <tr>
+          <td>Unknown</td>
+          <td><span class="group-tag">Unknown</span></td>
+          <td></td>
+          <td>Not Found</td>
+          <td>2026-06-24</td>
+        </tr>
+        <tr>
+          <td>Unknown</td>
+          <td><span class="group-tag">Unknown</span></td>
+          <td></td>
+          <td>Transportation/Logistics</td>
+          <td>2026-06-24</td>
+        </tr>
+        <tr>
+          <td>Unknown</td>
+          <td><span class="group-tag">Unknown</span></td>
+          <td></td>
+          <td>Not Found</td>
+          <td>2026-06-24</td>
+        </tr>
+        <tr>
+          <td>Unknown</td>
+          <td><span class="group-tag">Unknown</span></td>
+          <td>PE</td>
+          <td>Transportation/Logistics</td>
+          <td>2026-06-24</td>
+        </tr>
+        <tr>
+          <td>Unknown</td>
+          <td><span class="group-tag">Unknown</span></td>
+          <td>United States</td>
+          <td>Manufacturing</td>
+          <td>2026-06-24</td>
+        </tr>
+        <tr>
+          <td>Unknown</td>
+          <td><span class="group-tag">Unknown</span></td>
+          <td>Argentina</td>
+          <td>Not Found</td>
+          <td>2026-06-24</td>
+        </tr>
+        <tr>
+          <td>Unknown</td>
+          <td><span class="group-tag">Unknown</span></td>
+          <td>Canada</td>
+          <td>Financial Services</td>
+          <td>2026-06-24</td>
+        </tr>
+        <tr>
+          <td>Unknown</td>
+          <td><span class="group-tag">Unknown</span></td>
+          <td>Portugal</td>
+          <td>Business Services</td>
+          <td>2026-06-24</td>
+        </tr>
+        <tr>
+          <td>Unknown</td>
+          <td><span class="group-tag">Unknown</span></td>
+          <td>United States</td>
+          <td>Technology</td>
+          <td>2026-06-23</td>
+        </tr>
+        <tr>
+          <td>Unknown</td>
+          <td><span class="group-tag">Unknown</span></td>
+          <td>Brazil</td>
+          <td>Technology</td>
+          <td>2026-06-23</td>
+        </tr>
+        <tr>
+          <td>Unknown</td>
+          <td><span class="group-tag">Unknown</span></td>
+          <td>South Korea</td>
+          <td>Not Found</td>
+          <td>2026-06-23</td>
+        </tr>
+        <tr>
+          <td>Unknown</td>
+          <td><span class="group-tag">Unknown</span></td>
+          <td>MM</td>
+          <td>Financial Services</td>
+          <td>2026-06-23</td>
+        </tr>
+        <tr>
+          <td>Unknown</td>
+          <td><span class="group-tag">Unknown</span></td>
+          <td>United Kingdom</td>
+          <td>Agriculture and Food Production</td>
+          <td>2026-06-23</td>
+        </tr>
+        <tr>
+          <td>Unknown</td>
+          <td><span class="group-tag">Unknown</span></td>
+          <td></td>
+          <td>Technology</td>
+          <td>2026-06-23</td>
+        </tr>
+        <tr>
+          <td>Unknown</td>
+          <td><span class="group-tag">Unknown</span></td>
+          <td>Australia</td>
+          <td>Not Found</td>
+          <td>2026-06-23</td>
+        </tr>
+        <tr>
+          <td>Unknown</td>
+          <td><span class="group-tag">Unknown</span></td>
+          <td>Indonesia</td>
+          <td>Consumer Services</td>
+          <td>2026-06-23</td>
+        </tr>
+        <tr>
+          <td>Unknown</td>
+          <td><span class="group-tag">Unknown</span></td>
+          <td>Brazil</td>
+          <td>Public Sector</td>
+          <td>2026-06-23</td>
+        </tr>
+        <tr>
+          <td>Unknown</td>
+          <td><span class="group-tag">Unknown</span></td>
+          <td></td>
+          <td>Not Found</td>
+          <td>2026-06-23</td>
+        </tr>
+        <tr>
+          <td>Unknown</td>
+          <td><span class="group-tag">Unknown</span></td>
+          <td></td>
+          <td>Manufacturing</td>
+          <td>2026-06-23</td>
+        </tr></tbody>
+  </table>
+
+  <div class="two-col">
+    <div>
+      <div class="section-header">Most Active Groups — This Month</div>
+      <table>
+        <thead><tr><th>Group</th><th>Victims</th><th>Activity</th><th>Share</th></tr></thead>
+        <tbody>
+        <tr>
+          <td><strong>Unknown</strong></td>
+          <td>521</td>
+          <td><div class="bar" style="width:200px"></div></td>
+          <td>100.0%</td>
+        </tr></tbody>
+      </table>
+    </div>
+    <div>
+      <div class="section-header">Top Targeted Countries — This Month</div>
+      <table>
+        <thead><tr><th>Country</th><th>Victims</th><th>Activity</th></tr></thead>
+        <tbody>
+        <tr>
+          <td>United States</td>
+          <td>136</td>
+          <td><div class="bar" style="width:78px"></div></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>78</td>
+          <td><div class="bar" style="width:45px"></div></td>
+        </tr>
+        <tr>
+          <td>Germany</td>
+          <td>34</td>
+          <td><div class="bar" style="width:19px"></div></td>
+        </tr>
+        <tr>
+          <td>Canada</td>
+          <td>17</td>
+          <td><div class="bar" style="width:9px"></div></td>
+        </tr>
+        <tr>
+          <td>Brazil</td>
+          <td>16</td>
+          <td><div class="bar" style="width:9px"></div></td>
+        </tr>
+        <tr>
+          <td>United Kingdom</td>
+          <td>13</td>
+          <td><div class="bar" style="width:7px"></div></td>
+        </tr>
+        <tr>
+          <td>India</td>
+          <td>12</td>
+          <td><div class="bar" style="width:6px"></div></td>
+        </tr>
+        <tr>
+          <td>Thailand</td>
+          <td>12</td>
+          <td><div class="bar" style="width:6px"></div></td>
+        </tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section-header">Top Targeted Sectors — This Month</div>
+  <table>
+    <thead><tr><th>Sector</th><th>Victims</th><th>Activity</th></tr></thead>
+    <tbody>
+        <tr>
+          <td>Not Found</td>
+          <td>102</td>
+          <td><div class="bar" style="width:78px"></div></td>
+        </tr>
+        <tr>
+          <td>Business Services</td>
+          <td>81</td>
+          <td><div class="bar" style="width:62px"></div></td>
+        </tr>
+        <tr>
+          <td>Manufacturing</td>
+          <td>61</td>
+          <td><div class="bar" style="width:46px"></div></td>
+        </tr>
+        <tr>
+          <td>Technology</td>
+          <td>47</td>
+          <td><div class="bar" style="width:36px"></div></td>
+        </tr>
+        <tr>
+          <td>Consumer Services</td>
+          <td>39</td>
+          <td><div class="bar" style="width:30px"></div></td>
+        </tr>
+        <tr>
+          <td>Healthcare</td>
+          <td>36</td>
+          <td><div class="bar" style="width:27px"></div></td>
+        </tr>
+        <tr>
+          <td>Agriculture and Food Production</td>
+          <td>26</td>
+          <td><div class="bar" style="width:20px"></div></td>
+        </tr>
+        <tr>
+          <td>Construction</td>
+          <td>22</td>
+          <td><div class="bar" style="width:16px"></div></td>
+        </tr></tbody>
+  </table>
+
+</div>
+
+<footer>
+  <span>Data: ransomware.live (DLS monitoring) &nbsp;·&nbsp; For informational purposes only</span>
+  <span>Assembled by Randy Hinton &nbsp;·&nbsp; Thor Security &nbsp;·&nbsp; © 2026</span>
+</footer>
+</body>
+</html>

@@ -1,0 +1,101 @@
+{
+  "generated_at": "2026-06-24 14:45",
+  "title": "Ransomware Activity Report",
+  "source": "ransomware.live API v2",
+  "recent_victims": 48,
+  "monthly_victims": 521,
+  "groups_tracked": 350,
+  "top_group": "Unknown",
+  "top_country": "United States",
+  "top_sector": "Not Found",
+  "top_groups_monthly": [
+    [
+      "Unknown",
+      521
+    ]
+  ],
+  "top_sectors": [
+    [
+      "Not Found",
+      102
+    ],
+    [
+      "Business Services",
+      81
+    ],
+    [
+      "Manufacturing",
+      61
+    ],
+    [
+      "Technology",
+      47
+    ],
+    [
+      "Consumer Services",
+      39
+    ],
+    [
+      "Healthcare",
+      36
+    ],
+    [
+      "Agriculture and Food Production",
+      26
+    ],
+    [
+      "Construction",
+      22
+    ],
+    [
+      "Transportation/Logistics",
+      19
+    ],
+    [
+      "Financial Services",
+      18
+    ]
+  ],
+  "top_countries": [
+    [
+      "United States",
+      136
+    ],
+    [
+      "",
+      78
+    ],
+    [
+      "Germany",
+      34
+    ],
+    [
+      "Canada",
+      17
+    ],
+    [
+      "Brazil",
+      16
+    ],
+    [
+      "United Kingdom",
+      13
+    ],
+    [
+      "India",
+      12
+    ],
+    [
+      "Thailand",
+      12
+    ],
+    [
+      "France",
+      11
+    ],
+    [
+      "Australia",
+      10
+    ]
+  ]
+}
