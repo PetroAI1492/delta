@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-24T12:46:05Z",
+  "generated": "2026-06-24T15:43:59Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -53,7 +53,8 @@
         "live energy"
       ],
       "id": "energy_tripwire",
-      "path": "https://petroai1492.github.io/delta/index.html"
+      "path": "https://petroai1492.github.io/delta/index.html",
+      "last_generated": null
     },
     {
       "title": "Iran Gas Report",
@@ -7908,7 +7909,8 @@
         "lung screening trial"
       ],
       "id": "nlst_lung_ct_patient_report",
-      "path": "https://petroai1492.github.io/delta/medical/nlst_patient_report.html"
+      "path": "https://petroai1492.github.io/delta/medical/nlst_patient_report.html",
+      "last_generated": null
     },
     {
       "title": "CT Colonography Analysis Report",
