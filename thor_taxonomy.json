@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-24T00:03:29Z",
+  "generated": "2026-06-24T00:24:53Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -10153,19 +10153,19 @@
           "weight": 10
         },
         {
+          "keyword": "daraxonrasib",
+          "weight": 9
+        },
+        {
           "keyword": "il1rap therapy",
           "weight": 9
         },
         {
-          "keyword": "clinical trial",
+          "keyword": "cancer treatment",
           "weight": 9
         },
         {
-          "keyword": "daraxonrasib",
-          "weight": 8
-        },
-        {
-          "keyword": "spevatamig",
+          "keyword": "clinical trial",
           "weight": 8
         },
         {
@@ -10173,39 +10173,55 @@
           "weight": 8
         },
         {
-          "keyword": "revolution medicines",
-          "weight": 8
+          "keyword": "chemotherapy",
+          "weight": 7
+        },
+        {
+          "keyword": "drug trial",
+          "weight": 7
+        },
+        {
+          "keyword": "survival rate",
+          "weight": 7
+        },
+        {
+          "keyword": "cancer risk",
+          "weight": 7
+        },
+        {
+          "keyword": "phanes therapeutics",
+          "weight": 6
         },
         {
           "keyword": "eileen o\u2019reilly",
-          "weight": 7
+          "weight": 6
         },
         {
           "keyword": "car-t therapy",
-          "weight": 7
-        },
-        {
-          "keyword": "phase 2 trial",
-          "weight": 7
-        },
-        {
-          "keyword": "phase 3 trial",
-          "weight": 7
+          "weight": 6
         },
         {
           "keyword": "drug access",
           "weight": 6
         },
         {
-          "keyword": "treatment market",
+          "keyword": "alcohol risk",
           "weight": 6
         },
         {
-          "keyword": "survival rate",
+          "keyword": "oncology",
           "weight": 6
         },
         {
-          "keyword": "experimental drug",
+          "keyword": "treatment advancements",
+          "weight": 6
+        },
+        {
+          "keyword": "drug development",
+          "weight": 6
+        },
+        {
+          "keyword": "oncology drugs",
           "weight": 6
         },
         {
@@ -10257,6 +10273,10 @@
           "weight": 5
         },
         {
+          "keyword": "spevatamig",
+          "weight": 5
+        },
+        {
           "keyword": "pancreatic cancer ASCO",
           "weight": 5
         },
@@ -10277,7 +10297,7 @@
           "weight": 5
         },
         {
-          "keyword": "chattanooga",
+          "keyword": "revolution medicines",
           "weight": 5
         },
         {
@@ -10285,11 +10305,7 @@
           "weight": 5
         },
         {
-          "keyword": "israel",
-          "weight": 5
-        },
-        {
-          "keyword": "alcohol risk",
+          "keyword": "treatment market",
           "weight": 5
         },
         {
@@ -10297,27 +10313,63 @@
           "weight": 5
         },
         {
-          "keyword": "signal report",
+          "keyword": "clinical research",
           "weight": 5
         },
         {
-          "keyword": "noise count",
+          "keyword": "drug enrollment",
+          "weight": 5
+        },
+        {
+          "keyword": "treatment options",
+          "weight": 5
+        },
+        {
+          "keyword": "clinical outcomes",
+          "weight": 5
+        },
+        {
+          "keyword": "research study",
+          "weight": 5
+        },
+        {
+          "keyword": "patient access",
+          "weight": 5
+        },
+        {
+          "keyword": "treatment efficacy",
+          "weight": 5
+        },
+        {
+          "keyword": "clinical efficacy",
+          "weight": 5
+        },
+        {
+          "keyword": "patient outcomes",
+          "weight": 5
+        },
+        {
+          "keyword": "therapeutic strategies",
+          "weight": 5
+        },
+        {
+          "keyword": "treatment access",
+          "weight": 5
+        },
+        {
+          "keyword": "oncology research",
+          "weight": 5
+        },
+        {
+          "keyword": "israel",
           "weight": 4
         },
         {
-          "keyword": "signal count",
+          "keyword": "signal report",
           "weight": 4
         },
         {
           "keyword": "health report",
-          "weight": 4
-        },
-        {
-          "keyword": "treatment options",
-          "weight": 4
-        },
-        {
-          "keyword": "drug trial",
           "weight": 4
         },
         {
@@ -10326,26 +10378,90 @@
         },
         {
           "keyword": "biomedical research",
-          "weight": 3
+          "weight": 4
         },
         {
-          "keyword": "oncology",
-          "weight": 3
+          "keyword": "healthcare",
+          "weight": 4
         },
         {
-          "keyword": "cancer research",
-          "weight": 3
+          "keyword": "biotechnology",
+          "weight": 4
         },
         {
-          "keyword": "biotech",
-          "weight": 3
-        },
-        {
-          "keyword": "clinical research",
-          "weight": 3
+          "keyword": "drug approval",
+          "weight": 4
         },
         {
           "keyword": "treatment guidelines",
+          "weight": 4
+        },
+        {
+          "keyword": "pharmaceuticals",
+          "weight": 4
+        },
+        {
+          "keyword": "treatment landscape",
+          "weight": 4
+        },
+        {
+          "keyword": "biomarkers",
+          "weight": 4
+        },
+        {
+          "keyword": "medical research",
+          "weight": 4
+        },
+        {
+          "keyword": "future therapies",
+          "weight": 4
+        },
+        {
+          "keyword": "health outcomes",
+          "weight": 4
+        },
+        {
+          "keyword": "drug resistance",
+          "weight": 4
+        },
+        {
+          "keyword": "treatment protocols",
+          "weight": 4
+        },
+        {
+          "keyword": "clinical practice",
+          "weight": 4
+        },
+        {
+          "keyword": "patient care",
+          "weight": 4
+        },
+        {
+          "keyword": "medical advancements",
+          "weight": 4
+        },
+        {
+          "keyword": "treatment research",
+          "weight": 4
+        },
+        {
+          "keyword": "signal count",
+          "weight": 3
+        },
+        {
+          "keyword": "noise count",
+          "weight": 3
+        },
+        {
+          "keyword": "healthcare policy",
+          "weight": 3
+        },
+        {
+          "keyword": "research funding",
+          "weight": 3
+        },
+        {
+          "keyword": "clinical trials registry",
           "weight": 3
         },
         {
@@ -10353,161 +10469,105 @@
           "weight": 3
         },
         {
-          "keyword": "treatment access",
+          "keyword": "cancer awareness",
           "weight": 3
         },
         {
-          "keyword": "drug development",
+          "keyword": "treatment disparities",
           "weight": 3
-        },
-        {
-          "keyword": "healthcare",
-          "weight": 3
-        },
-        {
-          "keyword": "medical news",
-          "weight": 3
-        },
-        {
-          "keyword": "research funding",
-          "weight": 2
-        },
-        {
-          "keyword": "pharmaceuticals",
-          "weight": 2
-        },
-        {
-          "keyword": "cancer therapy",
-          "weight": 2
-        },
-        {
-          "keyword": "survivorship",
-          "weight": 2
-        },
-        {
-          "keyword": "treatment efficacy",
-          "weight": 2
-        },
-        {
-          "keyword": "patient outcomes",
-          "weight": 2
-        },
-        {
-          "keyword": "treatment landscape",
-          "weight": 2
-        },
-        {
-          "keyword": "healthcare policy",
-          "weight": 2
-        },
-        {
-          "keyword": "clinical outcomes",
-          "weight": 2
-        },
-        {
-          "keyword": "biomarkers",
-          "weight": 2
-        },
-        {
-          "keyword": "patient care",
-          "weight": 2
         },
         {
           "keyword": "research collaboration",
-          "weight": 2
+          "weight": 3
         },
         {
-          "keyword": "health disparities",
-          "weight": 2
+          "keyword": "healthcare innovation",
+          "weight": 3
         },
         {
-          "keyword": "drug approval",
-          "weight": 2
+          "keyword": "drug safety",
+          "weight": 3
         },
         {
-          "keyword": "treatment protocols",
-          "weight": 2
-        },
-        {
-          "keyword": "medical trials",
-          "weight": 2
-        },
-        {
-          "keyword": "patient education",
-          "weight": 2
-        },
-        {
-          "keyword": "treatment research",
-          "weight": 2
-        },
-        {
-          "keyword": "health outcomes",
-          "weight": 2
-        },
-        {
-          "keyword": "oncology drugs",
-          "weight": 2
+          "keyword": "cancer statistics",
+          "weight": 3
         },
         {
           "keyword": "clinical data",
-          "weight": 2
+          "weight": 3
         },
         {
-          "keyword": "treatment strategies",
-          "weight": 2
+          "keyword": "cancer prevention",
+          "weight": 3
         },
         {
-          "keyword": "drug efficacy",
-          "weight": 2
+          "keyword": "patient education",
+          "weight": 3
         },
         {
-          "keyword": "research studies",
-          "weight": 2
+          "keyword": "healthcare outcomes",
+          "weight": 3
         },
         {
-          "keyword": "treatment advancements",
-          "weight": 2
-        },
-        {
-          "keyword": "health trends",
-          "weight": 2
-        },
-        {
-          "keyword": "patient safety",
-          "weight": 2
-        },
-        {
-          "keyword": "medical advancements",
-          "weight": 2
-        },
-        {
-          "keyword": "treatment challenges",
-          "weight": 2
-        },
-        {
-          "keyword": "health innovations",
-          "weight": 2
-        },
-        {
-          "keyword": "cancer awareness",
-          "weight": 2
-        },
-        {
-          "keyword": "treatment reviews",
-          "weight": 2
-        },
-        {
-          "keyword": "treatment research funding",
-          "weight": 2
-        },
-        {
-          "keyword": "healthcare research",
-          "weight": 2
+          "keyword": "treatment trends",
+          "weight": 3
         }
       ],
       "id": "pancreatic_cancer_signal_report",
       "path": "https://petroai1492.github.io/delta/medical/pancreatic_cancer_signal_report.html",
       "last_generated": "2026-06-23 20:01"
+    },
+    {
+      "title": "CVE Daily Digest",
+      "file": "cybersecurity/cve_digest.html",
+      "description": "Daily NVD/NIST CVE vulnerability digest \u2014 today's published CVEs with CVSS scores, severity breakdown, affected products, and NVD links",
+      "json_file": "cybersecurity/cve_digest.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/cybersecurity/cve_digest.html`",
+      "auto_published": true,
+      "primary_domain": "Cybersecurity",
+      "secondary_domains": [
+        "Finance"
+      ],
+      "entities": [
+        "NVD",
+        "NIST",
+        "CVE Program",
+        "MITRE",
+        "CWE",
+        "CVSS"
+      ],
+      "data_sources": [
+        "NVD REST API v2.0 (nvd.nist.gov) \u2014 live fetch at runtime",
+        "daily window",
+        "no Storehouse dependency"
+      ],
+      "update_frequency": "Daily",
+      "key_signals": [
+        "Daily CVE count with severity breakdown (Critical/High/Medium/Low/Unscored)",
+        "avg CVSS score",
+        "per-CVE: ID, published date, CVSS score and vector, description, affected products, references",
+        "current: 3 CVEs today, 1 High (CVE-2026-7574 Anthropic Claude Desktop Cowork VM CVSS 8.7), 2 Caliptra Core Firmware cryptographic issues"
+      ],
+      "intent_phrases": [
+        "CVE digest",
+        "daily CVE",
+        "NVD vulnerabilities",
+        "NIST CVE",
+        "vulnerability digest",
+        "CVSS score",
+        "critical vulnerability today",
+        "high severity CVE",
+        "CVE report",
+        "new vulnerabilities today",
+        "cybersecurity vulnerability",
+        "CVE database",
+        "NVD daily",
+        "software vulnerability",
+        "CVE lookup"
+      ],
+      "id": "cve_daily_digest",
+      "path": "https://petroai1492.github.io/delta/cybersecurity/cve_digest.html"
     }
   ],
   "cross_domain_matrix": [
