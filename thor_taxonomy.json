@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-24T16:03:45Z",
+  "generated": "2026-06-24T16:05:06Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -89,10 +89,6 @@
       ],
       "intent_phrases": [
         {
-          "keyword": "wti",
-          "weight": 5
-        },
-        {
           "keyword": "Iran",
           "weight": 5
         },
@@ -130,6 +126,66 @@
         },
         {
           "keyword": "NIOC",
+          "weight": 5
+        },
+        {
+          "keyword": "iran crude",
+          "weight": 5
+        },
+        {
+          "keyword": "iran oil",
+          "weight": 5
+        },
+        {
+          "keyword": "iran war",
+          "weight": 5
+        },
+        {
+          "keyword": "iran gasoline",
+          "weight": 5
+        },
+        {
+          "keyword": "wti iran",
+          "weight": 5
+        },
+        {
+          "keyword": "crude",
+          "weight": 5
+        },
+        {
+          "keyword": "oil",
+          "weight": 5
+        },
+        {
+          "keyword": "gasoline",
+          "weight": 5
+        },
+        {
+          "keyword": "iran energy",
+          "weight": 5
+        },
+        {
+          "keyword": "persian gulf oil",
+          "weight": 5
+        },
+        {
+          "keyword": "strait hormuz oil",
+          "weight": 5
+        },
+        {
+          "keyword": "iran sanctions oil",
+          "weight": 5
+        },
+        {
+          "keyword": "oil price iran",
+          "weight": 5
+        },
+        {
+          "keyword": "iran conflict energy",
+          "weight": 5
+        },
+        {
+          "keyword": "middle east oil",
           "weight": 5
         }
       ],
