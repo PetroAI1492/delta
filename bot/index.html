@@ -151,7 +151,7 @@
 </div><!-- .layout -->
 <footer>
   THOR SIGNAL &nbsp;·&nbsp; Taxonomy-driven routing &nbsp;·&nbsp;
-  Generated: 2026-06-25 11:57 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+  Generated: 2026-06-25 12:17 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 <script>
 const REPORTS = [
@@ -2623,7 +2623,7 @@ function scoreReport(r, qTokens, bundle) {
 
 function routeQuery(text) {
   const qTokens = tokenize(text);
-  if (qTokens.length === 0) return { primary: null, secondary: null, fallback: false };
+  if (qTokens.length === 0) return { results: [], fallback: false };
 
   const scored = [];
 
@@ -2638,30 +2638,29 @@ function routeQuery(text) {
 
   scored.sort((a, b) => b.score - a.score);
 
-  // ── Strict AND: all tokens matched ────────────────────────────────────────
+  // ── Strict AND: all tokens matched — return ALL qualifying results ─────────
   const strictMatches = scored.filter(s => s.allMatched);
   if (strictMatches.length > 0) {
-    const primary   = strictMatches[0].report;
-    const threshold = strictMatches[0].score * 0.7;
-    const secondary = (strictMatches.length > 1 && strictMatches[1].score >= threshold)
-      ? strictMatches[1].report : null;
-    return { primary, secondary, fallback: false };
+    const threshold = strictMatches[0].score * 0.4;
+    const results = strictMatches
+      .filter(s => s.score >= threshold)
+      .map(s => s.report);
+    return { results, fallback: false };
   }
 
   // ── OR fallback: partial matches ───────────────────────────────────────────
   if (scored.length > 0) {
-    const primary   = scored[0].report;
-    const threshold = scored[0].score * 0.7;
-    const secondary = (scored.length > 1 && scored[1].score >= threshold)
-      ? scored[1].report : null;
-    // Find which tokens had no matches at all
+    const threshold = scored[0].score * 0.4;
+    const results = scored
+      .filter(s => s.score >= threshold)
+      .map(s => s.report);
     const allHitTokens = new Set();
     for (const s of scored) s.matchedTokens.forEach(t => allHitTokens.add(t));
     const missedTokens = qTokens.filter(t => !allHitTokens.has(t));
-    return { primary, secondary, fallback: true, missedTokens };
+    return { results, fallback: true, missedTokens };
   }
 
-  return { primary: null, secondary: null, fallback: false, missedTokens: qTokens };
+  return { results: [], fallback: false, missedTokens: qTokens };
 }
 
 function checkCrossDomain(text) {
@@ -2714,17 +2713,17 @@ function sendMessage() {
     }
     addMessage('thor', html);
   } else {
-    const { primary, secondary, fallback, missedTokens } = routeQuery(text);
-    if (primary) {
+    const { results, fallback, missedTokens } = routeQuery(text);
+    if (results.length > 0) {
       let html = '';
       if (fallback) {
         const missed = (missedTokens || []).join(', ');
         html += `<div style="font-family:Arial,sans-serif;font-size:.74rem;color:var(--gray);margin-bottom:.5rem;">No exact match for all terms. Closest results${missed ? ' (no match for: ' + missed + ')' : ''}:</div>`;
       }
-      html += reportCard(primary);
-      if (secondary) {
+      html += reportCard(results[0]);
+      for (const r of results.slice(1)) {
         html += '<div style="margin-top:.75rem;font-family:Arial,sans-serif;font-size:.75rem;color:var(--gray)">Also relevant:</div>';
-        html += reportCard(secondary);
+        html += reportCard(r);
       }
       addMessage('thor', html);
     } else {
