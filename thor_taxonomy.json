@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-25T15:46:08Z",
+  "generated": "2026-06-25T15:57:58Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -50,7 +50,15 @@
         "natural gas price",
         "VIX level",
         "energy market now",
-        "live energy"
+        "live energy",
+        {
+          "keyword": "energy",
+          "weight": 10
+        },
+        {
+          "keyword": "tripwire",
+          "weight": 10
+        }
       ],
       "id": "energy_tripwire",
       "path": "https://petroai1492.github.io/delta/index.html"
@@ -111,7 +119,19 @@
         "iran sanctions oil",
         "oil price iran",
         "iran conflict energy",
-        "middle east oil"
+        "middle east oil",
+        {
+          "keyword": "iran",
+          "weight": 10
+        },
+        {
+          "keyword": "gas",
+          "weight": 10
+        },
+        {
+          "keyword": "report",
+          "weight": 10
+        }
       ],
       "id": "iran_gas_report",
       "path": "https://petroai1492.github.io/delta/finance/iran_gas_report.pdf"
@@ -155,7 +175,23 @@
         "utilities output",
         "Fed industrial",
         "economic output",
-        "production index"
+        "production index",
+        {
+          "keyword": "industrial",
+          "weight": 10
+        },
+        {
+          "keyword": "production",
+          "weight": 10
+        },
+        {
+          "keyword": "report",
+          "weight": 10
+        },
+        {
+          "keyword": "(indpro)",
+          "weight": 10
+        }
       ],
       "id": "industrial_production_report_indpro",
       "path": "https://petroai1492.github.io/delta/finance/indpro_report.pdf"
@@ -202,7 +238,15 @@
         "how much cash does Treasury have",
         "IRS deposits",
         "treasury statement",
-        "treasury cash"
+        "treasury cash",
+        {
+          "keyword": "dts",
+          "weight": 10
+        },
+        {
+          "keyword": "brief",
+          "weight": 10
+        }
       ],
       "id": "dts_brief",
       "path": "https://petroai1492.github.io/delta/finance/dts_brief.pdf"
@@ -247,7 +291,19 @@
         "Treasury balance pattern",
         "when does TGA fill up",
         "seasonal spending",
-        "treasury seasonal pattern"
+        "treasury seasonal pattern",
+        {
+          "keyword": "tga",
+          "weight": 10
+        },
+        {
+          "keyword": "seasonal",
+          "weight": 10
+        },
+        {
+          "keyword": "report",
+          "weight": 10
+        }
       ],
       "id": "tga_seasonal_report",
       "path": "https://petroai1492.github.io/delta/finance/tga_seasonal.pdf"
@@ -289,7 +345,19 @@
         "generic drug shortage",
         "hospital drug supply",
         "HHS drug",
-        "prescription shortage"
+        "prescription shortage",
+        {
+          "keyword": "drug",
+          "weight": 10
+        },
+        {
+          "keyword": "shortage",
+          "weight": 10
+        },
+        {
+          "keyword": "report",
+          "weight": 10
+        }
       ],
       "id": "drug_shortage_report",
       "path": "https://petroai1492.github.io/delta/medical/drug_shortage_report.pdf"
@@ -354,7 +422,23 @@
         "federal deficit",
         "Treasury financial statement",
         "government net position",
-        "COVID spending spike"
+        "COVID spending spike",
+        {
+          "keyword": "u.s.",
+          "weight": 10
+        },
+        {
+          "keyword": "government",
+          "weight": 10
+        },
+        {
+          "keyword": "financial",
+          "weight": 10
+        },
+        {
+          "keyword": "report",
+          "weight": 10
+        }
       ],
       "id": "u_s_government_financial_report",
       "path": "https://petroai1492.github.io/delta/finance/fed_financial_report.html"
@@ -421,7 +505,19 @@
         "winter storm impact",
         "drought economic cost",
         "disaster market signal",
-        "CPI adjusted disaster"
+        "CPI adjusted disaster",
+        {
+          "keyword": "disaster",
+          "weight": 10
+        },
+        {
+          "keyword": "cross-reference",
+          "weight": 10
+        },
+        {
+          "keyword": "report",
+          "weight": 10
+        }
       ],
       "id": "disaster_cross_reference_report",
       "path": "https://petroai1492.github.io/delta/finance/disaster_report.html"
@@ -475,7 +571,27 @@
         "CRWD excess return",
         "vulnerability market reaction",
         "cyber ETF",
-        "CISA exploited vulnerabilities market"
+        "CISA exploited vulnerabilities market",
+        {
+          "keyword": "cyber",
+          "weight": 10
+        },
+        {
+          "keyword": "kev",
+          "weight": 10
+        },
+        {
+          "keyword": "market",
+          "weight": 10
+        },
+        {
+          "keyword": "signals",
+          "weight": 10
+        },
+        {
+          "keyword": "report",
+          "weight": 10
+        }
       ],
       "id": "cyber_kev_market_signals_report",
       "path": "https://petroai1492.github.io/delta/finance/cyber_report.html"
@@ -534,7 +650,27 @@
         "USPSTF",
         "screening guideline",
         "cancer research",
-        "ctDNA"
+        "ctDNA",
+        {
+          "keyword": "cancer",
+          "weight": 10
+        },
+        {
+          "keyword": "early",
+          "weight": 10
+        },
+        {
+          "keyword": "detection",
+          "weight": 10
+        },
+        {
+          "keyword": "signal",
+          "weight": 10
+        },
+        {
+          "keyword": "report",
+          "weight": 10
+        }
       ],
       "id": "cancer_early_detection_signal_report",
       "path": "https://petroai1492.github.io/delta/medical/early_detection_signal_report.html"
@@ -591,7 +727,23 @@
         "fda clears",
         "ema approval",
         "expanded indication",
-        "orphan drug"
+        "orphan drug",
+        {
+          "keyword": "cancer",
+          "weight": 10
+        },
+        {
+          "keyword": "fda",
+          "weight": 10
+        },
+        {
+          "keyword": "approval",
+          "weight": 10
+        },
+        {
+          "keyword": "signals",
+          "weight": 10
+        }
       ],
       "id": "cancer_fda_approval_signals",
       "path": "https://petroai1492.github.io/delta/medical/cancer_fda_approval_signals.html"
@@ -648,7 +800,23 @@
         "pediatric cancer trial",
         "trial enrollment",
         "new cancer trial",
-        "trial outcomes"
+        "trial outcomes",
+        {
+          "keyword": "cancer",
+          "weight": 10
+        },
+        {
+          "keyword": "clinical",
+          "weight": 10
+        },
+        {
+          "keyword": "trial",
+          "weight": 10
+        },
+        {
+          "keyword": "signals",
+          "weight": 10
+        }
       ],
       "id": "cancer_clinical_trial_signals",
       "path": "https://petroai1492.github.io/delta/medical/cancer_clinical_trial_signals.html"
@@ -714,7 +882,15 @@
         "flu tracker",
         "flu trend",
         "CDC weekly flu",
-        "flu severity this year"
+        "flu severity this year",
+        {
+          "keyword": "fluview",
+          "weight": 10
+        },
+        {
+          "keyword": "brief",
+          "weight": 10
+        }
       ],
       "id": "fluview_brief",
       "path": "https://petroai1492.github.io/delta/medical/fluview_brief.pdf"
@@ -766,7 +942,27 @@
         "CMS drug data",
         "what drugs cost medicare the most",
         "prescription drug spending",
-        "top medicare drugs"
+        "top medicare drugs",
+        {
+          "keyword": "medicare",
+          "weight": 10
+        },
+        {
+          "keyword": "part",
+          "weight": 10
+        },
+        {
+          "keyword": "drug",
+          "weight": 10
+        },
+        {
+          "keyword": "spending",
+          "weight": 10
+        },
+        {
+          "keyword": "report",
+          "weight": 10
+        }
       ],
       "id": "medicare_part_d_drug_spending_report",
       "path": "https://petroai1492.github.io/delta/medical/medicare_partd_2023.html"
@@ -826,7 +1022,19 @@
         "oil stocks",
         "petroleum inventory",
         "refinery",
-        "nat gas"
+        "nat gas",
+        {
+          "keyword": "weekly",
+          "weight": 10
+        },
+        {
+          "keyword": "energy",
+          "weight": 10
+        },
+        {
+          "keyword": "brief",
+          "weight": 10
+        }
       ],
       "id": "weekly_energy_brief",
       "path": "https://petroai1492.github.io/delta/energy/energy_brief.pdf"
@@ -885,7 +1093,23 @@
         "crude futures",
         "energy prices today",
         "oil market",
-        "petroleum daily"
+        "petroleum daily",
+        {
+          "keyword": "petroleum",
+          "weight": 10
+        },
+        {
+          "keyword": "daily",
+          "weight": 10
+        },
+        {
+          "keyword": "price",
+          "weight": 10
+        },
+        {
+          "keyword": "report",
+          "weight": 10
+        }
       ],
       "id": "petroleum_daily_price_report",
       "path": "https://petroai1492.github.io/delta/energy/petroleum_report.pdf"
@@ -957,7 +1181,19 @@
         "curve shape",
         "Fed funds rate",
         "Treasury inversion",
-        "rate hike impact"
+        "rate hike impact",
+        {
+          "keyword": "yield",
+          "weight": 10
+        },
+        {
+          "keyword": "curve",
+          "weight": 10
+        },
+        {
+          "keyword": "brief",
+          "weight": 10
+        }
       ],
       "id": "yield_curve_brief",
       "path": "https://petroai1492.github.io/delta/federal/yield_curve_brief.pdf"
@@ -1018,7 +1254,27 @@
         "St. Jude",
         "USASpending cancer",
         "federal cancer funding",
-        "NCI obligations"
+        "NCI obligations",
+        {
+          "keyword": "nci",
+          "weight": 10
+        },
+        {
+          "keyword": "cancer",
+          "weight": 10
+        },
+        {
+          "keyword": "grant",
+          "weight": 10
+        },
+        {
+          "keyword": "awards",
+          "weight": 10
+        },
+        {
+          "keyword": "report",
+          "weight": 10
+        }
       ],
       "id": "nci_cancer_grant_awards_report",
       "path": "https://petroai1492.github.io/delta/medical/nci_awards_fy2024.html"
@@ -1072,7 +1328,23 @@
         "treasury health",
         "Medicaid grants to states",
         "federal health budget",
-        "health spending signal"
+        "health spending signal",
+        {
+          "keyword": "treasury",
+          "weight": 10
+        },
+        {
+          "keyword": "health",
+          "weight": 10
+        },
+        {
+          "keyword": "spending",
+          "weight": 10
+        },
+        {
+          "keyword": "signal",
+          "weight": 10
+        }
       ],
       "id": "treasury_health_spending_signal",
       "path": "https://petroai1492.github.io/delta/federal/treasury_signal.html"
@@ -1142,7 +1414,15 @@
         "emerging markets",
         "weekly market",
         "equity returns",
-        "cross asset"
+        "cross asset",
+        {
+          "keyword": "market",
+          "weight": 10
+        },
+        {
+          "keyword": "watch",
+          "weight": 10
+        }
       ],
       "id": "market_watch",
       "path": "https://petroai1492.github.io/delta/finance/market_watch.html"
@@ -1199,7 +1479,23 @@
         "shipping stress",
         "tanker route",
         "global shipping",
-        "geopolitical supply risk"
+        "geopolitical supply risk",
+        {
+          "keyword": "global",
+          "weight": 10
+        },
+        {
+          "keyword": "chokepoint",
+          "weight": 10
+        },
+        {
+          "keyword": "signal",
+          "weight": 10
+        },
+        {
+          "keyword": "report",
+          "weight": 10
+        }
       ],
       "id": "global_chokepoint_signal_report",
       "path": "https://petroai1492.github.io/delta/energy/choke_point.html"
@@ -1259,7 +1555,15 @@
         "gold today",
         "Bitcoin now",
         "dollar index",
-        "Treasury yield today"
+        "Treasury yield today",
+        {
+          "keyword": "morning",
+          "weight": 10
+        },
+        {
+          "keyword": "pulse",
+          "weight": 10
+        }
       ],
       "id": "morning_pulse",
       "path": "https://petroai1492.github.io/delta/finance/morning_pulse.html"
@@ -1327,7 +1631,19 @@
         "refinery utilization",
         "energy macro",
         "WTI Brent",
-        "nat gas storage"
+        "nat gas storage",
+        {
+          "keyword": "eia",
+          "weight": 10
+        },
+        {
+          "keyword": "energy",
+          "weight": 10
+        },
+        {
+          "keyword": "digest",
+          "weight": 10
+        }
       ],
       "id": "eia_energy_digest",
       "path": "https://petroai1492.github.io/delta/energy/eia_digest.html"
@@ -1375,7 +1691,19 @@
         "NCI imaging data commons",
         "OHIF viewer",
         "colonography patient",
-        "colorectal screening"
+        "colorectal screening",
+        {
+          "keyword": "colonography",
+          "weight": 10
+        },
+        {
+          "keyword": "patient",
+          "weight": 10
+        },
+        {
+          "keyword": "report",
+          "weight": 10
+        }
       ],
       "id": "ct_colonography_patient_report",
       "path": "https://petroai1492.github.io/delta/medical/ctc_patient_report.html"
@@ -1424,7 +1752,23 @@
         "TCIA lung",
         "IDC lung CT",
         "NLST viewer",
-        "lung screening trial"
+        "lung screening trial",
+        {
+          "keyword": "nlst",
+          "weight": 10
+        },
+        {
+          "keyword": "lung",
+          "weight": 10
+        },
+        {
+          "keyword": "patient",
+          "weight": 10
+        },
+        {
+          "keyword": "report",
+          "weight": 10
+        }
       ],
       "id": "nlst_lung_ct_patient_report",
       "path": "https://petroai1492.github.io/delta/medical/nlst_patient_report.html"
@@ -1491,7 +1835,19 @@
         "colonography trial data",
         "CT colon cancer data",
         "polyp segment analysis",
-        "colon screening statistics"
+        "colon screening statistics",
+        {
+          "keyword": "colonography",
+          "weight": 10
+        },
+        {
+          "keyword": "analysis",
+          "weight": 10
+        },
+        {
+          "keyword": "report",
+          "weight": 10
+        }
       ],
       "id": "ct_colonography_analysis_report",
       "path": "https://petroai1492.github.io/delta/medical/ctc_analysis_report.html"
@@ -1577,7 +1933,27 @@
         "colorectal cancer treatment",
         "colon cancer update",
         "colorectal cancer news",
-        "colon cancer checkpoint inhibitor"
+        "colon cancer checkpoint inhibitor",
+        {
+          "keyword": "colon",
+          "weight": 10
+        },
+        {
+          "keyword": "cancer",
+          "weight": 10
+        },
+        {
+          "keyword": "clinical",
+          "weight": 10
+        },
+        {
+          "keyword": "trials",
+          "weight": 10
+        },
+        {
+          "keyword": "timeline",
+          "weight": 10
+        }
       ],
       "id": "colon_cancer_clinical_trials_timeline",
       "path": "https://petroai1492.github.io/delta/medical/coloncancer_clinicaltrials_timeline.html"
@@ -1642,7 +2018,23 @@
         "colorectal immunotherapy biomarker",
         "HER2 colorectal",
         "encorafenib colorectal",
-        "anti-EGFR colorectal"
+        "anti-EGFR colorectal",
+        {
+          "keyword": "colon",
+          "weight": 10
+        },
+        {
+          "keyword": "cancer",
+          "weight": 10
+        },
+        {
+          "keyword": "biomarker",
+          "weight": 10
+        },
+        {
+          "keyword": "timeline",
+          "weight": 10
+        }
       ],
       "id": "colon_cancer_biomarker_timeline",
       "path": "https://petroai1492.github.io/delta/medical/coloncancer_biomarker_timeline.html"
@@ -1703,7 +2095,27 @@
         "colon cancer medication",
         "colorectal targeted therapy",
         "colon cancer checkpoint inhibitor",
-        "dMMR drug approval"
+        "dMMR drug approval",
+        {
+          "keyword": "colon",
+          "weight": 10
+        },
+        {
+          "keyword": "cancer",
+          "weight": 10
+        },
+        {
+          "keyword": "fda",
+          "weight": 10
+        },
+        {
+          "keyword": "approved",
+          "weight": 10
+        },
+        {
+          "keyword": "drugs",
+          "weight": 10
+        }
       ],
       "id": "colon_cancer_fda_approved_drugs",
       "path": "https://petroai1492.github.io/delta/medical/coloncancer_drugs_timeline.html"
@@ -1760,7 +2172,23 @@
         "colorectal biotech funding",
         "CRC financial signals",
         "colon cancer pharma",
-        "colorectal cancer charity"
+        "colorectal cancer charity",
+        {
+          "keyword": "colon",
+          "weight": 10
+        },
+        {
+          "keyword": "cancer",
+          "weight": 10
+        },
+        {
+          "keyword": "funding",
+          "weight": 10
+        },
+        {
+          "keyword": "intelligence",
+          "weight": 10
+        }
       ],
       "id": "colon_cancer_funding_intelligence",
       "path": "https://petroai1492.github.io/delta/medical/coloncancer_funding_timeline.html"
@@ -1824,7 +2252,23 @@
         "stage 4 pancreatic",
         "pancreatic cancer news",
         "pancreatic cancer clinical trial",
-        "pancreatic cancer funding"
+        "pancreatic cancer funding",
+        {
+          "keyword": "pancreatic",
+          "weight": 10
+        },
+        {
+          "keyword": "cancer",
+          "weight": 10
+        },
+        {
+          "keyword": "signal",
+          "weight": 10
+        },
+        {
+          "keyword": "report",
+          "weight": 10
+        }
       ],
       "id": "pancreatic_cancer_signal_report",
       "path": "https://petroai1492.github.io/delta/medical/pancreatic_cancer_signal_report.html"
@@ -1876,7 +2320,19 @@
         "CVE database",
         "NVD daily",
         "software vulnerability",
-        "CVE lookup"
+        "CVE lookup",
+        {
+          "keyword": "cve",
+          "weight": 10
+        },
+        {
+          "keyword": "daily",
+          "weight": 10
+        },
+        {
+          "keyword": "digest",
+          "weight": 10
+        }
       ],
       "id": "cve_daily_digest",
       "path": "https://petroai1492.github.io/delta/cybersecurity/cve_digest.html"
@@ -1942,7 +2398,23 @@
         "firewall brute force",
         "network intrusion",
         "firewall report",
-        "ASA syslog"
+        "ASA syslog",
+        {
+          "keyword": "asa",
+          "weight": 10
+        },
+        {
+          "keyword": "firewall",
+          "weight": 10
+        },
+        {
+          "keyword": "threat",
+          "weight": 10
+        },
+        {
+          "keyword": "assessment",
+          "weight": 10
+        }
       ],
       "id": "asa_firewall_threat_assessment",
       "path": "https://petroai1492.github.io/delta/cybersecurity/asa_assessment.html"
@@ -2011,7 +2483,19 @@
         "Nova ransomware",
         "ransomware activity",
         "ransomware tracker",
-        "ransomware monthly"
+        "ransomware monthly",
+        {
+          "keyword": "ransomware",
+          "weight": 10
+        },
+        {
+          "keyword": "activity",
+          "weight": 10
+        },
+        {
+          "keyword": "report",
+          "weight": 10
+        }
       ],
       "id": "ransomware_activity_report",
       "path": "https://petroai1492.github.io/delta/cybersecurity/ransomware_report.html"
