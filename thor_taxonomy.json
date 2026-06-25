@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-25T17:31:39Z",
+  "generated": "2026-06-25T18:28:58Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -2499,6 +2499,167 @@
       ],
       "id": "ransomware_activity_report",
       "path": "https://petroai1492.github.io/delta/cybersecurity/ransomware_report.html"
+    },
+    {
+      "title": "Jet Fuel Pipeline Report",
+      "file": "energy/jet_fuel.html",
+      "description": "Weekly crude-to-jet-fuel supply chain \u2014 crude imports, refinery input, PADD 3 utilization, jet stocks, implied demand, days cover, and Gulf Coast price from 2008 to present",
+      "json_file": "energy/jet_fuel.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/energy/jet_fuel.html`",
+      "auto_published": false,
+      "primary_domain": "Energy",
+      "secondary_domains": [
+        "Finance"
+      ],
+      "entities": [
+        "EIA",
+        "FRED",
+        "PADD 3",
+        "Gulf Coast",
+        "WTI crude"
+      ],
+      "data_sources": [
+        "Thor Storehouse \u2014 EIA Weekly Petroleum Status Report (8 series: crude imports",
+        "crude stocks",
+        "refinery input",
+        "PADD 3 utilization",
+        "jet stocks",
+        "jet production",
+        "jet imports",
+        "jet exports); FRED (DJFUELUSGULF jet fuel price",
+        "daily aggregated to weekly)"
+      ],
+      "update_frequency": "Weekly (manual run after EIA Wednesday release)",
+      "key_signals": [
+        "Crude imports (MB/D)",
+        "commercial crude stocks (MB)",
+        "refinery net input (MB/D)",
+        "PADD 3 refinery utilization (%)",
+        "jet fuel stocks (MB)",
+        "jet fuel production (MB/D)",
+        "implied demand = production + imports - exports - stock change/7",
+        "days cover = jet stocks / implied demand (normal range 20\u201335 days)",
+        "4-week rolling averages",
+        "Gulf Coast jet fuel price ($/gallon)",
+        "week-over-week % change for all series"
+      ],
+      "intent_phrases": [
+        "jet fuel",
+        "jet fuel price",
+        "jet fuel stocks",
+        "aviation fuel",
+        "kerosene",
+        "days cover",
+        "implied demand",
+        "refinery utilization",
+        "PADD 3",
+        "crude to jet",
+        "fuel supply chain",
+        "Gulf Coast price",
+        "jet production",
+        "airline fuel",
+        "jet imports",
+        "jet exports",
+        "crude imports",
+        "refinery input",
+        "fuel inventory",
+        "energy supply chain",
+        {
+          "keyword": "jet",
+          "weight": 10
+        },
+        {
+          "keyword": "fuel",
+          "weight": 10
+        },
+        {
+          "keyword": "pipeline",
+          "weight": 10
+        },
+        {
+          "keyword": "report",
+          "weight": 10
+        }
+      ],
+      "id": "jet_fuel_pipeline_report",
+      "path": "https://petroai1492.github.io/delta/energy/jet_fuel.html"
+    },
+    {
+      "title": "Patch Tuesday Digest",
+      "file": "cybersecurity/patch_tuesday.html",
+      "description": "Monthly Microsoft Patch Tuesday triage digest \u2014 priority-sorted CVE list for patch engineers, with KEV crossover, exploitation status, reboot flags, and product family groupings",
+      "json_file": "cybersecurity/patch_tuesday.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/cybersecurity/patch_tuesday.html`",
+      "auto_published": false,
+      "primary_domain": "Cybersecurity",
+      "secondary_domains": [
+        "Federal"
+      ],
+      "entities": [
+        "Microsoft",
+        "MSRC",
+        "CISA KEV",
+        "Windows Server",
+        "Windows Desktop",
+        "Exchange",
+        "Office",
+        "Azure",
+        "Edge"
+      ],
+      "data_sources": [
+        "Microsoft MSRC CVRF API v3.0 (api.msrc.microsoft.com",
+        "no key required); CISA Known Exploited Vulnerabilities catalog (cisa.gov/kev)"
+      ],
+      "update_frequency": "Monthly (second Tuesday of each month, manual run)",
+      "key_signals": [
+        "Total CVEs patched",
+        "Critical/High/Medium counts",
+        "actively exploited in wild",
+        "CISA KEV crossover",
+        "reboot-required count",
+        "network-exploitable (AV:N) count",
+        "max and avg CVSS score",
+        "product family breakdown (Windows Server, Desktop, Exchange, Office, Azure, Edge, SQL Server, Visual Studio)",
+        "priority-sorted patch-now list"
+      ],
+      "intent_phrases": [
+        "patch tuesday",
+        "microsoft patches",
+        "microsoft security update",
+        "MSRC",
+        "windows patch",
+        "CVE patch",
+        "security update",
+        "monthly patches",
+        "patch now",
+        "reboot required",
+        "KEV patch",
+        "exploited vulnerability",
+        "windows server patch",
+        "exchange patch",
+        "office patch",
+        "azure vulnerability",
+        "edge patch",
+        "CVSS critical",
+        "patch triage",
+        "vulnerability digest",
+        {
+          "keyword": "patch",
+          "weight": 10
+        },
+        {
+          "keyword": "tuesday",
+          "weight": 10
+        },
+        {
+          "keyword": "digest",
+          "weight": 10
+        }
+      ],
+      "id": "patch_tuesday_digest",
+      "path": "https://petroai1492.github.io/delta/cybersecurity/patch_tuesday.html"
     }
   ],
   "cross_domain_matrix": [
