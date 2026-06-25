@@ -151,7 +151,7 @@
 </div><!-- .layout -->
 <footer>
   THOR SIGNAL &nbsp;·&nbsp; Taxonomy-driven routing &nbsp;·&nbsp;
-  Generated: 2026-06-25 12:17 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+  Generated: 2026-06-25 12:38 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 <script>
 const REPORTS = [
@@ -2734,9 +2734,20 @@ function sendMessage() {
   input.focus();
 }
 
+function getDeviceType() {
+  const ua = navigator.userAgent.toLowerCase();
+  const w  = window.innerWidth;
+  if (/ipad/.test(ua) || (w >= 768 && w <= 1024 && /macintosh/.test(ua))) return 'tablet';
+  if (/iphone|android|mobile/.test(ua)) return 'phone';
+  return 'desktop';
+}
+
 window.onload = () => {
-  document.getElementById('userInput').focus();
   renderSidebar();
+  if (getDeviceType() === 'phone') {
+    document.getElementById('sidebar').classList.add('collapsed');
+  }
+  document.getElementById('userInput').focus();
 };
 
 const DOMAIN_ORDER = ["Energy", "Geopolitics", "Economy", "Federal", "Health", "Finance", "Cybersecurity"];
