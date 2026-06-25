@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NLST Lung CT Signal Report</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --red: #e8111a; --black: #1a1a1a; --gray: #666;
+    --rule: #e5e7eb; --bg: #fff; --bg-soft: #f9fafb;
+  }
+  body { font-family: Georgia, serif; background: var(--bg); color: var(--black); }
+  .masthead { border-top: 4px solid var(--red); border-bottom: 1px solid var(--rule);
+               padding: .6rem 2rem .5rem; display: flex; align-items: baseline; gap: 1rem; }
+  .brand { font-family: Arial, sans-serif; font-size: 1.1rem; font-weight: bold;
+            color: var(--red); text-transform: uppercase; }
+  .section-label { font-family: Arial, sans-serif; font-size: .72rem; color: var(--gray);
+                    text-transform: uppercase; letter-spacing: .08em;
+                    border-left: 1px solid var(--rule); padding-left: 1rem; }
+  main { max-width: 1100px; margin: 0 auto; padding: 1.5rem 2rem 3rem; }
+  .report-title { font-size: 1.6rem; font-weight: bold; letter-spacing: -.5px;
+                   border-bottom: 2px solid var(--black); padding-bottom: .5rem;
+                   margin-bottom: .4rem; }
+  .report-sub { font-family: Arial, sans-serif; font-size: .8rem; color: var(--gray);
+                 margin-bottom: 1.25rem; }
+  .scorecard-row { display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: 1.5rem; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .key-finding { background: #fef2f2; border-left: 4px solid var(--red);
+                  padding: .75rem 1rem; margin-bottom: 1rem;
+                  font-family: Arial, sans-serif; font-size: .82rem; }
+  table { width: 100%; border-collapse: collapse; }
+  th { padding: .4rem .5rem; font-family: Arial, sans-serif; font-size: .65rem;
+        text-align: left; color: #888; text-transform: uppercase;
+        background: var(--bg-soft); border-bottom: 2px solid var(--rule); }
+  th.right { text-align: right; }
+  footer { border-top: 1px solid var(--rule); padding: .75rem 2rem;
+            font-family: Arial, sans-serif; font-size: .68rem;
+            color: var(--gray); text-align: center; margin-top: 2rem; }
+</style>
+</head>
+<body>
+<div class="masthead">
+  <span class="brand">THOR SIGNAL</span>
+  <span class="section-label">NLST Lung CT Signal Report</span>
+</div>
+<main>
+
+  <div class="report-title">National Lung Screening Trial — Signal Report</div>
+  <div class="report-sub">
+    53,452 participants &nbsp;·&nbsp;
+    2,150 cancer cases &nbsp;·&nbsp;
+    177,487 nodule records &nbsp;·&nbsp;
+    Source: TCIA NLST (DOI: 10.7937/TCIA.HMQ8-J677) &nbsp;·&nbsp;
+    Generated 2026-06-25 22:51 UTC
+  </div>
+
+  <!-- Key finding alert -->
+  <div class="key-finding">
+    <strong style="color:#e8111a;">KEY FINDING:</strong>
+    Low-dose CT screening reduced lung cancer mortality by
+    <strong>20.0%</strong>
+    compared to chest X-ray (95% CI: 6.8–26.7; p=0.004).
+    Lung cancer deaths: <strong>247 per 100,000</strong>
+    person-years (CT) vs 309 per 100,000 (X-ray).
+    Source: Aberle et al., NEJM 2011.
+  </div>
+
+  <!-- Scorecards -->
+  <div class="scorecard-row"><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:100px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;">Participants</div><div style="font-size:1.5rem;font-weight:bold;color:#1a1a1a;font-family:Georgia,serif;">53,452</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:100px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;">Cancer Cases</div><div style="font-size:1.5rem;font-weight:bold;color:#e8111a;font-family:Georgia,serif;">2,150</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:100px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;">Cancer Rate</div><div style="font-size:1.5rem;font-weight:bold;color:#ea580c;font-family:Georgia,serif;">3.85%</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:100px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;">Mortality Reduction</div><div style="font-size:1.5rem;font-weight:bold;color:#16a34a;font-family:Georgia,serif;">20.0%</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">LDCT vs X-ray</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:100px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;">Positive Screen Rate</div><div style="font-size:1.5rem;font-weight:bold;color:#d97706;font-family:Georgia,serif;">17.5%</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">across 3 years</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:100px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;">False Positive Rate</div><div style="font-size:1.5rem;font-weight:bold;color:#888;font-family:Georgia,serif;">96.4%</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">of positive CTs</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:100px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;">Nodule Records</div><div style="font-size:1.5rem;font-weight:bold;color:#1a1a1a;font-family:Georgia,serif;">177,487</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:100px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;">Avg Nodule Size</div><div style="font-size:1.5rem;font-weight:bold;color:#1a1a1a;font-family:Georgia,serif;">6.9 mm</div></div></div>
+
+  <!-- Screening results -->
+  <div style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;text-transform:uppercase;letter-spacing:.08em;color:#e8111a;border-bottom:2px solid #e8111a;padding-bottom:.3rem;margin:1.75rem 0 .75rem;">Screening Results by Year</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Year</th>
+        <th class="right">Screened</th>
+        <th class="right">Positive</th>
+        <th class="right">Positive Rate</th>
+        <th class="right">Negative</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.5rem;font-family:Arial,sans-serif;font-size:.75rem;">Year 0 (Baseline)</td>
+  <td style="padding:.5rem;font-family:Arial,sans-serif;font-size:.75rem;
+             text-align:right;">52,345</td>
+  <td style="padding:.5rem;font-family:Arial,sans-serif;font-size:.75rem;
+             text-align:right;color:#e8111a;font-weight:bold;">13,057</td>
+  <td style="padding:.5rem;font-family:Arial,sans-serif;font-size:.75rem;
+             text-align:right;">24.9%</td>
+  <td style="padding:.5rem;font-family:Arial,sans-serif;font-size:.75rem;
+             text-align:right;color:#16a34a;">39,288</td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.5rem;font-family:Arial,sans-serif;font-size:.75rem;">Year 1</td>
+  <td style="padding:.5rem;font-family:Arial,sans-serif;font-size:.75rem;
+             text-align:right;">46,193</td>
+  <td style="padding:.5rem;font-family:Arial,sans-serif;font-size:.75rem;
+             text-align:right;color:#e8111a;font-weight:bold;">7,722</td>
+  <td style="padding:.5rem;font-family:Arial,sans-serif;font-size:.75rem;
+             text-align:right;">16.7%</td>
+  <td style="padding:.5rem;font-family:Arial,sans-serif;font-size:.75rem;
+             text-align:right;color:#16a34a;">38,471</td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.5rem;font-family:Arial,sans-serif;font-size:.75rem;">Year 2</td>
+  <td style="padding:.5rem;font-family:Arial,sans-serif;font-size:.75rem;
+             text-align:right;">44,695</td>
+  <td style="padding:.5rem;font-family:Arial,sans-serif;font-size:.75rem;
+             text-align:right;color:#e8111a;font-weight:bold;">4,236</td>
+  <td style="padding:.5rem;font-family:Arial,sans-serif;font-size:.75rem;
+             text-align:right;">9.5%</td>
+  <td style="padding:.5rem;font-family:Arial,sans-serif;font-size:.75rem;
+             text-align:right;color:#16a34a;">40,459</td>
+</tr></tbody>
+  </table>
+  <p style="font-family:Arial,sans-serif;font-size:.72rem;color:#888;margin-top:.5rem;">
+    Positive = nodule ≥4mm or other actionable finding requiring follow-up.
+    Overall positive rate across 3 years: <strong>17.5%</strong>
+    (25,015 of 143,233 screens).
+    Of all positive CT results, <strong>96.4%</strong> were
+    false positives (no cancer confirmed).
+  </p>
+
+  <!-- Nodule findings + Cancer detection side by side -->
+  <div class="two-col">
+    <div>
+      <div style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;text-transform:uppercase;letter-spacing:.08em;color:#e8111a;border-bottom:2px solid #e8111a;padding-bottom:.3rem;margin:1.75rem 0 .75rem;">Nodule Size Distribution</div>
+      <p style="font-family:Arial,sans-serif;font-size:.72rem;color:#888;
+                margin-bottom:.75rem;">
+        177,487 nodule records across all screening years.
+        Mean longest diameter: 6.9 mm.
+      </p>
+      <div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span><4mm (below threshold)</span><span style="color:#888;">26 (0.0%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#16a34a;height:6px;border-radius:3px;width:0.0%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>4–6mm (borderline)</span><span style="color:#888;">17,339 (9.8%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#d97706;height:6px;border-radius:3px;width:9.8%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>6–10mm (actionable)</span><span style="color:#888;">13,006 (7.3%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#ea580c;height:6px;border-radius:3px;width:7.3%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>≥10mm (high concern)</span><span style="color:#888;">4,857 (2.7%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#e8111a;height:6px;border-radius:3px;width:2.7%;"></div></div></div>
+    </div>
+    <div>
+      <div style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;text-transform:uppercase;letter-spacing:.08em;color:#e8111a;border-bottom:2px solid #e8111a;padding-bottom:.3rem;margin:1.75rem 0 .75rem;">Cancer Stage at Detection</div>
+      <p style="font-family:Arial,sans-serif;font-size:.72rem;color:#888;
+                margin-bottom:.75rem;">
+        2,150 confirmed lung cancers.
+        Screen-detected: 928.
+      </p>
+      <div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>Stage IA</span><span style="color:#888;">680 (31.6%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#e8111a;height:6px;border-radius:3px;width:31.6%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>Stage IV</span><span style="color:#888;">600 (27.9%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#e8111a;height:6px;border-radius:3px;width:27.9%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>Stage IIIB</span><span style="color:#888;">253 (11.8%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#e8111a;height:6px;border-radius:3px;width:11.8%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>Stage IB</span><span style="color:#888;">217 (10.1%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#e8111a;height:6px;border-radius:3px;width:10.1%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>Stage IIIA</span><span style="color:#888;">216 (10.0%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#e8111a;height:6px;border-radius:3px;width:10.0%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>Stage IIB</span><span style="color:#888;">83 (3.9%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#e8111a;height:6px;border-radius:3px;width:3.9%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>Stage IIA</span><span style="color:#888;">72 (3.3%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#e8111a;height:6px;border-radius:3px;width:3.3%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>Not applicable</span><span style="color:#888;">14 (0.7%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#e8111a;height:6px;border-radius:3px;width:0.7%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>Unknown</span><span style="color:#888;">11 (0.5%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#e8111a;height:6px;border-radius:3px;width:0.5%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>Unknown/not staged</span><span style="color:#888;">3 (0.1%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#e8111a;height:6px;border-radius:3px;width:0.1%;"></div></div></div>
+    </div>
+  </div>
+
+  <!-- Histology + Demographics side by side -->
+  <div class="two-col">
+    <div>
+      <div style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;text-transform:uppercase;letter-spacing:.08em;color:#e8111a;border-bottom:2px solid #e8111a;padding-bottom:.3rem;margin:1.75rem 0 .75rem;">Cancer Histology</div>
+      <div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>Adenocarcinoma</span><span style="color:#888;">701 (32.6%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#e8111a;height:6px;border-radius:3px;width:32.6%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>Squamous cell carcinoma</span><span style="color:#888;">449 (20.9%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#ea580c;height:6px;border-radius:3px;width:20.9%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>Small cell carcinoma</span><span style="color:#888;">272 (12.7%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#d97706;height:6px;border-radius:3px;width:12.7%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>Non-small cell carcinoma, NOS</span><span style="color:#888;">207 (9.6%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#d97706;height:6px;border-radius:3px;width:9.6%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>Other (8250)</span><span style="color:#888;">118 (5.5%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#d97706;height:6px;border-radius:3px;width:5.5%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>Large cell carcinoma</span><span style="color:#888;">53 (2.5%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#d97706;height:6px;border-radius:3px;width:2.5%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>Other (8010)</span><span style="color:#888;">38 (1.8%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#d97706;height:6px;border-radius:3px;width:1.8%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>Other (8013)</span><span style="color:#888;">32 (1.5%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#d97706;height:6px;border-radius:3px;width:1.5%;"></div></div></div>
+    </div>
+    <div>
+      <div style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;text-transform:uppercase;letter-spacing:.08em;color:#e8111a;border-bottom:2px solid #e8111a;padding-bottom:.3rem;margin:1.75rem 0 .75rem;">Participant Demographics</div>
+      <p style="font-family:Arial,sans-serif;font-size:.72rem;color:#555;
+                margin-bottom:.75rem;">
+        Age: mean 61.4 yrs (range 43–79) &nbsp;·&nbsp;
+        Male: 59.0% &nbsp;·&nbsp; Female: 41.0%<br>
+        Current smokers: 48.2% &nbsp;·&nbsp;
+        Former smokers: 0.0%
+      </p>
+      <div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>White</span><span style="color:#888;">48,549 (90.8%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#6b7280;height:6px;border-radius:3px;width:90.8%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>Black/African American</span><span style="color:#888;">2,376 (4.4%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#6b7280;height:6px;border-radius:3px;width:4.4%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>Asian</span><span style="color:#888;">1,095 (2.0%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#6b7280;height:6px;border-radius:3px;width:2.0%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>Other/Unknown</span><span style="color:#888;">679 (1.3%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#6b7280;height:6px;border-radius:3px;width:1.3%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>Native Hawaiian/Pacific Islander</span><span style="color:#888;">193 (0.4%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#6b7280;height:6px;border-radius:3px;width:0.4%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>American Indian/Alaska Native</span><span style="color:#888;">190 (0.4%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#6b7280;height:6px;border-radius:3px;width:0.4%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>95</span><span style="color:#888;">175 (0.3%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#6b7280;height:6px;border-radius:3px;width:0.3%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>7</span><span style="color:#888;">109 (0.2%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#6b7280;height:6px;border-radius:3px;width:0.2%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>99</span><span style="color:#888;">81 (0.2%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#6b7280;height:6px;border-radius:3px;width:0.2%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>96</span><span style="color:#888;">3 (0.0%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#6b7280;height:6px;border-radius:3px;width:0.0%;"></div></div></div><div style="margin-bottom:.5rem;"><div style="display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;"><span>98</span><span style="color:#888;">2 (0.0%)</span></div><div style="background:#f3f4f6;height:6px;border-radius:3px;"><div style="background:#6b7280;height:6px;border-radius:3px;width:0.0%;"></div></div></div>
+    </div>
+  </div>
+
+  <!-- Cancers detected by year -->
+  <div style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;text-transform:uppercase;letter-spacing:.08em;color:#e8111a;border-bottom:2px solid #e8111a;padding-bottom:.3rem;margin:1.75rem 0 .75rem;">Cancers Detected by Screening Year</div>
+  <div style="display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:1rem;">
+    <div style="border:1px solid #e5e7eb;padding:.75rem 1.25rem;min-width:160px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;margin-bottom:.25rem;">Year 0 (Baseline)</div><div style="font-size:1.5rem;font-weight:bold;color:#e8111a;font-family:Georgia,serif;">494</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1.25rem;min-width:160px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;margin-bottom:.25rem;">Year 1</div><div style="font-size:1.5rem;font-weight:bold;color:#e8111a;font-family:Georgia,serif;">329</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1.25rem;min-width:160px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;margin-bottom:.25rem;">Year 2</div><div style="font-size:1.5rem;font-weight:bold;color:#e8111a;font-family:Georgia,serif;">360</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1.25rem;min-width:160px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;margin-bottom:.25rem;">3</div><div style="font-size:1.5rem;font-weight:bold;color:#e8111a;font-family:Georgia,serif;">233</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1.25rem;min-width:160px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;margin-bottom:.25rem;">4</div><div style="font-size:1.5rem;font-weight:bold;color:#e8111a;font-family:Georgia,serif;">276</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1.25rem;min-width:160px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;margin-bottom:.25rem;">5</div><div style="font-size:1.5rem;font-weight:bold;color:#e8111a;font-family:Georgia,serif;">314</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1.25rem;min-width:160px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;margin-bottom:.25rem;">6</div><div style="font-size:1.5rem;font-weight:bold;color:#e8111a;font-family:Georgia,serif;">141</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1.25rem;min-width:160px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;margin-bottom:.25rem;">7</div><div style="font-size:1.5rem;font-weight:bold;color:#e8111a;font-family:Georgia,serif;">3</div></div>
+  </div>
+
+  <!-- Lesion size summary -->
+  <div style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;text-transform:uppercase;letter-spacing:.08em;color:#e8111a;border-bottom:2px solid #e8111a;padding-bottom:.3rem;margin:1.75rem 0 .75rem;">Cancer Lesion Size at Diagnosis</div>
+  <p style="font-family:Arial,sans-serif;font-size:.78rem;color:#555;">
+    Mean: <strong>30.5 mm</strong> &nbsp;·&nbsp;
+    Median: <strong>25.0 mm</strong> &nbsp;·&nbsp;
+    Range: 1.0–260.0 mm
+  </p>
+  <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:.75rem;">
+    <div style="border:1px solid #e5e7eb;padding:.6rem 1rem;min-width:130px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;margin-bottom:.2rem;"><10mm</div><div style="font-size:1.3rem;font-weight:bold;color:#16a34a;font-family:Georgia,serif;">116</div></div><div style="border:1px solid #e5e7eb;padding:.6rem 1rem;min-width:130px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;margin-bottom:.2rem;">10–30mm</div><div style="font-size:1.3rem;font-weight:bold;color:#d97706;font-family:Georgia,serif;">998</div></div><div style="border:1px solid #e5e7eb;padding:.6rem 1rem;min-width:130px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;margin-bottom:.2rem;">≥30mm</div><div style="font-size:1.3rem;font-weight:bold;color:#e8111a;font-family:Georgia,serif;">763</div></div>
+  </div>
+
+</main>
+<footer>
+  <b>DATA SOURCE</b> &nbsp;·&nbsp;
+  National Lung Screening Trial Research Team (2013). TCIA.
+  DOI: 10.7937/TCIA.HMQ8-J677 &nbsp;·&nbsp;
+  License: CC BY 4.0 &nbsp;·&nbsp;
+  Key result: Aberle et al., NEJM 2011, doi:10.1056/NEJMoa1102873 &nbsp;·&nbsp;
+  No AI-generated content &nbsp;·&nbsp;
+  © 2026 Randy Hinton &nbsp;·&nbsp; Generated 2026-06-25 22:51 UTC &nbsp;·&nbsp; #FollowTheData
+</footer>
+</body>
+</html>
