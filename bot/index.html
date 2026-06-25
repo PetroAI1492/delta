@@ -151,7 +151,7 @@
 </div><!-- .layout -->
 <footer>
   THOR SIGNAL &nbsp;·&nbsp; Taxonomy-driven routing &nbsp;·&nbsp;
-  Generated: 2026-06-25 13:27 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+  Generated: 2026-06-25 13:31 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 <script>
 const REPORTS = [
@@ -2716,14 +2716,17 @@ function sendMessage() {
     const { results, fallback, missedTokens } = routeQuery(text);
     if (results.length > 0) {
       let html = '';
+      const total = results.length;
       if (fallback) {
         const missed = (missedTokens || []).join(', ');
         html += `<div style="font-family:Arial,sans-serif;font-size:.74rem;color:var(--gray);margin-bottom:.5rem;">No exact match for all terms. Closest results${missed ? ' (no match for: ' + missed + ')' : ''}:</div>`;
       }
+      html += `<div style="font-family:Arial,sans-serif;font-size:.72rem;color:var(--gray);margin-bottom:.6rem;letter-spacing:.04em;">${total} REPORT${total !== 1 ? 'S' : ''} FOUND</div>`;
+      html += `<div style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;color:var(--red);margin-bottom:.4rem;">1 of ${total}</div>`;
       html += reportCard(results[0]);
-      for (const r of results.slice(1)) {
-        html += '<div style="margin-top:.75rem;font-family:Arial,sans-serif;font-size:.75rem;color:var(--gray)">Also relevant:</div>';
-        html += reportCard(r);
+      for (let i = 1; i < results.length; i++) {
+        html += `<div style="margin-top:.75rem;font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;color:var(--red);">${i+1} of ${total}</div>`;
+        html += reportCard(results[i]);
       }
       addMessage('thor', html);
     } else {
