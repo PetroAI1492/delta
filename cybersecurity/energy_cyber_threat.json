@@ -2,7 +2,7 @@
   "metadata": {
     "report": "Energy ICS Threat Monitor",
     "source": "NVD CVE API + CISA KEV",
-    "generated_at": "2026-06-26 17:27 UTC",
+    "generated_at": "2026-06-26 17:36 UTC",
     "days": 90
   },
   "summary": {
@@ -15,22 +15,22 @@
     "critical_count": 1,
     "high_count": 8,
     "medium_count": 3,
-    "risk_score": 100,
+    "risk_score": 43,
     "vendor_counts": {
       "ABB": 11,
       "Honeywell": 1,
       "Siemens": 2
     },
     "vuln_type_counts": {
-      "Other Vulnerability": 3,
+      "Other Vulnerability": 1,
       "Improper Authorization": 2,
-      "Authentication Bypass": 2,
+      "Remote Code Execution": 2,
+      "Authentication Bypass": 3,
       "Cross-Site Scripting": 1,
       "Memory Corruption": 1,
       "Privilege Escalation": 1,
       "Denial of Service": 2,
-      "Uncontrolled Search Path": 1,
-      "Remote Code Execution": 1
+      "Uncontrolled Search Path": 1
     },
     "latest_date": "2026-06-25"
   },
@@ -52,9 +52,9 @@
       "vuln_type": "Other Vulnerability",
       "system_type": "General Software",
       "sectors": [
-        "Electric Utilities",
-        "Substations",
-        "Industrial"
+        "Substation Automation",
+        "Transmission",
+        "Distribution"
       ]
     },
     {
@@ -74,9 +74,9 @@
       "vuln_type": "Improper Authorization",
       "system_type": "General Software",
       "sectors": [
-        "Electric Utilities",
-        "Substations",
-        "Industrial"
+        "Substation Automation",
+        "Transmission",
+        "Distribution"
       ]
     },
     {
@@ -93,12 +93,12 @@
       "vendor": "ABB",
       "kev_count": 0,
       "kev_hits": [],
-      "vuln_type": "Other Vulnerability",
+      "vuln_type": "Remote Code Execution",
       "system_type": "General Software",
       "sectors": [
-        "Electric Utilities",
-        "Substations",
-        "Industrial"
+        "Substation Automation",
+        "Transmission",
+        "Distribution"
       ]
     },
     {
@@ -118,9 +118,9 @@
       "vuln_type": "Authentication Bypass",
       "system_type": "Handheld / Mobile",
       "sectors": [
-        "Refineries",
-        "Pipelines",
-        "Industrial"
+        "Process Control",
+        "Refinery Operations",
+        "Pipeline Control"
       ]
     },
     {
@@ -140,9 +140,9 @@
       "vuln_type": "Cross-Site Scripting",
       "system_type": "General Software",
       "sectors": [
-        "Electric Utilities",
-        "Substations",
-        "Industrial"
+        "Substation Automation",
+        "Transmission",
+        "Distribution"
       ]
     },
     {
@@ -162,9 +162,9 @@
       "vuln_type": "Memory Corruption",
       "system_type": "Engineering Workstation",
       "sectors": [
-        "Electric Utilities",
-        "Industrial",
-        "Oil & Gas"
+        "Transmission",
+        "Process Control",
+        "Engineering Workstation"
       ]
     },
     {
@@ -184,9 +184,9 @@
       "vuln_type": "Privilege Escalation",
       "system_type": "General Software",
       "sectors": [
-        "Electric Utilities",
-        "Substations",
-        "Industrial"
+        "Substation Automation",
+        "Transmission",
+        "Distribution"
       ]
     },
     {
@@ -206,9 +206,9 @@
       "vuln_type": "Denial of Service",
       "system_type": "Linux Kernel",
       "sectors": [
-        "Electric Utilities",
-        "Substations",
-        "Industrial"
+        "Substation Automation",
+        "Transmission",
+        "Distribution"
       ]
     },
     {
@@ -228,9 +228,9 @@
       "vuln_type": "Improper Authorization",
       "system_type": "General Software",
       "sectors": [
-        "Electric Utilities",
-        "Substations",
-        "Industrial"
+        "Substation Automation",
+        "Transmission",
+        "Distribution"
       ]
     },
     {
@@ -250,9 +250,9 @@
       "vuln_type": "Authentication Bypass",
       "system_type": "General Software",
       "sectors": [
-        "Electric Utilities",
-        "Substations",
-        "Industrial"
+        "Substation Automation",
+        "Transmission",
+        "Distribution"
       ]
     },
     {
@@ -272,9 +272,9 @@
       "vuln_type": "Denial of Service",
       "system_type": "Linux Kernel",
       "sectors": [
-        "Electric Utilities",
-        "Substations",
-        "Industrial"
+        "Substation Automation",
+        "Transmission",
+        "Distribution"
       ]
     },
     {
@@ -294,9 +294,9 @@
       "vuln_type": "Uncontrolled Search Path",
       "system_type": "Engineering Workstation",
       "sectors": [
-        "Electric Utilities",
-        "Substations",
-        "Industrial"
+        "Substation Automation",
+        "Transmission",
+        "Distribution"
       ]
     },
     {
@@ -313,12 +313,12 @@
       "vendor": "Siemens",
       "kev_count": 0,
       "kev_hits": [],
-      "vuln_type": "Other Vulnerability",
+      "vuln_type": "Authentication Bypass",
       "system_type": "Engineering Workstation",
       "sectors": [
-        "Electric Utilities",
-        "Industrial",
-        "Oil & Gas"
+        "Transmission",
+        "Process Control",
+        "Engineering Workstation"
       ]
     },
     {
@@ -338,9 +338,9 @@
       "vuln_type": "Remote Code Execution",
       "system_type": "Linux Kernel",
       "sectors": [
-        "Electric Utilities",
-        "Substations",
-        "Industrial"
+        "Substation Automation",
+        "Transmission",
+        "Distribution"
       ]
     }
   ]
