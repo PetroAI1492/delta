@@ -1,74 +1,273 @@
 {
-  "days": 30,
-  "run_date": "2026-06-26",
-  "regime": "High Tightening",
-  "tightening_count": 6,
-  "loosening_count": 1,
-  "neutral_count": 0,
-  "total_articles": 7,
-  "eu_division": false,
-  "india_flag": false,
-  "shadow_flag": false,
-  "opec_flag": false,
-  "price_flag": false,
-  "observations": [
-    "Sanctions enforcement activity remains elevated \u2014 6 tightening signals vs 1 loosening signals in the 30-day window."
-  ],
-  "articles": [
-    {
-      "title": "Tightening the Vise: E.U. Continues Sanctions Pressure Against Russian Origin Oil - Foley Hoag",
-      "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQVkVhWWVjM0F4bXAta3pkZjRYRmxob25WWktPX3pqbTlRQkFidWFPVVNwTGVVS3g0QUxyZ19qQ0ZuLUNXenM1Qkt1NWptaTZfazdIckozT2ZoU0tWcVJwZWk3RnNuYnJYb0FfU0pHZERMeXU0dFEyOVg1enc3ejhCNEhyWnlSUmhrclRXZ3FycjIxRFpNOWhmQ2tWdzZ1S1c2cjVkc2o1QUU4TFkyVjNuc3M3aWpqQThNemdNbDluUkk2V0M2aWNsX3JGb2toMWNsbXl0Q0JiVXQxM1owM29fcE9ONFlrU1NXLVVjQnJqOS1LeDhZNndVWTgwNW5PQWV3Q2c?oc=5",
-      "published": "2026-06-23",
-      "direction": "TIGHTENING",
-      "source": "Foley Hoag"
+  "metadata": {
+    "report": "Russian Petroleum Sanctions SITREP",
+    "source": "Google News RSS",
+    "generated_at": "2026-06-26 23:57 UTC",
+    "days": 30
+  },
+  "summary": {
+    "days": 30,
+    "run_date": "2026-06-26",
+    "regime": "Low Structural Pressure",
+    "regime_explanation": "No confirmed official actions \u2014 regime driven by 7 tightening-themed articles (statements and proposals) vs 1 loosening. Coverage concentrated in: Shipping (1), UK (1).",
+    "total_articles": 8,
+    "unique_events": 8,
+    "tightening_count": 7,
+    "loosening_count": 1,
+    "neutral_count": 0,
+    "official_tightening": 0,
+    "official_loosening": 0,
+    "type_counts": {
+      "News Report": 5,
+      "Legal Guidance": 1,
+      "Statement": 2
     },
+    "body_counts": {
+      "Other": 6,
+      "Shipping": 1,
+      "UK": 1
+    },
+    "active_flags": [],
+    "tier_counts": {
+      "1": 0,
+      "2": 1,
+      "3": 7
+    }
+  },
+  "events": [
     {
       "title": "TEMPORARY DEAL - US Eases Russia Oil Sanctions to Tame Price Surge, Riling European Allies - EnergyNow",
       "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOZEwteXNCcjlLa1dveThnYmJJMnFFdWNySXl3T19HZThyeUw1Rk52ay1Vak55WFhYNmp4Mk4tbVBjMDBDdUVEVFR0dzFmTmc4MjFKY0NjQXo1eFBicmptSF8tR1NLRUlYQTVjTFZ3UjJSUTdxNExiYUdLNy1tX2pHQS1aS19UUTdVdXF3c3RiU0JmdU9nR1NNb0FycmlxYlZsU2Jhck5WeklVWmRQQjlnT2o0ZmJDQlVv?oc=5",
       "published": "2026-06-24",
+      "source": "EnergyNow",
+      "source_tier": 3,
       "direction": "TIGHTENING",
-      "source": "EnergyNow"
+      "article_type": "News Report",
+      "bodies": [
+        "Other"
+      ],
+      "article_count": 1,
+      "all_sources": [
+        "EnergyNow"
+      ]
     },
     {
-      "title": "US extends Russian oil sanctions waiver for another month - Shipping Telegraph",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQME1qdUswQnhIWU9yTExiVFJwZWF4NzFZdXFPR2JpNG1DT3NSOG5rcER6N1BqR0VvWTB1S01ReUllV21MRDlhc0lXaGlDZlNocnVvdGJ1TkZDamhNSmZfS19Jb2VVdXQwUzhiV180bW9IUS1jNVQzazNlTGtDT29sSlE4ZGNnTG5UNjZtRV96WWpJVGMyYlQ1UU1HMmlwU09SNUFiamx3?oc=5",
-      "published": "2026-06-10",
+      "title": "Tightening the Vise: E.U. Continues Sanctions Pressure Against Russian Origin Oil - Foley Hoag",
+      "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQVkVhWWVjM0F4bXAta3pkZjRYRmxob25WWktPX3pqbTlRQkFidWFPVVNwTGVVS3g0QUxyZ19qQ0ZuLUNXenM1Qkt1NWptaTZfazdIckozT2ZoU0tWcVJwZWk3RnNuYnJYb0FfU0pHZERMeXU0dFEyOVg1enc3ejhCNEhyWnlSUmhrclRXZ3FycjIxRFpNOWhmQ2tWdzZ1S1c2cjVkc2o1QUU4TFkyVjNuc3M3aWpqQThNemdNbDluUkk2V0M2aWNsX3JGb2toMWNsbXl0Q0JiVXQxM1owM29fcE9ONFlrU1NXLVVjQnJqOS1LeDhZNndVWTgwNW5PQWV3Q2c?oc=5",
+      "published": "2026-06-23",
+      "source": "Foley Hoag",
+      "source_tier": 3,
       "direction": "TIGHTENING",
-      "source": "Shipping Telegraph"
+      "article_type": "Legal Guidance",
+      "bodies": [
+        "Other"
+      ],
+      "article_count": 1,
+      "all_sources": [
+        "Foley Hoag"
+      ]
     },
     {
       "title": "Trump says U.S. could restore Russian oil sanctions after Iran deal - The New Voice of Ukraine",
       "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOcU41aUVMcGRYOE52TEthdzRheUplZmlCNERKZFZBTF91YTNEVU9TVGZaVkFuMl9JdF83ZjhzRHVVQ2QxQ1I3andmSDN6ZTJIc3o3MTE3UFpNd0kyR3pSV3hyUU9xdlNvRFpTQVpoS0xJQ3huLTluYjkwWWc1MjVQZEprOXN4UlRULS1hYXU1cWJWTld0NjVUY0F3WkJuQ1N3eEEwNm5qMXg1VGNEalHSAaoBQVVfeXFMUG9hZ0tjY0dpdm9tWjVCVHFsU2pkT2ZRZi1KZnU0Rjd1SFgxZkRpOGNOcEI4VmhRMzU1MWh5V19VRWl1WmpreE9aSHRLMFlGaU5BRHlIM1NCeGJSUFQzcHFUdENUMDE0bV82QVBmOWMxNFJxZk1UZXhLSTdJZTRXa3FtUU1wRHRIc00zRVYtYWp3UGx3eWFLTEhNRUxQVk0zOVJUM3g5M190QlE?oc=5",
       "published": "2026-06-16",
+      "source": "The New Voice of Ukraine",
+      "source_tier": 3,
       "direction": "TIGHTENING",
-      "source": "The New Voice of Ukraine"
-    },
-    {
-      "title": "Britain softens sanctions - The Bell",
-      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE01TzFFLXprd0JxLVBkVkhMSzJ0aGRGb296bzZNb2NJU1R6N3ZWdUxSbGxMTEcyZnFjaGJ4cmxVSnVrOGJCYVJhMGgzNDYxTkx6NDNRVnZoT3FmZmNj?oc=5",
-      "published": "2026-05-27",
-      "direction": "TIGHTENING",
-      "source": "The Bell"
+      "article_type": "Statement",
+      "bodies": [
+        "Other"
+      ],
+      "article_count": 1,
+      "all_sources": [
+        "The New Voice of Ukraine"
+      ]
     },
     {
       "title": "Trump hints that he may reinstate sanctions on Russian oil - RBC-Ukraine",
       "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOdkxwWTdwc1Ftb0dlSFZoeGxBUFphUHFmX1ZtMk1vU2ZhVHBXMmxIZmp0VFRpZ3JrWll6VzVfUXVVUGRmZG10dmVBWUZ5ZzRxRi1iNXR6M0tVMkdpSmx2WDd2c0tnaXBhT3djOTd6blpubEI1RWlrcnNxSlRFUGdRM2xyaVpfeTdQdzlnVENNNVBuQW9vNnc?oc=5",
       "published": "2026-06-16",
+      "source": "RBC-Ukraine",
+      "source_tier": 3,
       "direction": "TIGHTENING",
-      "source": "RBC-Ukraine"
+      "article_type": "Statement",
+      "bodies": [
+        "Other"
+      ],
+      "article_count": 1,
+      "all_sources": [
+        "RBC-Ukraine"
+      ]
+    },
+    {
+      "title": "EU targets 2Rivers founder in Russia oil sanctions - Quantum Commodity Intelligence",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOSW52SHJYbnVwc2dmTXl2RUVoX0p1UUF1eE1rX1llQ0JCQ2FpWnBPaDNQaW0ydmJLUWtrenlwNGMzUFRTQ29nRU1iM05LbTZUWHRHS1VMQ2V3Y25uT3BVaFhJTVl1TTJILUVXd2NGOFhIQ251eGp5Zkh6bFRjN0VoSjc2bFJ5UDJPN2pWdW5mQnpHU1VITVhXbg?oc=5",
+      "published": "2026-06-15",
+      "source": "Quantum Commodity Intelligence",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "article_type": "News Report",
+      "bodies": [
+        "Other"
+      ],
+      "article_count": 1,
+      "all_sources": [
+        "Quantum Commodity Intelligence"
+      ]
+    },
+    {
+      "title": "US extends Russian oil sanctions waiver for another month - Shipping Telegraph",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQME1qdUswQnhIWU9yTExiVFJwZWF4NzFZdXFPR2JpNG1DT3NSOG5rcER6N1BqR0VvWTB1S01ReUllV21MRDlhc0lXaGlDZlNocnVvdGJ1TkZDamhNSmZfS19Jb2VVdXQwUzhiV180bW9IUS1jNVQzazNlTGtDT29sSlE4ZGNnTG5UNjZtRV96WWpJVGMyYlQ1UU1HMmlwU09SNUFiamx3?oc=5",
+      "published": "2026-06-10",
+      "source": "Shipping Telegraph",
+      "source_tier": 2,
+      "direction": "TIGHTENING",
+      "article_type": "News Report",
+      "bodies": [
+        "Shipping"
+      ],
+      "article_count": 1,
+      "all_sources": [
+        "Shipping Telegraph"
+      ]
     },
     {
       "title": "Russian Oil Continues Flow Amid US Waiver - IOL",
       "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOTUJkaGFuVHBMSDZIV2hIWDRkT0MzdlNXSVh1Q04zdUI4YWJjWk1DSk5xQUhsRjUwOWI2VEFQUXF4cE9uY3V4cnhXMk9hX05Tdm94dFVhQ0doOHFsbE41SGprMzZDYWpnNGl2bnB6SjdIRXhPcXVhRHo0S0l4OXM2X0d5Zmd2cHpWRFE?oc=5",
       "published": "2026-06-05",
+      "source": "IOL",
+      "source_tier": 3,
       "direction": "LOOSENING",
-      "source": "IOL"
+      "article_type": "News Report",
+      "bodies": [
+        "Other"
+      ],
+      "article_count": 1,
+      "all_sources": [
+        "IOL"
+      ]
+    },
+    {
+      "title": "Britain softens sanctions - The Bell",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE01TzFFLXprd0JxLVBkVkhMSzJ0aGRGb296bzZNb2NJU1R6N3ZWdUxSbGxMTEcyZnFjaGJ4cmxVSnVrOGJCYVJhMGgzNDYxTkx6NDNRVnZoT3FmZmNj?oc=5",
+      "published": "2026-05-27",
+      "source": "The Bell",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "article_type": "News Report",
+      "bodies": [
+        "UK"
+      ],
+      "article_count": 1,
+      "all_sources": [
+        "The Bell"
+      ]
     }
   ],
-  "metadata": {
-    "report": "Russian Petroleum Sanctions SITREP",
-    "source": "Google News RSS",
-    "generated_at": "2026-06-26 23:37 UTC",
-    "days": 30
-  }
+  "articles": [
+    {
+      "title": "TEMPORARY DEAL - US Eases Russia Oil Sanctions to Tame Price Surge, Riling European Allies - EnergyNow",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOZEwteXNCcjlLa1dveThnYmJJMnFFdWNySXl3T19HZThyeUw1Rk52ay1Vak55WFhYNmp4Mk4tbVBjMDBDdUVEVFR0dzFmTmc4MjFKY0NjQXo1eFBicmptSF8tR1NLRUlYQTVjTFZ3UjJSUTdxNExiYUdLNy1tX2pHQS1aS19UUTdVdXF3c3RiU0JmdU9nR1NNb0FycmlxYlZsU2Jhck5WeklVWmRQQjlnT2o0ZmJDQlVv?oc=5",
+      "published": "2026-06-24",
+      "source": "EnergyNow",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "article_type": "News Report",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "Tightening the Vise: E.U. Continues Sanctions Pressure Against Russian Origin Oil - Foley Hoag",
+      "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQVkVhWWVjM0F4bXAta3pkZjRYRmxob25WWktPX3pqbTlRQkFidWFPVVNwTGVVS3g0QUxyZ19qQ0ZuLUNXenM1Qkt1NWptaTZfazdIckozT2ZoU0tWcVJwZWk3RnNuYnJYb0FfU0pHZERMeXU0dFEyOVg1enc3ejhCNEhyWnlSUmhrclRXZ3FycjIxRFpNOWhmQ2tWdzZ1S1c2cjVkc2o1QUU4TFkyVjNuc3M3aWpqQThNemdNbDluUkk2V0M2aWNsX3JGb2toMWNsbXl0Q0JiVXQxM1owM29fcE9ONFlrU1NXLVVjQnJqOS1LeDhZNndVWTgwNW5PQWV3Q2c?oc=5",
+      "published": "2026-06-23",
+      "source": "Foley Hoag",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "article_type": "Legal Guidance",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "Trump says U.S. could restore Russian oil sanctions after Iran deal - The New Voice of Ukraine",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOcU41aUVMcGRYOE52TEthdzRheUplZmlCNERKZFZBTF91YTNEVU9TVGZaVkFuMl9JdF83ZjhzRHVVQ2QxQ1I3andmSDN6ZTJIc3o3MTE3UFpNd0kyR3pSV3hyUU9xdlNvRFpTQVpoS0xJQ3huLTluYjkwWWc1MjVQZEprOXN4UlRULS1hYXU1cWJWTld0NjVUY0F3WkJuQ1N3eEEwNm5qMXg1VGNEalHSAaoBQVVfeXFMUG9hZ0tjY0dpdm9tWjVCVHFsU2pkT2ZRZi1KZnU0Rjd1SFgxZkRpOGNOcEI4VmhRMzU1MWh5V19VRWl1WmpreE9aSHRLMFlGaU5BRHlIM1NCeGJSUFQzcHFUdENUMDE0bV82QVBmOWMxNFJxZk1UZXhLSTdJZTRXa3FtUU1wRHRIc00zRVYtYWp3UGx3eWFLTEhNRUxQVk0zOVJUM3g5M190QlE?oc=5",
+      "published": "2026-06-16",
+      "source": "The New Voice of Ukraine",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "article_type": "Statement",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "Trump hints that he may reinstate sanctions on Russian oil - RBC-Ukraine",
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOdkxwWTdwc1Ftb0dlSFZoeGxBUFphUHFmX1ZtMk1vU2ZhVHBXMmxIZmp0VFRpZ3JrWll6VzVfUXVVUGRmZG10dmVBWUZ5ZzRxRi1iNXR6M0tVMkdpSmx2WDd2c0tnaXBhT3djOTd6blpubEI1RWlrcnNxSlRFUGdRM2xyaVpfeTdQdzlnVENNNVBuQW9vNnc?oc=5",
+      "published": "2026-06-16",
+      "source": "RBC-Ukraine",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "article_type": "Statement",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "EU targets 2Rivers founder in Russia oil sanctions - Quantum Commodity Intelligence",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOSW52SHJYbnVwc2dmTXl2RUVoX0p1UUF1eE1rX1llQ0JCQ2FpWnBPaDNQaW0ydmJLUWtrenlwNGMzUFRTQ29nRU1iM05LbTZUWHRHS1VMQ2V3Y25uT3BVaFhJTVl1TTJILUVXd2NGOFhIQ251eGp5Zkh6bFRjN0VoSjc2bFJ5UDJPN2pWdW5mQnpHU1VITVhXbg?oc=5",
+      "published": "2026-06-15",
+      "source": "Quantum Commodity Intelligence",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "article_type": "News Report",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US extends Russian oil sanctions waiver for another month - Shipping Telegraph",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQME1qdUswQnhIWU9yTExiVFJwZWF4NzFZdXFPR2JpNG1DT3NSOG5rcER6N1BqR0VvWTB1S01ReUllV21MRDlhc0lXaGlDZlNocnVvdGJ1TkZDamhNSmZfS19Jb2VVdXQwUzhiV180bW9IUS1jNVQzazNlTGtDT29sSlE4ZGNnTG5UNjZtRV96WWpJVGMyYlQ1UU1HMmlwU09SNUFiamx3?oc=5",
+      "published": "2026-06-10",
+      "source": "Shipping Telegraph",
+      "source_tier": 2,
+      "direction": "TIGHTENING",
+      "article_type": "News Report",
+      "bodies": [
+        "Shipping"
+      ],
+      "flags": []
+    },
+    {
+      "title": "Russian Oil Continues Flow Amid US Waiver - IOL",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOTUJkaGFuVHBMSDZIV2hIWDRkT0MzdlNXSVh1Q04zdUI4YWJjWk1DSk5xQUhsRjUwOWI2VEFQUXF4cE9uY3V4cnhXMk9hX05Tdm94dFVhQ0doOHFsbE41SGprMzZDYWpnNGl2bnB6SjdIRXhPcXVhRHo0S0l4OXM2X0d5Zmd2cHpWRFE?oc=5",
+      "published": "2026-06-05",
+      "source": "IOL",
+      "source_tier": 3,
+      "direction": "LOOSENING",
+      "article_type": "News Report",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "Britain softens sanctions - The Bell",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE01TzFFLXprd0JxLVBkVkhMSzJ0aGRGb296bzZNb2NJU1R6N3ZWdUxSbGxMTEcyZnFjaGJ4cmxVSnVrOGJCYVJhMGgzNDYxTkx6NDNRVnZoT3FmZmNj?oc=5",
+      "published": "2026-05-27",
+      "source": "The Bell",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "article_type": "News Report",
+      "bodies": [
+        "UK"
+      ],
+      "flags": []
+    }
+  ]
 }
