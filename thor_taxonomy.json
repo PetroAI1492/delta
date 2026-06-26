@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-25T23:27:37Z",
+  "generated": "2026-06-26T00:42:52Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -2745,6 +2745,96 @@
       ],
       "id": "nlst_lung_ct_signal_report",
       "path": "https://petroai1492.github.io/delta/health/nlst_lung_ct.html"
+    },
+    {
+      "title": "CRC Nonprofit Funding Intelligence \u2014 IRS 990 Signal",
+      "file": "health/verify_990.html",
+      "description": "IRS 990 funding split analysis across 6 major colorectal cancer nonprofits \u2014 screening/prevention vs. research/treatment revenue comparison via ProPublica Nonprofit Explorer API",
+      "json_file": "health/verify_990.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/health/verify_990.html`",
+      "auto_published": false,
+      "primary_domain": "Health",
+      "secondary_domains": [
+        "Finance"
+      ],
+      "entities": [
+        "Dana-Farber",
+        "Memorial Sloan Kettering",
+        "Fox Chase",
+        "Colorectal Cancer Alliance",
+        "Fight Colorectal Cancer",
+        "Colon Cancer Coalition",
+        "IRS",
+        "ProPublica"
+      ],
+      "data_sources": [
+        "ProPublica Nonprofit Explorer API (projects.propublica.org/nonprofits/api/v2); IRS Form 990 public filings; 6 organizations tracked"
+      ],
+      "update_frequency": "Annual (IRS 990 filings typically available 12-18 months after fiscal year end)",
+      "key_signals": [
+        "$5.09B total tracked (FY2023)",
+        "99.5% to research/treatment ($5.06B)",
+        "0.5% to screening/prevention ($25.8M)",
+        "Dana-Farber $3.39B",
+        "MSK $1.67B",
+        "CRC Alliance $20.7M",
+        "Fight CRC $3.1M",
+        "Colon Cancer Coalition $2.0M",
+        "Fox Chase $2.1M"
+      ],
+      "intent_phrases": [
+        "CRC funding",
+        "colorectal cancer nonprofit",
+        "colon cancer funding",
+        "cancer nonprofit",
+        "IRS 990",
+        "nonprofit funding",
+        "screening vs treatment funding",
+        "cancer charity",
+        "Dana-Farber",
+        "Memorial Sloan Kettering",
+        "MSK",
+        "Fox Chase",
+        "Colorectal Cancer Alliance",
+        "Fight Colorectal Cancer",
+        "Colon Cancer Coalition",
+        "cancer research funding",
+        "prevention funding gap",
+        "nonprofit revenue",
+        "990 filing",
+        "cancer spending",
+        {
+          "keyword": "crc",
+          "weight": 10
+        },
+        {
+          "keyword": "nonprofit",
+          "weight": 10
+        },
+        {
+          "keyword": "funding",
+          "weight": 10
+        },
+        {
+          "keyword": "intelligence",
+          "weight": 10
+        },
+        {
+          "keyword": "irs",
+          "weight": 10
+        },
+        {
+          "keyword": "990",
+          "weight": 10
+        },
+        {
+          "keyword": "signal",
+          "weight": 10
+        }
+      ],
+      "id": "crc_nonprofit_funding_intelligence_irs_990_signal",
+      "path": "https://petroai1492.github.io/delta/health/verify_990.html"
     }
   ],
   "cross_domain_matrix": [
