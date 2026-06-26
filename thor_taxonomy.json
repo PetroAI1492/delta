@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-26T17:39:56Z",
+  "generated": "2026-06-26T23:39:15Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -3002,6 +3002,85 @@
       ],
       "id": "energy_sector_cyber_threat_signal",
       "path": "https://petroai1492.github.io/delta/cybersecurity/energy_cyber_threat.html"
+    },
+    {
+      "title": "Russian Petroleum Sanctions SITREP",
+      "file": "geopolitics/russia_sanctions.html",
+      "description": "Situation report on Russian petroleum sanctions activity \u2014 fetches Google News RSS headlines, classifies as TIGHTENING/LOOSENING/NEUTRAL, flags EU division, shadow fleet, India/China buyer activity, OPEC linkage, and price cap coverage; generates deterministic regime classification",
+      "json_file": "geopolitics/russia_sanctions.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/geopolitics/russia_sanctions.html`",
+      "auto_published": false,
+      "primary_domain": "Geopolitics",
+      "secondary_domains": [
+        "Energy"
+      ],
+      "entities": [
+        "Russia",
+        "OFAC",
+        "EU",
+        "OPEC",
+        "India",
+        "China",
+        "shadow fleet",
+        "price cap",
+        "petroleum sanctions"
+      ],
+      "data_sources": [
+        "Google News RSS (news.google.com/rss/search",
+        "free",
+        "no key); configurable lookback window (default 30 days)"
+      ],
+      "update_frequency": "Manual (recommend weekly or when sanctions news breaks)",
+      "key_signals": [
+        "Regime classification (High/Moderate Tightening, Loosening, Low Pressure)",
+        "tightening vs loosening article counts",
+        "EU division flag",
+        "India/China buyer flag",
+        "shadow fleet flag",
+        "OPEC linkage flag",
+        "price cap flag"
+      ],
+      "intent_phrases": [
+        "Russia sanctions",
+        "Russian oil sanctions",
+        "petroleum sanctions",
+        "Russia price cap",
+        "shadow fleet",
+        "Russian crude",
+        "OFAC Russia",
+        "oil sanctions",
+        "Russia oil ban",
+        "sanctions tightening",
+        "sanctions loosening",
+        "EU sanctions",
+        "Russia petroleum",
+        "Russian energy sanctions",
+        "sanctions regime",
+        "dark fleet",
+        "sanctions circumvention",
+        "India Russia oil",
+        "China Russia oil",
+        "Russian oil discount",
+        {
+          "keyword": "russian",
+          "weight": 10
+        },
+        {
+          "keyword": "petroleum",
+          "weight": 10
+        },
+        {
+          "keyword": "sanctions",
+          "weight": 10
+        },
+        {
+          "keyword": "sitrep",
+          "weight": 10
+        }
+      ],
+      "id": "russian_petroleum_sanctions_sitrep",
+      "path": "https://petroai1492.github.io/delta/geopolitics/russia_sanctions.html"
     }
   ],
   "cross_domain_matrix": [
