@@ -1,0 +1,108 @@
+{
+  "metadata": {
+    "report": "CRC Nonprofit Funding Intelligence",
+    "source": "ProPublica Nonprofit Explorer API",
+    "generated_at": "2026-06-26 00:40 UTC"
+  },
+  "summary": {
+    "total": 5085880222,
+    "screening": 25843166,
+    "treatment": 5060037056,
+    "pct_screen": 0.5,
+    "pct_treat": 99.5,
+    "orgs_total": 6,
+    "orgs_with_data": 6
+  },
+  "organizations": [
+    {
+      "org": "Dana-Farber Cancer Institute",
+      "ein": "042263040",
+      "revenue": 3387587769,
+      "expenses": 3002803859,
+      "assets": 4735245065,
+      "year": 2023,
+      "screening": false,
+      "status": "OK",
+      "mission": "",
+      "ntee": "H300",
+      "city": "Boston",
+      "state": "MA",
+      "propublica_url": "https://projects.propublica.org/nonprofits/organizations/042263040"
+    },
+    {
+      "org": "Memorial Sloan Kettering",
+      "ein": "131924236",
+      "revenue": 1670357000,
+      "expenses": 1507732713,
+      "assets": 8540897000,
+      "year": 2023,
+      "screening": false,
+      "status": "OK",
+      "mission": "",
+      "ntee": "E120",
+      "city": "New York",
+      "state": "NY",
+      "propublica_url": "https://projects.propublica.org/nonprofits/organizations/131924236"
+    },
+    {
+      "org": "Fox Chase Cancer Center",
+      "ein": "232003072",
+      "revenue": 2092287,
+      "expenses": 4314011,
+      "assets": 52729110,
+      "year": 2023,
+      "screening": false,
+      "status": "OK",
+      "mission": "",
+      "ntee": "H12",
+      "city": "Philadelphia",
+      "state": "PA",
+      "propublica_url": "https://projects.propublica.org/nonprofits/organizations/232003072"
+    },
+    {
+      "org": "Colorectal Cancer Alliance",
+      "ein": "860947831",
+      "revenue": 20743740,
+      "expenses": 16935687,
+      "assets": 16811784,
+      "year": 2023,
+      "screening": true,
+      "status": "OK",
+      "mission": "",
+      "ntee": "E60",
+      "city": "Washington",
+      "state": "DC",
+      "propublica_url": "https://projects.propublica.org/nonprofits/organizations/860947831"
+    },
+    {
+      "org": "Fight Colorectal Cancer",
+      "ein": "202622550",
+      "revenue": 3060301,
+      "expenses": 3662785,
+      "assets": 4417588,
+      "year": 2023,
+      "screening": true,
+      "status": "OK",
+      "mission": "",
+      "ntee": "G30",
+      "city": "Springfield",
+      "state": "MO",
+      "propublica_url": "https://projects.propublica.org/nonprofits/organizations/202622550"
+    },
+    {
+      "org": "Colon Cancer Coalition",
+      "ein": "300377727",
+      "revenue": 2039125,
+      "expenses": 2111812,
+      "assets": 5397481,
+      "year": 2023,
+      "screening": true,
+      "status": "OK",
+      "mission": "",
+      "ntee": "G30",
+      "city": "Minneapolis",
+      "state": "MN",
+      "propublica_url": "https://projects.propublica.org/nonprofits/organizations/300377727"
+    }
+  ]
+}
