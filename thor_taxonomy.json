@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-26T15:12:41Z",
+  "generated": "2026-06-26T17:16:31Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -2918,6 +2918,90 @@
       ],
       "id": "daily_sky_nasa_astronomy_picture_of_the_day",
       "path": "https://petroai1492.github.io/delta/science/daily_sky.html"
+    },
+    {
+      "title": "Energy Sector Cyber Threat Signal",
+      "file": "cybersecurity/energy_cyber_threat.html",
+      "description": "Identifies active cybersecurity threats targeting energy sector industrial control systems (ICS) \u2014 crosses NVD CVE data against energy sector vendors (ABB, Siemens, Honeywell, Schneider Electric, AVEVA, Emerson, Rockwell Automation, Yokogawa) with CISA KEV crossover",
+      "json_file": "cybersecurity/energy_cyber_threat.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/cybersecurity/energy_cyber_threat.html`",
+      "auto_published": false,
+      "primary_domain": "Cybersecurity",
+      "secondary_domains": [
+        "Energy"
+      ],
+      "entities": [
+        "ABB",
+        "Siemens",
+        "Honeywell",
+        "Schneider Electric",
+        "AVEVA",
+        "Emerson",
+        "Rockwell Automation",
+        "Yokogawa",
+        "CISA",
+        "NVD",
+        "ICS",
+        "SCADA"
+      ],
+      "data_sources": [
+        "NVD CVE API (services.nvd.nist.gov/rest/json/cves/2.0",
+        "no key required); CISA KEV catalog (cisa.gov/kev); configurable lookback window (default 30 days)"
+      ],
+      "update_frequency": "Manual (run as needed; recommend weekly)",
+      "key_signals": [
+        "CVE count by energy vendor",
+        "Critical/High severity counts",
+        "CISA KEV crossover (known exploited)",
+        "vendor breakdown",
+        "CVE descriptions and CVSS scores",
+        "latest advisory date"
+      ],
+      "intent_phrases": [
+        "energy cyber",
+        "ICS vulnerability",
+        "SCADA threat",
+        "energy sector cyber",
+        "industrial control system",
+        "ABB vulnerability",
+        "Siemens ICS",
+        "Honeywell CVE",
+        "Schneider Electric hack",
+        "AVEVA vulnerability",
+        "energy grid cyber",
+        "power grid hack",
+        "refinery cyber",
+        "pipeline cyber threat",
+        "OT security",
+        "operational technology",
+        "ICS CVE",
+        "energy KEV",
+        "critical infrastructure cyber",
+        "energy sector threat",
+        {
+          "keyword": "energy",
+          "weight": 10
+        },
+        {
+          "keyword": "sector",
+          "weight": 10
+        },
+        {
+          "keyword": "cyber",
+          "weight": 10
+        },
+        {
+          "keyword": "threat",
+          "weight": 10
+        },
+        {
+          "keyword": "signal",
+          "weight": 10
+        }
+      ],
+      "id": "energy_sector_cyber_threat_signal",
+      "path": "https://petroai1492.github.io/delta/cybersecurity/energy_cyber_threat.html"
     }
   ],
   "cross_domain_matrix": [
