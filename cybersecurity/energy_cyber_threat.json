@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "report": "Energy Sector Cyber Threat Signal",
-    "source": "CISA ICS Advisories + CISA KEV",
-    "generated_at": "2026-06-26 17:11 UTC",
+    "report": "Energy ICS Threat Monitor",
+    "source": "NVD CVE API + CISA KEV",
+    "generated_at": "2026-06-26 17:27 UTC",
     "days": 90
   },
   "summary": {
@@ -14,16 +14,30 @@
     "total_kev": 0,
     "critical_count": 1,
     "high_count": 8,
+    "medium_count": 3,
+    "risk_score": 100,
     "vendor_counts": {
       "ABB": 11,
       "Honeywell": 1,
       "Siemens": 2
     },
+    "vuln_type_counts": {
+      "Other Vulnerability": 3,
+      "Improper Authorization": 2,
+      "Authentication Bypass": 2,
+      "Cross-Site Scripting": 1,
+      "Memory Corruption": 1,
+      "Privilege Escalation": 1,
+      "Denial of Service": 2,
+      "Uncontrolled Search Path": 1,
+      "Remote Code Execution": 1
+    },
     "latest_date": "2026-06-25"
   },
   "advisories": [
     {
-      "title": "CVE-2025-14771 \u2014 ABB",
+      "cve_id": "CVE-2025-14771",
+      "title": "CVE-2025-14771",
       "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-14771",
       "advisory_code": "CVE-2025-14771",
       "description": "Files or directories accessible to external parties vulnerability in ABB T-MAC Plus.\n\nThis issue affects T-MAC Plus: 4.0-24.",
@@ -33,11 +47,19 @@
       ],
       "max_cvss": 9.9,
       "vendor": "ABB",
+      "kev_count": 0,
       "kev_hits": [],
-      "kev_count": 0
+      "vuln_type": "Other Vulnerability",
+      "system_type": "General Software",
+      "sectors": [
+        "Electric Utilities",
+        "Substations",
+        "Industrial"
+      ]
     },
     {
-      "title": "CVE-2025-14772 \u2014 ABB",
+      "cve_id": "CVE-2025-14772",
+      "title": "CVE-2025-14772",
       "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-14772",
       "advisory_code": "CVE-2025-14772",
       "description": "Authorization bypass through User-Controlled key vulnerability in ABB T-MAC Plus.\n\nThis issue affects T-MAC Plus: 4.0-24.",
@@ -47,11 +69,19 @@
       ],
       "max_cvss": 8.8,
       "vendor": "ABB",
+      "kev_count": 0,
       "kev_hits": [],
-      "kev_count": 0
+      "vuln_type": "Improper Authorization",
+      "system_type": "General Software",
+      "sectors": [
+        "Electric Utilities",
+        "Substations",
+        "Industrial"
+      ]
     },
     {
-      "title": "CVE-2026-53836 \u2014 ABB",
+      "cve_id": "CVE-2026-53836",
+      "title": "CVE-2026-53836",
       "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-53836",
       "advisory_code": "CVE-2026-53836",
       "description": "OpenClaw before 2026.5.12 contains an allowlist bypass vulnerability in PowerShell encoded-command handling that allows attackers to execute encoded commands using abbreviated flag aliases not recognized by the allowlist parser. Remote authenticated operators can bypass execution allowlist checks by using unrecognized encoded-command alias forms to execute arbitrary PowerShell content.",
@@ -61,11 +91,19 @@
       ],
       "max_cvss": 8.8,
       "vendor": "ABB",
+      "kev_count": 0,
       "kev_hits": [],
-      "kev_count": 0
+      "vuln_type": "Other Vulnerability",
+      "system_type": "General Software",
+      "sectors": [
+        "Electric Utilities",
+        "Substations",
+        "Industrial"
+      ]
     },
     {
-      "title": "CVE-2026-4272 \u2014 Honeywell",
+      "cve_id": "CVE-2026-4272",
+      "title": "CVE-2026-4272",
       "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-4272",
       "advisory_code": "CVE-2026-4272",
       "description": "Missing Authentication for Critical Function vulnerability in Honeywell Handheld Scanners allows Authentication Abuse.This issue affects Handheld Scanners: from C1 Base(Ingenic x1000) before GK000432BAA, from D1 Base(Ingenic x1600) before HE000085BAA, from A1/B1 Base(IMX25) before BK000763BAA_BK000765BAA_CU000101BAA.\n\nThis vulnerability could allow a remote attacker within Bluetooth range of the scanner's base station has the capability to remotely execute system commands on the host connected to the base station without authentication. This issue has been assigned\u00a0 CVE-2026-4272 https://nvd.nist.gov/vuln/detail/CVE-2026-4272  and rated with a severity of High. Honeywell strongly recommends that users upgrade to the latest version identified to resolve the vulnerability.",
@@ -75,11 +113,19 @@
       ],
       "max_cvss": 8.1,
       "vendor": "Honeywell",
+      "kev_count": 0,
       "kev_hits": [],
-      "kev_count": 0
+      "vuln_type": "Authentication Bypass",
+      "system_type": "Handheld / Mobile",
+      "sectors": [
+        "Refineries",
+        "Pipelines",
+        "Industrial"
+      ]
     },
     {
-      "title": "CVE-2025-14773 \u2014 ABB",
+      "cve_id": "CVE-2025-14773",
+      "title": "CVE-2025-14773",
       "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-14773",
       "advisory_code": "CVE-2025-14773",
       "description": "Improper neutralization of input during web page generation ('cross-site scripting') vulnerability in ABB T-MAC Plus.\n\nThis issue affects T-MAC Plus: 4.0-24.",
@@ -89,11 +135,19 @@
       ],
       "max_cvss": 8.0,
       "vendor": "ABB",
+      "kev_count": 0,
       "kev_hits": [],
-      "kev_count": 0
+      "vuln_type": "Cross-Site Scripting",
+      "system_type": "General Software",
+      "sectors": [
+        "Electric Utilities",
+        "Substations",
+        "Industrial"
+      ]
     },
     {
-      "title": "CVE-2025-12659 \u2014 Siemens",
+      "cve_id": "CVE-2025-12659",
+      "title": "CVE-2025-12659",
       "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-12659",
       "advisory_code": "CVE-2025-12659",
       "description": "Siemens Simcenter Femap\u00a0contains a memory corruption vulnerability while parsing specially crafted IPT files. This could allow an attacker to execute code in the context of the current process.",
@@ -103,11 +157,19 @@
       ],
       "max_cvss": 7.8,
       "vendor": "Siemens",
+      "kev_count": 0,
       "kev_hits": [],
-      "kev_count": 0
+      "vuln_type": "Memory Corruption",
+      "system_type": "Engineering Workstation",
+      "sectors": [
+        "Electric Utilities",
+        "Industrial",
+        "Oil & Gas"
+      ]
     },
     {
-      "title": "CVE-2026-37525 \u2014 ABB",
+      "cve_id": "CVE-2026-37525",
+      "title": "CVE-2026-37525",
       "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-37525",
       "advisory_code": "CVE-2026-37525",
       "description": "AGL app-framework-binder (afb-daemon) through v19.90.0 contains a privilege escalation vulnerability in the supervision Do command. The on_supervision_call function in src/afb-supervision.c explicitly nullifies the request credentials by calling afb_context_change_cred(&xreq->context, NULL) before dispatching an attacker-controlled API call via xapi->itf->call(xapi->closure, xreq). The NULL propagation chain through afb-context.c:110 (context->credentials = afb_cred_addref(NULL)) and afb-cred.c:163 (returns NULL when cred is NULL) confirms that credentials are zeroed before the target API executes. The attacker controls both api and verb parameters via JSON input, allowing execution of any registered API with a NULL credential context. APIs that rely on context->credentials for authorization decisions may fail open when receiving NULL credentials, enabling privilege escalation. This vulnerability was introduced in commit abbb4599f0b921c6f434b6bd02bcfb277eecf745 on 2018-02-14.",
@@ -117,11 +179,19 @@
       ],
       "max_cvss": 7.8,
       "vendor": "ABB",
+      "kev_count": 0,
       "kev_hits": [],
-      "kev_count": 0
+      "vuln_type": "Privilege Escalation",
+      "system_type": "General Software",
+      "sectors": [
+        "Electric Utilities",
+        "Substations",
+        "Industrial"
+      ]
     },
     {
-      "title": "CVE-2026-31598 \u2014 ABB",
+      "cve_id": "CVE-2026-31598",
+      "title": "CVE-2026-31598",
       "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-31598",
       "advisory_code": "CVE-2026-31598",
       "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nocfs2: fix possible deadlock between unlink and dio_end_io_write\n\nocfs2_unlink takes orphan dir inode_lock first and then ip_alloc_sem,\nwhile in ocfs2_dio_end_io_write, it acquires these locks in reverse order.\nThis creates an ABBA lock ordering violation on lock classes\nocfs2_sysfile_lock_key[ORPHAN_DIR_SYSTEM_INODE] and\nocfs2_file_ip_alloc_sem_key.\n\nLock Chain #0 (orphan dir inode_lock -> ip_alloc_sem):\nocfs2_unlink\n  ocfs2_prepare_orphan_dir\n    ocfs2_lookup_lock_orphan_dir\n      inode_lock(orphan_dir_inode) <- lock A\n    __ocfs2_prepare_orphan_dir\n      ocfs2_prepare_dir_for_insert\n        ocfs2_extend_dir\n\t  ocfs2_expand_inline_dir\n\t    down_write(&oi->ip_alloc_sem) <- Lock B\n\nLock Chain #1 (ip_alloc_sem -> orphan dir inode_lock):\nocfs2_dio_end_io_write\n  down_write(&oi->ip_alloc_sem) <- Lock B\n  ocfs2_del_inode_from_orphan()\n    inode_lock(orphan_dir_inode) <- Lock A\n\nDeadlock Scenario:\n  CPU0 (unlink)                     CPU1 (dio_end_io_write)\n  ------                            ------\n  inode_lock(orphan_dir_inode)\n                                    down_write(ip_alloc_sem)\n  down_write(ip_alloc_sem)\n                                    inode_lock(orphan_dir_inode)\n\nSince ip_alloc_sem is to protect allocation changes, which is unrelated\nwith operations in ocfs2_del_inode_from_orphan.  So move\nocfs2_del_inode_from_orphan out of ip_alloc_sem to fix the deadlock.",
@@ -131,11 +201,19 @@
       ],
       "max_cvss": 7.5,
       "vendor": "ABB",
+      "kev_count": 0,
       "kev_hits": [],
-      "kev_count": 0
+      "vuln_type": "Denial of Service",
+      "system_type": "Linux Kernel",
+      "sectors": [
+        "Electric Utilities",
+        "Substations",
+        "Industrial"
+      ]
     },
     {
-      "title": "CVE-2025-14774 \u2014 ABB",
+      "cve_id": "CVE-2025-14774",
+      "title": "CVE-2025-14774",
       "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-14774",
       "advisory_code": "CVE-2025-14774",
       "description": "Incorrect Authorization vulnerability in ABB T-MAC Plus.\n\nThis issue affects T-MAC Plus: 4.0-24.",
@@ -145,11 +223,19 @@
       ],
       "max_cvss": 7.4,
       "vendor": "ABB",
+      "kev_count": 0,
       "kev_hits": [],
-      "kev_count": 0
+      "vuln_type": "Improper Authorization",
+      "system_type": "General Software",
+      "sectors": [
+        "Electric Utilities",
+        "Substations",
+        "Industrial"
+      ]
     },
     {
-      "title": "CVE-2025-7064 \u2014 ABB",
+      "cve_id": "CVE-2025-7064",
+      "title": "CVE-2025-7064",
       "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-7064",
       "advisory_code": "CVE-2025-7064",
       "description": "Authentication bypass by primary weakness vulnerability in ABB Freelance.\n\nThis issue affects Freelance: through 2013, 2013 SP1, 2016, 2016 SP1, 2019, 2019 SP1, 2019 SP1 FP1, 2024.",
@@ -159,11 +245,19 @@
       ],
       "max_cvss": 6.6,
       "vendor": "ABB",
+      "kev_count": 0,
       "kev_hits": [],
-      "kev_count": 0
+      "vuln_type": "Authentication Bypass",
+      "system_type": "General Software",
+      "sectors": [
+        "Electric Utilities",
+        "Substations",
+        "Industrial"
+      ]
     },
     {
-      "title": "CVE-2026-46061 \u2014 ABB",
+      "cve_id": "CVE-2026-46061",
+      "title": "CVE-2026-46061",
       "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-46061",
       "advisory_code": "CVE-2026-46061",
       "description": "In the Linux kernel, the following vulnerability has been resolved:\n\njbd2: fix deadlock in jbd2_journal_cancel_revoke()\n\nCommit f76d4c28a46a (\"fs/jbd2: use sleeping version of\n__find_get_block()\") changed jbd2_journal_cancel_revoke() to use\n__find_get_block_nonatomic() which holds the folio lock instead of\ni_private_lock. This breaks the lock ordering (folio -> buffer) and\ncauses an ABBA deadlock when the filesystem blocksize < pagesize:\n\n     T1                                T2\next4_mkdir()\n ext4_init_new_dir()\n  ext4_append()\n   ext4_getblk()\n    lock_buffer()    <- A\n                                   sync_blockdev()\n                                    blkdev_writepages()\n                                     writeback_iter()\n                                      writeback_get_folio()\n                                       folio_lock()   <- B\n     ext4_journal_get_create_access()\n      jbd2_journal_cancel_revoke()\n       __find_get_block_nonatomic()\n        folio_lock()  <- B\n                                     block_write_full_folio()\n                                      lock_buffer()   <- A\n\nThis can occasionally cause generic/013 to hang.\n\nFix by only calling __find_get_block_nonatomic() when the passed\nbuffer_head doesn't belong to the bdev, which is the only case that we\nneed to look up its bdev alias. Otherwise, the lookup is redundant since\nthe found buffer_head is equal to the one we passed in.",
@@ -173,11 +267,19 @@
       ],
       "max_cvss": 5.5,
       "vendor": "ABB",
+      "kev_count": 0,
       "kev_hits": [],
-      "kev_count": 0
+      "vuln_type": "Denial of Service",
+      "system_type": "Linux Kernel",
+      "sectors": [
+        "Electric Utilities",
+        "Substations",
+        "Industrial"
+      ]
     },
     {
-      "title": "CVE-2025-13162 \u2014 ABB",
+      "cve_id": "CVE-2025-13162",
+      "title": "CVE-2025-13162",
       "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-13162",
       "advisory_code": "CVE-2025-13162",
       "description": "Uncontrolled Search Path Element vulnerability in ABB Control Builder A, ABB 800xA for Advant Master.\n\nThis issue affects Control Builder A: through 1.4/4; 800xA for Advant Master: through 6.0.3-1, through 6.1.1-1, 6.1.1-3, 6.2.0-1.",
@@ -187,11 +289,19 @@
       ],
       "max_cvss": 4.4,
       "vendor": "ABB",
+      "kev_count": 0,
       "kev_hits": [],
-      "kev_count": 0
+      "vuln_type": "Uncontrolled Search Path",
+      "system_type": "Engineering Workstation",
+      "sectors": [
+        "Electric Utilities",
+        "Substations",
+        "Industrial"
+      ]
     },
     {
-      "title": "CVE-2025-40745 \u2014 Siemens",
+      "cve_id": "CVE-2025-40745",
+      "title": "CVE-2025-40745",
       "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-40745",
       "advisory_code": "CVE-2025-40745",
       "description": "A vulnerability has been identified in Siemens Software Center (All versions < V3.5.8.2), Simcenter 3D (All versions < V2506.6000), Simcenter Femap (All versions < V2506.0002), Simcenter STAR-CCM+ (All versions < V2602), Solid Edge SE2025 (All versions < V225.0 Update 13), Solid Edge SE2026 (All versions < V226.0 Update 04), Tecnomatix Plant Simulation (All versions < V2504.0008). Affected applications do not properly validate client certificates to connect to Analytics Service endpoint. This could allow an unauthenticated remote attacker to perform man in the middle attacks.",
@@ -201,11 +311,19 @@
       ],
       "max_cvss": 3.7,
       "vendor": "Siemens",
+      "kev_count": 0,
       "kev_hits": [],
-      "kev_count": 0
+      "vuln_type": "Other Vulnerability",
+      "system_type": "Engineering Workstation",
+      "sectors": [
+        "Electric Utilities",
+        "Industrial",
+        "Oil & Gas"
+      ]
     },
     {
-      "title": "CVE-2026-53197 \u2014 ABB",
+      "cve_id": "CVE-2026-53197",
+      "title": "CVE-2026-53197",
       "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-53197",
       "advisory_code": "CVE-2026-53197",
       "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nxfrm: iptfs: fix ABBA deadlock in iptfs_destroy_state()\n\niptfs_destroy_state() calls hrtimer_cancel() while holding a spinlock\nthat the timer callback also acquires, leading to an ABBA deadlock on\nSMP systems.\n\nFor the output timer (iptfs_timer):\n  - iptfs_destroy_state() holds x->lock, calls hrtimer_cancel()\n  - iptfs_delay_timer() callback takes x->lock\n\nFor the drop timer (drop_timer):\n  - iptfs_destroy_state() holds drop_lock, calls hrtimer_cancel()\n  - iptfs_drop_timer() callback takes drop_lock\n\nBoth timers use HRTIMER_MODE_REL_SOFT, so their callbacks run in softirq\ncontext.  When hrtimer_cancel() is called for a soft timer that is\ncurrently executing on another CPU, hrtimer_cancel_wait_running() spins\non softirq_expiry_lock -- the same lock held by the softirq running the\ncallback.  If the callback is blocked waiting for the spinlock held by\nthe caller of hrtimer_cancel(), a circular dependency forms:\n\n  CPU 0: holds lock_A -> waits for softirq_expiry_lock\n  CPU 1: holds softirq_expiry_lock -> waits for lock_A\n\nFix by calling hrtimer_cancel() before acquiring the respective locks.\nhrtimer_cancel() is safe to call without holding any lock and will wait\nfor any in-progress callback to complete.  For the output timer, the\nlock is still acquired afterwards to drain the packet queue.  For the\ndrop timer, the lock/unlock pair is removed entirely since it only\nexisted to serialize with the timer callback, which hrtimer_cancel()\nalready guarantees.\n\nFound by source code audit.",
@@ -215,8 +333,15 @@
       ],
       "max_cvss": null,
       "vendor": "ABB",
+      "kev_count": 0,
       "kev_hits": [],
-      "kev_count": 0
+      "vuln_type": "Remote Code Execution",
+      "system_type": "Linux Kernel",
+      "sectors": [
+        "Electric Utilities",
+        "Substations",
+        "Industrial"
+      ]
     }
   ]
 }

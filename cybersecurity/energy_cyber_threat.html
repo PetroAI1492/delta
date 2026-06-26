@@ -3,71 +3,97 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Energy Sector Cyber Threat Signal</title>
+<title>Energy ICS Threat Monitor</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --red: #e8111a; --black: #1a1a1a; --gray: #666;
-    --rule: #e5e7eb; --bg: #fff; --bg-soft: #f9fafb;
-  }
+  :root { --red:#e8111a; --black:#1a1a1a; --gray:#666; --rule:#e5e7eb; --bg:#fff; --bg-soft:#f9fafb; }
   body { font-family: Georgia, serif; background: var(--bg); color: var(--black); }
-  .masthead { border-top: 4px solid var(--red); border-bottom: 1px solid var(--rule);
-               padding: .6rem 2rem .5rem; display: flex; align-items: baseline; gap: 1rem; }
-  .brand { font-family: Arial, sans-serif; font-size: 1.1rem; font-weight: bold;
-            color: var(--red); text-transform: uppercase; }
-  .section-label { font-family: Arial, sans-serif; font-size: .72rem; color: var(--gray);
-                    text-transform: uppercase; letter-spacing: .08em;
-                    border-left: 1px solid var(--rule); padding-left: 1rem; }
-  main { max-width: 1200px; margin: 0 auto; padding: 1.5rem 2rem 3rem; }
-  .report-title { font-size: 1.6rem; font-weight: bold; letter-spacing: -.5px;
-                   border-bottom: 2px solid var(--black); padding-bottom: .5rem;
-                   margin-bottom: .4rem; }
-  .report-sub { font-family: Arial, sans-serif; font-size: .8rem; color: var(--gray);
-                 margin-bottom: 1.25rem; }
-  .scorecard-row { display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: 1.5rem; }
-  table { width: 100%; border-collapse: collapse; }
-  th { padding: .4rem .5rem; font-family: Arial, sans-serif; font-size: .63rem;
-        text-align: left; color: #888; text-transform: uppercase;
-        background: var(--bg-soft); border-bottom: 2px solid var(--rule); }
-  footer { border-top: 1px solid var(--rule); padding: .75rem 2rem;
-            font-family: Arial, sans-serif; font-size: .68rem;
-            color: var(--gray); text-align: center; margin-top: 2rem; }
+  .masthead { border-top:4px solid var(--red); border-bottom:1px solid var(--rule);
+               padding:.6rem 2rem .5rem; display:flex; align-items:baseline; gap:1rem; }
+  .brand { font-family:Arial,sans-serif; font-size:1.1rem; font-weight:bold;
+            color:var(--red); text-transform:uppercase; }
+  .section-label { font-family:Arial,sans-serif; font-size:.72rem; color:var(--gray);
+                    text-transform:uppercase; letter-spacing:.08em;
+                    border-left:1px solid var(--rule); padding-left:1rem; }
+  main { max-width:1200px; margin:0 auto; padding:1.5rem 2rem 3rem; }
+  .report-title { font-size:1.6rem; font-weight:bold; letter-spacing:-.5px;
+                   border-bottom:2px solid var(--black); padding-bottom:.5rem; margin-bottom:.4rem; }
+  .report-sub { font-family:Arial,sans-serif; font-size:.8rem; color:var(--gray); margin-bottom:1.25rem; }
+  .scorecard-row { display:flex; flex-wrap:wrap; gap:.75rem; margin-bottom:1.5rem; }
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-bottom:1rem; }
+  table { width:100%; border-collapse:collapse; }
+  th { padding:.4rem .5rem; font-family:Arial,sans-serif; font-size:.63rem; text-align:left;
+        color:#888; text-transform:uppercase; background:var(--bg-soft); border-bottom:2px solid var(--rule); }
+  footer { border-top:1px solid var(--rule); padding:.75rem 2rem; font-family:Arial,sans-serif;
+            font-size:.68rem; color:var(--gray); text-align:center; margin-top:2rem; }
 </style>
 </head>
 <body>
 <div class="masthead">
   <span class="brand">THOR SIGNAL</span>
-  <span class="section-label">Energy Sector Cyber Threat Signal</span>
+  <span class="section-label">Energy ICS Threat Monitor</span>
 </div>
 <main>
-
-  <div class="report-title">Energy Sector ICS Cyber Threat Signal</div>
+  <div class="report-title">Energy ICS Threat Monitor</div>
   <div class="report-sub">
     90-day lookback &nbsp;·&nbsp;
-    14 energy advisories of 14 total ICS &nbsp;·&nbsp;
     14 CVEs &nbsp;·&nbsp;
-    0 KEV crossover &nbsp;·&nbsp;
-    Generated 2026-06-26 17:11 UTC
+    1 Critical · 8 High &nbsp;·&nbsp;
+    KEV crossover: 0 &nbsp;·&nbsp;
+    Generated 2026-06-26 17:27 UTC
   </div>
 
   
-
-  <div class="scorecard-row"><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:100px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;">Energy Advisories</div><div style="font-size:1.5rem;font-weight:bold;color:#e8111a;font-family:Georgia,serif;">14</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">of 14 total ICS</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:100px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;">Critical (≥9.0)</div><div style="font-size:1.5rem;font-weight:bold;color:#dc2626;font-family:Georgia,serif;">1</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:100px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;">High (7.0–8.9)</div><div style="font-size:1.5rem;font-weight:bold;color:#ea580c;font-family:Georgia,serif;">8</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:100px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;">CVEs Identified</div><div style="font-size:1.5rem;font-weight:bold;color:#1a1a1a;font-family:Georgia,serif;">14</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:100px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;">KEV Crossover</div><div style="font-size:1.5rem;font-weight:bold;color:#888;font-family:Georgia,serif;">0</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">known exploited</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:100px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;">Lookback Window</div><div style="font-size:1.5rem;font-weight:bold;color:#1a1a1a;font-family:Georgia,serif;">90d</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:100px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;">Latest Advisory</div><div style="font-size:1.5rem;font-weight:bold;color:#1a1a1a;font-family:Georgia,serif;">2026-06-25</div></div></div>
-
-  <div style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;text-transform:uppercase;letter-spacing:.08em;color:#e8111a;border-bottom:2px solid #e8111a;padding-bottom:.3rem;margin:1.75rem 0 .75rem;">Energy Sector ICS Advisories — 90-Day Window</div>
+<div style="background:#f0fdf4;border:1px solid #86efac;border-left:4px solid #16a34a;
+            padding:.75rem 1rem;margin-bottom:1rem;font-family:Arial,sans-serif;font-size:.8rem;">
+  <strong style="color:#16a34a;">✓ NO ACTIVE EXPLOITATION:</strong>
+  No energy sector advisories entered the CISA Known Exploited Vulnerabilities catalog
+  during the 90-day lookback period.
+</div>
   
+
+  <div style="display:flex;gap:2rem;align-items:flex-start;flex-wrap:wrap;margin-bottom:1.5rem;">
+    
+<div style="border:2px solid #dc2626;padding:1rem 1.5rem;display:inline-block;
+            min-width:200px;margin-bottom:1.5rem;">
+  <div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;
+              text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;">
+    Energy Cyber Risk Score
+  </div>
+  <div style="font-size:3rem;font-weight:bold;color:#dc2626;
+              font-family:Georgia,serif;line-height:1;">100<span
+       style="font-size:1.2rem;color:#888;">/100</span></div>
+  <div style="font-family:Arial,sans-serif;font-size:.8rem;font-weight:bold;
+              color:#dc2626;margin-top:.25rem;">CRITICAL</div>
+  <div style="font-family:Arial,sans-serif;font-size:.72rem;color:#888;
+              margin-top:.15rem;">
+    vs prior run: <strong>—</strong>
+  </div>
+  <div style="font-family:Arial,sans-serif;font-size:.62rem;color:#888;margin-top:.5rem;">
+    Derived from CVSS · KEV · Advisory count
+  </div>
+</div>
+    <div style="flex:1;min-width:300px;">
+      <div class="scorecard-row"><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:100px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;">CVEs Found</div><div style="font-size:1.5rem;font-weight:bold;color:#e8111a;font-family:Georgia,serif;">14</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">90-day window</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:100px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;">Critical (≥9.0)</div><div style="font-size:1.5rem;font-weight:bold;color:#dc2626;font-family:Georgia,serif;">1</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:100px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;">High (7.0–8.9)</div><div style="font-size:1.5rem;font-weight:bold;color:#ea580c;font-family:Georgia,serif;">8</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:100px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;">Medium (4.0–6.9)</div><div style="font-size:1.5rem;font-weight:bold;color:#d97706;font-family:Georgia,serif;">3</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:100px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;">KEV Crossover</div><div style="font-size:1.5rem;font-weight:bold;color:#16a34a;font-family:Georgia,serif;">0</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">none active</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:100px;"><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;">Latest Advisory</div><div style="font-size:1.5rem;font-weight:bold;color:#1a1a1a;font-family:Georgia,serif;">2026-06-25</div></div></div>
+    </div>
+  </div>
+
+  <!-- CVE Table -->
   
+  <div style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
+              text-transform:uppercase;letter-spacing:.08em;color:#e8111a;
+              border-bottom:2px solid #e8111a;padding-bottom:.3rem;margin-bottom:.75rem;">
+    Active Threats — 90-Day Window (14 CVEs)
+  </div>
   <table>
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>CVE / Description</th>
-        <th>Severity</th>
-        <th>Vendor</th>
-        <th>Date</th>
-        <th>KEV</th>
-      </tr>
-    </thead>
+    <thead><tr>
+      <th>#</th>
+      <th>CVE / Type / System</th>
+      <th>Severity</th>
+      <th>Vendor</th>
+      <th>Sector Exposure</th>
+      <th>Date</th>
+    </tr></thead>
     <tbody>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
@@ -75,10 +101,9 @@
   <td style="padding:.6rem .5rem;">
     <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-14771" target="_blank"
        style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;
-              color:#e8111a;text-decoration:none;">CVE-2025-14771</a><br>
-    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">Files or directories accessible to external parties vulnerability in ABB T-MAC Plus.
-
-This issue affects T-MAC Plus: 4.0-24.</span>
+              color:#e8111a;text-decoration:none;">CVE-2025-14771</a>
+    &nbsp;<br>
+    <span style="margin-top:.2rem;display:block;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#374151;background:#f3f4f6;border:1px solid #37415140;">Other Vulnerability</span> &nbsp; <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1e40af;background:#eff6ff;border:1px solid #1e40af40;">General Software</span></span>
   </td>
   <td style="padding:.6rem .5rem;white-space:nowrap;">
     <span style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
@@ -87,11 +112,9 @@ This issue affects T-MAC Plus: 4.0-24.</span>
   </td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
              color:#555;">ABB</td>
+  <td style="padding:.6rem .5rem;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1d4ed8;background:#1d4ed818;border:1px solid #1d4ed840;">Electric Utilities</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#7c3aed;background:#7c3aed18;border:1px solid #7c3aed40;">Substations</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#0369a1;background:#0369a118;border:1px solid #0369a140;">Industrial</span></td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.67rem;
              color:#888;">2026-06-03</td>
-  <td style="padding:.6rem .5rem;">
-    <span style="color:#ccc;font-size:.7rem;">—</span>
-  </td>
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
@@ -99,10 +122,9 @@ This issue affects T-MAC Plus: 4.0-24.</span>
   <td style="padding:.6rem .5rem;">
     <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-14772" target="_blank"
        style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;
-              color:#e8111a;text-decoration:none;">CVE-2025-14772</a><br>
-    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">Authorization bypass through User-Controlled key vulnerability in ABB T-MAC Plus.
-
-This issue affects T-MAC Plus: 4.0-24.</span>
+              color:#e8111a;text-decoration:none;">CVE-2025-14772</a>
+    &nbsp;<br>
+    <span style="margin-top:.2rem;display:block;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#374151;background:#f3f4f6;border:1px solid #37415140;">Improper Authorization</span> &nbsp; <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1e40af;background:#eff6ff;border:1px solid #1e40af40;">General Software</span></span>
   </td>
   <td style="padding:.6rem .5rem;white-space:nowrap;">
     <span style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
@@ -111,11 +133,9 @@ This issue affects T-MAC Plus: 4.0-24.</span>
   </td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
              color:#555;">ABB</td>
+  <td style="padding:.6rem .5rem;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1d4ed8;background:#1d4ed818;border:1px solid #1d4ed840;">Electric Utilities</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#7c3aed;background:#7c3aed18;border:1px solid #7c3aed40;">Substations</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#0369a1;background:#0369a118;border:1px solid #0369a140;">Industrial</span></td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.67rem;
              color:#888;">2026-06-03</td>
-  <td style="padding:.6rem .5rem;">
-    <span style="color:#ccc;font-size:.7rem;">—</span>
-  </td>
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
@@ -123,8 +143,9 @@ This issue affects T-MAC Plus: 4.0-24.</span>
   <td style="padding:.6rem .5rem;">
     <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-53836" target="_blank"
        style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;
-              color:#e8111a;text-decoration:none;">CVE-2026-53836</a><br>
-    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">OpenClaw before 2026.5.12 contains an allowlist bypass vulnerability in PowerShell encoded-command handling that allows attackers to execute encoded commands using abbreviated flag aliases not recogni…</span>
+              color:#e8111a;text-decoration:none;">CVE-2026-53836</a>
+    &nbsp;<br>
+    <span style="margin-top:.2rem;display:block;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#374151;background:#f3f4f6;border:1px solid #37415140;">Other Vulnerability</span> &nbsp; <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1e40af;background:#eff6ff;border:1px solid #1e40af40;">General Software</span></span>
   </td>
   <td style="padding:.6rem .5rem;white-space:nowrap;">
     <span style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
@@ -133,11 +154,9 @@ This issue affects T-MAC Plus: 4.0-24.</span>
   </td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
              color:#555;">ABB</td>
+  <td style="padding:.6rem .5rem;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1d4ed8;background:#1d4ed818;border:1px solid #1d4ed840;">Electric Utilities</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#7c3aed;background:#7c3aed18;border:1px solid #7c3aed40;">Substations</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#0369a1;background:#0369a118;border:1px solid #0369a140;">Industrial</span></td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.67rem;
              color:#888;">2026-06-12</td>
-  <td style="padding:.6rem .5rem;">
-    <span style="color:#ccc;font-size:.7rem;">—</span>
-  </td>
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
@@ -145,8 +164,9 @@ This issue affects T-MAC Plus: 4.0-24.</span>
   <td style="padding:.6rem .5rem;">
     <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-4272" target="_blank"
        style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;
-              color:#e8111a;text-decoration:none;">CVE-2026-4272</a><br>
-    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">Missing Authentication for Critical Function vulnerability in Honeywell Handheld Scanners allows Authentication Abuse.This issue affects Handheld Scanners: from C1 Base(Ingenic x1000) before GK000432B…</span>
+              color:#e8111a;text-decoration:none;">CVE-2026-4272</a>
+    &nbsp;<br>
+    <span style="margin-top:.2rem;display:block;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#374151;background:#f3f4f6;border:1px solid #37415140;">Authentication Bypass</span> &nbsp; <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1e40af;background:#eff6ff;border:1px solid #1e40af40;">Handheld / Mobile</span></span>
   </td>
   <td style="padding:.6rem .5rem;white-space:nowrap;">
     <span style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
@@ -155,11 +175,9 @@ This issue affects T-MAC Plus: 4.0-24.</span>
   </td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
              color:#555;">Honeywell</td>
+  <td style="padding:.6rem .5rem;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1d4ed8;background:#1d4ed818;border:1px solid #1d4ed840;">Refineries</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#7c3aed;background:#7c3aed18;border:1px solid #7c3aed40;">Pipelines</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#0369a1;background:#0369a118;border:1px solid #0369a140;">Industrial</span></td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.67rem;
              color:#888;">2026-04-05</td>
-  <td style="padding:.6rem .5rem;">
-    <span style="color:#ccc;font-size:.7rem;">—</span>
-  </td>
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
@@ -167,10 +185,9 @@ This issue affects T-MAC Plus: 4.0-24.</span>
   <td style="padding:.6rem .5rem;">
     <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-14773" target="_blank"
        style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;
-              color:#e8111a;text-decoration:none;">CVE-2025-14773</a><br>
-    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">Improper neutralization of input during web page generation ('cross-site scripting') vulnerability in ABB T-MAC Plus.
-
-This issue affects T-MAC Plus: 4.0-24.</span>
+              color:#e8111a;text-decoration:none;">CVE-2025-14773</a>
+    &nbsp;<br>
+    <span style="margin-top:.2rem;display:block;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#374151;background:#f3f4f6;border:1px solid #37415140;">Cross-Site Scripting</span> &nbsp; <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1e40af;background:#eff6ff;border:1px solid #1e40af40;">General Software</span></span>
   </td>
   <td style="padding:.6rem .5rem;white-space:nowrap;">
     <span style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
@@ -179,11 +196,9 @@ This issue affects T-MAC Plus: 4.0-24.</span>
   </td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
              color:#555;">ABB</td>
+  <td style="padding:.6rem .5rem;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1d4ed8;background:#1d4ed818;border:1px solid #1d4ed840;">Electric Utilities</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#7c3aed;background:#7c3aed18;border:1px solid #7c3aed40;">Substations</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#0369a1;background:#0369a118;border:1px solid #0369a140;">Industrial</span></td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.67rem;
              color:#888;">2026-06-03</td>
-  <td style="padding:.6rem .5rem;">
-    <span style="color:#ccc;font-size:.7rem;">—</span>
-  </td>
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
@@ -191,8 +206,9 @@ This issue affects T-MAC Plus: 4.0-24.</span>
   <td style="padding:.6rem .5rem;">
     <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-12659" target="_blank"
        style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;
-              color:#e8111a;text-decoration:none;">CVE-2025-12659</a><br>
-    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">Siemens Simcenter Femap contains a memory corruption vulnerability while parsing specially crafted IPT files. This could allow an attacker to execute code in the context of the current process.</span>
+              color:#e8111a;text-decoration:none;">CVE-2025-12659</a>
+    &nbsp;<br>
+    <span style="margin-top:.2rem;display:block;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#374151;background:#f3f4f6;border:1px solid #37415140;">Memory Corruption</span> &nbsp; <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1e40af;background:#eff6ff;border:1px solid #1e40af40;">Engineering Workstation</span></span>
   </td>
   <td style="padding:.6rem .5rem;white-space:nowrap;">
     <span style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
@@ -201,11 +217,9 @@ This issue affects T-MAC Plus: 4.0-24.</span>
   </td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
              color:#555;">Siemens</td>
+  <td style="padding:.6rem .5rem;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1d4ed8;background:#1d4ed818;border:1px solid #1d4ed840;">Electric Utilities</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#7c3aed;background:#7c3aed18;border:1px solid #7c3aed40;">Industrial</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#0369a1;background:#0369a118;border:1px solid #0369a140;">Oil & Gas</span></td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.67rem;
              color:#888;">2026-05-12</td>
-  <td style="padding:.6rem .5rem;">
-    <span style="color:#ccc;font-size:.7rem;">—</span>
-  </td>
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
@@ -213,8 +227,9 @@ This issue affects T-MAC Plus: 4.0-24.</span>
   <td style="padding:.6rem .5rem;">
     <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-37525" target="_blank"
        style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;
-              color:#e8111a;text-decoration:none;">CVE-2026-37525</a><br>
-    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">AGL app-framework-binder (afb-daemon) through v19.90.0 contains a privilege escalation vulnerability in the supervision Do command. The on_supervision_call function in src/afb-supervision.c explicitly…</span>
+              color:#e8111a;text-decoration:none;">CVE-2026-37525</a>
+    &nbsp;<br>
+    <span style="margin-top:.2rem;display:block;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#374151;background:#f3f4f6;border:1px solid #37415140;">Privilege Escalation</span> &nbsp; <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1e40af;background:#eff6ff;border:1px solid #1e40af40;">General Software</span></span>
   </td>
   <td style="padding:.6rem .5rem;white-space:nowrap;">
     <span style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
@@ -223,11 +238,9 @@ This issue affects T-MAC Plus: 4.0-24.</span>
   </td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
              color:#555;">ABB</td>
+  <td style="padding:.6rem .5rem;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1d4ed8;background:#1d4ed818;border:1px solid #1d4ed840;">Electric Utilities</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#7c3aed;background:#7c3aed18;border:1px solid #7c3aed40;">Substations</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#0369a1;background:#0369a118;border:1px solid #0369a140;">Industrial</span></td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.67rem;
              color:#888;">2026-05-01</td>
-  <td style="padding:.6rem .5rem;">
-    <span style="color:#ccc;font-size:.7rem;">—</span>
-  </td>
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
@@ -235,12 +248,9 @@ This issue affects T-MAC Plus: 4.0-24.</span>
   <td style="padding:.6rem .5rem;">
     <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-31598" target="_blank"
        style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;
-              color:#e8111a;text-decoration:none;">CVE-2026-31598</a><br>
-    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">In the Linux kernel, the following vulnerability has been resolved:
-
-ocfs2: fix possible deadlock between unlink and dio_end_io_write
-
-ocfs2_unlink takes orphan dir inode_lock first and then ip_alloc_…</span>
+              color:#e8111a;text-decoration:none;">CVE-2026-31598</a>
+    &nbsp;<br>
+    <span style="margin-top:.2rem;display:block;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#374151;background:#f3f4f6;border:1px solid #37415140;">Denial of Service</span> &nbsp; <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1e40af;background:#eff6ff;border:1px solid #1e40af40;">Linux Kernel</span></span>
   </td>
   <td style="padding:.6rem .5rem;white-space:nowrap;">
     <span style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
@@ -249,11 +259,9 @@ ocfs2_unlink takes orphan dir inode_lock first and then ip_alloc_…</span>
   </td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
              color:#555;">ABB</td>
+  <td style="padding:.6rem .5rem;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1d4ed8;background:#1d4ed818;border:1px solid #1d4ed840;">Electric Utilities</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#7c3aed;background:#7c3aed18;border:1px solid #7c3aed40;">Substations</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#0369a1;background:#0369a118;border:1px solid #0369a140;">Industrial</span></td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.67rem;
              color:#888;">2026-04-24</td>
-  <td style="padding:.6rem .5rem;">
-    <span style="color:#ccc;font-size:.7rem;">—</span>
-  </td>
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
@@ -261,10 +269,9 @@ ocfs2_unlink takes orphan dir inode_lock first and then ip_alloc_…</span>
   <td style="padding:.6rem .5rem;">
     <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-14774" target="_blank"
        style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;
-              color:#e8111a;text-decoration:none;">CVE-2025-14774</a><br>
-    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">Incorrect Authorization vulnerability in ABB T-MAC Plus.
-
-This issue affects T-MAC Plus: 4.0-24.</span>
+              color:#e8111a;text-decoration:none;">CVE-2025-14774</a>
+    &nbsp;<br>
+    <span style="margin-top:.2rem;display:block;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#374151;background:#f3f4f6;border:1px solid #37415140;">Improper Authorization</span> &nbsp; <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1e40af;background:#eff6ff;border:1px solid #1e40af40;">General Software</span></span>
   </td>
   <td style="padding:.6rem .5rem;white-space:nowrap;">
     <span style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
@@ -273,11 +280,9 @@ This issue affects T-MAC Plus: 4.0-24.</span>
   </td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
              color:#555;">ABB</td>
+  <td style="padding:.6rem .5rem;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1d4ed8;background:#1d4ed818;border:1px solid #1d4ed840;">Electric Utilities</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#7c3aed;background:#7c3aed18;border:1px solid #7c3aed40;">Substations</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#0369a1;background:#0369a118;border:1px solid #0369a140;">Industrial</span></td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.67rem;
              color:#888;">2026-06-03</td>
-  <td style="padding:.6rem .5rem;">
-    <span style="color:#ccc;font-size:.7rem;">—</span>
-  </td>
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
@@ -285,10 +290,9 @@ This issue affects T-MAC Plus: 4.0-24.</span>
   <td style="padding:.6rem .5rem;">
     <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-7064" target="_blank"
        style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;
-              color:#e8111a;text-decoration:none;">CVE-2025-7064</a><br>
-    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">Authentication bypass by primary weakness vulnerability in ABB Freelance.
-
-This issue affects Freelance: through 2013, 2013 SP1, 2016, 2016 SP1, 2019, 2019 SP1, 2019 SP1 FP1, 2024.</span>
+              color:#e8111a;text-decoration:none;">CVE-2025-7064</a>
+    &nbsp;<br>
+    <span style="margin-top:.2rem;display:block;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#374151;background:#f3f4f6;border:1px solid #37415140;">Authentication Bypass</span> &nbsp; <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1e40af;background:#eff6ff;border:1px solid #1e40af40;">General Software</span></span>
   </td>
   <td style="padding:.6rem .5rem;white-space:nowrap;">
     <span style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
@@ -297,11 +301,9 @@ This issue affects Freelance: through 2013, 2013 SP1, 2016, 2016 SP1, 2019, 2019
   </td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
              color:#555;">ABB</td>
+  <td style="padding:.6rem .5rem;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1d4ed8;background:#1d4ed818;border:1px solid #1d4ed840;">Electric Utilities</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#7c3aed;background:#7c3aed18;border:1px solid #7c3aed40;">Substations</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#0369a1;background:#0369a118;border:1px solid #0369a140;">Industrial</span></td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.67rem;
              color:#888;">2026-06-11</td>
-  <td style="padding:.6rem .5rem;">
-    <span style="color:#ccc;font-size:.7rem;">—</span>
-  </td>
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
@@ -309,13 +311,9 @@ This issue affects Freelance: through 2013, 2013 SP1, 2016, 2016 SP1, 2019, 2019
   <td style="padding:.6rem .5rem;">
     <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-46061" target="_blank"
        style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;
-              color:#e8111a;text-decoration:none;">CVE-2026-46061</a><br>
-    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">In the Linux kernel, the following vulnerability has been resolved:
-
-jbd2: fix deadlock in jbd2_journal_cancel_revoke()
-
-Commit f76d4c28a46a ("fs/jbd2: use sleeping version of
-__find_get_block()") cha…</span>
+              color:#e8111a;text-decoration:none;">CVE-2026-46061</a>
+    &nbsp;<br>
+    <span style="margin-top:.2rem;display:block;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#374151;background:#f3f4f6;border:1px solid #37415140;">Denial of Service</span> &nbsp; <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1e40af;background:#eff6ff;border:1px solid #1e40af40;">Linux Kernel</span></span>
   </td>
   <td style="padding:.6rem .5rem;white-space:nowrap;">
     <span style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
@@ -324,11 +322,9 @@ __find_get_block()") cha…</span>
   </td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
              color:#555;">ABB</td>
+  <td style="padding:.6rem .5rem;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1d4ed8;background:#1d4ed818;border:1px solid #1d4ed840;">Electric Utilities</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#7c3aed;background:#7c3aed18;border:1px solid #7c3aed40;">Substations</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#0369a1;background:#0369a118;border:1px solid #0369a140;">Industrial</span></td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.67rem;
              color:#888;">2026-05-27</td>
-  <td style="padding:.6rem .5rem;">
-    <span style="color:#ccc;font-size:.7rem;">—</span>
-  </td>
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
@@ -336,10 +332,9 @@ __find_get_block()") cha…</span>
   <td style="padding:.6rem .5rem;">
     <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-13162" target="_blank"
        style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;
-              color:#e8111a;text-decoration:none;">CVE-2025-13162</a><br>
-    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">Uncontrolled Search Path Element vulnerability in ABB Control Builder A, ABB 800xA for Advant Master.
-
-This issue affects Control Builder A: through 1.4/4; 800xA for Advant Master: through 6.0.3-1, th…</span>
+              color:#e8111a;text-decoration:none;">CVE-2025-13162</a>
+    &nbsp;<br>
+    <span style="margin-top:.2rem;display:block;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#374151;background:#f3f4f6;border:1px solid #37415140;">Uncontrolled Search Path</span> &nbsp; <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1e40af;background:#eff6ff;border:1px solid #1e40af40;">Engineering Workstation</span></span>
   </td>
   <td style="padding:.6rem .5rem;white-space:nowrap;">
     <span style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
@@ -348,11 +343,9 @@ This issue affects Control Builder A: through 1.4/4; 800xA for Advant Master: th
   </td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
              color:#555;">ABB</td>
+  <td style="padding:.6rem .5rem;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1d4ed8;background:#1d4ed818;border:1px solid #1d4ed840;">Electric Utilities</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#7c3aed;background:#7c3aed18;border:1px solid #7c3aed40;">Substations</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#0369a1;background:#0369a118;border:1px solid #0369a140;">Industrial</span></td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.67rem;
              color:#888;">2026-06-23</td>
-  <td style="padding:.6rem .5rem;">
-    <span style="color:#ccc;font-size:.7rem;">—</span>
-  </td>
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
@@ -360,8 +353,9 @@ This issue affects Control Builder A: through 1.4/4; 800xA for Advant Master: th
   <td style="padding:.6rem .5rem;">
     <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-40745" target="_blank"
        style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;
-              color:#e8111a;text-decoration:none;">CVE-2025-40745</a><br>
-    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">A vulnerability has been identified in Siemens Software Center (All versions < V3.5.8.2), Simcenter 3D (All versions < V2506.6000), Simcenter Femap (All versions < V2506.0002), Simcenter STAR-CCM+ (Al…</span>
+              color:#e8111a;text-decoration:none;">CVE-2025-40745</a>
+    &nbsp;<br>
+    <span style="margin-top:.2rem;display:block;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#374151;background:#f3f4f6;border:1px solid #37415140;">Other Vulnerability</span> &nbsp; <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1e40af;background:#eff6ff;border:1px solid #1e40af40;">Engineering Workstation</span></span>
   </td>
   <td style="padding:.6rem .5rem;white-space:nowrap;">
     <span style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
@@ -370,11 +364,9 @@ This issue affects Control Builder A: through 1.4/4; 800xA for Advant Master: th
   </td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
              color:#555;">Siemens</td>
+  <td style="padding:.6rem .5rem;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1d4ed8;background:#1d4ed818;border:1px solid #1d4ed840;">Electric Utilities</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#7c3aed;background:#7c3aed18;border:1px solid #7c3aed40;">Industrial</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#0369a1;background:#0369a118;border:1px solid #0369a140;">Oil & Gas</span></td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.67rem;
              color:#888;">2026-04-14</td>
-  <td style="padding:.6rem .5rem;">
-    <span style="color:#ccc;font-size:.7rem;">—</span>
-  </td>
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
@@ -382,13 +374,9 @@ This issue affects Control Builder A: through 1.4/4; 800xA for Advant Master: th
   <td style="padding:.6rem .5rem;">
     <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-53197" target="_blank"
        style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;
-              color:#e8111a;text-decoration:none;">CVE-2026-53197</a><br>
-    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">In the Linux kernel, the following vulnerability has been resolved:
-
-xfrm: iptfs: fix ABBA deadlock in iptfs_destroy_state()
-
-iptfs_destroy_state() calls hrtimer_cancel() while holding a spinlock
-that…</span>
+              color:#e8111a;text-decoration:none;">CVE-2026-53197</a>
+    &nbsp;<br>
+    <span style="margin-top:.2rem;display:block;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#374151;background:#f3f4f6;border:1px solid #37415140;">Remote Code Execution</span> &nbsp; <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1e40af;background:#eff6ff;border:1px solid #1e40af40;">Linux Kernel</span></span>
   </td>
   <td style="padding:.6rem .5rem;white-space:nowrap;">
     <span style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
@@ -397,22 +385,26 @@ that…</span>
   </td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.72rem;
              color:#555;">ABB</td>
+  <td style="padding:.6rem .5rem;"><span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#1d4ed8;background:#1d4ed818;border:1px solid #1d4ed840;">Electric Utilities</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#7c3aed;background:#7c3aed18;border:1px solid #7c3aed40;">Substations</span> <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;color:#0369a1;background:#0369a118;border:1px solid #0369a140;">Industrial</span></td>
   <td style="padding:.6rem .5rem;font-family:Arial,sans-serif;font-size:.67rem;
              color:#888;">2026-06-25</td>
-  <td style="padding:.6rem .5rem;">
-    <span style="color:#ccc;font-size:.7rem;">—</span>
-  </td>
 </tr></tbody>
   </table>
+  
 
-  <div style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;text-transform:uppercase;letter-spacing:.08em;color:#e8111a;border-bottom:2px solid #e8111a;padding-bottom:.3rem;margin:1.75rem 0 .75rem;">Affected Vendors</div>
-  <div style="max-width:500px;">
-    
+  <!-- Breakdown -->
+  <div class="two-col" style="margin-top:2rem;">
+    <div>
+      <div style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
+                  text-transform:uppercase;letter-spacing:.08em;color:#e8111a;
+                  border-bottom:2px solid #e8111a;padding-bottom:.3rem;margin-bottom:.75rem;">
+        Affected Vendors
+      </div>
+      
 <div style="margin-bottom:.5rem;">
   <div style="display:flex;justify-content:space-between;
               font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;">
-    <span>ABB</span>
-    <span style="color:#888;">11 (78.6%)</span>
+    <span>ABB</span><span style="color:#888;">11 (78.6%)</span>
   </div>
   <div style="background:#f3f4f6;height:6px;border-radius:3px;">
     <div style="background:#e8111a;height:6px;border-radius:3px;width:78.6%;"></div>
@@ -421,8 +413,7 @@ that…</span>
 <div style="margin-bottom:.5rem;">
   <div style="display:flex;justify-content:space-between;
               font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;">
-    <span>Siemens</span>
-    <span style="color:#888;">2 (14.3%)</span>
+    <span>Siemens</span><span style="color:#888;">2 (14.3%)</span>
   </div>
   <div style="background:#f3f4f6;height:6px;border-radius:3px;">
     <div style="background:#e8111a;height:6px;border-radius:3px;width:14.3%;"></div>
@@ -431,13 +422,102 @@ that…</span>
 <div style="margin-bottom:.5rem;">
   <div style="display:flex;justify-content:space-between;
               font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;">
-    <span>Honeywell</span>
-    <span style="color:#888;">1 (7.1%)</span>
+    <span>Honeywell</span><span style="color:#888;">1 (7.1%)</span>
   </div>
   <div style="background:#f3f4f6;height:6px;border-radius:3px;">
     <div style="background:#e8111a;height:6px;border-radius:3px;width:7.1%;"></div>
   </div>
 </div>
+    </div>
+    <div>
+      <div style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
+                  text-transform:uppercase;letter-spacing:.08em;color:#e8111a;
+                  border-bottom:2px solid #e8111a;padding-bottom:.3rem;margin-bottom:.75rem;">
+        Vulnerability Types
+      </div>
+      
+<div style="margin-bottom:.5rem;">
+  <div style="display:flex;justify-content:space-between;
+              font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;">
+    <span>Other Vulnerability</span><span style="color:#888;">3 (21.4%)</span>
+  </div>
+  <div style="background:#f3f4f6;height:6px;border-radius:3px;">
+    <div style="background:#374151;height:6px;border-radius:3px;width:21.4%;"></div>
+  </div>
+</div>
+<div style="margin-bottom:.5rem;">
+  <div style="display:flex;justify-content:space-between;
+              font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;">
+    <span>Improper Authorization</span><span style="color:#888;">2 (14.3%)</span>
+  </div>
+  <div style="background:#f3f4f6;height:6px;border-radius:3px;">
+    <div style="background:#374151;height:6px;border-radius:3px;width:14.3%;"></div>
+  </div>
+</div>
+<div style="margin-bottom:.5rem;">
+  <div style="display:flex;justify-content:space-between;
+              font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;">
+    <span>Authentication Bypass</span><span style="color:#888;">2 (14.3%)</span>
+  </div>
+  <div style="background:#f3f4f6;height:6px;border-radius:3px;">
+    <div style="background:#374151;height:6px;border-radius:3px;width:14.3%;"></div>
+  </div>
+</div>
+<div style="margin-bottom:.5rem;">
+  <div style="display:flex;justify-content:space-between;
+              font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;">
+    <span>Denial of Service</span><span style="color:#888;">2 (14.3%)</span>
+  </div>
+  <div style="background:#f3f4f6;height:6px;border-radius:3px;">
+    <div style="background:#374151;height:6px;border-radius:3px;width:14.3%;"></div>
+  </div>
+</div>
+<div style="margin-bottom:.5rem;">
+  <div style="display:flex;justify-content:space-between;
+              font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;">
+    <span>Cross-Site Scripting</span><span style="color:#888;">1 (7.1%)</span>
+  </div>
+  <div style="background:#f3f4f6;height:6px;border-radius:3px;">
+    <div style="background:#374151;height:6px;border-radius:3px;width:7.1%;"></div>
+  </div>
+</div>
+<div style="margin-bottom:.5rem;">
+  <div style="display:flex;justify-content:space-between;
+              font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;">
+    <span>Memory Corruption</span><span style="color:#888;">1 (7.1%)</span>
+  </div>
+  <div style="background:#f3f4f6;height:6px;border-radius:3px;">
+    <div style="background:#374151;height:6px;border-radius:3px;width:7.1%;"></div>
+  </div>
+</div>
+<div style="margin-bottom:.5rem;">
+  <div style="display:flex;justify-content:space-between;
+              font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;">
+    <span>Privilege Escalation</span><span style="color:#888;">1 (7.1%)</span>
+  </div>
+  <div style="background:#f3f4f6;height:6px;border-radius:3px;">
+    <div style="background:#374151;height:6px;border-radius:3px;width:7.1%;"></div>
+  </div>
+</div>
+<div style="margin-bottom:.5rem;">
+  <div style="display:flex;justify-content:space-between;
+              font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;">
+    <span>Uncontrolled Search Path</span><span style="color:#888;">1 (7.1%)</span>
+  </div>
+  <div style="background:#f3f4f6;height:6px;border-radius:3px;">
+    <div style="background:#374151;height:6px;border-radius:3px;width:7.1%;"></div>
+  </div>
+</div>
+<div style="margin-bottom:.5rem;">
+  <div style="display:flex;justify-content:space-between;
+              font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.15rem;">
+    <span>Remote Code Execution</span><span style="color:#888;">1 (7.1%)</span>
+  </div>
+  <div style="background:#f3f4f6;height:6px;border-radius:3px;">
+    <div style="background:#374151;height:6px;border-radius:3px;width:7.1%;"></div>
+  </div>
+</div>
+    </div>
   </div>
 
 </main>
@@ -445,8 +525,9 @@ that…</span>
   <b>DATA SOURCES</b> &nbsp;·&nbsp;
   NVD CVE API (services.nvd.nist.gov/rest/json/cves/2.0) &nbsp;·&nbsp;
   CISA Known Exploited Vulnerabilities (cisa.gov/kev) &nbsp;·&nbsp;
+  Risk score: deterministic (CVSS + KEV + advisory count) &nbsp;·&nbsp;
   No AI-generated content &nbsp;·&nbsp;
-  © 2026 Randy Hinton &nbsp;·&nbsp; Generated 2026-06-26 17:11 UTC &nbsp;·&nbsp; #FollowTheData
+  © 2026 Randy Hinton &nbsp;·&nbsp; Generated 2026-06-26 17:27 UTC &nbsp;·&nbsp; #FollowTheData
 </footer>
 </body>
 </html>
