@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-26T00:42:52Z",
+  "generated": "2026-06-26T12:40:58Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -2835,6 +2835,89 @@
       ],
       "id": "crc_nonprofit_funding_intelligence_irs_990_signal",
       "path": "https://petroai1492.github.io/delta/health/verify_990.html"
+    },
+    {
+      "title": "Daily Sky \u2014 NASA Astronomy Picture of the Day",
+      "file": "science/daily_sky.html",
+      "description": "NASA's Astronomy Picture of the Day \u2014 daily image or video of the universe with title, explanation, and image credit. First report in the Science domain.",
+      "json_file": "science/daily_sky.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/science/daily_sky.html`",
+      "auto_published": true,
+      "primary_domain": "Science",
+      "secondary_domains": [
+        "\u2014"
+      ],
+      "entities": [
+        "NASA",
+        "APOD",
+        "Goddard Space Flight Center"
+      ],
+      "data_sources": [
+        "NASA APOD API (api.nasa.gov/planetary/apod",
+        "API key required); updates daily"
+      ],
+      "update_frequency": "Daily (auto-published)",
+      "key_signals": [
+        "Daily astronomy image or video",
+        "title",
+        "explanation",
+        "photographer credit",
+        "HD image link",
+        "direct NASA APOD archive link"
+      ],
+      "intent_phrases": [
+        "astronomy picture",
+        "NASA photo",
+        "daily sky",
+        "APOD",
+        "space photo",
+        "astronomy",
+        "NASA image",
+        "picture of the day",
+        "space image",
+        "milky way",
+        "nebula",
+        "galaxy",
+        "planet photo",
+        "NASA",
+        "space",
+        "universe",
+        "telescope image",
+        "hubble",
+        "james webb",
+        "cosmos",
+        {
+          "keyword": "daily",
+          "weight": 10
+        },
+        {
+          "keyword": "sky",
+          "weight": 10
+        },
+        {
+          "keyword": "nasa",
+          "weight": 10
+        },
+        {
+          "keyword": "astronomy",
+          "weight": 10
+        },
+        {
+          "keyword": "picture",
+          "weight": 10
+        },
+        {
+          "keyword": "the",
+          "weight": 10
+        },
+        {
+          "keyword": "day",
+          "weight": 10
+        }
+      ],
+      "id": "daily_sky_nasa_astronomy_picture_of_the_day",
+      "path": "https://petroai1492.github.io/delta/science/daily_sky.html"
     }
   ],
   "cross_domain_matrix": [
