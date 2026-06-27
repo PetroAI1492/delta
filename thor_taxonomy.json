@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-27T16:17:52Z",
+  "generated": "2026-06-27T16:20:20Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -3169,6 +3169,96 @@
       ],
       "id": "iran_petroleum_sanctions_sitrep",
       "path": "https://petroai1492.github.io/delta/geopolitics/iran_sanctions.html"
+    },
+    {
+      "title": "Strait of Hormuz \u2014 Executive SITREP",
+      "file": "energy/hormuz_brief.html",
+      "description": "Executive situation report on the Strait of Hormuz \u2014 strategic overview, operational environment, live energy market data table (13 EIA/FRED series from Storehouse with API fallback), and 72-hour watchpoints. Produces HTML, JSON, and PDF outputs.",
+      "json_file": "energy/hormuz_brief.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/energy/hormuz_brief.html`",
+      "auto_published": false,
+      "primary_domain": "Energy",
+      "secondary_domains": [
+        "Geopolitics"
+      ],
+      "entities": [
+        "Strait of Hormuz",
+        "Iran",
+        "IRGC",
+        "U.S. 5th Fleet",
+        "GCC",
+        "Saudi Arabia",
+        "Qatar",
+        "UAE",
+        "LNG",
+        "Persian Gulf"
+      ],
+      "data_sources": [
+        "Thor Storehouse (EIA + FRED observations",
+        "primary); FRED API fallback (api.stlouisfed.org",
+        "key at C:\\mygit\\secrets\\fred.key); EIA API fallback (api.eia.gov/v2",
+        "key at C:\\mygit\\secrets\\eia.key); 13 series: Brent",
+        "WTI",
+        "Henry Hub",
+        "gasoline",
+        "diesel",
+        "crude imports/exports/stocks/production",
+        "gasoline stocks",
+        "distillate stocks",
+        "nat gas storage"
+      ],
+      "update_frequency": "Manual (recommend weekly; aligned with EIA weekly petroleum report)",
+      "key_signals": [
+        "Brent/WTI prices and spread",
+        "crude import/export flows",
+        "US crude and product stocks",
+        "nat gas storage",
+        "Brent-WTI spread interpretation",
+        "Henry Hub notable move flag",
+        "72-hour watchpoints",
+        "stale data detection"
+      ],
+      "intent_phrases": [
+        "Strait of Hormuz",
+        "Hormuz",
+        "Persian Gulf",
+        "chokepoint",
+        "hormuz brief",
+        "hormuz sitrep",
+        "Gulf oil",
+        "Iran oil closure",
+        "Hormuz threat",
+        "tanker strait",
+        "LNG chokepoint",
+        "IRGC navy",
+        "5th fleet",
+        "Gulf energy",
+        "oil chokepoint",
+        "Brent WTI spread",
+        "crude imports",
+        "crude stocks",
+        "energy market snapshot",
+        "petroleum market brief",
+        {
+          "keyword": "strait",
+          "weight": 10
+        },
+        {
+          "keyword": "hormuz",
+          "weight": 10
+        },
+        {
+          "keyword": "executive",
+          "weight": 10
+        },
+        {
+          "keyword": "sitrep",
+          "weight": 10
+        }
+      ],
+      "id": "strait_of_hormuz_executive_sitrep",
+      "path": "https://petroai1492.github.io/delta/energy/hormuz_brief.html"
     }
   ],
   "cross_domain_matrix": [
