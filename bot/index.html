@@ -151,7 +151,7 @@
 </div><!-- .layout -->
 <footer>
   THOR SIGNAL &nbsp;·&nbsp; Taxonomy-driven routing &nbsp;·&nbsp;
-  Generated: 2026-06-27 12:20 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+  Generated: 2026-06-27 14:48 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 <script>
 const REPORTS = [
@@ -3286,6 +3286,100 @@ const REPORTS = [
     ],
     "id": "strait_of_hormuz_executive_sitrep",
     "path": "https://petroai1492.github.io/delta/energy/hormuz_brief.html"
+  },
+  {
+    "title": "Magnificent 7 \u2014 SEC Signal Monitor",
+    "file": "finance/mag7_signal.html",
+    "description": "Deterministic SEC signal monitor for the Magnificent 7 technology stocks (AAPL, MSFT, NVDA, AMZN, GOOGL, META, TSLA) \u2014 scores each company across 9 factors using SEC EDGAR filings, XBRL financial data, and yfinance market data; produces buy/hold/pass signals with position sizing; all rules explicit and reproducible",
+    "json_file": "finance/mag7_signal.json",
+    "published": true,
+    "url": "`petroai1492.github.io/delta/finance/mag7_signal.html`",
+    "auto_published": false,
+    "primary_domain": "Finance",
+    "secondary_domains": [
+      "\u2014"
+    ],
+    "entities": [
+      "Apple",
+      "Microsoft",
+      "NVIDIA",
+      "Amazon",
+      "Alphabet",
+      "Meta",
+      "Tesla",
+      "AAPL",
+      "MSFT",
+      "NVDA",
+      "AMZN",
+      "GOOGL",
+      "META",
+      "TSLA",
+      "SEC EDGAR",
+      "Magnificent 7"
+    ],
+    "data_sources": [
+      "SEC EDGAR (XBRL financials",
+      "8-K filings",
+      "10-K",
+      "10-Q",
+      "Form 4 insider transactions); yfinance (price history",
+      "short interest",
+      "market cap); all public/free"
+    ],
+    "update_frequency": "Manual (recommend weekly; aligned with SEC filing activity)",
+    "key_signals": [
+      "Unified risk score (0-100)",
+      "status (STRONG/PRIME/STABLE/NEUTRAL/WATCH/ALERT)",
+      "buy signal (YES/MAYBE/NO) with position size",
+      "8-K event score",
+      "financial score (revenue/FCF/debt)",
+      "valuation P/FCF",
+      "momentum vs 200DMA",
+      "insider score (10b5-1 filter)",
+      "short interest",
+      "accruals quality",
+      "cool-down logic"
+    ],
+    "intent_phrases": [
+      "Magnificent 7",
+      "mag7",
+      "mag 7",
+      "AAPL signal",
+      "MSFT signal",
+      "NVDA signal",
+      "AMZN signal",
+      "GOOGL signal",
+      "META signal",
+      "TSLA signal",
+      "Apple SEC",
+      "Microsoft SEC",
+      "NVIDIA SEC",
+      "Amazon SEC",
+      "tech stock signal",
+      "SEC signal",
+      "buy signal tech",
+      "insider selling tech",
+      "tech stock risk",
+      "magnificent seven",
+      {
+        "keyword": "magnificent",
+        "weight": 10
+      },
+      {
+        "keyword": "sec",
+        "weight": 10
+      },
+      {
+        "keyword": "signal",
+        "weight": 10
+      },
+      {
+        "keyword": "monitor",
+        "weight": 10
+      }
+    ],
+    "id": "magnificent_7_sec_signal_monitor",
+    "path": "https://petroai1492.github.io/delta/finance/mag7_signal.html"
   }
 ];
 const CROSS_DOMAIN = [
