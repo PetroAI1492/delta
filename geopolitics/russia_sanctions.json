@@ -1,49 +1,92 @@
 {
   "metadata": {
     "report": "Russian Petroleum Sanctions SITREP",
-    "source": "Google News RSS",
-    "generated_at": "2026-06-27 00:18 UTC",
+    "version": "4.0.0",
+    "source": "Google News RSS (4 queries)",
+    "generated_at": "2026-06-27 15:10 UTC",
     "days": 30
   },
+  "feed_log": [
+    {
+      "feed": "Google/Russia-Oil-Sanctions",
+      "status": "OK",
+      "error": null,
+      "count": 6
+    },
+    {
+      "feed": "Google/Russia-OFAC",
+      "status": "OK",
+      "error": null,
+      "count": 2
+    },
+    {
+      "feed": "Google/Reuters-Russia",
+      "status": "OK",
+      "error": null,
+      "count": 0
+    },
+    {
+      "feed": "Google/Bloomberg-Russia",
+      "status": "OK",
+      "error": null,
+      "count": 0
+    }
+  ],
   "summary": {
     "days": 30,
-    "run_date": "2026-06-27",
-    "regime": "Moderate Tightening",
-    "regime_explanation": "1 official tightening action(s) detected (Shipping (1), UK (1)) vs 2 loosening action(s). Remaining coverage is statements, proposals, or commentary.",
-    "confidence": "MODERATE",
-    "confidence_color": "#d97706",
-    "confidence_reasons": [
-      "7 unique event(s)",
-      "3 official action(s)",
-      "0 Tier 1 source(s)"
-    ],
-    "total_articles": 7,
-    "unique_events": 7,
+    "total_articles": 8,
+    "unique_events": 8,
     "tightening_count": 6,
     "loosening_count": 1,
     "uncertain_count": 0,
-    "neutral_count": 0,
+    "neutral_count": 1,
     "official_tightening": 1,
     "official_loosening": 2,
     "type_counts": {
-      "Media Report": 2,
+      "Sanction Waived": 2,
+      "Media Report": 3,
       "Legal Analysis": 1,
-      "Political Statement": 2,
-      "Sanction Waived": 2
+      "Political Statement": 2
     },
     "body_counts": {
       "Other": 5,
       "Shipping": 1,
-      "UK": 1
+      "OFAC": 2
     },
     "active_flags": [],
     "tier_counts": {
       "1": 0,
-      "2": 1,
-      "3": 6
-    }
+      "2": 0,
+      "3": 8
+    },
+    "tier1_count": 0,
+    "max_corroboration": 1,
+    "regime": "Moderate Tightening",
+    "regime_explanation": "1 confirmed official tightening action(s) from: OFAC, Shipping. 2 official loosening/waiver action(s). Remaining 6 articles are statements, guidance, or media coverage.",
+    "confidence": "MODERATE",
+    "confidence_color": "#d97706",
+    "confidence_score": 41,
+    "confidence_reasons": [
+      "8 unique event(s) (weight 25%)",
+      "3 official action(s) (weight 40%)",
+      "0 Tier 1 source(s) (weight 20%)",
+      "1 max source corroboration (weight 15%)"
+    ]
   },
   "events": [
+    {
+      "title": "Russian Oil Continues Flow Amid US Waiver - IOL",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOTUJkaGFuVHBMSDZIV2hIWDRkT0MzdlNXSVh1Q04zdUI4YWJjWk1DSk5xQUhsRjUwOWI2VEFQUXF4cE9uY3V4cnhXMk9hX05Tdm94dFVhQ0doOHFsbE41SGprMzZDYWpnNGl2bnB6SjdIRXhPcXVhRHo0S0l4OXM2X0d5Zmd2cHpWRFE?oc=5",
+      "published": "2026-06-26",
+      "source": "IOL",
+      "source_tier": 3,
+      "direction": "LOOSENING",
+      "dir_rule": "keyword: 'waiver'",
+      "article_type": "Sanction Waived",
+      "type_rule": "waiver",
+      "corroboration": 1,
+      "article_count": 1
+    },
     {
       "title": "TEMPORARY DEAL - US Eases Russia Oil Sanctions to Tame Price Surge, Riling European Allies - EnergyNow",
       "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOZEwteXNCcjlLa1dveThnYmJJMnFFdWNySXl3T19HZThyeUw1Rk52ay1Vak55WFhYNmp4Mk4tbVBjMDBDdUVEVFR0dzFmTmc4MjFKY0NjQXo1eFBicmptSF8tR1NLRUlYQTVjTFZ3UjJSUTdxNExiYUdLNy1tX2pHQS1aS19UUTdVdXF3c3RiU0JmdU9nR1NNb0FycmlxYlZsU2Jhck5WeklVWmRQQjlnT2o0ZmJDQlVv?oc=5",
@@ -51,14 +94,11 @@
       "source": "EnergyNow",
       "source_tier": 3,
       "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
       "article_type": "Media Report",
-      "bodies": [
-        "Other"
-      ],
-      "article_count": 1,
-      "all_sources": [
-        "EnergyNow"
-      ]
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
     },
     {
       "title": "Tightening the Vise: E.U. Continues Sanctions Pressure Against Russian Origin Oil - Foley Hoag",
@@ -67,14 +107,11 @@
       "source": "Foley Hoag",
       "source_tier": 3,
       "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
       "article_type": "Legal Analysis",
-      "bodies": [
-        "Other"
-      ],
-      "article_count": 1,
-      "all_sources": [
-        "Foley Hoag"
-      ]
+      "type_rule": "foley",
+      "corroboration": 1,
+      "article_count": 1
     },
     {
       "title": "Trump says U.S. could restore Russian oil sanctions after Iran deal - The New Voice of Ukraine",
@@ -83,14 +120,11 @@
       "source": "The New Voice of Ukraine",
       "source_tier": 3,
       "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
       "article_type": "Political Statement",
-      "bodies": [
-        "Other"
-      ],
-      "article_count": 1,
-      "all_sources": [
-        "The New Voice of Ukraine"
-      ]
+      "type_rule": "says",
+      "corroboration": 1,
+      "article_count": 1
     },
     {
       "title": "Trump hints that he may reinstate sanctions on Russian oil - RBC-Ukraine",
@@ -99,73 +133,80 @@
       "source": "RBC-Ukraine",
       "source_tier": 3,
       "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
       "article_type": "Political Statement",
-      "bodies": [
-        "Other"
-      ],
-      "article_count": 1,
-      "all_sources": [
-        "RBC-Ukraine"
-      ]
+      "type_rule": "hints",
+      "corroboration": 1,
+      "article_count": 1
     },
     {
       "title": "US extends Russian oil sanctions waiver for another month - Shipping Telegraph",
       "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQME1qdUswQnhIWU9yTExiVFJwZWF4NzFZdXFPR2JpNG1DT3NSOG5rcER6N1BqR0VvWTB1S01ReUllV21MRDlhc0lXaGlDZlNocnVvdGJ1TkZDamhNSmZfS19Jb2VVdXQwUzhiV180bW9IUS1jNVQzazNlTGtDT29sSlE4ZGNnTG5UNjZtRV96WWpJVGMyYlQ1UU1HMmlwU09SNUFiamx3?oc=5",
       "published": "2026-06-10",
       "source": "Shipping Telegraph",
-      "source_tier": 2,
-      "direction": "TIGHTENING",
-      "article_type": "Sanction Waived",
-      "bodies": [
-        "Shipping"
-      ],
-      "article_count": 1,
-      "all_sources": [
-        "Shipping Telegraph"
-      ]
-    },
-    {
-      "title": "Russian Oil Continues Flow Amid US Waiver - IOL",
-      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOTUJkaGFuVHBMSDZIV2hIWDRkT0MzdlNXSVh1Q04zdUI4YWJjWk1DSk5xQUhsRjUwOWI2VEFQUXF4cE9uY3V4cnhXMk9hX05Tdm94dFVhQ0doOHFsbE41SGprMzZDYWpnNGl2bnB6SjdIRXhPcXVhRHo0S0l4OXM2X0d5Zmd2cHpWRFE?oc=5",
-      "published": "2026-06-05",
-      "source": "IOL",
-      "source_tier": 3,
-      "direction": "LOOSENING",
-      "article_type": "Sanction Waived",
-      "bodies": [
-        "Other"
-      ],
-      "article_count": 1,
-      "all_sources": [
-        "IOL"
-      ]
-    },
-    {
-      "title": "Britain softens sanctions - The Bell",
-      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE01TzFFLXprd0JxLVBkVkhMSzJ0aGRGb296bzZNb2NJU1R6N3ZWdUxSbGxMTEcyZnFjaGJ4cmxVSnVrOGJCYVJhMGgzNDYxTkx6NDNRVnZoT3FmZmNj?oc=5",
-      "published": "2026-05-27",
-      "source": "The Bell",
       "source_tier": 3,
       "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Sanction Waived",
+      "type_rule": "waiver",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "FTI Consulting Pays $1.05 Million to Settle OFAC Sanctions Violations Over VTB Bank Debt - The Eastern Herald",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQX0ZGcHlnNElNWkJBODZLdU1FMnRweUdDeGlrT0l2NVJ5S2wyZUxFX25uU0NTQTEySVBsbXA2eWhtcjV2WmcyRFpZdmxhY2NWYnhWdnVaOTJCalA1S0JMSXExZjBGY2preUtFVkJVZWhpQW1pTmUzVldra2l2R3JucEhvaU9MZklUM3NQQnNPQTM?oc=5",
+      "published": "2026-06-02",
+      "source": "The Eastern Herald",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
       "article_type": "Media Report",
-      "bodies": [
-        "UK"
-      ],
-      "article_count": 1,
-      "all_sources": [
-        "The Bell"
-      ]
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "U.S. Treasury extends licence for sale of Lukoil foreign assets until late June - The New Voice of Ukraine",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPRldFOVNCazhpZlJxelFEQjhYSE14SkhwUENmMjJlNDdDb2FBTlJfWEc2eEJocnNIY3djNDdpWkVMd040V19mQldYc210STBhOGJxQy1JQ3NwQ0dBSENQa0hweUN4emxKZE05aUZiY21LNDZZUXRmeHpfUG96Q2d2Q3ViU1o4bXh5aTdnYUl1X1NEUHc4ajBYdklPTXBKZ0dRU0k40gGcAUFVX3lxTE9ZNkk0OVdxNVRXZkliMl96MjBqUGQ3WWlDSXhQRlJpQXhPQ21RYVVtZHlleS1HZm5CRWkxd1ZwYnBvWDg4NmZpN25lcnp1MDdhLVRZb2lubWpEUHc1bURDZHlwdm0zbnlOYU5wSnNIdmh1QUwyQU9MWjhpTUFZTmswUEMtc2R5QVNtMER5UXpQWTVCMDRnOV9zS2J1ZA?oc=5",
+      "published": "2026-05-29",
+      "source": "The New Voice of Ukraine",
+      "source_tier": 3,
+      "direction": "NEUTRAL",
+      "dir_rule": "no directional keyword matched",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
     }
   ],
   "articles": [
     {
+      "title": "Russian Oil Continues Flow Amid US Waiver - IOL",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOTUJkaGFuVHBMSDZIV2hIWDRkT0MzdlNXSVh1Q04zdUI4YWJjWk1DSk5xQUhsRjUwOWI2VEFQUXF4cE9uY3V4cnhXMk9hX05Tdm94dFVhQ0doOHFsbE41SGprMzZDYWpnNGl2bnB6SjdIRXhPcXVhRHo0S0l4OXM2X0d5Zmd2cHpWRFE?oc=5",
+      "published": "2026-06-26",
+      "source": "IOL",
+      "source_tier": 3,
+      "feed_source": "Google/Russia-Oil-Sanctions",
+      "direction": "LOOSENING",
+      "dir_rule": "keyword: 'waiver'",
+      "article_type": "Sanction Waived",
+      "type_rule": "waiver",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
       "title": "TEMPORARY DEAL - US Eases Russia Oil Sanctions to Tame Price Surge, Riling European Allies - EnergyNow",
       "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOZEwteXNCcjlLa1dveThnYmJJMnFFdWNySXl3T19HZThyeUw1Rk52ay1Vak55WFhYNmp4Mk4tbVBjMDBDdUVEVFR0dzFmTmc4MjFKY0NjQXo1eFBicmptSF8tR1NLRUlYQTVjTFZ3UjJSUTdxNExiYUdLNy1tX2pHQS1aS19UUTdVdXF3c3RiU0JmdU9nR1NNb0FycmlxYlZsU2Jhck5WeklVWmRQQjlnT2o0ZmJDQlVv?oc=5",
       "published": "2026-06-24",
       "source": "EnergyNow",
       "source_tier": 3,
+      "feed_source": "Google/Russia-Oil-Sanctions",
       "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
       "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
       "bodies": [
         "Other"
       ],
@@ -177,8 +218,11 @@
       "published": "2026-06-23",
       "source": "Foley Hoag",
       "source_tier": 3,
+      "feed_source": "Google/Russia-Oil-Sanctions",
       "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
       "article_type": "Legal Analysis",
+      "type_rule": "foley",
       "bodies": [
         "Other"
       ],
@@ -190,8 +234,11 @@
       "published": "2026-06-16",
       "source": "The New Voice of Ukraine",
       "source_tier": 3,
+      "feed_source": "Google/Russia-Oil-Sanctions",
       "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
       "article_type": "Political Statement",
+      "type_rule": "says",
       "bodies": [
         "Other"
       ],
@@ -203,8 +250,11 @@
       "published": "2026-06-16",
       "source": "RBC-Ukraine",
       "source_tier": 3,
+      "feed_source": "Google/Russia-Oil-Sanctions",
       "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
       "article_type": "Political Statement",
+      "type_rule": "hints",
       "bodies": [
         "Other"
       ],
@@ -215,37 +265,46 @@
       "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQME1qdUswQnhIWU9yTExiVFJwZWF4NzFZdXFPR2JpNG1DT3NSOG5rcER6N1BqR0VvWTB1S01ReUllV21MRDlhc0lXaGlDZlNocnVvdGJ1TkZDamhNSmZfS19Jb2VVdXQwUzhiV180bW9IUS1jNVQzazNlTGtDT29sSlE4ZGNnTG5UNjZtRV96WWpJVGMyYlQ1UU1HMmlwU09SNUFiamx3?oc=5",
       "published": "2026-06-10",
       "source": "Shipping Telegraph",
-      "source_tier": 2,
+      "source_tier": 3,
+      "feed_source": "Google/Russia-Oil-Sanctions",
       "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
       "article_type": "Sanction Waived",
+      "type_rule": "waiver",
       "bodies": [
         "Shipping"
       ],
       "flags": []
     },
     {
-      "title": "Russian Oil Continues Flow Amid US Waiver - IOL",
-      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOTUJkaGFuVHBMSDZIV2hIWDRkT0MzdlNXSVh1Q04zdUI4YWJjWk1DSk5xQUhsRjUwOWI2VEFQUXF4cE9uY3V4cnhXMk9hX05Tdm94dFVhQ0doOHFsbE41SGprMzZDYWpnNGl2bnB6SjdIRXhPcXVhRHo0S0l4OXM2X0d5Zmd2cHpWRFE?oc=5",
-      "published": "2026-06-05",
-      "source": "IOL",
+      "title": "FTI Consulting Pays $1.05 Million to Settle OFAC Sanctions Violations Over VTB Bank Debt - The Eastern Herald",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQX0ZGcHlnNElNWkJBODZLdU1FMnRweUdDeGlrT0l2NVJ5S2wyZUxFX25uU0NTQTEySVBsbXA2eWhtcjV2WmcyRFpZdmxhY2NWYnhWdnVaOTJCalA1S0JMSXExZjBGY2preUtFVkJVZWhpQW1pTmUzVldra2l2R3JucEhvaU9MZklUM3NQQnNPQTM?oc=5",
+      "published": "2026-06-02",
+      "source": "The Eastern Herald",
       "source_tier": 3,
-      "direction": "LOOSENING",
-      "article_type": "Sanction Waived",
+      "feed_source": "Google/Russia-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
       "bodies": [
-        "Other"
+        "OFAC"
       ],
       "flags": []
     },
     {
-      "title": "Britain softens sanctions - The Bell",
-      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE01TzFFLXprd0JxLVBkVkhMSzJ0aGRGb296bzZNb2NJU1R6N3ZWdUxSbGxMTEcyZnFjaGJ4cmxVSnVrOGJCYVJhMGgzNDYxTkx6NDNRVnZoT3FmZmNj?oc=5",
-      "published": "2026-05-27",
-      "source": "The Bell",
+      "title": "U.S. Treasury extends licence for sale of Lukoil foreign assets until late June - The New Voice of Ukraine",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPRldFOVNCazhpZlJxelFEQjhYSE14SkhwUENmMjJlNDdDb2FBTlJfWEc2eEJocnNIY3djNDdpWkVMd040V19mQldYc210STBhOGJxQy1JQ3NwQ0dBSENQa0hweUN4emxKZE05aUZiY21LNDZZUXRmeHpfUG96Q2d2Q3ViU1o4bXh5aTdnYUl1X1NEUHc4ajBYdklPTXBKZ0dRU0k40gGcAUFVX3lxTE9ZNkk0OVdxNVRXZkliMl96MjBqUGQ3WWlDSXhQRlJpQXhPQ21RYVVtZHlleS1HZm5CRWkxd1ZwYnBvWDg4NmZpN25lcnp1MDdhLVRZb2lubWpEUHc1bURDZHlwdm0zbnlOYU5wSnNIdmh1QUwyQU9MWjhpTUFZTmswUEMtc2R5QVNtMER5UXpQWTVCMDRnOV9zS2J1ZA?oc=5",
+      "published": "2026-05-29",
+      "source": "The New Voice of Ukraine",
       "source_tier": 3,
-      "direction": "TIGHTENING",
+      "feed_source": "Google/Russia-OFAC",
+      "direction": "NEUTRAL",
+      "dir_rule": "no directional keyword matched",
       "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
       "bodies": [
-        "UK"
+        "OFAC"
       ],
       "flags": []
     }
