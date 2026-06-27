@@ -17,7 +17,7 @@
   .section-label { font-family:Arial,sans-serif; font-size:.72rem; color:#9ca3af;
                     text-transform:uppercase; letter-spacing:.08em;
                     border-left:1px solid #2d3748; padding-left:1rem; }
-  .container { max-width:2000px; margin:0 auto; }
+  main { max-width:2000px; margin:0 auto; }
   h1 { font-size:18px; margin-bottom:6px; }
   .meta { font-size:11px; color:#9ca3af; margin-bottom:16px; }
   .stats { display:flex; gap:12px; margin:12px 0; flex-wrap:wrap; }
@@ -27,6 +27,9 @@
   .note { background:#111827; padding:12px 16px; border-radius:6px;
            margin:12px 0; border-left:4px solid #059669;
            font-size:12px; color:#9ca3af; }
+  .legend { background:#111827; padding:10px 16px; border-radius:6px;
+             margin:8px 0; font-size:11px; color:#9ca3af;
+             border:1px solid #2d3748; }
   table { width:100%; border-collapse:collapse; background:#111827;
            border-radius:8px; overflow:hidden; font-size:12px; }
   th { background:#1f2937; padding:10px 8px; text-align:left;
@@ -37,8 +40,8 @@
             font-weight:700; border-radius:4px; font-size:11px; }
   .small { color:#9ca3af; font-size:11px; }
   footer { max-width:2000px; margin:16px auto 0; font-size:10px;
-            color:#4b5563; text-align:center; line-height:1.6; border-top:1px solid #1f2937;
-            padding-top:12px; }
+            color:#4b5563; text-align:center; line-height:1.6;
+            border-top:1px solid #1f2937; padding-top:12px; }
 </style>
 </head>
 <body>
@@ -46,57 +49,76 @@
   <span class="brand">THOR SIGNAL</span>
   <span class="section-label">Magnificent 7 — SEC Signal Monitor</span>
 </div>
-<div class="container">
+<main>
   <h1>Magnificent 7 — SEC Signal Monitor</h1>
-  <div class="meta">Generated: 2026-06-27 19:32 UTC · 9 factors: SEC 45% | Market/Quality 55% · 10b5-1 filter · Cool-down logic · No AI</div>
+  <div class="meta">Generated: 2026-06-27 20:07 UTC · 9 factors: SEC 45% | Market/Quality 55% · 10b5-1 filter · Cool-down logic · No AI</div>
   <div class="note">
     <b>Deterministic Mode:</b> Max 2.0% per position.
     Total suggested allocation: 4.0%.
     All rules explicit and reproducible. 10b5-1 sales penalized 1/5th vs discretionary.
   </div>
-  <div class="stats"><div class="stat"><b style="color:#b00020">0</b><span class="small">ALERT</span></div><div class="stat"><b style="color:#e67e22">0</b><span class="small">WATCH</span></div><div class="stat"><b style="color:#f1c40f">0</b><span class="small">NEUTRAL</span></div><div class="stat"><b style="color:#27ae60">0</b><span class="small">STABLE</span></div><div class="stat"><b style="color:#1e8449">6</b><span class="small">PRIME</span></div><div class="stat"><b style="color:#2c3e50">1</b><span class="small">STRONG</span></div></div>
+  <div class="legend">
+    <b>Quality Score:</b> 0–100, higher = better (inverted risk score) &nbsp;·&nbsp;
+    <b>BUY</b> = add position &nbsp;·&nbsp;
+    <b>WAIT</b> = conditions not yet met — monitor &nbsp;·&nbsp;
+    <b>AVOID</b> = do not add — specific risk flags present
+  </div>
   <div class="stats">
-    <div class="stat"><b style="color:#059669">0</b><span class="small">BUY YES @ 2%</span></div>
-    <div class="stat"><b style="color:#d97706">0</b><span class="small">BUY MAYBE @ 1%</span></div>
-    <div class="stat"><b style="color:#7f1d1d">1</b><span class="small">BUY NO @ 0%</span></div>
+    <div style="font-size:11px;color:#9ca3af;align-self:center;padding:4px 0;">
+      <b style="color:#e6edf3;">Company Quality:</b>
+    </div>
+    <div class="stat"><b style="color:#b00020">0</b><span class="small">ALERT</span></div><div class="stat"><b style="color:#e67e22">0</b><span class="small">WATCH</span></div><div class="stat"><b style="color:#f1c40f">0</b><span class="small">NEUTRAL</span></div><div class="stat"><b style="color:#27ae60">0</b><span class="small">STABLE</span></div><div class="stat"><b style="color:#1e8449">6</b><span class="small">PRIME</span></div><div class="stat"><b style="color:#2c3e50">1</b><span class="small">STRONG</span></div>
+  </div>
+  <div class="stats">
+    <div style="font-size:11px;color:#9ca3af;align-self:center;padding:4px 0;">
+      <b style="color:#e6edf3;">Current Entry:</b>
+    </div>
+    <div class="stat"><b style="color:#059669">0</b><span class="small">BUY @ 2%</span></div>
+    <div class="stat"><b style="color:#d97706">4</b><span class="small">WAIT @ 1%</span></div>
+    <div class="stat"><b style="color:#7f1d1d">3</b><span class="small">AVOID @ 0%</span></div>
     <div class="stat"><b>4.0%</b><span class="small">TOTAL ALLOC</span></div>
   </div>
   <table>
     <thead><tr>
-      <th>Ticker</th><th>Status</th><th>Score</th><th>Buy?</th><th>Size</th>
-      <th>8-K</th><th>FINS</th><th>VAL</th><th>MOM</th><th>INS</th>
-      <th>SHORT</th><th>ACCR</th><th>Buy Reason</th><th>Signals</th>
+      <th>Ticker</th>
+      <th>Quality</th>
+      <th>Score</th>
+      <th>Entry</th>
+      <th>Size</th>
+      <th>8-K</th><th>FINS</th><th>VAL</th><th>MOM</th>
+      <th>INS</th><th>SHORT</th><th>ACCR</th>
+      <th>Entry Reason</th><th>Key Signals</th>
     </tr></thead>
     <tbody>
 <tr>
   <td><b>META</b><br><span style="color:#9ca3af;font-size:11px;">Meta</span></td>
   <td><span class="badge" style="background:#2c3e50">STRONG</span></td>
-  <td><b>18.9</b></td>
-  <td><span class="badge" style="background:#7f1d1d">NO</span></td>
+  <td><b>81.1</b><span style="color:#4b5563;font-size:10px;">/100</span></td>
+  <td><span class="badge" style="background:#7f1d1d">AVOID</span></td>
   <td><b>0.0%</b></td>
   <td>25.7</td><td>0</td>
   <td>+0</td><td>+10</td>
   <td>-5</td><td>+0</td><td>+0</td>
-  <td class="small">Weak momentum (>10% below 200DMA)</td>
+  <td class="small">Trading 15% below its 200-day moving average</td>
   <td class="small">Earnings release (2026-04-29)<br>Director/officer departure (2026-04-14)<br>Weak momentum -15% vs 200DMA<br>No insider activity 6mo</td>
 </tr>
 <tr>
   <td><b>MSFT</b><br><span style="color:#9ca3af;font-size:11px;">Microsoft</span></td>
   <td><span class="badge" style="background:#1e8449">PRIME</span></td>
-  <td><b>20.1</b></td>
-  <td><span class="badge" style="background:#7f1d1d">NO</span></td>
+  <td><b>79.9</b><span style="color:#4b5563;font-size:10px;">/100</span></td>
+  <td><span class="badge" style="background:#7f1d1d">AVOID</span></td>
   <td><b>0.0%</b></td>
   <td>19.6</td><td>0</td>
   <td>+20</td><td>+10</td>
   <td>-5</td><td>+0</td><td>+15</td>
-  <td class="small">Weak momentum (>10% below 200DMA)</td>
+  <td class="small">Trading 16% below its 200-day moving average</td>
   <td class="small">Earnings release (2026-04-29)<br>Bubble P/FCF 67.7x<br>Weak momentum -16% vs 200DMA<br>No insider activity 6mo<br>NI 3.0x FCF — accruals</td>
 </tr>
 <tr>
   <td><b>GOOGL</b><br><span style="color:#9ca3af;font-size:11px;">Alphabet</span></td>
   <td><span class="badge" style="background:#1e8449">PRIME</span></td>
-  <td><b>20.2</b></td>
-  <td><span class="badge" style="background:#d97706">MAYBE</span></td>
+  <td><b>79.8</b><span style="color:#4b5563;font-size:10px;">/100</span></td>
+  <td><span class="badge" style="background:#d97706">WAIT</span></td>
   <td><b>1.0%</b></td>
   <td>36.7</td><td>0</td>
   <td>+0</td><td>-5</td>
@@ -107,8 +129,8 @@
 <tr>
   <td><b>NVDA</b><br><span style="color:#9ca3af;font-size:11px;">NVIDIA</span></td>
   <td><span class="badge" style="background:#1e8449">PRIME</span></td>
-  <td><b>20.9</b></td>
-  <td><span class="badge" style="background:#d97706">MAYBE</span></td>
+  <td><b>79.1</b><span style="color:#4b5563;font-size:10px;">/100</span></td>
+  <td><span class="badge" style="background:#d97706">WAIT</span></td>
   <td><b>1.0%</b></td>
   <td>36.7</td><td>0</td>
   <td>+0</td><td>-5</td>
@@ -119,8 +141,8 @@
 <tr>
   <td><b>AMZN</b><br><span style="color:#9ca3af;font-size:11px;">Amazon</span></td>
   <td><span class="badge" style="background:#1e8449">PRIME</span></td>
-  <td><b>21.6</b></td>
-  <td><span class="badge" style="background:#d97706">MAYBE</span></td>
+  <td><b>78.4</b><span style="color:#4b5563;font-size:10px;">/100</span></td>
+  <td><span class="badge" style="background:#d97706">WAIT</span></td>
   <td><b>1.0%</b></td>
   <td>38.5</td><td>0</td>
   <td>+0</td><td>+5</td>
@@ -131,8 +153,8 @@
 <tr>
   <td><b>AAPL</b><br><span style="color:#9ca3af;font-size:11px;">Apple</span></td>
   <td><span class="badge" style="background:#1e8449">PRIME</span></td>
-  <td><b>24.6</b></td>
-  <td><span class="badge" style="background:#d97706">MAYBE</span></td>
+  <td><b>75.4</b><span style="color:#4b5563;font-size:10px;">/100</span></td>
+  <td><span class="badge" style="background:#d97706">WAIT</span></td>
   <td><b>1.0%</b></td>
   <td>52.5</td><td>0</td>
   <td>+10</td><td>-5</td>
@@ -143,8 +165,8 @@
 <tr>
   <td><b>TSLA</b><br><span style="color:#9ca3af;font-size:11px;">Tesla</span></td>
   <td><span class="badge" style="background:#1e8449">PRIME</span></td>
-  <td><b>29.2</b></td>
-  <td><span class="badge" style="background:#7f1d1d">NO</span></td>
+  <td><b>70.8</b><span style="color:#4b5563;font-size:10px;">/100</span></td>
+  <td><span class="badge" style="background:#7f1d1d">AVOID</span></td>
   <td><b>0.0%</b></td>
   <td>40.0</td><td>30</td>
   <td>+20</td><td>+5</td>
@@ -153,13 +175,13 @@
   <td class="small">Earnings release (2026-04-22)<br>Director/officer departure (2025-11-07)<br>Negative FCF 2 quarters: $-398M last qtr<br>Negative FCF $-0.8B<br>Below 200DMA -9%</td>
 </tr></tbody>
   </table>
-</div>
+</main>
 <footer>
   <p style="margin-bottom:6px;">
     <b>DATA SOURCES</b> &nbsp;·&nbsp; SEC EDGAR (XBRL, 8-K, 10-K, 10-Q, Form 4)
     &nbsp;·&nbsp; yfinance (price/short data) &nbsp;·&nbsp;
     Deterministic scoring — no AI-generated content
-    &nbsp;·&nbsp; © 2026 Randy Hinton &nbsp;·&nbsp; 2026-06-27 19:32 UTC &nbsp;·&nbsp; #FollowTheData
+    &nbsp;·&nbsp; © 2026 Randy Hinton &nbsp;·&nbsp; 2026-06-27 20:07 UTC &nbsp;·&nbsp; #FollowTheData
   </p>
   <p style="color:#374151;font-size:9px;max-width:1400px;margin:0 auto;">
     <b>DISCLAIMER:</b> This report is generated by Thor Storehouse, an automated deterministic
