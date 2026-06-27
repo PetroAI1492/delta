@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-27T15:11:31Z",
+  "generated": "2026-06-27T15:28:09Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -3081,6 +3081,94 @@
       ],
       "id": "russian_petroleum_sanctions_sitrep",
       "path": "https://petroai1492.github.io/delta/geopolitics/russia_sanctions.html"
+    },
+    {
+      "title": "Iran Petroleum Sanctions SITREP",
+      "file": "geopolitics/iran_sanctions.html",
+      "description": "Multi-source situation report on Iran petroleum sanctions \u2014 fetches from 4 Google News RSS queries plus IAEA press releases, deduplicates into unique events, classifies article type (Official Sanction, Sanction Waived, Political Statement, etc.) independently from direction (TIGHTENING/LOOSENING/UNCERTAIN/NEUTRAL), flags JCPOA, IRGC, shadow fleet, Strait of Hormuz, snapback, and price cap signals; confidence-scored regime assessment",
+      "json_file": "geopolitics/iran_sanctions.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/geopolitics/iran_sanctions.html`",
+      "auto_published": false,
+      "primary_domain": "Geopolitics",
+      "secondary_domains": [
+        "Energy"
+      ],
+      "entities": [
+        "Iran",
+        "OFAC",
+        "EU",
+        "UK",
+        "UN",
+        "Israel",
+        "IAEA",
+        "IRGC",
+        "JCPOA",
+        "shadow fleet",
+        "Strait of Hormuz",
+        "petroleum sanctions"
+      ],
+      "data_sources": [
+        "Google News RSS (4 queries: Iran oil sanctions",
+        "Iran OFAC",
+        "Iran JCPOA nuclear",
+        "Reuters Iran); IAEA Press Releases RSS (iaea.org/feeds/pressreleases); configurable lookback window (default 30 days)"
+      ],
+      "update_frequency": "Manual (recommend weekly or when Iran sanctions news breaks)",
+      "key_signals": [
+        "Regime classification (High/Moderate Tightening, Active/Modest Loosening, Stable/Watch)",
+        "confidence score with 4-factor weighting",
+        "official action count",
+        "JCPOA/Nuclear Deal flag",
+        "IRGC flag",
+        "China buyer flag",
+        "shadow fleet flag",
+        "Strait of Hormuz flag",
+        "snapback flag",
+        "price cap flag",
+        "sanctioning body breakdown (OFAC/EU/UK/UN/Israel/IAEA)",
+        "timeline with explainable classification rules"
+      ],
+      "intent_phrases": [
+        "Iran sanctions",
+        "Iran oil sanctions",
+        "Iranian petroleum",
+        "JCPOA",
+        "Iran nuclear deal",
+        "Iran OFAC",
+        "IRGC sanctions",
+        "Iranian crude",
+        "Iran price cap",
+        "Strait of Hormuz sanctions",
+        "Iran shadow fleet",
+        "snapback sanctions",
+        "Iran energy sanctions",
+        "Iranian oil ban",
+        "Iran sanctions regime",
+        "IAEA Iran",
+        "Iran nuclear sanctions",
+        "Iranian oil exports",
+        "Iran China oil",
+        "Iran sanctions tightening",
+        {
+          "keyword": "iran",
+          "weight": 10
+        },
+        {
+          "keyword": "petroleum",
+          "weight": 10
+        },
+        {
+          "keyword": "sanctions",
+          "weight": 10
+        },
+        {
+          "keyword": "sitrep",
+          "weight": 10
+        }
+      ],
+      "id": "iran_petroleum_sanctions_sitrep",
+      "path": "https://petroai1492.github.io/delta/geopolitics/iran_sanctions.html"
     }
   ],
   "cross_domain_matrix": [
