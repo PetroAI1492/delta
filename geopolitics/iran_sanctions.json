@@ -2,14 +2,21 @@
   "metadata": {
     "report": "Iran Petroleum Sanctions SITREP",
     "source": "Google News RSS",
-    "generated_at": "2026-06-27 00:12 UTC",
+    "generated_at": "2026-06-27 00:18 UTC",
     "days": 30
   },
   "summary": {
     "days": 30,
     "run_date": "2026-06-27",
-    "regime": "Low Structural Pressure",
+    "regime": "Stable / Watch",
     "regime_explanation": "No significant policy movement detected in the 30-day window. 2 articles analyzed, 2 unique events identified.",
+    "confidence": "LOW",
+    "confidence_color": "#dc2626",
+    "confidence_reasons": [
+      "2 unique event(s)",
+      "0 official action(s)",
+      "0 Tier 1 source(s)"
+    ],
     "total_articles": 2,
     "unique_events": 2,
     "tightening_count": 0,
