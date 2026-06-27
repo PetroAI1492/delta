@@ -2,7 +2,7 @@
   "metadata": {
     "report": "Magnificent 7 SEC Signal Monitor",
     "version": "5.0.0",
-    "generated_at": "2026-06-27 19:11 UTC",
+    "generated_at": "2026-06-27 19:15 UTC",
     "tickers": [
       "AAPL",
       "MSFT",
@@ -188,10 +188,10 @@
       "ins": -5,
       "short": 0,
       "accr": 0,
-      "buy": "MAYBE",
-      "buy_color": "#d97706",
-      "buy_reason": "Near 200DMA \u2014 monitor for recovery",
-      "size_pct": 1.0,
+      "buy": "NO",
+      "buy_color": "#7f1d1d",
+      "buy_reason": "Negative FCF / financial risk (FINS=30)",
+      "size_pct": 0.0,
       "summaries": [
         "Earnings release (2026-04-22)",
         "Director/officer departure (2025-11-07)",
