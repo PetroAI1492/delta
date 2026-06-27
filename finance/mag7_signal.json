@@ -2,7 +2,7 @@
   "metadata": {
     "report": "Magnificent 7 SEC Signal Monitor",
     "version": "5.0.0",
-    "generated_at": "2026-06-27 19:01 UTC",
+    "generated_at": "2026-06-27 19:11 UTC",
     "tickers": [
       "AAPL",
       "MSFT",
@@ -58,7 +58,7 @@
       "accr": 15,
       "buy": "NO",
       "buy_color": "#7f1d1d",
-      "buy_reason": "Below 200DMA with insider selling",
+      "buy_reason": "Weak momentum (>10% below 200DMA)",
       "size_pct": 0.0,
       "summaries": [
         "Earnings release (2026-04-29)",
@@ -109,10 +109,10 @@
       "ins": -5,
       "short": 0,
       "accr": 0,
-      "buy": "NO",
-      "buy_color": "#7f1d1d",
-      "buy_reason": "Below 200DMA with insider selling",
-      "size_pct": 0.0,
+      "buy": "MAYBE",
+      "buy_color": "#d97706",
+      "buy_reason": "Near 200DMA \u2014 monitor for recovery",
+      "size_pct": 1.0,
       "summaries": [
         "Other events (2026-06-12)",
         "Material agreement entered (2026-06-10)",
@@ -164,7 +164,7 @@
       "accr": 0,
       "buy": "NO",
       "buy_color": "#7f1d1d",
-      "buy_reason": "Below 200DMA with insider selling",
+      "buy_reason": "Weak momentum (>10% below 200DMA)",
       "size_pct": 0.0,
       "summaries": [
         "Earnings release (2026-04-29)",
@@ -188,10 +188,10 @@
       "ins": -5,
       "short": 0,
       "accr": 0,
-      "buy": "NO",
-      "buy_color": "#7f1d1d",
-      "buy_reason": "Below 200DMA with insider selling",
-      "size_pct": 0.0,
+      "buy": "MAYBE",
+      "buy_color": "#d97706",
+      "buy_reason": "Near 200DMA \u2014 monitor for recovery",
+      "size_pct": 1.0,
       "summaries": [
         "Earnings release (2026-04-22)",
         "Director/officer departure (2025-11-07)",
