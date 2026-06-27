@@ -2,28 +2,30 @@
   "metadata": {
     "report": "Russian Petroleum Sanctions SITREP",
     "source": "Google News RSS",
-    "generated_at": "2026-06-26 23:57 UTC",
+    "generated_at": "2026-06-27 00:04 UTC",
     "days": 30
   },
   "summary": {
     "days": 30,
-    "run_date": "2026-06-26",
-    "regime": "Low Structural Pressure",
-    "regime_explanation": "No confirmed official actions \u2014 regime driven by 7 tightening-themed articles (statements and proposals) vs 1 loosening. Coverage concentrated in: Shipping (1), UK (1).",
-    "total_articles": 8,
-    "unique_events": 8,
-    "tightening_count": 7,
-    "loosening_count": 1,
+    "run_date": "2026-06-27",
+    "regime": "Active Loosening",
+    "regime_explanation": "No significant policy movement detected in the 30-day window. 7 articles analyzed, 7 unique events identified.",
+    "total_articles": 7,
+    "unique_events": 7,
+    "tightening_count": 3,
+    "loosening_count": 4,
+    "uncertain_count": 0,
     "neutral_count": 0,
     "official_tightening": 0,
-    "official_loosening": 0,
+    "official_loosening": 2,
     "type_counts": {
-      "News Report": 5,
-      "Legal Guidance": 1,
-      "Statement": 2
+      "Media Report": 2,
+      "Legal Analysis": 1,
+      "Political Statement": 2,
+      "Sanction Waived": 2
     },
     "body_counts": {
-      "Other": 6,
+      "Other": 5,
       "Shipping": 1,
       "UK": 1
     },
@@ -31,7 +33,7 @@
     "tier_counts": {
       "1": 0,
       "2": 1,
-      "3": 7
+      "3": 6
     }
   },
   "events": [
@@ -41,8 +43,8 @@
       "published": "2026-06-24",
       "source": "EnergyNow",
       "source_tier": 3,
-      "direction": "TIGHTENING",
-      "article_type": "News Report",
+      "direction": "LOOSENING",
+      "article_type": "Media Report",
       "bodies": [
         "Other"
       ],
@@ -58,7 +60,7 @@
       "source": "Foley Hoag",
       "source_tier": 3,
       "direction": "TIGHTENING",
-      "article_type": "Legal Guidance",
+      "article_type": "Legal Analysis",
       "bodies": [
         "Other"
       ],
@@ -73,8 +75,8 @@
       "published": "2026-06-16",
       "source": "The New Voice of Ukraine",
       "source_tier": 3,
-      "direction": "TIGHTENING",
-      "article_type": "Statement",
+      "direction": "LOOSENING",
+      "article_type": "Political Statement",
       "bodies": [
         "Other"
       ],
@@ -90,7 +92,7 @@
       "source": "RBC-Ukraine",
       "source_tier": 3,
       "direction": "TIGHTENING",
-      "article_type": "Statement",
+      "article_type": "Political Statement",
       "bodies": [
         "Other"
       ],
@@ -100,29 +102,13 @@
       ]
     },
     {
-      "title": "EU targets 2Rivers founder in Russia oil sanctions - Quantum Commodity Intelligence",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOSW52SHJYbnVwc2dmTXl2RUVoX0p1UUF1eE1rX1llQ0JCQ2FpWnBPaDNQaW0ydmJLUWtrenlwNGMzUFRTQ29nRU1iM05LbTZUWHRHS1VMQ2V3Y25uT3BVaFhJTVl1TTJILUVXd2NGOFhIQ251eGp5Zkh6bFRjN0VoSjc2bFJ5UDJPN2pWdW5mQnpHU1VITVhXbg?oc=5",
-      "published": "2026-06-15",
-      "source": "Quantum Commodity Intelligence",
-      "source_tier": 3,
-      "direction": "TIGHTENING",
-      "article_type": "News Report",
-      "bodies": [
-        "Other"
-      ],
-      "article_count": 1,
-      "all_sources": [
-        "Quantum Commodity Intelligence"
-      ]
-    },
-    {
       "title": "US extends Russian oil sanctions waiver for another month - Shipping Telegraph",
       "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQME1qdUswQnhIWU9yTExiVFJwZWF4NzFZdXFPR2JpNG1DT3NSOG5rcER6N1BqR0VvWTB1S01ReUllV21MRDlhc0lXaGlDZlNocnVvdGJ1TkZDamhNSmZfS19Jb2VVdXQwUzhiV180bW9IUS1jNVQzazNlTGtDT29sSlE4ZGNnTG5UNjZtRV96WWpJVGMyYlQ1UU1HMmlwU09SNUFiamx3?oc=5",
       "published": "2026-06-10",
       "source": "Shipping Telegraph",
       "source_tier": 2,
-      "direction": "TIGHTENING",
-      "article_type": "News Report",
+      "direction": "LOOSENING",
+      "article_type": "Sanction Waived",
       "bodies": [
         "Shipping"
       ],
@@ -138,7 +124,7 @@
       "source": "IOL",
       "source_tier": 3,
       "direction": "LOOSENING",
-      "article_type": "News Report",
+      "article_type": "Sanction Waived",
       "bodies": [
         "Other"
       ],
@@ -154,7 +140,7 @@
       "source": "The Bell",
       "source_tier": 3,
       "direction": "TIGHTENING",
-      "article_type": "News Report",
+      "article_type": "Media Report",
       "bodies": [
         "UK"
       ],
@@ -171,8 +157,8 @@
       "published": "2026-06-24",
       "source": "EnergyNow",
       "source_tier": 3,
-      "direction": "TIGHTENING",
-      "article_type": "News Report",
+      "direction": "LOOSENING",
+      "article_type": "Media Report",
       "bodies": [
         "Other"
       ],
@@ -185,7 +171,7 @@
       "source": "Foley Hoag",
       "source_tier": 3,
       "direction": "TIGHTENING",
-      "article_type": "Legal Guidance",
+      "article_type": "Legal Analysis",
       "bodies": [
         "Other"
       ],
@@ -197,8 +183,8 @@
       "published": "2026-06-16",
       "source": "The New Voice of Ukraine",
       "source_tier": 3,
-      "direction": "TIGHTENING",
-      "article_type": "Statement",
+      "direction": "LOOSENING",
+      "article_type": "Political Statement",
       "bodies": [
         "Other"
       ],
@@ -211,20 +197,7 @@
       "source": "RBC-Ukraine",
       "source_tier": 3,
       "direction": "TIGHTENING",
-      "article_type": "Statement",
-      "bodies": [
-        "Other"
-      ],
-      "flags": []
-    },
-    {
-      "title": "EU targets 2Rivers founder in Russia oil sanctions - Quantum Commodity Intelligence",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOSW52SHJYbnVwc2dmTXl2RUVoX0p1UUF1eE1rX1llQ0JCQ2FpWnBPaDNQaW0ydmJLUWtrenlwNGMzUFRTQ29nRU1iM05LbTZUWHRHS1VMQ2V3Y25uT3BVaFhJTVl1TTJILUVXd2NGOFhIQ251eGp5Zkh6bFRjN0VoSjc2bFJ5UDJPN2pWdW5mQnpHU1VITVhXbg?oc=5",
-      "published": "2026-06-15",
-      "source": "Quantum Commodity Intelligence",
-      "source_tier": 3,
-      "direction": "TIGHTENING",
-      "article_type": "News Report",
+      "article_type": "Political Statement",
       "bodies": [
         "Other"
       ],
@@ -236,8 +209,8 @@
       "published": "2026-06-10",
       "source": "Shipping Telegraph",
       "source_tier": 2,
-      "direction": "TIGHTENING",
-      "article_type": "News Report",
+      "direction": "LOOSENING",
+      "article_type": "Sanction Waived",
       "bodies": [
         "Shipping"
       ],
@@ -250,7 +223,7 @@
       "source": "IOL",
       "source_tier": 3,
       "direction": "LOOSENING",
-      "article_type": "News Report",
+      "article_type": "Sanction Waived",
       "bodies": [
         "Other"
       ],
@@ -263,7 +236,7 @@
       "source": "The Bell",
       "source_tier": 3,
       "direction": "TIGHTENING",
-      "article_type": "News Report",
+      "article_type": "Media Report",
       "bodies": [
         "UK"
       ],
