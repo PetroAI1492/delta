@@ -2,7 +2,7 @@
   "metadata": {
     "report": "Magnificent 7 SEC Signal Monitor",
     "version": "5.0.0",
-    "generated_at": "2026-06-27 18:10 UTC",
+    "generated_at": "2026-06-27 19:01 UTC",
     "tickers": [
       "AAPL",
       "MSFT",
@@ -19,16 +19,16 @@
       "name": "Apple",
       "cik": "0000320193",
       "status": "PRIME",
-      "unified": 27.6,
+      "unified": 24.6,
       "ess": 52.5,
-      "fins": 20,
+      "fins": 0,
       "qms": 90,
       "sss": 60,
-      "val": 0,
+      "val": 10,
       "mom": -5,
       "ins": -5,
       "short": -5,
-      "accr": 20,
+      "accr": 0,
       "buy": "MAYBE",
       "buy_color": "#d97706",
       "buy_reason": "Low insider concern + acceptable momentum",
@@ -36,9 +36,9 @@
       "summaries": [
         "Earnings release (2026-04-30)",
         "Director/officer departure (2026-04-20)",
-        "Revenue down 19% YoY",
-        "P/FCF 29.1x",
-        "Above 200DMA +5%"
+        "Expensive P/FCF 36.0x",
+        "Above 200DMA +5%",
+        "No insider activity 6mo"
       ]
     },
     {
@@ -46,12 +46,12 @@
       "name": "Microsoft",
       "cik": "0000789019",
       "status": "PRIME",
-      "unified": 22.1,
+      "unified": 20.1,
       "ess": 19.6,
-      "fins": 20,
+      "fins": 0,
       "qms": 90,
       "sss": 60,
-      "val": 10,
+      "val": 20,
       "mom": 10,
       "ins": -5,
       "short": 0,
@@ -62,10 +62,10 @@
       "size_pct": 0.0,
       "summaries": [
         "Earnings release (2026-04-29)",
-        "Revenue down 22% YoY",
-        "Expensive P/FCF 39.9x",
+        "Bubble P/FCF 67.7x",
         "Weak momentum -16% vs 200DMA",
-        "No insider activity 6mo"
+        "No insider activity 6mo",
+        "NI 3.0x FCF \u2014 accruals"
       ]
     },
     {
@@ -73,9 +73,9 @@
       "name": "NVIDIA",
       "cik": "0001045810",
       "status": "PRIME",
-      "unified": 23.9,
+      "unified": 20.9,
       "ess": 36.7,
-      "fins": 20,
+      "fins": 0,
       "qms": 90,
       "sss": 75,
       "val": 0,
@@ -90,7 +90,6 @@
       "summaries": [
         "Earnings release (2026-05-20)",
         "Director/officer departure (2026-05-08)",
-        "Revenue down 10% YoY",
         "Above 200DMA +1%",
         "No insider activity 6mo"
       ]
@@ -100,9 +99,9 @@
       "name": "Amazon",
       "cik": "0001018724",
       "status": "PRIME",
-      "unified": 29.1,
+      "unified": 21.6,
       "ess": 38.5,
-      "fins": 50,
+      "fins": 0,
       "qms": 90,
       "sss": 60,
       "val": 0,
@@ -118,8 +117,8 @@
         "Other events (2026-06-12)",
         "Material agreement entered (2026-06-10)",
         "Debt creation / material obligation (2026-06-10)",
-        "Revenue down 44% YoY",
-        "Net debt up >30% YoY to $17.3B"
+        "Below 200DMA -0%",
+        "No insider activity 6mo"
       ]
     },
     {
@@ -127,9 +126,9 @@
       "name": "Alphabet",
       "cik": "0001652044",
       "status": "PRIME",
-      "unified": 27.7,
+      "unified": 20.2,
       "ess": 36.7,
-      "fins": 50,
+      "fins": 0,
       "qms": 90,
       "sss": 60,
       "val": 0,
@@ -144,19 +143,18 @@
       "summaries": [
         "Director/officer departure (2026-06-05)",
         "Material agreement entered (2026-06-04)",
-        "Revenue down 41% YoY",
-        "Net debt up >30% YoY to $39.4B",
-        "Above 200DMA +8%"
+        "Above 200DMA +8%",
+        "No insider activity 6mo"
       ]
     },
     {
       "ticker": "META",
       "name": "Meta",
       "cik": "0001326801",
-      "status": "PRIME",
-      "unified": 23.4,
+      "status": "STRONG",
+      "unified": 18.9,
       "ess": 25.7,
-      "fins": 30,
+      "fins": 0,
       "qms": 90,
       "sss": 60,
       "val": 0,
@@ -171,7 +169,6 @@
       "summaries": [
         "Earnings release (2026-04-29)",
         "Director/officer departure (2026-04-14)",
-        "Net debt up >30% YoY to $35.3B",
         "Weak momentum -15% vs 200DMA",
         "No insider activity 6mo"
       ]
@@ -180,17 +177,17 @@
       "ticker": "TSLA",
       "name": "Tesla",
       "cik": "0001318605",
-      "status": "STABLE",
-      "unified": 33.2,
+      "status": "PRIME",
+      "unified": 29.2,
       "ess": 40.0,
-      "fins": 50,
+      "fins": 30,
       "qms": 90,
       "sss": 75,
       "val": 20,
       "mom": 5,
       "ins": -5,
       "short": 0,
-      "accr": 20,
+      "accr": 0,
       "buy": "NO",
       "buy_color": "#7f1d1d",
       "buy_reason": "Below 200DMA with insider selling",
@@ -198,9 +195,9 @@
       "summaries": [
         "Earnings release (2026-04-22)",
         "Director/officer departure (2025-11-07)",
-        "Revenue down 46% YoY",
         "Negative FCF 2 quarters: $-398M last qtr",
-        "Negative FCF $-1.3B"
+        "Negative FCF $-0.8B",
+        "Below 200DMA -9%"
       ]
     }
   ]
