@@ -1,0 +1,101 @@
+{
+  "metadata": {
+    "report": "Iran Petroleum Sanctions SITREP",
+    "source": "Google News RSS",
+    "generated_at": "2026-06-27 00:12 UTC",
+    "days": 30
+  },
+  "summary": {
+    "days": 30,
+    "run_date": "2026-06-27",
+    "regime": "Low Structural Pressure",
+    "regime_explanation": "No significant policy movement detected in the 30-day window. 2 articles analyzed, 2 unique events identified.",
+    "total_articles": 2,
+    "unique_events": 2,
+    "tightening_count": 0,
+    "loosening_count": 1,
+    "uncertain_count": 0,
+    "neutral_count": 1,
+    "official_tightening": 0,
+    "official_loosening": 0,
+    "type_counts": {
+      "Media Report": 1,
+      "Political Statement": 1
+    },
+    "body_counts": {
+      "Other": 2
+    },
+    "active_flags": [
+      "Strait of Hormuz"
+    ],
+    "tier_counts": {
+      "1": 0,
+      "2": 0,
+      "3": 2
+    }
+  },
+  "events": [
+    {
+      "title": "New Iran Authorization Implements Memorandum of Understanding - WilmerHale",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQVTlZUWRHYlFrbUdMNlR3ak8zLUlfdzFCRkFUWkU0NTNKTWVXMW1FbTV3WUJrNkNmMXRWSjVvT29JSnZDUHR0T0l6cy1zOE5IUkdYcDZCbi1PR2VZT2twUXp1Vmc4N0xIVm9hT1VPX0ZCOHBCN1JCT2JaWnlpUDFtSTdpUjFJalRaT2lrb3pTMWNIQ3luT2FaZUp1X3VHSGFTdGU1RmhLNE1XbjdOMnp1S0FVdi1EQWMtUjkwTVZoSms?oc=5",
+      "published": "2026-06-26",
+      "source": "WilmerHale",
+      "source_tier": 3,
+      "direction": "NEUTRAL",
+      "article_type": "Media Report",
+      "bodies": [
+        "Other"
+      ],
+      "article_count": 1,
+      "all_sources": [
+        "WilmerHale"
+      ]
+    },
+    {
+      "title": "Trump Accuses Iran Of Violating Cease-Fire With Hormuz Drone Attacks - Radio Free Europe/Radio Liberty",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQWnhyaS1tS3NVV19VeVRlS1RUeUhFblVCTkRCWmg2Z2YwTW1uR051ZFctc3F2eEcyN29hbkJkLUY3THpPVzVaYVRlcTRybGlrTGVsX3ZvTFJyQmRELVNHckg3Nk9uOUw3V2RyN2lZY0dIMW1jLWVQSUVTdXBTZGpuVE55cDBQcG01?oc=5",
+      "published": "2026-06-26",
+      "source": "Radio Free Europe/Radio Liberty",
+      "source_tier": 3,
+      "direction": "LOOSENING",
+      "article_type": "Political Statement",
+      "bodies": [
+        "Other"
+      ],
+      "article_count": 1,
+      "all_sources": [
+        "Radio Free Europe/Radio Liberty"
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "title": "New Iran Authorization Implements Memorandum of Understanding - WilmerHale",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQVTlZUWRHYlFrbUdMNlR3ak8zLUlfdzFCRkFUWkU0NTNKTWVXMW1FbTV3WUJrNkNmMXRWSjVvT29JSnZDUHR0T0l6cy1zOE5IUkdYcDZCbi1PR2VZT2twUXp1Vmc4N0xIVm9hT1VPX0ZCOHBCN1JCT2JaWnlpUDFtSTdpUjFJalRaT2lrb3pTMWNIQ3luT2FaZUp1X3VHSGFTdGU1RmhLNE1XbjdOMnp1S0FVdi1EQWMtUjkwTVZoSms?oc=5",
+      "published": "2026-06-26",
+      "source": "WilmerHale",
+      "source_tier": 3,
+      "direction": "NEUTRAL",
+      "article_type": "Media Report",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "Trump Accuses Iran Of Violating Cease-Fire With Hormuz Drone Attacks - Radio Free Europe/Radio Liberty",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQWnhyaS1tS3NVV19VeVRlS1RUeUhFblVCTkRCWmg2Z2YwTW1uR051ZFctc3F2eEcyN29hbkJkLUY3THpPVzVaYVRlcTRybGlrTGVsX3ZvTFJyQmRELVNHckg3Nk9uOUw3V2RyN2lZY0dIMW1jLWVQSUVTdXBTZGpuVE55cDBQcG01?oc=5",
+      "published": "2026-06-26",
+      "source": "Radio Free Europe/Radio Liberty",
+      "source_tier": 3,
+      "direction": "LOOSENING",
+      "article_type": "Political Statement",
+      "bodies": [
+        "Other"
+      ],
+      "flags": [
+        "Strait of Hormuz"
+      ]
+    }
+  ]
+}
