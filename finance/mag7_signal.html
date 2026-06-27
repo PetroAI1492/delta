@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magnificent 7 — SEC Signal Monitor</title>
+<style>
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  :root { --red:#e8111a; --rule:#e5e7eb; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
+          background:#0b0f14; color:#e6edf3; padding:20px; }
+  .masthead { border-top:4px solid var(--red); border-bottom:1px solid #2d3748;
+               padding:.6rem 1.5rem .5rem; display:flex; align-items:baseline;
+               gap:1rem; background:#111827; max-width:2000px; margin:0 auto 16px; }
+  .brand { font-family:Arial,sans-serif; font-size:1.1rem; font-weight:bold;
+            color:var(--red); text-transform:uppercase; }
+  .section-label { font-family:Arial,sans-serif; font-size:.72rem; color:#9ca3af;
+                    text-transform:uppercase; letter-spacing:.08em;
+                    border-left:1px solid #2d3748; padding-left:1rem; }
+  .container { max-width:2000px; margin:0 auto; }
+  h1 { font-size:18px; margin-bottom:6px; }
+  .meta { font-size:11px; color:#9ca3af; margin-bottom:16px; }
+  .stats { display:flex; gap:12px; margin:12px 0; flex-wrap:wrap; }
+  .stat { background:#111827; padding:10px 16px; border-radius:6px;
+           border:1px solid #2d3748; min-width:80px; }
+  .stat b { display:block; font-size:22px; }
+  .note { background:#111827; padding:12px 16px; border-radius:6px;
+           margin:12px 0; border-left:4px solid #059669;
+           font-size:12px; color:#9ca3af; }
+  table { width:100%; border-collapse:collapse; background:#111827;
+           border-radius:8px; overflow:hidden; font-size:12px; }
+  th { background:#1f2937; padding:10px 8px; text-align:left;
+        font-size:10px; text-transform:uppercase; color:#9ca3af; }
+  td { padding:10px 8px; border-top:1px solid #2d3748; vertical-align:top; }
+  tr:hover { background:#1f2937; }
+  .badge { display:inline-block; padding:3px 8px; color:#fff;
+            font-weight:700; border-radius:4px; font-size:11px; }
+  .small { color:#9ca3af; font-size:11px; }
+  footer { max-width:2000px; margin:16px auto 0; font-size:10px;
+            color:#4b5563; text-align:center; }
+</style>
+</head>
+<body>
+<div class="masthead">
+  <span class="brand">THOR SIGNAL</span>
+  <span class="section-label">Magnificent 7 — SEC Signal Monitor</span>
+</div>
+<div class="container">
+  <h1>Magnificent 7 — SEC Signal Monitor</h1>
+  <div class="meta">Generated: 2026-06-27 18:10 UTC · 9 factors: SEC 45% | Market/Quality 55% · 10b5-1 filter · Cool-down logic · No AI</div>
+  <div class="note">
+    <b>Deterministic Mode:</b> Max 2.0% per position.
+    Total suggested allocation: 3.0%.
+    All rules explicit and reproducible. 10b5-1 sales penalized 1/5th vs discretionary.
+  </div>
+  <div class="stats"><div class="stat"><b style="color:#b00020">0</b><span class="small">ALERT</span></div><div class="stat"><b style="color:#e67e22">0</b><span class="small">WATCH</span></div><div class="stat"><b style="color:#f1c40f">0</b><span class="small">NEUTRAL</span></div><div class="stat"><b style="color:#27ae60">1</b><span class="small">STABLE</span></div><div class="stat"><b style="color:#1e8449">6</b><span class="small">PRIME</span></div><div class="stat"><b style="color:#2c3e50">0</b><span class="small">STRONG</span></div></div>
+  <div class="stats">
+    <div class="stat"><b style="color:#059669">0</b><span class="small">BUY YES @ 2%</span></div>
+    <div class="stat"><b style="color:#d97706">0</b><span class="small">BUY MAYBE @ 1%</span></div>
+    <div class="stat"><b style="color:#7f1d1d">0</b><span class="small">BUY NO @ 0%</span></div>
+    <div class="stat"><b>3.0%</b><span class="small">TOTAL ALLOC</span></div>
+  </div>
+  <table>
+    <thead><tr>
+      <th>Ticker</th><th>Status</th><th>Score</th><th>Buy?</th><th>Size</th>
+      <th>8-K</th><th>FINS</th><th>VAL</th><th>MOM</th><th>INS</th>
+      <th>SHORT</th><th>ACCR</th><th>Buy Reason</th><th>Signals</th>
+    </tr></thead>
+    <tbody>
+<tr>
+  <td><b>MSFT</b><br><span style="color:#9ca3af;font-size:11px;">Microsoft</span></td>
+  <td><span class="badge" style="background:#1e8449">PRIME</span></td>
+  <td><b>22.1</b></td>
+  <td><span class="badge" style="background:#7f1d1d">NO</span></td>
+  <td><b>0.0%</b></td>
+  <td>19.6</td><td>20</td>
+  <td>+10</td><td>+10</td>
+  <td>-5</td><td>+0</td><td>+15</td>
+  <td class="small">Below 200DMA with insider selling</td>
+  <td class="small">Earnings release (2026-04-29)<br>Revenue down 22% YoY<br>Expensive P/FCF 39.9x<br>Weak momentum -16% vs 200DMA<br>No insider activity 6mo</td>
+</tr>
+<tr>
+  <td><b>META</b><br><span style="color:#9ca3af;font-size:11px;">Meta</span></td>
+  <td><span class="badge" style="background:#1e8449">PRIME</span></td>
+  <td><b>23.4</b></td>
+  <td><span class="badge" style="background:#7f1d1d">NO</span></td>
+  <td><b>0.0%</b></td>
+  <td>25.7</td><td>30</td>
+  <td>+0</td><td>+10</td>
+  <td>-5</td><td>+0</td><td>+0</td>
+  <td class="small">Below 200DMA with insider selling</td>
+  <td class="small">Earnings release (2026-04-29)<br>Director/officer departure (2026-04-14)<br>Net debt up >30% YoY to $35.3B<br>Weak momentum -15% vs 200DMA<br>No insider activity 6mo</td>
+</tr>
+<tr>
+  <td><b>NVDA</b><br><span style="color:#9ca3af;font-size:11px;">NVIDIA</span></td>
+  <td><span class="badge" style="background:#1e8449">PRIME</span></td>
+  <td><b>23.9</b></td>
+  <td><span class="badge" style="background:#d97706">MAYBE</span></td>
+  <td><b>1.0%</b></td>
+  <td>36.7</td><td>20</td>
+  <td>+0</td><td>-5</td>
+  <td>-5</td><td>+0</td><td>+0</td>
+  <td class="small">Low insider concern + acceptable momentum</td>
+  <td class="small">Earnings release (2026-05-20)<br>Director/officer departure (2026-05-08)<br>Revenue down 10% YoY<br>Above 200DMA +1%<br>No insider activity 6mo</td>
+</tr>
+<tr>
+  <td><b>AAPL</b><br><span style="color:#9ca3af;font-size:11px;">Apple</span></td>
+  <td><span class="badge" style="background:#1e8449">PRIME</span></td>
+  <td><b>27.6</b></td>
+  <td><span class="badge" style="background:#d97706">MAYBE</span></td>
+  <td><b>1.0%</b></td>
+  <td>52.5</td><td>20</td>
+  <td>+0</td><td>-5</td>
+  <td>-5</td><td>-5</td><td>+20</td>
+  <td class="small">Low insider concern + acceptable momentum</td>
+  <td class="small">Earnings release (2026-04-30)<br>Director/officer departure (2026-04-20)<br>Revenue down 19% YoY<br>P/FCF 29.1x<br>Above 200DMA +5%</td>
+</tr>
+<tr>
+  <td><b>GOOGL</b><br><span style="color:#9ca3af;font-size:11px;">Alphabet</span></td>
+  <td><span class="badge" style="background:#1e8449">PRIME</span></td>
+  <td><b>27.7</b></td>
+  <td><span class="badge" style="background:#d97706">MAYBE</span></td>
+  <td><b>1.0%</b></td>
+  <td>36.7</td><td>50</td>
+  <td>+0</td><td>-5</td>
+  <td>-5</td><td>+0</td><td>+0</td>
+  <td class="small">Low insider concern + acceptable momentum</td>
+  <td class="small">Director/officer departure (2026-06-05)<br>Material agreement entered (2026-06-04)<br>Revenue down 41% YoY<br>Net debt up >30% YoY to $39.4B<br>Above 200DMA +8%</td>
+</tr>
+<tr>
+  <td><b>AMZN</b><br><span style="color:#9ca3af;font-size:11px;">Amazon</span></td>
+  <td><span class="badge" style="background:#1e8449">PRIME</span></td>
+  <td><b>29.1</b></td>
+  <td><span class="badge" style="background:#7f1d1d">NO</span></td>
+  <td><b>0.0%</b></td>
+  <td>38.5</td><td>50</td>
+  <td>+0</td><td>+5</td>
+  <td>-5</td><td>+0</td><td>+0</td>
+  <td class="small">Below 200DMA with insider selling</td>
+  <td class="small">Other events (2026-06-12)<br>Material agreement entered (2026-06-10)<br>Debt creation / material obligation (2026-06-10)<br>Revenue down 44% YoY<br>Net debt up >30% YoY to $17.3B</td>
+</tr>
+<tr>
+  <td><b>TSLA</b><br><span style="color:#9ca3af;font-size:11px;">Tesla</span></td>
+  <td><span class="badge" style="background:#27ae60">STABLE</span></td>
+  <td><b>33.2</b></td>
+  <td><span class="badge" style="background:#7f1d1d">NO</span></td>
+  <td><b>0.0%</b></td>
+  <td>40.0</td><td>50</td>
+  <td>+20</td><td>+5</td>
+  <td>-5</td><td>+0</td><td>+20</td>
+  <td class="small">Below 200DMA with insider selling</td>
+  <td class="small">Earnings release (2026-04-22)<br>Director/officer departure (2025-11-07)<br>Revenue down 46% YoY<br>Negative FCF 2 quarters: $-398M last qtr<br>Negative FCF $-1.3B</td>
+</tr></tbody>
+  </table>
+</div>
+<footer>
+  DATA SOURCES · SEC EDGAR (XBRL, 8-K, 10-K, 10-Q, Form 4) · yfinance (price/short data) ·
+  Deterministic scoring — no AI-generated content · © 2026 Randy Hinton · 2026-06-27 18:10 UTC · #FollowTheData
+</footer>
+</body>
+</html>
