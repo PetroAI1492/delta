@@ -1,104 +1,2085 @@
 {
   "metadata": {
     "report": "Iran Petroleum Sanctions SITREP",
-    "source": "Google News RSS",
-    "generated_at": "2026-06-27 00:18 UTC",
+    "version": "3.0.0",
+    "source": "Google News RSS (4 queries) + IAEA Press Releases",
+    "generated_at": "2026-06-27 15:11 UTC",
     "days": 30
   },
+  "feed_log": [
+    {
+      "feed": "Google/Iran-Oil-Sanctions",
+      "status": "OK",
+      "error": null,
+      "count": 39
+    },
+    {
+      "feed": "Google/Iran-OFAC",
+      "status": "OK",
+      "error": null,
+      "count": 28
+    },
+    {
+      "feed": "Google/Iran-JCPOA",
+      "status": "OK",
+      "error": null,
+      "count": 6
+    },
+    {
+      "feed": "Google/Reuters-Iran",
+      "status": "OK",
+      "error": null,
+      "count": 0
+    },
+    {
+      "feed": "IAEA/PressReleases",
+      "status": "FAILED",
+      "error": "HTTP Error 404: Not Found",
+      "count": 0
+    }
+  ],
   "summary": {
     "days": 30,
-    "run_date": "2026-06-27",
-    "regime": "Stable / Watch",
-    "regime_explanation": "No significant policy movement detected in the 30-day window. 2 articles analyzed, 2 unique events identified.",
-    "confidence": "LOW",
-    "confidence_color": "#dc2626",
-    "confidence_reasons": [
-      "2 unique event(s)",
-      "0 official action(s)",
-      "0 Tier 1 source(s)"
-    ],
-    "total_articles": 2,
-    "unique_events": 2,
-    "tightening_count": 0,
-    "loosening_count": 1,
+    "total_articles": 72,
+    "unique_events": 63,
+    "tightening_count": 60,
+    "loosening_count": 0,
     "uncertain_count": 0,
-    "neutral_count": 1,
-    "official_tightening": 0,
-    "official_loosening": 0,
+    "neutral_count": 12,
+    "official_tightening": 11,
+    "official_loosening": 5,
     "type_counts": {
-      "Media Report": 1,
-      "Political Statement": 1
+      "Sanction Waived": 5,
+      "Media Report": 48,
+      "Political Statement": 10,
+      "Regulatory Guidance": 1,
+      "Legal Analysis": 2,
+      "Official Sanction": 6
     },
     "body_counts": {
-      "Other": 2
+      "Other": 39,
+      "OFAC": 29,
+      "EU": 2,
+      "UK": 2,
+      "IAEA": 1,
+      "UN": 1,
+      "Shipping": 2
     },
     "active_flags": [
+      "IRGC",
+      "JCPOA/Nuclear Deal",
+      "Snapback",
       "Strait of Hormuz"
     ],
     "tier_counts": {
-      "1": 0,
+      "1": 1,
       "2": 0,
-      "3": 2
-    }
+      "3": 71
+    },
+    "tier1_count": 1,
+    "max_corroboration": 2,
+    "regime": "High Tightening",
+    "regime_explanation": "11 confirmed official tightening action(s) from: OFAC, EU, UK. 5 official loosening/waiver action(s). Remaining 61 articles are statements, guidance, or media coverage.",
+    "confidence": "HIGH",
+    "confidence_color": "#16a34a",
+    "confidence_score": 76,
+    "confidence_reasons": [
+      "63 unique event(s) (weight 25%)",
+      "16 official action(s) (weight 40%)",
+      "1 Tier 1 source(s) (weight 20%)",
+      "2 max source corroboration (weight 15%)"
+    ]
   },
   "events": [
     {
-      "title": "New Iran Authorization Implements Memorandum of Understanding - WilmerHale",
-      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQVTlZUWRHYlFrbUdMNlR3ak8zLUlfdzFCRkFUWkU0NTNKTWVXMW1FbTV3WUJrNkNmMXRWSjVvT29JSnZDUHR0T0l6cy1zOE5IUkdYcDZCbi1PR2VZT2twUXp1Vmc4N0xIVm9hT1VPX0ZCOHBCN1JCT2JaWnlpUDFtSTdpUjFJalRaT2lrb3pTMWNIQ3luT2FaZUp1X3VHSGFTdGU1RmhLNE1XbjdOMnp1S0FVdi1EQWMtUjkwTVZoSms?oc=5",
-      "published": "2026-06-26",
-      "source": "WilmerHale",
+      "title": "US sanctions waiver could bring Iran's oil trade out of the shadows - \u0627\u06cc\u0631\u0627\u0646 \u0627\u06cc\u0646\u062a\u0631\u0646\u0634\u0646\u0627\u0644",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1USDJhZnRHcGxhWVZ0WllMcVJpa2pZcHJsaW9lUmJQQVJJRDRfZDlrUnBPX09jYkJ6Z0ZhT1Z6QTNkYkt0OTZJcGRmZE1YLXczU2c?oc=5",
+      "published": "2026-06-25",
+      "source": "\u0627\u06cc\u0631\u0627\u0646 \u0627\u06cc\u0646\u062a\u0631\u0646\u0634\u0646\u0627\u0644",
       "source_tier": 3,
-      "direction": "NEUTRAL",
-      "article_type": "Media Report",
-      "bodies": [
-        "Other"
-      ],
-      "article_count": 1,
-      "all_sources": [
-        "WilmerHale"
-      ]
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Sanction Waived",
+      "type_rule": "waiver",
+      "corroboration": 1,
+      "article_count": 1
     },
     {
-      "title": "Trump Accuses Iran Of Violating Cease-Fire With Hormuz Drone Attacks - Radio Free Europe/Radio Liberty",
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQWnhyaS1tS3NVV19VeVRlS1RUeUhFblVCTkRCWmg2Z2YwTW1uR051ZFctc3F2eEcyN29hbkJkLUY3THpPVzVaYVRlcTRybGlrTGVsX3ZvTFJyQmRELVNHckg3Nk9uOUw3V2RyN2lZY0dIMW1jLWVQSUVTdXBTZGpuVE55cDBQcG01?oc=5",
-      "published": "2026-06-26",
-      "source": "Radio Free Europe/Radio Liberty",
+      "title": "US eases Iran oil sanctions under temporary 60-day license - irishsun.com",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNdVJ5OWRKSW5xMFJwOTFhZ3NvaklxSHhmaENabF95NUhsRWVlSGs2YlNHMnhsQVlKcWhGeUNkYlZLYnQ4UFhLN0pVYnluQU5JMnRQV0dtZE1LTGxZRktHaVQ3S25xbHhIUkVDTGYyNFBJOXp4dlpZZzUyeEdXcXdLYW95NWphaHhfU3V0LUFwLU51M1JIZTJ4ZmM1Y2h0aWM?oc=5",
+      "published": "2026-06-25",
+      "source": "irishsun.com",
       "source_tier": 3,
-      "direction": "LOOSENING",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "Iran's petroleum minister meets Hardeep Singh Puri, looks for cooperation in hydrocarbon sector - The New Indian Express",
+      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPTE5QYWh1N1JCX0t3UFBQMm8zOGpDaVF2dW1wdXdUQ09kS0JmZ0gxYmlsbkxsQWllWi1XamZOY0VhMkJ2ZGIyUTdJZVhXUHh3WUdXOWs4SWotWTA2SmhCNVRROEhiMUUzV3FJTjlRbE9lRUc0RHcyajYxeU80MlZ4VnlFanpja2NHU2tnOTBLakhKZl9mSzc5UVFCY3pWQ0l3NTBtNWRNMURWYmdtM2JzRHNZa2tNdGVPRW9rNGNnZ3k1T0prRVBmSHJQdkVfZjY4anVKUjY5ZGlnb1J2M0VNdtIB7gFBVV95cUxNckxXVEJMLTNjMnFYcXhlQ3RJNmNJY3lvZXZMWGxsa2pVVDVTaWwwVllZOUpObU4wYkRzUkIzcUZlV1lqSjItdDV4alV1dDBJYXpTLVJoNEh6SkxlUWdlN3p6V3RJR0g0SC1qang4aXB6enE4VkJMT1RhaElOVXdOV0xRRG11Y0tHYS1qc1FRbkEySWcxNGc4UU1MUWE5SU90UHZLa2JNeUxFZndveVRXMzN3V3QyNWN1YlVRRnd0akhYQ3Q2NFJTTkJvQXd6cWhfR3Uya3M2OURVWWsyX0IwZXhOQ0ZON01IVTV1aEV3?oc=5",
+      "published": "2026-06-25",
+      "source": "The New Indian Express",
+      "source_tier": 3,
+      "direction": "NEUTRAL",
+      "dir_rule": "no directional keyword matched",
       "article_type": "Political Statement",
-      "bodies": [
-        "Other"
-      ],
-      "article_count": 1,
-      "all_sources": [
-        "Radio Free Europe/Radio Liberty"
-      ]
+      "type_rule": "minister",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "Trump deal gives Iran 100s of billions more than Obama\u2019s nuclear pact he slammed, in return for far less - Small Wars Journal",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNWVBTUG1mVFFobE9RS01ha2x0NTdoZVFnRG9vTURyZWFtZGdSRDd1bGs3TGk4RlNfTWF4RnhlRU5fVDZ4OVd2c1k2V0ZTcW45QjNxUG9hamRNUmRwN2hLcnBsYTd1U1JOVnNMVURUdV9uRlhwVkhlQl9MYllVYnl2QVp3?oc=5",
+      "published": "2026-06-25",
+      "source": "Small Wars Journal",
+      "source_tier": 3,
+      "direction": "NEUTRAL",
+      "dir_rule": "no directional keyword matched",
+      "article_type": "Regulatory Guidance",
+      "type_rule": "bill",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "OFAC Authorizes Certain Iran Crude Oil and Petroleum Transactions but Questions Remain and EU and UK Sanctions Remain in Force - globaltradeandsanctionslaw.com",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNbGJZMW9NWWhpY01FMVFJMGs3S2J1LTNhV2l6VFd5am5rQmhPNmptalBnTDk4Uk1sVDZod3REQzE2Wk5HVENTVUN3OWI0U2x1WC1kMmFLTjk0QnNBdTlzUkpIVi1aS0szcWFkdXRMTmxVTGZ2YnV4eUxVUUVIdHcyS3RhdkN3c0hjdllveTlwX01SU25nR2NLUFRsaU8?oc=5",
+      "published": "2026-06-24",
+      "source": "globaltradeandsanctionslaw.com",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "OFAC Temporarily Lifts Certain Oil Sanctions Against Iran - thompsonhinesmartrade.com",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNdldpTE1DSFFXVkVKTE5tZjNtbjdIVmRjT1N2X2hKWFJEeExoOTd1RWxESklwTDFOZmRmT2RSZm9tM0w0dXZ1X0VickxPbVA3T3VQdndNRnRjZENPMWR2X3Jlc1d0Qzl3RlE3cFk5c3NZV1MzQWxGbkhsTjVfSGpLbFJ5LTNra1htT1BqajVDWDJvMFM0MEdBMFVTTVo1VXZEQ2JaR0JqOA?oc=5",
+      "published": "2026-06-24",
+      "source": "thompsonhinesmartrade.com",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "OFAC Eases Iran Oil-Related Restrictions for Two Months, But Will Financial Institutions Cooperate? - ArentFox Schiff",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOU05HRms1dWNST2JSbTNGNFphU3BXNm5naGdQNzRIRUt3RWM3TjNKNXJfQnNoYXRLcG92bXhuNmlkcUktM2lIdzhNOExGdGs5NXR0Vy1oNmpfV0hZRm9YdllMcTBEZWZJQnVYUWVzSWE5NHNaRFZRQ1FkR2hTa3dhOWxmcU9uX0JnYm82d1htWTRQU3F6NDZnQndIQ0kybkowTGEwZjUycW8tMFFHa1gwY2xieUR1LXBkR2c?oc=5",
+      "published": "2026-06-24",
+      "source": "ArentFox Schiff",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'ofac'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "OFAC issues broad temporary general license for Iranian-origin crude oil, petroleum and petrochemical products - Norton Rose Fulbright",
+      "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOZmVlT3U4bHh6VVBtajhxLVBKcms2Yl9lZ1dldzNlb2FRMnpyNFFYOEgyd1NqTUxNdnBsd29kbmN2M0dzTFJjeXZJeEp3R3JheDliOWFrQV9LREx3V1RrRmJoNEd6LUJZRzgxS3VhUFd6VDUyMkZ0UDZuUThVX2xxY1E3TDVnMFg4YXR1dEVhWHlOU2xPS294X3prdmZoN0pVdnQ0d0hqNnJaYVBJTFJnWnBYLUVfVHRFWXhVNGRmc1NOc2pOUTRHUHRlZm9jRFM3YndWVVRhRGFvcWNIMzRIOWdHMnZWcHVNdWk3bTFjOGNNYWU5?oc=5",
+      "published": "2026-06-24",
+      "source": "Norton Rose Fulbright",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'ofac'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US Grants 60-Day Iran Oil Sanctions Waiver, Allowing Transport And Purchase Of Crude - Marine Insight",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQbktBQURCLTZfOXVaWW9OYk1JUVN6aExMNG5LV3AyWXRRLUVVaEpHTmFablF2UTVoeUZxVEFSNDF2cjRaUHNRdWllc3VEVFNjWTgwVmF6eHBjZGQ2MnBWc2hqQ3EzbGlBeC1RSTZYRGF5LV9tNkdKZkxSUkZza3gtYzhaQm5GNDhyVE5RdmNaZ2lWNU55NHhUcnNaUlR1SENRdkpBS2JoTTJfcFdFbEh6blNJZUE?oc=5",
+      "published": "2026-06-24",
+      "source": "Marine Insight",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Sanction Waived",
+      "type_rule": "waiver",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US temporarily lifts sanctions on Iranian oil: Is Trump desperate to lower global energy prices and how wil... - Bhaskar English",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNOVp4MGpQdG80dDhsNHoySEx1WnNkY1BmMHNJaG14eTBkbEotUUhwS04zeGlUT2NLYmpUWFl0NTJzUWx6OVduZ1lQWWF0M2JldUZ1RjFoU01rWHpVb2JRSk10RWdwUzJoOFEyY0RaTzh1MVgtVUZKek8yX3hvS1lIUF9UNl9na1paeWwzNVhaR1JuVW9fWm1Cd0c5dnh5YUFaalZxRlpZWDh4OW9GbWVHYtIBtgFBVV95cUxPcmIwZjNaNGhnNDFQMW1GMmpaMEJDRk9YakhqVEVrUmtpanNJMlFWaERBNlJYVkE4MFp4cUFTYVJtbmJ0cUN5QVl3ZjhyaXVHQkFvZFI5dHlQRlpxTHVBMjRxcjNNSU5NekE5bDMyQVAzNXczaXEyanphSXE5YmExajhxcThZWXlFTWNjRjFmZ1dKVGc5bGdlbnN4OUFUcExTQ2tpNmRMZlR5WGxtWEtodHBWNTJ2UQ?oc=5",
+      "published": "2026-06-24",
+      "source": "Bhaskar English",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Political Statement",
+      "type_rule": "trump",
+      "corroboration": 2,
+      "article_count": 2
+    },
+    {
+      "title": "U.S. issues sweeping Iran oil sanctions waivers, unlocking billions in revenue for Tehran - CNBC",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNS21VYnVjY3dGSmpOSVNsaFZtdFpIYWhsNlR0V0d4U0c2d2tXVjdnU0dhTE9HY1dkN1dSWkdkdmhRZDh6ak9Cc3ZIemh1bDM2T2JYUmptSnBoQjhjTk5ISlBSZEJVVEMxY1Q2MXR4UzQxdEo3MTl2eDhheXhKYlFvaXZqNGx3VjAtQWl0Z19OYmZBRTJzZ09IRNIBngFBVV95cUxOU0dRTm9Kak5JR3pDS1FyTXE4c1YzdWdQZjJpVXZYQndRUXdNTV9ZUjFVbi1pcmlreTJfU2wwNmxpNnFSSzdkMFdQRHdidG4yQ25Id1o4dmpod1hOZ1B5ZGFuanRTVnh5dFEycTF5Q2d4bGc2UnJFN0Utakc3VjMxRTZ1ZEc2d0tuWm1MUi1RaDlYdWNLR0xPemZOYm9WQQ?oc=5",
+      "published": "2026-06-23",
+      "source": "CNBC",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Sanction Waived",
+      "type_rule": "waiver",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "Waiving sanctions on Iranian oil is a huge concession by America - The Economist",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOUGg4cEZOWThBa3gzOUJPWDd1Ull0eTB3ckRhbjVXQk43OFQ2VFVORW85U21pTmc3VWlWTGZYWVhuVFNPV25sMWpoeTBUUUZRVVBudEFyR3REdW1pNHpGcVhqUkhVOVA3QkNtODJOWHppZEVyaGtzQ1Y4WXRPWWNhY0JxS0VHaU9HLXFCUllCX3ZpWXFrYVUzVGVNeVFnaGFJajRyYXFSQ2hrU0dnUndvSE9rWWFvaE9CWXYxY1plWng?oc=5",
+      "published": "2026-06-23",
+      "source": "The Economist",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US Treasury's OFAC Issues Temporary Waiver of Iran Oil Sanctions - Ship & Bunker",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOTzR5bVV3SVZBZnNQQWVuTDRFeGxDNVFMelV4Tk9Qel9xQ1ZoMTRfTkZXdWxlSlNucG5mQ25QcE5YSzBnTm5qZk82allnb3Z0TklWZHNUdkM0Q1pvX042QzhTa3poWmJsZ2QwcG9odXFRMVgwbkc1VC1jR1pzSGYzdmw4a29OQmItRjg2OVl1MnUyVkZRZkVaZUptWWgtRGhJSi1jVHR4Vkwtanc?oc=5",
+      "published": "2026-06-23",
+      "source": "Ship & Bunker",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Sanction Waived",
+      "type_rule": "waiver",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US Sanctions on Iran: What General Licence X Means for EU and UK Operators - Bird & Bird",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOVnFRY2NmcW5rRnYyVERqU1F0ZzBDQ2M1T1dGSG9sS1RybUtiaGFtTTZfMkw3UzJXbThFM01ZXzhibzNzUEtRMDdGck9DbkFJM1otRkhtLUZyUlB1YUExbno4VHpnSURYYkFoZVpUMGN3c0pPc1lDck1NcnZiUXJGQV9QZkNQTzdHLUdqRlluTlBhVnI4T2hGaXFIR1hvVDc3OWhDckRmVFpqZnk2OHRKZHpRa3pOUQ?oc=5",
+      "published": "2026-06-23",
+      "source": "Bird & Bird",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US opens door to Iranian oil in historic sanctions rollback - \u0627\u06cc\u0631\u0627\u0646 \u0627\u06cc\u0646\u062a\u0631\u0646\u0634\u0646\u0627\u0644",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5uQXlseV9kb2xZTVUyYk9MMjExSjBqSjNaMnRtY1M1TkIxZHRCclpOSjhsNGxsVkl5dklmcElHbDlBbjBKd0tuNUJlbkxuU2REZFE?oc=5",
+      "published": "2026-06-23",
+      "source": "\u0627\u06cc\u0631\u0627\u0646 \u0627\u06cc\u0646\u062a\u0631\u0646\u0634\u0646\u0627\u0644",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US Lifts Iran Oil Sanctions: Why India Could Be The Big Winner - NDTV",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQcWNWS3VMbDF3Q3BpZ2k5MjF6N0t3Y1Q5ZW1KN244UHVaUXNhMFprd2QyUEgzcDktMXNMd1VDanRnbHRsdFpmQW50WEs0RFl3aTNMdE9HRlpSbVBTUTJYckhnVlVkR01YQU9pQzVvTnNVZURwOXRBb0hUcGY2YXEzVjh6YW12VHVXY0t0M3JVVUw2SnlqMllnNFp0RFBfdUFZNUN6Y0Y5V3VWQzJidzV30gG3AUFVX3lxTE1wV0p6MUR5aXVUNDdmTl9FV2ZoeUlVVWhCTEZJSXFHemFOSU9WRTVseDJzakxyVWpqdUNHd0tURVFzTVJhOGh3TjFEZURtcDRPd28ycGFFRVBXdGp1SVVSM3B3eUdJbTNUQzJKajdEZVRzUVcydDJ0Qkt0cDhjR2tHRkp4eGF3Q2E3WkJWb1Axb2JpREVsX3JlczlrVzRxRFBWTEtwN2p4THFQNmV4M2VERHVNODdIOA?oc=5",
+      "published": "2026-06-23",
+      "source": "NDTV",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Political Statement",
+      "type_rule": "could",
+      "corroboration": 2,
+      "article_count": 2
+    },
+    {
+      "title": "South Korea Still Waits While U.S. Eases Iran Oil Sanctions - Businesskorea",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1wNnVhVFUxaWdqeVQ4SDNkZXFVWUUtMU1NMm1qTzU1VjgxdmJLR0pKWDhwM05Wck9pM0t5ZXdqcVpZbmozbVpYVTJTcEE0ejBzMEhMMk5PTWtHLUd3QnRXM21Ld3FhVktadXR1TmZKWFItckVs?oc=5",
+      "published": "2026-06-23",
+      "source": "Businesskorea",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US Suspends Iran Oil Sanctions Until 21 August, Opening Door For Crude Flows To India And Global Markets - Swarajya",
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQTVVPRDI1cGl5aFpjWVlORFc0RHV4SzktYzBZMDYyYzgybU93NmFfZjFMY2djekZuY2Zwc0pNbURJWGhwaDhPb3hobkVXem4tUUxHenNDNEd5VWZqTnZmYlQtYnBGWXlwTXRTWUt1ZEZkb0hBVl93UjNWcGVZNDFUbWxwUjZXUXdqQVdOTzhDS2R3bmo1MDNRZkhMbDNfenBLcFh6cndhRV85bzRES2l4TDM4M0w3cXN1NDBkMENRVmhLdlJpMG5lTG12SmVpNWZwOGd5T2hkY9IB5wFBVV95cUxOWlZ0czlkRHdtQVhTTnBoeHF3N3p6U3RTSElyNzJxeG0yajNoeXRlYzZVZGdLbHpwVUJyazZqOVN1WUpnQWxzVEU3blJZbnJRcWNtWHFfQUlzQUhLV3BTdG1mRW9VUldBUGk4YjRNSGlaeDNIMFVxb3dxZ2dxMXZpYTlvZ1lZaHFkZm12WHlWQ1hEWGx6V0t0Rk5YTGdldjhlUDdGSnlMeURWcmtoOXA3T1AxZFN5ckE2czdXazE3WTBRLXNoTmNINGZJSHYyMEtfdW82Yl9nSVlHNl9VQXJoLXdhdUNyc2s?oc=5",
+      "published": "2026-06-23",
+      "source": "Swarajya",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 2,
+      "article_count": 2
+    },
+    {
+      "title": "Indian refiners in touch with Iran as it pitches its oil to buyers - The Indian Express",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQcHQ4Nl9RbmNxZE1aYkdsMkNudktCVmVKUjJuM09KeUVkV21xSnEwRzlKcHJWU1JXV3dCWnN4YmJ0alF6aUFDUmVZUjd6NkNhTWZfenp3WjllZHZyU3ZyTmRRYkFSWV9yS3pIRTVfNm9ab2piOHVTRWMxelBoRmdiXzl4M2hKM0RSTDhOeVZoRFYtX3VtTVZYNmlZbmlwQdIBpAFBVV95cUxOczdpd3F6SWZsVjl6dHRIY2E1aE9sV0JiejVqcC1pcTFHTHpXbmc3UjlsbTJqcW50SjY0RERsNW1scjUzUXlqSlVXZnlXZV9WYllaWTYzWEN6N1hwWUk1SmwwTmx5MUhQWk5qMVluLXF3RVpQeTJVaGJRV1ExWWItZGhaZjhHRzdZaEZ3c1NNdkdhWmFYc2VRZHVXTnNsR245WXN2cw?oc=5",
+      "published": "2026-06-23",
+      "source": "The Indian Express",
+      "source_tier": 3,
+      "direction": "NEUTRAL",
+      "dir_rule": "no directional keyword matched",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US Waives Iran Oil Sanctions as Peace Deal Brings Huge Shift - Bloomberg.com",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNMkZQWG1TOW9MSmZzWTVZcHhJQVJCSzBCbzNiUW9WSFpZVkhBTktkemtIUE9jVWp2QTlibmdWaTVnUkVwTDNOamFFbGpJNGtncmJNOXAybEdycEJxdlJzZWZLMkJwM01fX3Q1b2xUMVpJMW5pQ2w5eG43STlFUVV4cHFjdUNTQzVESGlibzBOc0stdTBKeHdERm1MbUJLdHU1a1YtODJfdUtuLWZBOE81eXNn?oc=5",
+      "published": "2026-06-22",
+      "source": "Bloomberg.com",
+      "source_tier": 1,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 2,
+      "article_count": 2
+    },
+    {
+      "title": "U.S. eases Iran oil sanctions under temporary peace agreement - World Oil",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQNDVCWmFtckdnQUx5b2FiWWE1ekRlUG1ocERXM0puelR6RnA3STZFUkJvNVhDbFVqeHQtLUxpS0ZVQ1FxMjlsYlk3VXZRZWhYS2h3emRybkJsSFdDRFJZWHJWSnVYWlV6MS0yRVNDQ1hrVWd0S00zYVlGUkxGZ2R2SGVKMXhaUmpEdDJJc3UwRFYtejUtUVZnUmNNbXh6dw?oc=5",
+      "published": "2026-06-22",
+      "source": "World Oil",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "Treasury Department issues temporary license for Iranian oil sales - The Hill",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQd0x6OERIejktM29jR3FteVZmVEd1NVpxc0p4VzA2S2FhbHBtUjNyUU9rVEdCdTRVcjFOSWFVUmNQa2xlcE9UYXg3WnJhNFI0dktzZlZxR3VwMXBQR0k2ZVI0MHlWUDVldEgtQXBidTdGajcwMkU3dkJuMjJJZ2VzNmptX1ZOR3fSAYwBQVVfeXFMTkRQcjVRR2xpX041SFRaOEMya0FOWGwzR1ljUmJ2YmtiTWhrWUQzakdBRXJsM2owQzFTbno0cGlyRzNJR2h5STEzNnJqMWJGb3hjY21ncGVIVHBnNVgtRDJaa2xPVkR6YUJncE9QUWtpazRTR2VyX1ZtdGVhcloyU3dHMzZVcmhFQzhMTXU?oc=5",
+      "published": "2026-06-22",
+      "source": "The Hill",
+      "source_tier": 3,
+      "direction": "NEUTRAL",
+      "dir_rule": "no directional keyword matched",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US authorizes Iranian oil sales amid talks on final peace deal - Reuters",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQYzdZaTNrdXFNYWlPV2hKM1g2TDZkUFRmM3pMTE5HZzc1NnRuY1Y1cEdkLWl4bWpWOWFHdmZnMDN0cS0zdFdOeVIzalM0cGN1Yk1PV1lmc0I1NElkUjI5cWtKQzVvdHVqZFFNUm9nT01BZDdlYXFJdnVPM2NiMF9mUFduSFhlcUZWUjV0RVJtY0NFcFVmSElZSXk0V1IxN3ZrLXc?oc=5",
+      "published": "2026-06-22",
+      "source": "Reuters",
+      "source_tier": 3,
+      "direction": "NEUTRAL",
+      "dir_rule": "no directional keyword matched",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "The U.S. waived sanction on Iranian oil as part of its deal with Tehran to end the war - qz.com",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBRWU1kdzgzYzB5NXNOODBzM1pXaEkyTDVmdVdRUS1DUHpWYm92NVY5Ml9wWVFuWmx1U0dVTnB1bmRPeFRZZG9oeFZLUkhUZlZFQzN0bl9fN3Atazh2aW1kVzl4cmswUlZybXJIZjBVUHh0MGM0cERrSGFBTXl3d2c?oc=5",
+      "published": "2026-06-22",
+      "source": "qz.com",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Sanction Waived",
+      "type_rule": "waived",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "Treasury Department waives Iranian oil sanctions in a step forward for talks - Washington Examiner",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQdl9mT0hwcTJmUkw0RXd0d2g0WU14M3hQNHhfNzI4V1dJWjVnc2xya290Q3BzbHVZVWRpTE1RMEV1d1h3SW5JUEQ5WS1oVWhMeDNfM0dGaU5uREVXbW9FQmtoRWd6SUNGN08yR0dmR2FXVVQ2dWl2dVVpYkxNZXBQZ3Z1amVJSExIazBfRGlsZmFJeE45SnBELXJQU1ZhM0Z5cm5TS1NjSEJoOVVFMG96QXVGNnpZTkltVUlyV1QtQTVqWmd6cjFER2JscE9TTWhWaTNjdA?oc=5",
+      "published": "2026-06-22",
+      "source": "Washington Examiner",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US suspending sanctions on Iranian oil until 21 August - Middle East Eye",
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPTUkxcXZMdG0yS0RMVThYZVJZa1A2VFh4LVVtWkp3NHUxVnkwMU81UTNLd0FnWGJIMVdEd1dBZnNzUTJ0QUhnZXBJUHdYcEp6d2phWk1jVVpiXzh5NmIwSFZsNFFiUmNjUU40VVppa01tWURaNkFLSXpDZXhGSnd4VlpRUzg5UFNGZkhUQm9KaWpoZXFJdW15cUlqVkJteHFKM0JXWlRrY3JjM0tY?oc=5",
+      "published": "2026-06-22",
+      "source": "Middle East Eye",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US waives sanctions on Iranian crude oil, petroleum products for 60 days - Deccan Herald",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPbHpBVFl4bF9OLW8wRUE3Y2Jxamc5TllYRFdyWkNiLXdtZXFKNnFoZThQblg1X2EzbW9pQk1qZ1pmMXpnUjZ2d3p0U1dVXy1tLTYwS20tc0QwR0tJQTgwM3dBLTRMcENYQUNLR242eC1qbDQ3MmpONWNLWjNTZXJ5bXZYLW1yVTJmY191RHk4d3QzWXhEZ0RBYXhzTjZpVHV4cFpVNjlDMFpoMVJoVUJxODZjNGdqcXJI?oc=5",
+      "published": "2026-06-22",
+      "source": "Deccan Herald",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US Temporarily Eases Iran Oil Sanctions Until August 2026 Amid Ongoing Talks - PGurus",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOVkVUYUVDUTlQUzZuRjlNenZ2STBKZWdWbzhLWDM3b3QtWkstcDl0WUZfdm5jaWppX1B5ek1HUkVBZ2pCOWtIcjZqeFlEcGdxcFVKZ3I4U0taWGNtZ1ZjVWF6emQ0QVhKM1hCYzBzRUxCcUJ1Ymc4dnUzMy1fNkVadjAzR1VjMDlRM3dWWWFDNUZOakl4QU5aRS1nMDZyWXlKWGc?oc=5",
+      "published": "2026-06-22",
+      "source": "PGurus",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US eases sanctions on Iranian oil exports as talks move towards final peace agreement - The Times of India",
+      "link": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxQOWxVRU5iSzByd1RyVlh5VXVOeUMxTFFJd0tyWkhGQ09nTDJ1OGdQWU82SmNqb0lqc3dOSGxFLTNUYzRXZUItdjI4QTU4c3pFWHRJbl9hTlZyWWhwTlp0b0ZfZnV4eUZCaVRpWVNVeTdDN3B5RnAtOUVfd0ZzVTNSWjRhZjE4akpCcXFRcmVBdGV5enRFUlJYNUJhSU5vS3czVEZZbDJycHhuUFlaVGFoOHRBRkhhLXIyblg3QXF2RGtnRW0zclozMjhRbXB4Y1FBM3JtYXZqcnA1N0RCQ3EwWllTenViaHZyNlBMRm5uNUJPQ1V4OV91Zjh1MFBDSlRIR2JSbWFQaUVOYmvSAZACQVVfeXFMTWpSX25SRmFXRTNneW5PWVBkNjdCeUtHQTdEMUszcEIzcWIyOXMxSEFiQWNqZU9FclMxMTQ5UnBueVh6WHNRcDdYM3duTE5IRlFHT2s0NzhGU1hWVld0aXU2RUh6NXVRdkRnUGdyY2VsSVE3RGZRVzRtQUd0RGoxVFJGcmhNTnNMeTFoVzZFSEs2QjZuakNsbU1SaWpESE40R2xDU2NYMkJJUVNGRkowaTRacVBsZC00SjR2ei0zWmwxbWFEYzRkQjB3aUpDbTh0WFRKMkJXMm14NDJjdEVYeUg1aEFkSEZZZVVFajdwYnlpY09ZdjkyTmVRWnppVE5ucGlMTzE4RmFCTkhaaEE1aVE?oc=5",
+      "published": "2026-06-22",
+      "source": "The Times of India",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US Treasury eases sanctions, issues 60-day license for Iranian oil amid progress in peace talks - ANI News",
+      "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNalhhaHM1bGE4UEJ0X29hVHhxRHpmdDI5elRQNG9vRUdLMXNBMHM4R0ljYXdoNlFrWXhLSXQ1ejlEc2hwdlNDcWN5VUREU3l0RVhjNExOOExiWFdfbk9FTUxfYkxoTzIySkV3akhDUGs3UHE5aV9ISXBlY2E5ZklzS3BjdjRiRldJVVV4cl8xS0xmZkdfd1VCNVhNOUFyZlhxR2NIQUg2bFVkRkZ4WTV6Mk1OSkdIaE9QeTBLMzl0ZjRiTUhpazRlRHRfMGxpWm1mUUEwbWRrVGtWcFRS?oc=5",
+      "published": "2026-06-22",
+      "source": "ANI News",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US Allows Iranian Oil Exports for 60 Days... Dispute Over Resumption of IAEA Inspections - \uc544\uc2dc\uc544\uacbd\uc81c",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1NUmFTQWpER29mQmFYWFRfWmhsVWZmeEJPNTZsYXBZZjZqcWVRcXdzNVl4czhzLWZnUGlZQXF5eHhacUZZUVFTa0hPaEVvY0lpNjl2N0hpQkRNcGVQTGw0b0pENVk?oc=5",
+      "published": "2026-06-22",
+      "source": "\uc544\uc2dc\uc544\uacbd\uc81c",
+      "source_tier": 3,
+      "direction": "NEUTRAL",
+      "dir_rule": "no directional keyword matched",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "Trump\u2019s deal lifts oil sanctions on Iran, angering hawks - The Hill",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOY3B1a1k4VWU3cWo2RVVucmFQem1zRE13V0pXdzN0ZGJkWkUwU0xTcEdUUDF6RFZVMWtWOXRIMDZVVm9RVU56WEYxRTdEaHowekFRQjZaNWFxbUtkdTJQUHNfUHBZMEVWSW9WbUhub01odndjWG9qc1NKQlZxQVBXWkxxVVU1T2ZDTGM0ZVV30gGTAUFVX3lxTFBUWEVXY1puWGxSMVk5UTdjN0lzODJkZzNnSVlTc0tkaUVya0dzeUJZNU1kV1FWMGRPYncxYWRzZndJbEZyVHhBT0xvN1RYWUV6R21lQ3R5M3RheXlIRk04ZW8xOW1QSHl3QXE4MElnSnNDYkVoNlFUSl9SN3BDeFpEMFlMdlFBZDFEcTVVeWRBMDMzaw?oc=5",
+      "published": "2026-06-20",
+      "source": "The Hill",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Political Statement",
+      "type_rule": "trump",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US eases Iran oil sanctions, Korea refiners weigh gains against risks - CHOSUNBIZ - Chosunbiz",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOaHJiUUdxQmd4dnFLbGlabjBPLWt1N3BWS01WRjJBaWYwVlRkR1RtaEZrM0tBdGRWNDV6R0NrZ294djlDSk56ODlOZEtXWHoyc2UxbkhQRlpramZ0N2JJRjRjZktadTc3VW90Z1hyVGVzanlWeW8wQVpWbjNZaVd3eENR0gGWAUFVX3lxTE5tWkxuRjRhcnQzSlhhZWFFYlhwVmJCTnJmdi1QeFR3OHotQVFyQ2NURjdOYnBweHBYODBWOHJEaDg1NFFPWjF2U2RGblVKeGxqTElyTWtlcXdrbjcydnFwX1F6WHpFUTRQMVoyaGYxYVUwdmkzdkFWTnRVbDZqTmVTNXpaVXM1b0VrdFByOFZFTHA4ZEg4dw?oc=5",
+      "published": "2026-06-18",
+      "source": "Chosunbiz",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 2
+    },
+    {
+      "title": "Iranian petroleum minister to visit India next week, amid hopes of Iranian oil surge - The Times of India",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOQWhwYTBCRDNDbi1QTHIzM3gtaFAxYmduZV9kWkN1SnVUQTNzVG9Wc190VlJyZjRnOUR4ek4wT19lRDBBTlVyUmdLRjFVTGtvRTBLenNaaTIyMkhWX1p1OTNHcGRDQnFuWllfbEozcWhFLTBBdVpwQVV4SFBIQzlaWURoekdZQWNWVnJGRXFxUV9VUHZET1FVaXhETjNQWUxOTU1GeWhmbDJJa19HMUtV0gG0AUFVX3lxTE5kNC1OMko3Q0F4d0hUaXVmbGJTQi16SFRtQmZRcFpEdVVBTUNCMzNBRVBHSDJfZ0pOc1Q5dXhmY1NPTmtwQ0dwSU1KOUNnYWlPdTBfTW96bUZSNVE5RF92T0dkTFBBdVU3WUR5XzFOeW1NTWlGSVVFdDFYWGpuOXdPWFlaSnJCNHBSbmVJN0NyMll5aEQyRjhhejdpV3RYWS1Ba2VaZzl2RjJfNDJydnVDU0FHVw?oc=5",
+      "published": "2026-06-18",
+      "source": "The Times of India",
+      "source_tier": 3,
+      "direction": "NEUTRAL",
+      "dir_rule": "no directional keyword matched",
+      "article_type": "Political Statement",
+      "type_rule": "minister",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "Weapons, money and ships: How is this Iran deal different from others? - BBC",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBXSVRzOW5NTEwtZGk4RFdHelNuWFl6N3FmeEo1Q3lRcnRya09nR083alNIQzRqblhmc1QyVzBqOGNHREl2eS1WV25pRmRBYkNzYi1ZWGY2WG4xZw?oc=5",
+      "published": "2026-06-18",
+      "source": "BBC",
+      "source_tier": 3,
+      "direction": "NEUTRAL",
+      "dir_rule": "no directional keyword matched",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "How does Trump\u2019s MOU with Iran compare with Obama\u2019s nuclear pact? - Al Jazeera",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNaXduNkNjNlBzSVQ1QmVpbUlpYVpHRXYtaGVWeVhmM3lsdUM2blBuSU54WDU1dHlKYkQtcWgyQkRXYVJick95ZmNfenRXN3JVak1tUnZFVjM2WHdNdjRyeTRUMlJBbDVBOVhKdVVMXzFva1l6WlNiaXJMY3NFNm5yU1ZDYkRwS19nOVdpYWhIZkRwWGtBeVhpMERZNjBkNktDMXd0ZU530gGrAUFVX3lxTE1EWlRhMDM4Z2NpUzJTRmhIeXZPWlVoeUFHY1NlT2dkOEtLdGhXREo2b1gtOHh6b0ZRTVVEdEdZVzJzdDRvWlk1d2NEb3BrQjd2cWRySzdBVkdqR191ZFFsNTZvbHZHaDJRT1JRUWZUOVVMSFNSWk9WbjFWWmRnVUlLSTluNzRIcUZMNXVLM1VMbm5YU05tdFdtM1JfYXJpRnYxaS1WdkRTQkZHdw?oc=5",
+      "published": "2026-06-18",
+      "source": "Al Jazeera",
+      "source_tier": 3,
+      "direction": "NEUTRAL",
+      "dir_rule": "no directional keyword matched",
+      "article_type": "Political Statement",
+      "type_rule": "trump",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "Iran nuclear deal negotiations (2025\u201326) | United States, Trump, Obama, Snapback Sanctions, Program, & Weapons - Britannica",
+      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFB2NWxEcFBnMHJpcm92bE15UDFGMWNCcklxZUxlcVR6T0FfUjlYUjdjSm5KSGI3eS0tcEFNNjNRaXA0bUc5eXBKQmpUZEFQNjhpSmtscWYtTkZpU1VWNXJVSlJ0SUJFeHg4dm1LN3dLa2s?oc=5",
+      "published": "2026-06-18",
+      "source": "Britannica",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Political Statement",
+      "type_rule": "trump",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "Here's how Trump's memo of understanding with Iran compares to the Obama nuclear deal - CBS News",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWExLcjJsUXZ2RHNCYjIzXzdHSEowZURGYmpuZU1QZUkyMTloQ2oySXM5T2VvVmg1ZHhsekllQXp4bFpMWl9jZHY3bW1LemZwdHZfNWpiRzVwZDNicmNwRUlWZG9NSF94aC1CbF9YX1N5ZVR0V3FueVVWSWQ4R3p1bEx5YmtiODczTk1ZdFhCaWtXRkdwRmJtSzR5WWFST1hLcGNuWmNYX3NpNWlHbVFocjdCZUNFak1tT2QxQUx0MA?oc=5",
+      "published": "2026-06-17",
+      "source": "CBS News",
+      "source_tier": 3,
+      "direction": "NEUTRAL",
+      "dir_rule": "no directional keyword matched",
+      "article_type": "Political Statement",
+      "type_rule": "trump",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "U.S. Treasury Expands Iran Crypto Sanctions to Procurement Networks - Bitget",
+      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE82RWNFNnNzWjI1U0pmSG5TbmNDVUN5bHNWYXRpTllBWWQwY3NLTmV0WjFzT3VpMnJXeVU2TEYzQ3V0ejZyT2pxc0s5TFFXd3Z1SzFUNE1hdjBtS3M0T1HSAWNBVV95cUxNbnhqX0dPaEtYUXVEYmM1bjhyUHVEZk1fSXExd3BWWXdjY2hDbWxzZ3RFNUFXZTBZSjl6aW14d0ZHOXY4MTk0NzhkQUlNWVFsaUtQRjRkR1gtTUtPTE8xWnhrcGM?oc=5",
+      "published": "2026-06-12",
+      "source": "Bitget",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US Treasury Sanctions Nine Over Iran Weapons Procurement Networks - i24NEWS",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPNnpLOE1GOTVqNVItZDB1cmFsV0NCUGo2eVloYzJPLVVqX3FGMGdUbUd5TzFiVEJIQVlGTlhrMXJGaVlVWHAxQ1JVdUhtTkZkR2w2MEpab2E3dkxGblNLM2pfTWpwejNtS21kZnBBWVhUN1dzM1NVa3lkaGtTWmpyN3JOR2VKeGxGX280SDF3bllyY050R3FwcENRbldvZkppdlNMSlNTRmRWakIwNk5Gb3dKZENtdw?oc=5",
+      "published": "2026-06-10",
+      "source": "i24NEWS",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 2,
+      "article_count": 2
+    },
+    {
+      "title": "Treasury Secretary Bessent unveils fresh sanctions in Iran crackdown - thestreet.com",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPY2UtLTJCOENKQjdBSnNDdWNsUXNpMndydlZaeGdBT2tDZzdJLW5KNHJQQnYxTy1zM18zbnRQQjVKd09oZFNNNS1paFZlbm14SXZ2OWIyeE9uRGdjSlZON3d5VGE2eGw4YnpGSmZEOEJOaVNYMUVNbU5iR04zOUhXRS1sV3k4ZXRlRUpnWEZSQ3VBUldlSmVQaVFCdEZGVUw2T1VNa1JJSlFIN0QzMVE?oc=5",
+      "published": "2026-06-10",
+      "source": "thestreet.com",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Political Statement",
+      "type_rule": "secretary",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US Treasury Department issues new sanctions targeting Iran's LPG trade - Baird Maritime",
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQUkFrd3AxUVFyaU9tRHlLMzl2OGt2TjBXaDlsdk1WMkJoc0dIVzJpblNJRElqTTBhM004XzI0cTNrMEc1RkVtRUJXMmtDMkszTG1tdkNtaEFjWFVkcEthQUR3V1JNVkhORnZSVlBDMjBoYWE0eUVZY2pYX19fNkwxVzFnY09PWUZucHgyd2VNcUEyVlEzV05QZWNSZEtKNjFWNk9KRG9iV2lHc0R4R2Q1VHU5R0JBN1Y5NjRhS0tCcElaV2vSAdABQVVfeXFMT0R0UVRSaHZWMHhxRUFaMENVdE5sWXg1cUdHeG1fSWZobmJUU0tNdUtldVZ4RC1jSGg5S2IwQUMxTkZ1dHlmZ2k3dTlhelhYRXpYeVE4WjZEMXRRbmx4Wm9rb20yam9DUkZiQjQxcnhPVnY1RXlRcGhHR2RqTG82eVhqLUtGWmlyQWw5UFBIQk5MUy1FSG9RZ3RyWXhsRnBvVHJmcHROa3Jyay1oZFVKemJDZk1jZnZFdS15QTk4Q3hURTNQSmZMZ1pmZWtYTU0tVA?oc=5",
+      "published": "2026-06-08",
+      "source": "Baird Maritime",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Official Sanction",
+      "type_rule": "new sanctions",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "U.S. Treasury Targets Iranian LPG Smuggling And Shadow Banking Networks - Eurasia Review",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQU1NfTjlhSTZUcGUySnFmdm5XMXJVaVN1aWp2enQyOC1FMmpOTjJsSFc2WHdFcGdiLXNUZFFhZFZGZFBWelZFUXM0R1RadHdPZzBYRDFRT2dvNmhTQ2tIZnRnLV82bzJkRDZJa0l3Q1ZyWTRxdFVUMlhiaWhGTkdQRXFtcDhLM0tyZzRZWVh5eVhUcjhpWEx0Q3VPdTBWbWpoRzA4aU90LVlkU3lfbDIw?oc=5",
+      "published": "2026-06-06",
+      "source": "Eurasia Review",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'ban'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 2,
+      "article_count": 2
+    },
+    {
+      "title": "Treasury designates network facilitating Iranian LPG smuggling to Asia - Crypto Briefing",
+      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNNV9EQVJHSldUNUF4TXlDdnJDMmhsbmtxYWZubUhkN1Ffc2lOVktQcXRzbzBIYm9YeXFHNU5mNm00dVBxN2VwVDEtOTAxRHM2ZFFyZ3loZ1ZVRWtjSG5pT1Zfa0ZrUG9LcHNNYWE4N2xUWmxON2J0OW00WTNWeXpDOHB2NA?oc=5",
+      "published": "2026-06-06",
+      "source": "Crypto Briefing",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'designate'",
+      "article_type": "Official Sanction",
+      "type_rule": "designates",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US targets Iranian LPG smuggling network and shadow banking system - ANI News",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNNjFuOXJZaE1pd21yMGk1TU1Hbm45c0NZSnlsWnQ4bHpZS2wtT25aM0NCbGo2V1ZUZHlLa1RzZmVsMEZpVlI3Q0JzOGVGZWx1OW9sOHRHWWh5U3M5Qm9iTzVsenFkZDFYUWxhWUdGejVXdDFlOFhRRkZYdGhnbDdwUWk0QjE5UW5wT3F1YWxlcEZ3R3QtT2hxZWhLSFdRUWUwelBTQllYY0h3bklWZWVWS0lyNjI4RGZH?oc=5",
+      "published": "2026-06-06",
+      "source": "ANI News",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'ban'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "Inside the Obama-era Iran nuclear deal that Trump withdrew from - CNBC",
+      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFAyaDRtaXFFeDM2QnhJRVdpMERzWEZXYWxnakhaSFFHNzdhc24xQ3haZTU4emZjaG1fampfMTh5YkxrdnktOFNoczQ5V3oyUHNFUFdDLXhtMFBDd3pZQ3A0SzhYbFl4SFFVaEJTQU9UVWEyb0RSYnBxM3M4VGrSAYIBQVVfeXFMUE1VSVdfbTRiQzh0by0xMXRzcVcwNzNsNnRtOGNUS1c2dnZGR0p2NXhTM1NJeFkyem9JcE44eHZrWnZjYmRtT0hOc1NBMTRTdW9qeVpqM2pELXBVRnlMZHpFRnVhLWNoTUVIX2RQQl8wY2xKclNEYnlkcjdUVU5VRFRIZw?oc=5",
+      "published": "2026-06-06",
+      "source": "CNBC",
+      "source_tier": 3,
+      "direction": "NEUTRAL",
+      "dir_rule": "no directional keyword matched",
+      "article_type": "Political Statement",
+      "type_rule": "trump",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US Treasury Sanctions Global Network Smuggling Hundreds of Millions in Iranian Gas - Kurdistan24",
+      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOS2JKVFBwSXZZU19UOVpWbUdOallsUmxRRGxPYmU4ZUFRb3RBU3R2aFpxSFl1MU56STlNcTE2T2djeHNPN0tMLVFpSjY5bXdXMGdTYWdOV0k4ZnB0MU9JZkVEVGUxcDFXNF9mbmpkcnpySE83WU9FRS00WjdRbUo3TTRLWEtVZVZ1SnE3MDJxZXFFWEZXSllmT3NRcXctM20tNkxwVHQwRnFJZDhyRTk2RmRGRFRadEd6SXEtdjZYakNjWHo3?oc=5",
+      "published": "2026-06-05",
+      "source": "Kurdistan24",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "New US sanctions target Iran LPG and shadow banking system - Gulf News",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQaEtGMFh3ejZCeFUxb1RRU0NISk1MUFVjZVg5QUZydGh0czJQbWhpcXlQTjNsMFhDeFRUV1VZWGY5UHBJWmthVEktSnFjTXFfV3JMdktYWHFvUnBTdjdOT0M1ZXI4Ni1HdDVMcEpjVDRiM3cxSTVQX1RvNmZGNEVkMW9wOV8yZEJ4N0l1N2lfV2dHdFEzdk5fZHNEUnBEaXVMdmh3WQ?oc=5",
+      "published": "2026-06-05",
+      "source": "Gulf News",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US Treasury Sanctions Iran's Largest Crypto Exchange Nobitex Along With Three Other Iranian Platforms Under Economic Fury Campaign - unchainedcrypto.com",
+      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNUVNRRzVuQlJTWEJ6R3FZYktuWXg4b3ZZYmNRb2oyQm00Y1p5MDlZSWRoZUdXc3RlZnc2emM1eUs1R2ZfcTZUa1M1bzNuMTZpYVVCZlNiQzEwUENoY3JkdzI2Ylh2bm1GanlJUTRwLXJ6UEpDRE5LWHZ2SlZJVVZHalJNVGZiUGlfUkRPSGgxRDNrTXdPZDVvMTByQ3g3ZjhaWDRPd0tKVjdfMFdtbmdLeFdjSXduYXo5XzkzQ2loQzlyeVFIS0ZucElheDZGcHpkMGUtZURGUG1NaEhiUVUzbVkwd1EwS3Jmb1kzUGxiSQ?oc=5",
+      "published": "2026-06-03",
+      "source": "unchainedcrypto.com",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 2,
+      "article_count": 2
+    },
+    {
+      "title": "U.S. Treasury\u2019s Economic Fury Targets Iran\u2019s Largest Digital Asset Exchange For Terror Finance And Sanctions Evasion - Eurasia Review",
+      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQLWFjMEY5a2xGNGNucS1fV29BVUVuVkNmZ1dWUUhWSFFRX1NRc0dVdEQxVlhWS1Z0RzlQQnZuS3pDeGVYRlEtV2pkajhUaURvMEZQM19xSEdKZXp2OFl3MVR4aXlmX2dBMFRld0NwMk9zQ282MEdCZE5MU2pfb0JJRGltNS1WbVFkb2JUNWVsT0E2MXpCa01zbV8teFgzVXNHcnA5SWs3WkJqMXRKZTRRcVQ2M2JUM0JlUExIclM0NDQwUFJSd0c1N2N5NFhTdFFIdWVLNll3ZUtsOGJJVGM5OVVBXzBYUjFr?oc=5",
+      "published": "2026-06-03",
+      "source": "Eurasia Review",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US Treasury Sanctions Iranian Crypto Exchanges, Including Nobitex, Over Sanctions Evasion and IRGC Ties - CryptoRank",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQdVdVVTZjYUlaaXZpZWlEQmI1cG5XMGk3amVsWFB0bTFKV1U0UU5XZHVBeVkwQlRpX2RVb2lkS3UzMHZvaWZzS0ctNE5XOWs2VVVDNzNUVXI4SzIzeHUtaG9zRlZUbTkta1g5a25vc1V0UlpJVktla1hjQ1B5RU15M0Q0TFlsRXV6UVR1Z0xqdmpadHRuM2p3?oc=5",
+      "published": "2026-06-03",
+      "source": "CryptoRank",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 2,
+      "article_count": 2
+    },
+    {
+      "title": "U.S. sanctions Nobitex crypto exchange used by Iranian ransomware actors - BleepingComputer",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQSGhHdzlGNVQ3Qm9YcVZVbTM0aHVHN0FpWEVrTWFWS0hDV1pHUEc5QWRQZ1pPeUhMdFF6dEpkNml1WS1yTC1FekFGVE9jWVlzR3N3OXA0Qjk3RHBFMHRheTk4SW0ycE45REdCUEE1SWhmc3RjNnZLMVZLbVI3YURacmpDOWtXNklsS0tuZXlvX2dPc0plWXgyTS1OVUpXNzI5OTNuVGRrTjljTVHSAbABQVVfeXFMT3B4Qy0tTkxhZFV3OC1VRlBEdzFSb0tDaXRhY1NleFdoRmpraHhfeXNFWVFtc1lha2ItSWdBNnBucE05cW1xZFhGcVJtbHNXMHczelpVX0ZsMHMwVE9aVTk5Qk9pUXZZajRzRVJONVdkd3NmNllUM21xd0ZxSTRZaU5aVlhzdU1iN1FObTBPNXQ3US14T09NU0pETDhUZEpBekx1MlNxWG04ZDVFYWVfQU0?oc=5",
+      "published": "2026-06-03",
+      "source": "BleepingComputer",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US Treasury Adds Nobitex and Three Other Iranian Exchanges to OFAC SDN List Under 'Economic Fury' - thedefiant.io",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOSHZjVFM2MkdtVzd3SnJRNEpYMkpfVnZ3cDQtNlVEWmwxTndUbENhbi1FaUhxY3dfalZfbmo0ZU5DUDRrQ2cxaGVZV21kdlB3RkVDZ3BQekpaQWE4Z3JWUEFXWDZpTEwybVpZeDRhNGNlMXdKb094UGJpaWdYRVNTM2dUQVEwMU9DUnlGUmdtcUl3ck1zNmN3WU9DelQzWHlPbGU1eQ?oc=5",
+      "published": "2026-06-02",
+      "source": "thedefiant.io",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'ofac'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "U.S. sanctions Iranian crypto exchanges in ongoing war against the country - CoinDesk",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPRzBTQV9QYTNTWG1lRnc2U2ttRG5nNF9NTkpVRlpYUi15Z2xqa3NuN09pZ19BSzNYckRXLVFKaldJU21wR051OUtuVXQtLUdpX0xMRnBNc3VjckxkUWlnblBqQlIxZnZBNUg4WXdNNEVUUHpMZlhVcWlwVEZDemJMMVg1Zjk2bXBBR2Y2QVNYaWdDZy11R3o2UU1QR0lLeURtU0hGVlN0RmtiOGVTRGU0LXFn?oc=5",
+      "published": "2026-06-02",
+      "source": "CoinDesk",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US sanctions Nobitex and other Iranian crypto exchanges under 'Economic Fury' campaign - The Block",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQX2FFR0dHakxMR0U1UVVGNVJ5TUt6Zm44b0t0dWJfUnNISVAzZ2QweXp1YlVISnBZMi1pVHRubjVyOU9zb2hSZDBobC1yUGwzYlpNSmg0NWJod0JUN3MtTkgzbE1NY2ZYUDFRYTY2cGJmaTRjRjZHaTE0U2pjLU5lbGN5QmgxRzg0Rmp6VEdFRnYtb3dVU2xxV0NwVGxfSDRTWF95Um9mOA?oc=5",
+      "published": "2026-06-02",
+      "source": "The Block",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US Treasury issues sanctions on Iran, targets 4 crypto exchanges - TradingView",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNUkxZajBkSFRaa3hKRDRxVi0yZjBoT1phem1FbWtVeDlpVFlYMkQzRHdhT3VZcEs4b1J5Nms5Z1kwYkJRVkFOSkJVanJ4UElVMlRxU00xN0duaDdKQnVKR0taTjJ4dnYya0FBNTJCMDBZVGxsdU1tRlZKM2NTZTUxU3N6dGVIVzZwVHgxeU9Rbm41c1k5cnhTQlV5bE1WM3dqOEJhS24xcmpXODRmUFlYLTd2TWJBc0hQNWRRMHU2bkZ6WnQ5TUE?oc=5",
+      "published": "2026-06-02",
+      "source": "TradingView",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US imposes fresh sanctions on Iran's military oil sales, Treasury says - Reuters",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOTGN5U0hILU5zdG9XalBqazFVZGtCQXZmTnY5SlZ3Y1g2d293c0tGaXM0QnpXUkRGNWxMclNJSl96YmFPYnNRd3V0aEhKSDd0eEtBcmlTX1B6VXNRZlNic0ZRMGF5dmtsU3RZdDczS1FTWFRCS2FnTEZfMkxZRnhENHVEMDh0N2VtYjl4WXhIUGV0RnVJNk80TGNBdm1xbTQzUG1pNmhySjcwVXAyNVYtSjVTaw?oc=5",
+      "published": "2026-05-29",
+      "source": "Reuters",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Official Sanction",
+      "type_rule": "imposes",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "Iran Is Turning America's Sanctions Playbook Against It - Reason Magazine",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOTVdOYWFjMkFqUFdlRHZaQndjU0pEZVpTQ2ppdzFEV3AwdE1td3ZkVGd3WDZrUnJuNW9tQWlsUFllRkFPbkVnalJGakFyZGxlWjM0Nm94WnNsTHltSnRqQ3Jkb0pneWtIQkZOQkVEYTQxTnBQajgtYlcydS1SV09sZUsxZjFtMWlJYk9ua1RR?oc=5",
+      "published": "2026-05-29",
+      "source": "Reason Magazine",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "U.S. Targets Iran Shipping Network With New Sanctions - gCaptain",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBPdWpJVWZjdXJycW1iQzdTOC1kdDZkV1dsOGJyNnBMQm0wNEU3eTBtRzFzaGhabWU0Ul94RF9qVmk3NGtNSF9ucDdib2ZiREYxb0JzcFlDT0JOblRmbm9pTzNhc21XSndQa2pPRzJuZ3hWMmxUZ1lrWkdZa1dmczA?oc=5",
+      "published": "2026-05-28",
+      "source": "gCaptain",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Official Sanction",
+      "type_rule": "new sanctions",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "U.S. Treasury Expands Sanctions on Iranian Military Oil Sales and Strait of Hormuz Extortion Scheme - Forth.News",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE40SnVUS1NvSVctNzgxYlFTMUYwNVM0eWVTX3kzS2p1VmVnMVhwNGpqTE91UDRaN0hra3hpTVhpUTBISWZnQ2w4U0tnZWVrVHF5ZU1wTGJ2bk1KMkd3Z05zN3VB?oc=5",
+      "published": "2026-05-28",
+      "source": "Forth.News",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Official Sanction",
+      "type_rule": "expands sanctions",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US Treasury begins new sanctions on oil sales by Iran's military - Quantum Commodity Intelligence",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOTE9aV2EtME8zc21tRWVGTHV0UkZzLWxXVDRpT3FUQmFjM2hicE9RbF9Ca2ZIb3BKcGJvV2dTeDZOcklEU25QMGpnbm5QSU1kamRTS0JsYlFPTWw5bkxhX0hrZi1QbGk0czVFLWVVb1JHU3FfVEhRSlFCNFIxNi1zSXRRYzRjVkJabjhfZUR1VVRJNEUxUS1lRVc4VjRIdUxJQXlua09Nd0ptZTQ?oc=5",
+      "published": "2026-05-28",
+      "source": "Quantum Commodity Intelligence",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Official Sanction",
+      "type_rule": "new sanctions",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US Treasury sanctions Iran\u2019s Persian Gulf Strait Authority amid oil export pressure campaign - Crypto Briefing",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOYWdqMWs3X09NcjlIU3owbm9rdlF5UUt3ZHdWYWpTeU5hVmlnMWc5YzcwMTZIeU85SGpReEFqYkpkS1c0bVF5UUVIZWYxMTZjNGpvSVltWUhnRTA0Z1JuM3ZQM08yYXViR19KbXlvelE2OWQwMFV2WnJIWWkwSFVON3MwRS0zWlJHc1gxaw?oc=5",
+      "published": "2026-05-28",
+      "source": "Crypto Briefing",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Legal Analysis",
+      "type_rule": "brief",
+      "corroboration": 1,
+      "article_count": 1
+    },
+    {
+      "title": "US Treasury slaps sanctions on Iranian authority overseeing Hormuz - thecradle.co",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQM2R4bG9iLWFJc1NIa1BpVVJfTS01dGRVZFNMVDIwRk5ZNFlLUGp4WTY2RW1BamZxbzFDRXIzVTdFbWVRUU5XT0JReHN0LVV0MEY4bmx5NWIyWEVRTlhyYlVwNlhhNWNqam1SSEUxdW1uREUxZHdHRS1RbGhrSjJPM2hvZnFQUXFWS180dktOa1l6WXY3QnJrdkdLd0Y?oc=5",
+      "published": "2026-05-28",
+      "source": "thecradle.co",
+      "source_tier": 3,
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "corroboration": 1,
+      "article_count": 1
     }
   ],
   "articles": [
     {
-      "title": "New Iran Authorization Implements Memorandum of Understanding - WilmerHale",
-      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQVTlZUWRHYlFrbUdMNlR3ak8zLUlfdzFCRkFUWkU0NTNKTWVXMW1FbTV3WUJrNkNmMXRWSjVvT29JSnZDUHR0T0l6cy1zOE5IUkdYcDZCbi1PR2VZT2twUXp1Vmc4N0xIVm9hT1VPX0ZCOHBCN1JCT2JaWnlpUDFtSTdpUjFJalRaT2lrb3pTMWNIQ3luT2FaZUp1X3VHSGFTdGU1RmhLNE1XbjdOMnp1S0FVdi1EQWMtUjkwTVZoSms?oc=5",
-      "published": "2026-06-26",
-      "source": "WilmerHale",
+      "title": "US sanctions waiver could bring Iran's oil trade out of the shadows - \u0627\u06cc\u0631\u0627\u0646 \u0627\u06cc\u0646\u062a\u0631\u0646\u0634\u0646\u0627\u0644",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1USDJhZnRHcGxhWVZ0WllMcVJpa2pZcHJsaW9lUmJQQVJJRDRfZDlrUnBPX09jYkJ6Z0ZhT1Z6QTNkYkt0OTZJcGRmZE1YLXczU2c?oc=5",
+      "published": "2026-06-25",
+      "source": "\u0627\u06cc\u0631\u0627\u0646 \u0627\u06cc\u0646\u062a\u0631\u0646\u0634\u0646\u0627\u0644",
       "source_tier": 3,
-      "direction": "NEUTRAL",
-      "article_type": "Media Report",
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Sanction Waived",
+      "type_rule": "waiver",
       "bodies": [
         "Other"
       ],
       "flags": []
     },
     {
-      "title": "Trump Accuses Iran Of Violating Cease-Fire With Hormuz Drone Attacks - Radio Free Europe/Radio Liberty",
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQWnhyaS1tS3NVV19VeVRlS1RUeUhFblVCTkRCWmg2Z2YwTW1uR051ZFctc3F2eEcyN29hbkJkLUY3THpPVzVaYVRlcTRybGlrTGVsX3ZvTFJyQmRELVNHckg3Nk9uOUw3V2RyN2lZY0dIMW1jLWVQSUVTdXBTZGpuVE55cDBQcG01?oc=5",
-      "published": "2026-06-26",
-      "source": "Radio Free Europe/Radio Liberty",
+      "title": "US eases Iran oil sanctions under temporary 60-day license - irishsun.com",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNdVJ5OWRKSW5xMFJwOTFhZ3NvaklxSHhmaENabF95NUhsRWVlSGs2YlNHMnhsQVlKcWhGeUNkYlZLYnQ4UFhLN0pVYnluQU5JMnRQV0dtZE1LTGxZRktHaVQ3S25xbHhIUkVDTGYyNFBJOXp4dlpZZzUyeEdXcXdLYW95NWphaHhfU3V0LUFwLU51M1JIZTJ4ZmM1Y2h0aWM?oc=5",
+      "published": "2026-06-25",
+      "source": "irishsun.com",
       "source_tier": 3,
-      "direction": "LOOSENING",
-      "article_type": "Political Statement",
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
       "bodies": [
         "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "Iran's petroleum minister meets Hardeep Singh Puri, looks for cooperation in hydrocarbon sector - The New Indian Express",
+      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPTE5QYWh1N1JCX0t3UFBQMm8zOGpDaVF2dW1wdXdUQ09kS0JmZ0gxYmlsbkxsQWllWi1XamZOY0VhMkJ2ZGIyUTdJZVhXUHh3WUdXOWs4SWotWTA2SmhCNVRROEhiMUUzV3FJTjlRbE9lRUc0RHcyajYxeU80MlZ4VnlFanpja2NHU2tnOTBLakhKZl9mSzc5UVFCY3pWQ0l3NTBtNWRNMURWYmdtM2JzRHNZa2tNdGVPRW9rNGNnZ3k1T0prRVBmSHJQdkVfZjY4anVKUjY5ZGlnb1J2M0VNdtIB7gFBVV95cUxNckxXVEJMLTNjMnFYcXhlQ3RJNmNJY3lvZXZMWGxsa2pVVDVTaWwwVllZOUpObU4wYkRzUkIzcUZlV1lqSjItdDV4alV1dDBJYXpTLVJoNEh6SkxlUWdlN3p6V3RJR0g0SC1qang4aXB6enE4VkJMT1RhaElOVXdOV0xRRG11Y0tHYS1qc1FRbkEySWcxNGc4UU1MUWE5SU90UHZLa2JNeUxFZndveVRXMzN3V3QyNWN1YlVRRnd0akhYQ3Q2NFJTTkJvQXd6cWhfR3Uya3M2OURVWWsyX0IwZXhOQ0ZON01IVTV1aEV3?oc=5",
+      "published": "2026-06-25",
+      "source": "The New Indian Express",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "NEUTRAL",
+      "dir_rule": "no directional keyword matched",
+      "article_type": "Political Statement",
+      "type_rule": "minister",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "Trump deal gives Iran 100s of billions more than Obama\u2019s nuclear pact he slammed, in return for far less - Small Wars Journal",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNWVBTUG1mVFFobE9RS01ha2x0NTdoZVFnRG9vTURyZWFtZGdSRDd1bGs3TGk4RlNfTWF4RnhlRU5fVDZ4OVd2c1k2V0ZTcW45QjNxUG9hamRNUmRwN2hLcnBsYTd1U1JOVnNMVURUdV9uRlhwVkhlQl9MYllVYnl2QVp3?oc=5",
+      "published": "2026-06-25",
+      "source": "Small Wars Journal",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-JCPOA",
+      "direction": "NEUTRAL",
+      "dir_rule": "no directional keyword matched",
+      "article_type": "Regulatory Guidance",
+      "type_rule": "bill",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "OFAC Authorizes Certain Iran Crude Oil and Petroleum Transactions but Questions Remain and EU and UK Sanctions Remain in Force - globaltradeandsanctionslaw.com",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNbGJZMW9NWWhpY01FMVFJMGs3S2J1LTNhV2l6VFd5am5rQmhPNmptalBnTDk4Uk1sVDZod3REQzE2Wk5HVENTVUN3OWI0U2x1WC1kMmFLTjk0QnNBdTlzUkpIVi1aS0szcWFkdXRMTmxVTGZ2YnV4eUxVUUVIdHcyS3RhdkN3c0hjdllveTlwX01SU25nR2NLUFRsaU8?oc=5",
+      "published": "2026-06-24",
+      "source": "globaltradeandsanctionslaw.com",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "OFAC",
+        "EU",
+        "UK"
+      ],
+      "flags": []
+    },
+    {
+      "title": "OFAC Temporarily Lifts Certain Oil Sanctions Against Iran - thompsonhinesmartrade.com",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNdldpTE1DSFFXVkVKTE5tZjNtbjdIVmRjT1N2X2hKWFJEeExoOTd1RWxESklwTDFOZmRmT2RSZm9tM0w0dXZ1X0VickxPbVA3T3VQdndNRnRjZENPMWR2X3Jlc1d0Qzl3RlE3cFk5c3NZV1MzQWxGbkhsTjVfSGpLbFJ5LTNra1htT1BqajVDWDJvMFM0MEdBMFVTTVo1VXZEQ2JaR0JqOA?oc=5",
+      "published": "2026-06-24",
+      "source": "thompsonhinesmartrade.com",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": []
+    },
+    {
+      "title": "OFAC Eases Iran Oil-Related Restrictions for Two Months, But Will Financial Institutions Cooperate? - ArentFox Schiff",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOU05HRms1dWNST2JSbTNGNFphU3BXNm5naGdQNzRIRUt3RWM3TjNKNXJfQnNoYXRLcG92bXhuNmlkcUktM2lIdzhNOExGdGs5NXR0Vy1oNmpfV0hZRm9YdllMcTBEZWZJQnVYUWVzSWE5NHNaRFZRQ1FkR2hTa3dhOWxmcU9uX0JnYm82d1htWTRQU3F6NDZnQndIQ0kybkowTGEwZjUycW8tMFFHa1gwY2xieUR1LXBkR2c?oc=5",
+      "published": "2026-06-24",
+      "source": "ArentFox Schiff",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'ofac'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": []
+    },
+    {
+      "title": "OFAC issues broad temporary general license for Iranian-origin crude oil, petroleum and petrochemical products - Norton Rose Fulbright",
+      "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOZmVlT3U4bHh6VVBtajhxLVBKcms2Yl9lZ1dldzNlb2FRMnpyNFFYOEgyd1NqTUxNdnBsd29kbmN2M0dzTFJjeXZJeEp3R3JheDliOWFrQV9LREx3V1RrRmJoNEd6LUJZRzgxS3VhUFd6VDUyMkZ0UDZuUThVX2xxY1E3TDVnMFg4YXR1dEVhWHlOU2xPS294X3prdmZoN0pVdnQ0d0hqNnJaYVBJTFJnWnBYLUVfVHRFWXhVNGRmc1NOc2pOUTRHUHRlZm9jRFM3YndWVVRhRGFvcWNIMzRIOWdHMnZWcHVNdWk3bTFjOGNNYWU5?oc=5",
+      "published": "2026-06-24",
+      "source": "Norton Rose Fulbright",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'ofac'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US Grants 60-Day Iran Oil Sanctions Waiver, Allowing Transport And Purchase Of Crude - Marine Insight",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQbktBQURCLTZfOXVaWW9OYk1JUVN6aExMNG5LV3AyWXRRLUVVaEpHTmFablF2UTVoeUZxVEFSNDF2cjRaUHNRdWllc3VEVFNjWTgwVmF6eHBjZGQ2MnBWc2hqQ3EzbGlBeC1RSTZYRGF5LV9tNkdKZkxSUkZza3gtYzhaQm5GNDhyVE5RdmNaZ2lWNU55NHhUcnNaUlR1SENRdkpBS2JoTTJfcFdFbEh6blNJZUE?oc=5",
+      "published": "2026-06-24",
+      "source": "Marine Insight",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Sanction Waived",
+      "type_rule": "waiver",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US temporarily lifts sanctions on Iranian oil: Is Trump desperate to lower global energy prices and how wil... - Bhaskar English",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNOVp4MGpQdG80dDhsNHoySEx1WnNkY1BmMHNJaG14eTBkbEotUUhwS04zeGlUT2NLYmpUWFl0NTJzUWx6OVduZ1lQWWF0M2JldUZ1RjFoU01rWHpVb2JRSk10RWdwUzJoOFEyY0RaTzh1MVgtVUZKek8yX3hvS1lIUF9UNl9na1paeWwzNVhaR1JuVW9fWm1Cd0c5dnh5YUFaalZxRlpZWDh4OW9GbWVHYtIBtgFBVV95cUxPcmIwZjNaNGhnNDFQMW1GMmpaMEJDRk9YakhqVEVrUmtpanNJMlFWaERBNlJYVkE4MFp4cUFTYVJtbmJ0cUN5QVl3ZjhyaXVHQkFvZFI5dHlQRlpxTHVBMjRxcjNNSU5NekE5bDMyQVAzNXczaXEyanphSXE5YmExajhxcThZWXlFTWNjRjFmZ1dKVGc5bGdlbnN4OUFUcExTQ2tpNmRMZlR5WGxtWEtodHBWNTJ2UQ?oc=5",
+      "published": "2026-06-24",
+      "source": "Bhaskar English",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Political Statement",
+      "type_rule": "trump",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "U.S. issues sweeping Iran oil sanctions waivers, unlocking billions in revenue for Tehran - CNBC",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNS21VYnVjY3dGSmpOSVNsaFZtdFpIYWhsNlR0V0d4U0c2d2tXVjdnU0dhTE9HY1dkN1dSWkdkdmhRZDh6ak9Cc3ZIemh1bDM2T2JYUmptSnBoQjhjTk5ISlBSZEJVVEMxY1Q2MXR4UzQxdEo3MTl2eDhheXhKYlFvaXZqNGx3VjAtQWl0Z19OYmZBRTJzZ09IRNIBngFBVV95cUxOU0dRTm9Kak5JR3pDS1FyTXE4c1YzdWdQZjJpVXZYQndRUXdNTV9ZUjFVbi1pcmlreTJfU2wwNmxpNnFSSzdkMFdQRHdidG4yQ25Id1o4dmpod1hOZ1B5ZGFuanRTVnh5dFEycTF5Q2d4bGc2UnJFN0Utakc3VjMxRTZ1ZEc2d0tuWm1MUi1RaDlYdWNLR0xPemZOYm9WQQ?oc=5",
+      "published": "2026-06-23",
+      "source": "CNBC",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Sanction Waived",
+      "type_rule": "waiver",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "Waiving sanctions on Iranian oil is a huge concession by America - The Economist",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOUGg4cEZOWThBa3gzOUJPWDd1Ull0eTB3ckRhbjVXQk43OFQ2VFVORW85U21pTmc3VWlWTGZYWVhuVFNPV25sMWpoeTBUUUZRVVBudEFyR3REdW1pNHpGcVhqUkhVOVA3QkNtODJOWHppZEVyaGtzQ1Y4WXRPWWNhY0JxS0VHaU9HLXFCUllCX3ZpWXFrYVUzVGVNeVFnaGFJajRyYXFSQ2hrU0dnUndvSE9rWWFvaE9CWXYxY1plWng?oc=5",
+      "published": "2026-06-23",
+      "source": "The Economist",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US Treasury's OFAC Issues Temporary Waiver of Iran Oil Sanctions - Ship & Bunker",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOTzR5bVV3SVZBZnNQQWVuTDRFeGxDNVFMelV4Tk9Qel9xQ1ZoMTRfTkZXdWxlSlNucG5mQ25QcE5YSzBnTm5qZk82allnb3Z0TklWZHNUdkM0Q1pvX042QzhTa3poWmJsZ2QwcG9odXFRMVgwbkc1VC1jR1pzSGYzdmw4a29OQmItRjg2OVl1MnUyVkZRZkVaZUptWWgtRGhJSi1jVHR4Vkwtanc?oc=5",
+      "published": "2026-06-23",
+      "source": "Ship & Bunker",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Sanction Waived",
+      "type_rule": "waiver",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US Sanctions on Iran: What General Licence X Means for EU and UK Operators - Bird & Bird",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOVnFRY2NmcW5rRnYyVERqU1F0ZzBDQ2M1T1dGSG9sS1RybUtiaGFtTTZfMkw3UzJXbThFM01ZXzhibzNzUEtRMDdGck9DbkFJM1otRkhtLUZyUlB1YUExbno4VHpnSURYYkFoZVpUMGN3c0pPc1lDck1NcnZiUXJGQV9QZkNQTzdHLUdqRlluTlBhVnI4T2hGaXFIR1hvVDc3OWhDckRmVFpqZnk2OHRKZHpRa3pOUQ?oc=5",
+      "published": "2026-06-23",
+      "source": "Bird & Bird",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "EU",
+        "UK"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US opens door to Iranian oil in historic sanctions rollback - \u0627\u06cc\u0631\u0627\u0646 \u0627\u06cc\u0646\u062a\u0631\u0646\u0634\u0646\u0627\u0644",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5uQXlseV9kb2xZTVUyYk9MMjExSjBqSjNaMnRtY1M1TkIxZHRCclpOSjhsNGxsVkl5dklmcElHbDlBbjBKd0tuNUJlbkxuU2REZFE?oc=5",
+      "published": "2026-06-23",
+      "source": "\u0627\u06cc\u0631\u0627\u0646 \u0627\u06cc\u0646\u062a\u0631\u0646\u0634\u0646\u0627\u0644",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US Lifts Iran Oil Sanctions: Why India Could Be The Big Winner - NDTV",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQcWNWS3VMbDF3Q3BpZ2k5MjF6N0t3Y1Q5ZW1KN244UHVaUXNhMFprd2QyUEgzcDktMXNMd1VDanRnbHRsdFpmQW50WEs0RFl3aTNMdE9HRlpSbVBTUTJYckhnVlVkR01YQU9pQzVvTnNVZURwOXRBb0hUcGY2YXEzVjh6YW12VHVXY0t0M3JVVUw2SnlqMllnNFp0RFBfdUFZNUN6Y0Y5V3VWQzJidzV30gG3AUFVX3lxTE1wV0p6MUR5aXVUNDdmTl9FV2ZoeUlVVWhCTEZJSXFHemFOSU9WRTVseDJzakxyVWpqdUNHd0tURVFzTVJhOGh3TjFEZURtcDRPd28ycGFFRVBXdGp1SVVSM3B3eUdJbTNUQzJKajdEZVRzUVcydDJ0Qkt0cDhjR2tHRkp4eGF3Q2E3WkJWb1Axb2JpREVsX3JlczlrVzRxRFBWTEtwN2p4THFQNmV4M2VERHVNODdIOA?oc=5",
+      "published": "2026-06-23",
+      "source": "NDTV",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Political Statement",
+      "type_rule": "could",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "South Korea Still Waits While U.S. Eases Iran Oil Sanctions - Businesskorea",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1wNnVhVFUxaWdqeVQ4SDNkZXFVWUUtMU1NMm1qTzU1VjgxdmJLR0pKWDhwM05Wck9pM0t5ZXdqcVpZbmozbVpYVTJTcEE0ejBzMEhMMk5PTWtHLUd3QnRXM21Ld3FhVktadXR1TmZKWFItckVs?oc=5",
+      "published": "2026-06-23",
+      "source": "Businesskorea",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US Suspends Iran Oil Sanctions Until 21 August, Opening Door For Crude Flows To India And Global Markets - Swarajya",
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQTVVPRDI1cGl5aFpjWVlORFc0RHV4SzktYzBZMDYyYzgybU93NmFfZjFMY2djekZuY2Zwc0pNbURJWGhwaDhPb3hobkVXem4tUUxHenNDNEd5VWZqTnZmYlQtYnBGWXlwTXRTWUt1ZEZkb0hBVl93UjNWcGVZNDFUbWxwUjZXUXdqQVdOTzhDS2R3bmo1MDNRZkhMbDNfenBLcFh6cndhRV85bzRES2l4TDM4M0w3cXN1NDBkMENRVmhLdlJpMG5lTG12SmVpNWZwOGd5T2hkY9IB5wFBVV95cUxOWlZ0czlkRHdtQVhTTnBoeHF3N3p6U3RTSElyNzJxeG0yajNoeXRlYzZVZGdLbHpwVUJyazZqOVN1WUpnQWxzVEU3blJZbnJRcWNtWHFfQUlzQUhLV3BTdG1mRW9VUldBUGk4YjRNSGlaeDNIMFVxb3dxZ2dxMXZpYTlvZ1lZaHFkZm12WHlWQ1hEWGx6V0t0Rk5YTGdldjhlUDdGSnlMeURWcmtoOXA3T1AxZFN5ckE2czdXazE3WTBRLXNoTmNINGZJSHYyMEtfdW82Yl9nSVlHNl9VQXJoLXdhdUNyc2s?oc=5",
+      "published": "2026-06-23",
+      "source": "Swarajya",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "Indian refiners in touch with Iran as it pitches its oil to buyers - The Indian Express",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQcHQ4Nl9RbmNxZE1aYkdsMkNudktCVmVKUjJuM09KeUVkV21xSnEwRzlKcHJWU1JXV3dCWnN4YmJ0alF6aUFDUmVZUjd6NkNhTWZfenp3WjllZHZyU3ZyTmRRYkFSWV9yS3pIRTVfNm9ab2piOHVTRWMxelBoRmdiXzl4M2hKM0RSTDhOeVZoRFYtX3VtTVZYNmlZbmlwQdIBpAFBVV95cUxOczdpd3F6SWZsVjl6dHRIY2E1aE9sV0JiejVqcC1pcTFHTHpXbmc3UjlsbTJqcW50SjY0RERsNW1scjUzUXlqSlVXZnlXZV9WYllaWTYzWEN6N1hwWUk1SmwwTmx5MUhQWk5qMVluLXF3RVpQeTJVaGJRV1ExWWItZGhaZjhHRzdZaEZ3c1NNdkdhWmFYc2VRZHVXTnNsR245WXN2cw?oc=5",
+      "published": "2026-06-23",
+      "source": "The Indian Express",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "NEUTRAL",
+      "dir_rule": "no directional keyword matched",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US Waives Iran Oil Sanctions as Peace Deal Brings Huge Shift - Bloomberg.com",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNMkZQWG1TOW9MSmZzWTVZcHhJQVJCSzBCbzNiUW9WSFpZVkhBTktkemtIUE9jVWp2QTlibmdWaTVnUkVwTDNOamFFbGpJNGtncmJNOXAybEdycEJxdlJzZWZLMkJwM01fX3Q1b2xUMVpJMW5pQ2w5eG43STlFUVV4cHFjdUNTQzVESGlibzBOc0stdTBKeHdERm1MbUJLdHU1a1YtODJfdUtuLWZBOE81eXNn?oc=5",
+      "published": "2026-06-22",
+      "source": "Bloomberg.com",
+      "source_tier": 1,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "U.S. Temporarily Lifts Sanctions on Iranian Oil - The New York Times",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQb1ZuV3lfd3dsaHYzU0VTLUdnbU9LbkxnNDNlTC1YYzFRVWRtMjNUUk5vdU85UlNFR1hnZ3NXb0RsZFRGaTE2Tks1MS0zOFZRd29IVmtMX3F3WmR1S1ZXdWlvNzZQeThFb1lqa21zM0V5YjJVQ3ItVTBXQ3hwc2pVRVp1RE9jZVF1ZXphNzE0Tk4?oc=5",
+      "published": "2026-06-22",
+      "source": "The New York Times",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "U.S. eases Iran oil sanctions under temporary peace agreement - World Oil",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQNDVCWmFtckdnQUx5b2FiWWE1ekRlUG1ocERXM0puelR6RnA3STZFUkJvNVhDbFVqeHQtLUxpS0ZVQ1FxMjlsYlk3VXZRZWhYS2h3emRybkJsSFdDRFJZWHJWSnVYWlV6MS0yRVNDQ1hrVWd0S00zYVlGUkxGZ2R2SGVKMXhaUmpEdDJJc3UwRFYtejUtUVZnUmNNbXh6dw?oc=5",
+      "published": "2026-06-22",
+      "source": "World Oil",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "Treasury Department issues temporary license for Iranian oil sales - The Hill",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQd0x6OERIejktM29jR3FteVZmVEd1NVpxc0p4VzA2S2FhbHBtUjNyUU9rVEdCdTRVcjFOSWFVUmNQa2xlcE9UYXg3WnJhNFI0dktzZlZxR3VwMXBQR0k2ZVI0MHlWUDVldEgtQXBidTdGajcwMkU3dkJuMjJJZ2VzNmptX1ZOR3fSAYwBQVVfeXFMTkRQcjVRR2xpX041SFRaOEMya0FOWGwzR1ljUmJ2YmtiTWhrWUQzakdBRXJsM2owQzFTbno0cGlyRzNJR2h5STEzNnJqMWJGb3hjY21ncGVIVHBnNVgtRDJaa2xPVkR6YUJncE9QUWtpazRTR2VyX1ZtdGVhcloyU3dHMzZVcmhFQzhMTXU?oc=5",
+      "published": "2026-06-22",
+      "source": "The Hill",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "NEUTRAL",
+      "dir_rule": "no directional keyword matched",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US authorizes Iranian oil sales amid talks on final peace deal - Reuters",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQYzdZaTNrdXFNYWlPV2hKM1g2TDZkUFRmM3pMTE5HZzc1NnRuY1Y1cEdkLWl4bWpWOWFHdmZnMDN0cS0zdFdOeVIzalM0cGN1Yk1PV1lmc0I1NElkUjI5cWtKQzVvdHVqZFFNUm9nT01BZDdlYXFJdnVPM2NiMF9mUFduSFhlcUZWUjV0RVJtY0NFcFVmSElZSXk0V1IxN3ZrLXc?oc=5",
+      "published": "2026-06-22",
+      "source": "Reuters",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "NEUTRAL",
+      "dir_rule": "no directional keyword matched",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "The U.S. waived sanction on Iranian oil as part of its deal with Tehran to end the war - qz.com",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBRWU1kdzgzYzB5NXNOODBzM1pXaEkyTDVmdVdRUS1DUHpWYm92NVY5Ml9wWVFuWmx1U0dVTnB1bmRPeFRZZG9oeFZLUkhUZlZFQzN0bl9fN3Atazh2aW1kVzl4cmswUlZybXJIZjBVUHh0MGM0cERrSGFBTXl3d2c?oc=5",
+      "published": "2026-06-22",
+      "source": "qz.com",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Sanction Waived",
+      "type_rule": "waived",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US Waives Iran Oil Sanctions as Peace Deal Brings Huge Shift - Hart Energy",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNaHBqMnZXa0pydHp5YTMwMHhZbVZ0Wk45SkpXcHh0ejlYS0pDQ29jalZrNFU4Vi1lOFhoeEJoUkFiQ1VxWmNRcVhNYkFnNnR2Mmh5QTVIV2VDYXYwU2hHUEE4QW5NVVBQVmhWLUtiRi1hVzZNN2x4blEzX0xiX25taWsxVFc4SXN6RnRYOFRTLU8?oc=5",
+      "published": "2026-06-22",
+      "source": "Hart Energy",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US lifts Iran oil sanctions in first major step toward deal - Ynetnews",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1oT2IwYXBILTdoXzRYdktFUHgxb2hlUENlRFdJTmlMUktOZmZkWTRUV2xWd3JPQjJjM0RvbFljV2hmMTVySEd0MzVqTnVpU2MxZTBQWkNB?oc=5",
+      "published": "2026-06-22",
+      "source": "Ynetnews",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "Treasury Department waives Iranian oil sanctions in a step forward for talks - Washington Examiner",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQdl9mT0hwcTJmUkw0RXd0d2g0WU14M3hQNHhfNzI4V1dJWjVnc2xya290Q3BzbHVZVWRpTE1RMEV1d1h3SW5JUEQ5WS1oVWhMeDNfM0dGaU5uREVXbW9FQmtoRWd6SUNGN08yR0dmR2FXVVQ2dWl2dVVpYkxNZXBQZ3Z1amVJSExIazBfRGlsZmFJeE45SnBELXJQU1ZhM0Z5cm5TS1NjSEJoOVVFMG96QXVGNnpZTkltVUlyV1QtQTVqWmd6cjFER2JscE9TTWhWaTNjdA?oc=5",
+      "published": "2026-06-22",
+      "source": "Washington Examiner",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US suspending sanctions on Iranian oil until 21 August - Middle East Eye",
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPTUkxcXZMdG0yS0RMVThYZVJZa1A2VFh4LVVtWkp3NHUxVnkwMU81UTNLd0FnWGJIMVdEd1dBZnNzUTJ0QUhnZXBJUHdYcEp6d2phWk1jVVpiXzh5NmIwSFZsNFFiUmNjUU40VVppa01tWURaNkFLSXpDZXhGSnd4VlpRUzg5UFNGZkhUQm9KaWpoZXFJdW15cUlqVkJteHFKM0JXWlRrY3JjM0tY?oc=5",
+      "published": "2026-06-22",
+      "source": "Middle East Eye",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US waives sanctions on Iranian crude oil, petroleum products for 60 days - Deccan Herald",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPbHpBVFl4bF9OLW8wRUE3Y2Jxamc5TllYRFdyWkNiLXdtZXFKNnFoZThQblg1X2EzbW9pQk1qZ1pmMXpnUjZ2d3p0U1dVXy1tLTYwS20tc0QwR0tJQTgwM3dBLTRMcENYQUNLR242eC1qbDQ3MmpONWNLWjNTZXJ5bXZYLW1yVTJmY191RHk4d3QzWXhEZ0RBYXhzTjZpVHV4cFpVNjlDMFpoMVJoVUJxODZjNGdqcXJI?oc=5",
+      "published": "2026-06-22",
+      "source": "Deccan Herald",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US Temporarily Eases Iran Oil Sanctions Until August 2026 Amid Ongoing Talks - PGurus",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOVkVUYUVDUTlQUzZuRjlNenZ2STBKZWdWbzhLWDM3b3QtWkstcDl0WUZfdm5jaWppX1B5ek1HUkVBZ2pCOWtIcjZqeFlEcGdxcFVKZ3I4U0taWGNtZ1ZjVWF6emQ0QVhKM1hCYzBzRUxCcUJ1Ymc4dnUzMy1fNkVadjAzR1VjMDlRM3dWWWFDNUZOakl4QU5aRS1nMDZyWXlKWGc?oc=5",
+      "published": "2026-06-22",
+      "source": "PGurus",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US eases sanctions on Iranian oil exports as talks move towards final peace agreement - The Times of India",
+      "link": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxQOWxVRU5iSzByd1RyVlh5VXVOeUMxTFFJd0tyWkhGQ09nTDJ1OGdQWU82SmNqb0lqc3dOSGxFLTNUYzRXZUItdjI4QTU4c3pFWHRJbl9hTlZyWWhwTlp0b0ZfZnV4eUZCaVRpWVNVeTdDN3B5RnAtOUVfd0ZzVTNSWjRhZjE4akpCcXFRcmVBdGV5enRFUlJYNUJhSU5vS3czVEZZbDJycHhuUFlaVGFoOHRBRkhhLXIyblg3QXF2RGtnRW0zclozMjhRbXB4Y1FBM3JtYXZqcnA1N0RCQ3EwWllTenViaHZyNlBMRm5uNUJPQ1V4OV91Zjh1MFBDSlRIR2JSbWFQaUVOYmvSAZACQVVfeXFMTWpSX25SRmFXRTNneW5PWVBkNjdCeUtHQTdEMUszcEIzcWIyOXMxSEFiQWNqZU9FclMxMTQ5UnBueVh6WHNRcDdYM3duTE5IRlFHT2s0NzhGU1hWVld0aXU2RUh6NXVRdkRnUGdyY2VsSVE3RGZRVzRtQUd0RGoxVFJGcmhNTnNMeTFoVzZFSEs2QjZuakNsbU1SaWpESE40R2xDU2NYMkJJUVNGRkowaTRacVBsZC00SjR2ei0zWmwxbWFEYzRkQjB3aUpDbTh0WFRKMkJXMm14NDJjdEVYeUg1aEFkSEZZZVVFajdwYnlpY09ZdjkyTmVRWnppVE5ucGlMTzE4RmFCTkhaaEE1aVE?oc=5",
+      "published": "2026-06-22",
+      "source": "The Times of India",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US Treasury eases sanctions, issues 60-day license for Iranian oil amid progress in peace talks - ANI News",
+      "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNalhhaHM1bGE4UEJ0X29hVHhxRHpmdDI5elRQNG9vRUdLMXNBMHM4R0ljYXdoNlFrWXhLSXQ1ejlEc2hwdlNDcWN5VUREU3l0RVhjNExOOExiWFdfbk9FTUxfYkxoTzIySkV3akhDUGs3UHE5aV9ISXBlY2E5ZklzS3BjdjRiRldJVVV4cl8xS0xmZkdfd1VCNVhNOUFyZlhxR2NIQUg2bFVkRkZ4WTV6Mk1OSkdIaE9QeTBLMzl0ZjRiTUhpazRlRHRfMGxpWm1mUUEwbWRrVGtWcFRS?oc=5",
+      "published": "2026-06-22",
+      "source": "ANI News",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US Allows Iranian Oil Exports for 60 Days... Dispute Over Resumption of IAEA Inspections - \uc544\uc2dc\uc544\uacbd\uc81c",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1NUmFTQWpER29mQmFYWFRfWmhsVWZmeEJPNTZsYXBZZjZqcWVRcXdzNVl4czhzLWZnUGlZQXF5eHhacUZZUVFTa0hPaEVvY0lpNjl2N0hpQkRNcGVQTGw0b0pENVk?oc=5",
+      "published": "2026-06-22",
+      "source": "\uc544\uc2dc\uc544\uacbd\uc81c",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "NEUTRAL",
+      "dir_rule": "no directional keyword matched",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "IAEA"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US Suspends Iran Oil Sanctions Until August 21 - LEADERSHIP Newspapers",
+      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9ud3h0RVpGMGxLT3RUN2tUYTdxQm1DYTlmUzlndGJwcjUydUJvRklyUTdFN002QjlZX3lDZ1NIMHRNRWhfR0FlSF9nV1Rwd014b3lwaWJmZVg3RGhXMnVoNmktS0VRcUdxaU1lZFFuV3hQNjZDYmRsTQ?oc=5",
+      "published": "2026-06-22",
+      "source": "LEADERSHIP Newspapers",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "Trump\u2019s deal lifts oil sanctions on Iran, angering hawks - The Hill",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOY3B1a1k4VWU3cWo2RVVucmFQem1zRE13V0pXdzN0ZGJkWkUwU0xTcEdUUDF6RFZVMWtWOXRIMDZVVm9RVU56WEYxRTdEaHowekFRQjZaNWFxbUtkdTJQUHNfUHBZMEVWSW9WbUhub01odndjWG9qc1NKQlZxQVBXWkxxVVU1T2ZDTGM0ZVV30gGTAUFVX3lxTFBUWEVXY1puWGxSMVk5UTdjN0lzODJkZzNnSVlTc0tkaUVya0dzeUJZNU1kV1FWMGRPYncxYWRzZndJbEZyVHhBT0xvN1RYWUV6R21lQ3R5M3RheXlIRk04ZW8xOW1QSHl3QXE4MElnSnNDYkVoNlFUSl9SN3BDeFpEMFlMdlFBZDFEcTVVeWRBMDMzaw?oc=5",
+      "published": "2026-06-20",
+      "source": "The Hill",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Political Statement",
+      "type_rule": "trump",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US eases Iran oil sanctions, Korea refiners weigh gains against risks - CHOSUNBIZ - Chosunbiz",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOaHJiUUdxQmd4dnFLbGlabjBPLWt1N3BWS01WRjJBaWYwVlRkR1RtaEZrM0tBdGRWNDV6R0NrZ294djlDSk56ODlOZEtXWHoyc2UxbkhQRlpramZ0N2JJRjRjZktadTc3VW90Z1hyVGVzanlWeW8wQVpWbjNZaVd3eENR0gGWAUFVX3lxTE5tWkxuRjRhcnQzSlhhZWFFYlhwVmJCTnJmdi1QeFR3OHotQVFyQ2NURjdOYnBweHBYODBWOHJEaDg1NFFPWjF2U2RGblVKeGxqTElyTWtlcXdrbjcydnFwX1F6WHpFUTRQMVoyaGYxYVUwdmkzdkFWTnRVbDZqTmVTNXpaVXM1b0VrdFByOFZFTHA4ZEg4dw?oc=5",
+      "published": "2026-06-18",
+      "source": "Chosunbiz",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "Iranian petroleum minister to visit India next week, amid hopes of Iranian oil surge - The Times of India",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOQWhwYTBCRDNDbi1QTHIzM3gtaFAxYmduZV9kWkN1SnVUQTNzVG9Wc190VlJyZjRnOUR4ek4wT19lRDBBTlVyUmdLRjFVTGtvRTBLenNaaTIyMkhWX1p1OTNHcGRDQnFuWllfbEozcWhFLTBBdVpwQVV4SFBIQzlaWURoekdZQWNWVnJGRXFxUV9VUHZET1FVaXhETjNQWUxOTU1GeWhmbDJJa19HMUtV0gG0AUFVX3lxTE5kNC1OMko3Q0F4d0hUaXVmbGJTQi16SFRtQmZRcFpEdVVBTUNCMzNBRVBHSDJfZ0pOc1Q5dXhmY1NPTmtwQ0dwSU1KOUNnYWlPdTBfTW96bUZSNVE5RF92T0dkTFBBdVU3WUR5XzFOeW1NTWlGSVVFdDFYWGpuOXdPWFlaSnJCNHBSbmVJN0NyMll5aEQyRjhhejdpV3RYWS1Ba2VaZzl2RjJfNDJydnVDU0FHVw?oc=5",
+      "published": "2026-06-18",
+      "source": "The Times of India",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "NEUTRAL",
+      "dir_rule": "no directional keyword matched",
+      "article_type": "Political Statement",
+      "type_rule": "minister",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "Weapons, money and ships: How is this Iran deal different from others? - BBC",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBXSVRzOW5NTEwtZGk4RFdHelNuWFl6N3FmeEo1Q3lRcnRya09nR083alNIQzRqblhmc1QyVzBqOGNHREl2eS1WV25pRmRBYkNzYi1ZWGY2WG4xZw?oc=5",
+      "published": "2026-06-18",
+      "source": "BBC",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-JCPOA",
+      "direction": "NEUTRAL",
+      "dir_rule": "no directional keyword matched",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "Other"
+      ],
+      "flags": [
+        "JCPOA/Nuclear Deal"
+      ]
+    },
+    {
+      "title": "How does Trump\u2019s MOU with Iran compare with Obama\u2019s nuclear pact? - Al Jazeera",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNaXduNkNjNlBzSVQ1QmVpbUlpYVpHRXYtaGVWeVhmM3lsdUM2blBuSU54WDU1dHlKYkQtcWgyQkRXYVJick95ZmNfenRXN3JVak1tUnZFVjM2WHdNdjRyeTRUMlJBbDVBOVhKdVVMXzFva1l6WlNiaXJMY3NFNm5yU1ZDYkRwS19nOVdpYWhIZkRwWGtBeVhpMERZNjBkNktDMXd0ZU530gGrAUFVX3lxTE1EWlRhMDM4Z2NpUzJTRmhIeXZPWlVoeUFHY1NlT2dkOEtLdGhXREo2b1gtOHh6b0ZRTVVEdEdZVzJzdDRvWlk1d2NEb3BrQjd2cWRySzdBVkdqR191ZFFsNTZvbHZHaDJRT1JRUWZUOVVMSFNSWk9WbjFWWmRnVUlLSTluNzRIcUZMNXVLM1VMbm5YU05tdFdtM1JfYXJpRnYxaS1WdkRTQkZHdw?oc=5",
+      "published": "2026-06-18",
+      "source": "Al Jazeera",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-JCPOA",
+      "direction": "NEUTRAL",
+      "dir_rule": "no directional keyword matched",
+      "article_type": "Political Statement",
+      "type_rule": "trump",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "Iran nuclear deal negotiations (2025\u201326) | United States, Trump, Obama, Snapback Sanctions, Program, & Weapons - Britannica",
+      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFB2NWxEcFBnMHJpcm92bE15UDFGMWNCcklxZUxlcVR6T0FfUjlYUjdjSm5KSGI3eS0tcEFNNjNRaXA0bUc5eXBKQmpUZEFQNjhpSmtscWYtTkZpU1VWNXJVSlJ0SUJFeHg4dm1LN3dLa2s?oc=5",
+      "published": "2026-06-18",
+      "source": "Britannica",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-JCPOA",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Political Statement",
+      "type_rule": "trump",
+      "bodies": [
+        "UN"
+      ],
+      "flags": [
+        "JCPOA/Nuclear Deal",
+        "Snapback"
+      ]
+    },
+    {
+      "title": "US eases Iran oil sanctions to spur talks and keep Hormuz open - CHOSUNBIZ - Chosunbiz",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPVmlQeW9qRnJMSFl4b2RoYVZPc1pxYllIcW16ZHVaRl9YbmJncDdMdnRuWDR1YW9TQ1hjOXI4NDNpZ3loZ05wWTB2SXBNbWRsakI3TXRnVkJrbkkxaHJHckdzY1VLNG5xT05PaG5oZ2syalQ5T0Q3WEpGSmxzeTQ4aVZpQ2lPaUxw0gGcAUFVX3lxTE4tVFAyU0FRRnY0clg3aW9KNjNIMTJGcXpvRDN5RFYxV0JJczNkYlNGRjQ2NmRuOWh2d0N3bDIxeDhRaVJkSlozWHpzWVZKdE8xU0h6M1d2ODBzX1lmeUZDRlVfQ3JKMEV3M2x4NV9TbmprNmJzNjNNRWFaTmxZclF3VEFHQXNoUVJVTkVsRHdpaXdNdDFNSGl2MGtVUw?oc=5",
+      "published": "2026-06-17",
+      "source": "Chosunbiz",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "Other"
+      ],
+      "flags": [
+        "Strait of Hormuz"
+      ]
+    },
+    {
+      "title": "Here's how Trump's memo of understanding with Iran compares to the Obama nuclear deal - CBS News",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWExLcjJsUXZ2RHNCYjIzXzdHSEowZURGYmpuZU1QZUkyMTloQ2oySXM5T2VvVmg1ZHhsekllQXp4bFpMWl9jZHY3bW1LemZwdHZfNWpiRzVwZDNicmNwRUlWZG9NSF94aC1CbF9YX1N5ZVR0V3FueVVWSWQ4R3p1bEx5YmtiODczTk1ZdFhCaWtXRkdwRmJtSzR5WWFST1hLcGNuWmNYX3NpNWlHbVFocjdCZUNFak1tT2QxQUx0MA?oc=5",
+      "published": "2026-06-17",
+      "source": "CBS News",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-JCPOA",
+      "direction": "NEUTRAL",
+      "dir_rule": "no directional keyword matched",
+      "article_type": "Political Statement",
+      "type_rule": "trump",
+      "bodies": [
+        "Other"
+      ],
+      "flags": [
+        "JCPOA/Nuclear Deal"
+      ]
+    },
+    {
+      "title": "U.S. Treasury Expands Iran Crypto Sanctions to Procurement Networks - Bitget",
+      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE82RWNFNnNzWjI1U0pmSG5TbmNDVUN5bHNWYXRpTllBWWQwY3NLTmV0WjFzT3VpMnJXeVU2TEYzQ3V0ejZyT2pxc0s5TFFXd3Z1SzFUNE1hdjBtS3M0T1HSAWNBVV95cUxNbnhqX0dPaEtYUXVEYmM1bjhyUHVEZk1fSXExd3BWWXdjY2hDbWxzZ3RFNUFXZTBZSjl6aW14d0ZHOXY4MTk0NzhkQUlNWVFsaUtQRjRkR1gtTUtPTE8xWnhrcGM?oc=5",
+      "published": "2026-06-12",
+      "source": "Bitget",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US Treasury Sanctions Nine Over Iran Weapons Procurement Networks - i24NEWS",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPNnpLOE1GOTVqNVItZDB1cmFsV0NCUGo2eVloYzJPLVVqX3FGMGdUbUd5TzFiVEJIQVlGTlhrMXJGaVlVWHAxQ1JVdUhtTkZkR2w2MEpab2E3dkxGblNLM2pfTWpwejNtS21kZnBBWVhUN1dzM1NVa3lkaGtTWmpyN3JOR2VKeGxGX280SDF3bllyY050R3FwcENRbldvZkppdlNMSlNTRmRWakIwNk5Gb3dKZENtdw?oc=5",
+      "published": "2026-06-10",
+      "source": "i24NEWS",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": []
+    },
+    {
+      "title": "Treasury Secretary Bessent unveils fresh sanctions in Iran crackdown - thestreet.com",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPY2UtLTJCOENKQjdBSnNDdWNsUXNpMndydlZaeGdBT2tDZzdJLW5KNHJQQnYxTy1zM18zbnRQQjVKd09oZFNNNS1paFZlbm14SXZ2OWIyeE9uRGdjSlZON3d5VGE2eGw4YnpGSmZEOEJOaVNYMUVNbU5iR04zOUhXRS1sV3k4ZXRlRUpnWEZSQ3VBUldlSmVQaVFCdEZGVUw2T1VNa1JJSlFIN0QzMVE?oc=5",
+      "published": "2026-06-10",
+      "source": "thestreet.com",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Political Statement",
+      "type_rule": "secretary",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": []
+    },
+    {
+      "title": "Treasury sanctions nine individuals and entities linked to Iran's military procurement networks - Crypto Briefing",
+      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBaWDE1aEhnOGk3VHpRQXkyUWd6RWR3QjBSSTlENDg0U3VucnJtRE9UTGpLbFNRZVdqeU5YZ0ZjLW9xTkNsRVU5S3NySTQ5aFIxdHFKdWhGeVdqaEc0SEpOaUJjMmxaUF9pSXR1OWtkQlVhYnoyaGlTaDNQcUc?oc=5",
+      "published": "2026-06-10",
+      "source": "Crypto Briefing",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Legal Analysis",
+      "type_rule": "brief",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US Treasury Department issues new sanctions targeting Iran's LPG trade - Baird Maritime",
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQUkFrd3AxUVFyaU9tRHlLMzl2OGt2TjBXaDlsdk1WMkJoc0dIVzJpblNJRElqTTBhM004XzI0cTNrMEc1RkVtRUJXMmtDMkszTG1tdkNtaEFjWFVkcEthQUR3V1JNVkhORnZSVlBDMjBoYWE0eUVZY2pYX19fNkwxVzFnY09PWUZucHgyd2VNcUEyVlEzV05QZWNSZEtKNjFWNk9KRG9iV2lHc0R4R2Q1VHU5R0JBN1Y5NjRhS0tCcElaV2vSAdABQVVfeXFMT0R0UVRSaHZWMHhxRUFaMENVdE5sWXg1cUdHeG1fSWZobmJUU0tNdUtldVZ4RC1jSGg5S2IwQUMxTkZ1dHlmZ2k3dTlhelhYRXpYeVE4WjZEMXRRbmx4Wm9rb20yam9DUkZiQjQxcnhPVnY1RXlRcGhHR2RqTG82eVhqLUtGWmlyQWw5UFBIQk5MUy1FSG9RZ3RyWXhsRnBvVHJmcHROa3Jyay1oZFVKemJDZk1jZnZFdS15QTk4Q3hURTNQSmZMZ1pmZWtYTU0tVA?oc=5",
+      "published": "2026-06-08",
+      "source": "Baird Maritime",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Official Sanction",
+      "type_rule": "new sanctions",
+      "bodies": [
+        "OFAC",
+        "Shipping"
+      ],
+      "flags": []
+    },
+    {
+      "title": "U.S. Treasury Targets Iranian LPG Smuggling And Shadow Banking Networks - Eurasia Review",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQU1NfTjlhSTZUcGUySnFmdm5XMXJVaVN1aWp2enQyOC1FMmpOTjJsSFc2WHdFcGdiLXNUZFFhZFZGZFBWelZFUXM0R1RadHdPZzBYRDFRT2dvNmhTQ2tIZnRnLV82bzJkRDZJa0l3Q1ZyWTRxdFVUMlhiaWhGTkdQRXFtcDhLM0tyZzRZWVh5eVhUcjhpWEx0Q3VPdTBWbWpoRzA4aU90LVlkU3lfbDIw?oc=5",
+      "published": "2026-06-06",
+      "source": "Eurasia Review",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'ban'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": []
+    },
+    {
+      "title": "Treasury designates network facilitating Iranian LPG smuggling to Asia - Crypto Briefing",
+      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNNV9EQVJHSldUNUF4TXlDdnJDMmhsbmtxYWZubUhkN1Ffc2lOVktQcXRzbzBIYm9YeXFHNU5mNm00dVBxN2VwVDEtOTAxRHM2ZFFyZ3loZ1ZVRWtjSG5pT1Zfa0ZrUG9LcHNNYWE4N2xUWmxON2J0OW00WTNWeXpDOHB2NA?oc=5",
+      "published": "2026-06-06",
+      "source": "Crypto Briefing",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'designate'",
+      "article_type": "Official Sanction",
+      "type_rule": "designates",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US targets Iranian LPG smuggling network and shadow banking system - ANI News",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNNjFuOXJZaE1pd21yMGk1TU1Hbm45c0NZSnlsWnQ4bHpZS2wtT25aM0NCbGo2V1ZUZHlLa1RzZmVsMEZpVlI3Q0JzOGVGZWx1OW9sOHRHWWh5U3M5Qm9iTzVsenFkZDFYUWxhWUdGejVXdDFlOFhRRkZYdGhnbDdwUWk0QjE5UW5wT3F1YWxlcEZ3R3QtT2hxZWhLSFdRUWUwelBTQllYY0h3bklWZWVWS0lyNjI4RGZH?oc=5",
+      "published": "2026-06-06",
+      "source": "ANI News",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'ban'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "Inside the Obama-era Iran nuclear deal that Trump withdrew from - CNBC",
+      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFAyaDRtaXFFeDM2QnhJRVdpMERzWEZXYWxnakhaSFFHNzdhc24xQ3haZTU4emZjaG1fampfMTh5YkxrdnktOFNoczQ5V3oyUHNFUFdDLXhtMFBDd3pZQ3A0SzhYbFl4SFFVaEJTQU9UVWEyb0RSYnBxM3M4VGrSAYIBQVVfeXFMUE1VSVdfbTRiQzh0by0xMXRzcVcwNzNsNnRtOGNUS1c2dnZGR0p2NXhTM1NJeFkyem9JcE44eHZrWnZjYmRtT0hOc1NBMTRTdW9qeVpqM2pELXBVRnlMZHpFRnVhLWNoTUVIX2RQQl8wY2xKclNEYnlkcjdUVU5VRFRIZw?oc=5",
+      "published": "2026-06-06",
+      "source": "CNBC",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-JCPOA",
+      "direction": "NEUTRAL",
+      "dir_rule": "no directional keyword matched",
+      "article_type": "Political Statement",
+      "type_rule": "trump",
+      "bodies": [
+        "Other"
+      ],
+      "flags": [
+        "JCPOA/Nuclear Deal"
+      ]
+    },
+    {
+      "title": "Treasury Targets Iranian LPG Smuggling Network as U.S. Pressure Campaign Intensifies - gCaptain",
+      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNdU5hV1R4R19BMUtPSGVzTi1jU0FORVJUb0V0NklvZ0VFMFYwUTk4MVVUbEdYaE9VRm5peTczbWJKMVJ4LXJ3ckFSbXhLNWhHTnh0Q0t4WmJ6M3NQTVdPVUtwU3pjQzljeTlocnN0R3hsTWt2bVlJNnkzVXE4b2o1OTV3UHMyc29aaXJXV1VTMGVqZ3pBNXkzaFJPOFhVck1rdTR6UjlIQ0U?oc=5",
+      "published": "2026-06-05",
+      "source": "gCaptain",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "NEUTRAL",
+      "dir_rule": "no directional keyword matched",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US Treasury Sanctions Global Network Smuggling Hundreds of Millions in Iranian Gas - Kurdistan24",
+      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOS2JKVFBwSXZZU19UOVpWbUdOallsUmxRRGxPYmU4ZUFRb3RBU3R2aFpxSFl1MU56STlNcTE2T2djeHNPN0tMLVFpSjY5bXdXMGdTYWdOV0k4ZnB0MU9JZkVEVGUxcDFXNF9mbmpkcnpySE83WU9FRS00WjdRbUo3TTRLWEtVZVZ1SnE3MDJxZXFFWEZXSllmT3NRcXctM20tNkxwVHQwRnFJZDhyRTk2RmRGRFRadEd6SXEtdjZYakNjWHo3?oc=5",
+      "published": "2026-06-05",
+      "source": "Kurdistan24",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": []
+    },
+    {
+      "title": "New US sanctions target Iran LPG and shadow banking system - Gulf News",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQaEtGMFh3ejZCeFUxb1RRU0NISk1MUFVjZVg5QUZydGh0czJQbWhpcXlQTjNsMFhDeFRUV1VZWGY5UHBJWmthVEktSnFjTXFfV3JMdktYWHFvUnBTdjdOT0M1ZXI4Ni1HdDVMcEpjVDRiM3cxSTVQX1RvNmZGNEVkMW9wOV8yZEJ4N0l1N2lfV2dHdFEzdk5fZHNEUnBEaXVMdmh3WQ?oc=5",
+      "published": "2026-06-05",
+      "source": "Gulf News",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US Treasury Sanctions Iran's Largest Crypto Exchange Nobitex Along With Three Other Iranian Platforms Under Economic Fury Campaign - unchainedcrypto.com",
+      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNUVNRRzVuQlJTWEJ6R3FZYktuWXg4b3ZZYmNRb2oyQm00Y1p5MDlZSWRoZUdXc3RlZnc2emM1eUs1R2ZfcTZUa1M1bzNuMTZpYVVCZlNiQzEwUENoY3JkdzI2Ylh2bm1GanlJUTRwLXJ6UEpDRE5LWHZ2SlZJVVZHalJNVGZiUGlfUkRPSGgxRDNrTXdPZDVvMTByQ3g3ZjhaWDRPd0tKVjdfMFdtbmdLeFdjSXduYXo5XzkzQ2loQzlyeVFIS0ZucElheDZGcHpkMGUtZURGUG1NaEhiUVUzbVkwd1EwS3Jmb1kzUGxiSQ?oc=5",
+      "published": "2026-06-03",
+      "source": "unchainedcrypto.com",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": []
+    },
+    {
+      "title": "U.S. Treasury\u2019s Economic Fury Targets Iran\u2019s Largest Digital Asset Exchange For Terror Finance And Sanctions Evasion - Eurasia Review",
+      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQLWFjMEY5a2xGNGNucS1fV29BVUVuVkNmZ1dWUUhWSFFRX1NRc0dVdEQxVlhWS1Z0RzlQQnZuS3pDeGVYRlEtV2pkajhUaURvMEZQM19xSEdKZXp2OFl3MVR4aXlmX2dBMFRld0NwMk9zQ282MEdCZE5MU2pfb0JJRGltNS1WbVFkb2JUNWVsT0E2MXpCa01zbV8teFgzVXNHcnA5SWs3WkJqMXRKZTRRcVQ2M2JUM0JlUExIclM0NDQwUFJSd0c1N2N5NFhTdFFIdWVLNll3ZUtsOGJJVGM5OVVBXzBYUjFr?oc=5",
+      "published": "2026-06-03",
+      "source": "Eurasia Review",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US Treasury Sanctions Iranian Crypto Exchanges, Including Nobitex, Over Sanctions Evasion and IRGC Ties - CryptoRank",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQdVdVVTZjYUlaaXZpZWlEQmI1cG5XMGk3amVsWFB0bTFKV1U0UU5XZHVBeVkwQlRpX2RVb2lkS3UzMHZvaWZzS0ctNE5XOWs2VVVDNzNUVXI4SzIzeHUtaG9zRlZUbTkta1g5a25vc1V0UlpJVktla1hjQ1B5RU15M0Q0TFlsRXV6UVR1Z0xqdmpadHRuM2p3?oc=5",
+      "published": "2026-06-03",
+      "source": "CryptoRank",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": [
+        "IRGC"
+      ]
+    },
+    {
+      "title": "U.S. sanctions Nobitex crypto exchange used by Iranian ransomware actors - BleepingComputer",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQSGhHdzlGNVQ3Qm9YcVZVbTM0aHVHN0FpWEVrTWFWS0hDV1pHUEc5QWRQZ1pPeUhMdFF6dEpkNml1WS1yTC1FekFGVE9jWVlzR3N3OXA0Qjk3RHBFMHRheTk4SW0ycE45REdCUEE1SWhmc3RjNnZLMVZLbVI3YURacmpDOWtXNklsS0tuZXlvX2dPc0plWXgyTS1OVUpXNzI5OTNuVGRrTjljTVHSAbABQVVfeXFMT3B4Qy0tTkxhZFV3OC1VRlBEdzFSb0tDaXRhY1NleFdoRmpraHhfeXNFWVFtc1lha2ItSWdBNnBucE05cW1xZFhGcVJtbHNXMHczelpVX0ZsMHMwVE9aVTk5Qk9pUXZZajRzRVJONVdkd3NmNllUM21xd0ZxSTRZaU5aVlhzdU1iN1FObTBPNXQ3US14T09NU0pETDhUZEpBekx1MlNxWG04ZDVFYWVfQU0?oc=5",
+      "published": "2026-06-03",
+      "source": "BleepingComputer",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "U.S. Treasury Sanctions Iran's Largest Crypto Exchange In Sweeping Economic Warfare Push - Bitcoin Magazine",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5SbFdvdnpmQXR4M2ZLWlEtQl9vY21uZHpNcHpmNjU4MmxZS2otUzJUR1FtMS1qcHBJMTdZSFBydFFVdTlYT0ZDaHR3T1BZZndXTlBiZGF6QjNybzVxOENKNzBrQ0lfREVFVk1hamxHNWhBZmNld3J3?oc=5",
+      "published": "2026-06-02",
+      "source": "Bitcoin Magazine",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US Treasury Adds Nobitex and Three Other Iranian Exchanges to OFAC SDN List Under 'Economic Fury' - thedefiant.io",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOSHZjVFM2MkdtVzd3SnJRNEpYMkpfVnZ3cDQtNlVEWmwxTndUbENhbi1FaUhxY3dfalZfbmo0ZU5DUDRrQ2cxaGVZV21kdlB3RkVDZ3BQekpaQWE4Z3JWUEFXWDZpTEwybVpZeDRhNGNlMXdKb094UGJpaWdYRVNTM2dUQVEwMU9DUnlGUmdtcUl3ck1zNmN3WU9DelQzWHlPbGU1eQ?oc=5",
+      "published": "2026-06-02",
+      "source": "thedefiant.io",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'ofac'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": []
+    },
+    {
+      "title": "U.S. sanctions Iranian crypto exchanges in ongoing war against the country - CoinDesk",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPRzBTQV9QYTNTWG1lRnc2U2ttRG5nNF9NTkpVRlpYUi15Z2xqa3NuN09pZ19BSzNYckRXLVFKaldJU21wR051OUtuVXQtLUdpX0xMRnBNc3VjckxkUWlnblBqQlIxZnZBNUg4WXdNNEVUUHpMZlhVcWlwVEZDemJMMVg1Zjk2bXBBR2Y2QVNYaWdDZy11R3o2UU1QR0lLeURtU0hGVlN0RmtiOGVTRGU0LXFn?oc=5",
+      "published": "2026-06-02",
+      "source": "CoinDesk",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US sanctions Nobitex and other Iranian crypto exchanges under 'Economic Fury' campaign - The Block",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQX2FFR0dHakxMR0U1UVVGNVJ5TUt6Zm44b0t0dWJfUnNISVAzZ2QweXp1YlVISnBZMi1pVHRubjVyOU9zb2hSZDBobC1yUGwzYlpNSmg0NWJod0JUN3MtTkgzbE1NY2ZYUDFRYTY2cGJmaTRjRjZHaTE0U2pjLU5lbGN5QmgxRzg0Rmp6VEdFRnYtb3dVU2xxV0NwVGxfSDRTWF95Um9mOA?oc=5",
+      "published": "2026-06-02",
+      "source": "The Block",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US Treasury issues sanctions on Iran, targets 4 crypto exchanges - TradingView",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNUkxZajBkSFRaa3hKRDRxVi0yZjBoT1phem1FbWtVeDlpVFlYMkQzRHdhT3VZcEs4b1J5Nms5Z1kwYkJRVkFOSkJVanJ4UElVMlRxU00xN0duaDdKQnVKR0taTjJ4dnYya0FBNTJCMDBZVGxsdU1tRlZKM2NTZTUxU3N6dGVIVzZwVHgxeU9Rbm41c1k5cnhTQlV5bE1WM3dqOEJhS24xcmpXODRmUFlYLTd2TWJBc0hQNWRRMHU2bkZ6WnQ5TUE?oc=5",
+      "published": "2026-06-02",
+      "source": "TradingView",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US Treasury Sanctions Iranian Crypto Platforms and Individuals in Latest Financial Crackdown - Bitcoin World",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE56bDBJcllBQnBkY0dEQmNuTXhoV3FkSU50Nk5TVVlVTTFFVlZxMndsRDFZd0lVMEEteGNBZVFHajUweFlWelVvbUxuWnZCd3pNNG54cWFRdnRPU0lwS1hEc2ZMSEF0RUpXRGg1TGFUTnNHYU9wOHdDVjhITVh0N2M?oc=5",
+      "published": "2026-06-02",
+      "source": "Bitcoin World",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US imposes fresh sanctions on Iran's military oil sales, Treasury says - Reuters",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOTGN5U0hILU5zdG9XalBqazFVZGtCQXZmTnY5SlZ3Y1g2d293c0tGaXM0QnpXUkRGNWxMclNJSl96YmFPYnNRd3V0aEhKSDd0eEtBcmlTX1B6VXNRZlNic0ZRMGF5dmtsU3RZdDczS1FTWFRCS2FnTEZfMkxZRnhENHVEMDh0N2VtYjl4WXhIUGV0RnVJNk80TGNBdm1xbTQzUG1pNmhySjcwVXAyNVYtSjVTaw?oc=5",
+      "published": "2026-05-29",
+      "source": "Reuters",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-Oil-Sanctions",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Official Sanction",
+      "type_rule": "imposes",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": []
+    },
+    {
+      "title": "Iran Is Turning America's Sanctions Playbook Against It - Reason Magazine",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOTVdOYWFjMkFqUFdlRHZaQndjU0pEZVpTQ2ppdzFEV3AwdE1td3ZkVGd3WDZrUnJuNW9tQWlsUFllRkFPbkVnalJGakFyZGxlWjM0Nm94WnNsTHltSnRqQ3Jkb0pneWtIQkZOQkVEYTQxTnBQajgtYlcydS1SV09sZUsxZjFtMWlJYk9ua1RR?oc=5",
+      "published": "2026-05-29",
+      "source": "Reason Magazine",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "Other"
+      ],
+      "flags": []
+    },
+    {
+      "title": "U.S. Targets Iran Shipping Network With New Sanctions - gCaptain",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBPdWpJVWZjdXJycW1iQzdTOC1kdDZkV1dsOGJyNnBMQm0wNEU3eTBtRzFzaGhabWU0Ul94RF9qVmk3NGtNSF9ucDdib2ZiREYxb0JzcFlDT0JOblRmbm9pTzNhc21XSndQa2pPRzJuZ3hWMmxUZ1lrWkdZa1dmczA?oc=5",
+      "published": "2026-05-28",
+      "source": "gCaptain",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Official Sanction",
+      "type_rule": "new sanctions",
+      "bodies": [
+        "Shipping"
+      ],
+      "flags": []
+    },
+    {
+      "title": "U.S. Treasury Expands Sanctions on Iranian Military Oil Sales and Strait of Hormuz Extortion Scheme - Forth.News",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE40SnVUS1NvSVctNzgxYlFTMUYwNVM0eWVTX3kzS2p1VmVnMVhwNGpqTE91UDRaN0hra3hpTVhpUTBISWZnQ2w4U0tnZWVrVHF5ZU1wTGJ2bk1KMkd3Z05zN3VB?oc=5",
+      "published": "2026-05-28",
+      "source": "Forth.News",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Official Sanction",
+      "type_rule": "expands sanctions",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": [
+        "Strait of Hormuz"
+      ]
+    },
+    {
+      "title": "US Treasury begins new sanctions on oil sales by Iran's military - Quantum Commodity Intelligence",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOTE9aV2EtME8zc21tRWVGTHV0UkZzLWxXVDRpT3FUQmFjM2hicE9RbF9Ca2ZIb3BKcGJvV2dTeDZOcklEU25QMGpnbm5QSU1kamRTS0JsYlFPTWw5bkxhX0hrZi1QbGk0czVFLWVVb1JHU3FfVEhRSlFCNFIxNi1zSXRRYzRjVkJabjhfZUR1VVRJNEUxUS1lRVc4VjRIdUxJQXlua09Nd0ptZTQ?oc=5",
+      "published": "2026-05-28",
+      "source": "Quantum Commodity Intelligence",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Official Sanction",
+      "type_rule": "new sanctions",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US Treasury sanctions Iran\u2019s Persian Gulf Strait Authority amid oil export pressure campaign - Crypto Briefing",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOYWdqMWs3X09NcjlIU3owbm9rdlF5UUt3ZHdWYWpTeU5hVmlnMWc5YzcwMTZIeU85SGpReEFqYkpkS1c0bVF5UUVIZWYxMTZjNGpvSVltWUhnRTA0Z1JuM3ZQM08yYXViR19KbXlvelE2OWQwMFV2WnJIWWkwSFVON3MwRS0zWlJHc1gxaw?oc=5",
+      "published": "2026-05-28",
+      "source": "Crypto Briefing",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Legal Analysis",
+      "type_rule": "brief",
+      "bodies": [
+        "OFAC"
+      ],
+      "flags": []
+    },
+    {
+      "title": "US Treasury slaps sanctions on Iranian authority overseeing Hormuz - thecradle.co",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQM2R4bG9iLWFJc1NIa1BpVVJfTS01dGRVZFNMVDIwRk5ZNFlLUGp4WTY2RW1BamZxbzFDRXIzVTdFbWVRUU5XT0JReHN0LVV0MEY4bmx5NWIyWEVRTlhyYlVwNlhhNWNqam1SSEUxdW1uREUxZHdHRS1RbGhrSjJPM2hvZnFQUXFWS180dktOa1l6WXY3QnJrdkdLd0Y?oc=5",
+      "published": "2026-05-28",
+      "source": "thecradle.co",
+      "source_tier": 3,
+      "feed_source": "Google/Iran-OFAC",
+      "direction": "TIGHTENING",
+      "dir_rule": "keyword: 'sanction'",
+      "article_type": "Media Report",
+      "type_rule": "no specific type keyword matched",
+      "bodies": [
+        "OFAC"
       ],
       "flags": [
         "Strait of Hormuz"
