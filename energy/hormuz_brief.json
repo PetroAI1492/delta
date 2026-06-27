@@ -1,0 +1,186 @@
+{
+  "title": "STRAIT OF HORMUZ — EXECUTIVE SITREP",
+  "generated": "2026-06-27 16:16 UTC",
+  "live_data": {
+    "DCOILBRENTEU": {
+      "label": "Brent Crude",
+      "value": "76.49",
+      "period": "2026-06-22",
+      "delta": "-$3.97 vs 2026-06-19",
+      "unit": "USD/bbl",
+      "source": "local-db (fred)",
+      "ingested": "2026-06-25T12:00:42.206385+00:00",
+      "stale": false
+    },
+    "DCOILWTICO": {
+      "label": "WTI Crude",
+      "value": "78.94",
+      "period": "2026-06-22",
+      "delta": "-$1.41 vs 2026-06-18",
+      "unit": "USD/bbl",
+      "source": "local-db (fred)",
+      "ingested": "2026-06-25T12:00:44.173941+00:00",
+      "stale": false
+    },
+    "DHOILNYH": {
+      "label": "Heating Oil NY",
+      "value": "3.01",
+      "period": "2026-06-22",
+      "delta": "-$0.02 vs 2026-06-18",
+      "unit": "USD/gal",
+      "source": "local-db (fred)",
+      "ingested": "2026-06-25T12:00:56.297827+00:00",
+      "stale": false
+    },
+    "MHHNGSP": {
+      "label": "Henry Hub Nat Gas",
+      "value": "2.94",
+      "period": "May 2026",
+      "delta": "+$0.17 vs Apr 2026",
+      "unit": "USD/MMBtu",
+      "source": "local-db (fred)",
+      "ingested": "2026-06-17T18:47:10.385554+00:00",
+      "stale": false
+    },
+    "GASREGW": {
+      "label": "US Regular Gasoline",
+      "value": "3.91",
+      "period": "2026-06-22",
+      "delta": "-$0.14 vs 2026-06-15",
+      "unit": "USD/gal",
+      "source": "local-db (fred)",
+      "ingested": "2026-06-24T12:02:24.997671+00:00",
+      "stale": false
+    },
+    "GASDESW": {
+      "label": "US Diesel (Retail)",
+      "value": "4.83",
+      "period": "2026-06-22",
+      "delta": "-$0.23 vs 2026-06-15",
+      "unit": "USD/gal",
+      "source": "local-db (fred)",
+      "ingested": "2026-06-24T12:02:22.844465+00:00",
+      "stale": false
+    },
+    "PET.WCRIMUS2.W": {
+      "label": "US Crude Imports",
+      "value": "5,134",
+      "period": "2026-06-12",
+      "delta": "-754 MBPD vs 2026-06-05",
+      "unit": "MBPD",
+      "source": "local-db (eia)",
+      "ingested": "2026-06-24T14:31:59.284968+00:00",
+      "stale": false
+    },
+    "PET.WCREXUS2.W": {
+      "label": "US Crude Exports",
+      "value": "4,327",
+      "period": "2026-06-12",
+      "delta": "-513 MBPD vs 2026-06-05",
+      "unit": "MBPD",
+      "source": "local-db (eia)",
+      "ingested": "2026-06-24T14:31:34.848740+00:00",
+      "stale": false
+    },
+    "PET.WCESTUS1.W": {
+      "label": "US Crude Stocks",
+      "value": "418",
+      "period": "2026-06-12",
+      "delta": "-8 MMbbl vs 2026-06-05",
+      "unit": "MMbbl",
+      "source": "local-db (eia)",
+      "ingested": "2026-06-24T14:31:12.982998+00:00",
+      "stale": false
+    },
+    "PET.WCRFPUS2.W": {
+      "label": "US Crude Production",
+      "value": "13,806",
+      "period": "2026-06-12",
+      "delta": "+7 MBPD vs 2026-06-05",
+      "unit": "MBPD",
+      "source": "local-db (eia)",
+      "ingested": "2026-06-24T14:31:51.893467+00:00",
+      "stale": false
+    },
+    "PET.WGTSTUS1.W": {
+      "label": "US Gasoline Stocks",
+      "value": "214",
+      "period": "2026-06-12",
+      "delta": "-1 MMbbl vs 2026-06-05",
+      "unit": "MMbbl",
+      "source": "local-db (eia)",
+      "ingested": "2026-06-24T14:32:34.073970+00:00",
+      "stale": false
+    },
+    "PET.WDISTUS1.W": {
+      "label": "US Distillate Stocks",
+      "value": "103",
+      "period": "2026-06-12",
+      "delta": "+1 MMbbl vs 2026-06-05",
+      "unit": "MMbbl",
+      "source": "local-db (eia)",
+      "ingested": "2026-06-24T14:32:26.705376+00:00",
+      "stale": false
+    },
+    "NG.NW2_EPG0_SWO_R48_BCF.W": {
+      "label": "US Nat Gas Storage (L48)",
+      "value": "2,205",
+      "period": "2026-05-01",
+      "delta": "+63 Bcf vs 2026-04-24",
+      "unit": "Bcf",
+      "source": "local-db (eia) — STALE (50d old)",
+      "ingested": "2026-05-07T19:00:02.255916+00:00",
+      "stale": true
+    }
+  },
+  "sections": [
+    {
+      "id": 1,
+      "heading": "STRATEGIC OVERVIEW",
+      "bullets": [
+        "Connects Persian Gulf to Gulf of Oman; ~21 mi wide at narrowest navigable point.",
+        "~20-21 MBPD crude/condensate transits (~20-21% of global petroleum traded daily).",
+        "World's single largest LNG chokepoint; Qatar, UAE, and Kuwait primary exporters.",
+        "Closure or sustained disruption triggers immediate global energy price shock; no viable alternative route for Gulf producers at comparable volume.",
+        "Key importers at risk: China, India, Japan, South Korea, EU states."
+      ]
+    },
+    {
+      "id": 2,
+      "heading": "OPERATIONAL ENVIRONMENT",
+      "bullets": [
+        "IRAN (IRGCN/IRIN): Maintains fast-attack craft, submarine capability (Kilo-class), anti-ship missiles (Noor/Qader), and mine warfare assets. Routinely conducts freedom-of-navigation harassment operations.",
+        "U.S. 5th FLEET (Bahrain): Standing presence of carrier strike group (rotational), destroyers, Coast Guard cutters, and P-8 maritime patrol aircraft. Operates Combined Maritime Forces (CMF) with 40+ partner nations.",
+        "GCC: Saudi, UAE, and Bahraini naval assets patrol southern approaches. Saudi Arabia maintains Abqaiq-Yanbu pipeline bypass (~5 MBPD capacity) as partial contingency.",
+        "Standing Rules: International Recommended Transit Corridor (IRTC) observed; convoy procedures activated in elevated-threat periods."
+      ]
+    },
+    {
+      "id": 3,
+      "heading": "COMMERCIAL SHIPPING & ENERGY MARKET INDICATORS",
+      "bullets": [
+        "Brent Crude: $76.49/bbl  [-$3.97 vs 2026-06-19]  as of 2026-06-22.",
+        "WTI Crude:   $78.94/bbl  [-$1.41 vs 2026-06-18]  as of 2026-06-22.  Brent-WTI spread: $-2.45/bbl (narrow spread — markets pricing limited disruption risk).",
+        "Henry Hub Nat Gas: $2.94/MMBtu  [+$0.17 vs Apr 2026]  as of May 2026.",
+        "US Crude Imports: 5,134 MBPD  [-754 MBPD vs 2026-06-05]  as of 2026-06-12.",
+        "US Crude Stocks:  418 MMbbl  [-8 MMbbl vs 2026-06-05]  as of 2026-06-12.",
+        "War-risk insurance premiums spike 0.1%-0.5%+ of hull value during escalation; can reach 2%+ during acute crises. Lloyd's/JWC Listed Area — 7-day voyage notice required.",
+        "LNG re-routing via Cape of Good Hope adds ~10-14 days; vessels may deactivate AIS transponders in elevated-threat periods."
+      ]
+    },
+    {
+      "id": 4,
+      "heading": "72-HOUR WATCHPOINTS",
+      "bullets": [
+        "IRGCN vessel surge or abnormal positioning near shipping lanes or offshore platforms.",
+        "Any seizure, boarding, or harassment of commercial vessel — escalation ladder trigger.",
+        "Iranian leadership statement signaling closure threat or retaliatory mining.",
+        "U.S./coalition carrier strike group repositioning or force posture change.",
+        "Brent price movement >5% from current $76.49/bbl — signals market pricing of disruption risk.",
+        "UN Security Council session, U.S. Treasury sanctions announcement, or JCPOA-related statement.",
+        "Israeli or GCC military activity with potential Iranian reciprocal response through maritime proxy."
+      ]
+    }
+  ],
+  "copyright": "© 2026 Randy Hinton. All rights reserved. Market data sourced from Thor Storehouse (EIA/FRED observations) with live API fallback. Generated 2026-06-27 16:16 UTC. #FollowTheData"
+}
