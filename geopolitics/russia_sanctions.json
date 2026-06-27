@@ -2,21 +2,28 @@
   "metadata": {
     "report": "Russian Petroleum Sanctions SITREP",
     "source": "Google News RSS",
-    "generated_at": "2026-06-27 00:04 UTC",
+    "generated_at": "2026-06-27 00:18 UTC",
     "days": 30
   },
   "summary": {
     "days": 30,
     "run_date": "2026-06-27",
-    "regime": "Active Loosening",
-    "regime_explanation": "No significant policy movement detected in the 30-day window. 7 articles analyzed, 7 unique events identified.",
+    "regime": "Moderate Tightening",
+    "regime_explanation": "1 official tightening action(s) detected (Shipping (1), UK (1)) vs 2 loosening action(s). Remaining coverage is statements, proposals, or commentary.",
+    "confidence": "MODERATE",
+    "confidence_color": "#d97706",
+    "confidence_reasons": [
+      "7 unique event(s)",
+      "3 official action(s)",
+      "0 Tier 1 source(s)"
+    ],
     "total_articles": 7,
     "unique_events": 7,
-    "tightening_count": 3,
-    "loosening_count": 4,
+    "tightening_count": 6,
+    "loosening_count": 1,
     "uncertain_count": 0,
     "neutral_count": 0,
-    "official_tightening": 0,
+    "official_tightening": 1,
     "official_loosening": 2,
     "type_counts": {
       "Media Report": 2,
@@ -43,7 +50,7 @@
       "published": "2026-06-24",
       "source": "EnergyNow",
       "source_tier": 3,
-      "direction": "LOOSENING",
+      "direction": "TIGHTENING",
       "article_type": "Media Report",
       "bodies": [
         "Other"
@@ -75,7 +82,7 @@
       "published": "2026-06-16",
       "source": "The New Voice of Ukraine",
       "source_tier": 3,
-      "direction": "LOOSENING",
+      "direction": "TIGHTENING",
       "article_type": "Political Statement",
       "bodies": [
         "Other"
@@ -107,7 +114,7 @@
       "published": "2026-06-10",
       "source": "Shipping Telegraph",
       "source_tier": 2,
-      "direction": "LOOSENING",
+      "direction": "TIGHTENING",
       "article_type": "Sanction Waived",
       "bodies": [
         "Shipping"
@@ -157,7 +164,7 @@
       "published": "2026-06-24",
       "source": "EnergyNow",
       "source_tier": 3,
-      "direction": "LOOSENING",
+      "direction": "TIGHTENING",
       "article_type": "Media Report",
       "bodies": [
         "Other"
@@ -183,7 +190,7 @@
       "published": "2026-06-16",
       "source": "The New Voice of Ukraine",
       "source_tier": 3,
-      "direction": "LOOSENING",
+      "direction": "TIGHTENING",
       "article_type": "Political Statement",
       "bodies": [
         "Other"
@@ -209,7 +216,7 @@
       "published": "2026-06-10",
       "source": "Shipping Telegraph",
       "source_tier": 2,
-      "direction": "LOOSENING",
+      "direction": "TIGHTENING",
       "article_type": "Sanction Waived",
       "bodies": [
         "Shipping"
