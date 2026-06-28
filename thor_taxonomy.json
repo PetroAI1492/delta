@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-27T18:48:03Z",
+  "generated": "2026-06-28T00:30:21Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -3353,6 +3353,86 @@
       ],
       "id": "magnificent_7_sec_signal_monitor",
       "path": "https://petroai1492.github.io/delta/finance/mag7_signal.html"
+    },
+    {
+      "title": "Magnificent 7 \u2014 Price Monitor",
+      "file": "finance/mag7_portfolio.html",
+      "description": "Daily price monitor for the Magnificent 7 technology stocks \u2014 reads closing prices from Thor Storehouse with yfinance fallback; shows price, daily change, YTD return, 365-day return, 52-week high/low, and 30-day sparkline for each ticker; no position data, no shares, no cost basis",
+      "json_file": "finance/mag7_portfolio.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/finance/mag7_portfolio.html`",
+      "auto_published": false,
+      "primary_domain": "Finance",
+      "secondary_domains": [
+        "\u2014"
+      ],
+      "entities": [
+        "Apple",
+        "Microsoft",
+        "NVIDIA",
+        "Amazon",
+        "Alphabet",
+        "Meta",
+        "Tesla",
+        "AAPL",
+        "MSFT",
+        "NVDA",
+        "AMZN",
+        "GOOGL",
+        "META",
+        "TSLA",
+        "Magnificent 7"
+      ],
+      "data_sources": [
+        "Thor Storehouse (C:\\Thor\\storehouse.db) \u2014 yfinance daily closing prices (primary); yfinance live download (fallback)"
+      ],
+      "update_frequency": "Daily (after market close)",
+      "key_signals": [
+        "Daily price and change",
+        "YTD return",
+        "365-day return",
+        "52-week high/low",
+        "30-day sparkline",
+        "gainer/loser count",
+        "average YTD across Mag7"
+      ],
+      "intent_phrases": [
+        "Magnificent 7 price",
+        "mag7 price",
+        "Magnificent 7 performance",
+        "AAPL price",
+        "MSFT price",
+        "NVDA price",
+        "AMZN price",
+        "GOOGL price",
+        "META price",
+        "TSLA price",
+        "tech stock prices",
+        "big tech performance",
+        "Magnificent 7 returns",
+        "mag7 YTD",
+        "Apple stock price",
+        "Microsoft stock",
+        "NVIDIA stock",
+        "Amazon stock",
+        "Alphabet stock",
+        "Meta stock",
+        "Tesla stock",
+        {
+          "keyword": "magnificent",
+          "weight": 10
+        },
+        {
+          "keyword": "price",
+          "weight": 10
+        },
+        {
+          "keyword": "monitor",
+          "weight": 10
+        }
+      ],
+      "id": "magnificent_7_price_monitor",
+      "path": "https://petroai1492.github.io/delta/finance/mag7_portfolio.html"
     }
   ],
   "cross_domain_matrix": [
