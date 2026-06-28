@@ -1,6 +1,6 @@
 {
   "project": "giving",
-  "generated": "2026-06-28 23:21 UTC",
+  "generated": "2026-06-28 23:36 UTC",
   "source_db": "C:\\Thor\\storehouse.db",
   "table": "giving_alerts",
   "count": 19,
@@ -25,8 +25,7 @@
       "alert_flags": [],
       "alert_count": 0,
       "data_source": "propublica",
-      "created_at": "2026-04-19 13:20:43",
-      "updated_at": "2026-06-28T23:21:15.698664+00:00"
+      "updated_at": "2026-06-28T23:36:24.556876+00:00"
     },
     {
       "ein": "13-1924236",
@@ -48,8 +47,7 @@
       "alert_flags": [],
       "alert_count": 0,
       "data_source": "propublica",
-      "created_at": "2026-04-19 13:20:43",
-      "updated_at": "2026-06-28T23:21:15.072454+00:00"
+      "updated_at": "2026-06-28T23:36:23.948080+00:00"
     },
     {
       "ein": "13-3727250",
@@ -71,8 +69,7 @@
       "alert_flags": [],
       "alert_count": 0,
       "data_source": "propublica",
-      "created_at": "2026-04-19 13:20:46",
-      "updated_at": "2026-06-28T23:21:17.561948+00:00"
+      "updated_at": "2026-06-28T23:36:26.434638+00:00"
     },
     {
       "ein": "35-1044585",
@@ -94,8 +91,7 @@
       "alert_flags": [],
       "alert_count": 0,
       "data_source": "propublica",
-      "created_at": "2026-04-19 13:05:58",
-      "updated_at": "2026-06-28T23:21:10.087051+00:00"
+      "updated_at": "2026-06-28T23:36:18.921731+00:00"
     },
     {
       "ein": "58-1698648",
@@ -117,8 +113,7 @@
       "alert_flags": [],
       "alert_count": 0,
       "data_source": "propublica",
-      "created_at": "2026-04-19 13:06:01",
-      "updated_at": "2026-06-28T23:21:12.575604+00:00"
+      "updated_at": "2026-06-28T23:36:21.421066+00:00"
     },
     {
       "ein": "75-1835298",
@@ -140,8 +135,7 @@
       "alert_flags": [],
       "alert_count": 0,
       "data_source": "propublica",
-      "created_at": "2026-04-19 14:29:48",
-      "updated_at": "2026-06-28T23:21:18.177845+00:00"
+      "updated_at": "2026-06-28T23:36:27.055163+00:00"
     },
     {
       "ein": "95-1831116",
@@ -163,8 +157,7 @@
       "alert_flags": [],
       "alert_count": 0,
       "data_source": "propublica",
-      "created_at": "2026-04-19 13:05:59",
-      "updated_at": "2026-06-28T23:21:10.702371+00:00"
+      "updated_at": "2026-06-28T23:36:19.560373+00:00"
     },
     {
       "ein": "13-1788491",
@@ -186,8 +179,7 @@
       "alert_flags": [],
       "alert_count": 0,
       "data_source": "propublica",
-      "created_at": "2026-04-19 13:20:42",
-      "updated_at": "2026-06-28T23:21:14.445551+00:00"
+      "updated_at": "2026-06-28T23:36:23.313411+00:00"
     },
     {
       "ein": "13-5644916",
@@ -209,8 +201,7 @@
       "alert_flags": [],
       "alert_count": 0,
       "data_source": "propublica",
-      "created_at": "2026-04-19 13:20:45",
-      "updated_at": "2026-06-28T23:21:16.946727+00:00"
+      "updated_at": "2026-06-28T23:36:25.823809+00:00"
     },
     {
       "ein": "33-0841281",
@@ -232,8 +223,7 @@
       "alert_flags": [],
       "alert_count": 0,
       "data_source": "propublica",
-      "created_at": "2026-04-19 13:23:35",
-      "updated_at": "2026-06-28T23:21:18.802317+00:00"
+      "updated_at": "2026-06-28T23:36:27.686973+00:00"
     },
     {
       "ein": "58-1437002",
@@ -255,8 +245,7 @@
       "alert_flags": [],
       "alert_count": 0,
       "data_source": "propublica",
-      "created_at": "2026-04-19 13:08:34",
-      "updated_at": "2026-06-28T23:21:13.193293+00:00"
+      "updated_at": "2026-06-28T23:36:22.041657+00:00"
     },
     {
       "ein": "86-0947831",
@@ -278,8 +267,7 @@
       "alert_flags": [],
       "alert_count": 0,
       "data_source": "propublica",
-      "created_at": "2026-04-19 13:23:36",
-      "updated_at": "2026-06-28T23:21:19.413637+00:00"
+      "updated_at": "2026-06-28T23:36:28.317554+00:00"
     },
     {
       "ein": "91-1914868",
@@ -301,8 +289,7 @@
       "alert_flags": [],
       "alert_count": 0,
       "data_source": "propublica",
-      "created_at": "2026-04-19 13:06:00",
-      "updated_at": "2026-06-28T23:21:11.336998+00:00"
+      "updated_at": "2026-06-28T23:36:20.186087+00:00"
     },
     {
       "ein": "95-3435919",
@@ -324,8 +311,7 @@
       "alert_flags": [],
       "alert_count": 0,
       "data_source": "propublica",
-      "created_at": "2026-04-19 13:20:44",
-      "updated_at": "2026-06-28T23:21:16.316571+00:00"
+      "updated_at": "2026-06-28T23:36:25.192869+00:00"
     },
     {
       "ein": "13-1635294",
@@ -349,8 +335,7 @@
       ],
       "alert_count": 1,
       "data_source": "propublica",
-      "created_at": "2026-04-19 13:05:57",
-      "updated_at": "2026-06-28T23:21:08.813179+00:00"
+      "updated_at": "2026-06-28T23:36:17.694925+00:00"
     },
     {
       "ein": "36-3258696",
@@ -374,8 +359,7 @@
       ],
       "alert_count": 1,
       "data_source": "propublica",
-      "created_at": "2026-04-19 13:13:54",
-      "updated_at": "2026-06-28T23:21:13.819475+00:00"
+      "updated_at": "2026-06-28T23:36:22.695804+00:00"
     },
     {
       "ein": "53-0196517",
@@ -399,8 +383,7 @@
       ],
       "alert_count": 1,
       "data_source": "propublica",
-      "created_at": "2026-04-19 13:06:01",
-      "updated_at": "2026-06-28T23:21:11.956118+00:00"
+      "updated_at": "2026-06-28T23:36:20.805657+00:00"
     },
     {
       "ein": "53-0196605",
@@ -424,8 +407,7 @@
       ],
       "alert_count": 1,
       "data_source": "propublica",
-      "created_at": "2026-04-19 13:05:57",
-      "updated_at": "2026-06-28T23:21:09.453473+00:00"
+      "updated_at": "2026-06-28T23:36:18.311909+00:00"
     },
     {
       "ein": "36-3673599",
@@ -449,8 +431,7 @@
       ],
       "alert_count": 1,
       "data_source": "propublica",
-      "created_at": "2026-04-19 13:05:56",
-      "updated_at": "2026-06-28T23:21:08.175680+00:00"
+      "updated_at": "2026-06-28T23:36:17.052459+00:00"
     }
   ]
 }
