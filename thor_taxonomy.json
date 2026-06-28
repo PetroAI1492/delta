@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-28T00:30:21Z",
+  "generated": "2026-06-28T23:17:38Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -3433,6 +3433,93 @@
       ],
       "id": "magnificent_7_price_monitor",
       "path": "https://petroai1492.github.io/delta/finance/mag7_portfolio.html"
+    },
+    {
+      "title": "Charity Health Dashboard",
+      "file": "health/giving_dashboard.html",
+      "description": "Charity financial health monitor covering 19 organizations (top US charities + cancer-focused) \u2014 fetches IRS Form 990 data from ProPublica Nonprofit Explorer API, scores each organization across 6 metrics (program efficiency, financial reserves, CEO compensation, revenue trend, board independence, board size), and generates an interactive dashboard with Chart.js visualizations and alert flags",
+      "json_file": "health/giving_alerts.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/health/giving_dashboard.html`",
+      "auto_published": false,
+      "primary_domain": "Health",
+      "secondary_domains": [
+        "\u2014"
+      ],
+      "entities": [
+        "Feeding America",
+        "United Way",
+        "American Red Cross",
+        "St. Jude",
+        "Direct Relief",
+        "Habitat for Humanity",
+        "Goodwill",
+        "Americares",
+        "Samaritan's Purse",
+        "YMCA",
+        "American Cancer Society",
+        "Memorial Sloan Kettering",
+        "Dana-Farber",
+        "City of Hope",
+        "Blood Cancer United",
+        "Breast Cancer Research Foundation",
+        "Susan G. Komen",
+        "Pancreatic Cancer Action Network",
+        "Colorectal Cancer Alliance"
+      ],
+      "data_sources": [
+        "ProPublica Nonprofit Explorer API (projects.propublica.org/nonprofits/api/v2",
+        "free",
+        "no key); IRS Form 990 public filings; Thor Storehouse giving_alerts table"
+      ],
+      "update_frequency": "Manual (recommend annually or when 990 data refreshes); use --no-fetch to rebuild HTML from existing DB",
+      "key_signals": [
+        "Financial health score (0-100)",
+        "program efficiency ratio",
+        "months of financial reserves",
+        "CEO compensation % of budget",
+        "revenue YoY trend",
+        "board independence",
+        "stale filing flags",
+        "data confidence tier (High/Medium/Low)",
+        "alert count per organization"
+      ],
+      "intent_phrases": [
+        "charity health",
+        "nonprofit health",
+        "giving dashboard",
+        "charity score",
+        "nonprofit score",
+        "donor report",
+        "IRS 990",
+        "charity rating",
+        "Feeding America",
+        "Red Cross rating",
+        "St. Jude",
+        "cancer charity",
+        "program efficiency",
+        "nonprofit transparency",
+        "charity financial health",
+        "donate to cancer",
+        "best charities",
+        "nonprofit alert",
+        "giving intelligence",
+        "charity due diligence",
+        {
+          "keyword": "charity",
+          "weight": 10
+        },
+        {
+          "keyword": "health",
+          "weight": 10
+        },
+        {
+          "keyword": "dashboard",
+          "weight": 10
+        }
+      ],
+      "id": "charity_health_dashboard",
+      "path": "https://petroai1492.github.io/delta/health/giving_dashboard.html"
     }
   ],
   "cross_domain_matrix": [
