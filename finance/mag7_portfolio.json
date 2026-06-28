@@ -1,0 +1,88 @@
+{
+  "metadata": {
+    "report": "Magnificent 7 Price Monitor",
+    "version": "3.0.0",
+    "generated_at": "2026-06-28 00:25 UTC",
+    "tickers": [
+      "AAPL",
+      "MSFT",
+      "NVDA",
+      "AMZN",
+      "GOOGL",
+      "META",
+      "TSLA"
+    ]
+  },
+  "prices": {
+    "AAPL": {
+      "name": "Apple",
+      "price": 283.7799987792969,
+      "date": "2026-06-26",
+      "source": "storehouse",
+      "day_chg": 8.6300048828125,
+      "day_pct": 3.1364728599845946,
+      "ytd_pct": 4.906538682137205,
+      "ret_365d": 41.68778901814473
+    },
+    "MSFT": {
+      "name": "Microsoft",
+      "price": 372.9700012207031,
+      "date": "2026-06-26",
+      "source": "storehouse",
+      "day_chg": 20.1400146484375,
+      "day_pct": 5.708135763656948,
+      "ytd_pct": -20.786792571453386,
+      "ret_365d": -24.194636148884285
+    },
+    "NVDA": {
+      "name": "NVIDIA",
+      "price": 192.52999877929688,
+      "date": "2026-06-26",
+      "source": "storehouse",
+      "day_chg": -3.2100067138671875,
+      "day_pct": -1.6399339040476795,
+      "ytd_pct": 2.0729776739635497,
+      "ret_365d": 22.21009471305925
+    },
+    "AMZN": {
+      "name": "Amazon",
+      "price": 232.69000244140625,
+      "date": "2026-06-26",
+      "source": "storehouse",
+      "day_chg": 5.6800079345703125,
+      "day_pct": 2.5020959746330775,
+      "ytd_pct": 2.7328929101131347,
+      "ret_365d": 4.205104908785858
+    },
+    "GOOGL": {
+      "name": "Alphabet",
+      "price": 337.3900146484375,
+      "date": "2026-06-26",
+      "source": "storehouse",
+      "day_chg": -6.319976806640625,
+      "day_pct": -1.8387527170465239,
+      "ytd_pct": 7.196309736904697,
+      "ret_365d": 89.52139470626967
+    },
+    "META": {
+      "name": "Meta",
+      "price": 550.25,
+      "date": "2026-06-26",
+      "source": "storehouse",
+      "day_chg": 7.3800048828125,
+      "day_pct": 1.3594423985837352,
+      "ytd_pct": -15.327079858828627,
+      "ret_365d": -24.82010161920426
+    },
+    "TSLA": {
+      "name": "Tesla",
+      "price": 379.7099914550781,
+      "date": "2026-06-26",
+      "source": "storehouse",
+      "day_chg": 4.589996337890625,
+      "day_pct": 1.2236074849746972,
+      "ytd_pct": -13.322075214783641,
+      "ret_365d": 17.32842620466306
+    }
+  }
+}
