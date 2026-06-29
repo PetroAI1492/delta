@@ -2,8 +2,8 @@
   "metadata": {
     "report": "Financial-Cyber Stability Signal",
     "version": "1.0.0",
-    "source": "OSINT only \u2014 SEC EDGAR, NVD, CISA, Statuspage, Google News",
-    "generated_at": "2026-06-29 18:37 UTC",
+    "source": "Public Data Only \u2014 SEC EDGAR, NVD, CISA, Statuspage, Google News",
+    "generated_at": "2026-06-29 18:46 UTC",
     "days": 30
   },
   "signal": "WATCH",
