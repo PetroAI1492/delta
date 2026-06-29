@@ -1,0 +1,228 @@
+{
+  "metadata": {
+    "report": "Financial-Cyber Stability Signal",
+    "version": "1.0.0",
+    "source": "OSINT only \u2014 SEC EDGAR, NVD, CISA, Statuspage, Google News",
+    "generated_at": "2026-06-29 17:58 UTC",
+    "days": 30
+  },
+  "signal": "DISRUPTED",
+  "signal_score": 60,
+  "sec_filings": [
+    {
+      "entity": "8X8 INC /DE/  (EGHT)  (CIK 0001023731)",
+      "file_date": "2026-06-23",
+      "form": "8-K",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=8X8%20INC%20/DE/%20%20%28EGHT%29%20%20%28CIK%200001023731%29&type=8-K&dateb=&owner=include&count=10"
+    },
+    {
+      "entity": "iRhythm Holdings, Inc.  (IRTC)  (CIK 0001388658)",
+      "file_date": "2026-06-15",
+      "form": "8-K",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=iRhythm%20Holdings%2C%20Inc.%20%20%28IRTC%29%20%20%28CIK%200001388658%29&type=8-K&dateb=&owner=include&count=10"
+    },
+    {
+      "entity": "River Financial Corp  (RVRF)  (CIK 0001641601)",
+      "file_date": "2026-06-25",
+      "form": "8-K",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=River%20Financial%20Corp%20%20%28RVRF%29%20%20%28CIK%200001641601%29&type=8-K&dateb=&owner=include&count=10"
+    }
+  ],
+  "cves": [
+    {
+      "cve_id": "CVE-2026-53861",
+      "vendor": "swift",
+      "published": "2026-06-16",
+      "cvss": 6.6,
+      "severity": "MEDIUM",
+      "summary": "OpenClaw before 2026.5.6 contains an allowlist bypass vulnerability in the macOS Swift exec feature that misses combined POSIX inline-command flags. Attackers can execute shell content outside the int"
+    },
+    {
+      "cve_id": "CVE-2026-49319",
+      "vendor": "swift",
+      "published": "2026-06-25",
+      "cvss": 6.5,
+      "severity": "MEDIUM",
+      "summary": "Remote Keyless Entry System (RKES), using the 433 MHz key fob bearing FCC ID CWTR53R0 manufactured by ALPS ALPINE CO., LTD., is vulnerable to a roll-back attack against its rolling-code authentication"
+    },
+    {
+      "cve_id": "CVE-2026-28898",
+      "vendor": "swift",
+      "published": "2026-06-25",
+      "cvss": 5.3,
+      "severity": "MEDIUM",
+      "summary": "swift-nio-http2's HTTP/2-to-HTTP/1.1 codec did not validate pseudo-header values for control characters before placing them into the translated HTTP/1.1 message. swift-nio-http2 1.44.1 adds validation"
+    },
+    {
+      "cve_id": "CVE-2026-10801",
+      "vendor": "swift",
+      "published": "2026-06-04",
+      "cvss": 3.6,
+      "severity": "LOW",
+      "summary": "A security vulnerability has been detected in modelscope ms-swift up to 4.2.0. This affects the function Template._save_pil_image of the file swift/template/base.py of the component PIL Image Cache Ke"
+    },
+    {
+      "cve_id": "CVE-2026-50221",
+      "vendor": "swift",
+      "published": "2026-06-23",
+      "cvss": 0.0,
+      "severity": "LOW",
+      "summary": "In OpenStack Swift before 2.37.2, proxy-server does not strip internal update headers (X-Container-Host, X-Container-Device, X-Delete-At-Host, X-Delete-At-Device) from client requests before forwardin"
+    }
+  ],
+  "kev": [],
+  "exchanges": [
+    {
+      "name": "Coinbase",
+      "status": "UNKNOWN",
+      "indicator": "none",
+      "description": "Could not reach status page",
+      "color": "#888"
+    },
+    {
+      "name": "Binance",
+      "status": "UNKNOWN",
+      "indicator": "none",
+      "description": "Could not reach status page",
+      "color": "#888"
+    },
+    {
+      "name": "Kraken",
+      "status": "DEGRADED",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "color": "#d97706",
+      "updated": "2026-06-29"
+    },
+    {
+      "name": "Coinbase Exchange",
+      "status": "UNKNOWN",
+      "indicator": "none",
+      "description": "Could not reach status page",
+      "color": "#888"
+    }
+  ],
+  "news": [
+    {
+      "title": "CBL investigates alleged data leak after cyberattack - The Libya Observer",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOYVItd09qWnozSXZEdUx2ODVvWER5bzY1RUJNYndPSWIwMmdIeC1UUDMtSjZROVlIY3NZdy1GRkZ1TGZmekR2N2dfSXBGSElVOVlmOW9tcWMzQkp2Z2ZTOHFnaDFFVVRwWkxpZHFvMkNsVGRFRzJyanE4STduNTN2MDJoSjJxVGJMc0E?oc=5",
+      "source": "Bank Cyber",
+      "date": "2026-06-29"
+    },
+    {
+      "title": "Uruguay's Central Bank Launches Enhanced Cybersecurity Regulations \u2014 What It Means for Financial Entities - Coinfomania",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNMGowVEVldFVURXZNd0lCd2pXaWF1c1pvZ2c2Yk5UelNGRnBib1YzcU5Zdkx3WUZ1OXJqRlIyaHBnR1VSamhkWHF5dHlId3p5Vl9nUGZmd2lta0k3a19vMmJMb0RtdHo3eDVmSFVxN2VUbFhrWmFiVC1rSi11VGJTY2k4cVRFWVRzVzlldXZLeHcxWUdlMnhNY3JMZFRMdWdpbGZsUWcyTGVLMkNGSl82dGlkRnVybUtDWlpGV2NDM29oV3UydGc?oc=5",
+      "source": "Bank Cyber",
+      "date": "2026-06-29"
+    },
+    {
+      "title": "Taylor Swift ticket fraudster sentenced - Cheshire Constabulary",
+      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQNVBtRHlEcGQ0Z2ZWTzdlZUpFUVphdmQ2TnBWNjZ1TFVnZHdxampETjRBWTNGNmNWRW5WZW5UQjNtalE2aV94ZC15R3k5Qm9sRjJEc2plX1RKSXU5ck1MSnZiUUNTQldibHhrVGNoTjlESDVkZTRFSlFBdFhOcE5fck1LTE9QN1VFR0VZMFlJQ2c2LUNWQkQwLU9sOEFZSFhGdmhYR1V5a1Fwdw?oc=5",
+      "source": "SWIFT/Fraud",
+      "date": "2026-06-25"
+    },
+    {
+      "title": "CBL says cybersecurity incident under full control, accounts and financial assets safe - The Libya Observer",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNSHVBX01wQ0xvRUQ5b0RGWi1jb2YzYXdGMW5Gd1RITE1vbjJXN1EyaWFBd28yc0NaSDJrOEZQX1ZlY0prOExOVmhWQ0tKUFhjT0s4WFBQWS1kZDNQeFltR1FkSGlJeUJDQ2dodVhvLVk2cUYzeXhRVEt2NkNUUzl6TmlrX3RIZGp6WnRsR0xZQXVDSVdjT296SWh2bDBaQTkwRU9CaUVyaGhFdFd1Nk8yMHZLMWJjQUo2Y2c?oc=5",
+      "source": "Bank Cyber",
+      "date": "2026-06-23"
+    },
+    {
+      "title": "Qilin Strikes Central Bank of Libya in Ransomware Assault - DeXpose",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQbllLanNrdlc4VTRUaEpnYjVBNFpFX0p0U3ZqQkVreFZiWlRDc3B6RjA4TkJyNlMxQTlmRkY1OG45bVl6cnhxMmFEdGc1RG51cVRBdmtzN2lLZjJSc014anU4REd5RERVS3YtcWhwbV93b0tlYktJRGNsaUJXcGMxS2tCUm56aTNt?oc=5",
+      "source": "Ransomware/Finance",
+      "date": "2026-06-23"
+    },
+    {
+      "title": "NatWest\u2019s James Hodgson on Security for Open Banking - Cyber Magazine",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPSWh0cmJOckt6WXVONDdSSXBRaWFnVWF3bGc2SkxQY0Z6aWZmTHU2UUxGWTR4bzNFRmh6OTI5aEIzallnWW9RZ0VRdkEwMlh5eUIyVTItaFgzbjhqclgzOFE3VzJoNkVyRnZfa1cwa0pmcU05Qmd4X19qMy1oMGhUbVNORDZ1dnpHMlE?oc=5",
+      "source": "Bank Cyber",
+      "date": "2026-06-21"
+    },
+    {
+      "title": "The People's Bank of China Data and Cyber Security Measures: Practical Compliance Guide For Financial Institutions - Cli",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNcXFTX1lUM211Q0JBX0tsMURCM2lETGVydEFWTFowdXZTSXlGNHZxTC13R3k1X2huVkdJUGJuWXVvek1HaVpzQjJmM212UVdsLWRHdmxWa1hFYTNsSEVFaGhmNEl0ZGhObDZGWXFzREhVa2VOVXduX3dzS1RDOGNjOXNELUROMFhVV0RxWFdEbnNSN0ZMdHBEdkpNSDZReVhXWWQzLXZrVXB6UGlkZzNZQkpZMjlpTmtnY2c?oc=5",
+      "source": "Bank Cyber",
+      "date": "2026-06-20"
+    },
+    {
+      "title": "RBA warns financial industry to prepare for 'more shock-prone future' - Australian Broadcasting Corporation",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOMlZ1Q1ktN1VIaFJyLV8tMWYzUldjNFJ5cjRKOTFqLW9Rc0wyMWh1Wmd1SXNqSmFvdl9pNHpJaGZyYXpKT2ZIWkdrVWRONE95Zm9uQzY2bHhDamthTFBaUWJlRlczQ0UwRklsTmxqdEV1MWgtc0hwZmNCSXBqY0JXdVRpRVNUSmVxVWh2UENmbmJYcjlrcDIwRGxMWHFWdVR4WFlMTjE5R3FqT0lBd0FyZk5n?oc=5",
+      "source": "Bank Cyber",
+      "date": "2026-06-17"
+    },
+    {
+      "title": "Why Was DoorDash Down Today? DoorDash Suffers Major Outage Disrupting App Access for Customers and Drivers - Internation",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPTFZkSUhZS3E3QThiaVpueS00REVnYzdXS3hxelNCUlhhRHpzVGE1WWFPbTIya01oRUszT21KY1BoaWswdTB6QmxPR2l3QW15VU82bmIyTlM0am9JMFljYVcyX2J6UTNqSklaS21sNHNIS3pJSzc4Qm45RWFTaHVzaUkzTE1kdw?oc=5",
+      "source": "Payment Outage",
+      "date": "2026-06-17"
+    },
+    {
+      "title": "Power outage could lead to essential service disruption, experts warn - The Jerusalem Post",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1MVXc2bUdOdzlHS2Nwb1FCWWxLOVVrQTdnbHhjTTJrcV9rRVZ3MlRYaTl1T2hkbm1pMUdYMENwR29uMU5ESzZiY0dNeUhzN19OU0FhZTNKRFR5b3dx?oc=5",
+      "source": "Payment Outage",
+      "date": "2026-06-16"
+    },
+    {
+      "title": "Agentic AI surges in financial sector even as many firms fail to manage security risks - Cybersecurity Dive",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNY1lla0FtNWhNTnZKU3E2a3Bxb2FTRnU5T1UyRXV4Y3dMNHdXLWpySklqa2RMakRrWnlRamQ2RkhXdDh4YThSYS1FTGMxaFphOWJqYXhCb3FmTWNDaGRkTXhfNTVNcDd3a2kyUFVaclV4QVlnM1d5UlBUZ0FYclI0QmpJODNLM0ZZbW5Db21vdXlxVW1jcVkyd1VpbE5IRF9D?oc=5",
+      "source": "Bank Cyber",
+      "date": "2026-06-12"
+    },
+    {
+      "title": "CBL: Cyberattack contained, investigations ongoing with no signs of impact on customer accounts - The Libya Observer",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPQ0Vsa2ZNUXpFbzI0T3gzVXFWb21uVjBQTGdKQ1BKdFY3ekxSSzc2dXplc1Vod0prdUxqa2lHekdHYzlncEd3NGt5SDJ3NHlOaXYxM3g2X1pRTnowbzlDYWJIWVlHVE5CTk01Zm5YS0FVZS1Hbzg2c0ZYd2tMcHRtdlozcGdyNTFsbjRHMDVsZkNPRXpYaG9HenM2SzdFZTAwUkhzRDhmZlI1SWF0NEtQZlN3?oc=5",
+      "source": "Bank Cyber",
+      "date": "2026-06-09"
+    },
+    {
+      "title": "Geopolitical Risk and Financial Stability | Bulletin \u2013 June 2026 - Reserve Bank of Australia",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQSW9hdmhLczl3Um1CQzZnejRPSnZ6QU9XN1F3aTk1RGl1YnhITElvSFZyWTJSY252bDA4T3liT2RFYThmSmRGNmhHdTZwQmRlY3lfRkhGVW00RGdQczFraUNoLTcwa2pVUjN1VUlkTk4yeTU4S0lvZXVnRFVvYVBrdGxiLTB1bFNKamdudm51emtaNEMxYTFzOXMzaHhXc2hLbFE?oc=5",
+      "source": "Bank Cyber",
+      "date": "2026-06-09"
+    },
+    {
+      "title": "A bank breaks its silence on its shadow-AI breach - American Banker",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOR3BlSUsyTVFEQmtPdjhEU3oyYkdmTEVnMG1qbGM3Q1pIcEhBY2hDQlpESnlyRFp4TFJ6U2RFTG9LYUlkS1hPTjc1ZDg1LVh0MXNIUDNVSG1hcXVfSldYTVBrTkdweEhnaExsbTJFN0hkbTlfNENwRkgyelY2bTFBdWJWa1o5OE8wSUlFNFdR?oc=5",
+      "source": "Bank Cyber",
+      "date": "2026-06-08"
+    },
+    {
+      "title": "AI cyber security risk \u2018top of list\u2019 for banking threats, says UK regulator - Financial Times",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQVmhVVVM1SXZ2dG5kZkxDWk84VjRiZThhODBsN0JxQmJmdllzSVRBZGE3VHdYRVpJbUhFQXZ3MEJwTHJhR3VUZU5hZ29falpaOFRvVHFNWUVZb3A0UkI3ZmI2MmJqQmlWdXFfR0ZvQ0wwbGxPZDhGcy1rWXlrYTFUT2EyR0U?oc=5",
+      "source": "Bank Cyber",
+      "date": "2026-06-03"
+    },
+    {
+      "title": "ECB Urges Banks to Strengthen Defenses Against AI-Driven Cyber Risks - Global Banking & Finance Review",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNcHpnRWhoVHFJQTQ3YUw5T0JGbFpIVHZfeGJqQmc3c0xfeXVtTDJpVVhEMEp4RUJyb0NRZ0Q3UWVITk54NzRtV1lLVGl1UGl1MDFoU0dOUnBfaTJUWXdzSFd5clM2SF9mMXh2VV9uRmcxTlBlSDJLQVlFTGZNQ0hmU3M0eDNaUkJPcW5FT3FIRE9GQQ?oc=5",
+      "source": "Bank Cyber",
+      "date": "2026-06-03"
+    },
+    {
+      "title": "Black Kite\u2019s 2026 Financial Services Report Warns of a Growing Cybersecurity Crisis Across Banking and Investment Firms ",
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNMDhhaUhjWHJNLUhnbUJSdkxNMm51N0VPUjR6N1ZuYlhtTjl6ekQ0UTg4Z2pBQ1NpdDJYNmZjLWZIR01BZXR2aE9wWGNpWU1fRVVwdTBXU0ZhN0xhZUV1TUpjdzY1Sm5wcko1aWZEbHdDUmhCck5YaTFnbm9NZ21RWVVfUjFBYnl5UHhKVHVvU1hCcVFrUldXM1JEcmtVRkJDN2hHNjFCSUlha2laTDlfeGR0bXVUUnF4MHRfRVZoeXQxZjY2bFBub0g5eS12U2taR1VFNjFIWQ?oc=5",
+      "source": "Bank Cyber",
+      "date": "2026-06-03"
+    },
+    {
+      "title": "Black Kite's 2026 State of Financial Services Report Reveals Ransomware Surge and Vulnerability Deluge Driving Two-Front",
+      "link": "https://news.google.com/rss/articles/CBMilwJBVV95cUxPWXJ5cUlFU2pSZ2s5UDZpUkFlbXBTS2RDMkt4aktwVXJteGZSQXBaSUdzQWNGRXUzM0ZkV3dqSlJiX3dFZ3ZkeGk1WnU4ZUNnS3pyNGRZNHhNbF91eFF0S2RLR0ItX1VwTkNQMXhiQlQ3LVZoQlVNRjNpQ0F6TjZmNXVQSnJUX3hHSjNsR0hLcU1OTXJRbUdkbkw1ZjRwMGlwMmRxMDUwV2Z5SkZWRW5fZzlKYmR2VUd5YUdPbnhTX2pPaExPN09XNVdpeWtjOE5WaVVjS2pteHRyNDBzTFFtcFFVTF8xUmZlYk9hb1pZS05mazR1aDJHbWNtOXhfQmgybVlDa01IUm0xX21CcHpyZy0zUi1qcnc?oc=5",
+      "source": "Ransomware/Finance",
+      "date": "2026-06-03"
+    },
+    {
+      "title": "UK banks blocked from cyber AI tool Mythos get offer from rival OpenAI - BBC",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE0xOVJHTTdaTHp2TS0wbk8yaDhyeDd6ZUtwdFVpRkM5V2QyWG5wU0ZzbFNCMXQwTkdQUC1Kd242Zk5LMjdUNEdMemd0a0xHZVdELU5yLXFhUzNUUUF1?oc=5",
+      "source": "Bank Cyber",
+      "date": "2026-06-01"
+    },
+    {
+      "title": "Alert relative, swift police action foil cyber fraud targeting 72-year-old - The Times of India",
+      "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQYktKNURDV0tWU29ma2tZMEwzUFItczNYdHpaSzdid0pfbDlMWXNkd0xUNHFidG1KYThYUHk3bFo2ZnQ1bXdIRHlEUkt4QXVxUXFXM0FWQkNqWW9TaVp4SXktR1gxd0dUcm1nOEhhblJFdzBYa3N4Q2pSSzhTSFdvZlBOZUtRQmRlRi1SOTk4X1NoOWQ4WVRzTVhYM0FtUkRpZnhVR3ZkbUZDZWVwY2VRS0xTZXEzLVg5RkJVa3hUQWQwRUNRR3ZZb1FWZ1dQbkIxaWhEc3kwNWJXR2xzbFhB0gHkAUFVX3lxTE1xdzM5Nm52X19VcVJQalBtZ1d5REJuR2xZMTJQNkFpNmtrODBoQUFVOGtOVlp4Sm50anhsSE8wSDFCRFY4VUhEU1BVUlNYWHBpS0lPR2dtRGd1cGh4SXBHdC05a0UyUEZESnlxd3ZId1Q1bWtSY19IWXFfd1pJc1lWZVdGWVlDam5SdmFsb1NQX2REMExwaXBGdjlZT2VvU3U4c2dWaE9wYkZ6MFNZczZROTdidi1VUWdadlN6dktQZmJ2aGM3MVpQNWpNMEg5b2RNUklfeWJsR1lYMEFLNkZKUHhHMQ?oc=5",
+      "source": "SWIFT/Fraud",
+      "date": "2026-05-31"
+    }
+  ],
+  "advisories": []
+}
