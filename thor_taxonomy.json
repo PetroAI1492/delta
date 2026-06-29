@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-29T22:22:37Z",
+  "generated": "2026-06-29T22:35:25Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -4019,7 +4019,7 @@
     {
       "title": "Global Internet Stability Signal",
       "file": "cybersecurity/internet_outage.html",
-      "description": "Real-time dashboard of global internet stability. Monitors 14 major internet infrastructure providers via official Statuspage and RSS APIs, enriched with Cloudflare Radar data \u2014 confirmed outages, BGP hijacks, BGP route leaks, and traffic anomaly annotations. Produces an overall stability signal (HEALTHY/WATCH/DEGRADED/DISRUPTED/CRITICAL) with category-level status cards and per-provider detail.",
+      "description": "Real-time dashboard of global internet stability. Produces two separate signals \u2014 Internet Backbone (Cloudflare Radar: BGP hijacks, route leaks, confirmed outages) and SaaS Providers (14 official Statuspage/RSS feeds). Backbone HEALTHY means routing/DNS is clean even when SaaS providers are degraded. Categories: Cloud, CDN/Network, Identity, Collaboration, Security, Comms.",
       "json_file": "cybersecurity/internet_outage.json",
       "published": true,
       "url": "`petroai1492.github.io/delta/cybersecurity/internet_outage.html`",
