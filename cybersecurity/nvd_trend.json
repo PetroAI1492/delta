@@ -1,0 +1,188 @@
+{
+  "metadata": {
+    "report": "NVD Vulnerability Trend Signal",
+    "version": "1.0.0",
+    "source": "NVD CVE API + CISA KEV",
+    "generated_at": "2026-06-29 20:46 UTC"
+  },
+  "velocity": {
+    "signal": "NORMAL",
+    "current_count": 2126,
+    "prior_count": 2040,
+    "baseline_avg": 1782.0,
+    "vel_pct": 19.3,
+    "wow_pct": 4.2
+  },
+  "severity": {
+    "MEDIUM": 632,
+    "LOW": 64,
+    "NONE": 478,
+    "HIGH": 780,
+    "CRITICAL": 172
+  },
+  "top_vendors": [
+    [
+      "wolfssl",
+      32
+    ],
+    [
+      "n8n",
+      25
+    ],
+    [
+      "jenkins",
+      23
+    ],
+    [
+      "google",
+      23
+    ],
+    [
+      "openwebui",
+      15
+    ],
+    [
+      "cacti",
+      15
+    ],
+    [
+      "envoyproxy",
+      14
+    ],
+    [
+      "ibm",
+      13
+    ],
+    [
+      "angularjs",
+      13
+    ],
+    [
+      "gitlab",
+      13
+    ]
+  ],
+  "top_cwes": [
+    [
+      "CWE-79",
+      170
+    ],
+    [
+      "CWE-862",
+      117
+    ],
+    [
+      "CWE-22",
+      88
+    ],
+    [
+      "CWE-89",
+      86
+    ],
+    [
+      "CWE-639",
+      54
+    ],
+    [
+      "CWE-918",
+      48
+    ],
+    [
+      "CWE-78",
+      48
+    ],
+    [
+      "CWE-74",
+      40
+    ],
+    [
+      "CWE-416",
+      37
+    ],
+    [
+      "CWE-200",
+      34
+    ]
+  ],
+  "time_to_kev": [],
+  "weekly_history": [
+    {
+      "label": "Apr 06",
+      "count": 1563,
+      "start": "2026-03-30",
+      "end": "2026-04-06"
+    },
+    {
+      "label": "Apr 13",
+      "count": 1835,
+      "start": "2026-04-06",
+      "end": "2026-04-13"
+    },
+    {
+      "label": "Apr 20",
+      "count": 1344,
+      "start": "2026-04-13",
+      "end": "2026-04-20"
+    },
+    {
+      "label": "Apr 27",
+      "count": 1648,
+      "start": "2026-04-20",
+      "end": "2026-04-27"
+    },
+    {
+      "label": "May 04",
+      "count": 1304,
+      "start": "2026-04-27",
+      "end": "2026-05-04"
+    },
+    {
+      "label": "May 11",
+      "count": 2029,
+      "start": "2026-05-04",
+      "end": "2026-05-11"
+    },
+    {
+      "label": "May 18",
+      "count": 1992,
+      "start": "2026-05-11",
+      "end": "2026-05-18"
+    },
+    {
+      "label": "May 25",
+      "count": 1149,
+      "start": "2026-05-18",
+      "end": "2026-05-25"
+    },
+    {
+      "label": "Jun 01",
+      "count": 2458,
+      "start": "2026-05-25",
+      "end": "2026-06-01"
+    },
+    {
+      "label": "Jun 08",
+      "count": 1840,
+      "start": "2026-06-01",
+      "end": "2026-06-08"
+    },
+    {
+      "label": "Jun 15",
+      "count": 2184,
+      "start": "2026-06-08",
+      "end": "2026-06-15"
+    },
+    {
+      "label": "Jun 22",
+      "count": 2040,
+      "start": "2026-06-15",
+      "end": "2026-06-22"
+    },
+    {
+      "label": "Jun 29",
+      "count": 2126,
+      "start": "2026-06-22",
+      "end": "2026-06-29"
+    }
+  ]
+}

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NVD Vulnerability Trend Signal</title>
+<style>
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  :root { --red:#e8111a; --rule:#e5e7eb; }
+  body { font-family:Georgia,serif; background:#fff; color:#1a1a1a; }
+  .masthead { border-top:4px solid var(--red); border-bottom:1px solid var(--rule);
+               padding:.6rem 2rem .5rem; display:flex; align-items:baseline; gap:1rem; }
+  .brand { font-family:Arial,sans-serif; font-size:1.1rem; font-weight:bold;
+            color:var(--red); text-transform:uppercase; }
+  .section-label { font-family:Arial,sans-serif; font-size:.72rem; color:#666;
+                    text-transform:uppercase; letter-spacing:.08em;
+                    border-left:1px solid var(--rule); padding-left:1rem; }
+  main { max-width:1100px; margin:0 auto; padding:1.5rem 2rem 3rem; }
+  .report-title { font-size:1.6rem; font-weight:bold; letter-spacing:-.5px;
+                   border-bottom:2px solid #1a1a1a; padding-bottom:.5rem;
+                   margin-bottom:.4rem; }
+  .report-sub { font-family:Arial,sans-serif; font-size:.8rem; color:#666;
+                 margin-bottom:1.25rem; }
+  .vel-card { display:inline-block; border:2px solid #16a34a;
+               padding:.9rem 1.5rem; margin-bottom:1.25rem;
+               background:#16a34a08; min-width:220px; }
+  .scorecard-row { display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:1.25rem; }
+  .three-col { display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.25rem;
+                margin-bottom:1.5rem; }
+  .panel { border:1px solid var(--rule); padding:.9rem 1.1rem; }
+  .section-head { font-family:Arial,sans-serif; font-size:.72rem; font-weight:bold;
+                   text-transform:uppercase; letter-spacing:.08em; color:#e8111a;
+                   border-bottom:2px solid #e8111a; padding-bottom:.3rem;
+                   margin:1.5rem 0 .75rem; }
+  table { width:100%; border-collapse:collapse; font-size:12px; }
+  th { text-align:left; font-family:Arial,sans-serif; font-size:.65rem;
+        text-transform:uppercase; letter-spacing:.06em; color:#888;
+        padding:.4rem .6rem .4rem 0; border-bottom:2px solid #e5e7eb; }
+  td { vertical-align:middle; }
+  footer { border-top:1px solid var(--rule); padding:.75rem 2rem;
+            font-family:Arial,sans-serif; font-size:.68rem;
+            color:#666; text-align:center; margin-top:2rem; }
+</style>
+</head>
+<body>
+<div class="masthead">
+  <span class="brand">THOR SIGNAL</span>
+  <span class="section-label">NVD Vulnerability Trend Signal</span>
+</div>
+<main>
+  <div class="report-title">NVD Vulnerability Trend Signal</div>
+  <div class="report-sub">
+    NVD CVE API &nbsp;·&nbsp; CISA KEV &nbsp;·&nbsp;
+    2126 CVEs this week &nbsp;·&nbsp;
+    12-week baseline: 1782/week &nbsp;·&nbsp;
+    Generated 2026-06-29 20:46 UTC
+  </div>
+
+  <div class="vel-card">
+    <div style="font-family:Arial,sans-serif;font-size:.65rem;text-transform:uppercase;
+                letter-spacing:.08em;color:#16a34a;font-weight:bold;
+                margin-bottom:.25rem;">CVE Velocity Signal</div>
+    <div style="font-family:Georgia,serif;font-size:2rem;font-weight:bold;
+                color:#16a34a;line-height:1.1;">NORMAL</div>
+    <div style="font-family:Arial,sans-serif;font-size:.75rem;color:#555;
+                margin-top:.3rem;">
+      2126 CVEs this week &nbsp;·&nbsp;
+      +19.3% vs 12-week baseline (1782/wk)
+    </div>
+  </div>
+
+  <div class="scorecard-row"><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:110px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">CVEs This Week</div><div style="font-size:1.3rem;font-weight:bold;color:#16a34a;font-family:Georgia,serif;">2126</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">last 7 days</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:110px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">vs Prior Week</div><div style="font-size:1.3rem;font-weight:bold;color:#dc2626;font-family:Georgia,serif;">▲ 86 (+4.2%)</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:110px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">12-Wk Baseline</div><div style="font-size:1.3rem;font-weight:bold;color:#888;font-family:Georgia,serif;">1782</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">weekly avg</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:110px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">vs Baseline</div><div style="font-size:1.3rem;font-weight:bold;color:#16a34a;font-family:Georgia,serif;">+19.3%</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:110px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Crit+High %</div><div style="font-size:1.3rem;font-weight:bold;color:#dc2626;font-family:Georgia,serif;">44.8%</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">prior: 61.0%</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:110px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Time-to-KEV</div><div style="font-size:1.3rem;font-weight:bold;color:#16a34a;font-family:Georgia,serif;">0</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">this week's CVEs in KEV</div></div></div>
+  
+<div style="margin-bottom:1.5rem;">
+  <div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;
+              text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;">
+    12-Week CVE Velocity — weekly publication count (red = current week)
+  </div>
+  <svg width="516" height="100" viewBox="0 0 516 100"
+       xmlns="http://www.w3.org/2000/svg" style="overflow:visible;">
+    <rect x="0" y="30" width="36" height="50" fill="#93c5fd" rx="2"/><rect x="40" y="21" width="36" height="59" fill="#93c5fd" rx="2"/><rect x="80" y="37" width="36" height="43" fill="#93c5fd" rx="2"/><rect x="120" y="27" width="36" height="53" fill="#93c5fd" rx="2"/><rect x="160" y="38" width="36" height="42" fill="#93c5fd" rx="2"/><rect x="200" y="14" width="36" height="66" fill="#93c5fd" rx="2"/><rect x="240" y="16" width="36" height="64" fill="#93c5fd" rx="2"/><rect x="280" y="43" width="36" height="37" fill="#93c5fd" rx="2"/><rect x="320" y="0" width="36" height="80" fill="#93c5fd" rx="2"/><rect x="360" y="21" width="36" height="59" fill="#93c5fd" rx="2"/><rect x="400" y="9" width="36" height="71" fill="#93c5fd" rx="2"/><rect x="440" y="14" width="36" height="66" fill="#93c5fd" rx="2"/><rect x="480" y="11" width="36" height="69" fill="#e8111a" rx="2"/><text x="498" y="7" text-anchor="middle" font-family="Arial" font-size="9" fill="#e8111a" font-weight="bold">2126</text>
+    <text x="18" y="94" text-anchor="middle" font-family="Arial" font-size="8" fill="#aaa">Apr 06</text><text x="138" y="94" text-anchor="middle" font-family="Arial" font-size="8" fill="#aaa">Apr 27</text><text x="258" y="94" text-anchor="middle" font-family="Arial" font-size="8" fill="#aaa">May 18</text><text x="378" y="94" text-anchor="middle" font-family="Arial" font-size="8" fill="#aaa">Jun 08</text><text x="498" y="94" text-anchor="middle" font-family="Arial" font-size="8" fill="#aaa">Jun 29</text>
+  </svg>
+</div>
+
+  <div class="three-col">
+    <div class="panel">
+      <div class="section-head" style="margin-top:0;">Severity Distribution</div>
+      <table>
+        <thead><tr>
+          <th>Severity</th><th>This Wk</th><th>%</th>
+          <th>WoW</th><th>Prior Wk</th>
+        </tr></thead>
+        <tbody>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;">
+    <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;
+                 font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#7f1d1d;">CRITICAL</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;color:#7f1d1d;">172</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             color:#888;">8.1%</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#16a34a;font-weight:bold;">▼ 194</span></td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             color:#888;">366</td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;">
+    <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;
+                 font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#dc2626;">HIGH</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;color:#dc2626;">780</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             color:#888;">36.7%</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#16a34a;font-weight:bold;">▼ 99</span></td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             color:#888;">879</td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;">
+    <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;
+                 font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#d97706;">MEDIUM</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;color:#d97706;">632</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             color:#888;">29.7%</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#dc2626;font-weight:bold;">▲ 70</span></td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             color:#888;">562</td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;">
+    <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;
+                 font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#2563eb;">LOW</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;color:#2563eb;">64</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             color:#888;">3.0%</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#dc2626;font-weight:bold;">▲ 16</span></td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             color:#888;">48</td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;">
+    <span style="display:inline-block;padding:.15rem .45rem;border-radius:3px;
+                 font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#888;">NONE</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;color:#888;">478</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             color:#888;">22.5%</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#dc2626;font-weight:bold;">▲ 293</span></td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             color:#888;">185</td>
+</tr></tbody>
+      </table>
+    </div>
+    <div class="panel">
+      <div class="section-head" style="margin-top:0;">Top Vendors</div>
+      <table>
+        <thead><tr>
+          <th>Vendor</th><th>This Wk</th><th>WoW</th><th>Prior Wk</th>
+        </tr></thead>
+        <tbody>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">wolfssl</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;color:#1d4ed8;">32</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#d97706;">NEW</span></td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             color:#888;">0</td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">n8n</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;color:#1d4ed8;">25</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#dc2626;font-weight:bold;">▲ 23</span></td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             color:#888;">2</td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">jenkins</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;color:#1d4ed8;">23</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#d97706;">NEW</span></td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             color:#888;">0</td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">google</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;color:#1d4ed8;">23</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#16a34a;font-weight:bold;">▼ 68</span></td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             color:#888;">91</td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">openwebui</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;color:#1d4ed8;">15</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#dc2626;font-weight:bold;">▲ 14</span></td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             color:#888;">1</td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">cacti</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;color:#1d4ed8;">15</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#d97706;">NEW</span></td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             color:#888;">0</td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">envoyproxy</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;color:#1d4ed8;">14</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#d97706;">NEW</span></td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             color:#888;">0</td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">ibm</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;color:#1d4ed8;">13</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#888;">▶ 0</span></td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             color:#888;">13</td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">angularjs</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;color:#1d4ed8;">13</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#888;">▶ 0</span></td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             color:#888;">13</td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">gitlab</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;color:#1d4ed8;">13</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#d97706;">NEW</span></td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             color:#888;">0</td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">langflow</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;color:#1d4ed8;">12</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#dc2626;font-weight:bold;">▲ 9</span></td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             color:#888;">3</td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">messagepack</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;color:#1d4ed8;">12</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#888;">▶ 0</span></td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             color:#888;">12</td>
+</tr></tbody>
+      </table>
+    </div>
+    <div class="panel">
+      <div class="section-head" style="margin-top:0;">Top Weakness Types (CWE)</div>
+      <table>
+        <thead><tr>
+          <th>CWE</th><th>Type</th><th>This Wk</th><th>WoW</th>
+        </tr></thead>
+        <tbody>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:monospace;font-size:.75rem;
+             color:#1d4ed8;">CWE-79</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">XSS</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;">170</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#dc2626;font-weight:bold;">▲ 10</span></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:monospace;font-size:.75rem;
+             color:#1d4ed8;">CWE-862</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;"></td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;">117</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#16a34a;font-weight:bold;">▼ 13</span></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:monospace;font-size:.75rem;
+             color:#1d4ed8;">CWE-22</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Path Traversal</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;">88</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#dc2626;font-weight:bold;">▲ 20</span></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:monospace;font-size:.75rem;
+             color:#1d4ed8;">CWE-89</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">SQL Injection</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;">86</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#16a34a;font-weight:bold;">▼ 46</span></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:monospace;font-size:.75rem;
+             color:#1d4ed8;">CWE-639</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;"></td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;">54</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#dc2626;font-weight:bold;">▲ 28</span></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:monospace;font-size:.75rem;
+             color:#1d4ed8;">CWE-918</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">SSRF</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;">48</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#dc2626;font-weight:bold;">▲ 20</span></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:monospace;font-size:.75rem;
+             color:#1d4ed8;">CWE-78</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">OS Command Injection</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;">48</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#dc2626;font-weight:bold;">▲ 21</span></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:monospace;font-size:.75rem;
+             color:#1d4ed8;">CWE-74</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;"></td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;">40</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#dc2626;font-weight:bold;">▲ 23</span></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:monospace;font-size:.75rem;
+             color:#1d4ed8;">CWE-416</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Use After Free</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;">37</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#16a34a;font-weight:bold;">▼ 2</span></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:monospace;font-size:.75rem;
+             color:#1d4ed8;">CWE-200</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;"></td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.9rem;
+             font-weight:bold;">34</td>
+  <td style="padding:.4rem .6rem;"><span style="color:#16a34a;font-weight:bold;">▼ 2</span></td>
+</tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section-head">Time-to-KEV — This Week's CVEs Already in CISA KEV</div>
+  <div style="font-family:Arial,sans-serif;font-size:.7rem;color:#555;
+              margin-bottom:.75rem;line-height:1.5;">
+    CVEs published in the last 7 days that are already in CISA's Known Exploited
+    Vulnerabilities catalog — indicating active exploitation in the wild.
+    These warrant immediate attention.
+  </div>
+  <table>
+    <thead><tr>
+      <th>CVE ID</th><th>Severity</th><th>Vendor</th>
+      <th>NVD Published</th><th>KEV Date Added</th>
+    </tr></thead>
+    <tbody><tr><td colspan="5" style="padding:.75rem;font-family:Arial,sans-serif;font-size:.75rem;color:#16a34a;">No this-week CVEs have appeared in CISA KEV yet.</td></tr></tbody>
+  </table>
+
+</main>
+<footer>
+  <b>DATA SOURCES</b> &nbsp;·&nbsp;
+  NVD CVE API (services.nvd.nist.gov) &nbsp;·&nbsp;
+  CISA Known Exploited Vulnerabilities (cisa.gov) &nbsp;·&nbsp;
+  Public Data Only — no scanning, no probing &nbsp;·&nbsp;
+  No AI-generated content &nbsp;·&nbsp;
+  © 2026 Randy Hinton &nbsp;·&nbsp; 2026-06-29 20:46 UTC &nbsp;·&nbsp; #FollowTheData
+</footer>
+</body>
+</html>
