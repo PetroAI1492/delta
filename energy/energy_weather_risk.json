@@ -3,18 +3,18 @@
     "report": "Energy Infrastructure Weather Risk",
     "version": "1.0.0",
     "source": "NOAA NWS Alerts API",
-    "generated_at": "2026-06-29 12:17 UTC"
+    "generated_at": "2026-06-29 12:22 UTC"
   },
   "summary": {
-    "total": 20,
-    "affected": 1,
+    "total": 25,
+    "affected": 2,
     "critical": 0,
     "high": 0,
-    "moderate": 0,
-    "clear": 19,
-    "total_alerts": 1,
-    "overall": "LOW",
-    "overall_color": "#2563eb"
+    "moderate": 2,
+    "clear": 23,
+    "total_alerts": 2,
+    "overall": "MODERATE",
+    "overall_color": "#d97706"
   },
   "facilities": [
     {
@@ -227,29 +227,98 @@
       "risk_color": "#16a34a"
     },
     {
-      "name": "DJ Basin (Denver Hub)",
-      "type": "Production Basin",
-      "state": "CO",
-      "lat": 39.7392,
-      "lon": -104.9903,
-      "capacity": "~450 MBPD",
+      "name": "Phillips 66 Cherry Point Refinery",
+      "type": "Refinery",
+      "state": "WA",
+      "lat": 48.8614,
+      "lon": -122.7078,
+      "capacity": "255 MBPD \u2014 largest PNW refinery",
+      "alerts": [],
+      "risk": "CLEAR",
+      "risk_color": "#16a34a"
+    },
+    {
+      "name": "Chevron El Segundo Refinery",
+      "type": "Refinery",
+      "state": "CA",
+      "lat": 33.9178,
+      "lon": -118.4134,
+      "capacity": "290 MBPD \u2014 Southern California supply",
+      "alerts": [],
+      "risk": "CLEAR",
+      "risk_color": "#16a34a"
+    },
+    {
+      "name": "BP Whiting Refinery",
+      "type": "Refinery",
+      "state": "IN",
+      "lat": 41.6783,
+      "lon": -87.4939,
+      "capacity": "435 MBPD \u2014 largest Midwest refinery",
       "alerts": [
         {
-          "event": "Air Quality Alert",
-          "severity": "LOW",
-          "color": "#2563eb",
-          "bg": "#eff6ff",
-          "headline": "Air Quality Alert issued June 28 at 4:10PM MDT by NWS Denver CO",
-          "description": "The Colorado Department of Public Health and Environment has\nissued the following...\n\nWHAT...Action Day for Multiple Pollutants.\n\nWHERE...Douglas, Jefferson, Denver, western Arapahoe, western\nAdams, Broomfield, Boulder, Larimer, and Weld Counties\n\nWHEN...400 PM Sunday June 28 to 400 PM Monday June 2",
-          "onset": "2026-06-28T16:10:00-06:00",
-          "expires": "2026-06-29T16:00:00-06:00",
-          "sender": "NWS Denver CO",
-          "urgency": "Unknown",
-          "certainty": "Unknown"
+          "event": "Heat Advisory",
+          "severity": "MODERATE",
+          "color": "#d97706",
+          "bg": "#fffbeb",
+          "headline": "Heat Advisory issued June 29 at 2:02AM CDT until July 1 at 10:00PM CDT by NWS Chicago IL",
+          "description": "* WHAT...Heat index values around 105 expected each afternoon\n\n* WHERE...Portions of central, east central, north central, and\nnortheast Illinois and northwest Indiana.\n\n* WHEN...From noon CDT /1 PM EDT/ today to 10 PM CDT /11 PM EDT/\nWednesday.\n\n* IMPACTS...Hot temperatures and high humidity may ca",
+          "onset": "2026-06-29T12:00:00-05:00",
+          "expires": "2026-06-29T12:15:00-05:00",
+          "sender": "NWS Chicago IL",
+          "urgency": "Expected",
+          "certainty": "Likely"
         }
       ],
-      "risk": "LOW",
-      "risk_color": "#2563eb"
+      "risk": "MODERATE",
+      "risk_color": "#d97706"
+    },
+    {
+      "name": "BP/Husky Toledo Refinery",
+      "type": "Refinery",
+      "state": "OH",
+      "lat": 41.6639,
+      "lon": -83.5552,
+      "capacity": "160 MBPD \u2014 Great Lakes region",
+      "alerts": [
+        {
+          "event": "Heat Advisory",
+          "severity": "MODERATE",
+          "color": "#d97706",
+          "bg": "#fffbeb",
+          "headline": "Heat Advisory issued June 29 at 2:56AM EDT until July 2 at 8:00PM EDT by NWS Cleveland OH",
+          "description": "* WHAT...Heat index values up to 105 expected.\n\n* WHERE...Hancock, Lucas, and Wood Counties.\n\n* WHEN...From noon today to 8 PM EDT Thursday.\n\n* IMPACTS...Hot temperatures and high humidity may cause heat\nillnesses.",
+          "onset": "2026-06-29T12:00:00-04:00",
+          "expires": "2026-06-29T11:00:00-04:00",
+          "sender": "NWS Cleveland OH",
+          "urgency": "Expected",
+          "certainty": "Likely"
+        }
+      ],
+      "risk": "MODERATE",
+      "risk_color": "#d97706"
+    },
+    {
+      "name": "Par Pacific Kenai Refinery",
+      "type": "Refinery",
+      "state": "AK",
+      "lat": 60.6755,
+      "lon": -151.2198,
+      "capacity": "72 MBPD \u2014 Alaska's only refinery; Arctic/seismic risk",
+      "alerts": [],
+      "risk": "CLEAR",
+      "risk_color": "#16a34a"
+    },
+    {
+      "name": "Par Pacific Kapolei Refinery",
+      "type": "Refinery",
+      "state": "HI",
+      "lat": 21.3339,
+      "lon": -158.0808,
+      "capacity": "94 MBPD \u2014 Hawaii's only refinery; ~75% state fuel supply",
+      "alerts": [],
+      "risk": "CLEAR",
+      "risk_color": "#16a34a"
     }
   ]
 }
