@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-29T18:47:46Z",
+  "generated": "2026-06-29T20:03:09Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -3855,6 +3855,89 @@
       ],
       "id": "financial_cyber_stability_signal",
       "path": "https://petroai1492.github.io/delta/cybersecurity/fin_cyber.html"
+    },
+    {
+      "title": "Ransomware Victim Industry Tracker",
+      "file": "cybersecurity/ransomware_sectors.html",
+      "description": "Tracks ransomware victim publications by industry sector using the ransomware.live public bulk data feed. Measures public disclosure activity (not intrusion dates), surfaces high-value sector alerts (Finance, Healthcare, Energy, Government, Critical Infrastructure), ranks most active groups with period-over-period trend table, and shows recent victim publications with geographic distribution. Clearly documents data limitations \u2014 these are leak site publication claims, not confirmed incidents.",
+      "json_file": "cybersecurity/ransomware_sectors.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/cybersecurity/ransomware_sectors.html`",
+      "auto_published": true,
+      "primary_domain": "Cybersecurity",
+      "secondary_domains": [
+        "Finance",
+        "Health",
+        "Energy"
+      ],
+      "entities": [
+        "ransomware.live",
+        "Qilin",
+        "Akira",
+        "LockBit",
+        "DragonForce",
+        "and other active ransomware groups; Finance",
+        "Healthcare",
+        "Energy",
+        "Government",
+        "Critical Infrastructure sectors"
+      ],
+      "data_sources": [
+        "ransomware.live bulk data (data.ransomware.live/victims.json",
+        "free",
+        "no key); Public Data Only \u2014 passively monitored Data Leak Site disclosures; does not host or distribute leaked data"
+      ],
+      "update_frequency": "Daily",
+      "key_signals": [
+        "Public Disclosure Activity level (LOW/ACTIVE/ELEVATED/HIGH/CRITICAL) with documented thresholds",
+        "7-day and 30-day victim publication counts",
+        "WoW trend vs prior week",
+        "high-value sector alerts with top attacking groups",
+        "group trend table (current vs prior period)",
+        "top sectors bar chart",
+        "top countries",
+        "recent victim table"
+      ],
+      "intent_phrases": [
+        "ransomware sectors",
+        "ransomware industry",
+        "ransomware victims",
+        "ransomware tracker",
+        "which industries ransomware",
+        "healthcare ransomware",
+        "finance ransomware",
+        "energy ransomware",
+        "ransomware groups",
+        "active ransomware",
+        "ransomware activity",
+        "ransomware trends",
+        "ransomware victim tracker",
+        "ransomware sector analysis",
+        "ransomware threat intelligence",
+        "ransomware disclosure",
+        "ransomware publications",
+        "who is ransomware targeting",
+        "ransomware by industry",
+        "Qilin Akira ransomware",
+        {
+          "keyword": "ransomware",
+          "weight": 10
+        },
+        {
+          "keyword": "victim",
+          "weight": 10
+        },
+        {
+          "keyword": "industry",
+          "weight": 10
+        },
+        {
+          "keyword": "tracker",
+          "weight": 10
+        }
+      ],
+      "id": "ransomware_victim_industry_tracker",
+      "path": "https://petroai1492.github.io/delta/cybersecurity/ransomware_sectors.html"
     }
   ],
   "cross_domain_matrix": [
