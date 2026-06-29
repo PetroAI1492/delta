@@ -3,7 +3,7 @@
     "report": "Ransomware Victim Industry Tracker",
     "version": "1.0.0",
     "source": "ransomware.live (data.ransomware.live/victims.json)",
-    "generated_at": "2026-06-29 19:53 UTC",
+    "generated_at": "2026-06-29 19:59 UTC",
     "days": 30
   },
   "summary": {
@@ -13,7 +13,7 @@
     "trend_pct": -23.8,
     "top_sectors": [
       [
-        "Unknown",
+        "Unclassified",
         131
       ],
       [
