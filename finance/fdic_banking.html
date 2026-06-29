@@ -21,28 +21,30 @@
                    margin-bottom:.4rem; }
   .report-sub { font-family:Arial,sans-serif; font-size:.8rem; color:#666;
                  margin-bottom:1.25rem; }
-  .signal-card { display:inline-block; border:2px solid #d97706;
+  .signal-card { display:inline-block; border:2px solid #16a34a;
                   padding:.9rem 1.5rem; margin-bottom:1.25rem;
-                  background:#d9770608; }
+                  background:#16a34a08; min-width:260px; }
   .scorecard-row { display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:1.5rem; }
-  .two-col { display:grid; grid-template-columns:1.6fr 1fr; gap:1.5rem;
-              margin-bottom:1.5rem; }
-  .panel { border:1px solid var(--rule); padding:1rem 1.25rem; }
   .section-head { font-family:Arial,sans-serif; font-size:.72rem; font-weight:bold;
                    text-transform:uppercase; letter-spacing:.08em; color:#e8111a;
                    border-bottom:2px solid #e8111a; padding-bottom:.3rem;
                    margin:1.5rem 0 .75rem; }
-  table { width:100%; border-collapse:collapse; font-size:12px; }
+  .note { background:#f9fafb; border:1px solid #e5e7eb; border-left:3px solid #888;
+           padding:.6rem .9rem; font-family:Arial,sans-serif; font-size:.72rem;
+           color:#555; line-height:1.6; margin-bottom:1.25rem; }
+  table { width:100%; border-collapse:collapse; }
   th { text-align:left; font-family:Arial,sans-serif; font-size:.65rem;
         text-transform:uppercase; letter-spacing:.06em; color:#888;
-        padding:.4rem .75rem .4rem 0; border-bottom:2px solid #e5e7eb; }
+        padding:.4rem .75rem .4rem 0; border-bottom:2px solid #e5e7eb;
+        white-space:nowrap; }
   td { vertical-align:middle; }
-  .ytd-row { display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:1rem; }
-  .ytd-card { border:1px solid #e5e7eb; padding:.6rem .9rem; min-width:120px; }
+  .ytd-row { display:flex; gap:.75rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .ytd-card { border:1px solid #e5e7eb; padding:.6rem .9rem; min-width:130px; }
   .ytd-card .yr { font-family:Arial,sans-serif; font-size:.63rem; color:#888;
                    text-transform:uppercase; margin-bottom:.2rem; }
-  .ytd-card .cnt { font-family:Georgia,serif; font-size:1.4rem; font-weight:bold; }
-  .ytd-card .cst { font-family:Arial,sans-serif; font-size:.67rem; color:#888; }
+  .ytd-card .cnt { font-family:Georgia,serif; font-size:1.5rem; font-weight:bold; }
+  .ytd-card .cst { font-family:Arial,sans-serif; font-size:.67rem; color:#888;
+                    margin-top:.1rem; }
   footer { border-top:1px solid var(--rule); padding:.75rem 2rem;
             font-family:Arial,sans-serif; font-size:.68rem;
             color:#666; text-align:center; margin-top:2rem; }
@@ -56,298 +58,137 @@
 <main>
   <div class="report-title">US Banking System Health Signal</div>
   <div class="report-sub">
-    FDIC BankFind Suite &nbsp;·&nbsp; Quarterly call report data &nbsp;·&nbsp;
-    0 insured institutions &nbsp;·&nbsp; Generated 2026-06-29 16:49 UTC
+    FDIC BankFind Suite &nbsp;·&nbsp; 4,267 active insured institutions &nbsp;·&nbsp;
+    Aggregated from FDIC /summary (state-level) &nbsp;·&nbsp; Generated 2026-06-29 17:09 UTC
   </div>
 
   <div class="signal-card">
     <div style="font-family:Arial,sans-serif;font-size:.65rem;text-transform:uppercase;
-                letter-spacing:.08em;color:#d97706;font-weight:bold;
+                letter-spacing:.08em;color:#16a34a;font-weight:bold;
                 margin-bottom:.25rem;">Overall System Signal</div>
     <div style="font-family:Georgia,serif;font-size:2rem;font-weight:bold;
-                color:#d97706;line-height:1.1;">WATCH</div>
+                color:#16a34a;line-height:1.1;">HEALTHY</div>
     <div style="font-family:Arial,sans-serif;font-size:.75rem;color:#555;
-                margin-top:.3rem;">ROA 0.00% · 0 problem banks</div>
+                margin-top:.3rem;">ROA 1.17% · 2 failures YTD</div>
   </div>
 
-  <div class="scorecard-row"><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:110px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Total Assets</div><div style="font-size:1.2rem;font-weight:bold;color:#1a1a1a;font-family:Georgia,serif;">$9.8B</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">2025</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:110px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Total Deposits</div><div style="font-size:1.2rem;font-weight:bold;color:#1a1a1a;font-family:Georgia,serif;">$7.8B</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">2025</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:110px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Equity Capital</div><div style="font-size:1.2rem;font-weight:bold;color:#1a1a1a;font-family:Georgia,serif;">$1.1B</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">2025</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:110px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Net Income</div><div style="font-size:1.2rem;font-weight:bold;color:#16a34a;font-family:Georgia,serif;">$154.4M</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">2025</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:110px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">ROA</div><div style="font-size:1.2rem;font-weight:bold;color:#dc2626;font-family:Georgia,serif;">0.00%</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">Return on assets</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:110px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">ROE</div><div style="font-size:1.2rem;font-weight:bold;color:#dc2626;font-family:Georgia,serif;">0.0%</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">Return on equity</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:110px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Institutions</div><div style="font-size:1.2rem;font-weight:bold;color:#1a1a1a;font-family:Georgia,serif;">0</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">2025</div></div></div>
+  <div class="scorecard-row"><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:120px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Total Assets</div><div style="font-size:1.2rem;font-weight:bold;color:#1a1a1a;font-family:Georgia,serif;">$75.78T</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">Year 2025</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#16a34a;margin-top:.15rem;"><span style="color:#16a34a;">▲</span> +4.8% YoY</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:120px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Total Deposits</div><div style="font-size:1.2rem;font-weight:bold;color:#1a1a1a;font-family:Georgia,serif;">$60.24T</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">Year 2025</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#16a34a;margin-top:.15rem;"><span style="color:#16a34a;">▲</span> +4.5% YoY</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:120px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Equity Capital</div><div style="font-size:1.2rem;font-weight:bold;color:#1a1a1a;font-family:Georgia,serif;">$7.79T</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">Tier 1 proxy</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#16a34a;margin-top:.15rem;"><span style="color:#16a34a;">▲</span> +7.7% YoY</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:120px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Net Income</div><div style="font-size:1.2rem;font-weight:bold;color:#16a34a;font-family:Georgia,serif;">$886.7B</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">Year 2025</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#16a34a;margin-top:.15rem;"><span style="color:#16a34a;">▲</span> +10.2% YoY</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:120px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">ROA</div><div style="font-size:1.2rem;font-weight:bold;color:#16a34a;font-family:Georgia,serif;">1.17%</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">Net Income / Assets</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#16a34a;margin-top:.15rem;"><span style="color:#16a34a;">▲</span> +5.4% YoY</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:120px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">ROE</div><div style="font-size:1.2rem;font-weight:bold;color:#16a34a;font-family:Georgia,serif;">11.4%</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">Net Income / Equity</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#16a34a;margin-top:.15rem;"><span style="color:#16a34a;">▲</span> +2.7% YoY</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:120px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Institutions</div><div style="font-size:1.2rem;font-weight:bold;color:#1a1a1a;font-family:Georgia,serif;">4,267</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">Active, FDIC-insured</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:120px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Banks (agg)</div><div style="font-size:1.2rem;font-weight:bold;color:#1a1a1a;font-family:Georgia,serif;">12,981</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">Year 2025 total</div></div></div>
 
-  <div class="two-col">
-    <div class="panel">
-      <div class="section-head">Industry Trends — 5-Year Window</div>
-      <table>
-        <thead><tr>
-          <th>Year</th><th>Total Assets</th><th>Deposits</th>
-          <th>Net Income</th><th>ROA</th><th>Problem Banks</th>
-          <th>Institutions</th>
-        </tr></thead>
-        <tbody>
+  <div class="note">
+    <strong>Data notes:</strong>
+    Dollar amounts in $thousands aggregated nationally from FDIC state-level summary data.
+    ROA and ROE computed from aggregated NETINC/ASSET and NETINC/EQ respectively.
+    Problem bank count (CAMELS 4/5) not available via this API endpoint — omitted.
+    "Banks (agg)" reflects FDIC's annual summary count; active institution count from
+    /institutions endpoint (4,267 as of 2026-06-29).
+    Data is annual — most recent year may be preliminary.
+  </div>
+
+  <div class="section-head">Industry Trend — 5-Year Window</div>
+  <table>
+    <thead><tr>
+      <th>Year</th><th>Total Assets</th><th>Deposits</th><th>Equity</th>
+      <th>Net Income</th><th>ROA</th><th>Banks</th><th>Failures</th>
+    </tr></thead>
+    <tbody>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
              font-weight:bold;">2025</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    <span style="color:#dc2626;">▼</span> $9.8B
-  </td>
+    <span style="color:#16a34a;">▲</span> $75.78T</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    $7.8B
-  </td>
+    $60.24T</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    $154.4M
-  </td>
+    $7.79T</td>
+  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
+    $886.7B</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             color:#dc2626;font-weight:bold;">0.00%</td>
+             color:#16a34a;font-weight:bold;">1.17%</td>
+  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
+    12,981</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             color:#16a34a;font-weight:bold;">
-    0
-  </td>
-  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             color:#888;">0</td>
+             color:#1a1a1a;">
+    2</td>
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             font-weight:bold;">2025</td>
+             font-weight:bold;">2024</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    <span style="color:#16a34a;">▲</span> $225.2B
-  </td>
+    <span style="color:#16a34a;">▲</span> $72.31T</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    $189.9B
-  </td>
+    $57.65T</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    $3.1B
-  </td>
+    $7.23T</td>
+  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
+    $804.5B</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             color:#dc2626;font-weight:bold;">0.00%</td>
+             color:#16a34a;font-weight:bold;">1.11%</td>
+  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
+    13,425</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             color:#16a34a;font-weight:bold;">
-    0
-  </td>
-  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             color:#888;">0</td>
+             color:#1a1a1a;">
+    2</td>
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             font-weight:bold;">2025</td>
+             font-weight:bold;">2023</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    <span style="color:#888;"></span> $178.3B
-  </td>
+    <span style="color:#16a34a;">▲</span> $71.00T</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    $149.2B
-  </td>
+    $56.44T</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    $1.7B
-  </td>
+    $6.87T</td>
+  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
+    $762.1B</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             color:#dc2626;font-weight:bold;">0.00%</td>
+             color:#16a34a;font-weight:bold;">1.07%</td>
+  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
+    13,797</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             color:#16a34a;font-weight:bold;">
-    0
-  </td>
-  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             color:#888;">0</td>
+             color:#1a1a1a;">
+    —</td>
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             font-weight:bold;">2025</td>
+             font-weight:bold;">2022</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    <span style="color:#dc2626;">▼</span> $0
-  </td>
+    <span style="color:#dc2626;">▼</span> $70.79T</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    $0
-  </td>
+    $57.65T</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    $0
-  </td>
+    $6.61T</td>
+  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
+    $788.0B</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             color:#dc2626;font-weight:bold;">0.00%</td>
+             color:#16a34a;font-weight:bold;">1.11%</td>
+  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
+    14,154</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             color:#16a34a;font-weight:bold;">
-    0
-  </td>
-  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             color:#888;">0</td>
+             color:#1a1a1a;">
+    —</td>
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             font-weight:bold;">2025</td>
+             font-weight:bold;">2021</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    <span style="color:#dc2626;">▼</span> $95.3B
-  </td>
+     $71.16T</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    $79.8B
-  </td>
+    $59.11T</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    $973.5M
-  </td>
-  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             color:#dc2626;font-weight:bold;">0.00%</td>
-  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             color:#16a34a;font-weight:bold;">
-    0
-  </td>
-  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             color:#888;">0</td>
-</tr>
-<tr style="border-bottom:1px solid #f3f4f6;">
-  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             font-weight:bold;">2025</td>
+    $7.07T</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    <span style="color:#16a34a;">▲</span> $519.9B
-  </td>
+    $837.4B</td>
+  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
+             color:#16a34a;font-weight:bold;">1.18%</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    $429.3B
-  </td>
-  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    $5.5B
-  </td>
+    14,535</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             color:#dc2626;font-weight:bold;">0.00%</td>
-  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             color:#16a34a;font-weight:bold;">
-    0
-  </td>
-  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             color:#888;">0</td>
-</tr>
-<tr style="border-bottom:1px solid #f3f4f6;">
-  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             font-weight:bold;">2025</td>
-  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    <span style="color:#888;"></span> $77.1B
-  </td>
-  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    $66.4B
-  </td>
-  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    $897.4M
-  </td>
-  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             color:#dc2626;font-weight:bold;">0.00%</td>
-  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             color:#16a34a;font-weight:bold;">
-    0
-  </td>
-  <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             color:#888;">0</td>
+             color:#1a1a1a;">
+    —</td>
 </tr></tbody>
-      </table>
-    </div>
-    <div class="panel">
-      <div class="section-head">Problem Bank Count</div>
-      <div style="font-family:Arial,sans-serif;font-size:.7rem;color:#888;
-                  margin-bottom:.75rem;">
-        FDIC-defined "problem" institutions: CAMELS composite rating of 4 or 5.
-        Bar scale: 0–500 banks.
-      </div>
-      
-<div style="margin-bottom:.5rem;">
-  <div style="display:flex;justify-content:space-between;
-              font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.2rem;">
-    <span style="font-weight:bold;">2025</span>
-    <span style="color:#16a34a;font-weight:bold;">0 banks
-      <span style="color:#888;font-weight:normal;">
-        ($0 assets)
-      </span>
-    </span>
-  </div>
-  <div style="background:#f3f4f6;height:6px;border-radius:3px;">
-    <div style="background:#16a34a;height:6px;border-radius:3px;
-                width:0.0%;"></div>
-  </div>
-</div>
-<div style="margin-bottom:.5rem;">
-  <div style="display:flex;justify-content:space-between;
-              font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.2rem;">
-    <span style="font-weight:bold;">2025</span>
-    <span style="color:#16a34a;font-weight:bold;">0 banks
-      <span style="color:#888;font-weight:normal;">
-        ($0 assets)
-      </span>
-    </span>
-  </div>
-  <div style="background:#f3f4f6;height:6px;border-radius:3px;">
-    <div style="background:#16a34a;height:6px;border-radius:3px;
-                width:0.0%;"></div>
-  </div>
-</div>
-<div style="margin-bottom:.5rem;">
-  <div style="display:flex;justify-content:space-between;
-              font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.2rem;">
-    <span style="font-weight:bold;">2025</span>
-    <span style="color:#16a34a;font-weight:bold;">0 banks
-      <span style="color:#888;font-weight:normal;">
-        ($0 assets)
-      </span>
-    </span>
-  </div>
-  <div style="background:#f3f4f6;height:6px;border-radius:3px;">
-    <div style="background:#16a34a;height:6px;border-radius:3px;
-                width:0.0%;"></div>
-  </div>
-</div>
-<div style="margin-bottom:.5rem;">
-  <div style="display:flex;justify-content:space-between;
-              font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.2rem;">
-    <span style="font-weight:bold;">2025</span>
-    <span style="color:#16a34a;font-weight:bold;">0 banks
-      <span style="color:#888;font-weight:normal;">
-        ($0 assets)
-      </span>
-    </span>
-  </div>
-  <div style="background:#f3f4f6;height:6px;border-radius:3px;">
-    <div style="background:#16a34a;height:6px;border-radius:3px;
-                width:0.0%;"></div>
-  </div>
-</div>
-<div style="margin-bottom:.5rem;">
-  <div style="display:flex;justify-content:space-between;
-              font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.2rem;">
-    <span style="font-weight:bold;">2025</span>
-    <span style="color:#16a34a;font-weight:bold;">0 banks
-      <span style="color:#888;font-weight:normal;">
-        ($0 assets)
-      </span>
-    </span>
-  </div>
-  <div style="background:#f3f4f6;height:6px;border-radius:3px;">
-    <div style="background:#16a34a;height:6px;border-radius:3px;
-                width:0.0%;"></div>
-  </div>
-</div>
-<div style="margin-bottom:.5rem;">
-  <div style="display:flex;justify-content:space-between;
-              font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.2rem;">
-    <span style="font-weight:bold;">2025</span>
-    <span style="color:#16a34a;font-weight:bold;">0 banks
-      <span style="color:#888;font-weight:normal;">
-        ($0 assets)
-      </span>
-    </span>
-  </div>
-  <div style="background:#f3f4f6;height:6px;border-radius:3px;">
-    <div style="background:#16a34a;height:6px;border-radius:3px;
-                width:0.0%;"></div>
-  </div>
-</div>
-<div style="margin-bottom:.5rem;">
-  <div style="display:flex;justify-content:space-between;
-              font-family:Arial,sans-serif;font-size:.72rem;margin-bottom:.2rem;">
-    <span style="font-weight:bold;">2025</span>
-    <span style="color:#16a34a;font-weight:bold;">0 banks
-      <span style="color:#888;font-weight:normal;">
-        ($0 assets)
-      </span>
-    </span>
-  </div>
-  <div style="background:#f3f4f6;height:6px;border-radius:3px;">
-    <div style="background:#16a34a;height:6px;border-radius:3px;
-                width:0.0%;"></div>
-  </div>
-</div>
-    </div>
-  </div>
+  </table>
 
-  <div class="section-head">Recent Bank Failures</div>
+  <div class="section-head">Bank Failures — Year-over-Year</div>
   <div class="ytd-row">
     <div class="ytd-card">
       <div class="yr">YTD 2026</div>
@@ -365,35 +206,37 @@
       <div class="cst">$757.5M est. FDIC cost</div>
     </div>
   </div>
+
+  <div class="section-head">Recent Failures</div>
   <table>
     <thead><tr>
       <th>Failure Date</th><th>Institution</th><th>Location</th>
-      <th>Resolution</th><th>Est. FDIC Cost</th><th>Assets at Failure</th>
+      <th>Fund</th><th>Est. FDIC Cost</th><th>Assets at Failure</th>
     </tr></thead>
     <tbody>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             font-weight:bold;">5/1/2026</td>
+             font-weight:bold;">2026-05-01</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    COMMUNITY BANK AND TRUST - WEST GEORGIA</td>
+    Community Bank And Trust - West Georgia</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;
-             color:#888;">LAGRANGE, </td>
+             color:#888;">Lagrange, GA</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;">
-    FAILURE</td>
+    DIF</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             color:#dc2626;font-weight:bold;">—</td>
+             color:#dc2626;font-weight:bold;">est. pending</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;
              color:#888;">$305.7M</td>
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             font-weight:bold;">1/30/2026</td>
+             font-weight:bold;">2026-01-30</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    METROPOLITAN CAPITAL B&T</td>
+    Metropolitan Capital B&T</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;
-             color:#888;">CHICAGO, </td>
+             color:#888;">Chicago, IL</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;">
-    FAILURE</td>
+    DIF</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
              color:#dc2626;font-weight:bold;">$19.6M</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;
@@ -401,13 +244,13 @@
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             font-weight:bold;">6/27/2025</td>
+             font-weight:bold;">2025-06-27</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    SANTA ANNA NATIONAL BANK</td>
+    Santa Anna National Bank</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;
-             color:#888;">SANTA ANNA, </td>
+             color:#888;">Santa Anna, TX</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;">
-    FAILURE</td>
+    DIF</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
              color:#dc2626;font-weight:bold;">$23.5M</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;
@@ -415,13 +258,13 @@
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             font-weight:bold;">1/17/2025</td>
+             font-weight:bold;">2025-01-17</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    PULASKI SAVINGS BANK</td>
+    Pulaski Savings Bank</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;
-             color:#888;">CHICAGO, </td>
+             color:#888;">Chicago, IL</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;">
-    FAILURE</td>
+    DIF</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
              color:#dc2626;font-weight:bold;">$31.1M</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;
@@ -429,13 +272,13 @@
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             font-weight:bold;">10/18/2024</td>
+             font-weight:bold;">2024-10-18</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    FIRST NB OF LINDSAY</td>
+    First Nb Of Lindsay</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;
-             color:#888;">LINDSAY, </td>
+             color:#888;">Lindsay, OK</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;">
-    FAILURE</td>
+    DIF</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
              color:#dc2626;font-weight:bold;">$45.0M</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;
@@ -443,13 +286,13 @@
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             font-weight:bold;">4/26/2024</td>
+             font-weight:bold;">2024-04-26</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    REPUBLIC BANK</td>
+    Republic Bank</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;
-             color:#888;">PHILADELPHIA, </td>
+             color:#888;">Philadelphia, PA</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;">
-    FAILURE</td>
+    DIF</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
              color:#dc2626;font-weight:bold;">$712.5M</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;
@@ -457,13 +300,13 @@
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             font-weight:bold;">11/3/2023</td>
+             font-weight:bold;">2023-11-03</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    CITIZENS BANK</td>
+    Citizens Bank</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;
-             color:#888;">SAC CITY, </td>
+             color:#888;">Sac City, IA</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;">
-    FAILURE</td>
+    DIF</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
              color:#dc2626;font-weight:bold;">$14.1M</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;
@@ -471,13 +314,13 @@
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             font-weight:bold;">7/28/2023</td>
+             font-weight:bold;">2023-07-28</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    HEARTLAND TRI-STATE BANK</td>
+    Heartland Tri-State Bank</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;
-             color:#888;">ELKHART, </td>
+             color:#888;">Elkhart, KS</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;">
-    FAILURE</td>
+    DIF</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
              color:#dc2626;font-weight:bold;">$43.4M</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;
@@ -485,13 +328,13 @@
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             font-weight:bold;">5/1/2023</td>
+             font-weight:bold;">2023-05-01</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    FIRST REPUBLIC BANK</td>
+    First Republic Bank</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;
-             color:#888;">SAN FRANCISCO, </td>
+             color:#888;">San Francisco, CA</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;">
-    FAILURE</td>
+    DIF</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
              color:#dc2626;font-weight:bold;">$15.6B</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;
@@ -499,15 +342,15 @@
 </tr>
 <tr style="border-bottom:1px solid #f3f4f6;">
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             font-weight:bold;">3/12/2023</td>
+             font-weight:bold;">2023-03-12</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;">
-    SIGNATURE BANK</td>
+    Signature Bank</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;
-             color:#888;">NEW YORK, </td>
+             color:#888;">New York, NY</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;">
-    FAILURE</td>
+    DIF</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.8rem;
-             color:#dc2626;font-weight:bold;">—</td>
+             color:#dc2626;font-weight:bold;">est. pending</td>
   <td style="padding:.5rem .75rem;font-family:Arial,sans-serif;font-size:.75rem;
              color:#888;">$110.4B</td>
 </tr>
@@ -518,9 +361,10 @@
 <footer>
   <b>DATA SOURCE</b> &nbsp;·&nbsp;
   FDIC BankFind Suite API (banks.data.fdic.gov/api) &nbsp;·&nbsp;
-  Quarterly call report data — FDIC-insured depository institutions only &nbsp;·&nbsp;
+  Annual call report aggregates + failure history &nbsp;·&nbsp;
+  FDIC-insured depository institutions only &nbsp;·&nbsp;
   No AI-generated content &nbsp;·&nbsp;
-  © 2026 Randy Hinton &nbsp;·&nbsp; Generated 2026-06-29 16:49 UTC &nbsp;·&nbsp; #FollowTheData
+  © 2026 Randy Hinton &nbsp;·&nbsp; Generated 2026-06-29 17:09 UTC &nbsp;·&nbsp; #FollowTheData
 </footer>
 </body>
 </html>
