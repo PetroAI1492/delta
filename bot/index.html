@@ -151,7 +151,7 @@
 </div><!-- .layout -->
 <footer>
   THOR SIGNAL &nbsp;·&nbsp; Taxonomy-driven routing &nbsp;·&nbsp;
-  Generated: 2026-06-29 16:03 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+  Generated: 2026-06-29 16:51 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 <script>
 const REPORTS = [
@@ -3965,6 +3965,83 @@ const REPORTS = [
     ],
     "id": "ransomware_victim_industry_tracker",
     "path": "https://petroai1492.github.io/delta/cybersecurity/ransomware_sectors.html"
+  },
+  {
+    "title": "NVD Vulnerability Trend Signal",
+    "file": "cybersecurity/nvd_trend.html",
+    "description": "Weekly trend signal for CVE vulnerability activity \u2014 tracks velocity against a 12-week baseline, severity distribution shift (Critical/High ratio), most active vendors with WoW change, top CWE weakness types, and Time-to-KEV (this week's CVEs already appearing in CISA's Known Exploited Vulnerabilities catalog). Includes a 12-week SVG bar chart of weekly publication volume.",
+    "json_file": "cybersecurity/nvd_trend.json",
+    "published": true,
+    "url": "`petroai1492.github.io/delta/cybersecurity/nvd_trend.html`",
+    "auto_published": true,
+    "primary_domain": "Cybersecurity",
+    "secondary_domains": [
+      "\u2014"
+    ],
+    "entities": [
+      "NVD",
+      "CISA KEV",
+      "CVE",
+      "CWE",
+      "CVSS"
+    ],
+    "data_sources": [
+      "NVD CVE API (services.nvd.nist.gov/rest/json/cves/2.0",
+      "free",
+      "no key); CISA Known Exploited Vulnerabilities (cisa.gov",
+      "free",
+      "no key); ~15 API calls per run at 2s spacing"
+    ],
+    "update_frequency": "Weekly (runtime ~30 seconds due to NVD rate limits)",
+    "key_signals": [
+      "CVE velocity signal (NORMAL/ELEVATED/SURGE vs 12-week baseline)",
+      "weekly CVE count and WoW change",
+      "Critical+High ratio and trend",
+      "top vendors by CVE count with WoW change",
+      "top CWE weakness types",
+      "Time-to-KEV count (this week's CVEs already in CISA KEV \u2014 indicates active exploitation)",
+      "12-week bar chart"
+    ],
+    "intent_phrases": [
+      "CVE trend",
+      "vulnerability trend",
+      "NVD weekly",
+      "CVE velocity",
+      "vulnerability volume",
+      "weekly CVE count",
+      "CVSS severity trend",
+      "critical CVE this week",
+      "time to KEV",
+      "CVE to KEV",
+      "exploited vulnerability",
+      "NVD trend",
+      "vulnerability signal",
+      "CVE baseline",
+      "weekly vulnerability report",
+      "CWE trend",
+      "vendor CVE count",
+      "vulnerability severity",
+      "CVE surge",
+      "NVD signal",
+      {
+        "keyword": "nvd",
+        "weight": 10
+      },
+      {
+        "keyword": "vulnerability",
+        "weight": 10
+      },
+      {
+        "keyword": "trend",
+        "weight": 10
+      },
+      {
+        "keyword": "signal",
+        "weight": 10
+      }
+    ],
+    "id": "nvd_vulnerability_trend_signal",
+    "path": "https://petroai1492.github.io/delta/cybersecurity/nvd_trend.html"
   }
 ];
 const CROSS_DOMAIN = [
