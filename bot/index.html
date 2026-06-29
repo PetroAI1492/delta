@@ -151,7 +151,7 @@
 </div><!-- .layout -->
 <footer>
   THOR SIGNAL &nbsp;·&nbsp; Taxonomy-driven routing &nbsp;·&nbsp;
-  Generated: 2026-06-28 19:17 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+  Generated: 2026-06-29 08:26 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 <script>
 const REPORTS = [
@@ -3547,6 +3547,94 @@ const REPORTS = [
     ],
     "id": "charity_health_dashboard",
     "path": "https://petroai1492.github.io/delta/health/giving_dashboard.html"
+  },
+  {
+    "title": "Energy Infrastructure Weather Risk",
+    "file": "energy/energy_weather_risk.html",
+    "description": "Crosses active NOAA NWS weather alerts against 20 major US energy infrastructure locations \u2014 Gulf Coast refineries, Cushing crude storage, Henry Hub, LNG export terminals, and production basins. Surfaces any active watch, warning, or advisory at each facility with deterministic severity classification and a prominent alert banner.",
+    "json_file": "energy/energy_weather_risk.json",
+    "published": true,
+    "url": "`petroai1492.github.io/delta/energy/energy_weather_risk.html`",
+    "auto_published": true,
+    "primary_domain": "Energy",
+    "secondary_domains": [
+      "\u2014"
+    ],
+    "entities": [
+      "Motiva Port Arthur",
+      "ExxonMobil Beaumont",
+      "Marathon Galveston Bay",
+      "Valero",
+      "Cushing Hub",
+      "Henry Hub",
+      "Sabine Pass LNG",
+      "Freeport LNG",
+      "Corpus Christi LNG",
+      "Cameron LNG",
+      "Calcasieu Pass LNG",
+      "LOOP",
+      "Permian Basin",
+      "Eagle Ford",
+      "Haynesville",
+      "DJ Basin",
+      "NOAA NWS"
+    ],
+    "data_sources": [
+      "NOAA NWS Alerts API (api.weather.gov/alerts/active",
+      "free",
+      "no key); active watches",
+      "warnings",
+      "and advisories only; facility locations are static reference data"
+    ],
+    "update_frequency": "Every 6 hours recommended (Task Scheduler); hourly during active hurricane season",
+    "key_signals": [
+      "Overall infrastructure risk level (ALL CLEAR/LOW/MODERATE/HIGH/CRITICAL)",
+      "facility-level alert count",
+      "severity classification (Critical: Hurricane/Tornado Warning",
+      "High: Flood/Winter Storm Warning",
+      "Moderate: Wind/Fog/Freeze Advisory)",
+      "alert headline, sender, expiry, urgency, certainty"
+    ],
+    "intent_phrases": [
+      "energy weather risk",
+      "refinery weather",
+      "Gulf Coast weather",
+      "hurricane refinery",
+      "energy infrastructure alert",
+      "LNG weather",
+      "Cushing weather",
+      "Henry Hub weather",
+      "Permian weather",
+      "refinery alert",
+      "energy weather warning",
+      "Gulf storm",
+      "hurricane Gulf Coast",
+      "energy infrastructure weather",
+      "NOAA energy",
+      "weather risk oil",
+      "weather risk gas",
+      "LNG terminal weather",
+      "pipeline weather",
+      "refinery hurricane",
+      {
+        "keyword": "energy",
+        "weight": 10
+      },
+      {
+        "keyword": "infrastructure",
+        "weight": 10
+      },
+      {
+        "keyword": "weather",
+        "weight": 10
+      },
+      {
+        "keyword": "risk",
+        "weight": 10
+      }
+    ],
+    "id": "energy_infrastructure_weather_risk",
+    "path": "https://petroai1492.github.io/delta/energy/energy_weather_risk.html"
   }
 ];
 const CROSS_DOMAIN = [
