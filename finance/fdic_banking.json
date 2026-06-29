@@ -1,0 +1,248 @@
+{
+  "metadata": {
+    "report": "US Banking System Health Signal",
+    "version": "1.0.0",
+    "source": "FDIC BankFind Suite API",
+    "generated_at": "2026-06-29 16:49 UTC"
+  },
+  "signal": "WATCH",
+  "summary": [
+    {
+      "year": 2025,
+      "institutions": 0,
+      "assets": 9765541.0,
+      "deposits": 7816166.0,
+      "equity": 1055514.0,
+      "net_income": 154382.0,
+      "roa": 0.0,
+      "roe": 0.0,
+      "loans": 5767378.0,
+      "npa": 0.0
+    },
+    {
+      "year": 2025,
+      "institutions": 0,
+      "assets": 225230810.0,
+      "deposits": 189884399.0,
+      "equity": 24857519.0,
+      "net_income": 3099425.0,
+      "roa": 0.0,
+      "roe": 0.0,
+      "loans": 138594588.0,
+      "npa": 0.0
+    },
+    {
+      "year": 2025,
+      "institutions": 0,
+      "assets": 178292908.0,
+      "deposits": 149198813.0,
+      "equity": 22446878.0,
+      "net_income": 1732735.0,
+      "roa": 0.0,
+      "roe": 0.0,
+      "loans": 127696085.0,
+      "npa": 0.0
+    },
+    {
+      "year": 2025,
+      "institutions": 0,
+      "assets": 0.0,
+      "deposits": 0.0,
+      "equity": 0.0,
+      "net_income": 0.0,
+      "roa": 0.0,
+      "roe": 0.0,
+      "loans": 0.0,
+      "npa": 0.0
+    },
+    {
+      "year": 2025,
+      "institutions": 0,
+      "assets": 95336832.0,
+      "deposits": 79810032.0,
+      "equity": 8096371.0,
+      "net_income": 973451.0,
+      "roa": 0.0,
+      "roe": 0.0,
+      "loans": 63620365.0,
+      "npa": 0.0
+    },
+    {
+      "year": 2025,
+      "institutions": 0,
+      "assets": 519860346.0,
+      "deposits": 429251256.0,
+      "equity": 62882874.0,
+      "net_income": 5475693.0,
+      "roa": 0.0,
+      "roe": 0.0,
+      "loans": 357623970.0,
+      "npa": 0.0
+    },
+    {
+      "year": 2025,
+      "institutions": 0,
+      "assets": 77094889.0,
+      "deposits": 66427524.0,
+      "equity": 7119710.0,
+      "net_income": 897367.0,
+      "roa": 0.0,
+      "roe": 0.0,
+      "loans": 50457431.0,
+      "npa": 0.0
+    }
+  ],
+  "problem_banks": [
+    {
+      "year": 2025,
+      "prob_count": 0,
+      "prob_assets": 0.0
+    },
+    {
+      "year": 2025,
+      "prob_count": 0,
+      "prob_assets": 0.0
+    },
+    {
+      "year": 2025,
+      "prob_count": 0,
+      "prob_assets": 0.0
+    },
+    {
+      "year": 2025,
+      "prob_count": 0,
+      "prob_assets": 0.0
+    },
+    {
+      "year": 2025,
+      "prob_count": 0,
+      "prob_assets": 0.0
+    },
+    {
+      "year": 2025,
+      "prob_count": 0,
+      "prob_assets": 0.0
+    },
+    {
+      "year": 2025,
+      "prob_count": 0,
+      "prob_assets": 0.0
+    }
+  ],
+  "failures": [
+    {
+      "name": "COMMUNITY BANK AND TRUST - WEST GEORGIA",
+      "cert": 25796,
+      "fail_date": "5/1/2026",
+      "city": "LAGRANGE",
+      "state": "",
+      "resolution": "FAILURE",
+      "cost": 0.0,
+      "assets": 305716.0
+    },
+    {
+      "name": "METROPOLITAN CAPITAL B&T",
+      "cert": 57488,
+      "fail_date": "1/30/2026",
+      "city": "CHICAGO",
+      "state": "",
+      "resolution": "FAILURE",
+      "cost": 19647.0,
+      "assets": 261185.0
+    },
+    {
+      "name": "SANTA ANNA NATIONAL BANK",
+      "cert": 5520,
+      "fail_date": "6/27/2025",
+      "city": "SANTA ANNA",
+      "state": "",
+      "resolution": "FAILURE",
+      "cost": 23460.0,
+      "assets": 76938.0
+    },
+    {
+      "name": "PULASKI SAVINGS BANK",
+      "cert": 28611,
+      "fail_date": "1/17/2025",
+      "city": "CHICAGO",
+      "state": "",
+      "resolution": "FAILURE",
+      "cost": 31149.0,
+      "assets": 49466.0
+    },
+    {
+      "name": "FIRST NB OF LINDSAY",
+      "cert": 4134,
+      "fail_date": "10/18/2024",
+      "city": "LINDSAY",
+      "state": "",
+      "resolution": "FAILURE",
+      "cost": 45030.0,
+      "assets": 107850.0
+    },
+    {
+      "name": "REPUBLIC BANK",
+      "cert": 27332,
+      "fail_date": "4/26/2024",
+      "city": "PHILADELPHIA",
+      "state": "",
+      "resolution": "FAILURE",
+      "cost": 712503.0,
+      "assets": 5866190.0
+    },
+    {
+      "name": "CITIZENS BANK",
+      "cert": 8758,
+      "fail_date": "11/3/2023",
+      "city": "SAC CITY",
+      "state": "",
+      "resolution": "FAILURE",
+      "cost": 14114.0,
+      "assets": 60448.0
+    },
+    {
+      "name": "HEARTLAND TRI-STATE BANK",
+      "cert": 25851,
+      "fail_date": "7/28/2023",
+      "city": "ELKHART",
+      "state": "",
+      "resolution": "FAILURE",
+      "cost": 43408.0,
+      "assets": 139446.0
+    },
+    {
+      "name": "FIRST REPUBLIC BANK",
+      "cert": 59017,
+      "fail_date": "5/1/2023",
+      "city": "SAN FRANCISCO",
+      "state": "",
+      "resolution": "FAILURE",
+      "cost": 15639197.0,
+      "assets": 212638872.0
+    },
+    {
+      "name": "SIGNATURE BANK",
+      "cert": 57053,
+      "fail_date": "3/12/2023",
+      "city": "NEW YORK",
+      "state": "",
+      "resolution": "FAILURE",
+      "cost": 0.0,
+      "assets": 110363650.0
+    }
+  ],
+  "ytd_failures": {
+    "2026": {
+      "count": 2,
+      "cost": 19647.0
+    },
+    "2025": {
+      "count": 2,
+      "cost": 54609.0
+    },
+    "2024": {
+      "count": 2,
+      "cost": 757533.0
+    }
+  }
+}
