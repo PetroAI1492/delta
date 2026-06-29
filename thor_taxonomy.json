@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-29T13:40:12Z",
+  "generated": "2026-06-29T17:16:10Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -3689,6 +3689,85 @@
       ],
       "id": "cftc_energy_positioning_signal",
       "path": "https://petroai1492.github.io/delta/energy/cftc_energy.html"
+    },
+    {
+      "title": "US Banking System Health Signal",
+      "file": "finance/fdic_banking.html",
+      "description": "Quarterly signal report on the health of the US banking system \u2014 aggregates FDIC BankFind Suite state-level summary data nationally, computes ROA/ROE, and surfaces a system health signal (HEALTHY/STABLE/WATCH/STRESSED/CRISIS). Shows 5-year industry trend, year-over-year failure counts, and recent bank failure detail with FDIC cost estimates.",
+      "json_file": "finance/fdic_banking.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/finance/fdic_banking.html`",
+      "auto_published": true,
+      "primary_domain": "Finance",
+      "secondary_domains": [
+        "Federal"
+      ],
+      "entities": [
+        "FDIC",
+        "US banking system",
+        "bank failures",
+        "DIF",
+        "insured institutions",
+        "call report"
+      ],
+      "data_sources": [
+        "FDIC BankFind Suite API (banks.data.fdic.gov/api",
+        "free",
+        "no key); /summary endpoint (state-level",
+        "aggregated nationally); /failures endpoint; /institutions endpoint (active count); data is annual",
+        "most recent year may be preliminary"
+      ],
+      "update_frequency": "Quarterly (FDIC updates annually; run after new year data appears, typically Q1)",
+      "key_signals": [
+        "System health signal (HEALTHY/STABLE/WATCH/STRESSED/CRISIS)",
+        "total assets, deposits, equity, net income",
+        "ROA (computed: NETINC/ASSET)",
+        "ROE (computed: NETINC/EQ)",
+        "active institution count (4,267)",
+        "5-year trend",
+        "YTD failure count vs prior years",
+        "recent failure table with FDIC cost and assets at failure"
+      ],
+      "intent_phrases": [
+        "bank health",
+        "US banking system",
+        "FDIC",
+        "bank failures",
+        "banking signal",
+        "bank failure 2026",
+        "FDIC data",
+        "banking system health",
+        "bank ROA",
+        "bank deposits",
+        "insured institutions",
+        "banking stress",
+        "bank system risk",
+        "FDIC failures",
+        "bank health signal",
+        "US banks",
+        "banking industry",
+        "bank failure history",
+        "FDIC cost",
+        "banking trend",
+        {
+          "keyword": "banking",
+          "weight": 10
+        },
+        {
+          "keyword": "system",
+          "weight": 10
+        },
+        {
+          "keyword": "health",
+          "weight": 10
+        },
+        {
+          "keyword": "signal",
+          "weight": 10
+        }
+      ],
+      "id": "us_banking_system_health_signal",
+      "path": "https://petroai1492.github.io/delta/finance/fdic_banking.html"
     }
   ],
   "cross_domain_matrix": [
