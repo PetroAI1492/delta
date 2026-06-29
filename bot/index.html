@@ -151,7 +151,7 @@
 </div><!-- .layout -->
 <footer>
   THOR SIGNAL &nbsp;·&nbsp; Taxonomy-driven routing &nbsp;·&nbsp;
-  Generated: 2026-06-29 13:16 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+  Generated: 2026-06-29 14:39 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 <script>
 const REPORTS = [
@@ -3795,6 +3795,93 @@ const REPORTS = [
     ],
     "id": "us_banking_system_health_signal",
     "path": "https://petroai1492.github.io/delta/finance/fdic_banking.html"
+  },
+  {
+    "title": "Financial-Cyber Stability Signal",
+    "file": "cybersecurity/fin_cyber.html",
+    "description": "Deterministic OSINT-only daily signal tracking cyber-related stress on financial infrastructure. Splits SEC 8-K Item 1.05 material cybersecurity incident filings into financial-sector vs all-sector. Monitors NVD CVEs for confirmed financial infrastructure vendors (Fiserv, Temenos, Finastra, Jack Henry, NCR, Diebold, ACI, SWIFT Alliance, Broadridge, ION Trading), CISA KEV financial vendor filter, crypto exchange operational status via Statuspage APIs, financial cyber news, and infrastructure-specific cyber advisories. No scanning, no customer data, no internal data \u2014 OSINT only.",
+    "json_file": "cybersecurity/fin_cyber.json",
+    "published": true,
+    "url": "`petroai1492.github.io/delta/cybersecurity/fin_cyber.html`",
+    "auto_published": true,
+    "primary_domain": "Cybersecurity",
+    "secondary_domains": [
+      "Finance"
+    ],
+    "entities": [
+      "SEC EDGAR",
+      "CISA KEV",
+      "NVD",
+      "Coinbase",
+      "Kraken",
+      "Gemini",
+      "Crypto.com",
+      "Fiserv",
+      "Temenos",
+      "Finastra",
+      "Jack Henry",
+      "NCR",
+      "Diebold Nixdorf",
+      "ACI Worldwide",
+      "SWIFT Alliance",
+      "Broadridge",
+      "ION Trading"
+    ],
+    "data_sources": [
+      "SEC EDGAR full-text search (8-K Item 1.05 filings",
+      "efts.sec.gov); NVD CVE API (services.nvd.nist.gov",
+      "10 financial vendors); CISA KEV (cisa.gov); Exchange Statuspage APIs (Coinbase",
+      "Kraken",
+      "Gemini",
+      "Crypto.com); Google News RSS (5 targeted queries with negative filters); Advisory news RSS (4 infrastructure-specific queries)"
+    ],
+    "update_frequency": "Daily",
+    "key_signals": [
+      "Overall stability signal (STABLE/WATCH/ELEVATED/DISRUPTED)",
+      "score breakdown showing exact contribution per component",
+      "SEC material cyber filings split financial vs all-sector",
+      "confirmed financial-vendor CVEs (Critical/High)",
+      "CISA KEV financial vendor matches",
+      "exchange operational status",
+      "financial cyber news volume",
+      "infrastructure advisory items"
+    ],
+    "intent_phrases": [
+      "financial cyber",
+      "bank cyber attack",
+      "payment system outage",
+      "financial stability signal",
+      "SEC cyber filing",
+      "Item 1.05",
+      "financial infrastructure cyber",
+      "exchange outage",
+      "crypto exchange status",
+      "bank ransomware",
+      "financial cyber signal",
+      "SWIFT cyber",
+      "payment rail disruption",
+      "financial sector vulnerability",
+      "bank cyber incident",
+      "SEC cybersecurity disclosure",
+      "financial cyber threat",
+      "banking cyber",
+      "fintech cyber",
+      "payment network outage",
+      {
+        "keyword": "financial-cyber",
+        "weight": 10
+      },
+      {
+        "keyword": "stability",
+        "weight": 10
+      },
+      {
+        "keyword": "signal",
+        "weight": 10
+      }
+    ],
+    "id": "financial_cyber_stability_signal",
+    "path": "https://petroai1492.github.io/delta/cybersecurity/fin_cyber.html"
   }
 ];
 const CROSS_DOMAIN = [
