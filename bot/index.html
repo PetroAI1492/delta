@@ -151,7 +151,7 @@
 </div><!-- .layout -->
 <footer>
   THOR SIGNAL &nbsp;·&nbsp; Taxonomy-driven routing &nbsp;·&nbsp;
-  Generated: 2026-06-29 08:26 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+  Generated: 2026-06-29 09:40 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 <script>
 const REPORTS = [
@@ -3635,6 +3635,87 @@ const REPORTS = [
     ],
     "id": "energy_infrastructure_weather_risk",
     "path": "https://petroai1492.github.io/delta/energy/energy_weather_risk.html"
+  },
+  {
+    "title": "CFTC Energy Positioning Signal",
+    "file": "energy/cftc_energy.html",
+    "description": "Weekly CFTC Commitments of Traders signal for four energy futures contracts \u2014 WTI Crude Oil, Natural Gas, RBOB Gasoline, and NY Harbor ULSD (Heating Oil). Fetches Disaggregated Futures Only report from the CFTC public API, computes Managed Money net position as % of open interest, and produces a deterministic positioning bias (STRONGLY BULLISH / BULLISH / NEUTRAL / BEARISH / STRONGLY BEARISH). Features largest weekly change card, most bullish/bearish extremes, summary table, and full four-category positioning detail.",
+    "json_file": "energy/cftc_energy.json",
+    "published": true,
+    "url": "`petroai1492.github.io/delta/energy/cftc_energy.html`",
+    "auto_published": true,
+    "primary_domain": "Energy",
+    "secondary_domains": [
+      "Finance"
+    ],
+    "entities": [
+      "WTI Crude Oil",
+      "Natural Gas",
+      "RBOB Gasoline",
+      "Heating Oil",
+      "NY Harbor ULSD",
+      "CFTC",
+      "Managed Money",
+      "Producer/Merchant",
+      "Swap Dealers",
+      "NYMEX",
+      "ICE"
+    ],
+    "data_sources": [
+      "CFTC COT Disaggregated Futures Only API (publicreporting.cftc.gov/resource/72hh-3qpy.json",
+      "free",
+      "no key); released every Friday at 3:30pm ET",
+      "data as of prior Tuesday"
+    ],
+    "update_frequency": "Weekly \u2014 run Friday after 3:30pm ET",
+    "key_signals": [
+      "Largest weekly change (most actionable)",
+      "most bullish/most bearish contract",
+      "Managed Money net position as % of open interest per contract",
+      "WoW momentum",
+      "overall energy bias",
+      "positioning bias per contract"
+    ],
+    "intent_phrases": [
+      "CFTC positioning",
+      "commitments of traders",
+      "COT report",
+      "energy futures positioning",
+      "managed money crude",
+      "speculator positioning oil",
+      "hedge fund crude",
+      "WTI COT",
+      "natural gas positioning",
+      "RBOB positioning",
+      "heating oil COT",
+      "futures positioning signal",
+      "energy speculator sentiment",
+      "crude oil sentiment",
+      "COT energy",
+      "CFTC energy",
+      "futures sentiment oil",
+      "managed money energy",
+      "energy positioning signal",
+      "COT crude oil",
+      {
+        "keyword": "cftc",
+        "weight": 10
+      },
+      {
+        "keyword": "energy",
+        "weight": 10
+      },
+      {
+        "keyword": "positioning",
+        "weight": 10
+      },
+      {
+        "keyword": "signal",
+        "weight": 10
+      }
+    ],
+    "id": "cftc_energy_positioning_signal",
+    "path": "https://petroai1492.github.io/delta/energy/cftc_energy.html"
   }
 ];
 const CROSS_DOMAIN = [
