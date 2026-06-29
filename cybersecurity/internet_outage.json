@@ -1,0 +1,162 @@
+{
+  "metadata": {
+    "report": "Global Internet Stability Signal",
+    "version": "1.0.0",
+    "source": "Cloudflare Radar + Official Statuspage APIs",
+    "generated_at": "2026-06-29 21:56 UTC"
+  },
+  "signal": "WATCH",
+  "score": 24,
+  "providers": [
+    {
+      "name": "AWS",
+      "cat": "Cloud",
+      "url": "https://health.aws.amazon.com/health/status",
+      "status": "OPERATIONAL",
+      "color": "#16a34a",
+      "desc": "No current issues"
+    },
+    {
+      "name": "Azure",
+      "cat": "Cloud",
+      "url": "https://azure.status.microsoft/en-us/status/feed/",
+      "status": "OPERATIONAL",
+      "color": "#16a34a",
+      "desc": "No incidents in status feed"
+    },
+    {
+      "name": "Google Cloud",
+      "cat": "Cloud",
+      "url": "https://status.cloud.google.com/en/feed.atom",
+      "status": "DEGRADED",
+      "color": "#d97706",
+      "desc": "Active incident reported in feed"
+    },
+    {
+      "name": "Oracle Cloud",
+      "cat": "Cloud",
+      "url": "https://ocistatus.oraclecloud.com/api/v2/status.json",
+      "status": "OPERATIONAL",
+      "color": "#16a34a",
+      "desc": "Normal Performance"
+    },
+    {
+      "name": "Cloudflare",
+      "cat": "CDN/Network",
+      "url": "https://www.cloudflarestatus.com/api/v2/status.json",
+      "status": "DEGRADED",
+      "color": "#d97706",
+      "desc": "Minor Service Outage"
+    },
+    {
+      "name": "Fastly",
+      "cat": "CDN/Network",
+      "url": "https://www.fastlystatus.com/api/v2/status.json",
+      "status": "UNKNOWN",
+      "color": "#888",
+      "desc": "Could not reach status page"
+    },
+    {
+      "name": "GitHub",
+      "cat": "Collaboration",
+      "url": "https://www.githubstatus.com/api/v2/status.json",
+      "status": "OPERATIONAL",
+      "color": "#16a34a",
+      "desc": "All Systems Operational"
+    },
+    {
+      "name": "Okta",
+      "cat": "Identity",
+      "url": "https://status.okta.com/api/v2/status.json",
+      "status": "UNKNOWN",
+      "color": "#888",
+      "desc": "Could not reach status page"
+    },
+    {
+      "name": "Auth0",
+      "cat": "Identity",
+      "url": "https://status.auth0.com/api/v2/status.json",
+      "status": "UNKNOWN",
+      "color": "#888",
+      "desc": "Could not reach status page"
+    },
+    {
+      "name": "Atlassian",
+      "cat": "Collaboration",
+      "url": "https://status.atlassian.com/api/v2/status.json",
+      "status": "OPERATIONAL",
+      "color": "#16a34a",
+      "desc": "All Systems Operational"
+    },
+    {
+      "name": "Slack",
+      "cat": "Collaboration",
+      "url": "https://status.slack.com/api/v2/status.json",
+      "status": "UNKNOWN",
+      "color": "#888",
+      "desc": "Could not reach status page"
+    },
+    {
+      "name": "Zoom",
+      "cat": "Collaboration",
+      "url": "https://status.zoom.us/api/v2/status.json",
+      "status": "OPERATIONAL",
+      "color": "#16a34a",
+      "desc": "All Systems Operational"
+    },
+    {
+      "name": "CrowdStrike",
+      "cat": "Security",
+      "url": "https://status.crowdstrike.com/api/v2/status.json",
+      "status": "UNKNOWN",
+      "color": "#888",
+      "desc": "Could not reach status page"
+    },
+    {
+      "name": "Zscaler",
+      "cat": "Security",
+      "url": "https://trust.zscaler.com/api/v2/status.json",
+      "status": "UNKNOWN",
+      "color": "#888",
+      "desc": "Could not reach status page"
+    },
+    {
+      "name": "PagerDuty",
+      "cat": "Security",
+      "url": "https://status.pagerduty.com/api/v2/status.json",
+      "status": "UNKNOWN",
+      "color": "#888",
+      "desc": "Could not reach status page"
+    },
+    {
+      "name": "Stripe",
+      "cat": "Payments",
+      "url": "https://status.stripe.com/api/v2/status.json",
+      "status": "UNKNOWN",
+      "color": "#888",
+      "desc": "Could not reach status page"
+    },
+    {
+      "name": "Twilio",
+      "cat": "Payments",
+      "url": "https://status.twilio.com/api/v2/status.json",
+      "status": "DEGRADED",
+      "color": "#d97706",
+      "desc": "Partially Degraded Service"
+    },
+    {
+      "name": "Braintree",
+      "cat": "Payments",
+      "url": "https://status.braintreepayments.com/api/v2/status.json",
+      "status": "UNKNOWN",
+      "color": "#888",
+      "desc": "Could not reach status page"
+    }
+  ],
+  "radar": {
+    "outages": [],
+    "hijacks": [],
+    "leaks": [],
+    "anomalies": []
+  }
+}

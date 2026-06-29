@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Internet Stability Signal</title>
+<style>
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  :root { --red:#e8111a; --rule:#e5e7eb; }
+  body { font-family:Georgia,serif; background:#fff; color:#1a1a1a; }
+  .masthead { border-top:4px solid var(--red); border-bottom:1px solid var(--rule);
+               padding:.6rem 2rem .5rem; display:flex; align-items:baseline; gap:1rem; }
+  .brand { font-family:Arial,sans-serif; font-size:1.1rem; font-weight:bold;
+            color:var(--red); text-transform:uppercase; }
+  .section-label { font-family:Arial,sans-serif; font-size:.72rem; color:#666;
+                    text-transform:uppercase; letter-spacing:.08em;
+                    border-left:1px solid var(--rule); padding-left:1rem; }
+  main { max-width:1100px; margin:0 auto; padding:1.5rem 2rem 3rem; }
+  .report-title { font-size:1.6rem; font-weight:bold; letter-spacing:-.5px;
+                   border-bottom:2px solid #1a1a1a; padding-bottom:.5rem;
+                   margin-bottom:.4rem; }
+  .report-sub { font-family:Arial,sans-serif; font-size:.8rem; color:#666;
+                 margin-bottom:1.25rem; }
+  .signal-card { display:inline-block; border:2px solid #d97706;
+                  padding:.9rem 1.5rem; margin-bottom:1.25rem;
+                  background:#d9770608; min-width:240px; }
+  .scorecard-row { display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:1.5rem; }
+  .cat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:.6rem;
+               margin-bottom:1.5rem; }
+  .two-col { display:grid; grid-template-columns:1.4fr 1fr; gap:1.5rem;
+              margin-bottom:1.5rem; }
+  .panel { border:1px solid var(--rule); padding:.9rem 1.1rem; }
+  .section-head { font-family:Arial,sans-serif; font-size:.72rem; font-weight:bold;
+                   text-transform:uppercase; letter-spacing:.08em; color:#e8111a;
+                   border-bottom:2px solid #e8111a; padding-bottom:.3rem;
+                   margin:1.5rem 0 .75rem; }
+  footer { border-top:1px solid var(--rule); padding:.75rem 2rem;
+            font-family:Arial,sans-serif; font-size:.68rem;
+            color:#666; text-align:center; margin-top:2rem; }
+</style>
+</head>
+<body>
+<div class="masthead">
+  <span class="brand">THOR SIGNAL</span>
+  <span class="section-label">Global Internet Stability Signal</span>
+</div>
+<main>
+  <div class="report-title">Global Internet Stability Signal</div>
+  <div class="report-sub">
+    18 providers monitored &nbsp;·&nbsp;
+    Cloudflare Radar (outages · BGP · anomalies) &nbsp;·&nbsp;
+    Official Statuspage APIs &nbsp;·&nbsp;
+    Generated 2026-06-29 21:56 UTC
+  </div>
+
+  <div class="signal-card">
+    <div style="font-family:Arial,sans-serif;font-size:.65rem;text-transform:uppercase;
+                letter-spacing:.08em;color:#d97706;font-weight:bold;
+                margin-bottom:.25rem;">Global Internet Status</div>
+    <div style="font-family:Georgia,serif;font-size:2.2rem;font-weight:bold;
+                color:#d97706;line-height:1.1;">WATCH</div>
+    <div style="font-family:Arial,sans-serif;font-size:.75rem;color:#555;
+                margin-top:.3rem;">
+      3 provider issues &nbsp;·&nbsp;
+      0 confirmed outages &nbsp;·&nbsp;
+      0 BGP hijacks
+    </div>
+  </div>
+
+  <div class="scorecard-row"><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:105px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Providers</div><div style="font-size:1.3rem;font-weight:bold;color:#1a1a1a;font-family:Georgia,serif;">18</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">monitored</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:105px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Active Issues</div><div style="font-size:1.3rem;font-weight:bold;color:#dc2626;font-family:Georgia,serif;">3</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">degraded or worse</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:105px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Down</div><div style="font-size:1.3rem;font-weight:bold;color:#16a34a;font-family:Georgia,serif;">0</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:105px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">BGP Hijacks</div><div style="font-size:1.3rem;font-weight:bold;color:#16a34a;font-family:Georgia,serif;">0</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">last 24h</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:105px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">BGP Leaks</div><div style="font-size:1.3rem;font-weight:bold;color:#16a34a;font-family:Georgia,serif;">0</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">last 24h</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:105px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">CF Outages</div><div style="font-size:1.3rem;font-weight:bold;color:#16a34a;font-family:Georgia,serif;">0</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">confirmed 24h</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:105px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Anomalies</div><div style="font-size:1.3rem;font-weight:bold;color:#16a34a;font-family:Georgia,serif;">0</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">ongoing</div></div></div>
+
+  <div class="section-head">Category Status</div>
+  <div class="cat-grid">
+<div style="border:1px solid #e5e7eb;border-left:4px solid #d97706;
+            padding:.65rem .85rem;background:#d9770608;">
+  <div style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
+              color:#1a1a1a;margin-bottom:.2rem;">Cloud</div>
+  <div style="font-family:Arial,sans-serif;font-size:.67rem;color:#d97706;
+              font-weight:bold;">DEGRADED</div>
+  <div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;margin-top:.1rem;">
+    3/4 operational
+  </div>
+</div>
+<div style="border:1px solid #e5e7eb;border-left:4px solid #d97706;
+            padding:.65rem .85rem;background:#d9770608;">
+  <div style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
+              color:#1a1a1a;margin-bottom:.2rem;">CDN/Network</div>
+  <div style="font-family:Arial,sans-serif;font-size:.67rem;color:#d97706;
+              font-weight:bold;">DEGRADED</div>
+  <div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;margin-top:.1rem;">
+    0/2 operational
+  </div>
+</div>
+<div style="border:1px solid #e5e7eb;border-left:4px solid #888;
+            padding:.65rem .85rem;background:#88808;">
+  <div style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
+              color:#1a1a1a;margin-bottom:.2rem;">Identity</div>
+  <div style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;
+              font-weight:bold;">UNKNOWN</div>
+  <div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;margin-top:.1rem;">
+    0/2 operational
+  </div>
+</div>
+<div style="border:1px solid #e5e7eb;border-left:4px solid #888;
+            padding:.65rem .85rem;background:#88808;">
+  <div style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
+              color:#1a1a1a;margin-bottom:.2rem;">Collaboration</div>
+  <div style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;
+              font-weight:bold;">UNKNOWN</div>
+  <div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;margin-top:.1rem;">
+    3/4 operational
+  </div>
+</div>
+<div style="border:1px solid #e5e7eb;border-left:4px solid #888;
+            padding:.65rem .85rem;background:#88808;">
+  <div style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
+              color:#1a1a1a;margin-bottom:.2rem;">Security</div>
+  <div style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;
+              font-weight:bold;">UNKNOWN</div>
+  <div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;margin-top:.1rem;">
+    0/3 operational
+  </div>
+</div>
+<div style="border:1px solid #e5e7eb;border-left:4px solid #d97706;
+            padding:.65rem .85rem;background:#d9770608;">
+  <div style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
+              color:#1a1a1a;margin-bottom:.2rem;">Payments</div>
+  <div style="font-family:Arial,sans-serif;font-size:.67rem;color:#d97706;
+              font-weight:bold;">DEGRADED</div>
+  <div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;margin-top:.1rem;">
+    0/3 operational
+  </div>
+</div></div>
+
+  <div class="two-col">
+    <div class="panel">
+      <div style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
+                  text-transform:uppercase;letter-spacing:.08em;color:#e8111a;
+                  border-bottom:2px solid #e8111a;padding-bottom:.3rem;
+                  margin-bottom:.75rem;">Provider Status Detail</div>
+      
+<div style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+            text-transform:uppercase;letter-spacing:.08em;color:#888;
+            margin:1rem 0 .4rem;">Cloud</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem .6rem;border:1px solid #e5e7eb;margin-bottom:.3rem;
+            border-left:3px solid #16a34a;">
+  <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+    AWS</div>
+  <div style="display:flex;align-items:center;gap:.6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">
+      No current issues</span>
+    <span style="font-family:Arial,sans-serif;font-size:.7rem;font-weight:bold;
+                 color:#16a34a;">✓ OPERATIONAL</span>
+  </div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem .6rem;border:1px solid #e5e7eb;margin-bottom:.3rem;
+            border-left:3px solid #16a34a;">
+  <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+    Azure</div>
+  <div style="display:flex;align-items:center;gap:.6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">
+      No incidents in status feed</span>
+    <span style="font-family:Arial,sans-serif;font-size:.7rem;font-weight:bold;
+                 color:#16a34a;">✓ OPERATIONAL</span>
+  </div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem .6rem;border:1px solid #e5e7eb;margin-bottom:.3rem;
+            border-left:3px solid #d97706;">
+  <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+    Google Cloud</div>
+  <div style="display:flex;align-items:center;gap:.6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">
+      Active incident reported in feed</span>
+    <span style="font-family:Arial,sans-serif;font-size:.7rem;font-weight:bold;
+                 color:#d97706;">⚠ DEGRADED</span>
+  </div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem .6rem;border:1px solid #e5e7eb;margin-bottom:.3rem;
+            border-left:3px solid #16a34a;">
+  <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+    Oracle Cloud</div>
+  <div style="display:flex;align-items:center;gap:.6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">
+      Normal Performance</span>
+    <span style="font-family:Arial,sans-serif;font-size:.7rem;font-weight:bold;
+                 color:#16a34a;">✓ OPERATIONAL</span>
+  </div>
+</div>
+<div style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+            text-transform:uppercase;letter-spacing:.08em;color:#888;
+            margin:1rem 0 .4rem;">CDN/Network</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem .6rem;border:1px solid #e5e7eb;margin-bottom:.3rem;
+            border-left:3px solid #d97706;">
+  <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+    Cloudflare</div>
+  <div style="display:flex;align-items:center;gap:.6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">
+      Minor Service Outage</span>
+    <span style="font-family:Arial,sans-serif;font-size:.7rem;font-weight:bold;
+                 color:#d97706;">⚠ DEGRADED</span>
+  </div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem .6rem;border:1px solid #e5e7eb;margin-bottom:.3rem;
+            border-left:3px solid #888;">
+  <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+    Fastly</div>
+  <div style="display:flex;align-items:center;gap:.6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">
+      Could not reach status page</span>
+    <span style="font-family:Arial,sans-serif;font-size:.7rem;font-weight:bold;
+                 color:#888;">? UNKNOWN</span>
+  </div>
+</div>
+<div style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+            text-transform:uppercase;letter-spacing:.08em;color:#888;
+            margin:1rem 0 .4rem;">Identity</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem .6rem;border:1px solid #e5e7eb;margin-bottom:.3rem;
+            border-left:3px solid #888;">
+  <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+    Okta</div>
+  <div style="display:flex;align-items:center;gap:.6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">
+      Could not reach status page</span>
+    <span style="font-family:Arial,sans-serif;font-size:.7rem;font-weight:bold;
+                 color:#888;">? UNKNOWN</span>
+  </div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem .6rem;border:1px solid #e5e7eb;margin-bottom:.3rem;
+            border-left:3px solid #888;">
+  <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+    Auth0</div>
+  <div style="display:flex;align-items:center;gap:.6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">
+      Could not reach status page</span>
+    <span style="font-family:Arial,sans-serif;font-size:.7rem;font-weight:bold;
+                 color:#888;">? UNKNOWN</span>
+  </div>
+</div>
+<div style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+            text-transform:uppercase;letter-spacing:.08em;color:#888;
+            margin:1rem 0 .4rem;">Collaboration</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem .6rem;border:1px solid #e5e7eb;margin-bottom:.3rem;
+            border-left:3px solid #16a34a;">
+  <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+    GitHub</div>
+  <div style="display:flex;align-items:center;gap:.6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">
+      All Systems Operational</span>
+    <span style="font-family:Arial,sans-serif;font-size:.7rem;font-weight:bold;
+                 color:#16a34a;">✓ OPERATIONAL</span>
+  </div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem .6rem;border:1px solid #e5e7eb;margin-bottom:.3rem;
+            border-left:3px solid #16a34a;">
+  <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+    Atlassian</div>
+  <div style="display:flex;align-items:center;gap:.6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">
+      All Systems Operational</span>
+    <span style="font-family:Arial,sans-serif;font-size:.7rem;font-weight:bold;
+                 color:#16a34a;">✓ OPERATIONAL</span>
+  </div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem .6rem;border:1px solid #e5e7eb;margin-bottom:.3rem;
+            border-left:3px solid #888;">
+  <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+    Slack</div>
+  <div style="display:flex;align-items:center;gap:.6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">
+      Could not reach status page</span>
+    <span style="font-family:Arial,sans-serif;font-size:.7rem;font-weight:bold;
+                 color:#888;">? UNKNOWN</span>
+  </div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem .6rem;border:1px solid #e5e7eb;margin-bottom:.3rem;
+            border-left:3px solid #16a34a;">
+  <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+    Zoom</div>
+  <div style="display:flex;align-items:center;gap:.6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">
+      All Systems Operational</span>
+    <span style="font-family:Arial,sans-serif;font-size:.7rem;font-weight:bold;
+                 color:#16a34a;">✓ OPERATIONAL</span>
+  </div>
+</div>
+<div style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+            text-transform:uppercase;letter-spacing:.08em;color:#888;
+            margin:1rem 0 .4rem;">Security</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem .6rem;border:1px solid #e5e7eb;margin-bottom:.3rem;
+            border-left:3px solid #888;">
+  <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+    CrowdStrike</div>
+  <div style="display:flex;align-items:center;gap:.6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">
+      Could not reach status page</span>
+    <span style="font-family:Arial,sans-serif;font-size:.7rem;font-weight:bold;
+                 color:#888;">? UNKNOWN</span>
+  </div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem .6rem;border:1px solid #e5e7eb;margin-bottom:.3rem;
+            border-left:3px solid #888;">
+  <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+    Zscaler</div>
+  <div style="display:flex;align-items:center;gap:.6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">
+      Could not reach status page</span>
+    <span style="font-family:Arial,sans-serif;font-size:.7rem;font-weight:bold;
+                 color:#888;">? UNKNOWN</span>
+  </div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem .6rem;border:1px solid #e5e7eb;margin-bottom:.3rem;
+            border-left:3px solid #888;">
+  <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+    PagerDuty</div>
+  <div style="display:flex;align-items:center;gap:.6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">
+      Could not reach status page</span>
+    <span style="font-family:Arial,sans-serif;font-size:.7rem;font-weight:bold;
+                 color:#888;">? UNKNOWN</span>
+  </div>
+</div>
+<div style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+            text-transform:uppercase;letter-spacing:.08em;color:#888;
+            margin:1rem 0 .4rem;">Payments</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem .6rem;border:1px solid #e5e7eb;margin-bottom:.3rem;
+            border-left:3px solid #888;">
+  <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+    Stripe</div>
+  <div style="display:flex;align-items:center;gap:.6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">
+      Could not reach status page</span>
+    <span style="font-family:Arial,sans-serif;font-size:.7rem;font-weight:bold;
+                 color:#888;">? UNKNOWN</span>
+  </div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem .6rem;border:1px solid #e5e7eb;margin-bottom:.3rem;
+            border-left:3px solid #d97706;">
+  <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+    Twilio</div>
+  <div style="display:flex;align-items:center;gap:.6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">
+      Partially Degraded Service</span>
+    <span style="font-family:Arial,sans-serif;font-size:.7rem;font-weight:bold;
+                 color:#d97706;">⚠ DEGRADED</span>
+  </div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem .6rem;border:1px solid #e5e7eb;margin-bottom:.3rem;
+            border-left:3px solid #888;">
+  <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+    Braintree</div>
+  <div style="display:flex;align-items:center;gap:.6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;color:#888;">
+      Could not reach status page</span>
+    <span style="font-family:Arial,sans-serif;font-size:.7rem;font-weight:bold;
+                 color:#888;">? UNKNOWN</span>
+  </div>
+</div>
+    </div>
+    <div>
+      <div class="panel" style="margin-bottom:.75rem;">
+        <div style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
+                    text-transform:uppercase;letter-spacing:.08em;color:#e8111a;
+                    border-bottom:2px solid #e8111a;padding-bottom:.3rem;
+                    margin-bottom:.6rem;">CF Radar — Confirmed Outages (24h)</div>
+        
+<div style="font-family:Arial,sans-serif;font-size:.75rem;color:#16a34a;
+            padding:.6rem;background:#f0fdf4;border:1px solid #86efac;">
+  ✓ No confirmed outages in last 24 hours
+</div>
+      </div>
+      <div class="panel" style="margin-bottom:.75rem;">
+        <div style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
+                    text-transform:uppercase;letter-spacing:.08em;color:#e8111a;
+                    border-bottom:2px solid #e8111a;padding-bottom:.3rem;
+                    margin-bottom:.6rem;">CF Radar — Traffic Anomalies (ongoing)</div>
+        
+<div style="font-family:Arial,sans-serif;font-size:.75rem;color:#16a34a;
+            padding:.6rem;background:#f0fdf4;border:1px solid #86efac;">
+  ✓ No ongoing traffic anomalies detected
+</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-head">Cloudflare Radar — BGP Events (24h)</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+    <div class="panel">
+      <div style="font-family:Arial,sans-serif;font-size:.7rem;font-weight:bold;
+                  color:#dc2626;margin-bottom:.6rem;">BGP Hijacks</div>
+      
+<div style="font-family:Arial,sans-serif;font-size:.75rem;color:#16a34a;
+            padding:.6rem;background:#f0fdf4;border:1px solid #86efac;">
+  ✓ No BGP hijack events in last 24 hours
+</div>
+    </div>
+    <div class="panel">
+      <div style="font-family:Arial,sans-serif;font-size:.7rem;font-weight:bold;
+                  color:#d97706;margin-bottom:.6rem;">BGP Route Leaks</div>
+      
+<div style="font-family:Arial,sans-serif;font-size:.75rem;color:#16a34a;
+            padding:.6rem;background:#f0fdf4;border:1px solid #86efac;">
+  ✓ No BGP route leak events in last 24 hours
+</div>
+    </div>
+  </div>
+
+</main>
+<footer>
+  <b>DATA SOURCES</b> &nbsp;·&nbsp;
+  Cloudflare Radar API (api.cloudflare.com/client/v4/radar) &nbsp;·&nbsp;
+  Official Statuspage APIs — 18 providers &nbsp;·&nbsp;
+  Public Data Only &nbsp;·&nbsp;
+  No AI-generated content &nbsp;·&nbsp;
+  © 2026 Randy Hinton &nbsp;·&nbsp; 2026-06-29 21:56 UTC &nbsp;·&nbsp; #FollowTheData
+</footer>
+</body>
+</html>
