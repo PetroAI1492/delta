@@ -1,0 +1,255 @@
+{
+  "metadata": {
+    "report": "Energy Infrastructure Weather Risk",
+    "version": "1.0.0",
+    "source": "NOAA NWS Alerts API",
+    "generated_at": "2026-06-29 12:17 UTC"
+  },
+  "summary": {
+    "total": 20,
+    "affected": 1,
+    "critical": 0,
+    "high": 0,
+    "moderate": 0,
+    "clear": 19,
+    "total_alerts": 1,
+    "overall": "LOW",
+    "overall_color": "#2563eb"
+  },
+  "facilities": [
+    {
+      "name": "Motiva Port Arthur Refinery",
+      "type": "Refinery",
+      "state": "TX",
+      "lat": 29.8749,
+      "lon": -93.9396,
+      "capacity": "636 MBPD \u2014 largest US refinery",
+      "alerts": [],
+      "risk": "CLEAR",
+      "risk_color": "#16a34a"
+    },
+    {
+      "name": "ExxonMobil Beaumont Refinery",
+      "type": "Refinery",
+      "state": "TX",
+      "lat": 30.086,
+      "lon": -94.1266,
+      "capacity": "369 MBPD",
+      "alerts": [],
+      "risk": "CLEAR",
+      "risk_color": "#16a34a"
+    },
+    {
+      "name": "Valero Port Arthur Refinery",
+      "type": "Refinery",
+      "state": "TX",
+      "lat": 29.88,
+      "lon": -93.92,
+      "capacity": "310 MBPD",
+      "alerts": [],
+      "risk": "CLEAR",
+      "risk_color": "#16a34a"
+    },
+    {
+      "name": "Marathon Galveston Bay Refinery",
+      "type": "Refinery",
+      "state": "TX",
+      "lat": 29.7355,
+      "lon": -94.9774,
+      "capacity": "585 MBPD",
+      "alerts": [],
+      "risk": "CLEAR",
+      "risk_color": "#16a34a"
+    },
+    {
+      "name": "Valero Houston Refinery",
+      "type": "Refinery",
+      "state": "TX",
+      "lat": 29.73,
+      "lon": -95.26,
+      "capacity": "189 MBPD",
+      "alerts": [],
+      "risk": "CLEAR",
+      "risk_color": "#16a34a"
+    },
+    {
+      "name": "Phillips 66 Alliance Refinery",
+      "type": "Refinery",
+      "state": "LA",
+      "lat": 29.43,
+      "lon": -89.92,
+      "capacity": "255 MBPD",
+      "alerts": [],
+      "risk": "CLEAR",
+      "risk_color": "#16a34a"
+    },
+    {
+      "name": "ExxonMobil Baton Rouge Refinery",
+      "type": "Refinery",
+      "state": "LA",
+      "lat": 30.495,
+      "lon": -91.185,
+      "capacity": "502 MBPD",
+      "alerts": [],
+      "risk": "CLEAR",
+      "risk_color": "#16a34a"
+    },
+    {
+      "name": "Cushing Storage Hub",
+      "type": "Crude Storage",
+      "state": "OK",
+      "lat": 35.9848,
+      "lon": -96.7642,
+      "capacity": "~90 MMbbl capacity \u2014 WTI benchmark delivery",
+      "alerts": [],
+      "risk": "CLEAR",
+      "risk_color": "#16a34a"
+    },
+    {
+      "name": "LOOP Louisiana Offshore",
+      "type": "Marine Terminal",
+      "state": "LA",
+      "lat": 28.8853,
+      "lon": -90.0247,
+      "capacity": "Only US deepwater crude port",
+      "alerts": [],
+      "risk": "CLEAR",
+      "risk_color": "#16a34a"
+    },
+    {
+      "name": "Henry Hub",
+      "type": "Nat Gas Hub",
+      "state": "LA",
+      "lat": 29.9691,
+      "lon": -90.6426,
+      "capacity": "Global nat gas price benchmark",
+      "alerts": [],
+      "risk": "CLEAR",
+      "risk_color": "#16a34a"
+    },
+    {
+      "name": "Transwestern Pipeline Hub",
+      "type": "Nat Gas Hub",
+      "state": "TX",
+      "lat": 31.5,
+      "lon": -100.4,
+      "capacity": "Permian Basin nat gas egress",
+      "alerts": [],
+      "risk": "CLEAR",
+      "risk_color": "#16a34a"
+    },
+    {
+      "name": "Sabine Pass LNG (Cheniere)",
+      "type": "LNG Export",
+      "state": "LA",
+      "lat": 29.7333,
+      "lon": -93.8666,
+      "capacity": "~30 MTPA \u2014 largest US LNG export",
+      "alerts": [],
+      "risk": "CLEAR",
+      "risk_color": "#16a34a"
+    },
+    {
+      "name": "Freeport LNG",
+      "type": "LNG Export",
+      "state": "TX",
+      "lat": 28.95,
+      "lon": -95.35,
+      "capacity": "~15 MTPA",
+      "alerts": [],
+      "risk": "CLEAR",
+      "risk_color": "#16a34a"
+    },
+    {
+      "name": "Corpus Christi LNG (Cheniere)",
+      "type": "LNG Export",
+      "state": "TX",
+      "lat": 27.8006,
+      "lon": -97.3964,
+      "capacity": "~15 MTPA",
+      "alerts": [],
+      "risk": "CLEAR",
+      "risk_color": "#16a34a"
+    },
+    {
+      "name": "Cameron LNG",
+      "type": "LNG Export",
+      "state": "LA",
+      "lat": 29.77,
+      "lon": -93.33,
+      "capacity": "~12 MTPA",
+      "alerts": [],
+      "risk": "CLEAR",
+      "risk_color": "#16a34a"
+    },
+    {
+      "name": "Calcasieu Pass LNG",
+      "type": "LNG Export",
+      "state": "LA",
+      "lat": 29.86,
+      "lon": -93.35,
+      "capacity": "~10 MTPA",
+      "alerts": [],
+      "risk": "CLEAR",
+      "risk_color": "#16a34a"
+    },
+    {
+      "name": "Permian Basin (Midland Hub)",
+      "type": "Production Basin",
+      "state": "TX",
+      "lat": 31.9973,
+      "lon": -102.0779,
+      "capacity": "~6 MBPD \u2014 largest US oil basin",
+      "alerts": [],
+      "risk": "CLEAR",
+      "risk_color": "#16a34a"
+    },
+    {
+      "name": "Eagle Ford Shale Hub",
+      "type": "Production Basin",
+      "state": "TX",
+      "lat": 28.75,
+      "lon": -98.5,
+      "capacity": "~1.1 MBPD",
+      "alerts": [],
+      "risk": "CLEAR",
+      "risk_color": "#16a34a"
+    },
+    {
+      "name": "Haynesville Shale Hub",
+      "type": "Production Basin",
+      "state": "LA",
+      "lat": 32.5,
+      "lon": -93.5,
+      "capacity": "~15 Bcf/d \u2014 feeds Gulf LNG",
+      "alerts": [],
+      "risk": "CLEAR",
+      "risk_color": "#16a34a"
+    },
+    {
+      "name": "DJ Basin (Denver Hub)",
+      "type": "Production Basin",
+      "state": "CO",
+      "lat": 39.7392,
+      "lon": -104.9903,
+      "capacity": "~450 MBPD",
+      "alerts": [
+        {
+          "event": "Air Quality Alert",
+          "severity": "LOW",
+          "color": "#2563eb",
+          "bg": "#eff6ff",
+          "headline": "Air Quality Alert issued June 28 at 4:10PM MDT by NWS Denver CO",
+          "description": "The Colorado Department of Public Health and Environment has\nissued the following...\n\nWHAT...Action Day for Multiple Pollutants.\n\nWHERE...Douglas, Jefferson, Denver, western Arapahoe, western\nAdams, Broomfield, Boulder, Larimer, and Weld Counties\n\nWHEN...400 PM Sunday June 28 to 400 PM Monday June 2",
+          "onset": "2026-06-28T16:10:00-06:00",
+          "expires": "2026-06-29T16:00:00-06:00",
+          "sender": "NWS Denver CO",
+          "urgency": "Unknown",
+          "certainty": "Unknown"
+        }
+      ],
+      "risk": "LOW",
+      "risk_color": "#2563eb"
+    }
+  ]
+}
