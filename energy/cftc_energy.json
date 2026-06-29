@@ -3,71 +3,35 @@
     "report": "CFTC Energy Positioning Signal",
     "version": "1.0.0",
     "source": "CFTC COT Disaggregated Futures Only",
-    "generated_at": "2026-06-29 13:18 UTC"
+    "generated_at": "2026-06-29 13:20 UTC"
   },
   "contracts": [
     {
-      "commodity_name": "CRUDE OIL, LIGHT SWEET",
+      "cftc_code": "067651",
       "label": "WTI Crude Oil",
       "unit": "contracts (1,000 bbl each)",
       "exchange": "NYMEX",
-      "signals": {
-        "pm_net": 0,
-        "sd_net": 8998,
-        "mm_net": 0,
-        "or_net": 0,
-        "mm_pct_oi": 0.0,
-        "mm_chg": 0,
-        "momentum": "\u2193 0",
-        "bias": "NEUTRAL",
-        "bias_color": "#888",
-        "open_interest": 218740,
-        "report_date": "2026-06-23"
-      },
-      "matched_name": "CRUDE OIL"
+      "signals": null,
+      "matched_name": null
     },
     {
-      "commodity_name": "NATURAL GAS",
+      "cftc_code": "023651",
       "label": "Natural Gas",
       "unit": "contracts (10,000 MMBtu each)",
       "exchange": "NYMEX",
-      "signals": {
-        "pm_net": 0,
-        "sd_net": -698095,
-        "mm_net": 11326,
-        "or_net": 0,
-        "mm_pct_oi": 1.1,
-        "mm_chg": 218643,
-        "momentum": "\u2191 +218,643 (building longs)",
-        "bias": "NEUTRAL",
-        "bias_color": "#888",
-        "open_interest": 1049834,
-        "report_date": "2026-06-23"
-      },
-      "matched_name": "NATURAL GAS"
+      "signals": null,
+      "matched_name": null
     },
     {
-      "commodity_name": "GASOLINE BLENDSTOCK (RBOB)",
+      "cftc_code": "111659",
       "label": "RBOB Gasoline",
       "unit": "contracts (42,000 gal each)",
       "exchange": "NYMEX",
-      "signals": {
-        "pm_net": 0,
-        "sd_net": 25394,
-        "mm_net": 71095,
-        "or_net": 0,
-        "mm_pct_oi": 22.5,
-        "mm_chg": 3675,
-        "momentum": "\u2191 +3,675",
-        "bias": "STRONGLY BULLISH",
-        "bias_color": "#15803d",
-        "open_interest": 316160,
-        "report_date": "2026-06-23"
-      },
-      "matched_name": "GASOLINE"
+      "signals": null,
+      "matched_name": null
     },
     {
-      "commodity_name": "NO. 2 FUEL OIL, NEW YORK HARBOR",
+      "cftc_code": "022651",
       "label": "Heating Oil",
       "unit": "contracts (42,000 gal each)",
       "exchange": "NYMEX",
