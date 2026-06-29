@@ -3,10 +3,10 @@
     "report": "Global Internet Stability Signal",
     "version": "1.0.0",
     "source": "Cloudflare Radar + Official Statuspage APIs",
-    "generated_at": "2026-06-29 22:17 UTC"
+    "generated_at": "2026-06-29 22:18 UTC"
   },
   "signal": "DEGRADED",
-  "score": 48,
+  "score": 40,
   "providers": [
     {
       "name": "AWS",
@@ -84,9 +84,9 @@
       "name": "CrowdStrike",
       "cat": "Security",
       "url": "https://crowdstrike.statuspage.io/",
-      "status": "DEGRADED",
-      "color": "#d97706",
-      "desc": "Active incident detected"
+      "status": "OPERATIONAL",
+      "color": "#16a34a",
+      "desc": "No active incidents"
     },
     {
       "name": "Datadog",
