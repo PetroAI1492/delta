@@ -3,7 +3,7 @@
     "report": "Global Internet Stability Signal",
     "version": "1.0.0",
     "source": "Cloudflare Radar + Official Statuspage APIs",
-    "generated_at": "2026-06-29 22:05 UTC"
+    "generated_at": "2026-06-29 22:07 UTC"
   },
   "signal": "WATCH",
   "score": 24,
@@ -12,9 +12,9 @@
       "name": "AWS",
       "cat": "Cloud",
       "url": "https://health.aws.amazon.com/health/status",
-      "status": "OPERATIONAL",
-      "color": "#16a34a",
-      "desc": "No current issues"
+      "status": "UNKNOWN",
+      "color": "#888",
+      "desc": "Unknown type"
     },
     {
       "name": "Azure",
@@ -91,10 +91,10 @@
     {
       "name": "Slack",
       "cat": "Collaboration",
-      "url": "https://slack-status.com/api/v2/status.json",
-      "status": "UNKNOWN",
-      "color": "#888",
-      "desc": "Could not reach status page"
+      "url": "https://status.slack.com/api/v2.json",
+      "status": "OPERATIONAL",
+      "color": "#16a34a",
+      "desc": "No current issues"
     },
     {
       "name": "Zoom",
@@ -107,7 +107,7 @@
     {
       "name": "CrowdStrike",
       "cat": "Security",
-      "url": "https://crowdstrike.statuspage.io/api/v2/status.json",
+      "url": "https://status.crowdstrike.com/api/v2/status.json",
       "status": "UNKNOWN",
       "color": "#888",
       "desc": "Could not reach status page"
