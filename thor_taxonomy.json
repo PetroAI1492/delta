@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-29T21:12:32Z",
+  "generated": "2026-06-29T22:22:37Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -4015,6 +4015,92 @@
       ],
       "id": "nvd_vulnerability_trend_signal",
       "path": "https://petroai1492.github.io/delta/cybersecurity/nvd_trend.html"
+    },
+    {
+      "title": "Global Internet Stability Signal",
+      "file": "cybersecurity/internet_outage.html",
+      "description": "Real-time dashboard of global internet stability. Monitors 14 major internet infrastructure providers via official Statuspage and RSS APIs, enriched with Cloudflare Radar data \u2014 confirmed outages, BGP hijacks, BGP route leaks, and traffic anomaly annotations. Produces an overall stability signal (HEALTHY/WATCH/DEGRADED/DISRUPTED/CRITICAL) with category-level status cards and per-provider detail.",
+      "json_file": "cybersecurity/internet_outage.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/cybersecurity/internet_outage.html`",
+      "auto_published": true,
+      "primary_domain": "Cybersecurity",
+      "secondary_domains": [
+        "\u2014"
+      ],
+      "entities": [
+        "AWS",
+        "Azure",
+        "Google Cloud",
+        "Oracle Cloud",
+        "Cloudflare",
+        "Okta",
+        "GitHub",
+        "Atlassian",
+        "Zoom",
+        "CrowdStrike",
+        "Datadog",
+        "New Relic",
+        "Twilio",
+        "Intuit; Cloudflare Radar (BGP hijacks",
+        "route leaks",
+        "outage annotations)"
+      ],
+      "data_sources": [
+        "Official Statuspage APIs (free",
+        "no key); AWS Health RSS feed; Azure/Google Cloud Atom feeds; Cloudflare Radar API (free token",
+        "C:\\mygit\\secrets\\cloudflare.key); all sources are official provider-published data"
+      ],
+      "update_frequency": "Hourly recommended; every 6 hours minimum",
+      "key_signals": [
+        "Overall stability signal with score",
+        "active provider issues count",
+        "confirmed Cloudflare Radar outages (24h)",
+        "BGP hijack events (24h)",
+        "BGP route leak events (24h)",
+        "category status (Cloud/CDN/Identity/Collaboration/Security/Payments)",
+        "per-provider operational status"
+      ],
+      "intent_phrases": [
+        "internet outage",
+        "internet stability",
+        "cloud outage",
+        "AWS outage",
+        "Azure outage",
+        "Google Cloud outage",
+        "Cloudflare outage",
+        "BGP hijack",
+        "BGP route leak",
+        "internet status",
+        "global internet",
+        "provider status",
+        "cloud status",
+        "internet disruption",
+        "GitHub outage",
+        "Zoom outage",
+        "Okta outage",
+        "Twilio outage",
+        "internet signal",
+        "internet health",
+        {
+          "keyword": "global",
+          "weight": 10
+        },
+        {
+          "keyword": "internet",
+          "weight": 10
+        },
+        {
+          "keyword": "stability",
+          "weight": 10
+        },
+        {
+          "keyword": "signal",
+          "weight": 10
+        }
+      ],
+      "id": "global_internet_stability_signal",
+      "path": "https://petroai1492.github.io/delta/cybersecurity/internet_outage.html"
     }
   ],
   "cross_domain_matrix": [
