@@ -1,0 +1,78 @@
+{
+  "metadata": {
+    "report": "CFTC Energy Positioning Signal",
+    "version": "1.0.0",
+    "source": "CFTC COT Disaggregated Futures Only",
+    "generated_at": "2026-06-29 13:18 UTC"
+  },
+  "contracts": [
+    {
+      "commodity_name": "CRUDE OIL, LIGHT SWEET",
+      "label": "WTI Crude Oil",
+      "unit": "contracts (1,000 bbl each)",
+      "exchange": "NYMEX",
+      "signals": {
+        "pm_net": 0,
+        "sd_net": 8998,
+        "mm_net": 0,
+        "or_net": 0,
+        "mm_pct_oi": 0.0,
+        "mm_chg": 0,
+        "momentum": "\u2193 0",
+        "bias": "NEUTRAL",
+        "bias_color": "#888",
+        "open_interest": 218740,
+        "report_date": "2026-06-23"
+      },
+      "matched_name": "CRUDE OIL"
+    },
+    {
+      "commodity_name": "NATURAL GAS",
+      "label": "Natural Gas",
+      "unit": "contracts (10,000 MMBtu each)",
+      "exchange": "NYMEX",
+      "signals": {
+        "pm_net": 0,
+        "sd_net": -698095,
+        "mm_net": 11326,
+        "or_net": 0,
+        "mm_pct_oi": 1.1,
+        "mm_chg": 218643,
+        "momentum": "\u2191 +218,643 (building longs)",
+        "bias": "NEUTRAL",
+        "bias_color": "#888",
+        "open_interest": 1049834,
+        "report_date": "2026-06-23"
+      },
+      "matched_name": "NATURAL GAS"
+    },
+    {
+      "commodity_name": "GASOLINE BLENDSTOCK (RBOB)",
+      "label": "RBOB Gasoline",
+      "unit": "contracts (42,000 gal each)",
+      "exchange": "NYMEX",
+      "signals": {
+        "pm_net": 0,
+        "sd_net": 25394,
+        "mm_net": 71095,
+        "or_net": 0,
+        "mm_pct_oi": 22.5,
+        "mm_chg": 3675,
+        "momentum": "\u2191 +3,675",
+        "bias": "STRONGLY BULLISH",
+        "bias_color": "#15803d",
+        "open_interest": 316160,
+        "report_date": "2026-06-23"
+      },
+      "matched_name": "GASOLINE"
+    },
+    {
+      "commodity_name": "NO. 2 FUEL OIL, NEW YORK HARBOR",
+      "label": "Heating Oil",
+      "unit": "contracts (42,000 gal each)",
+      "exchange": "NYMEX",
+      "signals": null,
+      "matched_name": null
+    }
+  ]
+}
