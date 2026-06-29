@@ -3,18 +3,18 @@
     "report": "Global Internet Stability Signal",
     "version": "1.0.0",
     "source": "Cloudflare Radar + Official Statuspage APIs",
-    "generated_at": "2026-06-29 22:15 UTC"
+    "generated_at": "2026-06-29 22:17 UTC"
   },
   "signal": "DEGRADED",
-  "score": 32,
+  "score": 48,
   "providers": [
     {
       "name": "AWS",
       "cat": "Cloud",
-      "url": "https://health.aws.amazon.com/health/status",
-      "status": "UNKNOWN",
-      "color": "#888",
-      "desc": "Unknown type"
+      "url": "https://status.aws.amazon.com/rss/all.rss",
+      "status": "DEGRADED",
+      "color": "#d97706",
+      "desc": "Active incident reported in feed"
     },
     {
       "name": "Azure",
@@ -83,10 +83,10 @@
     {
       "name": "CrowdStrike",
       "cat": "Security",
-      "url": "https://crowdstrike.statuspage.io/api/v2/status.json",
-      "status": "UNKNOWN",
-      "color": "#888",
-      "desc": "Could not reach status page"
+      "url": "https://crowdstrike.statuspage.io/",
+      "status": "DEGRADED",
+      "color": "#d97706",
+      "desc": "Active incident detected"
     },
     {
       "name": "Datadog",
