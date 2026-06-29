@@ -3,10 +3,10 @@
     "report": "Global Internet Stability Signal",
     "version": "1.0.0",
     "source": "Cloudflare Radar + Official Statuspage APIs",
-    "generated_at": "2026-06-29 22:07 UTC"
+    "generated_at": "2026-06-29 22:11 UTC"
   },
-  "signal": "WATCH",
-  "score": 24,
+  "signal": "DEGRADED",
+  "score": 32,
   "providers": [
     {
       "name": "AWS",
@@ -49,28 +49,12 @@
       "desc": "Minor Service Outage"
     },
     {
-      "name": "Fastly",
-      "cat": "CDN/Network",
-      "url": "https://fastlystatus.com/api/v2/status.json",
-      "status": "UNKNOWN",
-      "color": "#888",
-      "desc": "Could not reach status page"
-    },
-    {
       "name": "Okta",
       "cat": "Identity",
-      "url": "https://status.okta.com/api/v2/status.json",
-      "status": "UNKNOWN",
-      "color": "#888",
-      "desc": "Could not reach status page"
-    },
-    {
-      "name": "Auth0",
-      "cat": "Identity",
-      "url": "https://status.auth0.com/api/v2/status.json",
-      "status": "UNKNOWN",
-      "color": "#888",
-      "desc": "Could not reach status page"
+      "url": "https://status.okta.com/",
+      "status": "DEGRADED",
+      "color": "#d97706",
+      "desc": "Active incident detected"
     },
     {
       "name": "GitHub",
@@ -89,14 +73,6 @@
       "desc": "All Systems Operational"
     },
     {
-      "name": "Slack",
-      "cat": "Collaboration",
-      "url": "https://status.slack.com/api/v2.json",
-      "status": "OPERATIONAL",
-      "color": "#16a34a",
-      "desc": "No current issues"
-    },
-    {
       "name": "Zoom",
       "cat": "Collaboration",
       "url": "https://status.zoom.us/api/v2/status.json",
@@ -107,15 +83,7 @@
     {
       "name": "CrowdStrike",
       "cat": "Security",
-      "url": "https://status.crowdstrike.com/api/v2/status.json",
-      "status": "UNKNOWN",
-      "color": "#888",
-      "desc": "Could not reach status page"
-    },
-    {
-      "name": "Zscaler",
-      "cat": "Security",
-      "url": "https://trust.zscaler.com/api/v2/status.json",
+      "url": "https://status.crowdstrike.com/",
       "status": "UNKNOWN",
       "color": "#888",
       "desc": "Could not reach status page"
@@ -143,14 +111,6 @@
       "status": "DEGRADED",
       "color": "#d97706",
       "desc": "Partially Degraded Service"
-    },
-    {
-      "name": "Braintree",
-      "cat": "Payments",
-      "url": "https://status.braintreepayments.com/api/v2/status.json",
-      "status": "UNKNOWN",
-      "color": "#888",
-      "desc": "Could not reach status page"
     }
   ],
   "radar": {
