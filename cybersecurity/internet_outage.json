@@ -3,7 +3,7 @@
     "report": "Global Internet Stability Signal",
     "version": "1.0.0",
     "source": "Cloudflare Radar + Official Statuspage APIs",
-    "generated_at": "2026-06-29 22:11 UTC"
+    "generated_at": "2026-06-29 22:15 UTC"
   },
   "signal": "DEGRADED",
   "score": 32,
@@ -83,26 +83,26 @@
     {
       "name": "CrowdStrike",
       "cat": "Security",
-      "url": "https://status.crowdstrike.com/",
+      "url": "https://crowdstrike.statuspage.io/api/v2/status.json",
       "status": "UNKNOWN",
       "color": "#888",
       "desc": "Could not reach status page"
     },
     {
-      "name": "PagerDuty",
+      "name": "Datadog",
       "cat": "Security",
-      "url": "https://status.pagerduty.com/api/v2/status.json",
-      "status": "UNKNOWN",
-      "color": "#888",
-      "desc": "Could not reach status page"
+      "url": "https://status.datadoghq.com/api/v2/status.json",
+      "status": "OPERATIONAL",
+      "color": "#16a34a",
+      "desc": "All Systems Operational"
     },
     {
-      "name": "Stripe",
-      "cat": "Payments",
-      "url": "https://status.stripe.com/api/v2/status.json",
-      "status": "UNKNOWN",
-      "color": "#888",
-      "desc": "Could not reach status page"
+      "name": "New Relic",
+      "cat": "Security",
+      "url": "https://status.newrelic.com/api/v2/status.json",
+      "status": "OPERATIONAL",
+      "color": "#16a34a",
+      "desc": "All Systems Operational"
     },
     {
       "name": "Twilio",
@@ -111,6 +111,14 @@
       "status": "DEGRADED",
       "color": "#d97706",
       "desc": "Partially Degraded Service"
+    },
+    {
+      "name": "Intuit",
+      "cat": "Payments",
+      "url": "https://status.developer.intuit.com/api/v2/status.json",
+      "status": "OPERATIONAL",
+      "color": "#16a34a",
+      "desc": "All Systems Operational"
     }
   ],
   "radar": {
