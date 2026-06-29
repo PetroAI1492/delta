@@ -3,7 +3,7 @@
     "report": "Global Internet Stability Signal",
     "version": "1.0.0",
     "source": "Cloudflare Radar + Official Statuspage APIs",
-    "generated_at": "2026-06-29 22:18 UTC"
+    "generated_at": "2026-06-29 22:31 UTC"
   },
   "signal": "DEGRADED",
   "score": 40,
@@ -47,6 +47,14 @@
       "status": "DEGRADED",
       "color": "#d97706",
       "desc": "Minor Service Outage"
+    },
+    {
+      "name": "Fastly",
+      "cat": "CDN/Network",
+      "url": "https://fastlystatus.com/",
+      "status": "UNKNOWN",
+      "color": "#888",
+      "desc": "Could not reach status page"
     },
     {
       "name": "Okta",
@@ -106,7 +114,7 @@
     },
     {
       "name": "Twilio",
-      "cat": "Payments",
+      "cat": "Comms",
       "url": "https://status.twilio.com/api/v2/status.json",
       "status": "DEGRADED",
       "color": "#d97706",
@@ -114,7 +122,7 @@
     },
     {
       "name": "Intuit",
-      "cat": "Payments",
+      "cat": "Comms",
       "url": "https://status.developer.intuit.com/api/v2/status.json",
       "status": "OPERATIONAL",
       "color": "#16a34a",
