@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ransomware Victim Industry Tracker</title>
+<style>
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  :root { --red:#e8111a; --rule:#e5e7eb; }
+  body { font-family:Georgia,serif; background:#fff; color:#1a1a1a; }
+  .masthead { border-top:4px solid var(--red); border-bottom:1px solid var(--rule);
+               padding:.6rem 2rem .5rem; display:flex; align-items:baseline; gap:1rem; }
+  .brand { font-family:Arial,sans-serif; font-size:1.1rem; font-weight:bold;
+            color:var(--red); text-transform:uppercase; }
+  .section-label { font-family:Arial,sans-serif; font-size:.72rem; color:#666;
+                    text-transform:uppercase; letter-spacing:.08em;
+                    border-left:1px solid var(--rule); padding-left:1rem; }
+  main { max-width:1100px; margin:0 auto; padding:1.5rem 2rem 3rem; }
+  .report-title { font-size:1.6rem; font-weight:bold; letter-spacing:-.5px;
+                   border-bottom:2px solid #1a1a1a; padding-bottom:.5rem;
+                   margin-bottom:.4rem; }
+  .report-sub { font-family:Arial,sans-serif; font-size:.8rem; color:#666;
+                 margin-bottom:1.25rem; }
+  .threat-card { display:inline-block; border:2px solid #7f1d1d;
+                  padding:.9rem 1.5rem; margin-bottom:1.25rem;
+                  background:#7f1d1d08; min-width:220px; }
+  .scorecard-row { display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:1.5rem; }
+  .two-col { display:grid; grid-template-columns:1.5fr 1fr; gap:1.5rem;
+              margin-bottom:1.5rem; }
+  .hv-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:.6rem;
+              margin-bottom:1.5rem; }
+  .panel { border:1px solid var(--rule); padding:.9rem 1.1rem; }
+  .section-head { font-family:Arial,sans-serif; font-size:.72rem; font-weight:bold;
+                   text-transform:uppercase; letter-spacing:.08em; color:#e8111a;
+                   border-bottom:2px solid #e8111a; padding-bottom:.3rem;
+                   margin:1.5rem 0 .75rem; }
+  table { width:100%; border-collapse:collapse; font-size:12px; }
+  th { text-align:left; font-family:Arial,sans-serif; font-size:.65rem;
+        text-transform:uppercase; letter-spacing:.06em; color:#888;
+        padding:.4rem .6rem .4rem 0; border-bottom:2px solid #e5e7eb; }
+  td { border-bottom:1px solid #f3f4f6; vertical-align:middle; }
+  .note { background:#f9fafb;border:1px solid #e5e7eb;border-left:3px solid #888;
+           padding:.6rem .9rem;font-family:Arial,sans-serif;font-size:.7rem;
+           color:#555;line-height:1.6;margin-bottom:1.25rem; }
+  footer { border-top:1px solid var(--rule); padding:.75rem 2rem;
+            font-family:Arial,sans-serif; font-size:.68rem;
+            color:#666; text-align:center; margin-top:2rem; }
+</style>
+</head>
+<body>
+<div class="masthead">
+  <span class="brand">THOR SIGNAL</span>
+  <span class="section-label">Ransomware Victim Industry Tracker</span>
+</div>
+<main>
+  <div class="report-title">Ransomware Victim Industry Tracker</div>
+  <div class="report-sub">
+    ransomware.live public data &nbsp;·&nbsp; 30-day lookback &nbsp;·&nbsp;
+    678 victims &nbsp;·&nbsp; 64 active groups &nbsp;·&nbsp;
+    Generated 2026-06-29 19:53 UTC
+  </div>
+
+  <div class="note">
+    <strong>Public Data Only:</strong> Data sourced from ransomware.live, which passively
+    monitors ransomware groups' Data Leak Sites (DLS) and aggregates publicly disclosed
+    victim information. Does not host or distribute leaked data. Victim names reflect
+    what ransomware groups have publicly posted on their own leak sites.
+    <br><br>
+    <strong>Data limitations:</strong> These are <em>leak site publication dates</em>,
+    not confirmed intrusion dates — actual compromise typically occurred days or weeks
+    earlier. Records represent claims made by ransomware operators, not independently
+    verified incidents. Duplicate posts and re-publications may be present.
+    This dashboard answers: <em>"What ransomware victim activity is being publicly
+    disclosed, by sector and geography?"</em> — not "who is about to be attacked."
+  </div>
+
+  <div class="threat-card">
+    <div style="font-family:Arial,sans-serif;font-size:.65rem;text-transform:uppercase;
+                letter-spacing:.08em;color:#7f1d1d;font-weight:bold;margin-bottom:.25rem;">
+      Leak Site Publication Activity — 7-Day
+    </div>
+    <div style="font-family:Georgia,serif;font-size:2rem;font-weight:bold;
+                color:#7f1d1d;line-height:1.1;">CRITICAL</div>
+    <div style="font-family:Arial,sans-serif;font-size:.75rem;color:#555;
+                margin-top:.3rem;">125 victim posts published in last 7 days
+      <span style="color:#888;font-size:.67rem;">
+        · Thresholds: LOW &lt;5 · ACTIVE 5–19 · ELEVATED 20–49 · HIGH 50–99 · CRITICAL 100+
+      </span>
+    </div>
+  </div>
+
+  <div class="scorecard-row"><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:105px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Publications (7d)</div><div style="font-size:1.4rem;font-weight:bold;color:#7f1d1d;font-family:Georgia,serif;">125</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">leak site posts, last 7 days</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:105px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Publications (30d)</div><div style="font-size:1.4rem;font-weight:bold;color:#1a1a1a;font-family:Georgia,serif;">678</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">30-day window</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:105px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">WoW Trend</div><div style="font-size:1.4rem;font-weight:bold;color:#16a34a;font-family:Georgia,serif;">▼ 24%</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">vs prior week (164 posts)</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:105px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Sectors Hit</div><div style="font-size:1.4rem;font-weight:bold;color:#1a1a1a;font-family:Georgia,serif;">14</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">30-day window</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:105px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Active Groups</div><div style="font-size:1.4rem;font-weight:bold;color:#dc2626;font-family:Georgia,serif;">64</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">by group_name field</div></div></div>
+
+  <div style="font-family:Arial,sans-serif;font-size:.72rem;color:#555;
+              margin-bottom:1.25rem;">
+    <strong>Top countries targeted:</strong> <span style="font-family:Arial,sans-serif;font-size:.75rem;"><b>US</b> 184</span> &nbsp;·&nbsp; <span style="font-family:Arial,sans-serif;font-size:.75rem;"><b>DE</b> 46</span> &nbsp;·&nbsp; <span style="font-family:Arial,sans-serif;font-size:.75rem;"><b>BR</b> 23</span> &nbsp;·&nbsp; <span style="font-family:Arial,sans-serif;font-size:.75rem;"><b>CA</b> 20</span> &nbsp;·&nbsp; <span style="font-family:Arial,sans-serif;font-size:.75rem;"><b>IN</b> 20</span> &nbsp;·&nbsp; <span style="font-family:Arial,sans-serif;font-size:.75rem;"><b>GB</b> 19</span> &nbsp;·&nbsp; <span style="font-family:Arial,sans-serif;font-size:.75rem;"><b>IT</b> 14</span> &nbsp;·&nbsp; <span style="font-family:Arial,sans-serif;font-size:.75rem;"><b>MX</b> 14</span>
+  </div>
+
+  <div class="section-head">High-Value Sector Alerts — 30-Day Window</div>
+  <div class="hv-grid">
+<div style="border:1px solid #dc2626;border-left:4px solid #dc2626;
+            padding:.7rem .9rem;background:#fef2f2;">
+  <div style="display:flex;justify-content:space-between;align-items:center;
+              margin-bottom:.3rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.8rem;font-weight:bold;
+                 color:#1a1a1a;">Finance</span>
+    <span style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
+                 color:#dc2626;">25 victims</span>
+  </div>
+  <div style="font-family:Arial,sans-serif;font-size:.67rem;color:#555;">
+    Top groups: qilin (3), lapsus$ (2)
+  </div>
+</div>
+<div style="border:1px solid #dc2626;border-left:4px solid #dc2626;
+            padding:.7rem .9rem;background:#fef2f2;">
+  <div style="display:flex;justify-content:space-between;align-items:center;
+              margin-bottom:.3rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.8rem;font-weight:bold;
+                 color:#1a1a1a;">Healthcare</span>
+    <span style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
+                 color:#dc2626;">69 victims</span>
+  </div>
+  <div style="font-family:Arial,sans-serif;font-size:.67rem;color:#555;">
+    Top groups: thegentlemen (10), qilin (10)
+  </div>
+</div>
+<div style="border:1px solid #dc2626;border-left:4px solid #dc2626;
+            padding:.7rem .9rem;background:#fef2f2;">
+  <div style="display:flex;justify-content:space-between;align-items:center;
+              margin-bottom:.3rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.8rem;font-weight:bold;
+                 color:#1a1a1a;">Energy</span>
+    <span style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
+                 color:#dc2626;">11 victims</span>
+  </div>
+  <div style="font-family:Arial,sans-serif;font-size:.67rem;color:#555;">
+    Top groups: qilin (3), thegentlemen (2)
+  </div>
+</div>
+<div style="border:1px solid #dc2626;border-left:4px solid #dc2626;
+            padding:.7rem .9rem;background:#fef2f2;">
+  <div style="display:flex;justify-content:space-between;align-items:center;
+              margin-bottom:.3rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.8rem;font-weight:bold;
+                 color:#1a1a1a;">Government</span>
+    <span style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
+                 color:#dc2626;">24 victims</span>
+  </div>
+  <div style="font-family:Arial,sans-serif;font-size:.67rem;color:#555;">
+    Top groups: krybit (3), thegentlemen (3)
+  </div>
+</div>
+<div style="border:1px solid #dc2626;border-left:4px solid #dc2626;
+            padding:.7rem .9rem;background:#fef2f2;">
+  <div style="display:flex;justify-content:space-between;align-items:center;
+              margin-bottom:.3rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.8rem;font-weight:bold;
+                 color:#1a1a1a;">Critical Infra</span>
+    <span style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
+                 color:#dc2626;">34 victims</span>
+  </div>
+  <div style="font-family:Arial,sans-serif;font-size:.67rem;color:#555;">
+    Top groups: qilin (7), nova (4)
+  </div>
+</div></div>
+
+  <div class="two-col">
+    <div class="panel">
+      <div style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
+                  text-transform:uppercase;letter-spacing:.08em;color:#e8111a;
+                  border-bottom:2px solid #e8111a;padding-bottom:.3rem;
+                  margin-bottom:.75rem;">
+        Top Targeted Sectors — 30-Day Window
+      </div>
+      
+<div style="margin-bottom:.55rem;">
+  <div style="display:flex;justify-content:space-between;align-items:center;
+              margin-bottom:.2rem;flex-wrap:wrap;gap:.25rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;">
+      Unknown
+    </span>
+    <span style="font-family:Arial,sans-serif;font-size:.72rem;color:#888;">
+      131 victims
+      · <span style="font-size:.65rem;">AiLock, AuditTeam, BrainCipher…</span>
+    </span>
+  </div>
+  <div style="background:#f3f4f6;height:7px;border-radius:3px;">
+    <div style="background:#1d4ed8;height:7px;
+                border-radius:3px;width:100.0%;"></div>
+  </div>
+</div>
+<div style="margin-bottom:.55rem;">
+  <div style="display:flex;justify-content:space-between;align-items:center;
+              margin-bottom:.2rem;flex-wrap:wrap;gap:.25rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;">
+      Business Services
+    </span>
+    <span style="font-family:Arial,sans-serif;font-size:.72rem;color:#888;">
+      112 victims
+      · <span style="font-size:.65rem;">AiLock, Black X, BrainCipher…</span>
+    </span>
+  </div>
+  <div style="background:#f3f4f6;height:7px;border-radius:3px;">
+    <div style="background:#1d4ed8;height:7px;
+                border-radius:3px;width:85.5%;"></div>
+  </div>
+</div>
+<div style="margin-bottom:.55rem;">
+  <div style="display:flex;justify-content:space-between;align-items:center;
+              margin-bottom:.2rem;flex-wrap:wrap;gap:.25rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;">
+      Manufacturing
+    </span>
+    <span style="font-family:Arial,sans-serif;font-size:.72rem;color:#888;">
+      82 victims
+      · <span style="font-size:.65rem;">AiLock, Blackfield, BrainCipher…</span>
+    </span>
+  </div>
+  <div style="background:#f3f4f6;height:7px;border-radius:3px;">
+    <div style="background:#1d4ed8;height:7px;
+                border-radius:3px;width:62.6%;"></div>
+  </div>
+</div>
+<div style="margin-bottom:.55rem;">
+  <div style="display:flex;justify-content:space-between;align-items:center;
+              margin-bottom:.2rem;flex-wrap:wrap;gap:.25rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;">
+      Technology
+    </span>
+    <span style="font-family:Arial,sans-serif;font-size:.72rem;color:#888;">
+      55 victims
+      · <span style="font-size:.65rem;">AuditTeam, Icarus, akira…</span>
+    </span>
+  </div>
+  <div style="background:#f3f4f6;height:7px;border-radius:3px;">
+    <div style="background:#1d4ed8;height:7px;
+                border-radius:3px;width:42.0%;"></div>
+  </div>
+</div>
+<div style="margin-bottom:.55rem;">
+  <div style="display:flex;justify-content:space-between;align-items:center;
+              margin-bottom:.2rem;flex-wrap:wrap;gap:.25rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;">
+      Consumer Services
+    </span>
+    <span style="font-family:Arial,sans-serif;font-size:.72rem;color:#888;">
+      52 victims
+      · <span style="font-size:.65rem;">BrainCipher, PrinzEugen, akira…</span>
+    </span>
+  </div>
+  <div style="background:#f3f4f6;height:7px;border-radius:3px;">
+    <div style="background:#1d4ed8;height:7px;
+                border-radius:3px;width:39.7%;"></div>
+  </div>
+</div>
+<div style="margin-bottom:.55rem;">
+  <div style="display:flex;justify-content:space-between;align-items:center;
+              margin-bottom:.2rem;flex-wrap:wrap;gap:.25rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;">
+      Healthcare<span style="display:inline-block;padding:.1rem .35rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.6rem;font-weight:bold;color:#dc2626;background:#fef2f2;border:1px solid #fca5a5;margin-left:.3rem;">⚠ Healthcare</span>
+    </span>
+    <span style="font-family:Arial,sans-serif;font-size:.72rem;color:#888;">
+      49 victims
+      · <span style="font-size:.65rem;">Black X, Redact, anubis…</span>
+    </span>
+  </div>
+  <div style="background:#f3f4f6;height:7px;border-radius:3px;">
+    <div style="background:#dc2626;height:7px;
+                border-radius:3px;width:37.4%;"></div>
+  </div>
+</div>
+<div style="margin-bottom:.55rem;">
+  <div style="display:flex;justify-content:space-between;align-items:center;
+              margin-bottom:.2rem;flex-wrap:wrap;gap:.25rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;">
+      Agriculture and Food Production
+    </span>
+    <span style="font-family:Arial,sans-serif;font-size:.72rem;color:#888;">
+      34 victims
+      · <span style="font-size:.65rem;">BrainCipher, aurora, bravox…</span>
+    </span>
+  </div>
+  <div style="background:#f3f4f6;height:7px;border-radius:3px;">
+    <div style="background:#1d4ed8;height:7px;
+                border-radius:3px;width:26.0%;"></div>
+  </div>
+</div>
+<div style="margin-bottom:.55rem;">
+  <div style="display:flex;justify-content:space-between;align-items:center;
+              margin-bottom:.2rem;flex-wrap:wrap;gap:.25rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;">
+      Education
+    </span>
+    <span style="font-family:Arial,sans-serif;font-size:.72rem;color:#888;">
+      25 victims
+      · <span style="font-size:.65rem;">PrinzEugen, cmdorganization, dragonforce…</span>
+    </span>
+  </div>
+  <div style="background:#f3f4f6;height:7px;border-radius:3px;">
+    <div style="background:#1d4ed8;height:7px;
+                border-radius:3px;width:19.1%;"></div>
+  </div>
+</div>
+<div style="margin-bottom:.55rem;">
+  <div style="display:flex;justify-content:space-between;align-items:center;
+              margin-bottom:.2rem;flex-wrap:wrap;gap:.25rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;">
+      Transportation/Logistics<span style="display:inline-block;padding:.1rem .35rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.6rem;font-weight:bold;color:#dc2626;background:#fef2f2;border:1px solid #fca5a5;margin-left:.3rem;">⚠ Critical Infra</span>
+    </span>
+    <span style="font-family:Arial,sans-serif;font-size:.72rem;color:#888;">
+      25 victims
+      · <span style="font-size:.65rem;">akira, apt73, aurora…</span>
+    </span>
+  </div>
+  <div style="background:#f3f4f6;height:7px;border-radius:3px;">
+    <div style="background:#dc2626;height:7px;
+                border-radius:3px;width:19.1%;"></div>
+  </div>
+</div>
+<div style="margin-bottom:.55rem;">
+  <div style="display:flex;justify-content:space-between;align-items:center;
+              margin-bottom:.2rem;flex-wrap:wrap;gap:.25rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;">
+      Financial Services<span style="display:inline-block;padding:.1rem .35rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.6rem;font-weight:bold;color:#dc2626;background:#fef2f2;border:1px solid #fca5a5;margin-left:.3rem;">⚠ Finance</span>
+    </span>
+    <span style="font-family:Arial,sans-serif;font-size:.72rem;color:#888;">
+      25 victims
+      · <span style="font-size:.65rem;">Deadlock, Icarus, Redact…</span>
+    </span>
+  </div>
+  <div style="background:#f3f4f6;height:7px;border-radius:3px;">
+    <div style="background:#dc2626;height:7px;
+                border-radius:3px;width:19.1%;"></div>
+  </div>
+</div>
+<div style="margin-bottom:.55rem;">
+  <div style="display:flex;justify-content:space-between;align-items:center;
+              margin-bottom:.2rem;flex-wrap:wrap;gap:.25rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;">
+      Public Sector<span style="display:inline-block;padding:.1rem .35rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.6rem;font-weight:bold;color:#dc2626;background:#fef2f2;border:1px solid #fca5a5;margin-left:.3rem;">⚠ Government</span>
+    </span>
+    <span style="font-family:Arial,sans-serif;font-size:.72rem;color:#888;">
+      24 victims
+      · <span style="font-size:.65rem;">Black X, abyss, apt73…</span>
+    </span>
+  </div>
+  <div style="background:#f3f4f6;height:7px;border-radius:3px;">
+    <div style="background:#dc2626;height:7px;
+                border-radius:3px;width:18.3%;"></div>
+  </div>
+</div>
+<div style="margin-bottom:.55rem;">
+  <div style="display:flex;justify-content:space-between;align-items:center;
+              margin-bottom:.2rem;flex-wrap:wrap;gap:.25rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;">
+      Construction
+    </span>
+    <span style="font-family:Arial,sans-serif;font-size:.72rem;color:#888;">
+      24 victims
+      · <span style="font-size:.65rem;">akira, anubis, aurora…</span>
+    </span>
+  </div>
+  <div style="background:#f3f4f6;height:7px;border-radius:3px;">
+    <div style="background:#1d4ed8;height:7px;
+                border-radius:3px;width:18.3%;"></div>
+  </div>
+</div>
+<div style="margin-bottom:.55rem;">
+  <div style="display:flex;justify-content:space-between;align-items:center;
+              margin-bottom:.2rem;flex-wrap:wrap;gap:.25rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;">
+      Hospitality and Tourism<span style="display:inline-block;padding:.1rem .35rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.6rem;font-weight:bold;color:#dc2626;background:#fef2f2;border:1px solid #fca5a5;margin-left:.3rem;">⚠ Healthcare</span>
+    </span>
+    <span style="font-family:Arial,sans-serif;font-size:.72rem;color:#888;">
+      20 victims
+      · <span style="font-size:.65rem;">Deadlock, akira, blackwater…</span>
+    </span>
+  </div>
+  <div style="background:#f3f4f6;height:7px;border-radius:3px;">
+    <div style="background:#dc2626;height:7px;
+                border-radius:3px;width:15.3%;"></div>
+  </div>
+</div>
+<div style="margin-bottom:.55rem;">
+  <div style="display:flex;justify-content:space-between;align-items:center;
+              margin-bottom:.2rem;flex-wrap:wrap;gap:.25rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;">
+      Energy<span style="display:inline-block;padding:.1rem .35rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.6rem;font-weight:bold;color:#dc2626;background:#fef2f2;border:1px solid #fca5a5;margin-left:.3rem;">⚠ Energy</span>
+    </span>
+    <span style="font-family:Arial,sans-serif;font-size:.72rem;color:#888;">
+      11 victims
+      · <span style="font-size:.65rem;">Black X, BrainCipher, krybit…</span>
+    </span>
+  </div>
+  <div style="background:#f3f4f6;height:7px;border-radius:3px;">
+    <div style="background:#dc2626;height:7px;
+                border-radius:3px;width:8.4%;"></div>
+  </div>
+</div>
+<div style="margin-bottom:.55rem;">
+  <div style="display:flex;justify-content:space-between;align-items:center;
+              margin-bottom:.2rem;flex-wrap:wrap;gap:.25rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;">
+      Telecommunication<span style="display:inline-block;padding:.1rem .35rem;border-radius:3px;font-family:Arial,sans-serif;font-size:.6rem;font-weight:bold;color:#dc2626;background:#fef2f2;border:1px solid #fca5a5;margin-left:.3rem;">⚠ Critical Infra</span>
+    </span>
+    <span style="font-family:Arial,sans-serif;font-size:.72rem;color:#888;">
+      9 victims
+      · <span style="font-size:.65rem;">Deadlock, anubis, play…</span>
+    </span>
+  </div>
+  <div style="background:#f3f4f6;height:7px;border-radius:3px;">
+    <div style="background:#dc2626;height:7px;
+                border-radius:3px;width:6.9%;"></div>
+  </div>
+</div>
+    </div>
+    <div class="panel">
+      <div style="font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;
+                  text-transform:uppercase;letter-spacing:.08em;color:#e8111a;
+                  border-bottom:2px solid #e8111a;padding-bottom:.3rem;
+                  margin-bottom:.75rem;">
+        Most Active Groups — 30d
+      </div>
+      
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem 0;border-bottom:1px solid #f3f4f6;">
+  <div style="display:flex;align-items:center;gap:.5rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+                 color:#dc2626;min-width:18px;">#1</span>
+    <span style="font-family:Arial,sans-serif;font-size:.8rem;font-weight:bold;">
+      qilin</span>
+  </div>
+  <span style="font-family:Georgia,serif;font-size:1rem;font-weight:bold;
+               color:#dc2626;">76</span>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem 0;border-bottom:1px solid #f3f4f6;">
+  <div style="display:flex;align-items:center;gap:.5rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+                 color:#ea580c;min-width:18px;">#2</span>
+    <span style="font-family:Arial,sans-serif;font-size:.8rem;font-weight:bold;">
+      thegentlemen</span>
+  </div>
+  <span style="font-family:Georgia,serif;font-size:1rem;font-weight:bold;
+               color:#ea580c;">76</span>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem 0;border-bottom:1px solid #f3f4f6;">
+  <div style="display:flex;align-items:center;gap:.5rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+                 color:#d97706;min-width:18px;">#3</span>
+    <span style="font-family:Arial,sans-serif;font-size:.8rem;font-weight:bold;">
+      lockbit5</span>
+  </div>
+  <span style="font-family:Georgia,serif;font-size:1rem;font-weight:bold;
+               color:#d97706;">59</span>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem 0;border-bottom:1px solid #f3f4f6;">
+  <div style="display:flex;align-items:center;gap:.5rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+                 color:#d97706;min-width:18px;">#4</span>
+    <span style="font-family:Arial,sans-serif;font-size:.8rem;font-weight:bold;">
+      akira</span>
+  </div>
+  <span style="font-family:Georgia,serif;font-size:1rem;font-weight:bold;
+               color:#d97706;">30</span>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem 0;border-bottom:1px solid #f3f4f6;">
+  <div style="display:flex;align-items:center;gap:.5rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+                 color:#d97706;min-width:18px;">#5</span>
+    <span style="font-family:Arial,sans-serif;font-size:.8rem;font-weight:bold;">
+      incransom</span>
+  </div>
+  <span style="font-family:Georgia,serif;font-size:1rem;font-weight:bold;
+               color:#d97706;">29</span>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem 0;border-bottom:1px solid #f3f4f6;">
+  <div style="display:flex;align-items:center;gap:.5rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+                 color:#d97706;min-width:18px;">#6</span>
+    <span style="font-family:Arial,sans-serif;font-size:.8rem;font-weight:bold;">
+      dragonforce</span>
+  </div>
+  <span style="font-family:Georgia,serif;font-size:1rem;font-weight:bold;
+               color:#d97706;">28</span>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem 0;border-bottom:1px solid #f3f4f6;">
+  <div style="display:flex;align-items:center;gap:.5rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+                 color:#d97706;min-width:18px;">#7</span>
+    <span style="font-family:Arial,sans-serif;font-size:.8rem;font-weight:bold;">
+      nova</span>
+  </div>
+  <span style="font-family:Georgia,serif;font-size:1rem;font-weight:bold;
+               color:#d97706;">28</span>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem 0;border-bottom:1px solid #f3f4f6;">
+  <div style="display:flex;align-items:center;gap:.5rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+                 color:#d97706;min-width:18px;">#8</span>
+    <span style="font-family:Arial,sans-serif;font-size:.8rem;font-weight:bold;">
+      nightspire</span>
+  </div>
+  <span style="font-family:Georgia,serif;font-size:1rem;font-weight:bold;
+               color:#d97706;">22</span>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem 0;border-bottom:1px solid #f3f4f6;">
+  <div style="display:flex;align-items:center;gap:.5rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+                 color:#d97706;min-width:18px;">#9</span>
+    <span style="font-family:Arial,sans-serif;font-size:.8rem;font-weight:bold;">
+      krybit</span>
+  </div>
+  <span style="font-family:Georgia,serif;font-size:1rem;font-weight:bold;
+               color:#d97706;">21</span>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:.45rem 0;border-bottom:1px solid #f3f4f6;">
+  <div style="display:flex;align-items:center;gap:.5rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+                 color:#d97706;min-width:18px;">#10</span>
+    <span style="font-family:Arial,sans-serif;font-size:.8rem;font-weight:bold;">
+      safepay</span>
+  </div>
+  <span style="font-family:Georgia,serif;font-size:1rem;font-weight:bold;
+               color:#d97706;">21</span>
+</div>
+    </div>
+  </div>
+
+  <div class="section-head">Recent Victims — Last 30 Days
+    (highlighted = high-value sector)</div>
+  <table>
+    <thead><tr>
+      <th>Date</th><th>Victim</th><th>Group</th>
+      <th>Sector</th><th>Country</th>
+    </tr></thead>
+    <tbody>
+<tr>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">Kunert Fashion</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#dc2626;">qilin</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Manufacturing</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">DE</td>
+</tr>
+<tr>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">Musashino University</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#dc2626;">qilin</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Education</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">JP</td>
+</tr>
+<tr>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">straightperformance.de</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#dc2626;">unsafe</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Business Services</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">DE</td>
+</tr>
+<tr>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">KALIACT ANCHETA et Associs</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#dc2626;">qilin</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Business Services</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">FR</td>
+</tr>
+<tr>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">Metal Sur Famin</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#dc2626;">qilin</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Manufacturing</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">AR</td>
+</tr>
+<tr style="background:#fef2f2;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">Lørenskog kommune</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#dc2626;">cmdorganization</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Public Sector</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">NO</td>
+</tr>
+<tr>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">Bonacio</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#dc2626;">ransomhouse</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Construction</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">IT</td>
+</tr>
+<tr>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">ESMS Global Limited</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#dc2626;">anubis</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Business Services</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">GB</td>
+</tr>
+<tr style="background:#fef2f2;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">Boston Orthotics & Prosthetics</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#dc2626;">anubis</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Healthcare</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">US</td>
+</tr>
+<tr>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">Lam Soon</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#dc2626;">qilin</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Agriculture and Food Production</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">TH</td>
+</tr>
+<tr>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">Bristol Place</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#dc2626;">qilin</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Not Found</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">GB</td>
+</tr>
+<tr style="background:#fef2f2;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">Gsma</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#dc2626;">qilin</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Telecommunication</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">GB</td>
+</tr>
+<tr>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">Abans Group</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#dc2626;">blacknevas</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Consumer Services</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">LK</td>
+</tr>
+<tr>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">hwaseng</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#dc2626;">dragonforce</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Not Found</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">TW</td>
+</tr>
+<tr>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">agroprime</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#dc2626;">dragonforce</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Agriculture and Food Production</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">BR</td>
+</tr>
+<tr>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">stni.co.kr</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#dc2626;">dragonforce</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Not Found</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">KR</td>
+</tr>
+<tr style="background:#fef2f2;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">vipimaging</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#dc2626;">dragonforce</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Healthcare</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">US</td>
+</tr>
+<tr>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">GDN AR(Dorinka)</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#dc2626;">incransom</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Not Found</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">AR</td>
+</tr>
+<tr style="background:#fef2f2;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">medipakpharma.com</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#dc2626;">dragonforce</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Healthcare</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">PK</td>
+</tr>
+<tr>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">METCO Services, Metco Southeast</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#dc2626;">cmdorganization</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Business Services</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">US</td>
+</tr>
+<tr>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">ccic.com.tw</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#dc2626;">Blackfield</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Manufacturing</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">TW</td>
+</tr>
+<tr style="background:#fef2f2;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">Villea Hotels in AttanaHo</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#dc2626;">payload</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Hospitality and Tourism</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;"></td>
+</tr>
+<tr>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">Axionlog</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#dc2626;">qilin</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Technology</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">CZ</td>
+</tr>
+<tr>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">NASCO</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#dc2626;">qilin</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Agriculture and Food Production</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">US</td>
+</tr>
+<tr>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-28</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             font-weight:bold;">higuchi-inc.co.jp</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#dc2626;">stormous</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#555;">Not Found</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">JP</td>
+</tr></tbody>
+  </table>
+
+</main>
+<footer>
+  <b>DATA SOURCE</b> &nbsp;·&nbsp;
+  ransomware.live (data.ransomware.live/victims.json) &nbsp;·&nbsp;
+  Public Data Only — passively monitored DLS disclosures &nbsp;·&nbsp;
+  No leaked data hosted or distributed &nbsp;·&nbsp;
+  No AI-generated content &nbsp;·&nbsp;
+  © 2026 Randy Hinton &nbsp;·&nbsp; 2026-06-29 19:53 UTC &nbsp;·&nbsp; #FollowTheData
+</footer>
+</body>
+</html>
