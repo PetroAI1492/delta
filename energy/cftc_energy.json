@@ -3,52 +3,88 @@
     "report": "CFTC Energy Positioning Signal",
     "version": "1.0.0",
     "source": "CFTC COT Disaggregated Futures Only",
-    "generated_at": "2026-06-29 13:22 UTC"
+    "generated_at": "2026-06-29 13:32 UTC"
   },
   "contracts": [
     {
-      "commodity_name": "CRUDE OIL, LIGHT SWEET",
+      "contract_market_name": "CRUDE OIL, LIGHT SWEET-WTI",
       "label": "WTI Crude Oil",
       "unit": "contracts (1,000 bbl each)",
       "exchange": "NYMEX",
-      "signals": null,
-      "matched_name": null
-    },
-    {
-      "commodity_name": "NATURAL GAS",
-      "label": "Natural Gas",
-      "unit": "contracts (10,000 MMBtu each)",
-      "exchange": "NYMEX",
       "signals": {
         "pm_net": 0,
-        "sd_net": -698095,
-        "mm_net": 11326,
+        "sd_net": -82766,
+        "mm_net": -18387,
         "or_net": 0,
-        "mm_pct_oi": 1.1,
-        "mm_chg": 218643,
-        "momentum": "\u2191 +218,643 (building longs)",
+        "mm_pct_oi": -2.3,
+        "mm_chg": 5279,
+        "momentum": "\u2191 +5,279",
         "bias": "NEUTRAL",
         "bias_color": "#888",
-        "open_interest": 1049834,
+        "open_interest": 803067,
         "report_date": "2026-06-23"
       },
-      "matched_name": "NATURAL GAS"
+      "matched_name": "CRUDE OIL, LIGHT SWEET-WTI"
     },
     {
-      "commodity_name": "GASOLINE RBOB",
+      "contract_market_name": "NAT GAS ICE LD1",
+      "label": "Natural Gas",
+      "unit": "contracts (10,000 MMBtu each)",
+      "exchange": "ICE/NYMEX",
+      "signals": {
+        "pm_net": 0,
+        "sd_net": -2447933,
+        "mm_net": 330277,
+        "or_net": 0,
+        "mm_pct_oi": 4.1,
+        "mm_chg": -21905,
+        "momentum": "\u2193 -21,905 (liquidating longs)",
+        "bias": "NEUTRAL",
+        "bias_color": "#888",
+        "open_interest": 8001089,
+        "report_date": "2026-06-23"
+      },
+      "matched_name": "NAT GAS ICE LD1"
+    },
+    {
+      "contract_market_name": "GASOLINE RBOB",
       "label": "RBOB Gasoline",
       "unit": "contracts (42,000 gal each)",
       "exchange": "NYMEX",
-      "signals": null,
-      "matched_name": null
+      "signals": {
+        "pm_net": 0,
+        "sd_net": 25394,
+        "mm_net": 71095,
+        "or_net": 0,
+        "mm_pct_oi": 22.5,
+        "mm_chg": 3675,
+        "momentum": "\u2191 +3,675",
+        "bias": "STRONGLY BULLISH",
+        "bias_color": "#15803d",
+        "open_interest": 316160,
+        "report_date": "2026-06-23"
+      },
+      "matched_name": "GASOLINE RBOB"
     },
     {
-      "commodity_name": "NO. 2 FUEL OIL, NEW YORK HARBOR",
+      "contract_market_name": "NY HARBOR ULSD",
       "label": "Heating Oil",
       "unit": "contracts (42,000 gal each)",
       "exchange": "NYMEX",
-      "signals": null,
-      "matched_name": null
+      "signals": {
+        "pm_net": 0,
+        "sd_net": 39221,
+        "mm_net": 6408,
+        "or_net": 0,
+        "mm_pct_oi": 2.4,
+        "mm_chg": -3111,
+        "momentum": "\u2193 -3,111",
+        "bias": "NEUTRAL",
+        "bias_color": "#888",
+        "open_interest": 270034,
+        "report_date": "2026-06-23"
+      },
+      "matched_name": "NY HARBOR ULSD"
     }
   ]
 }
