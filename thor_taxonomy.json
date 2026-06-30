@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-30T13:33:14Z",
+  "generated": "2026-06-30T14:18:52Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -4560,6 +4560,189 @@
       ],
       "id": "rates_fx_signal",
       "path": "https://petroai1492.github.io/delta/finance/rates_fx_signal.html"
+    },
+    {
+      "title": "Commodities Signal",
+      "file": "finance/commodities_signal.html",
+      "description": "Weekly signal report on key commodity prices \u2014 connects PPI/CPI divergence (Inflation Dashboard) to underlying commodity price action and links WTI/Henry Hub moves to wildfire proximity alerts near West Coast refineries (NASA EONET). Tracks WTI Crude, Brent Crude, WTI-Brent spread, Henry Hub Natural Gas (all daily), and Copper (monthly only \u2014 clearly labeled). Gold is explicitly excluded due to no free daily FRED series.",
+      "json_file": "finance/commodities_signal.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/finance/commodities_signal.html`",
+      "auto_published": true,
+      "primary_domain": "Finance",
+      "secondary_domains": [
+        "Energy",
+        "Economy"
+      ],
+      "entities": [
+        "WTI",
+        "Brent",
+        "Henry Hub",
+        "Copper",
+        "EIA",
+        "IMF"
+      ],
+      "data_sources": [
+        "FRED API (api.stlouisfed.org",
+        "free key required); series: DCOILWTICO",
+        "DCOILBRENTEU",
+        "DHHNGSP (daily",
+        "EIA); PCOPPUSDM (monthly only",
+        "IMF)"
+      ],
+      "update_frequency": "Weekly",
+      "key_signals": [
+        "Energy Commodity Momentum (SURGING/RISING/STABLE/FALLING/PLUNGING) based on WTI + Henry Hub 1-month average move",
+        "WTI and Brent prices with 1-month % change",
+        "WTI-Brent spread",
+        "Henry Hub price",
+        "Copper price (monthly)"
+      ],
+      "intent_phrases": [
+        "WTI price",
+        "Brent price",
+        "crude oil price",
+        "natural gas price",
+        "Henry Hub",
+        "commodity prices",
+        "WTI Brent spread",
+        "copper price",
+        "energy commodities",
+        "commodities signal",
+        "oil price signal",
+        "gas price signal",
+        "commodity momentum",
+        "crude oil signal",
+        {
+          "keyword": "commodities",
+          "weight": 10
+        },
+        {
+          "keyword": "signal",
+          "weight": 10
+        }
+      ],
+      "id": "commodities_signal",
+      "path": "https://petroai1492.github.io/delta/finance/commodities_signal.html"
+    },
+    {
+      "title": "Treasury Auction Signal",
+      "file": "finance/treasury_auction_signal.html",
+      "description": "Tracks recent US Treasury security auctions \u2014 bid-to-cover ratios, indirect/direct/primary dealer bidder composition, and high yield/rate \u2014 answering \"who is actually buying US debt, and at what price?\" Covers benchmark tenors from 4-Week Bills through 30-Year Bonds. Bills report bond-equivalent yield (BEY) rather than coupon yield, clearly flagged in the table.",
+      "json_file": "finance/treasury_auction_signal.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/finance/treasury_auction_signal.html`",
+      "auto_published": true,
+      "primary_domain": "Finance",
+      "secondary_domains": [
+        "Federal"
+      ],
+      "entities": [
+        "U.S. Treasury",
+        "primary dealers",
+        "indirect bidders",
+        "direct bidders"
+      ],
+      "data_sources": [
+        "U.S. Treasury Fiscal Data API (api.fiscaldata.treasury.gov",
+        "free",
+        "no key); endpoint v1/accounting/od/auctions_query; filtered to completed auctions only (excludes same-day unresulted announcements)"
+      ],
+      "update_frequency": "Weekly",
+      "key_signals": [
+        "Treasury Demand Signal (STRONG/SOLID/ADEQUATE/WEAK/POOR DEMAND) based on average bid-to-cover ratio across benchmark tenors",
+        "per-tenor bid-to-cover, high yield/rate (BEY-flagged for Bills), and bidder composition (indirect %, direct %, primary dealer %)"
+      ],
+      "intent_phrases": [
+        "Treasury auction",
+        "bid to cover",
+        "Treasury demand",
+        "bond auction",
+        "Treasury bill auction",
+        "indirect bidders",
+        "foreign demand Treasury",
+        "auction results",
+        "Treasury yield auction",
+        "who buys Treasuries",
+        "primary dealer",
+        "Treasury auction signal",
+        "debt auction demand",
+        {
+          "keyword": "treasury",
+          "weight": 10
+        },
+        {
+          "keyword": "auction",
+          "weight": 10
+        },
+        {
+          "keyword": "signal",
+          "weight": 10
+        }
+      ],
+      "id": "treasury_auction_signal",
+      "path": "https://petroai1492.github.io/delta/finance/treasury_auction_signal.html"
+    },
+    {
+      "title": "US Growth Signal",
+      "file": "economy/growth_signal.html",
+      "description": "Quarterly/monthly signal report on US economic growth. Tracks Real GDP (quarterly) and the Chicago Fed National Activity Index (monthly) as a free substitute for ISM Manufacturing/Services PMI, which requires a paid subscription with no free FRED equivalent. Uses Chicago Fed's own documented CFNAI-MA3 thresholds for recession/expansion/inflation-risk classification.",
+      "json_file": "economy/growth_signal.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/economy/growth_signal.html`",
+      "auto_published": true,
+      "primary_domain": "Economy",
+      "secondary_domains": [
+        "Finance",
+        "Federal"
+      ],
+      "entities": [
+        "BEA",
+        "Federal Reserve Bank of Chicago",
+        "GDP"
+      ],
+      "data_sources": [
+        "FRED API (api.stlouisfed.org",
+        "free key required); series: GDPC1 (BEA",
+        "quarterly)",
+        "CFNAI",
+        "CFNAIMA3 (Chicago Fed",
+        "monthly)"
+      ],
+      "update_frequency": "Monthly (CFNAI) / Quarterly (GDP)",
+      "key_signals": [
+        "Growth Momentum Signal (RECESSION RISK/BELOW TREND/AT-ABOVE TREND/INFLATION RISK ZONE) per Chicago Fed's documented CFNAI-MA3 thresholds",
+        "Real GDP QoQ annualized",
+        "Real GDP YoY",
+        "CFNAI",
+        "CFNAI 3-month average \u2605"
+      ],
+      "intent_phrases": [
+        "GDP growth",
+        "economic growth",
+        "CFNAI",
+        "Chicago Fed index",
+        "growth signal",
+        "is the economy growing",
+        "recession risk",
+        "GDP signal",
+        "economic momentum",
+        "real GDP",
+        "growth momentum",
+        "national activity index",
+        "ISM substitute",
+        "economic activity index",
+        {
+          "keyword": "growth",
+          "weight": 10
+        },
+        {
+          "keyword": "signal",
+          "weight": 10
+        }
+      ],
+      "id": "us_growth_signal",
+      "path": "https://petroai1492.github.io/delta/economy/growth_signal.html"
     }
   ],
   "cross_domain_matrix": [
