@@ -3,7 +3,7 @@
     "report": "Inflation Dashboard",
     "version": "1.0.0",
     "source": "FRED / BLS / BEA",
-    "generated_at": "2026-06-30 10:28 UTC",
+    "generated_at": "2026-06-30 10:31 UTC",
     "fed_target": 2.0
   },
   "signal": "ABOVE TARGET",
@@ -14,7 +14,7 @@
   "pce_yoy": 4.07,
   "core_pce_yoy": 3.41,
   "core_pce_date": "2026-05-01",
-  "ppi_yoy": 13.08,
+  "ppi_yoy": 6.42,
   "breakeven_5y": 2.24,
   "breakeven_10y": 2.22
 }
