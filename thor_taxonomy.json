@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-30T00:57:30Z",
+  "generated": "2026-06-30T10:33:19Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -4267,6 +4267,82 @@
       ],
       "id": "jobs_market_signal",
       "path": "https://petroai1492.github.io/delta/economy/jobs_signal.html"
+    },
+    {
+      "title": "Inflation Dashboard",
+      "file": "economy/inflation_dashboard.html",
+      "description": "Monthly signal report on US inflation. Tracks headline and core CPI, headline and core PCE (the Fed's official target metric), PPI Final Demand, and market-based breakeven inflation expectations (5Y/10Y). Computes YoY inflation rates from FRED index-level series using calendar-date matching (not positional offset). Produces a signal relative to the Fed's 2% Core PCE target.",
+      "json_file": "economy/inflation_dashboard.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/economy/inflation_dashboard.html`",
+      "auto_published": true,
+      "primary_domain": "Economy",
+      "secondary_domains": [
+        "Finance",
+        "Federal"
+      ],
+      "entities": [
+        "BLS",
+        "BEA",
+        "Federal Reserve",
+        "CPI",
+        "PCE",
+        "PPI",
+        "TIPS breakeven"
+      ],
+      "data_sources": [
+        "FRED API (api.stlouisfed.org",
+        "free key required); series: CPIAUCSL",
+        "CPILFESL",
+        "PCEPI",
+        "PCEPILFE",
+        "PPIFIS",
+        "T5YIE",
+        "T10YIE"
+      ],
+      "update_frequency": "Monthly \u2014 run after BLS CPI (mid-month) and BEA PCE (end of month) releases",
+      "key_signals": [
+        "Inflation signal (WELL ABOVE/ABOVE/NEAR/AT/BELOW TARGET) vs Fed's 2% Core PCE target",
+        "Headline CPI YoY",
+        "Core CPI YoY",
+        "Headline PCE YoY",
+        "Core PCE YoY \u2605 (Fed's official metric)",
+        "PPI Final Demand YoY",
+        "5Y and 10Y breakeven inflation expectations",
+        "24-month trend sparklines with target line overlay"
+      ],
+      "intent_phrases": [
+        "inflation",
+        "CPI",
+        "core CPI",
+        "PCE",
+        "core PCE",
+        "inflation rate",
+        "inflation dashboard",
+        "Fed inflation target",
+        "producer price index",
+        "PPI",
+        "breakeven inflation",
+        "inflation expectations",
+        "consumer prices",
+        "wholesale prices",
+        "inflation signal",
+        "is inflation rising",
+        "inflation data",
+        "headline inflation",
+        "TIPS spread",
+        "inflation trend",
+        {
+          "keyword": "inflation",
+          "weight": 10
+        },
+        {
+          "keyword": "dashboard",
+          "weight": 10
+        }
+      ],
+      "id": "inflation_dashboard",
+      "path": "https://petroai1492.github.io/delta/economy/inflation_dashboard.html"
     }
   ],
   "cross_domain_matrix": [
