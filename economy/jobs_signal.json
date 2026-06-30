@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "report": "Jobs Market Signal",
+    "version": "1.0.0",
+    "source": "FRED / BLS",
+    "generated_at": "2026-06-30 00:55 UTC"
+  },
+  "signal": "HEALTHY",
+  "signal_color": "#65a30d",
+  "score": 18,
+  "components": [
+    {
+      "label": "Unemployment Rate",
+      "value": "4.3%",
+      "pts": 5,
+      "color": "#d97706"
+    },
+    {
+      "label": "Initial Claims (4-wk MA)",
+      "value": "224,250",
+      "pts": 8,
+      "color": "#d97706"
+    },
+    {
+      "label": "Job Openings",
+      "value": "7.6M",
+      "pts": 5,
+      "color": "#d97706"
+    }
+  ],
+  "payroll_mom": 172.0,
+  "payroll_date": "2026-05-01",
+  "unrate": 4.3,
+  "unrate_date": "2026-05-01",
+  "unrate_mom": 0.0,
+  "claims": 215000.0,
+  "claims_date": "2026-06-20",
+  "claims_ma4": 224250.0,
+  "claims_yoy": 12000.0,
+  "ccsa": 1821000.0,
+  "openings": 7618.0,
+  "openings_date": "2026-04-01",
+  "openings_yoy": 520.0,
+  "quits_rate": 1.9,
+  "wages": 37.53,
+  "wages_date": "2026-05-01",
+  "wages_yoy": 3.4,
+  "civpart": 61.8,
+  "epop": 59.2,
+  "avg_hours": 33.8
+}
