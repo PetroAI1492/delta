@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NASA EONET Natural Events Monitor</title>
+<style>
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  :root { --red:#e8111a; --rule:#e5e7eb; }
+  body { font-family:Georgia,serif; background:#fff; color:#1a1a1a; }
+  .masthead { border-top:4px solid var(--red); border-bottom:1px solid var(--rule);
+               padding:.6rem 2rem .5rem; display:flex; align-items:baseline; gap:1rem; }
+  .brand { font-family:Arial,sans-serif; font-size:1.1rem; font-weight:bold;
+            color:var(--red); text-transform:uppercase; }
+  .section-label { font-family:Arial,sans-serif; font-size:.72rem; color:#666;
+                    text-transform:uppercase; letter-spacing:.08em;
+                    border-left:1px solid var(--rule); padding-left:1rem; }
+  main { max-width:1100px; margin:0 auto; padding:1.5rem 2rem 3rem; }
+  .report-title { font-size:1.6rem; font-weight:bold; letter-spacing:-.5px;
+                   border-bottom:2px solid #1a1a1a; padding-bottom:.5rem;
+                   margin-bottom:.4rem; }
+  .report-sub { font-family:Arial,sans-serif; font-size:.8rem; color:#666;
+                 margin-bottom:1.25rem; }
+  .signal-card { display:inline-block; border:2px solid #dc2626;
+                  padding:.9rem 1.5rem; margin-bottom:1.25rem;
+                  background:#dc262608; min-width:240px; }
+  .scorecard-row { display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:1.5rem; }
+  .cat-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:.5rem;
+               margin-bottom:1.5rem; }
+  .section-head { font-family:Arial,sans-serif; font-size:.72rem; font-weight:bold;
+                   text-transform:uppercase; letter-spacing:.08em; color:#e8111a;
+                   border-bottom:2px solid #e8111a; padding-bottom:.3rem;
+                   margin:1.5rem 0 .75rem; }
+  table { width:100%; border-collapse:collapse; font-size:12px; }
+  th { text-align:left; font-family:Arial,sans-serif; font-size:.65rem;
+        text-transform:uppercase; letter-spacing:.06em; color:#888;
+        padding:.4rem .6rem .4rem 0; border-bottom:2px solid #e5e7eb; }
+  td { vertical-align:middle; }
+  footer { border-top:1px solid var(--rule); padding:.75rem 2rem;
+            font-family:Arial,sans-serif; font-size:.68rem;
+            color:#666; text-align:center; margin-top:2rem; }
+</style>
+</head>
+<body>
+<div class="masthead">
+  <span class="brand">THOR SIGNAL</span>
+  <span class="section-label">NASA EONET Natural Events Monitor</span>
+</div>
+<main>
+  <div class="report-title">NASA EONET Natural Events Monitor</div>
+  <div class="report-sub">
+    NASA Earth Observatory Natural Event Tracker &nbsp;·&nbsp;
+    25 energy-relevant events worldwide &nbsp;·&nbsp;
+    Cross-referenced against 22 energy facilities &nbsp;·&nbsp;
+    Generated 2026-06-30 12:28 UTC
+  </div>
+
+  <div style="font-family:Arial,sans-serif;font-size:.7rem;color:#888;
+              margin-bottom:1.25rem;">
+    Focused on categories with plausible US energy infrastructure impact
+    (wildfires, severe storms, volcanoes, floods, landslides, drought,
+    dust/haze, earthquakes). 14 sea/lake ice and manmade
+    events excluded from this view — primarily Antarctic iceberg tracking
+    with no relevance to monitored facilities.
+    Event status ("open"/"closed") reflects the live EONET feed as of
+    2026-06-30 12:28 UTC — not cached. Some prescribed/controlled burns may remain
+    "open" in EONET for several days after containment.
+  </div>
+
+  <div class="signal-card">
+    <div style="font-family:Arial,sans-serif;font-size:.65rem;text-transform:uppercase;
+                letter-spacing:.08em;color:#dc2626;font-weight:bold;margin-bottom:.25rem;">
+      Natural Event Signal
+    </div>
+    <div style="font-family:Georgia,serif;font-size:1.7rem;font-weight:bold;
+                color:#dc2626;line-height:1.1;">WATCH</div>
+    <div style="font-family:Arial,sans-serif;font-size:.75rem;color:#555;
+                margin-top:.3rem;">
+      25 energy-relevant events &nbsp;·&nbsp; 8 within 300mi of energy infrastructure
+      
+    </div>
+  </div>
+
+  <div class="scorecard-row"><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:105px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Open Events</div><div style="font-size:1.3rem;font-weight:bold;color:#1a1a1a;font-family:Georgia,serif;">25</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">last 20d, worldwide</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:105px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Wildfires</div><div style="font-size:1.3rem;font-weight:bold;color:#dc2626;font-family:Georgia,serif;">22</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:105px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Severe Storms</div><div style="font-size:1.3rem;font-weight:bold;color:#d97706;font-family:Georgia,serif;">2</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:105px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Volcanoes</div><div style="font-size:1.3rem;font-weight:bold;color:#7f1d1d;font-family:Georgia,serif;">1</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:105px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Energy Proximity</div><div style="font-size:1.3rem;font-weight:bold;color:#dc2626;font-family:Georgia,serif;">8</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">within 300mi of facility</div></div></div>
+
+  <div class="section-head">Events by Category</div>
+  <div class="cat-grid">
+<div style="border:1px solid #e5e7eb;border-left:4px solid #dc2626;
+            padding:.6rem .85rem;">
+  <div style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;">
+    🔥 Wildfires</div>
+  <div style="font-family:Georgia,serif;font-size:1.3rem;font-weight:bold;
+              color:#dc2626;">22</div>
+</div>
+<div style="border:1px solid #e5e7eb;border-left:4px solid #d97706;
+            padding:.6rem .85rem;">
+  <div style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;">
+    🌀 Severe Storms</div>
+  <div style="font-family:Georgia,serif;font-size:1.3rem;font-weight:bold;
+              color:#d97706;">2</div>
+</div>
+<div style="border:1px solid #e5e7eb;border-left:4px solid #7f1d1d;
+            padding:.6rem .85rem;">
+  <div style="font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;">
+    🌋 Volcanoes</div>
+  <div style="font-family:Georgia,serif;font-size:1.3rem;font-weight:bold;
+              color:#7f1d1d;">1</div>
+</div></div>
+
+  <div class="section-head">Energy Infrastructure Proximity Alerts</div>
+  <div style="font-family:Arial,sans-serif;font-size:.7rem;color:#555;
+              margin-bottom:.75rem;">
+    Active natural events within 300 miles of monitored refineries,
+    LNG terminals, and production basins (same facility list as
+    Energy Infrastructure Weather Risk report).
+  </div>
+  
+<div style="display:flex;gap:1rem;margin-bottom:.75rem;font-family:Arial,sans-serif;
+            font-size:.68rem;color:#555;">
+  <span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;
+        background:#7f1d1d;margin-right:.3rem;"></span>CRITICAL ≤50mi</span>
+  <span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;
+        background:#dc2626;margin-right:.3rem;"></span>WATCH ≤150mi</span>
+  <span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;
+        background:#d97706;margin-right:.3rem;"></span>MONITOR ≤300mi</span>
+</div>
+  
+<div style="border:1px solid #dc2626;border-left:4px solid #dc2626;
+            padding:.6rem .85rem;margin-bottom:.5rem;background:#dc262608;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+    <div>
+      <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+        🔥 SHORE Wildfire, Riverside, California
+        <span style="display:inline-block;margin-left:.4rem;padding:.1rem .4rem;
+                     border-radius:3px;font-size:.6rem;font-weight:bold;
+                     color:#fff;background:#dc2626;">WATCH</span>
+      </div>
+      <div style="font-family:Arial,sans-serif;font-size:.7rem;color:#555;margin-top:.2rem;">
+        75 mi from <strong>Chevron El Segundo Refinery</strong> (CA)
+         · 3,085 acres</div>
+    </div>
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;
+                 white-space:nowrap;">2026-06-15</span>
+  </div>
+</div>
+<div style="border:1px solid #dc2626;border-left:4px solid #dc2626;
+            padding:.6rem .85rem;margin-bottom:.5rem;background:#dc262608;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+    <div>
+      <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+        🔥 WYLY Wildfire, Kern, California
+        <span style="display:inline-block;margin-left:.4rem;padding:.1rem .4rem;
+                     border-radius:3px;font-size:.6rem;font-weight:bold;
+                     color:#fff;background:#dc2626;">WATCH</span>
+      </div>
+      <div style="font-family:Arial,sans-serif;font-size:.7rem;color:#555;margin-top:.2rem;">
+        94 mi from <strong>Chevron El Segundo Refinery</strong> (CA)
+         · 1,075 acres</div>
+    </div>
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;
+                 white-space:nowrap;">2026-06-13</span>
+  </div>
+</div>
+<div style="border:1px solid #d97706;border-left:4px solid #d97706;
+            padding:.6rem .85rem;margin-bottom:.5rem;background:#d9770608;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+    <div>
+      <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+        🔥 Omak Lake Road Wildfire, Okanogan, Washington
+        <span style="display:inline-block;margin-left:.4rem;padding:.1rem .4rem;
+                     border-radius:3px;font-size:.6rem;font-weight:bold;
+                     color:#fff;background:#d97706;">MONITOR</span>
+      </div>
+      <div style="font-family:Arial,sans-serif;font-size:.7rem;color:#555;margin-top:.2rem;">
+        156 mi from <strong>Phillips 66 Cherry Point Refinery</strong> (WA)
+         · 670 acres</div>
+    </div>
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;
+                 white-space:nowrap;">2026-06-16</span>
+  </div>
+</div>
+<div style="border:1px solid #d97706;border-left:4px solid #d97706;
+            padding:.6rem .85rem;margin-bottom:.5rem;background:#d9770608;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+    <div>
+      <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+        🔥 Kartar Wildfire, Okanogan, Washington
+        <span style="display:inline-block;margin-left:.4rem;padding:.1rem .4rem;
+                     border-radius:3px;font-size:.6rem;font-weight:bold;
+                     color:#fff;background:#d97706;">MONITOR</span>
+      </div>
+      <div style="font-family:Arial,sans-serif;font-size:.7rem;color:#555;margin-top:.2rem;">
+        157 mi from <strong>Phillips 66 Cherry Point Refinery</strong> (WA)
+         · 1,700 acres</div>
+    </div>
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;
+                 white-space:nowrap;">2026-06-16</span>
+  </div>
+</div>
+<div style="border:1px solid #d97706;border-left:4px solid #d97706;
+            padding:.6rem .85rem;margin-bottom:.5rem;background:#d9770608;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+    <div>
+      <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+        🔥 4170 Tule Rd Wildfire, Yakima, Washington
+        <span style="display:inline-block;margin-left:.4rem;padding:.1rem .4rem;
+                     border-radius:3px;font-size:.6rem;font-weight:bold;
+                     color:#fff;background:#d97706;">MONITOR</span>
+      </div>
+      <div style="font-family:Arial,sans-serif;font-size:.7rem;color:#555;margin-top:.2rem;">
+        211 mi from <strong>Phillips 66 Cherry Point Refinery</strong> (WA)
+         · 5,000 acres</div>
+    </div>
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;
+                 white-space:nowrap;">2026-06-14</span>
+  </div>
+</div>
+<div style="border:1px solid #d97706;border-left:4px solid #d97706;
+            padding:.6rem .85rem;margin-bottom:.5rem;background:#d9770608;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+    <div>
+      <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+        🔥 JUNIPER DUNES Wildfire, Franklin, Washington
+        <span style="display:inline-block;margin-left:.4rem;padding:.1rem .4rem;
+                     border-radius:3px;font-size:.6rem;font-weight:bold;
+                     color:#fff;background:#d97706;">MONITOR</span>
+      </div>
+      <div style="font-family:Arial,sans-serif;font-size:.7rem;color:#555;margin-top:.2rem;">
+        248 mi from <strong>Phillips 66 Cherry Point Refinery</strong> (WA)
+         · 1,000 acres</div>
+    </div>
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;
+                 white-space:nowrap;">2026-06-14</span>
+  </div>
+</div>
+<div style="border:1px solid #d97706;border-left:4px solid #d97706;
+            padding:.6rem .85rem;margin-bottom:.5rem;background:#d9770608;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+    <div>
+      <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+        🔥 TWIN SISTERS Wildfire, Walla Walla, Washington
+        <span style="display:inline-block;margin-left:.4rem;padding:.1rem .4rem;
+                     border-radius:3px;font-size:.6rem;font-weight:bold;
+                     color:#fff;background:#d97706;">MONITOR</span>
+      </div>
+      <div style="font-family:Arial,sans-serif;font-size:.7rem;color:#555;margin-top:.2rem;">
+        263 mi from <strong>Phillips 66 Cherry Point Refinery</strong> (WA)
+         · 8,262 acres</div>
+    </div>
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;
+                 white-space:nowrap;">2026-06-14</span>
+  </div>
+</div>
+<div style="border:1px solid #d97706;border-left:4px solid #d97706;
+            padding:.6rem .85rem;margin-bottom:.5rem;background:#d9770608;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+    <div>
+      <div style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;">
+        🔥 Old Emigrant Wildfire, Umatilla, Oregon
+        <span style="display:inline-block;margin-left:.4rem;padding:.1rem .4rem;
+                     border-radius:3px;font-size:.6rem;font-weight:bold;
+                     color:#fff;background:#d97706;">MONITOR</span>
+      </div>
+      <div style="font-family:Arial,sans-serif;font-size:.7rem;color:#555;margin-top:.2rem;">
+        295 mi from <strong>Phillips 66 Cherry Point Refinery</strong> (WA)
+         · 1,000 acres</div>
+    </div>
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;
+                 white-space:nowrap;">2026-06-16</span>
+  </div>
+</div>
+<div style="font-family:Arial,sans-serif;font-size:.72rem;color:#555;
+            margin-top:.5rem;padding-top:.5rem;border-top:1px solid #e5e7eb;">
+  <strong>Facilities at risk:</strong> 2
+  (Chevron El Segundo Refinery, Phillips 66 Cherry Point Refinery)
+</div>
+
+  <div class="section-head">Recent Events — Last 20 Days</div>
+  <table>
+    <thead><tr>
+      <th>Date</th><th>Category</th><th>Event</th>
+      <th>Magnitude</th><th>Link</th>
+    </tr></thead>
+    <tbody>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-27</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#d97706;padding:.1rem .4rem;
+                 border-radius:3px;">🌀 Severe Storms</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;">
+    Tropical Storm Higos</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">45 kts</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;">
+    <a href="https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20671" target="_blank" style="color:#e8111a;">View →</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-27</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#d97706;padding:.1rem .4rem;
+                 border-radius:3px;">🌀 Severe Storms</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;">
+    Typhoon Mekkhala</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">40 kts</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;">
+    <a href="https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20606" target="_blank" style="color:#e8111a;">View →</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-17</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#dc2626;padding:.1rem .4rem;
+                 border-radius:3px;">🔥 Wildfires</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;">
+    Median Wildfire, Gooding, Idaho</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">1,000 acres</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;">
+    <a href="https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20558" target="_blank" style="color:#e8111a;">View →</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-16</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#dc2626;padding:.1rem .4rem;
+                 border-radius:3px;">🔥 Wildfires</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;">
+    TRAIL 13 (09) Wildfire, Citrus, Florida</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">687 acres</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;">
+    <a href="https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20565" target="_blank" style="color:#e8111a;">View →</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-16</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#dc2626;padding:.1rem .4rem;
+                 border-radius:3px;">🔥 Wildfires</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;">
+    Kartar Wildfire, Okanogan, Washington</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">1,700 acres</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;">
+    <a href="https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20560" target="_blank" style="color:#e8111a;">View →</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-16</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#dc2626;padding:.1rem .4rem;
+                 border-radius:3px;">🔥 Wildfires</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;">
+    Omak Lake Road Wildfire, Okanogan, Washington</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">670 acres</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;">
+    <a href="https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20562" target="_blank" style="color:#e8111a;">View →</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-16</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#dc2626;padding:.1rem .4rem;
+                 border-radius:3px;">🔥 Wildfires</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;">
+    Old Emigrant Wildfire, Umatilla, Oregon</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">1,000 acres</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;">
+    <a href="https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20559" target="_blank" style="color:#e8111a;">View →</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-16</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#dc2626;padding:.1rem .4rem;
+                 border-radius:3px;">🔥 Wildfires</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;">
+    Sawmill Wildfire, Iron, Utah</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">1,100 acres</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;">
+    <a href="https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20561" target="_blank" style="color:#e8111a;">View →</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-15</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#dc2626;padding:.1rem .4rem;
+                 border-radius:3px;">🔥 Wildfires</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;">
+    QUARRY 2 (13) Wildfire, Miami-Dade, Florida</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">3,500 acres</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;">
+    <a href="https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20567" target="_blank" style="color:#e8111a;">View →</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-15</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#dc2626;padding:.1rem .4rem;
+                 border-radius:3px;">🔥 Wildfires</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;">
+    Dellenbaugh Wildfire, Mohave, Arizona</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">724 acres</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;">
+    <a href="https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20569" target="_blank" style="color:#e8111a;">View →</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-15</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#dc2626;padding:.1rem .4rem;
+                 border-radius:3px;">🔥 Wildfires</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;">
+    APQ Area 5A RX 0615 Prescribed Fire, Polk, Florida</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">556 acres</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;">
+    <a href="https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20570" target="_blank" style="color:#e8111a;">View →</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-15</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#dc2626;padding:.1rem .4rem;
+                 border-radius:3px;">🔥 Wildfires</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;">
+    SHORE Wildfire, Riverside, California</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">3,085 acres</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;">
+    <a href="https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20564" target="_blank" style="color:#e8111a;">View →</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-15</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#dc2626;padding:.1rem .4rem;
+                 border-radius:3px;">🔥 Wildfires</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;">
+    Rock Canyon Wildfire, Coconino, Arizona</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">1,165 acres</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;">
+    <a href="https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20566" target="_blank" style="color:#e8111a;">View →</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-15</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#7f1d1d;padding:.1rem .4rem;
+                 border-radius:3px;">🌋 Volcanoes</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;">
+    Nevados del Chillan Volcano, Chile</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">—</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;">
+    <a href="https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20710" target="_blank" style="color:#e8111a;">View →</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-14</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#dc2626;padding:.1rem .4rem;
+                 border-radius:3px;">🔥 Wildfires</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;">
+    Green Gate (26) Wildfire, Hendry, Florida</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">535 acres</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;">
+    <a href="https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20520" target="_blank" style="color:#e8111a;">View →</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-14</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#dc2626;padding:.1rem .4rem;
+                 border-radius:3px;">🔥 Wildfires</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;">
+    MIDNIGHT FIRE (53) Wildfire, Polk, Florida</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">600 acres</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;">
+    <a href="https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20523" target="_blank" style="color:#e8111a;">View →</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-14</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#dc2626;padding:.1rem .4rem;
+                 border-radius:3px;">🔥 Wildfires</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;">
+    4170 Tule Rd Wildfire, Yakima, Washington</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">5,000 acres</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;">
+    <a href="https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20516" target="_blank" style="color:#e8111a;">View →</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-14</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#dc2626;padding:.1rem .4rem;
+                 border-radius:3px;">🔥 Wildfires</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;">
+    Rookery Wildfire, Volusia, Florida</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">600 acres</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;">
+    <a href="https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20513" target="_blank" style="color:#e8111a;">View →</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-14</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#dc2626;padding:.1rem .4rem;
+                 border-radius:3px;">🔥 Wildfires</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;">
+    TWIN SISTERS Wildfire, Walla Walla, Washington</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">8,262 acres</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;">
+    <a href="https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20571" target="_blank" style="color:#e8111a;">View →</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-14</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#dc2626;padding:.1rem .4rem;
+                 border-radius:3px;">🔥 Wildfires</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;">
+    JUNIPER DUNES Wildfire, Franklin, Washington</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">1,000 acres</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;">
+    <a href="https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20517" target="_blank" style="color:#e8111a;">View →</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-13</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#dc2626;padding:.1rem .4rem;
+                 border-radius:3px;">🔥 Wildfires</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;">
+    WYLY Wildfire, Kern, California</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">1,075 acres</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;">
+    <a href="https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20519" target="_blank" style="color:#e8111a;">View →</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-13</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#dc2626;padding:.1rem .4rem;
+                 border-radius:3px;">🔥 Wildfires</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;">
+    SNAKE RIVER Wildfire, Whitman, Washington</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">686 acres</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;">
+    <a href="https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20518" target="_blank" style="color:#e8111a;">View →</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-12</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#dc2626;padding:.1rem .4rem;
+                 border-radius:3px;">🔥 Wildfires</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;">
+    Kilolitna Wildfire, Yukon-Koyukuk, Alaska</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">908 acres</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;">
+    <a href="https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20522" target="_blank" style="color:#e8111a;">View →</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-12</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#dc2626;padding:.1rem .4rem;
+                 border-radius:3px;">🔥 Wildfires</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;">
+    Unit 16/20 Rx Prescribed Fire, Bibb, Alabama</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">534 acres</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;">
+    <a href="https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20524" target="_blank" style="color:#e8111a;">View →</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.75rem;
+             white-space:nowrap;">2026-06-10</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.67rem;font-weight:bold;
+                 color:#fff;background:#dc2626;padding:.1rem .4rem;
+                 border-radius:3px;">🔥 Wildfires</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;">
+    Little Schloss RX Prescribed Fire, Shenandoah, Virginia</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">1,560 acres</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;">
+    <a href="https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20446" target="_blank" style="color:#e8111a;">View →</a></td>
+</tr></tbody>
+  </table>
+
+</main>
+<footer>
+  <b>DATA SOURCE</b> &nbsp;·&nbsp;
+  NASA EONET API v3 (eonet.gsfc.nasa.gov) &nbsp;·&nbsp;
+  Public Data Only — free, no key required &nbsp;·&nbsp;
+  No AI-generated content &nbsp;·&nbsp;
+  © 2026 Randy Hinton &nbsp;·&nbsp; 2026-06-30 12:28 UTC &nbsp;·&nbsp; #FollowTheData
+</footer>
+</body>
+</html>
