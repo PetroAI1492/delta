@@ -151,7 +151,7 @@
 </div><!-- .layout -->
 <footer>
   THOR SIGNAL &nbsp;·&nbsp; Taxonomy-driven routing &nbsp;·&nbsp;
-  Generated: 2026-06-30 10:18 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+  Generated: 2026-06-30 11:15 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 <script>
 const REPORTS = [
@@ -4770,6 +4770,70 @@ const REPORTS = [
     ],
     "id": "us_growth_signal",
     "path": "https://petroai1492.github.io/delta/economy/growth_signal.html"
+  },
+  {
+    "title": "Consolidated Energy Signal Panel",
+    "file": "energy/energy_panel.html",
+    "description": "Single executive dashboard fusing every Thor energy-domain signal into one view. Pure consolidator \u2014 performs zero independent data fetching, reads the already-published JSON output from six existing reports (Energy Infrastructure Weather Risk, CFTC Energy Positioning, Strait of Hormuz SITREP, NASA EONET Natural Events, Russia Petroleum Sanctions, Iran Petroleum Sanctions) and assembles them into one panel. Worst signal across all active sources drives the overall posture, with graceful degradation showing \"DATA UNAVAILABLE\" for any source not yet run.",
+    "json_file": "energy/energy_panel.json",
+    "published": true,
+    "url": "`petroai1492.github.io/delta/energy/energy_panel.html`",
+    "auto_published": true,
+    "primary_domain": "Energy",
+    "secondary_domains": [
+      "Geopolitics",
+      "Finance",
+      "Science"
+    ],
+    "entities": [
+      "All entities tracked by the six source reports"
+    ],
+    "data_sources": [
+      "Reads JSON output directly from: energy_weather_risk.json",
+      "cftc_energy.json",
+      "hormuz_brief.json",
+      "eonet_events.json",
+      "russia_sanctions.json",
+      "iran_sanctions.json \u2014 no new API calls"
+    ],
+    "update_frequency": "Daily \u2014 must run after the six source reports complete their own --publish cycles",
+    "key_signals": [
+      "Overall Energy Risk Posture (worst signal across all loaded sources)",
+      "per-source signal cards with detail line and last-generated timestamp",
+      "source availability tracking"
+    ],
+    "intent_phrases": [
+      "energy panel",
+      "energy dashboard",
+      "consolidated energy",
+      "energy overview",
+      "energy signal panel",
+      "all energy signals",
+      "energy risk posture",
+      "energy summary",
+      "single pane energy",
+      "energy executive summary",
+      "overall energy risk",
+      "energy status",
+      {
+        "keyword": "consolidated",
+        "weight": 10
+      },
+      {
+        "keyword": "energy",
+        "weight": 10
+      },
+      {
+        "keyword": "signal",
+        "weight": 10
+      },
+      {
+        "keyword": "panel",
+        "weight": 10
+      }
+    ],
+    "id": "consolidated_energy_signal_panel",
+    "path": "https://petroai1492.github.io/delta/energy/energy_panel.html"
   }
 ];
 const CROSS_DOMAIN = [
