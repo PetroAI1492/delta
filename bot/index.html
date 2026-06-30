@@ -151,7 +151,7 @@
 </div><!-- .layout -->
 <footer>
   THOR SIGNAL &nbsp;·&nbsp; Taxonomy-driven routing &nbsp;·&nbsp;
-  Generated: 2026-06-30 09:00 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+  Generated: 2026-06-30 09:33 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 <script>
 const REPORTS = [
@@ -4519,6 +4519,74 @@ const REPORTS = [
     ],
     "id": "us_credit_market_signal",
     "path": "https://petroai1492.github.io/delta/finance/credit_signal.html"
+  },
+  {
+    "title": "Rates & FX Signal",
+    "file": "finance/rates_fx_signal.html",
+    "description": "Weekly signal comparing bond market pricing against the Fed's stated policy path \u2014 answers \"does the market agree with the Fed?\" Tracks the Federal Reserve's own Broad Dollar Index, 10Y/2Y Treasury yields, yield curve shape, and 10Y breakeven inflation. Uses 2Y Treasury yield as a free proxy for market-implied rate-path expectations (CME Fed Funds futures require a paid feed). Cross-references directly with Federal Reserve Watch's dot plot and Inflation Dashboard's Core PCE reading.",
+    "json_file": "finance/rates_fx_signal.json",
+    "published": true,
+    "url": "`petroai1492.github.io/delta/finance/rates_fx_signal.html`",
+    "auto_published": true,
+    "primary_domain": "Finance",
+    "secondary_domains": [
+      "Federal",
+      "Economy"
+    ],
+    "entities": [
+      "Federal Reserve",
+      "Treasury yields",
+      "Broad Dollar Index",
+      "FOMC"
+    ],
+    "data_sources": [
+      "FRED API (api.stlouisfed.org",
+      "free key required); series: DTWEXBGS",
+      "DGS10",
+      "DGS2",
+      "T10Y2Y",
+      "T10YIE",
+      "DFEDTARU"
+    ],
+    "update_frequency": "Weekly",
+    "key_signals": [
+      "Market vs Fed signal (MARKET PRICING CUTS/LEANING DOVISH/AGREES WITH FED/LEANING HAWKISH/PRICING HIKES) based on 2Y Treasury vs Fed Funds upper limit gap in bps",
+      "Broad Dollar Index with 1-month % change and trend (STRENGTHENING/FIRMING/STABLE/SOFTENING/WEAKENING)",
+      "10Y and 2Y Treasury yields",
+      "10Y-2Y curve shape",
+      "10Y breakeven inflation expectation"
+    ],
+    "intent_phrases": [
+      "dollar index",
+      "DXY",
+      "Treasury yields",
+      "10 year yield",
+      "2 year yield",
+      "yield curve",
+      "does market agree with Fed",
+      "market vs Fed",
+      "rate expectations",
+      "dollar strength",
+      "broad dollar index",
+      "Treasury spread",
+      "bond market signal",
+      "Fed credibility",
+      "market pricing rate cuts",
+      "FX signal",
+      "rates signal",
+      "dollar trend",
+      "yield curve shape",
+      {
+        "keyword": "rates",
+        "weight": 10
+      },
+      {
+        "keyword": "signal",
+        "weight": 10
+      }
+    ],
+    "id": "rates_fx_signal",
+    "path": "https://petroai1492.github.io/delta/finance/rates_fx_signal.html"
   }
 ];
 const CROSS_DOMAIN = [
