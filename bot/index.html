@@ -151,7 +151,7 @@
 </div><!-- .layout -->
 <footer>
   THOR SIGNAL &nbsp;·&nbsp; Taxonomy-driven routing &nbsp;·&nbsp;
-  Generated: 2026-06-30 06:33 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+  Generated: 2026-06-30 08:29 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 <script>
 const REPORTS = [
@@ -4370,6 +4370,81 @@ const REPORTS = [
     ],
     "id": "inflation_dashboard",
     "path": "https://petroai1492.github.io/delta/economy/inflation_dashboard.html"
+  },
+  {
+    "title": "NASA EONET Natural Events Monitor",
+    "file": "science/eonet_events.html",
+    "description": "Tracks active natural events worldwide via NASA's Earth Observatory Natural Event Tracker, focused on categories with plausible US energy infrastructure impact (wildfires, severe storms, volcanoes, floods, landslides, drought, dust/haze, earthquakes). Sea/Lake Ice and Manmade categories are excluded from the primary view (mostly Antarctic iceberg tracking) but disclosed as a count. Cross-references event coordinates against Thor's 22-facility energy infrastructure list with a three-tier proximity system: CRITICAL \u226450mi, WATCH \u2264150mi, MONITOR \u2264300mi.",
+    "json_file": "science/eonet_events.json",
+    "published": true,
+    "url": "`petroai1492.github.io/delta/science/eonet_events.html`",
+    "auto_published": true,
+    "primary_domain": "Science",
+    "secondary_domains": [
+      "Energy"
+    ],
+    "entities": [
+      "NASA EONET",
+      "wildfires",
+      "severe storms",
+      "volcanoes",
+      "floods",
+      "earthquakes; same 22 energy facilities as Energy Infrastructure Weather Risk report"
+    ],
+    "data_sources": [
+      "NASA EONET API v3 (eonet.gsfc.nasa.gov/api/v3/events",
+      "free",
+      "no key; fallback eonet.sci.gsfc.nasa.gov); retry logic with backoff for transient 503s"
+    ],
+    "update_frequency": "Every 6 hours recommended; hourly during active wildfire/hurricane season",
+    "key_signals": [
+      "Natural event signal (NORMAL/ELEVATED ACTIVITY/MONITOR/WATCH/CRITICAL based on worst proximity tier)",
+      "energy-relevant event count by category",
+      "energy infrastructure proximity alerts with tiered distance bands",
+      "facilities-at-risk concentration count",
+      "recent events table with magnitude and source link"
+    ],
+    "intent_phrases": [
+      "natural events",
+      "EONET",
+      "NASA wildfire",
+      "wildfire near refinery",
+      "natural disaster energy",
+      "wildfire energy risk",
+      "NASA natural events",
+      "earthquake energy",
+      "volcano alert",
+      "flood energy infrastructure",
+      "natural event monitor",
+      "wildfire refinery risk",
+      "NASA EONET",
+      "energy facility wildfire",
+      "natural hazard energy",
+      "wildfire El Segundo",
+      "energy infrastructure fire risk",
+      {
+        "keyword": "nasa",
+        "weight": 10
+      },
+      {
+        "keyword": "eonet",
+        "weight": 10
+      },
+      {
+        "keyword": "natural",
+        "weight": 10
+      },
+      {
+        "keyword": "events",
+        "weight": 10
+      },
+      {
+        "keyword": "monitor",
+        "weight": 10
+      }
+    ],
+    "id": "nasa_eonet_natural_events_monitor",
+    "path": "https://petroai1492.github.io/delta/science/eonet_events.html"
   }
 ];
 const CROSS_DOMAIN = [
