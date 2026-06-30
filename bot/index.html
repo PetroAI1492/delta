@@ -151,7 +151,7 @@
 </div><!-- .layout -->
 <footer>
   THOR SIGNAL &nbsp;·&nbsp; Taxonomy-driven routing &nbsp;·&nbsp;
-  Generated: 2026-06-29 20:41 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+  Generated: 2026-06-29 20:57 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 <script>
 const REPORTS = [
@@ -4211,6 +4211,89 @@ const REPORTS = [
     ],
     "id": "federal_reserve_watch",
     "path": "https://petroai1492.github.io/delta/finance/fed_watch.html"
+  },
+  {
+    "title": "Jobs Market Signal",
+    "file": "economy/jobs_signal.html",
+    "description": "Monthly signal report on US labor market health. Aggregates key BLS employment indicators from FRED into a deterministic stress score (0\u2013100, higher = more stress). Tracks nonfarm payrolls MoM, unemployment rate, initial jobless claims (4-week MA), JOLTS job openings, average hourly wages YoY, labor force participation rate, and employment-population ratio. Includes 24-month payroll bar chart and sparklines per indicator.",
+    "json_file": "economy/jobs_signal.json",
+    "published": true,
+    "url": "`petroai1492.github.io/delta/economy/jobs_signal.html`",
+    "auto_published": true,
+    "primary_domain": "Economy",
+    "secondary_domains": [
+      "Federal"
+    ],
+    "entities": [
+      "BLS",
+      "Federal Reserve",
+      "nonfarm payrolls",
+      "JOLTS",
+      "initial claims",
+      "unemployment"
+    ],
+    "data_sources": [
+      "FRED API (api.stlouisfed.org",
+      "free key required); series: PAYEMS",
+      "UNRATE",
+      "ICSA",
+      "CCSA",
+      "JTSJOL",
+      "JTSQUR",
+      "CES0500000003",
+      "CIVPART",
+      "EMRATIO",
+      "AWHNONAG"
+    ],
+    "update_frequency": "Monthly \u2014 run after BLS Employment Situation release (typically first Friday of month)",
+    "key_signals": [
+      "Labor market signal (STRONG/HEALTHY/SOFTENING/COOLING/STRESSED)",
+      "stress score with component breakdown",
+      "payrolls MoM",
+      "unemployment rate and MoM change",
+      "initial claims and 4-week MA",
+      "job openings",
+      "wages YoY%",
+      "participation rate",
+      "employment-population ratio",
+      "quits rate"
+    ],
+    "intent_phrases": [
+      "jobs report",
+      "employment situation",
+      "payrolls",
+      "nonfarm payrolls",
+      "unemployment rate",
+      "jobless claims",
+      "initial claims",
+      "job openings",
+      "JOLTS",
+      "labor market",
+      "jobs signal",
+      "employment signal",
+      "jobs market",
+      "hiring",
+      "labor force participation",
+      "wage growth",
+      "jobs data",
+      "BLS jobs",
+      "employment signal",
+      "jobs market health",
+      {
+        "keyword": "jobs",
+        "weight": 10
+      },
+      {
+        "keyword": "market",
+        "weight": 10
+      },
+      {
+        "keyword": "signal",
+        "weight": 10
+      }
+    ],
+    "id": "jobs_market_signal",
+    "path": "https://petroai1492.github.io/delta/economy/jobs_signal.html"
   }
 ];
 const CROSS_DOMAIN = [
