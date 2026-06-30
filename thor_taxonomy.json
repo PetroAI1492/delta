@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-29T22:35:25Z",
+  "generated": "2026-06-30T00:41:36Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -4101,6 +4101,89 @@
       ],
       "id": "global_internet_stability_signal",
       "path": "https://petroai1492.github.io/delta/cybersecurity/internet_outage.html"
+    },
+    {
+      "title": "Federal Reserve Watch",
+      "file": "finance/fed_watch.html",
+      "description": "Weekly signal report on Federal Reserve monetary policy. Tracks current Fed Funds target range, EFFR, SOFR, balance sheet size and trend, 10Y/2Y Treasury spreads vs EFFR, FOMC meeting calendar, dot plot median projections with period-over-period change, policy timeline of rate moves, and 12-month rate trajectory. All data from FRED (Federal Reserve Economic Data) via free API.",
+      "json_file": "finance/fed_watch.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/finance/fed_watch.html`",
+      "auto_published": true,
+      "primary_domain": "Finance",
+      "secondary_domains": [
+        "Federal",
+        "Economy"
+      ],
+      "entities": [
+        "Federal Reserve",
+        "FOMC",
+        "Fed Funds Rate",
+        "EFFR",
+        "SOFR",
+        "Treasury yields",
+        "balance sheet",
+        "dot plot"
+      ],
+      "data_sources": [
+        "FRED API (api.stlouisfed.org",
+        "free key required at C:\\mygit\\secrets\\fred.key); series: DFEDTARU",
+        "DFEDTARL",
+        "DFF",
+        "FEDFUNDS",
+        "SOFR",
+        "WALCL",
+        "FEDTARMD",
+        "DGS10",
+        "DGS2"
+      ],
+      "update_frequency": "Weekly (FRED updates daily; run Friday for weekly snapshot)",
+      "key_signals": [
+        "Policy stance (HOLDING/HIKING/CUTTING)",
+        "last move in bps (from target range, not FEDFUNDS average)",
+        "12-month rate change in bps",
+        "balance sheet trend (Stable/Gradual Runoff/Shrinking/Gradual Expansion/Expanding LSAP) with YoY delta",
+        "10Y and 2Y Treasury spreads vs EFFR",
+        "FOMC meeting countdown",
+        "dot plot median projections with YoY change",
+        "policy timeline of real FOMC decisions"
+      ],
+      "intent_phrases": [
+        "Federal Reserve",
+        "Fed Funds rate",
+        "FOMC",
+        "monetary policy",
+        "Fed Watch",
+        "interest rate signal",
+        "Fed balance sheet",
+        "dot plot",
+        "Fed rate cut",
+        "Fed rate hike",
+        "EFFR",
+        "SOFR",
+        "Treasury spread",
+        "Fed policy",
+        "FOMC calendar",
+        "next Fed meeting",
+        "Fed rate history",
+        "monetary stance",
+        "Fed cutting",
+        "Fed holding",
+        {
+          "keyword": "federal",
+          "weight": 10
+        },
+        {
+          "keyword": "reserve",
+          "weight": 10
+        },
+        {
+          "keyword": "watch",
+          "weight": 10
+        }
+      ],
+      "id": "federal_reserve_watch",
+      "path": "https://petroai1492.github.io/delta/finance/fed_watch.html"
     }
   ],
   "cross_domain_matrix": [
