@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "report": "US Growth Signal",
+    "version": "1.0.0",
+    "source": "BEA / Federal Reserve Bank of Chicago via FRED",
+    "generated_at": "2026-06-30 14:17 UTC"
+  },
+  "cfnai_signal": "BELOW TREND",
+  "cfnai_color": "#d97706",
+  "gdp": 24180.419,
+  "gdp_date": "2026-01-01",
+  "gdp_qoq_annualized": 2.1,
+  "gdp_yoy": 2.7,
+  "cfnai": -0.1,
+  "cfnai_date": "2026-05-01",
+  "cfnai_ma3": -0.03
+}
