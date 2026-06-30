@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treasury Auction Signal</title>
+<style>
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  :root { --red:#e8111a; --rule:#e5e7eb; }
+  body { font-family:Georgia,serif; background:#fff; color:#1a1a1a; }
+  .masthead { border-top:4px solid var(--red); border-bottom:1px solid var(--rule);
+               padding:.6rem 2rem .5rem; display:flex; align-items:baseline; gap:1rem; }
+  .brand { font-family:Arial,sans-serif; font-size:1.1rem; font-weight:bold;
+            color:var(--red); text-transform:uppercase; }
+  .section-label { font-family:Arial,sans-serif; font-size:.72rem; color:#666;
+                    text-transform:uppercase; letter-spacing:.08em;
+                    border-left:1px solid var(--rule); padding-left:1rem; }
+  main { max-width:1050px; margin:0 auto; padding:1.5rem 2rem 3rem; }
+  .report-title { font-size:1.6rem; font-weight:bold; letter-spacing:-.5px;
+                   border-bottom:2px solid #1a1a1a; padding-bottom:.5rem;
+                   margin-bottom:.4rem; }
+  .report-sub { font-family:Arial,sans-serif; font-size:.8rem; color:#666;
+                 margin-bottom:1.25rem; }
+  .signal-card { display:inline-block; border:2px solid #65a30d;
+                  padding:.9rem 1.5rem; margin-bottom:1.25rem;
+                  background:#65a30d08; min-width:260px; }
+  .scorecard-row { display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:1.5rem; }
+  .section-head { font-family:Arial,sans-serif; font-size:.72rem; font-weight:bold;
+                   text-transform:uppercase; letter-spacing:.08em; color:#e8111a;
+                   border-bottom:2px solid #e8111a; padding-bottom:.3rem;
+                   margin:1.5rem 0 .75rem; }
+  table { width:100%; border-collapse:collapse; font-size:12px; }
+  th { text-align:left; font-family:Arial,sans-serif; font-size:.65rem;
+        text-transform:uppercase; letter-spacing:.06em; color:#888;
+        padding:.4rem .6rem .4rem 0; border-bottom:2px solid #e5e7eb; }
+  td { vertical-align:middle; }
+  .note { background:#f9fafb;border:1px solid #e5e7eb;border-left:3px solid #888;
+           padding:.6rem .9rem;font-family:Arial,sans-serif;font-size:.7rem;
+           color:#555;line-height:1.6;margin-bottom:1.25rem; }
+  footer { border-top:1px solid var(--rule); padding:.75rem 2rem;
+            font-family:Arial,sans-serif; font-size:.68rem;
+            color:#666; text-align:center; margin-top:2rem; }
+</style>
+</head>
+<body>
+<div class="masthead">
+  <span class="brand">THOR SIGNAL</span>
+  <span class="section-label">Treasury Auction Signal</span>
+</div>
+<main>
+  <div class="report-title">Treasury Auction Signal</div>
+  <div class="report-sub">
+    U.S. Treasury Fiscal Data &nbsp;·&nbsp;
+    Bid-to-Cover · Bidder Composition · High Yield &nbsp;·&nbsp;
+    Generated 2026-06-30 14:15 UTC
+  </div>
+
+  <div class="signal-card">
+    <div style="font-family:Arial,sans-serif;font-size:.65rem;text-transform:uppercase;
+                letter-spacing:.08em;color:#65a30d;font-weight:bold;margin-bottom:.25rem;">
+      Treasury Demand Signal
+    </div>
+    <div style="font-family:Georgia,serif;font-size:1.8rem;font-weight:bold;
+                color:#65a30d;line-height:1.1;">SOLID DEMAND</div>
+    <div style="font-family:Arial,sans-serif;font-size:.75rem;color:#555;
+                margin-top:.3rem;">
+      Average bid-to-cover across benchmark tenors: 2.66
+    </div>
+  </div>
+
+  <div class="scorecard-row"><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:110px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Auctions Tracked</div><div style="font-size:1.2rem;font-weight:bold;color:#1a1a1a;font-family:Georgia,serif;">47</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">45-day window</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:110px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Avg Bid-to-Cover</div><div style="font-size:1.2rem;font-weight:bold;color:#65a30d;font-family:Georgia,serif;">2.66</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">across benchmark tenors</div></div><div style="border:1px solid #e5e7eb;padding:.75rem 1rem;min-width:110px;"><div style="font-family:Arial,sans-serif;font-size:.63rem;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;">Tenors Covered</div><div style="font-size:1.2rem;font-weight:bold;color:#1a1a1a;font-family:Georgia,serif;">12</div><div style="font-family:Arial,sans-serif;font-size:.65rem;color:#888;margin-top:.1rem;">4-Week, 6-Week, 8-Week, 13-Week, 17-Week</div></div></div>
+
+  <div class="note">
+    <strong>How to read this:</strong> <strong>Bid-to-cover ratio</strong> is total
+    bids received divided by amount accepted — higher means stronger demand for
+    that auction. Below ~2.0 on notes/bonds is historically weak. <strong>Indirect
+    bidders</strong> typically include foreign central banks and large institutional
+    investors purchasing through primary dealers — a rough proxy for foreign demand
+    for US debt. <strong>Direct bidders</strong> are large domestic institutional
+    investors bidding directly. <strong>Primary dealers</strong> are obligated to
+    bid and often absorb what the market doesn't want — high primary dealer share
+    can signal soft underlying demand. <strong>(BEY)</strong> next to a yield
+    indicates a Treasury Bill's bond-equivalent yield (Bills are quoted at
+    discount, not coupon yield — BEY makes them comparable to Notes/Bonds).
+  </div>
+
+  <div class="section-head">Benchmark Tenor Auctions — Most Recent in 45-Day Window</div>
+  <table>
+    <thead><tr>
+      <th>Term</th><th>Auction Date</th><th>High Yield</th>
+      <th>Bid-to-Cover</th><th>Demand Signal</th><th>Bidder Composition</th>
+    </tr></thead>
+    <tbody>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;
+             font-weight:bold;">4-Week</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">2026-06-25</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.85rem;
+             font-weight:bold;">3.670% <span style="font-size:.6rem;color:#888;font-weight:normal;">(BEY)</span></td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.85rem;
+             font-weight:bold;color:#65a30d;">2.74</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+                 color:#fff;background:#65a30d;padding:.1rem .4rem;border-radius:3px;">SOLID DEMAND</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;
+             color:#555;">
+    Indirect 54%
+     · Direct 3%
+     · Dealer 26%
+  </td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;
+             font-weight:bold;">6-Week</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">2026-06-23</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.85rem;
+             font-weight:bold;">3.686% <span style="font-size:.6rem;color:#888;font-weight:normal;">(BEY)</span></td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.85rem;
+             font-weight:bold;color:#16a34a;">2.91</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+                 color:#fff;background:#16a34a;padding:.1rem .4rem;border-radius:3px;">STRONG DEMAND</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;
+             color:#555;">
+    Indirect 58%
+     · Direct 2%
+     · Dealer 28%
+  </td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;
+             font-weight:bold;">8-Week</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">2026-06-25</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.85rem;
+             font-weight:bold;">3.732% <span style="font-size:.6rem;color:#888;font-weight:normal;">(BEY)</span></td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.85rem;
+             font-weight:bold;color:#65a30d;">2.79</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+                 color:#fff;background:#65a30d;padding:.1rem .4rem;border-radius:3px;">SOLID DEMAND</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;
+             color:#555;">
+    Indirect 63%
+     · Direct 2%
+     · Dealer 25%
+  </td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;
+             font-weight:bold;">13-Week</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.85rem;
+             font-weight:bold;">3.828% <span style="font-size:.6rem;color:#888;font-weight:normal;">(BEY)</span></td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.85rem;
+             font-weight:bold;color:#d97706;">2.32</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+                 color:#fff;background:#d97706;padding:.1rem .4rem;border-radius:3px;">ADEQUATE DEMAND</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;
+             color:#555;">
+    Indirect 37%
+     · Direct 6%
+     · Dealer 47%
+  </td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;
+             font-weight:bold;">17-Week</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">2026-06-24</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.85rem;
+             font-weight:bold;">3.871% <span style="font-size:.6rem;color:#888;font-weight:normal;">(BEY)</span></td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.85rem;
+             font-weight:bold;color:#65a30d;">2.55</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+                 color:#fff;background:#65a30d;padding:.1rem .4rem;border-radius:3px;">SOLID DEMAND</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;
+             color:#555;">
+    Indirect 50%
+     · Direct 4%
+     · Dealer 38%
+  </td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;
+             font-weight:bold;">26-Week</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">2026-06-29</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.85rem;
+             font-weight:bold;">3.970% <span style="font-size:.6rem;color:#888;font-weight:normal;">(BEY)</span></td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.85rem;
+             font-weight:bold;color:#65a30d;">2.58</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+                 color:#fff;background:#65a30d;padding:.1rem .4rem;border-radius:3px;">SOLID DEMAND</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;
+             color:#555;">
+    Indirect 51%
+     · Direct 6%
+     · Dealer 33%
+  </td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;
+             font-weight:bold;">52-Week</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">2026-06-09</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.85rem;
+             font-weight:bold;">3.914% <span style="font-size:.6rem;color:#888;font-weight:normal;">(BEY)</span></td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.85rem;
+             font-weight:bold;color:#16a34a;">3.34</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+                 color:#fff;background:#16a34a;padding:.1rem .4rem;border-radius:3px;">STRONG DEMAND</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;
+             color:#555;">
+    Indirect 63%
+     · Direct 2%
+     · Dealer 27%
+  </td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;
+             font-weight:bold;">2-Year</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">2026-06-23</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.85rem;
+             font-weight:bold;">4.189%</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.85rem;
+             font-weight:bold;color:#65a30d;">2.64</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+                 color:#fff;background:#65a30d;padding:.1rem .4rem;border-radius:3px;">SOLID DEMAND</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;
+             color:#555;">
+    Indirect 48%
+     · Direct 29%
+     · Dealer 9%
+  </td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;
+             font-weight:bold;">3-Year</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">2026-06-09</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.85rem;
+             font-weight:bold;">4.192%</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.85rem;
+             font-weight:bold;color:#65a30d;">2.64</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+                 color:#fff;background:#65a30d;padding:.1rem .4rem;border-radius:3px;">SOLID DEMAND</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;
+             color:#555;">
+    Indirect 63%
+     · Direct 21%
+     · Dealer 15%
+  </td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;
+             font-weight:bold;">5-Year</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">2026-06-24</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.85rem;
+             font-weight:bold;">4.200%</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.85rem;
+             font-weight:bold;color:#d97706;">2.35</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+                 color:#fff;background:#d97706;padding:.1rem .4rem;border-radius:3px;">ADEQUATE DEMAND</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;
+             color:#555;">
+    Indirect 54%
+     · Direct 22%
+     · Dealer 11%
+  </td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;
+             font-weight:bold;">7-Year</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">2026-06-25</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.85rem;
+             font-weight:bold;">4.260%</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.85rem;
+             font-weight:bold;color:#65a30d;">2.50</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+                 color:#fff;background:#65a30d;padding:.1rem .4rem;border-radius:3px;">SOLID DEMAND</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;
+             color:#555;">
+    Indirect 50%
+     · Direct 26%
+     · Dealer 11%
+  </td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;
+             font-weight:bold;">10-Year</td>
+  <td colspan="5" style="padding:.4rem .6rem;font-family:Arial,sans-serif;
+             font-size:.72rem;color:#888;">No auction in 45-day window</td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;
+             font-weight:bold;">20-Year</td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.72rem;
+             color:#888;">2026-05-20</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.85rem;
+             font-weight:bold;">5.122%</td>
+  <td style="padding:.4rem .6rem;font-family:Georgia,serif;font-size:.85rem;
+             font-weight:bold;color:#65a30d;">2.55</td>
+  <td style="padding:.4rem .6rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.65rem;font-weight:bold;
+                 color:#fff;background:#65a30d;padding:.1rem .4rem;border-radius:3px;">SOLID DEMAND</span>
+  </td>
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.7rem;
+             color:#555;">
+    Indirect 58%
+     · Direct 20%
+     · Dealer 8%
+  </td>
+</tr>
+<tr style="border-bottom:1px solid #f3f4f6;">
+  <td style="padding:.4rem .6rem;font-family:Arial,sans-serif;font-size:.78rem;
+             font-weight:bold;">30-Year</td>
+  <td colspan="5" style="padding:.4rem .6rem;font-family:Arial,sans-serif;
+             font-size:.72rem;color:#888;">No auction in 45-day window</td>
+</tr></tbody>
+  </table>
+
+</main>
+<footer>
+  <b>DATA SOURCE</b> &nbsp;·&nbsp;
+  U.S. Treasury Fiscal Data API (api.fiscaldata.treasury.gov) &nbsp;·&nbsp;
+  Public Data Only — free, no key required &nbsp;·&nbsp;
+  No AI-generated content &nbsp;·&nbsp;
+  © 2026 Randy Hinton &nbsp;·&nbsp; 2026-06-30 14:15 UTC &nbsp;·&nbsp; #FollowTheData
+</footer>
+</body>
+</html>
