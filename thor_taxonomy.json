@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-06-30T12:29:28Z",
+  "generated": "2026-06-30T13:00:50Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -4418,6 +4418,80 @@
       ],
       "id": "nasa_eonet_natural_events_monitor",
       "path": "https://petroai1492.github.io/delta/science/eonet_events.html"
+    },
+    {
+      "title": "US Credit Market Signal",
+      "file": "finance/credit_signal.html",
+      "description": "Weekly signal report on US credit market stress \u2014 completes Thor's macro stack (Fed \u2192 Jobs \u2192 Inflation \u2192 Credit Spreads \u2192 Physical Risk). Tracks investment grade and high yield corporate bond option-adjusted spreads, the HY-IG differential (risk appetite signal), HY effective yield, and the 10Y-2Y Treasury curve. Produces a deterministic stress signal (TIGHT/NORMAL/WIDENING/STRESSED/CRISIS) against documented historical thresholds, with cycle-tights context when HY-IG compression nears historical extremes.",
+      "json_file": "finance/credit_signal.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/finance/credit_signal.html`",
+      "auto_published": true,
+      "primary_domain": "Finance",
+      "secondary_domains": [
+        "Federal",
+        "Economy"
+      ],
+      "entities": [
+        "ICE BofA",
+        "corporate bonds",
+        "high yield",
+        "investment grade",
+        "Treasury yield curve"
+      ],
+      "data_sources": [
+        "FRED API (api.stlouisfed.org",
+        "free key required); series: BAMLC0A0CM",
+        "BAMLH0A0HYM2",
+        "BAMLH0A0HYM2EY",
+        "T10Y2Y; ICE BofA index series restricted to rolling 3-year window per FRED policy (April 2026)"
+      ],
+      "update_frequency": "Weekly",
+      "key_signals": [
+        "Credit stress signal (TIGHT/NORMAL/WIDENING/STRESSED/CRISIS) based on HY OAS thresholds",
+        "IG OAS",
+        "HY OAS \u2605 with 1-week change in bps",
+        "HY-IG differential (risk appetite)",
+        "HY effective yield",
+        "10Y-2Y curve (INVERTED/FLAT/SLIGHTLY POSITIVE/NORMAL)",
+        "stress threshold reference table"
+      ],
+      "intent_phrases": [
+        "credit spreads",
+        "high yield spread",
+        "investment grade spread",
+        "credit market signal",
+        "HY OAS",
+        "corporate bond spread",
+        "credit stress",
+        "junk bond spread",
+        "yield curve",
+        "10Y-2Y spread",
+        "credit risk",
+        "bond market signal",
+        "risk appetite",
+        "credit conditions",
+        "OAS",
+        "ICE BofA spread",
+        "credit market stress",
+        "corporate credit",
+        "credit signal",
+        "is the bond market worried",
+        {
+          "keyword": "credit",
+          "weight": 10
+        },
+        {
+          "keyword": "market",
+          "weight": 10
+        },
+        {
+          "keyword": "signal",
+          "weight": 10
+        }
+      ],
+      "id": "us_credit_market_signal",
+      "path": "https://petroai1492.github.io/delta/finance/credit_signal.html"
     }
   ],
   "cross_domain_matrix": [
