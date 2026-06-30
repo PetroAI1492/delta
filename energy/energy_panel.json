@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "report": "Consolidated Energy Signal Panel",
+    "version": "1.0.0",
+    "source": "Assembly of existing Thor energy reports \u2014 no independent fetching",
+    "generated_at": "2026-06-30 15:13 UTC"
+  },
+  "overall_signal": "High Tightening",
+  "sources_loaded": 6,
+  "sources_total": 6,
+  "signals": {
+    "Energy Infrastructure Weather Risk": {
+      "signal": "MODERATE",
+      "detail": "2 of 25 facilities affected (0 critical, 0 high, 2 moderate)",
+      "ts": "2026-06-29 12:22 UTC"
+    },
+    "CFTC Energy Positioning": {
+      "signal": "MIXED",
+      "detail": "4 contracts tracked",
+      "ts": "2026-06-29 13:32 UTC"
+    },
+    "Strait of Hormuz SITREP": {
+      "signal": "STABLE",
+      "detail": "WTI $78.94 (-$1.41 vs 2026-06-18) \u00b7 Brent $76.49 (-$3.97 vs 2026-06-19)",
+      "ts": "2026-06-27 16:16 UTC"
+    },
+    "NASA EONET Natural Events": {
+      "signal": "WATCH",
+      "detail": "8 proximity alerts, 25 events",
+      "ts": "2026-06-30 12:28 UTC"
+    },
+    "Russia Petroleum Sanctions": {
+      "signal": "Moderate Tightening",
+      "detail": "8 events, 1 official tightening actions \u00b7 Confidence: MODERATE",
+      "ts": "2026-06-27 15:10 UTC"
+    },
+    "Iran Petroleum Sanctions": {
+      "signal": "High Tightening",
+      "detail": "63 events, 11 official tightening actions \u00b7 Confidence: HIGH",
+      "ts": "2026-06-27 15:11 UTC"
+    }
+  }
+}

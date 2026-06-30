@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consolidated Energy Signal Panel</title>
+<style>
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  :root { --red:#e8111a; --rule:#e5e7eb; }
+  body { font-family:Georgia,serif; background:#fff; color:#1a1a1a; }
+  .masthead { border-top:4px solid var(--red); border-bottom:1px solid var(--rule);
+               padding:.6rem 2rem .5rem; display:flex; align-items:baseline; gap:1rem; }
+  .brand { font-family:Arial,sans-serif; font-size:1.1rem; font-weight:bold;
+            color:var(--red); text-transform:uppercase; }
+  .section-label { font-family:Arial,sans-serif; font-size:.72rem; color:#666;
+                    text-transform:uppercase; letter-spacing:.08em;
+                    border-left:1px solid var(--rule); padding-left:1rem; }
+  main { max-width:1000px; margin:0 auto; padding:1.5rem 2rem 3rem; }
+  .report-title { font-size:1.6rem; font-weight:bold; letter-spacing:-.5px;
+                   border-bottom:2px solid #1a1a1a; padding-bottom:.5rem;
+                   margin-bottom:.4rem; }
+  .report-sub { font-family:Arial,sans-serif; font-size:.8rem; color:#666;
+                 margin-bottom:1.25rem; }
+  .signal-card { display:inline-block; border:2px solid #dc2626;
+                  padding:.9rem 1.5rem; margin-bottom:1.25rem;
+                  background:#dc262608; min-width:260px; }
+  .panel-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:.75rem;
+                 margin-bottom:1.5rem; }
+  .note { background:#f9fafb;border:1px solid #e5e7eb;border-left:3px solid #888;
+           padding:.6rem .9rem;font-family:Arial,sans-serif;font-size:.7rem;
+           color:#555;line-height:1.6;margin-bottom:1.25rem; }
+  footer { border-top:1px solid var(--rule); padding:.75rem 2rem;
+            font-family:Arial,sans-serif; font-size:.68rem;
+            color:#666; text-align:center; margin-top:2rem; }
+</style>
+</head>
+<body>
+<div class="masthead">
+  <span class="brand">THOR SIGNAL</span>
+  <span class="section-label">Consolidated Energy Signal Panel</span>
+</div>
+<main>
+  <div class="report-title">Consolidated Energy Signal Panel</div>
+  <div class="report-sub">
+    Single-pane assembly of 6 Thor energy-domain reports &nbsp;·&nbsp;
+    No independent data fetching — reads published JSON only &nbsp;·&nbsp;
+    Generated 2026-06-30 15:13 UTC
+  </div>
+
+  <div class="signal-card">
+    <div style="font-family:Arial,sans-serif;font-size:.65rem;text-transform:uppercase;
+                letter-spacing:.08em;color:#dc2626;font-weight:bold;
+                margin-bottom:.25rem;">Overall Energy Risk Posture</div>
+    <div style="font-family:Georgia,serif;font-size:1.8rem;font-weight:bold;
+                color:#dc2626;line-height:1.1;">High Tightening</div>
+    <div style="font-family:Arial,sans-serif;font-size:.75rem;color:#555;
+                margin-top:.3rem;">
+      Worst signal across 6 active source reports
+    </div>
+  </div>
+
+  
+
+  <div class="panel-grid">
+<div style="border:1px solid #e5e7eb;border-left:4px solid #d97706;
+            padding:.75rem 1rem;background:#d9770608;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;
+              margin-bottom:.3rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;
+                 color:#1a1a1a;">Energy Infrastructure Weather Risk</span>
+    <span style="font-family:Arial,sans-serif;font-size:.68rem;font-weight:bold;
+                 color:#d97706;white-space:nowrap;">MODERATE</span>
+  </div>
+  <div style="font-family:Arial,sans-serif;font-size:.7rem;color:#555;">
+    2 of 25 facilities affected (0 critical, 0 high, 2 moderate)</div>
+  <div style="font-family:Arial,sans-serif;font-size:.63rem;color:#aaa;
+              margin-top:.25rem;">As of 2026-06-29 12:22 UTC</div>
+</div>
+<div style="border:1px solid #e5e7eb;border-left:4px solid #65a30d;
+            padding:.75rem 1rem;background:#65a30d08;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;
+              margin-bottom:.3rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;
+                 color:#1a1a1a;">CFTC Energy Positioning</span>
+    <span style="font-family:Arial,sans-serif;font-size:.68rem;font-weight:bold;
+                 color:#65a30d;white-space:nowrap;">MIXED</span>
+  </div>
+  <div style="font-family:Arial,sans-serif;font-size:.7rem;color:#555;">
+    4 contracts tracked</div>
+  <div style="font-family:Arial,sans-serif;font-size:.63rem;color:#aaa;
+              margin-top:.25rem;">As of 2026-06-29 13:32 UTC</div>
+</div>
+<div style="border:1px solid #e5e7eb;border-left:4px solid #16a34a;
+            padding:.75rem 1rem;background:#16a34a08;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;
+              margin-bottom:.3rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;
+                 color:#1a1a1a;">Strait of Hormuz SITREP</span>
+    <span style="font-family:Arial,sans-serif;font-size:.68rem;font-weight:bold;
+                 color:#16a34a;white-space:nowrap;">STABLE</span>
+  </div>
+  <div style="font-family:Arial,sans-serif;font-size:.7rem;color:#555;">
+    WTI $78.94 (-$1.41 vs 2026-06-18) · Brent $76.49 (-$3.97 vs 2026-06-19)</div>
+  <div style="font-family:Arial,sans-serif;font-size:.63rem;color:#aaa;
+              margin-top:.25rem;">As of 2026-06-27 16:16 UTC</div>
+</div>
+<div style="border:1px solid #e5e7eb;border-left:4px solid #d97706;
+            padding:.75rem 1rem;background:#d9770608;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;
+              margin-bottom:.3rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;
+                 color:#1a1a1a;">NASA EONET Natural Events</span>
+    <span style="font-family:Arial,sans-serif;font-size:.68rem;font-weight:bold;
+                 color:#d97706;white-space:nowrap;">WATCH</span>
+  </div>
+  <div style="font-family:Arial,sans-serif;font-size:.7rem;color:#555;">
+    8 proximity alerts, 25 events</div>
+  <div style="font-family:Arial,sans-serif;font-size:.63rem;color:#aaa;
+              margin-top:.25rem;">As of 2026-06-30 12:28 UTC</div>
+</div>
+<div style="border:1px solid #e5e7eb;border-left:4px solid #d97706;
+            padding:.75rem 1rem;background:#d9770608;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;
+              margin-bottom:.3rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;
+                 color:#1a1a1a;">Russia Petroleum Sanctions</span>
+    <span style="font-family:Arial,sans-serif;font-size:.68rem;font-weight:bold;
+                 color:#d97706;white-space:nowrap;">Moderate Tightening</span>
+  </div>
+  <div style="font-family:Arial,sans-serif;font-size:.7rem;color:#555;">
+    8 events, 1 official tightening actions · Confidence: MODERATE</div>
+  <div style="font-family:Arial,sans-serif;font-size:.63rem;color:#aaa;
+              margin-top:.25rem;">As of 2026-06-27 15:10 UTC</div>
+</div>
+<div style="border:1px solid #e5e7eb;border-left:4px solid #dc2626;
+            padding:.75rem 1rem;background:#dc262608;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;
+              margin-bottom:.3rem;">
+    <span style="font-family:Arial,sans-serif;font-size:.78rem;font-weight:bold;
+                 color:#1a1a1a;">Iran Petroleum Sanctions</span>
+    <span style="font-family:Arial,sans-serif;font-size:.68rem;font-weight:bold;
+                 color:#dc2626;white-space:nowrap;">High Tightening</span>
+  </div>
+  <div style="font-family:Arial,sans-serif;font-size:.7rem;color:#555;">
+    63 events, 11 official tightening actions · Confidence: HIGH</div>
+  <div style="font-family:Arial,sans-serif;font-size:.63rem;color:#aaa;
+              margin-top:.25rem;">As of 2026-06-27 15:11 UTC</div>
+</div></div>
+
+  <div class="note">
+    <strong>How this panel works:</strong> This is a pure consolidator — it
+    performs zero independent data fetching. It reads the JSON output that
+    each underlying report already writes during its own --publish run, and
+    assembles them into one view with the worst (most severe) signal driving
+    the overall posture. Run each source report on its own schedule; run this
+    panel after to get the consolidated view. If a source report hasn't been
+    run recently, its card will show stale data with its last-generated
+    timestamp, or "DATA UNAVAILABLE" if it has never been run.
+  </div>
+
+</main>
+<footer>
+  <b>SOURCE REPORTS</b> &nbsp;·&nbsp;
+  Energy Infrastructure Weather Risk · CFTC Energy Positioning ·
+  Strait of Hormuz SITREP · NASA EONET Natural Events ·
+  Russia/Iran Petroleum Sanctions &nbsp;·&nbsp;
+  No AI-generated content &nbsp;·&nbsp;
+  © 2026 Randy Hinton &nbsp;·&nbsp; 2026-06-30 15:13 UTC &nbsp;·&nbsp; #FollowTheData
+</footer>
+</body>
+</html>
