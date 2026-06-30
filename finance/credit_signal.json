@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "report": "US Credit Market Signal",
+    "version": "1.0.0",
+    "source": "ICE BofA via FRED",
+    "generated_at": "2026-06-30 12:59 UTC"
+  },
+  "hy_signal": "TIGHT",
+  "hy_signal_color": "#16a34a",
+  "ig_oas": 0.77,
+  "ig_date": "2026-06-26",
+  "hy_oas": 2.83,
+  "hy_date": "2026-06-26",
+  "hy_yield": 6.96,
+  "hy_ig_diff": 2.06,
+  "hy_chg_1w": 17.0,
+  "t10y2y": 0.28,
+  "curve_signal": "SLIGHTLY POSITIVE",
+  "curve_color": "#65a30d"
+}
