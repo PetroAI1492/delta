@@ -1,0 +1,196 @@
+{
+  "metadata": {
+    "report": "Federal Reserve Watch",
+    "version": "1.0.0",
+    "source": "FRED \u2014 Federal Reserve Economic Data",
+    "generated_at": "2026-06-30 00:38 UTC"
+  },
+  "rate_upper": 3.75,
+  "rate_lower": 3.5,
+  "rate_date": "2026-06-29",
+  "effr": 3.63,
+  "effr_date": "2026-06-26",
+  "sofr": 3.62,
+  "sofr_date": "2026-06-26",
+  "balance_sheet": 6735645.0,
+  "bs_date": "2026-06-24",
+  "bs_trend": "Gradual Expansion",
+  "bs_tc": "#d97706",
+  "bs_yoy_delta": 73445.0,
+  "bs_mom_delta": 31262.0,
+  "direction": "CUTTING",
+  "dc": "#16a34a",
+  "last_move_bps": null,
+  "last_move_date": null,
+  "t10y": 4.38,
+  "t10y_date": "2026-06-26",
+  "t10y_spread": 0.75,
+  "t2y": 4.07,
+  "t2y_date": "2026-06-26",
+  "t2y_spread": 0.44,
+  "r12_start": 4.33,
+  "r12_end": 3.63,
+  "r12_bps": -70,
+  "next_fomc": "2026-07-29",
+  "days_to_fomc": 29,
+  "last_fomc": "2026-06-17",
+  "dot_plot": {
+    "2028": 3.4,
+    "2027": 3.6,
+    "2026": 3.8
+  },
+  "timeline": [
+    {
+      "date": "2024-09",
+      "action": "CUT",
+      "bps": -20,
+      "rate": 5.13
+    },
+    {
+      "date": "2024-10",
+      "action": "CUT",
+      "bps": -30,
+      "rate": 4.83
+    },
+    {
+      "date": "2024-11",
+      "action": "CUT",
+      "bps": -19,
+      "rate": 4.64
+    },
+    {
+      "date": "2024-12",
+      "action": "CUT",
+      "bps": -16,
+      "rate": 4.48
+    },
+    {
+      "date": "2025-01",
+      "action": "CUT",
+      "bps": -15,
+      "rate": 4.33
+    },
+    {
+      "date": "2025-09",
+      "action": "CUT",
+      "bps": -11,
+      "rate": 4.22
+    },
+    {
+      "date": "2025-10",
+      "action": "CUT",
+      "bps": -13,
+      "rate": 4.09
+    },
+    {
+      "date": "2025-11",
+      "action": "CUT",
+      "bps": -21,
+      "rate": 3.88
+    },
+    {
+      "date": "2025-12",
+      "action": "CUT",
+      "bps": -16,
+      "rate": 3.72
+    }
+  ],
+  "rate_history": [
+    {
+      "date": "2024-06-01",
+      "value": 5.33
+    },
+    {
+      "date": "2024-07-01",
+      "value": 5.33
+    },
+    {
+      "date": "2024-08-01",
+      "value": 5.33
+    },
+    {
+      "date": "2024-09-01",
+      "value": 5.13
+    },
+    {
+      "date": "2024-10-01",
+      "value": 4.83
+    },
+    {
+      "date": "2024-11-01",
+      "value": 4.64
+    },
+    {
+      "date": "2024-12-01",
+      "value": 4.48
+    },
+    {
+      "date": "2025-01-01",
+      "value": 4.33
+    },
+    {
+      "date": "2025-02-01",
+      "value": 4.33
+    },
+    {
+      "date": "2025-03-01",
+      "value": 4.33
+    },
+    {
+      "date": "2025-04-01",
+      "value": 4.33
+    },
+    {
+      "date": "2025-05-01",
+      "value": 4.33
+    },
+    {
+      "date": "2025-06-01",
+      "value": 4.33
+    },
+    {
+      "date": "2025-07-01",
+      "value": 4.33
+    },
+    {
+      "date": "2025-08-01",
+      "value": 4.33
+    },
+    {
+      "date": "2025-09-01",
+      "value": 4.22
+    },
+    {
+      "date": "2025-10-01",
+      "value": 4.09
+    },
+    {
+      "date": "2025-11-01",
+      "value": 3.88
+    },
+    {
+      "date": "2025-12-01",
+      "value": 3.72
+    },
+    {
+      "date": "2026-01-01",
+      "value": 3.64
+    },
+    {
+      "date": "2026-02-01",
+      "value": 3.64
+    },
+    {
+      "date": "2026-03-01",
+      "value": 3.64
+    },
+    {
+      "date": "2026-04-01",
+      "value": 3.64
+    },
+    {
+      "date": "2026-05-01",
+      "value": 3.63
+    }
+  ]
+}
