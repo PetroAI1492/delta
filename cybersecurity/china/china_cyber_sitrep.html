@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>China Cyber Threat — Executive SITREP</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #f5f0e8;
+    color: #1a1a1a;
+    font-family: 'PT Serif', Georgia, serif;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    background: #fff;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    min-height: 100vh;
+  }
+
+  .header {
+    background: #1a1a2e;
+    color: #fff;
+    padding: 42px 52px 36px;
+    border-bottom: 4px solid #cc0000;
+  }
+  .header-eyebrow {
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: #cc0000;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .header-sub {
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 13px;
+    color: #aaa;
+    margin-top: 6px;
+  }
+  .header-meta {
+    margin-top: 18px;
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .meta-item {
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 11px;
+    color: #888;
+  }
+  .meta-item strong {
+    display: block;
+    color: #ccc;
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+
+  .content { padding: 0 52px 48px; }
+
+  .section {
+    padding: 32px 0;
+    border-bottom: 1px solid #e8e0d0;
+  }
+  .section:last-of-type { border-bottom: none; }
+
+  .section-label {
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #cc0000;
+    margin-bottom: 6px;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+
+  p {
+    font-size: 9.5pt;
+    line-height: 1.75;
+    color: #2a2a2a;
+    margin-bottom: 10px;
+  }
+
+  .as-of {
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 10px;
+    color: #999;
+    font-weight: 400;
+    margin-left: 10px;
+  }
+
+  /* ── TABLES ── */
+  table.intel {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 12px;
+    margin: 14px 0;
+  }
+  table.intel th {
+    background: #1a1a2e;
+    color: #fff;
+    padding: 7px 10px;
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+  }
+  table.intel td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  table.intel tr:nth-child(even) td { background: #fafaf7; }
+
+  /* ── SIGNAL TABLE ── */
+  .signal-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 12px;
+    margin: 16px 0 10px;
+  }
+  .signal-table th {
+    background: #1a1a2e;
+    color: #fff;
+    padding: 8px 10px;
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+  }
+  .signal-table td {
+    padding: 7px 10px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+  }
+  .signal-table tr:nth-child(even) td { background: #fafaf7; }
+  .sig-label { font-weight: 600; color: #1a1a1a; }
+  .sig-value { font-weight: 700; font-size: 13px; color: #1a1a2e; }
+  .sig-unit  { color: #888; font-size: 11px; }
+
+  .delta { font-weight: 600; font-size: 11px; }
+  .delta.up      { color: #16a34a; }
+  .delta.down    { color: #cc0000; }
+  .delta.neutral { color: #888; }
+
+  .panel-note {
+    font-size: 9px;
+    color: #aaa;
+    margin-top: 8px;
+    font-family: 'PT Sans', Arial, sans-serif;
+  }
+  .panel-note code {
+    font-size: 9px;
+    background: #f4f4f4;
+    padding: 1px 4px;
+    border-radius: 2px;
+  }
+
+  /* ── RISK BOX ── */
+  .risk-box {
+    background: #fff8f0;
+    border: 1px solid #f0c060;
+    border-left: 4px solid #e8a020;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .risk-title {
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: #b07000;
+    margin-bottom: 6px;
+  }
+
+  .critical-box {
+    background: #fff5f5;
+    border: 1px solid #fca5a5;
+    border-left: 4px solid #cc0000;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .critical-title {
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: #cc0000;
+    margin-bottom: 6px;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline { margin: 16px 0; }
+  .tl-item {
+    display: flex;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0ece4;
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 12px;
+  }
+  .tl-year {
+    min-width: 60px;
+    font-weight: 700;
+    color: #cc0000;
+    font-size: 13px;
+  }
+  .tl-desc { color: #333; line-height: 1.5; }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: #1a1a2e;
+    color: #aaa;
+    padding: 24px 52px;
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 10px;
+    line-height: 1.7;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .footer-right { text-align: right; }
+  .footer em { color: #666; }
+  .classification {
+    display: inline-block;
+    background: #cc0000;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    margin-bottom: 6px;
+  }
+
+  @media (max-width: 680px) {
+    .header, .content, .footer { padding-left: 20px; padding-right: 20px; }
+    .header h1 { font-size: 1.4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-eyebrow">Thor Storehouse Intelligence · Cybersecurity / Geopolitics · Executive SITREP</div>
+    <h1>China Cyber Threat</h1>
+    <div class="header-sub">People's Republic of China State-Sponsored Cyber Operations — Permanent Reference Brief</div>
+    <div class="header-meta">
+      <div class="meta-item"><strong>Threat Level</strong>CRITICAL — Active Pre-positioning</div>
+      <div class="meta-item"><strong>Primary Actors</strong>Volt Typhoon · Salt Typhoon · APT40 · APT41</div>
+      <div class="meta-item"><strong>Sponsor</strong>PRC Ministry of State Security (MSS)</div>
+      <div class="meta-item"><strong>Primary Target</strong>U.S. Critical Infrastructure</div>
+      <div class="meta-item"><strong>Intel Verified</strong>June 2025</div>
+      <div class="meta-item"><strong>Generated</strong>2026-07-01</div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- OVERVIEW -->
+    <div class="section">
+      <div class="section-label">Strategic Overview</div>
+      <h2>PRC Cyber Operations — Doctrine and Intent</h2>
+      <p>
+        The People's Republic of China operates the world's most sophisticated
+        state-sponsored cyber program, encompassing espionage, intellectual property
+        theft, and — most critically — pre-positioning within U.S. critical infrastructure
+        for potential future disruption. Unlike financially motivated cybercriminals or
+        ransomware operators, PRC-sponsored actors often establish persistent access
+        years in advance of any operational use, consistent with a military pre-positioning
+        doctrine rather than immediate exploitation.
+      </p>
+      <p>
+        The February 2024 CISA advisory confirmed that Volt Typhoon actors had maintained
+        access to some U.S. critical infrastructure networks for five or more years without
+        detection. The stated intent, assessed by U.S. intelligence, is to pre-position
+        for disruption of logistics, energy, water, and communications in the event of
+        a military conflict — particularly a Taiwan Strait contingency.
+      </p>
+      <div class="critical-box">
+        <div class="critical-title">Strategic Assessment — CISA / FBI / NSA</div>
+        PRC cyber actors are not primarily seeking to steal data from critical infrastructure —
+        they are seeking to <strong>disrupt or destroy</strong> it at a time of their choosing.
+        This is a fundamentally different threat model than espionage. Dwell times of 5+ years
+        indicate pre-positioning, not opportunistic access. The energy sector is a primary target.
+        [1][2]
+      </div>
+    </div>
+
+    <!-- THREAT ACTORS -->
+    <div class="section">
+      <div class="section-label">Threat Actors</div>
+      <h2>PRC State-Sponsored Cyber Groups</h2>
+      <table class="intel">
+        <thead>
+          <tr>
+            <th>Actor</th>
+            <th>Sponsor</th>
+            <th>Mission Focus</th>
+            <th>Primary Sectors</th>
+            <th>Status</th>
+            <th>Ref</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><strong>Volt Typhoon</strong><br>
+              <span style="font-size:10px;color:#6B7280;">Bronze Silhouette, Vanguard Panda</span></td>
+          <td style="font-size:11px;">PRC Ministry of State Security (MSS)</td>
+          <td style="font-size:11px;">Pre-positioning in U.S. critical infrastructure for potential disruption</td>
+          <td style="font-size:11px;">Energy, water, transportation, communications, defense industrial base</td>
+          <td style="font-size:11px;color:#D97706;font-weight:600;">Active — CISA Emergency Directive issued 2024</td>
+          <td style="font-size:10px;color:#9CA3AF;">[1][2]</td>
+        </tr>
+        <tr>
+          <td><strong>Salt Typhoon</strong><br>
+              <span style="font-size:10px;color:#6B7280;">GhostEmperor, FamousSparrow</span></td>
+          <td style="font-size:11px;">PRC Ministry of State Security (MSS)</td>
+          <td style="font-size:11px;">Telecommunications infrastructure and lawful intercept systems</td>
+          <td style="font-size:11px;">Telecom, ISPs, government communications</td>
+          <td style="font-size:11px;color:#D97706;font-weight:600;">Active — compromised major U.S. carriers 2024; Senate briefings conducted</td>
+          <td style="font-size:10px;color:#9CA3AF;">[3]</td>
+        </tr>
+        <tr>
+          <td><strong>APT40</strong><br>
+              <span style="font-size:10px;color:#6B7280;">BRONZE MOHAWK, Leviathan, TEMP.Periscope</span></td>
+          <td style="font-size:11px;">PRC Ministry of State Security (MSS) — Hainan State Security Department</td>
+          <td style="font-size:11px;">Maritime, defense, aviation, and research sector espionage</td>
+          <td style="font-size:11px;">Maritime industry, naval defense, aviation, universities, research institutes</td>
+          <td style="font-size:11px;color:#D97706;font-weight:600;">Active — Five Eyes joint advisory issued July 2024</td>
+          <td style="font-size:10px;color:#9CA3AF;">[4]</td>
+        </tr>
+        <tr>
+          <td><strong>APT41</strong><br>
+              <span style="font-size:10px;color:#6B7280;">Double Dragon, Winnti, Barium</span></td>
+          <td style="font-size:11px;">PRC Ministry of State Security (MSS) — dual espionage and financial crime</td>
+          <td style="font-size:11px;">Dual-mission: state espionage and financially motivated cybercrime</td>
+          <td style="font-size:11px;">Healthcare, telecom, technology, financial services, gaming</td>
+          <td style="font-size:11px;color:#D97706;font-weight:600;">Active — DOJ indictments 2020; operations continuing</td>
+          <td style="font-size:10px;color:#9CA3AF;">[5]</td>
+        </tr></tbody>
+      </table>
+    </div>
+
+    <!-- TTPs -->
+    <div class="section">
+      <div class="section-label">Tactics, Techniques &amp; Procedures</div>
+      <h2>How They Operate</h2>
+      <div class="risk-box">
+        <div class="risk-title">Living Off the Land (LOTL) — The Defining Technique</div>
+        Volt Typhoon's signature technique uses built-in Windows tools (wmic, ntdsutil,
+        netsh, PowerShell) and legitimate credentials rather than custom malware.
+        This makes detection extremely difficult — behavioral anomalies rather than
+        malware signatures are the primary detection vector. Traditional antivirus
+        and signature-based defenses are largely ineffective against LOTL techniques. [1]
+      </div>
+      <table class="intel">
+        <thead>
+          <tr>
+            <th style="width:18%;">Actor</th>
+            <th>Techniques &amp; Procedures</th>
+            <th style="width:8%;">Ref</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><strong>Volt Typhoon</strong></td>
+          <td style="font-size:11px;">Living-off-the-land (LOTL); legitimate credentials; Fortinet, Ivanti, Cisco exploits; SOHO router compromise; long dwell time (avg 5+ years reported)</td>
+          <td style="font-size:10px;color:#9CA3AF;">[1][2]</td>
+        </tr>
+        <tr>
+          <td><strong>Salt Typhoon</strong></td>
+          <td style="font-size:11px;">Cisco IOS XE exploitation; persistent backdoors in carrier infrastructure; access to CALEA lawful intercept systems; targeting senior U.S. government officials</td>
+          <td style="font-size:10px;color:#9CA3AF;">[3]</td>
+        </tr>
+        <tr>
+          <td><strong>APT40</strong></td>
+          <td style="font-size:11px;">Rapid exploitation of newly disclosed CVEs (days to hours); web shell deployment; Log4Shell, ProxyLogon, Atlassian Confluence exploits</td>
+          <td style="font-size:10px;color:#9CA3AF;">[4]</td>
+        </tr>
+        <tr>
+          <td><strong>APT41</strong></td>
+          <td style="font-size:11px;">Supply chain compromise; software signing certificate theft; ransomware as cover for espionage; watering hole attacks</td>
+          <td style="font-size:10px;color:#9CA3AF;">[5]</td>
+        </tr></tbody>
+      </table>
+    </div>
+
+    <!-- TARGETED SECTORS -->
+    <div class="section">
+      <div class="section-label">Target Sectors</div>
+      <h2>U.S. Critical Infrastructure Exposure</h2>
+      <table class="intel">
+        <thead>
+          <tr>
+            <th>Sector</th>
+            <th style="width:12%;">Threat Level</th>
+            <th>Intelligence Basis</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><strong>Energy</strong></td>
+          <td><span style="color:#DC2626;font-weight:700;font-size:11px;">CRITICAL</span></td>
+          <td style="font-size:11px;">Power generation, oil & gas pipelines, LNG terminals, refineries — Volt Typhoon pre-positioning confirmed</td>
+        </tr>
+        <tr>
+          <td><strong>Water & Wastewater</strong></td>
+          <td><span style="color:#DC2626;font-weight:700;font-size:11px;">CRITICAL</span></td>
+          <td style="font-size:11px;">Municipal water systems; CISA/FBI/EPA joint advisory issued 2024</td>
+        </tr>
+        <tr>
+          <td><strong>Telecommunications</strong></td>
+          <td><span style="color:#DC2626;font-weight:700;font-size:11px;">CRITICAL</span></td>
+          <td style="font-size:11px;">Major U.S. carriers compromised by Salt Typhoon; lawful intercept access obtained</td>
+        </tr>
+        <tr>
+          <td><strong>Transportation</strong></td>
+          <td><span style="color:#D97706;font-weight:700;font-size:11px;">HIGH</span></td>
+          <td style="font-size:11px;">Aviation, rail, maritime logistics; pre-positioning for potential disruption</td>
+        </tr>
+        <tr>
+          <td><strong>Defense Industrial Base</strong></td>
+          <td><span style="color:#D97706;font-weight:700;font-size:11px;">HIGH</span></td>
+          <td style="font-size:11px;">Defense contractors, weapons system supply chains, shipyards</td>
+        </tr>
+        <tr>
+          <td><strong>Financial Services</strong></td>
+          <td><span style="color:#D97706;font-weight:700;font-size:11px;">HIGH</span></td>
+          <td style="font-size:11px;">Payment systems, SWIFT connectivity, banking infrastructure</td>
+        </tr>
+        <tr>
+          <td><strong>Healthcare</strong></td>
+          <td><span style="color:#2563EB;font-weight:700;font-size:11px;">ELEVATED</span></td>
+          <td style="font-size:11px;">Hospital systems, pharmaceutical R&D, biomedical research</td>
+        </tr>
+        <tr>
+          <td><strong>Government Communications</strong></td>
+          <td><span style="color:#2563EB;font-weight:700;font-size:11px;">ELEVATED</span></td>
+          <td style="font-size:11px;">Senior official communications targeted via Salt Typhoon telecom access</td>
+        </tr></tbody>
+      </table>
+    </div>
+
+    <!-- INCIDENT TIMELINE -->
+    <div class="section">
+      <div class="section-label">Incident History</div>
+      <h2>Key Events — 2021 to Present</h2>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-year">2021</div>
+          <div class="tl-desc"><strong>Microsoft Exchange — Hafnium / APT40.</strong>
+          PRC-affiliated actors exploited four zero-day vulnerabilities in Microsoft Exchange
+          Server, compromising over 250,000 servers globally within days of disclosure.
+          Targets included defense contractors, law firms, and infectious disease researchers.
+          CISA Emergency Directive 21-02 issued. [4]</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2023</div>
+          <div class="tl-desc"><strong>Volt Typhoon — Critical Infrastructure Pre-positioning Disclosed.</strong>
+          Microsoft and CISA disclosed that Volt Typhoon had maintained persistent access to
+          U.S. critical infrastructure networks — including energy, water, transportation, and
+          communications — for up to five years. Focus assessed as pre-positioning for
+          disruption rather than data theft. Five Eyes joint advisory issued. [1][2]</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2024</div>
+          <div class="tl-desc"><strong>Salt Typhoon — U.S. Telecom Compromise.</strong>
+          Salt Typhoon compromised at least nine major U.S. telecommunications carriers,
+          including AT&amp;T and Verizon, obtaining access to CALEA lawful intercept systems
+          used by law enforcement. Senior government officials' communications were
+          reportedly accessed. Senate Intelligence Committee briefed. [3]</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2024</div>
+          <div class="tl-desc"><strong>CISA Emergency Directive — Ivanti VPN Exploitation.</strong>
+          CISA issued Emergency Directive 24-01 after PRC-linked actors exploited zero-days
+          in Ivanti Connect Secure VPN appliances, targeting federal agencies and critical
+          infrastructure operators. Volt Typhoon among actors attributed. [2]</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2024</div>
+          <div class="tl-desc"><strong>APT40 — Five Eyes Joint Advisory.</strong>
+          Australia, Canada, Germany, Japan, New Zealand, South Korea, UK, and U.S.
+          issued a joint advisory attributing APT40 to China's MSS Hainan State Security
+          Department. Advisory detailed APT40's rapid exploitation of newly disclosed CVEs —
+          sometimes within hours of public disclosure — across maritime, defense, and
+          government targets globally. [4]</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2025</div>
+          <div class="tl-desc"><strong>Treasury Department Breach — Silk Typhoon.</strong>
+          PRC state-sponsored actors (Silk Typhoon / APT41 affiliate) breached the U.S.
+          Treasury Department's Office of Foreign Assets Control (OFAC) and Office of
+          the Secretary — the offices responsible for administering China-related sanctions.
+          Access obtained via compromised BeyondTrust remote support software. [5]</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIVE ENERGY EXPOSURE PANEL -->
+    <div class="section">
+      <div class="section-label">Energy Sector Exposure Context</div>
+      <h2>U.S. Energy Signal Dashboard
+        <span class="as-of">As of week ending 2026-06-22 · Source: Thor Storehouse / EIA / FRED</span>
+      </h2>
+      <p>
+        Energy infrastructure is Volt Typhoon's primary confirmed target sector.
+        A successful disruption of U.S. pipeline, refinery, or grid infrastructure
+        would immediately impact crude supply and price. The signals below reflect
+        current U.S. energy market conditions — the context within which a
+        cyber-induced disruption would occur.
+      </p>
+      <table class="signal-table">
+        <thead>
+          <tr>
+            <th>Signal</th>
+            <th>Latest Value</th>
+            <th>Unit</th>
+            <th>Change</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td class="sig-label">U.S. Commercial Crude Stocks</td>
+          <td class="sig-value">418,222</td>
+          <td class="sig-unit">Thousand Bbl</td>
+          <td><span class="delta down">▼ -8,263.00 (-1.9%)</span></td>
+        </tr>
+        <tr>
+          <td class="sig-label">WTI Crude Price</td>
+          <td class="sig-value">78.94</td>
+          <td class="sig-unit">$/bbl</td>
+          <td><span class="delta down">▼ -1.41 (-1.8%)</span></td>
+        </tr>
+        <tr>
+          <td class="sig-label">SPR Crude Stocks</td>
+          <td class="sig-value">340,251</td>
+          <td class="sig-unit">Thousand Bbl</td>
+          <td><span class="delta down">▼ -8,941.00 (-2.6%)</span></td>
+        </tr></tbody>
+      </table>
+      <p class="panel-note">
+        ⓘ All values sourced deterministically from <code>Storehouse.db · observations</code>.
+        No estimates or AI-inferred figures. Build timestamp: 2026-07-01 02:28 ET.
+      </p>
+    </div>
+
+    <!-- STRATEGIC METRICS -->
+    <div class="section">
+      <div class="section-label">Strategic Assessment</div>
+      <h2>Threat Metrics</h2>
+      <table class="intel">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Assessment</th>
+            <th>Basis</th>
+            <th>Ref</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Overall Threat Level</strong></td>
+            <td style="color:#DC2626;font-weight:700;">CRITICAL</td>
+            <td>Active pre-positioning confirmed in multiple critical infrastructure sectors;
+            5+ year dwell times; CISA Emergency Directives issued</td>
+            <td>[1][2]</td>
+          </tr>
+          <tr>
+            <td><strong>Detection Difficulty</strong></td>
+            <td style="color:#DC2626;font-weight:700;">Extreme</td>
+            <td>LOTL techniques evade signature-based detection; legitimate credentials
+            used; behavioral analytics required</td>
+            <td>[1]</td>
+          </tr>
+          <tr>
+            <td><strong>Energy Sector Risk</strong></td>
+            <td style="color:#DC2626;font-weight:700;">CRITICAL</td>
+            <td>Volt Typhoon confirmed in energy sector networks; pipeline and grid
+            disruption assessed as intended capability</td>
+            <td>[1][2]</td>
+          </tr>
+          <tr>
+            <td><strong>Telecom Sector Risk</strong></td>
+            <td style="color:#DC2626;font-weight:700;">CRITICAL</td>
+            <td>Salt Typhoon confirmed access to 9+ U.S. carriers including lawful
+            intercept systems; senior official communications accessed</td>
+            <td>[3]</td>
+          </tr>
+          <tr>
+            <td><strong>Taiwan Contingency Nexus</strong></td>
+            <td style="color:#D97706;font-weight:700;">HIGH</td>
+            <td>U.S. intelligence assesses pre-positioning is preparation for potential
+            disruption in a Taiwan Strait conflict scenario</td>
+            <td>[1][2]</td>
+          </tr>
+          <tr>
+            <td><strong>Public Data Confidence</strong></td>
+            <td>High</td>
+            <td>CISA/FBI/NSA joint advisories; Five Eyes joint advisory; DOJ indictments;
+            Microsoft MSTIC threat intelligence</td>
+            <td>[1–5]</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- DEFENSIVE POSTURE -->
+    <div class="section">
+      <div class="section-label">Defensive Posture</div>
+      <h2>Key Mitigations — CISA Guidance</h2>
+      <p>
+        The following mitigations are drawn from CISA/FBI/NSA joint advisories.
+        They are specifically tailored to counter LOTL techniques used by Volt Typhoon
+        and related PRC actors.
+      </p>
+      <table class="intel">
+        <thead>
+          <tr>
+            <th>Priority</th>
+            <th>Mitigation</th>
+            <th>Addresses</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1 — Critical</strong></td>
+            <td>Enforce phishing-resistant MFA on all remote access and privileged accounts</td>
+            <td>Credential-based initial access used by Volt Typhoon</td>
+          </tr>
+          <tr>
+            <td><strong>2 — Critical</strong></td>
+            <td>Patch Fortinet, Ivanti, Cisco, and Citrix appliances within 48 hours of critical CVE disclosure</td>
+            <td>APT40 and Volt Typhoon perimeter exploitation</td>
+          </tr>
+          <tr>
+            <td><strong>3 — Critical</strong></td>
+            <td>Audit and restrict SOHO router access to OT/ICS networks; replace end-of-life devices</td>
+            <td>Volt Typhoon SOHO router proxy infrastructure</td>
+          </tr>
+          <tr>
+            <td><strong>4 — High</strong></td>
+            <td>Deploy behavioral analytics (EDR/XDR) tuned to detect LOTL tool abuse</td>
+            <td>Living-off-the-land detection gap</td>
+          </tr>
+          <tr>
+            <td><strong>5 — High</strong></td>
+            <td>Segment OT/ICS networks; enforce unidirectional gateways where feasible</td>
+            <td>Lateral movement from IT to OT in energy/utility environments</td>
+          </tr>
+          <tr>
+            <td><strong>6 — High</strong></td>
+            <td>Audit all privileged accounts; remove stale accounts; enforce least privilege</td>
+            <td>Long-dwell persistence via legitimate credential reuse</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CITATIONS -->
+    <div class="section">
+      <div class="section-label">Sources</div>
+      <h2>Citations &amp; Intelligence Sources</h2>
+      <table class="intel">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Source</th>
+            <th>Publication</th>
+            <th>Applies To</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>[1]</td>
+            <td>CISA / FBI / NSA / Five Eyes</td>
+            <td>Joint Advisory: "PRC State-Sponsored Actors Compromise and Maintain
+            Persistent Access to U.S. Critical Infrastructure" — February 7, 2024</td>
+            <td>Volt Typhoon TTPs, LOTL techniques, energy sector pre-positioning,
+            5-year dwell time, Taiwan contingency assessment</td>
+          </tr>
+          <tr>
+            <td>[2]</td>
+            <td>CISA</td>
+            <td>Emergency Directive 24-01: Mitigate Ivanti Connect Secure and Ivanti
+            Policy Secure Vulnerabilities — January 19, 2024</td>
+            <td>Ivanti zero-day exploitation; Volt Typhoon attribution; federal agency impact</td>
+          </tr>
+          <tr>
+            <td>[3]</td>
+            <td>CISA / FBI / NSA</td>
+            <td>Joint Statement: People's Republic of China (PRC) Targeting of Commercial
+            Telecommunications Infrastructure — November 13, 2024</td>
+            <td>Salt Typhoon telecom compromise; CALEA access; carrier list; senior
+            official communications</td>
+          </tr>
+          <tr>
+            <td>[4]</td>
+            <td>ASD ACSC / CISA / FBI / NCSC-UK (Five Eyes + partners)</td>
+            <td>Joint Advisory: "People's Republic of China State-Sponsored Cyber Actor
+            APT40 Rapid Exploitation" — July 8, 2024</td>
+            <td>APT40 TTPs; rapid CVE exploitation; maritime and defense targeting;
+            Hainan MSS attribution</td>
+          </tr>
+          <tr>
+            <td>[5]</td>
+            <td>U.S. Department of Justice</td>
+            <td>Indictment: United States v. Li Xiaoyu et al. — August 11, 2020;
+            Treasury breach disclosure — January 2025</td>
+            <td>APT41 dual-mission doctrine; Treasury OFAC breach;
+            BeyondTrust supply chain vector</td>
+          </tr>
+          <tr>
+            <td>[6]</td>
+            <td>EIA Weekly Petroleum Supply Report</td>
+            <td>Live via Thor Storehouse (week ending 2026-06-22)</td>
+            <td>U.S. crude stocks (PET.WCESTUS1.W); SPR stocks (PET.WCSSTUS1.W)</td>
+          </tr>
+          <tr>
+            <td>[7]</td>
+            <td>FRED — Federal Reserve Bank of St. Louis</td>
+            <td>Live via Thor Storehouse</td>
+            <td>WTI crude price (DCOILWTICO)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div><!-- /content -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      <span class="classification">General Reference — Open Source Intelligence</span><br><br>
+      Threat intelligence: CISA · FBI · NSA · Five Eyes joint advisories · DOJ indictments<br>
+      Market signals: Thor Storehouse · observations (EIA weekly petroleum; FRED WTI)<br>
+      Intel last verified: June 2025 · Generated: 2026-07-01 02:28 ET
+    </div>
+    <div class="footer-right">
+      Thor Storehouse Intelligence Platform<br>
+      Cybersecurity / Geopolitics · Executive SITREP Series<br>
+      <em>All intelligence sourced from public U.S. government advisories · No classified material</em>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
