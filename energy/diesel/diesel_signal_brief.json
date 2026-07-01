@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-07-01 01:18",
+  "as_of_week": "2026-25",
+  "diesel_wti_ratio": {
+    "latest": 2.57,
+    "prior": 2.51
+  },
+  "diesel_price": {
+    "latest": 4.832,
+    "prior": 5.059
+  },
+  "wti_price": {
+    "latest": 78.94,
+    "prior": 81.3625
+  }
+}
