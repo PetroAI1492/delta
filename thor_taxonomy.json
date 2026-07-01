@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-07-01T06:30:14Z",
+  "generated": "2026-07-01T06:41:35Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -5506,6 +5506,104 @@
       ],
       "id": "china_cyber_threat_executive_sitrep",
       "path": "https://petroai1492.github.io/delta/cybersecurity/china/china_cyber_sitrep.html"
+    },
+    {
+      "title": "North Korea Cyber Threat \u2014 Executive SITREP",
+      "file": "cybersecurity/northkorea/nk_cyber_sitrep.html",
+      "description": "Deterministic intelligence brief on DPRK state-sponsored cyber operations \u2014 Lazarus Group, Kimsuky, Andariel, BlueNoroff; revenue generation as primary mission (~$3B crypto stolen); TraderTraitor crypto developer targeting; IT worker insider scheme; 2016\u20132025 incident timeline including Bybit $1.5B record theft; CISA/FBI/DOJ/UN defensive guidance; live U.S. energy signals from Thor Storehouse",
+      "json_file": "cybersecurity/northkorea/nk_cyber_sitrep.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/cybersecurity/northkorea/nk_cyber_sitrep.html`",
+      "auto_published": true,
+      "primary_domain": "Cybersecurity",
+      "secondary_domains": [
+        "Geopolitics",
+        "Finance"
+      ],
+      "entities": [
+        "DPRK",
+        "RGB",
+        "Lazarus Group",
+        "Kimsuky",
+        "Andariel",
+        "BlueNoroff",
+        "FBI",
+        "CISA",
+        "NSA",
+        "DOJ",
+        "UN Panel of Experts",
+        "Bybit",
+        "Ronin Bridge",
+        "SWIFT"
+      ],
+      "data_sources": [
+        "FBI/CISA joint advisories 2022\u20132025; UN Panel of Experts S/2024/215; DOJ indictments 2024; EIA Weekly Petroleum Supply (PET.WCESTUS1.W",
+        "PET.WCSSTUS1.W); FRED DCOILWTICO \u2014 all via Thor Storehouse"
+      ],
+      "update_frequency": "On-demand (rebuild injects latest Storehouse signals; intel reviewed quarterly)",
+      "key_signals": [
+        "~$3B crypto stolen 2017\u20132024 (UN estimate)",
+        "Bybit $1.5B Feb 2025 (record)",
+        "Ronin Bridge $620M 2022",
+        "Bangladesh Bank $81M SWIFT heist 2016",
+        "~4,000 overseas IT workers",
+        "Maui ransomware healthcare campaign",
+        "TraderTraitor developer targeting",
+        "live crude stocks, WTI, SPR w/w delta"
+      ],
+      "intent_phrases": [
+        "North Korea cyber",
+        "DPRK cyber",
+        "Lazarus Group",
+        "Kimsuky",
+        "Andariel",
+        "BlueNoroff",
+        "NK hacking",
+        "North Korea crypto theft",
+        "DPRK crypto",
+        "Bybit hack",
+        "Ronin Bridge hack",
+        "TraderTraitor",
+        "DPRK IT workers",
+        "North Korea ransomware",
+        "Maui ransomware",
+        "Bangladesh Bank hack",
+        "SWIFT hack DPRK",
+        "North Korea WMD financing",
+        "DPRK revenue generation",
+        "North Korea sanctions evasion",
+        "NK cyber sitrep",
+        "DPRK threat actor",
+        "North Korea espionage",
+        "RGB cyber",
+        "DPRK financial theft",
+        {
+          "keyword": "north",
+          "weight": 10
+        },
+        {
+          "keyword": "korea",
+          "weight": 10
+        },
+        {
+          "keyword": "cyber",
+          "weight": 10
+        },
+        {
+          "keyword": "threat",
+          "weight": 10
+        },
+        {
+          "keyword": "executive",
+          "weight": 10
+        },
+        {
+          "keyword": "sitrep",
+          "weight": 10
+        }
+      ],
+      "id": "north_korea_cyber_threat_executive_sitrep",
+      "path": "https://petroai1492.github.io/delta/cybersecurity/northkorea/nk_cyber_sitrep.html"
     }
   ],
   "cross_domain_matrix": [
