@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Counterparty Risk Monitor</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #f5f0e8; color: #1a1a1a;
+    font-family: 'PT Serif', Georgia, serif; font-size: 15px; line-height: 1.7;
+  }
+  .page {
+    max-width: 960px; margin: 0 auto; background: #fff;
+    border-left: 1px solid #ddd; border-right: 1px solid #ddd; min-height: 100vh;
+  }
+  .header {
+    background: #1a1a2e; color: #fff; padding: 42px 52px 36px;
+    border-bottom: 4px solid #cc0000;
+  }
+  .header-eyebrow {
+    font-family: 'PT Sans', Arial, sans-serif; font-size: 10px; font-weight: 700;
+    letter-spacing: .15em; text-transform: uppercase; color: #cc0000; margin-bottom: 10px;
+  }
+  .header h1 { font-size: 2rem; font-weight: 700; line-height: 1.2; margin-bottom: 8px; }
+  .header-sub { font-family: 'PT Sans', Arial, sans-serif; font-size: 13px; color: #aaa; margin-top: 6px; }
+  .header-meta { margin-top: 18px; display: flex; gap: 28px; flex-wrap: wrap; }
+  .meta-item { font-family: 'PT Sans', Arial, sans-serif; font-size: 11px; color: #888; }
+  .meta-item strong { display: block; color: #ccc; font-size: 12px; margin-bottom: 2px; }
+  .content { padding: 0 52px 48px; }
+  .section { padding: 28px 0; border-bottom: 1px solid #e8e0d0; }
+  .section:last-of-type { border-bottom: none; }
+  .section-label {
+    font-family: 'PT Sans', Arial, sans-serif; font-size: 9.5px; font-weight: 700;
+    letter-spacing: .14em; text-transform: uppercase; color: #cc0000; margin-bottom: 6px;
+  }
+  h2 { font-size: 1.2rem; font-weight: 700; margin-bottom: 14px; line-height: 1.3; }
+  h3 { font-size: 1rem; font-weight: 700; margin: 16px 0 8px; }
+  p { font-size: 9.5pt; line-height: 1.75; color: #2a2a2a; margin-bottom: 10px; }
+
+  /* SIGNAL BANNER */
+  .signal-banner {
+    background: #DC2626; color: #fff; padding: 20px 24px; margin: 0 0 24px 0;
+    font-family: 'PT Sans', Arial, sans-serif;
+  }
+  .signal-eyebrow {
+    font-size: 10px; font-weight: 700; letter-spacing: .15em;
+    text-transform: uppercase; opacity: .8; margin-bottom: 6px;
+  }
+  .signal-body { display: flex; align-items: flex-start; gap: 32px; flex-wrap: wrap; }
+  .signal-level { font-size: 2.2rem; font-weight: 700; line-height: 1; }
+  .signal-question {
+    font-size: 13px; opacity: .9; margin-top: 4px; font-style: italic;
+  }
+  .signal-stats { display: flex; gap: 28px; flex-wrap: wrap; margin-left: auto; }
+  .signal-stat { text-align: center; }
+  .signal-stat-num { font-size: 1.6rem; font-weight: 700; line-height: 1; }
+  .signal-stat-label { font-size: 9px; opacity: .7; text-transform: uppercase; letter-spacing: .08em; margin-top: 2px; }
+  .signal-note { font-size: 9px; opacity: .45; margin-top: 10px; }
+
+  /* KPI GRID */
+  .kpi-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 14px 0;
+  }
+  .kpi-card {
+    background: #fafaf7; border: 1px solid #e8e0d0;
+    border-top: 3px solid #1a1a2e; padding: 10px 14px;
+    font-family: 'PT Sans', Arial, sans-serif;
+  }
+  .kpi-label { font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: #6B7280; margin-bottom: 3px; }
+  .kpi-value { font-size: 1.8rem; font-weight: 700; line-height: 1; }
+
+  /* TABLES */
+  table.intel {
+    width: 100%; border-collapse: collapse; font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 12px; margin: 12px 0;
+  }
+  table.intel th {
+    background: #1a1a2e; color: #fff; padding: 7px 10px; text-align: left;
+    font-size: 10px; letter-spacing: .05em; text-transform: uppercase;
+  }
+  table.intel td { padding: 7px 10px; border-bottom: 1px solid #eee; vertical-align: top; }
+  table.intel tr:nth-child(even) td { background: #fafaf7; }
+
+  /* RISK BOX */
+  .risk-box {
+    background: #fff8f0; border: 1px solid #f0c060; border-left: 4px solid #e8a020;
+    padding: 14px 18px; margin: 14px 0; font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 12px; line-height: 1.6;
+  }
+  .risk-title {
+    font-weight: 700; font-size: 11px; text-transform: uppercase;
+    letter-spacing: .06em; color: #b07000; margin-bottom: 6px;
+  }
+
+  /* WTI STRIP */
+  .wti-strip {
+    background: #f0f4f8; border: 1px solid #d0dce8; border-left: 3px solid #0369a1;
+    padding: 10px 16px; margin: 14px 0; font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 12px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  }
+  .wti-label { color: #6B7280; font-size: 10px; text-transform: uppercase; letter-spacing: .08em; }
+  .wti-value { font-size: 1.4rem; font-weight: 700; color: #1a1a2e; }
+  .delta { font-weight: 600; font-size: 11px; }
+  .delta.up   { color: #DC2626; }
+  .delta.down { color: #16a34a; }
+  .delta.neutral { color: #888; }
+
+  /* FOOTER */
+  .footer {
+    background: #1a1a2e; color: #aaa; padding: 24px 52px;
+    font-family: 'PT Sans', Arial, sans-serif; font-size: 10px; line-height: 1.7;
+    display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+  }
+  .footer-right { text-align: right; }
+  .footer em { color: #666; }
+  .classification {
+    display: inline-block; background: #cc0000; color: #fff; font-size: 9px;
+    font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    padding: 2px 8px; margin-bottom: 6px;
+  }
+
+  @media (max-width: 700px) {
+    .header, .content, .footer { padding-left: 20px; padding-right: 20px; }
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .signal-stats { margin-left: 0; }
+    .header h1 { font-size: 1.4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-eyebrow">Thor Storehouse Intelligence · Finance / Geopolitics · Compliance Signal</div>
+    <h1>Counterparty Risk Monitor</h1>
+    <div class="header-sub">OFAC SDN · FATF Jurisdictions · BIS Entity List — Combined Signal</div>
+    <div class="header-meta">
+      <div class="meta-item"><strong>OFAC SDN Date</strong>07/01/2026</div>
+      <div class="meta-item"><strong>FATF Lists</strong>Updated October 2024</div>
+      <div class="meta-item"><strong>BIS Entity List</strong>Live fetch</div>
+      <div class="meta-item"><strong>Generated</strong>2026-07-01 10:49 ET</div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- SIGNAL BANNER -->
+    <div class="section">
+      <div class="section-label">Combined Risk Signal</div>
+      <h2>Who Am I Doing Business With?</h2>
+      <div class="signal-banner">
+        <div class="signal-eyebrow">Counterparty Risk Signal</div>
+        <div class="signal-body">
+          <div>
+            <div class="signal-level">ELEVATED</div>
+            <div class="signal-question">"Who am I doing business with?"</div>
+          </div>
+          <div class="signal-stats">
+            <div class="signal-stat">
+              <div class="signal-stat-num">876</div>
+              <div class="signal-stat-label">OFAC Financial SDNs</div>
+            </div>
+            <div class="signal-stat">
+              <div class="signal-stat-num">2</div>
+              <div class="signal-stat-label">FATF Black List</div>
+            </div>
+            <div class="signal-stat">
+              <div class="signal-stat-num">21</div>
+              <div class="signal-stat-label">FATF Grey List</div>
+            </div>
+            <div class="signal-stat">
+              <div class="signal-stat-num">0</div>
+              <div class="signal-stat-label">BIS Entity List</div>
+            </div>
+          </div>
+        </div>
+        <div class="signal-note">
+          Signal level computed from three independent regulatory lists.
+          ELEVATED = OFAC ≥500 financial entities + FATF black list ≥2 + BIS ≥1,500 entities.
+          Reference thresholds — not statistically derived. Reviewed quarterly.
+          ⚠ BIS data unavailable — signal based on OFAC + FATF only
+        </div>
+      </div>
+      <p>
+        Counterparty risk screening answers the question every compliance officer,
+        banker, and corporate treasurer must ask before transacting: <em>who am I
+        doing business with?</em> Three public regulatory lists together define the
+        universe of known-bad or high-risk counterparties: OFAC identifies sanctioned
+        entities, FATF identifies high-risk jurisdictions, and the BIS Entity List
+        identifies export-controlled parties.
+      </p>
+    </div>
+
+    <!-- OFAC -->
+    <div class="section">
+      <div class="section-label">Layer 1 — OFAC SDN List</div>
+      <h2>Sanctioned Financial Entities
+        <span style="font-family:'PT Sans',Arial,sans-serif;font-size:11px;
+                     color:#999;font-weight:400;margin-left:10px;">
+          876 total · SDN date: 07/01/2026
+        </span>
+      </h2>
+      <p>
+        The OFAC Specially Designated Nationals list prohibits U.S. persons from
+        transacting with listed parties. The counts below represent financial sector
+        entities classified by type. A counterparty match against the SDN list is a
+        hard block — no transaction is permitted without an OFAC license.
+      </p>
+      <div class="kpi-grid">
+        <div class="kpi-card" style="border-top-color:#1a1a2e;">
+          <div class="kpi-label">Commercial Banks</div>
+          <div class="kpi-value" style="color:#1a1a2e;">459</div>
+        </div>
+        <div class="kpi-card" style="border-top-color:#7c3aed;">
+          <div class="kpi-label">Crypto</div>
+          <div class="kpi-value" style="color:#7c3aed;">75</div>
+        </div>
+        <div class="kpi-card" style="border-top-color:#0369a1;">
+          <div class="kpi-label">Investment</div>
+          <div class="kpi-value" style="color:#0369a1;">299</div>
+        </div>
+        <div class="kpi-card" style="border-top-color:#065f46;">
+          <div class="kpi-label">Payment</div>
+          <div class="kpi-value" style="color:#065f46;">13</div>
+        </div>
+        <div class="kpi-card" style="border-top-color:#92400e;">
+          <div class="kpi-label">Money Services</div>
+          <div class="kpi-value" style="color:#92400e;">4</div>
+        </div>
+        <div class="kpi-card" style="border-top-color:#1d4ed8;">
+          <div class="kpi-label">Clearing/Settlement</div>
+          <div class="kpi-value" style="color:#1d4ed8;">4</div>
+        </div>
+        <div class="kpi-card" style="border-top-color:#0f766e;">
+          <div class="kpi-label">Broker/Dealer</div>
+          <div class="kpi-value" style="color:#0f766e;">7</div>
+        </div>
+        <div class="kpi-card" style="border-top-color:#6b21a8;">
+          <div class="kpi-label">Insurance</div>
+          <div class="kpi-value" style="color:#6b21a8;">15</div>
+        </div></div>
+
+      <h3>Top Jurisdictions — OFAC Financial Entities</h3>
+      <table class="intel">
+        <thead>
+          <tr><th>Jurisdiction</th><th style="text-align:right;">Entities</th><th style="width:35%;">Scale</th></tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><strong>Russia</strong></td>
+          <td style="text-align:right;font-weight:700;">356</td>
+          <td style="width:35%;">
+            <div style="background:#e8e0d0;border-radius:2px;height:8px;">
+              <div style="background:#cc0000;width:100%;height:8px;border-radius:2px;"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Iran</strong></td>
+          <td style="text-align:right;font-weight:700;">183</td>
+          <td style="width:35%;">
+            <div style="background:#e8e0d0;border-radius:2px;height:8px;">
+              <div style="background:#cc0000;width:51%;height:8px;border-radius:2px;"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Global Terrorism</strong></td>
+          <td style="text-align:right;font-weight:700;">132</td>
+          <td style="width:35%;">
+            <div style="background:#e8e0d0;border-radius:2px;height:8px;">
+              <div style="background:#cc0000;width:37%;height:8px;border-radius:2px;"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Other</strong></td>
+          <td style="text-align:right;font-weight:700;">44</td>
+          <td style="width:35%;">
+            <div style="background:#e8e0d0;border-radius:2px;height:8px;">
+              <div style="background:#cc0000;width:12%;height:8px;border-radius:2px;"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Transnational Crime</strong></td>
+          <td style="text-align:right;font-weight:700;">31</td>
+          <td style="width:35%;">
+            <div style="background:#e8e0d0;border-radius:2px;height:8px;">
+              <div style="background:#cc0000;width:9%;height:8px;border-radius:2px;"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>North Korea</strong></td>
+          <td style="text-align:right;font-weight:700;">30</td>
+          <td style="width:35%;">
+            <div style="background:#e8e0d0;border-radius:2px;height:8px;">
+              <div style="background:#cc0000;width:8%;height:8px;border-radius:2px;"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>WMD Proliferation</strong></td>
+          <td style="text-align:right;font-weight:700;">25</td>
+          <td style="width:35%;">
+            <div style="background:#e8e0d0;border-radius:2px;height:8px;">
+              <div style="background:#cc0000;width:7%;height:8px;border-radius:2px;"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Global Magnitsky</strong></td>
+          <td style="text-align:right;font-weight:700;">23</td>
+          <td style="width:35%;">
+            <div style="background:#e8e0d0;border-radius:2px;height:8px;">
+              <div style="background:#cc0000;width:6%;height:8px;border-radius:2px;"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Drug Trafficking</strong></td>
+          <td style="text-align:right;font-weight:700;">19</td>
+          <td style="width:35%;">
+            <div style="background:#e8e0d0;border-radius:2px;height:8px;">
+              <div style="background:#cc0000;width:5%;height:8px;border-radius:2px;"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Venezuela</strong></td>
+          <td style="text-align:right;font-weight:700;">14</td>
+          <td style="width:35%;">
+            <div style="background:#e8e0d0;border-radius:2px;height:8px;">
+              <div style="background:#cc0000;width:4%;height:8px;border-radius:2px;"></div>
+            </div>
+          </td>
+        </tr></tbody>
+      </table>
+
+      <div class="risk-box">
+        <div class="risk-title">OFAC 50% Rule — Critical for Beneficial Ownership</div>
+        An entity owned 50% or more by an SDN-listed party is itself blocked under
+        OFAC regulations — even if that entity does not appear on the SDN list.
+        <strong>Example:</strong> SDN-listed Party A owns 51% of Entity X →
+        Entity X is blocked even if not listed. This means screening only the SDN list
+        is insufficient. Beneficial ownership must be traced to identify indirect
+        SDN exposure. This is where the question "who am I doing business with?"
+        becomes structurally complex. [1]
+      </div>
+    </div>
+
+    <!-- FATF -->
+    <div class="section">
+      <div class="section-label">Layer 2 — FATF High-Risk Jurisdictions</div>
+      <h2>Anti-Money Laundering Risk — Country Level
+        <span style="font-family:'PT Sans',Arial,sans-serif;font-size:11px;
+                     color:#999;font-weight:400;margin-left:10px;">
+          Updated October 2024
+        </span>
+      </h2>
+      <p>
+        The Financial Action Task Force (FATF) identifies countries with strategic
+        deficiencies in their anti-money laundering and counter-terrorist financing
+        regimes. A counterparty domiciled in or transacting through a FATF-listed
+        jurisdiction requires enhanced due diligence (EDD) under most financial
+        institution AML programs.
+      </p>
+      <table class="intel">
+        <thead>
+          <tr><th>Country</th><th>FATF Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong style="color:#DC2626;">Iran</strong></td><td style="font-size:11px;color:#DC2626;font-weight:700;">BLACK — Call for Action</td></tr><tr><td><strong style="color:#DC2626;">North Korea</strong></td><td style="font-size:11px;color:#DC2626;font-weight:700;">BLACK — Call for Action</td></tr>
+          <tr><td><strong>Bulgaria</strong></td><td style="font-size:11px;color:#D97706;font-weight:700;">GREY — Increased Monitoring</td></tr><tr><td><strong>Burkina Faso</strong></td><td style="font-size:11px;color:#D97706;font-weight:700;">GREY — Increased Monitoring</td></tr><tr><td><strong>Cameroon</strong></td><td style="font-size:11px;color:#D97706;font-weight:700;">GREY — Increased Monitoring</td></tr><tr><td><strong>Croatia</strong></td><td style="font-size:11px;color:#D97706;font-weight:700;">GREY — Increased Monitoring</td></tr><tr><td><strong>Côte d'Ivoire</strong></td><td style="font-size:11px;color:#D97706;font-weight:700;">GREY — Increased Monitoring</td></tr><tr><td><strong>Democratic Republic of Congo</strong></td><td style="font-size:11px;color:#D97706;font-weight:700;">GREY — Increased Monitoring</td></tr><tr><td><strong>Haiti</strong></td><td style="font-size:11px;color:#D97706;font-weight:700;">GREY — Increased Monitoring</td></tr><tr><td><strong>Kenya</strong></td><td style="font-size:11px;color:#D97706;font-weight:700;">GREY — Increased Monitoring</td></tr><tr><td><strong>Mali</strong></td><td style="font-size:11px;color:#D97706;font-weight:700;">GREY — Increased Monitoring</td></tr><tr><td><strong>Monaco</strong></td><td style="font-size:11px;color:#D97706;font-weight:700;">GREY — Increased Monitoring</td></tr><tr><td><strong>Mozambique</strong></td><td style="font-size:11px;color:#D97706;font-weight:700;">GREY — Increased Monitoring</td></tr><tr><td><strong>Namibia</strong></td><td style="font-size:11px;color:#D97706;font-weight:700;">GREY — Increased Monitoring</td></tr><tr><td><strong>Nigeria</strong></td><td style="font-size:11px;color:#D97706;font-weight:700;">GREY — Increased Monitoring</td></tr><tr><td><strong>Philippines</strong></td><td style="font-size:11px;color:#D97706;font-weight:700;">GREY — Increased Monitoring</td></tr><tr><td><strong>Senegal</strong></td><td style="font-size:11px;color:#D97706;font-weight:700;">GREY — Increased Monitoring</td></tr><tr><td><strong>South Africa</strong></td><td style="font-size:11px;color:#D97706;font-weight:700;">GREY — Increased Monitoring</td></tr><tr><td><strong>South Sudan</strong></td><td style="font-size:11px;color:#D97706;font-weight:700;">GREY — Increased Monitoring</td></tr><tr><td><strong>Syria</strong></td><td style="font-size:11px;color:#D97706;font-weight:700;">GREY — Increased Monitoring</td></tr><tr><td><strong>Tanzania</strong></td><td style="font-size:11px;color:#D97706;font-weight:700;">GREY — Increased Monitoring</td></tr><tr><td><strong>Venezuela</strong></td><td style="font-size:11px;color:#D97706;font-weight:700;">GREY — Increased Monitoring</td></tr><tr><td><strong>Vietnam</strong></td><td style="font-size:11px;color:#D97706;font-weight:700;">GREY — Increased Monitoring</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:9px;color:#aaa;font-family:'PT Sans',Arial,sans-serif;margin-top:6px;">
+        Source: FATF Public Statement — October 2024. Last verified against FATF website: 2026-06-30.
+        Review quarterly — FATF plenary meets February, June, October.
+        Black List = High-Risk Jurisdictions Subject to a Call for Action.
+        Grey List = Jurisdictions Under Increased Monitoring.
+      </p>
+    </div>
+
+    <!-- BIS -->
+    <div class="section">
+      <div class="section-label">Layer 3 — BIS Entity List</div>
+      <h2>Export-Controlled Entities
+        <span style="font-family:'PT Sans',Arial,sans-serif;font-size:11px;
+                     color:#999;font-weight:400;margin-left:10px;">
+          0 entities · Live fetch
+        </span>
+      </h2>
+      <p>
+        The U.S. Bureau of Industry and Security (BIS) Entity List identifies
+        foreign parties subject to specific export license requirements based on
+        risk of diversion to weapons programs, military end-users, or restricted
+        activities. A counterparty on the BIS Entity List requires a license for
+        most U.S.-origin items, software, and technology.
+      </p>
+      
+      <div style="background:#fff5f5;border:1px solid #fca5a5;border-left:4px solid #cc0000;
+                  padding:12px 16px;margin:12px 0;font-family:'PT Sans',Arial,sans-serif;font-size:12px;">
+        <strong style="color:#cc0000;">DATA UNAVAILABLE</strong> — BIS Entity List could not be parsed at build time.
+        Verify directly at <a href="https://www.bis.doc.gov" style="color:#003366;">www.bis.doc.gov</a>.
+        Signal level computed from OFAC + FATF only.
+      </div>
+      <div class="risk-box">
+        <div class="risk-title">BIS vs OFAC — Different Triggers, Same Question</div>
+        OFAC prohibits transactions. BIS restricts exports. A counterparty can be
+        on the BIS Entity List but not the OFAC SDN — meaning you can transact
+        financially but cannot export controlled technology to them. Both lists
+        must be screened independently. China dominates the BIS Entity List due
+        to military-civil fusion concerns; Russia dominates OFAC. A full counterparty
+        risk picture requires both. [2]
+      </div>
+    </div>
+
+    <!-- ENERGY LINK -->
+    <div class="section">
+      <div class="section-label">Energy Market Context</div>
+      <h2>Sanctions → Energy Price Signal</h2>
+      <p>
+        Russia and Iran — the two largest sources of sanctioned financial entities —
+        together account for a significant share of global crude oil production.
+        Sanctions enforcement directly affects global energy supply and WTI pricing.
+        The WTI signal below provides market context for the counterparty risk
+        environment.
+      </p>
+      <div class="wti-strip">
+        <div>
+          <div class="wti-label">WTI Crude Price</div>
+          <div class="wti-value">$78.94/bbl</div>
+        </div>
+        <div><span class="delta down">▼ -1.41 (-1.8%)</span> vs prior day · as of 2026-06-22</div>
+        <div style="font-size:10px;color:#6B7280;margin-left:auto;">
+          Source: FRED DCOILWTICO via Thor Storehouse
+        </div>
+      </div>
+    </div>
+
+    <!-- COMPLIANCE FRAMEWORK -->
+    <div class="section">
+      <div class="section-label">Compliance Framework</div>
+      <h2>Screening Triggers by Risk Level</h2>
+      <table class="intel">
+        <thead>
+          <tr>
+            <th>Risk Level</th>
+            <th>Trigger Condition</th>
+            <th>Required Action</th>
+            <th>Regulator</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong style="color:#DC2626;">BLOCKED</strong></td>
+            <td>Counterparty on OFAC SDN list</td>
+            <td>Transaction prohibited — no exceptions without OFAC license</td>
+            <td>OFAC</td>
+          </tr>
+          <tr>
+            <td><strong style="color:#DC2626;">BLOCKED</strong></td>
+            <td>Counterparty 50%+ owned by SDN entity (OFAC 50% Rule)</td>
+            <td>Transaction prohibited even if entity not on SDN list</td>
+            <td>OFAC</td>
+          </tr>
+          <tr>
+            <td><strong style="color:#DC2626;">LICENSE REQUIRED</strong></td>
+            <td>Counterparty on BIS Entity List</td>
+            <td>Export license required for U.S.-origin items, software, technology</td>
+            <td>BIS / Commerce</td>
+          </tr>
+          <tr>
+            <td><strong style="color:#D97706;">EDD REQUIRED</strong></td>
+            <td>Counterparty in FATF Black List jurisdiction</td>
+            <td>Enhanced Due Diligence mandatory; transaction may proceed with documentation</td>
+            <td>FinCEN / Bank regulators</td>
+          </tr>
+          <tr>
+            <td><strong style="color:#D97706;">EDD REQUIRED</strong></td>
+            <td>Counterparty in FATF Grey List jurisdiction</td>
+            <td>Enhanced Due Diligence required; risk-based approach; document rationale</td>
+            <td>FinCEN / Bank regulators</td>
+          </tr>
+          <tr>
+            <td><strong style="color:#2563EB;">CDD REQUIRED</strong></td>
+            <td>Counterparty is a Politically Exposed Person (PEP)</td>
+            <td>Customer Due Diligence; beneficial ownership; source of funds</td>
+            <td>FinCEN / BSA</td>
+          </tr>
+          <tr>
+            <td><strong style="color:#059669;">STANDARD</strong></td>
+            <td>No list matches; low-risk jurisdiction</td>
+            <td>Standard KYC; periodic review</td>
+            <td>FinCEN / BSA</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SOURCES -->
+    <div class="section">
+      <div class="section-label">Sources</div>
+      <h2>Data Sources</h2>
+      <table class="intel">
+        <thead>
+          <tr><th>#</th><th>Source</th><th>Details</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>[1]</td>
+            <td>OFAC Specially Designated Nationals List</td>
+            <td>U.S. Treasury — live fetch 2026-07-01 10:49 ET · www.treasury.gov/ofac/downloads/sdn.xml ·
+            SDN date: 07/01/2026 · OFAC 50% Rule: 31 CFR § 501</td>
+          </tr>
+          <tr>
+            <td>[2]</td>
+            <td>BIS Entity List — Supplement No. 4 to Part 744</td>
+            <td>U.S. Bureau of Industry and Security — live fetch 2026-07-01 10:49 ET ·
+            0 entities · www.bis.doc.gov</td>
+          </tr>
+          <tr>
+            <td>[3]</td>
+            <td>FATF High-Risk and Other Monitored Jurisdictions</td>
+            <td>Financial Action Task Force — Public Statement October 2024 ·
+            www.fatf-gafi.org/en/countries/black-and-grey-lists.html ·
+            Review quarterly</td>
+          </tr>
+          <tr>
+            <td>[4]</td>
+            <td>FRED — Federal Reserve Bank of St. Louis</td>
+            <td>WTI crude price (DCOILWTICO) via Thor Storehouse · as of 2026-06-22</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">
+      <span class="classification">General Reference — Public Regulatory Data</span><br><br>
+      OFAC SDN: U.S. Treasury (live fetch) · BIS Entity List: U.S. Commerce (live fetch)<br>
+      FATF: Public Statement October 2024 (hardcoded — update quarterly)<br>
+      Generated: 2026-07-01 10:49 ET
+    </div>
+    <div class="footer-right">
+      Thor Storehouse Intelligence Platform<br>
+      Finance / Geopolitics · Compliance Signal Series<br>
+      <em>For informational purposes only · Not legal or compliance advice</em><br>
+      © 2026 Randy Hinton
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

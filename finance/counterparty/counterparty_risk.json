@@ -1,0 +1,61 @@
+{
+  "generated_at": "2026-07-01 10:49",
+  "signal": "ELEVATED",
+  "bis_note": "BIS data unavailable \u2014 signal based on OFAC + FATF only",
+  "ofac": {
+    "total": 876,
+    "pub_date": "07/01/2026",
+    "by_sector": {
+      "commercial_bank": 459,
+      "investment": 299,
+      "insurance": 15,
+      "crypto": 75,
+      "broker_dealer": 7,
+      "money_services": 4,
+      "payment": 13,
+      "clearing": 4
+    },
+    "top_jurisdiction": "Russia"
+  },
+  "fatf": {
+    "updated": "October 2024",
+    "black_list": [
+      "Iran",
+      "North Korea"
+    ],
+    "grey_list": [
+      "Bulgaria",
+      "Burkina Faso",
+      "Cameroon",
+      "C\u00f4te d'Ivoire",
+      "Croatia",
+      "Democratic Republic of Congo",
+      "Haiti",
+      "Kenya",
+      "Mali",
+      "Monaco",
+      "Mozambique",
+      "Namibia",
+      "Nigeria",
+      "Philippines",
+      "Senegal",
+      "South Africa",
+      "South Sudan",
+      "Syria",
+      "Tanzania",
+      "Venezuela",
+      "Vietnam"
+    ],
+    "black_count": 2,
+    "grey_count": 21
+  },
+  "bis": {
+    "total": 0,
+    "by_country": {}
+  },
+  "wti": {
+    "value": 78.94,
+    "prior": 80.35,
+    "date": "2026-06-22"
+  }
+}
