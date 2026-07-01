@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strait of Hormuz — Chokepoint Prospectus</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #f5f0e8;
+    color: #1a1a1a;
+    font-family: 'PT Serif', Georgia, serif;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: #1a1a2e;
+    color: #fff;
+    padding: 42px 52px 36px;
+    border-bottom: 4px solid #cc0000;
+  }
+  .header-eyebrow {
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: #cc0000;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .header-sub {
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 13px;
+    color: #aaa;
+    margin-top: 6px;
+  }
+  .header-meta {
+    margin-top: 18px;
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .meta-item {
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 11px;
+    color: #888;
+  }
+  .meta-item strong {
+    display: block;
+    color: #ccc;
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+
+  /* ── CONTENT ── */
+  .content { padding: 0 52px 48px; }
+
+  .section {
+    padding: 32px 0;
+    border-bottom: 1px solid #e8e0d0;
+  }
+  .section:last-of-type { border-bottom: none; }
+
+  .section-label {
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #cc0000;
+    margin-bottom: 6px;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 18px 0 8px;
+  }
+
+  p {
+    font-size: 9.5pt;
+    line-height: 1.75;
+    color: #2a2a2a;
+    margin-bottom: 10px;
+  }
+
+  .as-of {
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 10px;
+    color: #999;
+    font-weight: 400;
+    margin-left: 10px;
+  }
+
+  /* ── SIGNAL TABLE ── */
+  .signal-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 12px;
+    margin: 16px 0 10px;
+  }
+  .signal-table th {
+    background: #1a1a2e;
+    color: #fff;
+    padding: 8px 10px;
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+  }
+  .signal-table td {
+    padding: 7px 10px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+  }
+  .signal-table tr:nth-child(even) td { background: #fafaf7; }
+  .sig-label { font-weight: 600; color: #1a1a1a; }
+  .sig-value { font-weight: 700; font-size: 13px; color: #1a1a2e; }
+  .sig-unit  { color: #888; font-size: 11px; }
+
+  .delta { font-weight: 600; font-size: 11px; }
+  .delta.up      { color: #16a34a; }
+  .delta.down    { color: #cc0000; }
+  .delta.neutral { color: #888; }
+
+  .panel-note {
+    font-size: 9px;
+    color: #aaa;
+    margin-top: 8px;
+    font-family: 'PT Sans', Arial, sans-serif;
+  }
+  .panel-note code {
+    font-size: 9px;
+    background: #f4f4f4;
+    padding: 1px 4px;
+    border-radius: 2px;
+  }
+
+  /* ── GENERAL TABLE ── */
+  table.connections {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 12px;
+    margin: 14px 0;
+  }
+  table.connections th {
+    background: #1a1a2e;
+    color: #fff;
+    padding: 7px 10px;
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+  }
+  table.connections td {
+    padding: 7px 10px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  table.connections tr:nth-child(even) td { background: #fafaf7; }
+
+  /* ── GRID ── */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 16px;
+  }
+  .card {
+    background: #fafaf7;
+    border: 1px solid #e8e0d0;
+    border-left: 3px solid #cc0000;
+    padding: 16px 18px;
+  }
+  .card h3 { margin-top: 0; font-size: 13px; }
+  .card ul {
+    padding-left: 16px;
+    font-size: 12px;
+    line-height: 1.8;
+    font-family: 'PT Sans', Arial, sans-serif;
+  }
+
+  /* ── RISK BOX ── */
+  .risk-box {
+    background: #fff8f0;
+    border: 1px solid #f0c060;
+    border-left: 4px solid #e8a020;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .risk-title {
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: #b07000;
+    margin-bottom: 6px;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline { margin: 16px 0; }
+  .tl-item {
+    display: flex;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0ece4;
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 12px;
+  }
+  .tl-year {
+    min-width: 52px;
+    font-weight: 700;
+    color: #cc0000;
+    font-size: 13px;
+  }
+  .tl-desc { color: #333; line-height: 1.5; }
+
+  /* ── FLOW TABLE ── */
+  .flow-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 12px;
+    margin: 14px 0;
+  }
+  .flow-table th {
+    background: #cc0000;
+    color: #fff;
+    padding: 7px 10px;
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+  }
+  .flow-table td {
+    padding: 7px 10px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .flow-table tr:nth-child(even) td { background: #fafaf7; }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: #1a1a2e;
+    color: #aaa;
+    padding: 24px 52px;
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 10px;
+    line-height: 1.7;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .footer-right { text-align: right; }
+  .footer em { color: #666; }
+  .classification {
+    display: inline-block;
+    background: #cc0000;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    margin-bottom: 6px;
+  }
+
+  @media (max-width: 680px) {
+    .header, .content, .footer { padding-left: 20px; padding-right: 20px; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .header h1 { font-size: 1.4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-eyebrow">Thor Storehouse Intelligence · Energy / Geopolitics · Chokepoint Prospectus</div>
+    <h1>Strait of Hormuz</h1>
+    <div class="header-sub">Global Energy Chokepoint — Permanent Reference Brief</div>
+    <div class="header-meta">
+      <div class="meta-item"><strong>Location</strong>Persian Gulf / Gulf of Oman</div>
+      <div class="meta-item"><strong>Throughput</strong>~21 Million Bbl/Day (2023)</div>
+      <div class="meta-item"><strong>Global Oil Share</strong>~20% of traded oil</div>
+      <div class="meta-item"><strong>LNG Share</strong>~20% of global LNG</div>
+      <div class="meta-item"><strong>Narrowest Point</strong>~21 nautical miles</div>
+      <div class="meta-item"><strong>Generated</strong>2026-06-30</div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- OVERVIEW -->
+    <div class="section">
+      <div class="section-label">Overview</div>
+      <h2>The World's Most Critical Energy Chokepoint</h2>
+      <p>
+        The Strait of Hormuz is the narrow waterway connecting the Persian Gulf to the
+        Gulf of Oman, and through it to the Arabian Sea and global shipping lanes.
+        At its narrowest point it spans approximately 21 nautical miles, with two
+        2-mile-wide shipping lanes — one inbound, one outbound — separated by a
+        2-mile buffer zone.
+      </p>
+      <p>
+        Approximately 21 million barrels of crude oil and petroleum products transit
+        Hormuz daily, representing roughly 20% of global petroleum liquids trade.
+        An additional 20% of global liquefied natural gas (LNG) trade passes through
+        the strait, primarily from Qatar. There is no viable alternative route for the
+        volume of energy that transits Hormuz — it is, by any measure, the single most
+        consequential energy chokepoint on earth.
+      </p>
+      <div class="risk-box">
+        <div class="risk-title">No Bypass at Scale</div>
+        The primary alternatives — the Abqaiq-Yanbu pipeline (Saudi Arabia, ~5 mmbpd
+        capacity) and the Abu Dhabi Crude Oil Pipeline (~1.5 mmbpd) — together cover
+        less than a third of normal Hormuz throughput. A full closure would remove
+        approximately 15–17 million b/d from global markets with no substitute route.
+      </div>
+    </div>
+
+    <!-- GEOGRAPHY -->
+    <div class="section">
+      <div class="section-label">Geography &amp; Dimensions</div>
+      <h2>Physical Characteristics</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Dimensions</h3>
+          <ul>
+            <li>Narrowest width: ~21 nautical miles</li>
+            <li>Inbound shipping lane: 2 nautical miles</li>
+            <li>Outbound shipping lane: 2 nautical miles</li>
+            <li>Buffer zone: 2 nautical miles</li>
+            <li>Depth: adequate for VLCCs (Very Large Crude Carriers)</li>
+            <li>Bordering states: Iran (north), Oman / UAE (south)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Transit Volume (EIA, 2023)</h3>
+          <ul>
+            <li>Crude oil &amp; condensate: ~17 mmbpd</li>
+            <li>Petroleum products: ~4 mmbpd</li>
+            <li>Total liquids: ~21 mmbpd</li>
+            <li>LNG: ~20% of global trade</li>
+            <li>Top exporters: Saudi Arabia, Iraq, UAE, Kuwait, Iran</li>
+            <li>Top importers: China, India, Japan, South Korea</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- FLOWS BY COUNTRY -->
+    <div class="section">
+      <div class="section-label">Trade Flows</div>
+      <h2>Key Exporters Through Hormuz</h2>
+      <p>
+        The following flows are sourced from EIA Country Analysis Briefs and the
+        EIA World Oil Transit Chokepoints report. All figures are approximate
+        annual averages for 2023.
+      </p>
+      <table class="flow-table">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Approx. Flow (mmbpd)</th>
+            <th>Primary Destinations</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Saudi Arabia</strong></td>
+            <td>~6.0–7.0</td>
+            <td>China, Japan, South Korea, India</td>
+            <td>[1]</td>
+          </tr>
+          <tr>
+            <td><strong>Iraq</strong></td>
+            <td>~3.5–4.0</td>
+            <td>China, India, Europe</td>
+            <td>[1]</td>
+          </tr>
+          <tr>
+            <td><strong>UAE</strong></td>
+            <td>~2.5–3.0</td>
+            <td>China, Japan, South Korea</td>
+            <td>[1]</td>
+          </tr>
+          <tr>
+            <td><strong>Kuwait</strong></td>
+            <td>~1.5–2.0</td>
+            <td>China, Japan, South Korea</td>
+            <td>[1]</td>
+          </tr>
+          <tr>
+            <td><strong>Iran</strong></td>
+            <td>~1.5 (sanctioned)</td>
+            <td>China (primary, under sanctions)</td>
+            <td>[1]</td>
+          </tr>
+          <tr>
+            <td><strong>Qatar (LNG)</strong></td>
+            <td>~77 MT/year LNG</td>
+            <td>Japan, South Korea, China, Europe</td>
+            <td>[1]</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- THREAT HISTORY -->
+    <div class="section">
+      <div class="section-label">Historical Record</div>
+      <h2>Major Hormuz Disruption Events</h2>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-year">1980–88</div>
+          <div class="tl-desc"><strong>Tanker War — Iran-Iraq War.</strong>
+          Both sides attacked oil tankers transiting the Persian Gulf. The U.S. Navy
+          conducted Operation Earnest Will (1987–88), escorting Kuwaiti tankers reflagged
+          under the U.S. flag. Approximately 451 ships were attacked during the conflict.
+          Hormuz remained open but at elevated risk throughout.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">1988</div>
+          <div class="tl-desc"><strong>Operation Praying Mantis.</strong>
+          U.S. Navy struck Iranian naval vessels and oil platforms in the Gulf in retaliation
+          for Iran mining international waters. The largest U.S. naval surface engagement
+          since World War II. Strait remained open.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2019</div>
+          <div class="tl-desc"><strong>Tanker Attacks &amp; Mine Incidents.</strong>
+          Multiple commercial tankers attacked or mined in the Gulf of Oman near the
+          strait entrance. U.S. attributed attacks to Iran. Insurance premiums for
+          Hormuz transit spiked. No closure occurred but transit risk elevated sharply.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2019</div>
+          <div class="tl-desc"><strong>UK Tanker Seizure.</strong>
+          Iran's Islamic Revolutionary Guard Corps (IRGC) seized the British-flagged
+          tanker Stena Impero in the Strait of Hormuz in July 2019, holding it for
+          two months. Direct response to UK seizure of Iranian tanker Grace 1 in Gibraltar.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2023–24</div>
+          <div class="tl-desc"><strong>Houthi Red Sea Campaign — Spillover Risk.</strong>
+          While Houthi attacks targeted Red Sea / Bab-el-Mandeb shipping rather than
+          Hormuz directly, the campaign demonstrated the capacity of Iran-aligned proxies
+          to disrupt major chokepoints. Insurance and routing costs for Gulf exporters rose.
+          Hormuz itself remained unaffected.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BYPASS ROUTES -->
+    <div class="section">
+      <div class="section-label">Alternatives</div>
+      <h2>Bypass Pipeline Capacity</h2>
+      <p>
+        Two overland pipelines offer partial bypass of Hormuz. Neither approaches
+        normal strait throughput.
+      </p>
+      <table class="connections">
+        <thead>
+          <tr>
+            <th>Pipeline</th>
+            <th>Country</th>
+            <th>Capacity</th>
+            <th>Destination</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>East-West Pipeline (Petroline)</strong></td>
+            <td>Saudi Arabia</td>
+            <td>~5.0 mmbpd</td>
+            <td>Yanbu, Red Sea</td>
+            <td>Abqaiq to Yanbu; primary Saudi bypass route</td>
+          </tr>
+          <tr>
+            <td><strong>Abu Dhabi Crude Oil Pipeline (ADCOP)</strong></td>
+            <td>UAE</td>
+            <td>~1.5 mmbpd</td>
+            <td>Fujairah, Gulf of Oman</td>
+            <td>Habshan to Fujairah; bypasses strait entirely</td>
+          </tr>
+          <tr>
+            <td><strong>Combined bypass capacity</strong></td>
+            <td>—</td>
+            <td>~6.5 mmbpd</td>
+            <td>—</td>
+            <td>vs ~21 mmbpd normal Hormuz flow — ~31% coverage</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- LIVE SIGNAL PANEL -->
+    
+  <div class="section">
+    <div class="section-label">Live Disruption Context</div>
+    <h2>U.S. Exposure Signal Dashboard
+      <span class="as-of">As of week ending 2026-06-22 · Source: Thor Storehouse / EIA / FRED</span>
+    </h2>
+    <p>
+      The signals below are drawn live from Thor Storehouse at report build time.
+      In a Hormuz closure scenario, U.S. crude imports decline, WTI spikes, and
+      SPR and Cushing stocks become the primary near-term supply buffers.
+    </p>
+    <table class="signal-table">
+      <thead>
+        <tr>
+          <th>Signal</th>
+          <th>Latest Value</th>
+          <th>Unit</th>
+          <th>Change</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="sig-label">U.S. Crude Imports</td>
+          <td class="sig-value">5,134</td>
+          <td class="sig-unit">Thousand Bbl/Day</td>
+          <td><span class="delta down">▼ -754.00 (-12.8%)</span></td>
+        </tr>
+        <tr>
+          <td class="sig-label">WTI Crude Price</td>
+          <td class="sig-value">78.94</td>
+          <td class="sig-unit">$/bbl</td>
+          <td><span class="delta down">▼ -1.41 (-1.8%)</span></td>
+        </tr>
+        <tr>
+          <td class="sig-label">SPR Crude Stocks</td>
+          <td class="sig-value">340,251</td>
+          <td class="sig-unit">Thousand Bbl</td>
+          <td><span class="delta down">▼ -8,941.00 (-2.6%)</span></td>
+        </tr>
+        <tr>
+          <td class="sig-label">Cushing, OK Stocks</td>
+          <td class="sig-value">20,034</td>
+          <td class="sig-unit">Thousand Bbl</td>
+          <td><span class="delta down">▼ -1,606.00 (-7.4%)</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="panel-note">
+      ⓘ All values sourced deterministically from <code>Storehouse.db · observations</code>.
+      No estimates or AI-inferred figures. Build timestamp: 2026-06-30 22:00 ET.
+    </p>
+  </div>
+
+
+    <!-- STRATEGIC METRICS -->
+    <div class="section">
+      <div class="section-label">Strategic Assessment</div>
+      <h2>Chokepoint Metrics</h2>
+      <table class="connections">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Rating</th>
+            <th>Basis</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Global Energy Criticality</strong></td>
+            <td>★★★★★</td>
+            <td>~20% of global petroleum liquids trade; no viable full bypass</td>
+            <td>[1]</td>
+          </tr>
+          <tr>
+            <td><strong>Closure Risk</strong></td>
+            <td>Low (chronic threat)</td>
+            <td>Iran has repeatedly threatened closure; has never executed full blockade;
+            mutual economic deterrence constrains action</td>
+            <td>[2]</td>
+          </tr>
+          <tr>
+            <td><strong>Bypass Coverage</strong></td>
+            <td>~31% of flow</td>
+            <td>Petroline (~5 mmbpd) + ADCOP (~1.5 mmbpd) vs ~21 mmbpd throughput</td>
+            <td>[1]</td>
+          </tr>
+          <tr>
+            <td><strong>Iran Control</strong></td>
+            <td>Partial</td>
+            <td>Iran borders strait to the north; Oman/UAE to the south;
+            U.S. Fifth Fleet based in Bahrain maintains freedom of navigation</td>
+            <td>[2]</td>
+          </tr>
+          <tr>
+            <td><strong>LNG Exposure</strong></td>
+            <td>Very High</td>
+            <td>~20% of global LNG trade (Qatar primary); no LNG bypass pipeline exists</td>
+            <td>[1]</td>
+          </tr>
+          <tr>
+            <td><strong>Public Data Confidence</strong></td>
+            <td>High</td>
+            <td>EIA World Oil Transit Chokepoints report; EIA Country Analysis Briefs</td>
+            <td>[1]</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- KEY FACTS -->
+    <div class="section">
+      <div class="section-label">Reference Data</div>
+      <h2>Key Facts at a Glance</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Geography</h3>
+          <ul>
+            <li>Connects: Persian Gulf to Gulf of Oman</li>
+            <li>Narrowest width: ~21 nautical miles</li>
+            <li>Shipping lanes: 2 × 2 nautical miles</li>
+            <li>Bordering states: Iran (north), Oman / UAE (south)</li>
+            <li>U.S. naval presence: Fifth Fleet, Bahrain</li>
+            <li>International law: right of transit passage (UNCLOS)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Energy Flows (EIA, 2023)</h3>
+          <ul>
+            <li>Total petroleum liquids: ~21 million b/d</li>
+            <li>Share of global oil trade: ~20%</li>
+            <li>LNG share: ~20% of global trade</li>
+            <li>Top exporters: Saudi Arabia, Iraq, UAE, Kuwait, Iran</li>
+            <li>Top importers: China, India, Japan, South Korea</li>
+            <li>Bypass capacity: ~6.5 mmbpd (~31% of flow)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CITATIONS -->
+    <div class="section">
+      <div class="section-label">Sources</div>
+      <h2>Citations &amp; Data Sources</h2>
+      <table class="connections">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Source</th>
+            <th>Publication</th>
+            <th>Applies To</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>[1]</td>
+            <td>EIA — World Oil Transit Chokepoints</td>
+            <td>July 2017 (updated periodically)</td>
+            <td>Throughput volumes, bypass capacity, shipping lane dimensions, trade flows</td>
+          </tr>
+          <tr>
+            <td>[2]</td>
+            <td>EIA Country Analysis Briefs — Iran, Saudi Arabia, Iraq, UAE, Kuwait, Qatar</td>
+            <td>Various 2023–2024</td>
+            <td>Country-level export volumes, pipeline capacities, geopolitical context</td>
+          </tr>
+          <tr>
+            <td>[3]</td>
+            <td>EIA Weekly Petroleum Supply Report</td>
+            <td>Live via Thor Storehouse (week ending 2026-06-22)</td>
+            <td>U.S. crude imports (PET.WCRIMUS2.W); SPR stocks (PET.WCSSTUS1.W); Cushing (PET.WCESTUS2.W)</td>
+          </tr>
+          <tr>
+            <td>[4]</td>
+            <td>FRED — Federal Reserve Bank of St. Louis</td>
+            <td>Live via Thor Storehouse</td>
+            <td>WTI crude price (DCOILWTICO)</td>
+          </tr>
+          <tr>
+            <td>[5]</td>
+            <td>U.S. Naval Institute / DOD historical records</td>
+            <td>Various</td>
+            <td>Operation Earnest Will, Operation Praying Mantis, tanker war history</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div><!-- /content -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      <span class="classification">General Reference</span><br><br>
+      Chokepoint data: EIA World Oil Transit Chokepoints · EIA Country Analysis Briefs<br>
+      Market signals: Thor Storehouse · observations (EIA weekly petroleum; FRED WTI)<br>
+      Generated: 2026-06-30 22:00 ET
+    </div>
+    <div class="footer-right">
+      Thor Storehouse Intelligence Platform<br>
+      Energy / Geopolitics · Chokepoint Prospectus Series<br>
+      <em>All data sourced from public records · No AI-inferred figures</em>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
