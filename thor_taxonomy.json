@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-07-01T05:29:32Z",
+  "generated": "2026-07-01T06:13:36Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -5323,6 +5323,97 @@
       ],
       "id": "diesel_signal_brief",
       "path": "https://petroai1492.github.io/delta/energy/diesel/diesel_signal_brief.html"
+    },
+    {
+      "title": "U.S. Petroleum Market Brief",
+      "file": "energy/petroleum/weekly_petroleum_newsletter.html",
+      "description": "Weekly signal-driven petroleum market narrative \u2014 crude stocks, gasoline, distillates, SPR, refinery input, Brent, WTI, heating oil, dollar index; 10-year percentiles and Z-scores for all metrics; deterministic prose explains structural conditions (tight/ample/stressed) rather than generic language; Brent-WTI spread Z-score flags geopolitical risk premium",
+      "json_file": "energy/petroleum/weekly_petroleum_newsletter.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/energy/petroleum/weekly_petroleum_newsletter.html`",
+      "auto_published": true,
+      "primary_domain": "Energy",
+      "secondary_domains": [
+        "Economy",
+        "Finance"
+      ],
+      "entities": [
+        "EIA",
+        "FRED",
+        "WTI",
+        "Brent",
+        "SPR",
+        "U.S. petroleum market"
+      ],
+      "data_sources": [
+        "EIA Weekly Petroleum Supply (PET.WCESTUS1.W crude",
+        "PET.WGTSTUS1.W gasoline",
+        "PET.WDISTUS1.W distillate",
+        "PET.WCRFPUS2.W refinery",
+        "PET.WCSSTUS1.W SPR); FRED DCOILBRENTEU",
+        "DCOILWTICO",
+        "DHOILNYH",
+        "DTWEXAFEGS \u2014 all via Thor Storehouse; 10-year percentile and Z-score computed at build time"
+      ],
+      "update_frequency": "Weekly (EIA Wednesday release)",
+      "key_signals": [
+        "Crude stocks (Thousand Bbl, 10Y %ile, Z-score)",
+        "gasoline stocks",
+        "distillate stocks",
+        "SPR stocks",
+        "refinery net input",
+        "Brent crude",
+        "WTI crude",
+        "Brent-WTI spread Z-score",
+        "heating oil",
+        "dollar index",
+        "signal-driven overall assessment (stable/stressed/multi-stress)"
+      ],
+      "intent_phrases": [
+        "petroleum brief",
+        "petroleum market",
+        "petroleum newsletter",
+        "weekly petroleum",
+        "crude stocks",
+        "gasoline stocks",
+        "distillate stocks",
+        "petroleum supply",
+        "US petroleum",
+        "oil market brief",
+        "petroleum balance",
+        "crude inventory",
+        "petroleum signal",
+        "oil supply brief",
+        "WTI Brent spread",
+        "petroleum weekly",
+        "oil market weekly",
+        "EIA weekly",
+        "petroleum report",
+        "crude oil brief",
+        "oil inventory report",
+        "petroleum market brief",
+        "US oil supply",
+        "petroleum digest",
+        "weekly oil report",
+        {
+          "keyword": "u.s.",
+          "weight": 10
+        },
+        {
+          "keyword": "petroleum",
+          "weight": 10
+        },
+        {
+          "keyword": "market",
+          "weight": 10
+        },
+        {
+          "keyword": "brief",
+          "weight": 10
+        }
+      ],
+      "id": "u_s_petroleum_market_brief",
+      "path": "https://petroai1492.github.io/delta/energy/petroleum/weekly_petroleum_newsletter.html"
     }
   ],
   "cross_domain_matrix": [
