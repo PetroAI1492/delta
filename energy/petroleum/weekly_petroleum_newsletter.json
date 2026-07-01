@@ -1,0 +1,74 @@
+{
+  "generated_at": "2026-07-01 02:10",
+  "as_of": "2026-06-12",
+  "signals": {
+    "crude_stocks": {
+      "series_id": "PET.WCESTUS1.W",
+      "label": "U.S. Crude Stocks",
+      "value": 418222.0,
+      "pctl": 12,
+      "z": -0.99
+    },
+    "gasoline_stocks": {
+      "series_id": "PET.WGTSTUS1.W",
+      "label": "Gasoline Stocks",
+      "value": 214235.0,
+      "pctl": 7,
+      "z": -1.4
+    },
+    "distillate_stocks": {
+      "series_id": "PET.WDISTUS1.W",
+      "label": "Distillate Stocks",
+      "value": 103052.0,
+      "pctl": 2,
+      "z": -1.49
+    },
+    "production": {
+      "series_id": "PET.WCRFPUS2.W",
+      "label": "Refinery Net Input",
+      "value": 13806.0,
+      "pctl": 98,
+      "z": 1.38
+    },
+    "spr_stocks": {
+      "series_id": "PET.WCSSTUS1.W",
+      "label": "SPR Stocks",
+      "value": 340251.0,
+      "pctl": 0,
+      "z": -1.54
+    },
+    "brent": {
+      "series_id": "DCOILBRENTEU",
+      "label": "Brent Crude",
+      "value": 88.64,
+      "pctl": 87,
+      "z": 0.82
+    },
+    "wti": {
+      "series_id": "DCOILWTICO",
+      "label": "WTI Crude",
+      "value": 88.62,
+      "pctl": 88,
+      "z": 1.3
+    },
+    "heating_oil": {
+      "series_id": "DHOILNYH",
+      "label": "Heating Oil",
+      "value": 3.304,
+      "pctl": 87,
+      "z": 1.49
+    },
+    "dollar_index": {
+      "series_id": "DTWEXAFEGS",
+      "label": "Dollar Index",
+      "value": 112.5589,
+      "pctl": 47,
+      "z": -0.42
+    }
+  },
+  "spread": {
+    "value_raw": 0.02,
+    "z": -0.93,
+    "pctl": 12
+  }
+}
