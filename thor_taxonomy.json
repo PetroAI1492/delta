@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-07-01T02:39:31Z",
+  "generated": "2026-07-01T05:29:32Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -5249,6 +5249,80 @@
       ],
       "id": "ras_tanura_export_terminal_prospectus",
       "path": "https://petroai1492.github.io/delta/energy/prospectus/ras_tanura_prospectus.html"
+    },
+    {
+      "title": "Diesel Signal Brief",
+      "file": "energy/diesel/diesel_signal_brief.html",
+      "description": "Weekly distillate tightness signal \u2014 Diesel/WTI ratio with 4-band structural interpretation, combined price/ratio history table, distillate stocks and refinery utilization context with 10-year percentiles; deterministic narrative explains whether elevated diesel prices are supply-constrained or demand-driven",
+      "json_file": "energy/diesel/diesel_signal_brief.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/energy/diesel/diesel_signal_brief.html`",
+      "auto_published": true,
+      "primary_domain": "Energy",
+      "secondary_domains": [
+        "Economy",
+        "Finance"
+      ],
+      "entities": [
+        "EIA",
+        "FRED",
+        "WTI",
+        "NYMEX",
+        "U.S. diesel market"
+      ],
+      "data_sources": [
+        "EIA GASDESW (diesel retail price weekly); FRED DCOILWTICO (WTI crude daily); EIA PET.WDISTUS1.W (distillate stocks weekly); EIA PET.WCRFPUS2.W (refinery net input weekly) \u2014 all via Thor Storehouse; 10-year percentile history computed at build time"
+      ],
+      "update_frequency": "Weekly (EIA Wednesday release)",
+      "key_signals": [
+        "Diesel/WTI ratio (current band: Weak/Normal/Tight/Elevated Scarcity)",
+        "diesel retail price ($/gal)",
+        "WTI crude ($/bbl)",
+        "distillate stocks (Thousand Bbl, 10Y %ile)",
+        "refinery net input (Thousand Bbl/Day, 10Y %ile)",
+        "structural interpretation narrative"
+      ],
+      "intent_phrases": [
+        "diesel signal",
+        "diesel price",
+        "diesel WTI ratio",
+        "distillate tightness",
+        "diesel brief",
+        "diesel signal brief",
+        "diesel cost",
+        "freight cost signal",
+        "distillate stocks",
+        "diesel inventory",
+        "refinery utilization",
+        "diesel spread",
+        "diesel crack spread",
+        "diesel scarcity",
+        "diesel demand",
+        "diesel supply",
+        "U.S. diesel market",
+        "diesel percentile",
+        "diesel 10 year",
+        "WTI diesel",
+        "diesel crude ratio",
+        "distillate fuel oil",
+        "diesel report",
+        "diesel market signal",
+        "diesel fuel signal",
+        {
+          "keyword": "diesel",
+          "weight": 10
+        },
+        {
+          "keyword": "signal",
+          "weight": 10
+        },
+        {
+          "keyword": "brief",
+          "weight": 10
+        }
+      ],
+      "id": "diesel_signal_brief",
+      "path": "https://petroai1492.github.io/delta/energy/diesel/diesel_signal_brief.html"
     }
   ],
   "cross_domain_matrix": [
