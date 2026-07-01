@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-07-01T14:23:33Z",
+  "generated": "2026-07-01T14:50:56Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -5789,6 +5789,88 @@
       ],
       "id": "red_sea_houthi_executive_sitrep",
       "path": "https://petroai1492.github.io/delta/geopolitics/redsea/redsea_sitrep.html"
+    },
+    {
+      "title": "Counterparty Risk Monitor",
+      "file": "finance/counterparty/counterparty_risk.html",
+      "description": "Pre-trade counterparty risk check \u2014 answers \"who am I doing business with?\" by combining three public regulatory lists at build time: OFAC SDN (live fetch), FATF high-risk jurisdictions (hardcoded quarterly), BIS Entity List (live fetch); ELEVATED/HIGH/NORMAL combined signal; OFAC 50% Rule explained with example; 7-row compliance framework (BLOCKED/LICENSE/EDD/CDD/STANDARD); WTI energy link; pairs with OFAC Banking Risk Signal (#75)",
+      "json_file": "finance/counterparty/counterparty_risk.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/finance/counterparty/counterparty_risk.html`",
+      "auto_published": true,
+      "primary_domain": "Finance",
+      "secondary_domains": [
+        "Geopolitics",
+        "Cybersecurity"
+      ],
+      "entities": [
+        "OFAC",
+        "BIS",
+        "FATF",
+        "U.S. Treasury",
+        "U.S. Commerce",
+        "FinCEN",
+        "Russia",
+        "Iran",
+        "China",
+        "North Korea"
+      ],
+      "data_sources": [
+        "OFAC SDN List (live fetch \u2014 www.treasury.gov/ofac/downloads/sdn.xml); BIS Entity List (live fetch \u2014 www.bis.doc.gov); FATF Black/Grey Lists (hardcoded",
+        "verified 2026-06-30",
+        "updated quarterly); FRED DCOILWTICO via Thor Storehouse"
+      ],
+      "update_frequency": "On-demand (OFAC + BIS live fetch at runtime; FATF reviewed quarterly)",
+      "key_signals": [
+        "Combined ELEVATED/HIGH/NORMAL signal",
+        "OFAC financial SDNs (~876)",
+        "FATF black list (2 countries: Iran, North Korea)",
+        "FATF grey list (21 countries)",
+        "BIS Entity List count by country",
+        "OFAC 50% Rule beneficial ownership trap",
+        "7-tier compliance framework"
+      ],
+      "intent_phrases": [
+        "counterparty risk",
+        "KYC",
+        "know your customer",
+        "who am I doing business with",
+        "sanctions screening",
+        "OFAC screening",
+        "BIS entity list",
+        "FATF grey list",
+        "FATF black list",
+        "AML risk",
+        "beneficial ownership",
+        "OFAC 50 percent rule",
+        "pre-trade check",
+        "counterparty screening",
+        "SDN screening",
+        "EDD",
+        "enhanced due diligence",
+        "export controls",
+        "counterparty compliance",
+        "sanctions compliance",
+        "FATF jurisdiction",
+        "AML compliance",
+        "FinCEN",
+        "BSA compliance",
+        "counterparty monitor",
+        {
+          "keyword": "counterparty",
+          "weight": 10
+        },
+        {
+          "keyword": "risk",
+          "weight": 10
+        },
+        {
+          "keyword": "monitor",
+          "weight": 10
+        }
+      ],
+      "id": "counterparty_risk_monitor",
+      "path": "https://petroai1492.github.io/delta/finance/counterparty/counterparty_risk.html"
     }
   ],
   "cross_domain_matrix": [
