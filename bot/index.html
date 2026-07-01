@@ -151,7 +151,7 @@
 </div><!-- .layout -->
 <footer>
   THOR SIGNAL &nbsp;·&nbsp; Taxonomy-driven routing &nbsp;·&nbsp;
-  Generated: 2026-06-30 22:04 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+  Generated: 2026-06-30 22:17 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 <script>
 const REPORTS = [
@@ -5008,6 +5008,183 @@ const REPORTS = [
     ],
     "id": "strategic_petroleum_reserve_facility_prospectus",
     "path": "https://petroai1492.github.io/delta/energy/prospectus/spr_prospectus.html"
+  },
+  {
+    "title": "Strait of Hormuz \u2014 Chokepoint Prospectus",
+    "file": "energy/prospectus/hormuz_prospectus.html",
+    "description": "Deterministic chokepoint prospectus for the Strait of Hormuz \u2014 ~21 mmbpd (~20% of global oil trade) and ~20% of global LNG transit; geography, country flows, bypass capacity (~31%), major disruption history (1980\u20132024); live U.S. crude imports, WTI, SPR, and Cushing stocks injected from Thor Storehouse at build time",
+    "json_file": "energy/prospectus/hormuz_prospectus.json",
+    "published": true,
+    "url": "`petroai1492.github.io/delta/energy/prospectus/hormuz_prospectus.html`",
+    "auto_published": true,
+    "primary_domain": "Energy",
+    "secondary_domains": [
+      "Geopolitics"
+    ],
+    "entities": [
+      "Iran",
+      "Saudi Arabia",
+      "Iraq",
+      "UAE",
+      "Kuwait",
+      "Qatar",
+      "Oman",
+      "IRGC",
+      "U.S. Fifth Fleet",
+      "Bahrain",
+      "Petroline",
+      "ADCOP",
+      "EIA"
+    ],
+    "data_sources": [
+      "EIA World Oil Transit Chokepoints; EIA Country Analysis Briefs 2023\u20132024; EIA Weekly Petroleum Supply (PET.WCRIMUS2.W",
+      "PET.WCSSTUS1.W",
+      "PET.WCESTUS2.W); FRED DCOILWTICO \u2014 all via Thor Storehouse"
+    ],
+    "update_frequency": "On-demand (rebuild injects latest Storehouse signals at runtime)",
+    "key_signals": [
+      "~21 mmbpd throughput",
+      "~20% global oil trade",
+      "~20% global LNG",
+      "bypass capacity ~6.5 mmbpd (~31%)",
+      "Tanker War 1980\u201388",
+      "2019 tanker attacks and UK seizure",
+      "2023\u201324 Houthi spillover risk",
+      "live U.S. crude imports, WTI, SPR, Cushing w/w delta"
+    ],
+    "intent_phrases": [
+      "Hormuz",
+      "Strait of Hormuz",
+      "Persian Gulf chokepoint",
+      "oil chokepoint",
+      "energy chokepoint",
+      "Iran strait",
+      "tanker war",
+      "Gulf oil",
+      "LNG chokepoint",
+      "Qatar LNG",
+      "Petroline",
+      "ADCOP bypass",
+      "Iran blockade",
+      "Gulf shipping",
+      "oil transit",
+      "IRGC tanker",
+      "Fifth Fleet",
+      "Bahrain naval",
+      "crude imports chokepoint",
+      "Hormuz closure",
+      "Hormuz threat",
+      "Persian Gulf energy",
+      "Gulf oil flow",
+      "oil transit risk",
+      "chokepoint prospectus",
+      {
+        "keyword": "strait",
+        "weight": 10
+      },
+      {
+        "keyword": "hormuz",
+        "weight": 10
+      },
+      {
+        "keyword": "chokepoint",
+        "weight": 10
+      },
+      {
+        "keyword": "prospectus",
+        "weight": 10
+      }
+    ],
+    "id": "strait_of_hormuz_chokepoint_prospectus",
+    "path": "https://petroai1492.github.io/delta/energy/prospectus/hormuz_prospectus.html"
+  },
+  {
+    "title": "Cushing, Oklahoma \u2014 Storage Hub Prospectus",
+    "file": "energy/prospectus/cushing_prospectus.html",
+    "description": "Deterministic storage hub prospectus for Cushing, Oklahoma \u2014 NYMEX WTI futures delivery point and most-watched weekly crude inventory in U.S. markets; 76,000 Thousand Bbl working capacity; pipeline nexus history; 2011 bottleneck, 2015 near-capacity, 2020 negative price event, 2022 drawdown; live Cushing stocks, WTI, field production, and national commercial stocks injected from Thor Storehouse at build time with derived capacity % and national share",
+    "json_file": "energy/prospectus/cushing_prospectus.json",
+    "published": true,
+    "url": "`petroai1492.github.io/delta/energy/prospectus/cushing_prospectus.html`",
+    "auto_published": true,
+    "primary_domain": "Energy",
+    "secondary_domains": [
+      "Finance"
+    ],
+    "entities": [
+      "EIA",
+      "NYMEX",
+      "CME Group",
+      "WTI",
+      "Plains All American",
+      "Magellan",
+      "Enterprise",
+      "Keystone",
+      "Seaway",
+      "Longhorn"
+    ],
+    "data_sources": [
+      "EIA Weekly Petroleum Supply (PET.WCESTUS2.W Cushing stocks",
+      "PET.WCESTUS1.W commercial stocks",
+      "PET.WCRFPUS2.W field production); FRED DCOILWTICO WTI price \u2014 all via Thor Storehouse; CME Group NYMEX WTI specifications"
+    ],
+    "update_frequency": "On-demand (rebuild injects latest Storehouse signals at runtime)",
+    "key_signals": [
+      "Cushing crude stocks (Thousand Bbl)",
+      "% of 76,000 Thousand Bbl working capacity",
+      "Cushing as % of national commercial stocks",
+      "WTI price ($/bbl)",
+      "U.S. field production (Thousand Bbl/Day)",
+      "April 20 2020 negative price event historical reference"
+    ],
+    "intent_phrases": [
+      "Cushing",
+      "Cushing Oklahoma",
+      "WTI delivery point",
+      "crude storage",
+      "oil storage hub",
+      "Cushing stocks",
+      "WTI futures",
+      "NYMEX WTI",
+      "crude inventory",
+      "oil inventory",
+      "Cushing capacity",
+      "WTI price",
+      "crude oil benchmark",
+      "pipeline nexus",
+      "Cushing draw",
+      "Cushing build",
+      "negative oil price",
+      "WTI negative",
+      "crude contango",
+      "WTI backwardation",
+      "Cushing bottleneck",
+      "oil storage Oklahoma",
+      "Cushing tank farm",
+      "EIA petroleum supply",
+      "Cushing prospectus",
+      {
+        "keyword": "cushing,",
+        "weight": 10
+      },
+      {
+        "keyword": "oklahoma",
+        "weight": 10
+      },
+      {
+        "keyword": "storage",
+        "weight": 10
+      },
+      {
+        "keyword": "hub",
+        "weight": 10
+      },
+      {
+        "keyword": "prospectus",
+        "weight": 10
+      }
+    ],
+    "id": "cushing_oklahoma_storage_hub_prospectus",
+    "path": "https://petroai1492.github.io/delta/energy/prospectus/cushing_prospectus.html"
   }
 ];
 const CROSS_DOMAIN = [
