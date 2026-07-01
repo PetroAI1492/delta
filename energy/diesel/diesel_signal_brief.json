@@ -1,9 +1,10 @@
 {
-  "generated_at": "2026-07-01 01:18",
+  "generated_at": "2026-07-01 01:26",
   "as_of_week": "2026-25",
   "diesel_wti_ratio": {
     "latest": 2.57,
-    "prior": 2.51
+    "prior": 2.51,
+    "band": "Elevated Scarcity"
   },
   "diesel_price": {
     "latest": 4.832,
@@ -12,5 +13,13 @@
   "wti_price": {
     "latest": 78.94,
     "prior": 81.3625
+  },
+  "distillate_stocks": {
+    "latest": 103052.0,
+    "prior": 102101.0
+  },
+  "refinery_input": {
+    "latest": 13806.0,
+    "prior": 13799.0
   }
 }
