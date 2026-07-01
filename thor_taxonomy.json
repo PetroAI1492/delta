@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-07-01T01:27:51Z",
+  "generated": "2026-07-01T01:54:03Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -4894,6 +4894,93 @@
       ],
       "id": "abqaiq_plants_facility_prospectus",
       "path": "https://petroai1492.github.io/delta/energy/prospectus/abqaiq_prospectus.html"
+    },
+    {
+      "title": "Strategic Petroleum Reserve \u2014 Facility Prospectus",
+      "file": "energy/prospectus/spr_prospectus.html",
+      "description": "Deterministic facility prospectus for the U.S. Strategic Petroleum Reserve \u2014 world's largest emergency crude stockpile; 4 Gulf Coast salt cavern sites; major drawdown history (1991\u20132022); live SPR stocks, WTI price, and crude imports injected from Thor Storehouse at build time with derived capacity % and estimated market value",
+      "json_file": "energy/prospectus/spr_prospectus.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/energy/prospectus/spr_prospectus.html`",
+      "auto_published": true,
+      "primary_domain": "Energy",
+      "secondary_domains": [
+        "Federal",
+        "Economy"
+      ],
+      "entities": [
+        "DOE",
+        "EIA",
+        "FRED",
+        "IEA",
+        "Bryan Mound",
+        "Big Hill",
+        "West Hackberry",
+        "Bayou Choctaw",
+        "WTI"
+      ],
+      "data_sources": [
+        "EIA Weekly Petroleum Supply (PET.WCSSTUS1.W SPR stocks",
+        "PET.WCRIMUS2.W crude imports); FRED DCOILWTICO WTI price \u2014 all via Thor Storehouse; DOE FECM public data; EPCA 1975"
+      ],
+      "update_frequency": "On-demand (rebuild injects latest Storehouse signals at runtime)",
+      "key_signals": [
+        "SPR crude stocks (Thousand Bbl)",
+        "WTI price ($/bbl)",
+        "U.S. crude imports (Thousand Bbl/Day)",
+        "SPR as % of 714M bbl max capacity",
+        "estimated market value at current WTI",
+        "2022 record 180M bbl drawdown historical reference"
+      ],
+      "intent_phrases": [
+        "SPR",
+        "strategic petroleum reserve",
+        "emergency oil reserve",
+        "crude stockpile",
+        "oil reserve",
+        "petroleum reserve",
+        "SPR drawdown",
+        "SPR release",
+        "emergency crude",
+        "DOE energy reserve",
+        "oil emergency",
+        "IEA reserve",
+        "90 days import cover",
+        "salt cavern storage",
+        "Bryan Mound",
+        "Big Hill",
+        "West Hackberry",
+        "Bayou Choctaw",
+        "SPR capacity",
+        "SPR refill",
+        "SPR stocks",
+        "WTI price",
+        "crude import cover",
+        "energy security reserve",
+        "EPCA",
+        {
+          "keyword": "strategic",
+          "weight": 10
+        },
+        {
+          "keyword": "petroleum",
+          "weight": 10
+        },
+        {
+          "keyword": "reserve",
+          "weight": 10
+        },
+        {
+          "keyword": "facility",
+          "weight": 10
+        },
+        {
+          "keyword": "prospectus",
+          "weight": 10
+        }
+      ],
+      "id": "strategic_petroleum_reserve_facility_prospectus",
+      "path": "https://petroai1492.github.io/delta/energy/prospectus/spr_prospectus.html"
     }
   ],
   "cross_domain_matrix": [
