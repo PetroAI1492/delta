@@ -1,0 +1,54 @@
+{
+  "generated_at": "2026-06-30 21:25",
+  "as_of": "2026-06-12",
+  "signals": [
+    {
+      "series_id": "PET.WCRFPUS2.W",
+      "label": "U.S. Field Production",
+      "unit": "Thousand Bbl/Day",
+      "latest_date": "2026-06-12",
+      "latest_value": 13806.0,
+      "prior_value": 13799.0
+    },
+    {
+      "series_id": "PET.WCRIMUS2.W",
+      "label": "U.S. Crude Imports",
+      "unit": "Thousand Bbl/Day",
+      "latest_date": "2026-06-12",
+      "latest_value": 5134.0,
+      "prior_value": 5888.0
+    },
+    {
+      "series_id": "PET.WCREXUS2.W",
+      "label": "U.S. Crude Exports",
+      "unit": "Thousand Bbl/Day",
+      "latest_date": "2026-06-12",
+      "latest_value": 4327.0,
+      "prior_value": 4840.0
+    },
+    {
+      "series_id": "PET.WCESTUS1.W",
+      "label": "Commercial Crude Stocks (U.S.)",
+      "unit": "Thousand Bbl",
+      "latest_date": "2026-06-12",
+      "latest_value": 418222.0,
+      "prior_value": 426485.0
+    },
+    {
+      "series_id": "PET.WCSSTUS1.W",
+      "label": "SPR Crude Stocks (U.S.)",
+      "unit": "Thousand Bbl",
+      "latest_date": "2026-06-12",
+      "latest_value": 340251.0,
+      "prior_value": 349192.0
+    },
+    {
+      "series_id": "PET.WCESTUS2.W",
+      "label": "Cushing, OK Crude Stocks",
+      "unit": "Thousand Bbl",
+      "latest_date": "2026-06-12",
+      "latest_value": 20034.0,
+      "prior_value": 21640.0
+    }
+  ]
+}

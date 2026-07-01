@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abqaiq Plants — Facility Prospectus</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #f5f0e8;
+    color: #1a1a1a;
+    font-family: 'PT Serif', Georgia, serif;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: #1a1a2e;
+    color: #fff;
+    padding: 42px 52px 36px;
+    border-bottom: 4px solid #cc0000;
+  }
+  .header-eyebrow {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #cc0000;
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-family: 'PT Serif', serif;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+  .header-subtitle {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    color: #aab0c0;
+    font-style: italic;
+    margin-bottom: 22px;
+  }
+  .header-meta {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+  }
+  .meta-item { font-family: 'PT Sans', sans-serif; font-size: 11px; }
+  .meta-label { color: #7a8090; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 3px; }
+  .meta-value { color: #e8e8e8; font-weight: 700; font-size: 13px; }
+
+  /* ── QUOTE BANNER ── */
+  .quote-banner {
+    background: #1a1a2e;
+    padding: 28px 52px;
+    border-bottom: 4px solid #cc0000;
+  }
+  .quote-text {
+    font-family: 'PT Serif', serif;
+    font-size: 17px;
+    font-style: italic;
+    color: #e8e8e8;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  .quote-source {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 10px;
+    color: #cc0000;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  /* ── BODY ── */
+  .content { padding: 44px 52px; }
+  .section { margin-bottom: 36px; }
+  .section-label {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #cc0000;
+    margin-bottom: 8px;
+  }
+  .section h2 {
+    font-family: 'PT Serif', serif;
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #1a1a2e;
+    border-bottom: 2px solid #e8e2d8;
+    padding-bottom: 8px;
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .as-of {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: #888;
+    font-style: italic;
+    margin-left: auto;
+  }
+  .section p { margin-bottom: 12px; color: #2c2c2c; }
+
+  /* ── GRID ── */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 16px; }
+  .card {
+    background: #f9f6f0;
+    border: 1px solid #e5ddd0;
+    border-top: 3px solid #1a1a2e;
+    padding: 20px 22px;
+  }
+  .card h3 {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #7a5500;
+    margin-bottom: 10px;
+  }
+  .card ul { list-style: none; padding: 0; }
+  .card ul li {
+    font-size: 13.5px;
+    padding: 5px 0;
+    border-bottom: 1px solid #ece5d8;
+    color: #2c2c2c;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .card ul li:last-child { border-bottom: none; }
+  .card ul li::before { content: "▸"; color: #cc0000; font-size: 10px; margin-top: 3px; flex-shrink: 0; }
+
+  /* ── PROCESSING FLOW ── */
+  .flow { display: flex; align-items: center; flex-wrap: wrap; margin: 18px 0; gap: 0; }
+  .flow-step {
+    background: #1a1a2e;
+    color: #fff;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+    padding: 10px 14px;
+    min-width: 96px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+  }
+  .flow-step.alt { background: #cc0000; }
+  .flow-arrow { color: #999; font-size: 18px; padding: 0 6px; }
+
+  /* ── RISK BOX ── */
+  .risk-box {
+    background: #fff8f0;
+    border: 1px solid #f0d0a8;
+    border-left: 4px solid #cc0000;
+    padding: 18px 22px;
+    margin-top: 16px;
+  }
+  .risk-title {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: #cc0000;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  /* ── CONNECTIONS TABLE ── */
+  .connections { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 14px; }
+  .connections thead tr { background: #1a1a2e; color: #fff; }
+  .connections th {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 9px 14px;
+    text-align: left;
+    font-weight: 700;
+  }
+  .connections td { padding: 9px 14px; border-bottom: 1px solid #ece5d8; color: #2c2c2c; }
+  .connections tr:last-child td { border-bottom: none; }
+  .connections tr:nth-child(even) td { background: #f9f6f0; }
+  .badge {
+    display: inline-block;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    background: #1a1a2e;
+    color: #fff;
+  }
+  .badge.green { background: #1a6e3a; }
+
+  /* ── SIGNAL TABLE ── */
+  .signal-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 14px; }
+  .signal-table thead tr { background: #1a1a2e; color: #fff; }
+  .signal-table th {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 9px 14px;
+    text-align: left;
+    font-weight: 700;
+  }
+  .signal-table td { padding: 9px 14px; border-bottom: 1px solid #ece5d8; vertical-align: middle; }
+  .signal-table tr:last-child td { border-bottom: none; }
+  .signal-table tr:nth-child(even) td { background: #f9f6f0; }
+
+  .sig-label { font-weight: 600; color: #1a1a2e; }
+  .sig-value { font-family: 'PT Sans', sans-serif; font-size: 15px; font-weight: 700; color: #1a1a2e; text-align: right; }
+  .sig-unit  { font-family: 'PT Sans', sans-serif; font-size: 11px; color: #888; }
+
+  .delta { font-family: 'PT Sans', sans-serif; font-size: 12px; font-weight: 700; white-space: nowrap; }
+  .delta.up      { color: #1a6e3a; }
+  .delta.down    { color: #cc0000; }
+  .delta.neutral { color: #888; }
+
+  .panel-note {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 11px;
+    color: #888;
+    margin-top: 12px;
+    font-style: italic;
+  }
+  .panel-note code {
+    background: #f0ebe0;
+    padding: 1px 5px;
+    font-size: 10.5px;
+    border-radius: 2px;
+    font-style: normal;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: #f0ebe0;
+    border-top: 1px solid #d8d0c4;
+    padding: 20px 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-left  { font-family: 'PT Sans', sans-serif; font-size: 11px; color: #888; }
+  .footer-right { font-family: 'PT Sans', sans-serif; font-size: 11px; color: #888; text-align: right; }
+  .classification {
+    display: inline-block;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1a1a2e;
+    border: 1.5px solid #1a1a2e;
+    padding: 3px 9px;
+  }
+
+  @media (max-width: 640px) {
+    .header, .content, .footer { padding-left: 24px; padding-right: 24px; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .stat-bar { flex-direction: column; align-items: center; }
+    .flow { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-eyebrow">Saudi Aramco · Facility Prospectus</div>
+    <h1>Abqaiq Plants</h1>
+    <div class="header-subtitle">"Aramco owns and operates the Abqaiq facility, which is its largest oil processing facility and the largest crude oil stabilization plant in the world." &mdash; Saudi Aramco Annual Report 2025</div>
+    <div class="header-meta">
+      <div class="meta-item">
+        <span class="meta-label">Operator</span>
+        <span class="meta-value">Saudi Aramco</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Location</span>
+        <span class="meta-value">Eastern Province, Saudi Arabia</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Coordinates <span style="font-weight:400;font-size:9px;opacity:0.7;">(Geographic Ref)</span></span>
+        <span class="meta-value">26.0°N · 49.7°E</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Document Type</span>
+        <span class="meta-value">General Reference / Research</span>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- BODY -->
+  <div class="content">
+
+    <!-- EXECUTIVE SUMMARY -->
+    <div class="section">
+      <div class="section-label">Executive Summary</div>
+      <h2>Facility Overview</h2>
+      <p>
+        Abqaiq Plants is Saudi Aramco's largest oil processing and crude stabilization facility
+        and, as stated in the Saudi Aramco Annual Report 2025, the largest crude oil stabilization
+        plant in the world. Located in Saudi Arabia's Eastern Province, the facility is the primary
+        processing hub for Arabian Extra Light and Arabian Light crude oils — two of the five grades
+        Saudi Aramco produces.
+      </p>
+      <p>
+        The facility's core function is to receive sour crude oil from upstream gas-oil separation
+        plants (GOSPs) and remove impurities — principally hydrogen sulfide — producing stabilized
+        sweet crude suitable for export and downstream refining. Processed crude is dispatched to
+        Saudi Aramco's domestic refining network and export terminals, including Ras Tanura and
+        Jubail on the east coast and Yanbu on the west coast. Saudi Arabia exported 7.0 million
+        barrels per day of crude oil in 2023, of which Asia received 75%, with China, Japan,
+        South Korea, and India as the top importers.
+      </p>
+      <p>
+        Saudi Arabia held an estimated 17% of the world's proved oil reserves in 2023 and was
+        the world's top crude oil exporter and OPEC's largest producer that year. Saudi Aramco's
+        stated Maximum Sustainable Capacity is 12.0 million barrels per day, a level the Saudi
+        government directed Aramco to maintain in January 2024. Abqaiq is the central processing
+        node that underpins that capacity.
+      </p>
+    </div>
+
+    <!-- PROCESSING OPERATIONS -->
+    <div class="section">
+      <div class="section-label">Operations</div>
+      <h2>Processing Units &amp; Technical Capabilities</h2>
+      <p>The facility comprises three integrated processing units operating in sequence:</p>
+      <div class="flow">
+        <div class="flow-step">Sour Crude<br>Intake (GOSP)</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step alt">Crude Oil<br>Processing Unit</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">NGL<br>Facility</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step alt">Utilities<br>Unit</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">Stabilized<br>Sweet Crude</div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Oil Processing Unit</h3>
+          <ul>
+            <li>Receives sour crude from upstream GOSPs</li>
+            <li>Removes hydrogen sulfide and reduces crude volatility</li>
+            <li>Separates oil from associated gases via depressurization</li>
+            <li>Produces Arab Extra Light and Arab Light crude grades</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>NGL Facility</h3>
+          <ul>
+            <li>Processes off-gases from the oil processing unit</li>
+            <li>Separates light gases from natural gas liquids product</li>
+            <li>NGL product sent to Ras Tanura refinery for fractionation</li>
+            <li>Light gases transported to other gas plants for processing</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Utilities Unit</h3>
+          <ul>
+            <li>Supplies power, steam, and treated water to oil and NGL units</li>
+            <li>Steam turbine and combustion gas turbine power generation</li>
+            <li>Boiler-based steam generation for processing and compression</li>
+            <li>Reverse osmosis water treatment for boiler makeup supply</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Digital &amp; Control Systems</h3>
+          <ul>
+            <li>Integration Objects KNet Analytics for energy KPI monitoring</li>
+            <li>Dynamic targets across shallow and deep stabilization modes</li>
+            <li>Automated root cause analysis for energy overconsumption</li>
+            <li>WEF Global Lighthouse Network designee (October 2021)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- OFFTAKE ROUTES -->
+    <div class="section">
+      <div class="section-label">Infrastructure</div>
+      <h2>Offtake Routes</h2>
+      <p>
+        According to the Saudi Aramco Annual Report 2025, stabilized crude processed at Abqaiq
+        is dispatched to refining plants at Ras Tanura and Jubail on the east coast and Yanbu
+        on the west coast. Aramco also operates four crude export terminals that contribute to
+        its operational flexibility and supply reliability.
+      </p>
+      <p>
+        Beyond domestic destinations, Aramco maintains strategic international crude delivery
+        points at Rotterdam (the Netherlands), Sidi Kerir (Egypt), Okinawa and Kiire (Japan),
+        and Ulsan (South Korea) — providing downstream optionality across key consuming regions.
+      </p>
+      <p class="panel-note">
+        ⓘ Source: Saudi Aramco Annual Report 2025 (as of December 31, 2024).
+        Pipeline specifications and feedstock routing details are not published
+        in Aramco's current primary disclosures and have been excluded.
+      </p>
+    </div>
+
+    <!-- STRATEGIC SIGNIFICANCE -->
+    <div class="section">
+      <div class="section-label">Strategic Analysis</div>
+      <h2>Global Energy Significance</h2>
+      <p>
+        Saudi Arabia was the world's top crude oil exporter and OPEC's largest producer in 2023,
+        exporting 7.0 million barrels per day of crude oil, according to the EIA Country Analysis
+        Brief (October 2024). As the largest crude oil stabilization plant in the world and Saudi
+        Aramco's primary processing facility, Abqaiq is central to sustaining that export capacity.
+        Saudi Aramco reported 99.7% crude oil supply reliability in 2024, reflecting the operational
+        continuity standards applied across its processing infrastructure.
+      </p>
+      <p>
+        As Saudi Aramco's primary crude stabilization facility, Abqaiq underpins Saudi Arabia's
+        ability to sustain its 12.0 million barrel per day Maximum Sustainable Capacity and
+        remains one of the most strategically important energy facilities in the world.<sup>¹³</sup>
+      </p>
+      <div class="risk-box">
+        <div class="risk-title">Historical Reference — September 14, 2019 Attack</div>
+        <p>
+          A coordinated drone and missile strike on the Abqaiq facility temporarily disrupted
+          Saudi crude processing. The U.S. EIA reported the event in its September 2019
+          "Today in Energy" publication. Saudi Aramco subsequently restored operational capacity.
+          Specific disruption volumes and price impacts cited in that 2019 EIA report are not
+          reproduced here as current operational data.
+        </p>
+      </div>
+    </div>
+
+    <!-- LIVE EIA PANEL INJECTED HERE -->
+    
+  <!-- ── LIVE U.S. MARKET CONTEXT PANEL ── -->
+  <div class="section">
+    <div class="section-label">Live U.S. Market Context</div>
+    <h2>EIA Crude Signal Dashboard
+      <span class="as-of">As of week ending 2026-06-12 · Source: Thor Storehouse / EIA</span>
+    </h2>
+    <p>
+      The signals below are drawn live from Thor Storehouse at report build time,
+      providing current U.S. petroleum market context should a material disruption
+      occur at Abqaiq — Saudi Aramco's largest oil processing facility and the
+      world's largest crude stabilization plant.<sup>¹</sup>
+    </p>
+    <table class="signal-table">
+      <thead>
+        <tr>
+          <th>Signal</th>
+          <th>Latest Value</th>
+          <th>Unit</th>
+          <th>Week-over-Week</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="sig-label">U.S. Field Production</td>
+          <td class="sig-value">13,806</td>
+          <td class="sig-unit">Thousand Bbl/Day</td>
+          <td><span class="delta up">▲ +7 (+0.1%)</span></td>
+        </tr>
+        <tr>
+          <td class="sig-label">U.S. Crude Imports</td>
+          <td class="sig-value">5,134</td>
+          <td class="sig-unit">Thousand Bbl/Day</td>
+          <td><span class="delta down">▼ -754 (-12.8%)</span></td>
+        </tr>
+        <tr>
+          <td class="sig-label">U.S. Crude Exports</td>
+          <td class="sig-value">4,327</td>
+          <td class="sig-unit">Thousand Bbl/Day</td>
+          <td><span class="delta down">▼ -513 (-10.6%)</span></td>
+        </tr>
+        <tr>
+          <td class="sig-label">Commercial Crude Stocks (U.S.)</td>
+          <td class="sig-value">418,222</td>
+          <td class="sig-unit">Thousand Bbl</td>
+          <td><span class="delta down">▼ -8,263 (-1.9%)</span></td>
+        </tr>
+        <tr>
+          <td class="sig-label">SPR Crude Stocks (U.S.)</td>
+          <td class="sig-value">340,251</td>
+          <td class="sig-unit">Thousand Bbl</td>
+          <td><span class="delta down">▼ -8,941 (-2.6%)</span></td>
+        </tr>
+        <tr>
+          <td class="sig-label">Cushing, OK Crude Stocks</td>
+          <td class="sig-value">20,034</td>
+          <td class="sig-unit">Thousand Bbl</td>
+          <td><span class="delta down">▼ -1,606 (-7.4%)</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="panel-note">
+      ⓘ All values sourced deterministically from <code>Storehouse.db · observations (source='eia')</code>.
+      No estimates or AI-inferred figures. Build timestamp: 2026-06-30 21:25 ET.
+    </p>
+  </div>
+
+
+    <!-- STRATEGIC METRICS -->
+    <div class="section">
+      <div class="section-label">Strategic Assessment</div>
+      <h2>Facility Metrics</h2>
+      <p>Deterministic ratings derived from published primary sources. No subjective scoring.</p>
+      <table class="connections">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Rating</th>
+            <th>Basis</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Strategic Importance</strong></td>
+            <td>&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+            <td>World's largest crude stabilization plant; underpins Saudi MSC of 12.0 mmbpd</td>
+            <td>[1][3]</td>
+          </tr>
+          <tr>
+            <td><strong>Global Criticality</strong></td>
+            <td>Very High</td>
+            <td>Saudi Arabia is world's top crude exporter; 7.0 million b/d exported in 2023</td>
+            <td>[3]</td>
+          </tr>
+          <tr>
+            <td><strong>Single Point of Failure Risk</strong></td>
+            <td>High</td>
+            <td>Primary processing facility for Saudi Aramco's largest oil processing operations</td>
+            <td>[1]</td>
+          </tr>
+          <tr>
+            <td><strong>Export Importance</strong></td>
+            <td>Very High</td>
+            <td>Processed crude dispatched to Ras Tanura, Jubail, Yanbu and four export terminals</td>
+            <td>[1]</td>
+          </tr>
+          <tr>
+            <td><strong>Operational Reliability (2024)</strong></td>
+            <td>99.7% supply reliability</td>
+            <td>Saudi Aramco reported crude oil supply reliability across its processing network</td>
+            <td>[1]</td>
+          </tr>
+          <tr>
+            <td><strong>Public Data Confidence</strong></td>
+            <td>High</td>
+            <td>Primary sources: Saudi Aramco Annual Report 2025, EIA Country Analysis Oct 2024</td>
+            <td>[1][3]</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- KEY FACTS -->
+    <div class="section">
+      <div class="section-label">Reference Data</div>
+      <h2>Key Facts at a Glance</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Facility <span style="font-weight:400;font-size:10px;color:#888;">[1][2]</span></h3>
+          <ul>
+            <li>Owner / Operator: Saudi Aramco (100%)</li>
+            <li>Designation: World's largest crude stabilization plant</li>
+            <li>Primary products: Arab Extra Light, Arab Light crude; NGL</li>
+            <li>Processing units: Oil Processing, NGL, Utilities</li>
+            <li>Digital designation: WEF Global Lighthouse Network (Oct 2021)</li>
+            <li>2024 crude supply reliability: 99.7%</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Saudi Arabia National Context<sup>³</sup></h3>
+          <ul>
+            <li>World's top crude oil exporter (2023)</li>
+            <li>OPEC's largest crude oil producer (2023)</li>
+            <li>Crude oil exports: 7.0 million b/d (2023)</li>
+            <li>Proved oil reserves: ~17% of world total (2023)</li>
+            <li>Maximum Sustainable Capacity: 12.0 mmbpd (Jan 2024 directive)</li>
+            <li>Top export markets: China, Japan, South Korea, India</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTNOTES -->
+    <div class="section">
+      <div class="section-label">Sources</div>
+      <h2>Citations &amp; Data Sources</h2>
+      <table class="connections">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Source</th>
+            <th>Publication</th>
+            <th>Applies To</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>[1]</td>
+            <td>Saudi Aramco Annual Report 2025</td>
+            <td>As of December 31, 2024</td>
+            <td>Facility designation, supply reliability, offtake routes, export terminals</td>
+          </tr>
+          <tr>
+            <td>[2]</td>
+            <td>World Economic Forum — Global Lighthouse Network</td>
+            <td>October 2021</td>
+            <td>Digital &amp; control systems designation</td>
+          </tr>
+          <tr>
+            <td>[3]</td>
+            <td>EIA Country Analysis Brief: Saudi Arabia</td>
+            <td>October 4, 2024</td>
+            <td>National production, exports, reserves, MSC, crude grades, export markets</td>
+          </tr>
+          <tr>
+            <td>[4]</td>
+            <td>EIA Today in Energy — Saudi Arabia Outage</td>
+            <td>September 2019 (historical reference only)</td>
+            <td>2019 attack — referenced as dated event, no figures reproduced as current</td>
+          </tr>
+          <tr>
+            <td>[5]</td>
+            <td>Integration Objects — Abqaiq Plants Case Study</td>
+            <td>Operator-published</td>
+            <td>KNet Analytics platform, energy KPI monitoring, root cause analysis</td>
+          </tr>
+          <tr>
+            <td>[6]</td>
+            <td>U.S. EIA — Weekly Petroleum Supply Data</td>
+            <td>Live via Thor Storehouse (week ending 2026-06-12)</td>
+            <td>All U.S. crude signal values in the EIA Dashboard panel</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div><!-- /content -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      <span class="classification">General Reference</span><br><br>
+      Facility data: Saudi Aramco Annual Report 2025 · EIA Country Analysis Brief Oct 2024 · WEF Global Lighthouse Network · Integration Objects<br>
+      Market signals: Thor Storehouse · observations (EIA weekly petroleum data)<br>
+      Generated: 2026-06-30 21:25 ET
+    </div>
+    <div class="footer-right">
+      Thor Storehouse Intelligence Platform<br>
+      Energy Domain · Facility Prospectus Series<br>
+      <em>All data sourced from public records · No AI-inferred figures</em>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
