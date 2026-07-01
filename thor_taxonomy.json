@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-07-01T06:41:35Z",
+  "generated": "2026-07-01T12:19:56Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -5604,6 +5604,94 @@
       ],
       "id": "north_korea_cyber_threat_executive_sitrep",
       "path": "https://petroai1492.github.io/delta/cybersecurity/northkorea/nk_cyber_sitrep.html"
+    },
+    {
+      "title": "OFAC Banking & Financial Risk Signal",
+      "file": "finance/ofac/ofac_banking_signal.html",
+      "description": "Live OFAC SDN list financial sector monitor \u2014 fetches U.S. Treasury SDN XML at build time, classifies 19,000+ entries into 9 financial sector categories (commercial banks, crypto, investment, payment, clearing/settlement, money services, broker/dealer, insurance, central banks), computes ELEVATED/HIGH/NORMAL signal level, extracts recent designations, aggregates by jurisdiction with bar chart; ~$50K/yr institutional-grade sanctions data, free and timestamped",
+      "json_file": "finance/ofac/ofac_banking_signal.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/finance/ofac/ofac_banking_signal.html`",
+      "auto_published": true,
+      "primary_domain": "Finance",
+      "secondary_domains": [
+        "Geopolitics",
+        "Cybersecurity"
+      ],
+      "entities": [
+        "OFAC",
+        "U.S. Treasury",
+        "SDN list",
+        "Russia",
+        "Iran",
+        "DPRK",
+        "Garantex",
+        "Sberbank",
+        "VTB",
+        "Gazprombank"
+      ],
+      "data_sources": [
+        "OFAC SDN List (live fetch from www.treasury.gov/ofac/downloads/sdn.xml \u2014 updated by OFAC on business days); no Storehouse dependency"
+      ],
+      "update_frequency": "On-demand (live SDN fetch at runtime \u2014 always current)",
+      "key_signals": [
+        "Signal level (ELEVATED/HIGH/NORMAL)",
+        "total financial SDNs (~876 current)",
+        "commercial banks (~459)",
+        "crypto/digital assets (~75)",
+        "by jurisdiction (Russia ~356, Iran ~183, SDGT ~132)",
+        "recent 30d and 90d designation counts",
+        "9-category breakdown"
+      ],
+      "intent_phrases": [
+        "OFAC",
+        "SDN list",
+        "sanctions",
+        "financial sanctions",
+        "banking sanctions",
+        "OFAC signal",
+        "sanctioned banks",
+        "sanctioned crypto",
+        "Russia sanctions",
+        "Iran sanctions",
+        "DPRK sanctions",
+        "sanctions compliance",
+        "SDN screening",
+        "OFAC banking",
+        "Garantex",
+        "Sberbank sanctions",
+        "VTB sanctions",
+        "crypto sanctions",
+        "OFAC risk",
+        "sanctions risk",
+        "financial risk signal",
+        "SDN financial",
+        "OFAC monitor",
+        "sanctions monitor",
+        "correspondent banking sanctions",
+        {
+          "keyword": "ofac",
+          "weight": 10
+        },
+        {
+          "keyword": "banking",
+          "weight": 10
+        },
+        {
+          "keyword": "financial",
+          "weight": 10
+        },
+        {
+          "keyword": "risk",
+          "weight": 10
+        },
+        {
+          "keyword": "signal",
+          "weight": 10
+        }
+      ],
+      "id": "ofac_banking_financial_risk_signal",
+      "path": "https://petroai1492.github.io/delta/finance/ofac/ofac_banking_signal.html"
     }
   ],
   "cross_domain_matrix": [
