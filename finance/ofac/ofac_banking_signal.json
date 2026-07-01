@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-07-01 08:03",
+  "sdn_pub_date": "06/30/2026",
+  "signal": "ELEVATED",
+  "total_financial": 876,
+  "by_sector": {
+    "commercial_bank": 459,
+    "investment": 299,
+    "insurance": 15,
+    "crypto": 75,
+    "broker_dealer": 7,
+    "money_services": 4,
+    "payment": 13,
+    "messaging": 4
+  },
+  "by_jurisdiction": {
+    "Russia": 356,
+    "Iran": 183,
+    "Global Terrorism": 132,
+    "Other": 44,
+    "Transnational Crime": 31,
+    "North Korea": 30,
+    "WMD Proliferation": 25,
+    "Global Magnitsky": 23,
+    "Drug Trafficking": 19,
+    "Venezuela": 14,
+    "Ukraine/Russia": 10,
+    "Belarus": 5,
+    "Cuba": 4
+  },
+  "recent_30d_count": 0,
+  "recent_90d_count": 0
+}

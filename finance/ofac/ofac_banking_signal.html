@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OFAC Banking &amp; Financial Risk Signal</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #f5f0e8; color: #1a1a1a;
+    font-family: 'PT Serif', Georgia, serif; font-size: 15px; line-height: 1.7;
+  }
+  .page {
+    max-width: 960px; margin: 0 auto; background: #fff;
+    border-left: 1px solid #ddd; border-right: 1px solid #ddd; min-height: 100vh;
+  }
+  .header {
+    background: #1a1a2e; color: #fff; padding: 42px 52px 36px;
+    border-bottom: 4px solid #cc0000;
+  }
+  .header-eyebrow {
+    font-family: 'PT Sans', Arial, sans-serif; font-size: 10px; font-weight: 700;
+    letter-spacing: .15em; text-transform: uppercase; color: #cc0000; margin-bottom: 10px;
+  }
+  .header h1 { font-size: 2rem; font-weight: 700; line-height: 1.2; margin-bottom: 8px; }
+  .header-sub { font-family: 'PT Sans', Arial, sans-serif; font-size: 13px; color: #aaa; margin-top: 6px; }
+  .header-meta { margin-top: 18px; display: flex; gap: 28px; flex-wrap: wrap; }
+  .meta-item { font-family: 'PT Sans', Arial, sans-serif; font-size: 11px; color: #888; }
+  .meta-item strong { display: block; color: #ccc; font-size: 12px; margin-bottom: 2px; }
+  .content { padding: 0 52px 48px; }
+  .section { padding: 28px 0; border-bottom: 1px solid #e8e0d0; }
+  .section:last-of-type { border-bottom: none; }
+  .section-label {
+    font-family: 'PT Sans', Arial, sans-serif; font-size: 9.5px; font-weight: 700;
+    letter-spacing: .14em; text-transform: uppercase; color: #cc0000; margin-bottom: 6px;
+  }
+  h2 { font-size: 1.2rem; font-weight: 700; margin-bottom: 14px; line-height: 1.3; }
+  p { font-size: 9.5pt; line-height: 1.75; color: #2a2a2a; margin-bottom: 10px; }
+  .kpi-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 16px 0 8px;
+  }
+  .kpi-card {
+    background: #fafaf7; border: 1px solid #e8e0d0; border-top: 3px solid #1a1a2e; padding: 12px 14px;
+    font-family: 'PT Sans', Arial, sans-serif;
+  }
+  .kpi-label { font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: #6B7280; margin-bottom: 4px; }
+  .kpi-value { font-size: 2rem; font-weight: 700; line-height: 1; margin-bottom: 2px; }
+  .kpi-sub   { font-size: 9px; color: #9CA3AF; }
+  table.intel {
+    width: 100%; border-collapse: collapse; font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 12px; margin: 14px 0;
+  }
+  table.intel th {
+    background: #1a1a2e; color: #fff; padding: 7px 10px; text-align: left;
+    font-size: 10px; letter-spacing: .05em; text-transform: uppercase;
+  }
+  table.intel td { padding: 7px 10px; border-bottom: 1px solid #eee; vertical-align: top; line-height: 1.5; }
+  table.intel tr:nth-child(even) td { background: #fafaf7; }
+  .entity-section { margin: 20px 0; }
+  .entity-label {
+    font-family: 'PT Sans', Arial, sans-serif; font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .1em; margin-bottom: 6px;
+  }
+  table.entity-table {
+    width: 100%; border-collapse: collapse; font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 11px; margin-bottom: 4px;
+  }
+  table.entity-table th {
+    background: #f3f4f6; color: #374151; padding: 6px 10px; text-align: left;
+    font-size: 9px; text-transform: uppercase; letter-spacing: .04em; border-bottom: 1px solid #d1d5db;
+  }
+  table.entity-table td { padding: 5px 10px; border-bottom: 1px solid #f0ece4; vertical-align: top; }
+  table.entity-table tr:nth-child(even) td { background: #fafaf7; }
+  .footer {
+    background: #1a1a2e; color: #aaa; padding: 24px 52px;
+    font-family: 'PT Sans', Arial, sans-serif; font-size: 10px; line-height: 1.7;
+    display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+  }
+  .footer-right { text-align: right; }
+  .footer em { color: #666; }
+  .classification {
+    display: inline-block; background: #cc0000; color: #fff; font-size: 9px;
+    font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    padding: 2px 8px; margin-bottom: 6px;
+  }
+  @media (max-width: 700px) {
+    .header, .content, .footer { padding-left: 20px; padding-right: 20px; }
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .header h1 { font-size: 1.4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="header-eyebrow">Thor Storehouse Intelligence · Finance / Geopolitics · Sanctions Signal</div>
+    <h1>OFAC Banking &amp; Financial Risk Signal</h1>
+    <div class="header-sub">U.S. Treasury SDN List — Financial Sector Entity Monitor</div>
+    <div class="header-meta">
+      <div class="meta-item"><strong>SDN List Date</strong>06/30/2026</div>
+      <div class="meta-item"><strong>Total Financial Entities</strong>876</div>
+      <div class="meta-item"><strong>Categories</strong>9 financial sector types</div>
+      <div class="meta-item"><strong>Generated</strong>2026-07-01 08:03 ET</div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- SIGNAL BANNER -->
+    <div class="section">
+      <div class="section-label">Risk Signal</div>
+      <h2>Current Signal Assessment</h2>
+      
+    <div style="background:#DC2626;color:#fff;padding:20px 24px;margin:0 0 24px 0;
+                font-family:'PT Sans',Arial,sans-serif;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:.15em;
+                  text-transform:uppercase;opacity:.8;margin-bottom:6px;">
+        OFAC Financial Risk Signal
+      </div>
+      <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+        <div>
+          <div style="font-size:2rem;font-weight:700;line-height:1;">ELEVATED</div>
+          <div style="font-size:11px;opacity:.85;margin-top:3px;">Financial sector SDN count (876) is at an elevated level. Russia and Iran sanctions programs are the primary drivers.</div>
+        </div>
+        <div style="display:flex;gap:28px;flex-wrap:wrap;margin-left:auto;">
+          <div>
+            <div style="font-size:10px;opacity:.7;text-transform:uppercase;
+                        letter-spacing:.08em;">Total Financial SDNs</div>
+            <div style="font-size:1.6rem;font-weight:700;">876</div>
+          </div>
+          <div>
+            <div style="font-size:10px;opacity:.7;text-transform:uppercase;
+                        letter-spacing:.08em;">Primary Geography</div>
+            <div style="font-size:1.1rem;font-weight:700;">Russia</div>
+          </div>
+          <div>
+            <div style="font-size:10px;opacity:.7;text-transform:uppercase;
+                        letter-spacing:.08em;">Recent (90d)</div>
+            <div style="font-size:1.6rem;font-weight:700;">0</div>
+          </div>
+        </div>
+      </div>
+      <div style="font-size:9px;opacity:.5;margin-top:10px;">
+        Signal level based on reference thresholds (ELEVATED ≥500 · 
+        HIGH ≥350 · NORMAL &lt;350). 
+        Not statistically derived. Historical context: ~400 financial SDNs pre-2022 invasion baseline; 
+        ~750 post-2022 average following Russia sanctions expansion. Reviewed quarterly.
+        Primary drivers at ELEVATED: Russia, Iran, SDGT programs.
+      </div>
+    </div>
+      <p>
+        The OFAC Specially Designated Nationals (SDN) list identifies individuals and
+        entities subject to U.S. sanctions. This report filters the SDN list to financial
+        sector participants across 9 categories and aggregates by sector and jurisdiction.
+        U.S. persons are generally prohibited from transacting with SDN-listed parties.
+      </p>
+    </div>
+
+    <!-- KPI GRID -->
+    <div class="section">
+      <div class="section-label">Sector Breakdown</div>
+      <h2>Sanctioned Entities by Financial Sector</h2>
+      <div class="kpi-grid">
+        <div class="kpi-card" style="border-top-color:#1a1a2e;">
+            <div class="kpi-label">Commercial Banks</div>
+            <div class="kpi-value" style="color:#1a1a2e;">459</div>
+            <div class="kpi-sub">sanctioned entities</div>
+        </div>
+        <div class="kpi-card" style="border-top-color:#7c3aed;">
+            <div class="kpi-label">Crypto / Digital Assets</div>
+            <div class="kpi-value" style="color:#7c3aed;">75</div>
+            <div class="kpi-sub">sanctioned entities</div>
+        </div>
+        <div class="kpi-card" style="border-top-color:#0369a1;">
+            <div class="kpi-label">Investment Firms</div>
+            <div class="kpi-value" style="color:#0369a1;">299</div>
+            <div class="kpi-sub">sanctioned entities</div>
+        </div>
+        <div class="kpi-card" style="border-top-color:#065f46;">
+            <div class="kpi-label">Payment Networks</div>
+            <div class="kpi-value" style="color:#065f46;">13</div>
+            <div class="kpi-sub">sanctioned entities</div>
+        </div>
+        <div class="kpi-card" style="border-top-color:#92400e;">
+            <div class="kpi-label">Money Services</div>
+            <div class="kpi-value" style="color:#92400e;">4</div>
+            <div class="kpi-sub">sanctioned entities</div>
+        </div>
+        <div class="kpi-card" style="border-top-color:#1d4ed8;">
+            <div class="kpi-label">Clearing / Settlement</div>
+            <div class="kpi-value" style="color:#1d4ed8;">4</div>
+            <div class="kpi-sub">sanctioned entities</div>
+        </div>
+        <div class="kpi-card" style="border-top-color:#0f766e;">
+            <div class="kpi-label">Broker / Dealers</div>
+            <div class="kpi-value" style="color:#0f766e;">7</div>
+            <div class="kpi-sub">sanctioned entities</div>
+        </div>
+        <div class="kpi-card" style="border-top-color:#6b21a8;">
+            <div class="kpi-label">Insurance</div>
+            <div class="kpi-value" style="color:#6b21a8;">15</div>
+            <div class="kpi-sub">sanctioned entities</div>
+        </div></div>
+      <p style="font-size:9px;color:#aaa;font-family:'PT Sans',Arial,sans-serif;margin-top:8px;">
+        Classification by keyword matching against entity names and OFAC remarks fields.
+        Counts are conservative — some entities may not match any sector keyword.
+        "Clearing / Settlement" reflects clearing houses, settlement entities, and correspondent banking-associated 
+        names — keyword inference only; does not imply OFAC formally classifies entities by SWIFT participation.
+      </p>
+    </div>
+
+    <!-- RECENT ACTIONS -->
+    
+        <div class="section">
+          <div class="section-label">Recent OFAC Actions</div>
+          <h2>Financial Sector Designations — Last 30 Days</h2>
+          <p style="color:#6B7280;font-family:'PT Sans',Arial,sans-serif;font-size:12px;">
+            No dated designations extracted from the current SDN remarks fields for
+            the last 30 days. Check the
+            <a href="https://ofac.treasury.gov/recent-actions" style="color:#003366;">
+            OFAC Recent Actions</a> page for the latest additions.
+          </p>
+        </div>
+
+    <!-- JURISDICTION -->
+    <div class="section">
+      <div class="section-label">Jurisdiction Analysis</div>
+      <h2>Sanctioned Financial Entities by Jurisdiction</h2>
+      <table class="intel">
+        <thead>
+          <tr>
+            <th>Jurisdiction</th>
+            <th style="text-align:right;">Entities</th>
+            <th style="width:40%;">Relative Scale</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><strong>Russia</strong></td>
+          <td style="text-align:right;font-weight:700;">356</td>
+          <td style="width:40%;">
+            <div style="background:#e8e0d0;border-radius:2px;height:8px;">
+              <div style="background:#cc0000;width:100%;height:8px;border-radius:2px;"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Iran</strong></td>
+          <td style="text-align:right;font-weight:700;">183</td>
+          <td style="width:40%;">
+            <div style="background:#e8e0d0;border-radius:2px;height:8px;">
+              <div style="background:#cc0000;width:51%;height:8px;border-radius:2px;"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Global Terrorism</strong></td>
+          <td style="text-align:right;font-weight:700;">132</td>
+          <td style="width:40%;">
+            <div style="background:#e8e0d0;border-radius:2px;height:8px;">
+              <div style="background:#cc0000;width:37%;height:8px;border-radius:2px;"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Other</strong></td>
+          <td style="text-align:right;font-weight:700;">44</td>
+          <td style="width:40%;">
+            <div style="background:#e8e0d0;border-radius:2px;height:8px;">
+              <div style="background:#cc0000;width:12%;height:8px;border-radius:2px;"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Transnational Crime</strong></td>
+          <td style="text-align:right;font-weight:700;">31</td>
+          <td style="width:40%;">
+            <div style="background:#e8e0d0;border-radius:2px;height:8px;">
+              <div style="background:#cc0000;width:9%;height:8px;border-radius:2px;"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>North Korea</strong></td>
+          <td style="text-align:right;font-weight:700;">30</td>
+          <td style="width:40%;">
+            <div style="background:#e8e0d0;border-radius:2px;height:8px;">
+              <div style="background:#cc0000;width:8%;height:8px;border-radius:2px;"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>WMD Proliferation</strong></td>
+          <td style="text-align:right;font-weight:700;">25</td>
+          <td style="width:40%;">
+            <div style="background:#e8e0d0;border-radius:2px;height:8px;">
+              <div style="background:#cc0000;width:7%;height:8px;border-radius:2px;"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Global Magnitsky</strong></td>
+          <td style="text-align:right;font-weight:700;">23</td>
+          <td style="width:40%;">
+            <div style="background:#e8e0d0;border-radius:2px;height:8px;">
+              <div style="background:#cc0000;width:6%;height:8px;border-radius:2px;"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Drug Trafficking</strong></td>
+          <td style="text-align:right;font-weight:700;">19</td>
+          <td style="width:40%;">
+            <div style="background:#e8e0d0;border-radius:2px;height:8px;">
+              <div style="background:#cc0000;width:5%;height:8px;border-radius:2px;"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Venezuela</strong></td>
+          <td style="text-align:right;font-weight:700;">14</td>
+          <td style="width:40%;">
+            <div style="background:#e8e0d0;border-radius:2px;height:8px;">
+              <div style="background:#cc0000;width:4%;height:8px;border-radius:2px;"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Ukraine/Russia</strong></td>
+          <td style="text-align:right;font-weight:700;">10</td>
+          <td style="width:40%;">
+            <div style="background:#e8e0d0;border-radius:2px;height:8px;">
+              <div style="background:#cc0000;width:3%;height:8px;border-radius:2px;"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Belarus</strong></td>
+          <td style="text-align:right;font-weight:700;">5</td>
+          <td style="width:40%;">
+            <div style="background:#e8e0d0;border-radius:2px;height:8px;">
+              <div style="background:#cc0000;width:1%;height:8px;border-radius:2px;"></div>
+            </div>
+          </td>
+        </tr></tbody>
+      </table>
+    </div>
+
+    <!-- ENTITY DETAIL -->
+    <div class="section">
+      <div class="section-label">Entity Detail</div>
+      <h2>Selected Sanctioned Entities by Sector</h2>
+      <p>Representative sample drawn directly from the OFAC SDN list at report generation time.</p>
+      
+        <div class="entity-section">
+          <div class="entity-label" style="color:#1a1a2e;">
+            Commercial Banks <span style="font-weight:400;color:#9CA3AF;">
+            — 459 total</span>
+          </div>
+          <table class="entity-table">
+            <thead>
+              <tr><th>Entity Name</th><th>Program(s)</th><th>Jurisdiction</th></tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                ADVANCE BANKING SOLUTION TRADING DMCC</td>
+              <td style="font-size:10px;color:#6B7280;">SDGT</td>
+              <td style="font-size:10px;color:#6B7280;">Global Terrorism</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                AGRICULTURAL DEVELOPMENT BANK</td>
+              <td style="font-size:10px;color:#6B7280;">DPRK4</td>
+              <td style="font-size:10px;color:#6B7280;">North Korea</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                AGROPROMYSHLENNY KOMPLEKS VORONEZHSKI OOO</td>
+              <td style="font-size:10px;color:#6B7280;">RUSSIA-EO14024</td>
+              <td style="font-size:10px;color:#6B7280;">Russia</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                AKTSIONERNOE OBSHCHESTVO BANK AGROROS</td>
+              <td style="font-size:10px;color:#6B7280;">RUSSIA-EO14024</td>
+              <td style="font-size:10px;color:#6B7280;">Russia</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                AKTSIONERNOE OBSHCHESTVO FINTENDER</td>
+              <td style="font-size:10px;color:#6B7280;">RUSSIA-EO14024</td>
+              <td style="font-size:10px;color:#6B7280;">Russia</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                AKTSIONERNOE OBSHCHESTVO RTS-KHOLDING</td>
+              <td style="font-size:10px;color:#6B7280;">RUSSIA-EO14024</td>
+              <td style="font-size:10px;color:#6B7280;">Russia</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                AKTSIONERNOE OBSHCHESTVO SG-DEVELOPMENT</td>
+              <td style="font-size:10px;color:#6B7280;">RUSSIA-EO14024, UKRAINE-EO13662</td>
+              <td style="font-size:10px;color:#6B7280;">Russia</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                AKTSIONERNOE OBSHCHESTVO SOVKOMBANK STRAKHOVANIE</td>
+              <td style="font-size:10px;color:#6B7280;">RUSSIA-EO14024</td>
+              <td style="font-size:10px;color:#6B7280;">Russia</td>
+            </tr></tbody>
+          </table>
+        </div>
+        <div class="entity-section">
+          <div class="entity-label" style="color:#7c3aed;">
+            Crypto / Digital Assets <span style="font-weight:400;color:#9CA3AF;">
+            — 75 total</span>
+          </div>
+          <table class="entity-table">
+            <thead>
+              <tr><th>Entity Name</th><th>Program(s)</th><th>Jurisdiction</th></tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                A7 LIMITED LIABILITY COMPANY</td>
+              <td style="font-size:10px;color:#6B7280;">CYBER4</td>
+              <td style="font-size:10px;color:#6B7280;">Other</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                AL ADAL EXCHANGE</td>
+              <td style="font-size:10px;color:#6B7280;">SDNTK</td>
+              <td style="font-size:10px;color:#6B7280;">Drug Trafficking</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                AL AMAN KARGO ITHALAT IHRACAT VE NAKLIYAT LIMITED SIRKETI</td>
+              <td style="font-size:10px;color:#6B7280;">SDGT</td>
+              <td style="font-size:10px;color:#6B7280;">Global Terrorism</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                AL HADHA EXCHANGE CO.</td>
+              <td style="font-size:10px;color:#6B7280;">SDGT</td>
+              <td style="font-size:10px;color:#6B7280;">Global Terrorism</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                AL HARAM FOREIGN EXCHANGE CO. LTD</td>
+              <td style="font-size:10px;color:#6B7280;">SDGT</td>
+              <td style="font-size:10px;color:#6B7280;">Global Terrorism</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                AL HAZMI EXCHANGE KHALED AL HAZMI AND BROTHER COMPANY GENERA…</td>
+              <td style="font-size:10px;color:#6B7280;">SDGT</td>
+              <td style="font-size:10px;color:#6B7280;">Global Terrorism</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                AL RAWDA EXCHANGE AND MONEY TRANSFERS COMPANY</td>
+              <td style="font-size:10px;color:#6B7280;">SDGT</td>
+              <td style="font-size:10px;color:#6B7280;">Global Terrorism</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                AL ZAROONI EXCHANGE</td>
+              <td style="font-size:10px;color:#6B7280;">TCO</td>
+              <td style="font-size:10px;color:#6B7280;">Transnational Crime</td>
+            </tr></tbody>
+          </table>
+        </div>
+        <div class="entity-section">
+          <div class="entity-label" style="color:#0369a1;">
+            Investment Firms <span style="font-weight:400;color:#9CA3AF;">
+            — 299 total</span>
+          </div>
+          <table class="entity-table">
+            <thead>
+              <tr><th>Entity Name</th><th>Program(s)</th><th>Jurisdiction</th></tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                3ZED INVESTMENT</td>
+              <td style="font-size:10px;color:#6B7280;">SDGT</td>
+              <td style="font-size:10px;color:#6B7280;">Global Terrorism</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                855 INVESTMENT CORPORATION</td>
+              <td style="font-size:10px;color:#6B7280;">CYBER4</td>
+              <td style="font-size:10px;color:#6B7280;">Other</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                A.S.P. BUILDERS</td>
+              <td style="font-size:10px;color:#6B7280;">IRAN</td>
+              <td style="font-size:10px;color:#6B7280;">Iran</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                AFRICA HORIZONS INVESTMENT LIMITED</td>
+              <td style="font-size:10px;color:#6B7280;">GLOMAG</td>
+              <td style="font-size:10px;color:#6B7280;">Global Magnitsky</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                AFRICA MIDDLE EAST INVESTMENT HOLDING SAL</td>
+              <td style="font-size:10px;color:#6B7280;">SDGT</td>
+              <td style="font-size:10px;color:#6B7280;">Global Terrorism</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                AL 'AHD COMPANY FOR TRADE AND INVESTMENT</td>
+              <td style="font-size:10px;color:#6B7280;">SDGT</td>
+              <td style="font-size:10px;color:#6B7280;">Global Terrorism</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                AL CARDINAL INVESTMENTS CO. LTD</td>
+              <td style="font-size:10px;color:#6B7280;">GLOMAG</td>
+              <td style="font-size:10px;color:#6B7280;">Global Magnitsky</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                AL MASHREQ INVESTMENT FUND</td>
+              <td style="font-size:10px;color:#6B7280;">PAARSSR-EO13894</td>
+              <td style="font-size:10px;color:#6B7280;">Other</td>
+            </tr></tbody>
+          </table>
+        </div>
+        <div class="entity-section">
+          <div class="entity-label" style="color:#065f46;">
+            Payment Networks <span style="font-weight:400;color:#9CA3AF;">
+            — 13 total</span>
+          </div>
+          <table class="entity-table">
+            <thead>
+              <tr><th>Entity Name</th><th>Program(s)</th><th>Jurisdiction</th></tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                ARVAND ARIAN PASARGAD COMMUNICATIONS AND INFORMATION TECHNOL…</td>
+              <td style="font-size:10px;color:#6B7280;">IRAN-EO13902</td>
+              <td style="font-size:10px;color:#6B7280;">Iran</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                AUTONOMOUS NONCOMMERCIAL ORGANIZATION PROFESSIONAL ASSOCIATI…</td>
+              <td style="font-size:10px;color:#6B7280;">CYBER2</td>
+              <td style="font-size:10px;color:#6B7280;">Other</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                JOINT STOCK COMPANY TUGANSK MINING AND PROCESSING ENTERPRISE…</td>
+              <td style="font-size:10px;color:#6B7280;">RUSSIA-EO14024</td>
+              <td style="font-size:10px;color:#6B7280;">Russia</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                MERCHANT SUPREME CO., LTD.</td>
+              <td style="font-size:10px;color:#6B7280;">GLOMAG</td>
+              <td style="font-size:10px;color:#6B7280;">Global Magnitsky</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                NATIONAL PAYMENT CARD SYSTEM JOINT STOCK COMPANY</td>
+              <td style="font-size:10px;color:#6B7280;">RUSSIA-EO14024, UKRAINE-EO13662</td>
+              <td style="font-size:10px;color:#6B7280;">Russia</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                PASARGAD ELECTRONIC PAYMENT SERVICES COMPANY</td>
+              <td style="font-size:10px;color:#6B7280;">IRAN-EO13902</td>
+              <td style="font-size:10px;color:#6B7280;">Iran</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                PRIME CHEER CORPORATION LTD.</td>
+              <td style="font-size:10px;color:#6B7280;">GLOMAG</td>
+              <td style="font-size:10px;color:#6B7280;">Global Magnitsky</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                RASHID SAMANEH ELECTRONIC PROCESSING COMPANY</td>
+              <td style="font-size:10px;color:#6B7280;">IRAN-EO13902</td>
+              <td style="font-size:10px;color:#6B7280;">Iran</td>
+            </tr></tbody>
+          </table>
+        </div>
+        <div class="entity-section">
+          <div class="entity-label" style="color:#92400e;">
+            Money Services <span style="font-weight:400;color:#9CA3AF;">
+            — 4 total</span>
+          </div>
+          <table class="entity-table">
+            <thead>
+              <tr><th>Entity Name</th><th>Program(s)</th><th>Jurisdiction</th></tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                AFRICADA FINANCIAL SERVICES AND BUREAU DE CHANGE LTD</td>
+              <td style="font-size:10px;color:#6B7280;">GLOMAG</td>
+              <td style="font-size:10px;color:#6B7280;">Global Magnitsky</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                GENERATION CURRENCY BUREAU DE CHANGE LIMITED</td>
+              <td style="font-size:10px;color:#6B7280;">SDGT</td>
+              <td style="font-size:10px;color:#6B7280;">Global Terrorism</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                HAJI BASIR AND ZARJMIL COMPANY HAWALA</td>
+              <td style="font-size:10px;color:#6B7280;">SDGT</td>
+              <td style="font-size:10px;color:#6B7280;">Global Terrorism</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                MANHATTAN BUREAU DE CHANGE LIMITED</td>
+              <td style="font-size:10px;color:#6B7280;">SDGT</td>
+              <td style="font-size:10px;color:#6B7280;">Global Terrorism</td>
+            </tr></tbody>
+          </table>
+        </div>
+        <div class="entity-section">
+          <div class="entity-label" style="color:#1d4ed8;">
+            Clearing / Settlement <span style="font-weight:400;color:#9CA3AF;">
+            — 4 total</span>
+          </div>
+          <table class="entity-table">
+            <thead>
+              <tr><th>Entity Name</th><th>Program(s)</th><th>Jurisdiction</th></tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                ASHDALE SETTLEMENT GERCO SAS</td>
+              <td style="font-size:10px;color:#6B7280;">GLOMAG</td>
+              <td style="font-size:10px;color:#6B7280;">Global Magnitsky</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                NATIONAL CLEARING CENTER</td>
+              <td style="font-size:10px;color:#6B7280;">RUSSIA-EO14024, UKRAINE-EO13662</td>
+              <td style="font-size:10px;color:#6B7280;">Russia</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                OPERA</td>
+              <td style="font-size:10px;color:#6B7280;">GLOMAG</td>
+              <td style="font-size:10px;color:#6B7280;">Global Magnitsky</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                PALATINA SARLU</td>
+              <td style="font-size:10px;color:#6B7280;">GLOMAG</td>
+              <td style="font-size:10px;color:#6B7280;">Global Magnitsky</td>
+            </tr></tbody>
+          </table>
+        </div>
+        <div class="entity-section">
+          <div class="entity-label" style="color:#0f766e;">
+            Broker / Dealers <span style="font-weight:400;color:#9CA3AF;">
+            — 7 total</span>
+          </div>
+          <table class="entity-table">
+            <thead>
+              <tr><th>Entity Name</th><th>Program(s)</th><th>Jurisdiction</th></tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                LIMITED LIABILITY COMPANY BROKER EXPERT</td>
+              <td style="font-size:10px;color:#6B7280;">RUSSIA-EO14024</td>
+              <td style="font-size:10px;color:#6B7280;">Russia</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                LIMITED LIABILITY COMPANY MOSCOW BUSINESS BROKERAGE</td>
+              <td style="font-size:10px;color:#6B7280;">RUSSIA-EO14024</td>
+              <td style="font-size:10px;color:#6B7280;">Russia</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                LOGISTIQUE ECONOMIQUE ETRANGERE SARLU</td>
+              <td style="font-size:10px;color:#6B7280;">RUSSIA-EO14024</td>
+              <td style="font-size:10px;color:#6B7280;">Russia</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                MINATO COMMERCIAL BROKERS</td>
+              <td style="font-size:10px;color:#6B7280;">IFSR, SDGT</td>
+              <td style="font-size:10px;color:#6B7280;">Global Terrorism</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                RAZAVI BROKERAGE FIRM</td>
+              <td style="font-size:10px;color:#6B7280;">IRAN-EO13876</td>
+              <td style="font-size:10px;color:#6B7280;">Iran</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                STRAIT SHIPBROKERS PTE. LTD.</td>
+              <td style="font-size:10px;color:#6B7280;">IRAN-EO13846</td>
+              <td style="font-size:10px;color:#6B7280;">Iran</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                TADBIR BROKERAGE COMPANY</td>
+              <td style="font-size:10px;color:#6B7280;">IRAN</td>
+              <td style="font-size:10px;color:#6B7280;">Iran</td>
+            </tr></tbody>
+          </table>
+        </div>
+        <div class="entity-section">
+          <div class="entity-label" style="color:#6b21a8;">
+            Insurance <span style="font-weight:400;color:#9CA3AF;">
+            — 15 total</span>
+          </div>
+          <table class="entity-table">
+            <thead>
+              <tr><th>Entity Name</th><th>Program(s)</th><th>Jurisdiction</th></tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                AFRICADA INSURANCE COMPANY</td>
+              <td style="font-size:10px;color:#6B7280;">GLOMAG</td>
+              <td style="font-size:10px;color:#6B7280;">Global Magnitsky</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                ASCENT GENERAL INSURANCE COMPANY</td>
+              <td style="font-size:10px;color:#6B7280;">SDGT</td>
+              <td style="font-size:10px;color:#6B7280;">Global Terrorism</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                BIMEH IRAN INSURANCE COMPANY (U.K.) LIMITED</td>
+              <td style="font-size:10px;color:#6B7280;">IRAN</td>
+              <td style="font-size:10px;color:#6B7280;">Iran</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                GAS INDUSTRY INSURANCE COMPANY SOGAZ</td>
+              <td style="font-size:10px;color:#6B7280;">RUSSIA-EO14024, UKRAINE-EO13662</td>
+              <td style="font-size:10px;color:#6B7280;">Russia</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                INDEPENDENT INSURANCE GROUP LTD</td>
+              <td style="font-size:10px;color:#6B7280;">RUSSIA-EO14024</td>
+              <td style="font-size:10px;color:#6B7280;">Russia</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                INGOSSTRAKH INSURANCE COMPANY</td>
+              <td style="font-size:10px;color:#6B7280;">RUSSIA-EO14024, UKRAINE-EO13662</td>
+              <td style="font-size:10px;color:#6B7280;">Russia</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                IRAN INSURANCE COMPANY</td>
+              <td style="font-size:10px;color:#6B7280;">IRAN</td>
+              <td style="font-size:10px;color:#6B7280;">Iran</td>
+            </tr>
+            <tr>
+              <td style="font-size:11px;font-weight:600;">
+                JOINT STOCK COMPANY RUSSIAN NATIONAL REINSURANCE COMPANY</td>
+              <td style="font-size:10px;color:#6B7280;">RUSSIA-EO14024, UKRAINE-EO13662</td>
+              <td style="font-size:10px;color:#6B7280;">Russia</td>
+            </tr></tbody>
+          </table>
+        </div>
+    </div>
+
+    <!-- COMPLIANCE -->
+    <div class="section">
+      <div class="section-label">Compliance Context</div>
+      <h2>Key Screening Obligations</h2>
+      <table class="intel">
+        <thead><tr><th>Obligation</th><th>Applies To</th><th>Regulator</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>SDN Screening</strong></td>
+            <td>All U.S. persons; all transactions touching U.S. financial system</td>
+            <td>OFAC / Treasury</td>
+          </tr>
+          <tr>
+            <td><strong>Correspondent Bank Screening</strong></td>
+            <td>U.S. banks must screen foreign correspondent relationships</td>
+            <td>OFAC / FinCEN / OCC</td>
+          </tr>
+          <tr>
+            <td><strong>Crypto / VASP Screening</strong></td>
+            <td>Virtual asset service providers subject to OFAC jurisdiction</td>
+            <td>OFAC / FinCEN</td>
+          </tr>
+          <tr>
+            <td><strong>Real-Time Payment Screening</strong></td>
+            <td>Payment processors must screen all transactions in real time</td>
+            <td>OFAC / FinCEN</td>
+          </tr>
+          <tr>
+            <td><strong>Secondary Sanctions Risk</strong></td>
+            <td>Non-U.S. entities transacting with SDN parties may face U.S. market access restrictions</td>
+            <td>OFAC / State Dept</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SOURCES -->
+    <div class="section">
+      <div class="section-label">Sources</div>
+      <h2>Data Sources</h2>
+      <table class="intel">
+        <thead><tr><th>#</th><th>Source</th><th>Details</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>[1]</td>
+            <td>OFAC Specially Designated Nationals (SDN) List</td>
+            <td>U.S. Treasury — fetched live at 2026-07-01 08:03 ET from www.treasury.gov/ofac/downloads/sdn.xml;
+            SDN list publish date: 06/30/2026</td>
+          </tr>
+          <tr>
+            <td>[2]</td>
+            <td>OFAC Recent Actions</td>
+            <td>ofac.treasury.gov/recent-actions — verify dated designations against official source</td>
+          </tr>
+          <tr>
+            <td>[3]</td>
+            <td>OFAC Sanctions Programs</td>
+            <td>ofac.treasury.gov/sanctions-programs-and-country-information — program jurisdiction mapping</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">
+      <span class="classification">General Reference — Public Data</span><br><br>
+      Sanctions data: OFAC SDN List — U.S. Department of the Treasury (live fetch)<br>
+      SDN list publish date: 06/30/2026 · Report generated: 2026-07-01 08:03 ET
+    </div>
+    <div class="footer-right">
+      Thor Storehouse Intelligence Platform<br>
+      Finance / Geopolitics · Sanctions Signal Series<br>
+      <em>For informational purposes only · Not legal or compliance advice</em><br>
+      © 2026 Randy Hinton
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
