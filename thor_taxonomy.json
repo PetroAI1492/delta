@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-07-01T12:19:56Z",
+  "generated": "2026-07-01T14:23:33Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -5692,6 +5692,103 @@
       ],
       "id": "ofac_banking_financial_risk_signal",
       "path": "https://petroai1492.github.io/delta/finance/ofac/ofac_banking_signal.html"
+    },
+    {
+      "title": "Red Sea / Houthi \u2014 Executive SITREP",
+      "file": "geopolitics/redsea/redsea_sitrep.html",
+      "description": "Deterministic OSINT brief on the Houthi maritime interdiction campaign \u2014 100+ attacks since November 2023; ASBMs, OWA drones, mines, vessel seizures; Galaxy Leader, MV Rubymar, MV Tutor incidents; Operation Prosperity Guardian coalition; Suez Canal -50%, Cape bypass +10 days; cost-exchange asymmetry; Iran proxy relationship; live U.S. energy signals from Thor Storehouse. CENTCOM/UKMTO/EIA/Lloyd's List sources only.",
+      "json_file": "geopolitics/redsea/redsea_sitrep.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/geopolitics/redsea/redsea_sitrep.html`",
+      "auto_published": true,
+      "primary_domain": "Geopolitics",
+      "secondary_domains": [
+        "Energy",
+        "Finance"
+      ],
+      "entities": [
+        "Houthi",
+        "Ansar Allah",
+        "IRGC",
+        "Iran",
+        "Yemen",
+        "U.S. CENTCOM",
+        "Operation Prosperity Guardian",
+        "UKMTO",
+        "Bab-el-Mandeb",
+        "Suez Canal",
+        "Galaxy Leader",
+        "MV Rubymar",
+        "MV Tutor",
+        "Maersk",
+        "MSC"
+      ],
+      "data_sources": [
+        "UKMTO incident reports; U.S. CENTCOM press releases; EIA World Oil Transit Chokepoints; Lloyd's List / IMO; EIA Weekly Petroleum Supply (PET.WCRIMUS2.W",
+        "PET.WCSSTUS1.W",
+        "PET.WCESTUS1.W); FRED DCOILWTICO \u2014 all via Thor Storehouse"
+      ],
+      "update_frequency": "On-demand (rebuild injects latest Storehouse signals; doctrinal content reviewed quarterly)",
+      "key_signals": [
+        "~100+ attacks (as of mid-2025)",
+        "3 vessels seized/sunk",
+        "Bab-el-Mandeb ~8,800 Thousand Bbl/Day",
+        "Red Sea 12% global trade / 30% container trade",
+        "Suez transits -40-50%",
+        "Cape bypass +10 days +30% cost",
+        "ASBM capability (non-state first use)",
+        "cost-exchange: $2K drone vs $2-4M interceptor",
+        "live crude imports, WTI, SPR, commercial stocks"
+      ],
+      "intent_phrases": [
+        "Red Sea",
+        "Houthi",
+        "Ansar Allah",
+        "Red Sea attack",
+        "Houthi shipping",
+        "Red Sea shipping",
+        "Bab el Mandeb",
+        "Bab-el-Mandeb",
+        "Suez Canal disruption",
+        "Red Sea disruption",
+        "shipping attack",
+        "Yemen missile",
+        "anti-ship missile",
+        "Galaxy Leader",
+        "Operation Prosperity Guardian",
+        "Red Sea SITREP",
+        "Houthi drone",
+        "maritime attack",
+        "Cape of Good Hope rerouting",
+        "Red Sea energy",
+        "Houthi Iran",
+        "Houthi WMD",
+        "Houthi naval",
+        "Red Sea oil",
+        "Houthi ASBM",
+        {
+          "keyword": "red",
+          "weight": 10
+        },
+        {
+          "keyword": "sea",
+          "weight": 10
+        },
+        {
+          "keyword": "houthi",
+          "weight": 10
+        },
+        {
+          "keyword": "executive",
+          "weight": 10
+        },
+        {
+          "keyword": "sitrep",
+          "weight": 10
+        }
+      ],
+      "id": "red_sea_houthi_executive_sitrep",
+      "path": "https://petroai1492.github.io/delta/geopolitics/redsea/redsea_sitrep.html"
     }
   ],
   "cross_domain_matrix": [
