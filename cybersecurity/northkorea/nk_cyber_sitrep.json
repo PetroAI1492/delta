@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-07-01 02:39",
+  "intel_verified": "June 2025",
+  "as_of": "2026-06-22",
+  "crypto_stolen_b": 3.0,
+  "it_workers_est": 4000,
+  "threat_actors": [
+    "Lazarus Group",
+    "Kimsuky",
+    "Andariel",
+    "BlueNoroff"
+  ],
+  "signals": [
+    {
+      "series_id": "PET.WCESTUS1.W",
+      "label": "U.S. Commercial Crude Stocks",
+      "unit": "Thousand Bbl",
+      "latest_date": "2026-06-12",
+      "latest_value": 418222.0,
+      "prior_value": 426485.0
+    },
+    {
+      "series_id": "DCOILWTICO",
+      "label": "WTI Crude Price",
+      "unit": "$/bbl",
+      "latest_date": "2026-06-22",
+      "latest_value": 78.94,
+      "prior_value": 80.35
+    },
+    {
+      "series_id": "PET.WCSSTUS1.W",
+      "label": "SPR Crude Stocks",
+      "unit": "Thousand Bbl",
+      "latest_date": "2026-06-12",
+      "latest_value": 340251.0,
+      "prior_value": 349192.0
+    }
+  ]
+}

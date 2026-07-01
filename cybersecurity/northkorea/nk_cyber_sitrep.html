@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>North Korea Cyber Threat — Executive SITREP</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #f5f0e8;
+    color: #1a1a1a;
+    font-family: 'PT Serif', Georgia, serif;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    background: #fff;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .header {
+    background: #1a1a2e;
+    color: #fff;
+    padding: 42px 52px 36px;
+    border-bottom: 4px solid #cc0000;
+  }
+  .header-eyebrow {
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: #cc0000;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .header-sub {
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 13px;
+    color: #aaa;
+    margin-top: 6px;
+  }
+  .header-meta {
+    margin-top: 18px;
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .meta-item {
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 11px;
+    color: #888;
+  }
+  .meta-item strong {
+    display: block;
+    color: #ccc;
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+
+  /* CONTENT */
+  .content { padding: 0 52px 48px; }
+  .section {
+    padding: 32px 0;
+    border-bottom: 1px solid #e8e0d0;
+  }
+  .section:last-of-type { border-bottom: none; }
+  .section-label {
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #cc0000;
+    margin-bottom: 6px;
+  }
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+  p {
+    font-size: 9.5pt;
+    line-height: 1.75;
+    color: #2a2a2a;
+    margin-bottom: 10px;
+  }
+  .as-of {
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 10px;
+    color: #999;
+    font-weight: 400;
+    margin-left: 10px;
+  }
+
+  /* TABLES */
+  table.intel {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 12px;
+    margin: 14px 0;
+  }
+  table.intel th {
+    background: #1a1a2e;
+    color: #fff;
+    padding: 7px 10px;
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+  }
+  table.intel td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  table.intel tr:nth-child(even) td { background: #fafaf7; }
+
+  /* SIGNAL TABLE */
+  .signal-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 12px;
+    margin: 16px 0 10px;
+  }
+  .signal-table th {
+    background: #1a1a2e;
+    color: #fff;
+    padding: 8px 10px;
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+  }
+  .signal-table td {
+    padding: 7px 10px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+  }
+  .signal-table tr:nth-child(even) td { background: #fafaf7; }
+  .sig-label { font-weight: 600; color: #1a1a1a; }
+  .sig-value { font-weight: 700; font-size: 13px; color: #1a1a2e; }
+  .sig-unit  { color: #888; font-size: 11px; }
+  .delta { font-weight: 600; font-size: 11px; }
+  .delta.up      { color: #16a34a; }
+  .delta.down    { color: #cc0000; }
+  .delta.neutral { color: #888; }
+  .panel-note {
+    font-size: 9px;
+    color: #aaa;
+    margin-top: 8px;
+    font-family: 'PT Sans', Arial, sans-serif;
+  }
+  .panel-note code {
+    font-size: 9px;
+    background: #f4f4f4;
+    padding: 1px 4px;
+    border-radius: 2px;
+  }
+
+  /* CALLOUT BOXES */
+  .risk-box {
+    background: #fff8f0;
+    border: 1px solid #f0c060;
+    border-left: 4px solid #e8a020;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .risk-title {
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: #b07000;
+    margin-bottom: 6px;
+  }
+  .critical-box {
+    background: #fff5f5;
+    border: 1px solid #fca5a5;
+    border-left: 4px solid #cc0000;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .critical-title {
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: #cc0000;
+    margin-bottom: 6px;
+  }
+
+  /* TIMELINE */
+  .timeline { margin: 16px 0; }
+  .tl-item {
+    display: flex;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0ece4;
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 12px;
+  }
+  .tl-year {
+    min-width: 60px;
+    font-weight: 700;
+    color: #cc0000;
+    font-size: 13px;
+  }
+  .tl-desc { color: #333; line-height: 1.5; }
+
+  /* FOOTER */
+  .footer {
+    background: #1a1a2e;
+    color: #aaa;
+    padding: 24px 52px;
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-size: 10px;
+    line-height: 1.7;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .footer-right { text-align: right; }
+  .footer em { color: #666; }
+  .classification {
+    display: inline-block;
+    background: #cc0000;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    margin-bottom: 6px;
+  }
+
+  @media (max-width: 680px) {
+    .header, .content, .footer { padding-left: 20px; padding-right: 20px; }
+    .header h1 { font-size: 1.4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-eyebrow">Thor Storehouse Intelligence · Cybersecurity / Geopolitics · Executive SITREP</div>
+    <h1>North Korea Cyber Threat</h1>
+    <div class="header-sub">DPRK State-Sponsored Cyber Operations — Permanent Reference Brief</div>
+    <div class="header-meta">
+      <div class="meta-item"><strong>Threat Level</strong>CRITICAL — Active Revenue Generation + Espionage</div>
+      <div class="meta-item"><strong>Primary Actors</strong>Lazarus Group · Kimsuky · Andariel · BlueNoroff</div>
+      <div class="meta-item"><strong>Sponsor</strong>RGB — Reconnaissance General Bureau</div>
+      <div class="meta-item"><strong>Crypto Stolen</strong>~$3.0B (2017–2024, UN estimate)</div>
+      <div class="meta-item"><strong>Intel Verified</strong>June 2025</div>
+      <div class="meta-item"><strong>Generated</strong>2026-07-01</div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- OVERVIEW -->
+    <div class="section">
+      <div class="section-label">Strategic Overview</div>
+      <h2>DPRK Cyber Operations — Doctrine and Intent</h2>
+      <p>
+        North Korea's cyber program is unique among nation-state threat actors in its
+        <strong>primary mission of revenue generation</strong> to fund the regime's
+        weapons of mass destruction program under international sanctions. Unlike China's
+        pre-positioning doctrine or Russia's disruption focus, the DPRK treats
+        cryptocurrency theft and financial system heists as a core funding mechanism —
+        assessed by the UN Panel of Experts to have generated approximately
+        $3.0 billion in stolen cryptocurrency between 2017 and 2024.
+      </p>
+      <p>
+        The Reconnaissance General Bureau (RGB), DPRK's primary intelligence organ,
+        oversees all major cyber units. Operations span three parallel tracks:
+        financial theft (Lazarus Group / BlueNoroff), intelligence collection
+        (Kimsuky), and military/infrastructure targeting (Andariel). An estimated
+        4,000 DPRK nationals work overseas under false identities
+        as IT contractors, generating additional revenue while potentially embedding
+        access into client systems.
+      </p>
+      <div class="critical-box">
+        <div class="critical-title">Strategic Context — UN Panel of Experts</div>
+        DPRK cyber theft directly funds ballistic missile and nuclear weapons development.
+        The UN Panel of Experts assessed that cryptocurrency proceeds have become a
+        <strong>primary financing mechanism</strong> for the DPRK WMD program, partially
+        offsetting the impact of international sanctions. The February 2025 Bybit theft
+        of approximately $1.5 billion — the largest crypto heist in history — was
+        attributed to Lazarus Group within weeks. [1][2]
+      </div>
+    </div>
+
+    <!-- THREAT ACTORS -->
+    <div class="section">
+      <div class="section-label">Threat Actors</div>
+      <h2>DPRK State-Sponsored Cyber Groups</h2>
+      <table class="intel">
+        <thead>
+          <tr>
+            <th>Actor</th>
+            <th>Sponsor</th>
+            <th>Mission Focus</th>
+            <th>Primary Sectors</th>
+            <th>Status</th>
+            <th>Ref</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><strong>Lazarus Group</strong><br>
+              <span style="font-size:10px;color:#6B7280;">Hidden Cobra, Guardians of Peace, APT38 (financial ops subgroup)</span></td>
+          <td style="font-size:11px;">DPRK Reconnaissance General Bureau (RGB)</td>
+          <td style="font-size:11px;">Cryptocurrency theft, financial system heists, WMD program financing</td>
+          <td style="font-size:11px;">Cryptocurrency exchanges, DeFi protocols, banks, defense contractors</td>
+          <td style="font-size:11px;color:#D97706;font-weight:600;">Active — $1.5B Bybit theft February 2025</td>
+          <td style="font-size:10px;color:#9CA3AF;">[1][2]</td>
+        </tr>
+        <tr>
+          <td><strong>Kimsuky</strong><br>
+              <span style="font-size:10px;color:#6B7280;">Velvet Chollima, Black Banshee, TA406</span></td>
+          <td style="font-size:11px;">DPRK Reconnaissance General Bureau (RGB)</td>
+          <td style="font-size:11px;">Intelligence collection — nuclear policy, sanctions, geopolitical analysis</td>
+          <td style="font-size:11px;">Government, think tanks, academia, journalists, Korea policy experts</td>
+          <td style="font-size:11px;color:#D97706;font-weight:600;">Active — CISA/NSA advisory 2023; ongoing targeting of U.S. policy community</td>
+          <td style="font-size:10px;color:#9CA3AF;">[3]</td>
+        </tr>
+        <tr>
+          <td><strong>Andariel</strong><br>
+              <span style="font-size:10px;color:#6B7280;">Silent Chollima, Stonefly, DarkSeoul</span></td>
+          <td style="font-size:11px;">DPRK Reconnaissance General Bureau (RGB) — Unit 110</td>
+          <td style="font-size:11px;">Defense and military intelligence; ransomware for revenue</td>
+          <td style="font-size:11px;">Defense contractors, military, healthcare, critical infrastructure</td>
+          <td style="font-size:11px;color:#D97706;font-weight:600;">Active — FBI/CISA healthcare ransomware advisory 2022; DOJ indictment 2024</td>
+          <td style="font-size:10px;color:#9CA3AF;">[4]</td>
+        </tr>
+        <tr>
+          <td><strong>BlueNoroff</strong><br>
+              <span style="font-size:10px;color:#6B7280;">APT38, Stardust Chollima (financial subgroup of Lazarus)</span></td>
+          <td style="font-size:11px;">DPRK Reconnaissance General Bureau (RGB)</td>
+          <td style="font-size:11px;">Financial institution targeting — SWIFT, banks, crypto</td>
+          <td style="font-size:11px;">Banks, SWIFT-connected financial institutions, cryptocurrency</td>
+          <td style="font-size:11px;color:#D97706;font-weight:600;">Active — successor operations to 2016 Bangladesh Bank heist</td>
+          <td style="font-size:10px;color:#9CA3AF;">[1][5]</td>
+        </tr></tbody>
+      </table>
+    </div>
+
+    <!-- TTPs -->
+    <div class="section">
+      <div class="section-label">Tactics, Techniques &amp; Procedures</div>
+      <h2>How They Operate</h2>
+      <div class="risk-box">
+        <div class="risk-title">TraderTraitor — The Defining Crypto Theft Technique</div>
+        Lazarus Group's primary cryptocurrency theft vector uses fake job recruitment
+        lures — particularly targeting developers at crypto firms and DeFi protocols.
+        Victims are sent trojanized coding challenges or npm packages that deploy
+        malware granting access to private keys and hot wallets. The technique exploits
+        the crypto industry's reliance on open-source collaboration and remote hiring.
+        FBI advisory issued 2023. [1]
+      </div>
+      <table class="intel">
+        <thead>
+          <tr>
+            <th style="width:18%;">Actor</th>
+            <th>Techniques &amp; Procedures</th>
+            <th style="width:8%;">Ref</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><strong>Lazarus Group</strong></td>
+          <td style="font-size:11px;">Spear phishing with trojanized job offers; supply chain compromise; fake crypto apps; SWIFT system targeting; mixer/tumbler laundering; TraderTraitor campaign targeting crypto developers</td>
+          <td style="font-size:10px;color:#9CA3AF;">[1][2]</td>
+        </tr>
+        <tr>
+          <td><strong>Kimsuky</strong></td>
+          <td style="font-size:11px;">Spear phishing; credential harvesting via fake login pages; browser extension malware; BEC (business email compromise); impersonation of journalists and academics</td>
+          <td style="font-size:10px;color:#9CA3AF;">[3]</td>
+        </tr>
+        <tr>
+          <td><strong>Andariel</strong></td>
+          <td style="font-size:11px;">Maui ransomware against healthcare; custom RATs (DTrack, Dora RAT); defense contractor targeting for weapons system intelligence; watering hole attacks on defense industry sites</td>
+          <td style="font-size:10px;color:#9CA3AF;">[4]</td>
+        </tr>
+        <tr>
+          <td><strong>BlueNoroff</strong></td>
+          <td style="font-size:11px;">SWIFT system manipulation; fraudulent transfer instructions; RogueMaster malware; targeting of bank employee workstations connected to SWIFT terminals</td>
+          <td style="font-size:10px;color:#9CA3AF;">[1][5]</td>
+        </tr></tbody>
+      </table>
+    </div>
+
+    <!-- TARGETED SECTORS -->
+    <div class="section">
+      <div class="section-label">Target Sectors</div>
+      <h2>Sector Exposure Assessment</h2>
+      <table class="intel">
+        <thead>
+          <tr>
+            <th>Sector</th>
+            <th style="width:12%;">Threat Level</th>
+            <th>Intelligence Basis</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><strong>Cryptocurrency & DeFi</strong></td>
+          <td><span style="color:#DC2626;font-weight:700;font-size:11px;">CRITICAL</span></td>
+          <td style="font-size:11px;">Primary revenue target — $3B+ stolen since 2017; Bybit $1.5B Feb 2025; Ronin Bridge $620M 2022</td>
+        </tr>
+        <tr>
+          <td><strong>Financial Services</strong></td>
+          <td><span style="color:#DC2626;font-weight:700;font-size:11px;">CRITICAL</span></td>
+          <td style="font-size:11px;">SWIFT targeting; bank heists; fraudulent wire transfers; 2016 Bangladesh Bank $81M theft</td>
+        </tr>
+        <tr>
+          <td><strong>Defense Industrial Base</strong></td>
+          <td><span style="color:#D97706;font-weight:700;font-size:11px;">HIGH</span></td>
+          <td style="font-size:11px;">Andariel targeting of defense contractors for weapons system intelligence to support DPRK WMD program</td>
+        </tr>
+        <tr>
+          <td><strong>Healthcare</strong></td>
+          <td><span style="color:#D97706;font-weight:700;font-size:11px;">HIGH</span></td>
+          <td style="font-size:11px;">Maui ransomware campaign; hospital systems targeted for revenue; CISA/FBI/HHS joint advisory 2022</td>
+        </tr>
+        <tr>
+          <td><strong>Energy & Critical Infra</strong></td>
+          <td><span style="color:#2563EB;font-weight:700;font-size:11px;">ELEVATED</span></td>
+          <td style="font-size:11px;">Andariel infrastructure targeting; less prioritized than China but growing capability</td>
+        </tr>
+        <tr>
+          <td><strong>Government & Policy</strong></td>
+          <td><span style="color:#2563EB;font-weight:700;font-size:11px;">ELEVATED</span></td>
+          <td style="font-size:11px;">Kimsuky targeting of Korea policy experts, nuclear analysts, think tanks, journalists</td>
+        </tr>
+        <tr>
+          <td><strong>Technology / IT Supply Chain</strong></td>
+          <td><span style="color:#2563EB;font-weight:700;font-size:11px;">ELEVATED</span></td>
+          <td style="font-size:11px;">TraderTraitor supply chain compromise of crypto developer tools and npm packages</td>
+        </tr></tbody>
+      </table>
+    </div>
+
+    <!-- INCIDENT TIMELINE -->
+    <div class="section">
+      <div class="section-label">Incident History</div>
+      <h2>Key Events — 2016 to Present</h2>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-year">2016</div>
+          <div class="tl-desc"><strong>Bangladesh Bank — $81M SWIFT Heist.</strong>
+          Lazarus Group / BlueNoroff compromised Bangladesh Bank's SWIFT terminal and
+          issued fraudulent transfer instructions totaling $951M. $81M was successfully
+          transferred to accounts in the Philippines before the fraud was detected.
+          The operation established DPRK as a major financial cybercriminal actor and
+          demonstrated capability to manipulate SWIFT messaging systems. [5]</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2017</div>
+          <div class="tl-desc"><strong>WannaCry Ransomware — Global Disruption.</strong>
+          NSA-attributed to Lazarus Group. WannaCry infected over 200,000 systems in
+          150 countries, exploiting the EternalBlue vulnerability. UK NHS hospitals were
+          severely disrupted. Estimated damages exceeded $4 billion globally. Demonstrated
+          DPRK willingness to cause widespread collateral damage. [2]</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2022</div>
+          <div class="tl-desc"><strong>Ronin Bridge — $620M Crypto Theft.</strong>
+          Lazarus Group compromised Ronin Network, the Ethereum sidechain supporting
+          the Axie Infinity gaming platform, stealing approximately $620 million in
+          cryptocurrency — the largest DeFi theft at the time. Attack vector was
+          compromised validator private keys obtained via trojanized job offer malware
+          sent to a developer. FBI attributed within weeks. [1]</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2022–23</div>
+          <div class="tl-desc"><strong>Andariel — Healthcare Ransomware Campaign.</strong>
+          FBI, CISA, NSA, and HHS issued joint advisory warning of Andariel's Maui
+          ransomware targeting U.S. healthcare and public health sector organizations.
+          Revenue from ransomware payments assessed as funding additional DPRK cyber
+          operations and WMD program costs. [4]</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2024</div>
+          <div class="tl-desc"><strong>IT Worker Scheme — DOJ Indictments.</strong>
+          DOJ charged multiple individuals for facilitating a scheme in which thousands
+          of DPRK nationals used stolen identities to gain remote employment at U.S.
+          technology companies — including defense contractors and Fortune 500 firms.
+          Workers generated revenue for the regime while potentially establishing
+          insider access to client systems. Estimated 4,000 workers
+          active globally. [6]</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2025</div>
+          <div class="tl-desc"><strong>Bybit — $1.5B Theft (Largest in History).</strong>
+          Lazarus Group compromised Safe{"{"}Wallet{"}"}, a multi-signature wallet interface
+          used by Bybit exchange, manipulating the signing UI to redirect a transfer
+          of approximately $1.5 billion in Ethereum — the largest cryptocurrency theft
+          in history. FBI attribution issued within days. Funds were rapidly laundered
+          through mixers and cross-chain bridges. Demonstrates continued escalation
+          of DPRK crypto theft scale and sophistication. [1]</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIVE ENERGY EXPOSURE PANEL -->
+    <div class="section">
+      <div class="section-label">Energy Sector Exposure Context</div>
+      <h2>U.S. Energy Signal Dashboard
+        <span class="as-of">As of week ending 2026-06-22 · Source: Thor Storehouse / EIA / FRED</span>
+      </h2>
+      <p>
+        While DPRK's primary cyber focus is financial theft rather than infrastructure
+        disruption, Andariel has demonstrated growing capability against energy and
+        critical infrastructure targets. The signals below provide current U.S. energy
+        market context — the backdrop against which any infrastructure disruption
+        would be assessed.
+      </p>
+      <table class="signal-table">
+        <thead>
+          <tr>
+            <th>Signal</th>
+            <th>Latest Value</th>
+            <th>Unit</th>
+            <th>Change</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td class="sig-label">U.S. Commercial Crude Stocks</td>
+          <td class="sig-value">418,222</td>
+          <td class="sig-unit">Thousand Bbl</td>
+          <td><span class="delta down">▼ -8,263.00 (-1.9%)</span></td>
+        </tr>
+        <tr>
+          <td class="sig-label">WTI Crude Price</td>
+          <td class="sig-value">78.94</td>
+          <td class="sig-unit">$/bbl</td>
+          <td><span class="delta down">▼ -1.41 (-1.8%)</span></td>
+        </tr>
+        <tr>
+          <td class="sig-label">SPR Crude Stocks</td>
+          <td class="sig-value">340,251</td>
+          <td class="sig-unit">Thousand Bbl</td>
+          <td><span class="delta down">▼ -8,941.00 (-2.6%)</span></td>
+        </tr></tbody>
+      </table>
+      <p class="panel-note">
+        ⓘ All values sourced deterministically from <code>Storehouse.db · observations</code>.
+        No estimates or AI-inferred figures. Build timestamp: 2026-07-01 02:39 ET.
+      </p>
+    </div>
+
+    <!-- STRATEGIC ASSESSMENT -->
+    <div class="section">
+      <div class="section-label">Strategic Assessment</div>
+      <h2>Threat Metrics</h2>
+      <table class="intel">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Assessment</th>
+            <th>Basis</th>
+            <th>Ref</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Overall Threat Level</strong></td>
+            <td style="color:#DC2626;font-weight:700;">CRITICAL</td>
+            <td>Active financial theft at scale; WMD financing mission drives
+            persistent aggressive operations regardless of diplomatic context</td>
+            <td>[1][2]</td>
+          </tr>
+          <tr>
+            <td><strong>Primary Mission</strong></td>
+            <td style="color:#DC2626;font-weight:700;">Revenue Generation</td>
+            <td>~$3.0B crypto stolen 2017–2024 (UN estimate);
+            Bybit $1.5B Feb 2025; WMD program financing assessed as primary driver</td>
+            <td>[1][2]</td>
+          </tr>
+          <tr>
+            <td><strong>Financial Sector Risk</strong></td>
+            <td style="color:#DC2626;font-weight:700;">CRITICAL</td>
+            <td>SWIFT targeting; crypto exchange and DeFi exploitation;
+            escalating theft scale — $1.5B single event 2025</td>
+            <td>[1][5]</td>
+          </tr>
+          <tr>
+            <td><strong>Crypto / DeFi Risk</strong></td>
+            <td style="color:#DC2626;font-weight:700;">CRITICAL</td>
+            <td>Primary target category; TraderTraitor supply chain technique
+            highly effective; laundering via mixers and cross-chain bridges</td>
+            <td>[1]</td>
+          </tr>
+          <tr>
+            <td><strong>IT Worker Insider Risk</strong></td>
+            <td style="color:#D97706;font-weight:700;">HIGH</td>
+            <td>~4,000 estimated overseas workers using false identities;
+            DOJ indictments 2024; potential for insider access at tech firms</td>
+            <td>[6]</td>
+          </tr>
+          <tr>
+            <td><strong>Infrastructure Disruption Risk</strong></td>
+            <td style="color:#D97706;font-weight:700;">ELEVATED</td>
+            <td>Lower priority than China but Andariel has demonstrated
+            critical infrastructure capability; WannaCry showed willingness
+            to cause collateral damage</td>
+            <td>[4]</td>
+          </tr>
+          <tr>
+            <td><strong>Public Data Confidence</strong></td>
+            <td>High</td>
+            <td>FBI/CISA/NSA joint advisories; DOJ indictments; UN Panel of Experts;
+            Treasury OFAC designations; FBI crypto theft attributions</td>
+            <td>[1–6]</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- DEFENSIVE POSTURE -->
+    <div class="section">
+      <div class="section-label">Defensive Posture</div>
+      <h2>Key Mitigations — FBI / CISA Guidance</h2>
+      <table class="intel">
+        <thead>
+          <tr>
+            <th>Priority</th>
+            <th>Mitigation</th>
+            <th>Addresses</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1 — Critical</strong></td>
+            <td>Verify identity of remote IT contractors; use video verification;
+            check for North Korean indicators (VPN use, unusual hours, payment
+            routing to China or crypto)</td>
+            <td>DPRK IT worker insider access scheme</td>
+          </tr>
+          <tr>
+            <td><strong>2 — Critical</strong></td>
+            <td>Harden multi-signature wallet and signing infrastructure;
+            verify UI integrity before signing large transactions;
+            use hardware security modules</td>
+            <td>Bybit/Ronin-style wallet interface compromise</td>
+          </tr>
+          <tr>
+            <td><strong>3 — Critical</strong></td>
+            <td>Treat unsolicited job offers, coding challenges, and npm packages
+            from unknown contacts as high-risk; sandbox all third-party code</td>
+            <td>TraderTraitor developer targeting</td>
+          </tr>
+          <tr>
+            <td><strong>4 — High</strong></td>
+            <td>Audit SWIFT terminal access; enforce dual-control for high-value
+            transfers; monitor for after-hours SWIFT activity</td>
+            <td>BlueNoroff SWIFT manipulation</td>
+          </tr>
+          <tr>
+            <td><strong>5 — High</strong></td>
+            <td>Patch internet-facing systems within 48 hours of critical CVE disclosure;
+            prioritize VPN appliances and remote access infrastructure</td>
+            <td>Andariel and Lazarus initial access via known CVEs</td>
+          </tr>
+          <tr>
+            <td><strong>6 — High</strong></td>
+            <td>Enforce phishing-resistant MFA; train staff on spear phishing
+            lures targeting crypto, finance, and policy sectors</td>
+            <td>Kimsuky credential harvesting; Lazarus spear phishing</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CITATIONS -->
+    <div class="section">
+      <div class="section-label">Sources</div>
+      <h2>Citations &amp; Intelligence Sources</h2>
+      <table class="intel">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Source</th>
+            <th>Publication</th>
+            <th>Applies To</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>[1]</td>
+            <td>FBI / CISA</td>
+            <td>Advisory: "TraderTraitor — Lazarus Group Targeting Cryptocurrency
+            Organizations" — September 2023; Bybit attribution statement February 2025</td>
+            <td>Lazarus Group TTPs; TraderTraitor; Bybit $1.5B theft; Ronin Bridge;
+            crypto theft methodology</td>
+          </tr>
+          <tr>
+            <td>[2]</td>
+            <td>UN Panel of Experts on North Korea</td>
+            <td>Report S/2024/215 — March 2024</td>
+            <td>$3B+ crypto stolen 2017–2023; WMD financing assessment;
+            WannaCry attribution</td>
+          </tr>
+          <tr>
+            <td>[3]</td>
+            <td>CISA / NSA / FBI</td>
+            <td>Advisory: "North Korean Cyber Actors Using Kimsuky Spearphishing
+            Campaigns" — October 2023</td>
+            <td>Kimsuky TTPs; credential harvesting; Korea policy community targeting</td>
+          </tr>
+          <tr>
+            <td>[4]</td>
+            <td>FBI / CISA / NSA / HHS</td>
+            <td>Joint Advisory: "North Korean State-Sponsored Cyber Actors Use Maui
+            Ransomware to Target the Healthcare and Public Health Sector" — July 2022</td>
+            <td>Andariel; Maui ransomware; healthcare sector targeting; revenue generation</td>
+          </tr>
+          <tr>
+            <td>[5]</td>
+            <td>U.S. Department of Justice / FinCEN</td>
+            <td>Bangladesh Bank indictment (2018); SWIFT heist attribution</td>
+            <td>BlueNoroff; SWIFT system manipulation; $81M Bangladesh Bank heist</td>
+          </tr>
+          <tr>
+            <td>[6]</td>
+            <td>U.S. Department of Justice</td>
+            <td>Indictments: DPRK IT Worker Scheme — May 2024; October 2024</td>
+            <td>Overseas IT worker scheme; false identity employment;
+            4,000 worker estimate; defense contractor access</td>
+          </tr>
+          <tr>
+            <td>[7]</td>
+            <td>EIA Weekly Petroleum Supply Report</td>
+            <td>Live via Thor Storehouse (week ending 2026-06-22)</td>
+            <td>U.S. crude stocks (PET.WCESTUS1.W); SPR stocks (PET.WCSSTUS1.W)</td>
+          </tr>
+          <tr>
+            <td>[8]</td>
+            <td>FRED — Federal Reserve Bank of St. Louis</td>
+            <td>Live via Thor Storehouse</td>
+            <td>WTI crude price (DCOILWTICO)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div><!-- /content -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      <span class="classification">General Reference — Open Source Intelligence</span><br><br>
+      Threat intelligence: FBI · CISA · NSA · DOJ · UN Panel of Experts on North Korea<br>
+      Market signals: Thor Storehouse · observations (EIA weekly petroleum; FRED WTI)<br>
+      Intel last verified: June 2025 · Generated: 2026-07-01 02:39 ET
+    </div>
+    <div class="footer-right">
+      Thor Storehouse Intelligence Platform<br>
+      Cybersecurity / Geopolitics · Executive SITREP Series<br>
+      <em>All intelligence sourced from public U.S. government advisories · No classified material</em>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
