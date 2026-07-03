@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>THOR BANK HEALTH CHECK</title>
+<style>
+    body { font-family: 'Courier New', monospace; background: #0a0a0a; color: #00ff00; margin: 20px; }
+    h1 { color: #ffaa00; border-bottom: 2px solid #ffaa00; }
+    table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 13px; }
+    th { background: #1a1a1a; color: #ffaa00; padding: 8px; text-align: left; border: 1px solid #333; }
+    td { padding: 6px 8px; border: 1px solid #222; }
+    tr:nth-child(even) { background: #0f0f0f; }
+    .header { color: #888; font-size: 12px; }
+    .footer { color: #e8e8e8; font-size: 11px; margin-top: 30px; border-top: 1px solid #444; padding-top: 10px; }
+    .footer .attrib { color: #ffaa00; }
+    .note { color: #ffaa00; font-weight:bold; font-size: 12px; margin: 8px 0 20px 0; }
+</style>
+</head>
+<body>
+<h1>THOR BANK HEALTH CHECK</h1>
+<div class="header">
+    Run: 2026-07-03 13:43 ET | Source: FDIC BankFind Suite API (api.fdic.gov) | Data: Quarterly Call Reports<br>
+    Universe: BANK_TICKERS from landfool.py (JPM, BAC, WFC, C, GS, MS)
+</div>
+<p class="note">
+    &#9888; PCA Category reflects 12 CFR 324.403 Tier 1 risk-based capital thresholds only
+    (single metric). A complete regulatory capital determination also requires Total RBC,
+    CET1, and Leverage ratios together -- this is not a full PCA determination.
+</p>
+<table>
+<tr>
+    <th>Ticker</th><th>Legal Name</th><th>CERT</th><th>Report Date</th>
+    <th>Total Assets</th><th>Total Deposits</th><th>Net Income (qtr)</th>
+    <th>ROA</th><th>ROE</th><th>Tier 1 Capital</th><th>NPL Ratio</th>
+    <th>Loans/Deposits*</th><th>PCA Category</th>
+</tr>
+
+        <tr>
+            <td style="font-weight:bold;">JPM</td>
+            <td>JPMORGAN CHASE BANK NA</td>
+            <td>#628</td>
+            <td>20260331</td>
+            <td>$4.02T</td>
+            <td>$2.79T</td>
+            <td>$13.97B</td>
+            <td>1.44%</td>
+            <td>16.64%</td>
+            <td>15.08%</td>
+            <td>0.85%</td>
+            <td>53.59%</td>
+            <td style="color:#00ff00;font-weight:bold;">Well Capitalized</td>
+        </tr>
+        <tr>
+            <td style="font-weight:bold;">BAC</td>
+            <td>BANK OF AMERICA NA</td>
+            <td>#3510</td>
+            <td>20260331</td>
+            <td>$2.67T</td>
+            <td>$2.13T</td>
+            <td>$7.42B</td>
+            <td>1.12%</td>
+            <td>12.16%</td>
+            <td>12.17%</td>
+            <td>0.68%</td>
+            <td>55.99%</td>
+            <td style="color:#00ff00;font-weight:bold;">Well Capitalized</td>
+        </tr>
+        <tr>
+            <td style="font-weight:bold;">WFC</td>
+            <td>WELLS FARGO BANK NA</td>
+            <td>#3511</td>
+            <td>20260331</td>
+            <td>$1.85T</td>
+            <td>$1.52T</td>
+            <td>$5.96B</td>
+            <td>1.30%</td>
+            <td>13.75%</td>
+            <td>12.58%</td>
+            <td>1.18%</td>
+            <td>64.05%</td>
+            <td style="color:#00ff00;font-weight:bold;">Well Capitalized</td>
+        </tr>
+        <tr>
+            <td style="font-weight:bold;">C</td>
+            <td>CITIBANK NATIONAL ASSN</td>
+            <td>#7213</td>
+            <td>20260331</td>
+            <td>$1.93T</td>
+            <td>$1.50T</td>
+            <td>$5.01B</td>
+            <td>1.06%</td>
+            <td>11.52%</td>
+            <td>13.96%</td>
+            <td>0.75%</td>
+            <td>47.20%</td>
+            <td style="color:#00ff00;font-weight:bold;">Well Capitalized</td>
+        </tr>
+        <tr>
+            <td style="font-weight:bold;">GS</td>
+            <td>GOLDMAN SACHS BANK USA</td>
+            <td>#33124</td>
+            <td>20260331</td>
+            <td>$751.78B</td>
+            <td>$504.82B</td>
+            <td>$1.96B</td>
+            <td>1.12%</td>
+            <td>12.12%</td>
+            <td>14.05%</td>
+            <td>1.10%</td>
+            <td>47.61%</td>
+            <td style="color:#00ff00;font-weight:bold;">Well Capitalized</td>
+        </tr>
+        <tr>
+            <td style="font-weight:bold;">MS</td>
+            <td>MORGAN STANLEY BANK NA</td>
+            <td>#32992</td>
+            <td>20260331</td>
+            <td>$391.31B</td>
+            <td>$254.34B</td>
+            <td>$1.33B</td>
+            <td>1.65%</td>
+            <td>15.71%</td>
+            <td>19.54%</td>
+            <td>0.56%</td>
+            <td>44.48%</td>
+            <td style="color:#00ff00;font-weight:bold;">Well Capitalized</td>
+        </tr>
+</table>
+<div class="footer">
+    &copy; Randy Hinton. Bank Health Check is informational only, not investment advice.<br>
+    *Loans/Deposits is a liquidity PROXY (LNLSDEPR), not a confirmed match to any specific
+    "Liquidity Ratio" field definition -- treat with more caution than the other metrics.<br>
+    <span class="attrib">All deposits at FDIC-insured banks are protected up to $250,000 per depositor, per institution.</span><br>
+    Data source: FDIC BankFind Suite API, api.fdic.gov. Not affiliated with the FDIC.<br>
+    Generated: 2026-07-03 13:43 ET
+</div>
+</body>
+</html>
