@@ -151,7 +151,7 @@
 </div><!-- .layout -->
 <footer>
   THOR SIGNAL &nbsp;·&nbsp; Taxonomy-driven routing &nbsp;·&nbsp;
-  Generated: 2026-07-03 14:00 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
+  Generated: 2026-07-03 14:46 &nbsp;·&nbsp; #FollowTheData &nbsp;·&nbsp; © 2026 Randy Hinton
 </footer>
 <script>
 const REPORTS = [
@@ -5972,6 +5972,68 @@ const REPORTS = [
     ],
     "id": "bank_health_check",
     "path": "https://petroai1492.github.io/delta/finance/fdic/bank_health.html"
+  },
+  {
+    "title": "Bank Failures Monitor",
+    "file": "finance/fdic/bank_failures.html",
+    "description": "Live FDIC bank failure and assistance monitor \u2014 companion to Bank Health Check (#78), same data source. Fetches directly from the FDIC BankFind Suite API at build time (no API key, no Storehouse dependency); shows recent failures within a configurable lookback window (default 5 years) with per-institution cost to the Deposit Insurance Fund, assets/deposits at failure, and resolution type, plus an all-time (1934\u2013present) summary for historical context",
+    "json_file": "finance/fdic/bank_failures.json",
+    "published": true,
+    "url": "`petroai1492.github.io/delta/finance/fdic/bank_failures.html`",
+    "auto_published": true,
+    "primary_domain": "Finance",
+    "secondary_domains": [
+      "Economy"
+    ],
+    "entities": [
+      "FDIC",
+      "Deposit Insurance Fund (DIF)"
+    ],
+    "data_sources": [
+      "FDIC BankFind Suite API (live fetch \u2014 api.fdic.gov/banks/failures); no Storehouse dependency"
+    ],
+    "update_frequency": "On-demand (live FDIC fetch at runtime \u2014 always current; FDIC updates this dataset after any failure or assistance transaction)",
+    "key_signals": [
+      "Recent bank failure count (lookback window)",
+      "cost to DIF per failure",
+      "assets/deposits at failure",
+      "resolution type (Purchase & Assumption / Assistance Agreement / Payout Insured)",
+      "all-time failure count and cumulative DIF cost since 1934"
+    ],
+    "intent_phrases": [
+      "bank failures",
+      "recent bank failures",
+      "has a bank failed",
+      "FDIC bank failure",
+      "bank failure history",
+      "bank closure",
+      "deposit insurance fund",
+      "DIF cost",
+      "bank failure list",
+      "banking crisis",
+      "bank collapse",
+      "which banks failed",
+      "bank failure timeline",
+      "FDIC receivership",
+      "purchase and assumption",
+      "bank assistance",
+      "how many banks failed",
+      "banking system stability",
+      {
+        "keyword": "bank",
+        "weight": 10
+      },
+      {
+        "keyword": "failures",
+        "weight": 10
+      },
+      {
+        "keyword": "monitor",
+        "weight": 10
+      }
+    ],
+    "id": "bank_failures_monitor",
+    "path": "https://petroai1492.github.io/delta/finance/fdic/bank_failures.html"
   }
 ];
 const CROSS_DOMAIN = [
