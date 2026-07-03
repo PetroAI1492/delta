@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-07-01T14:50:56Z",
+  "generated": "2026-07-03T18:00:23Z",
   "github_base": "https://petroai1492.github.io/delta",
   "domains": {
     "Energy": "Commodity prices, production, supply/demand, geopolitical supply risk",
@@ -5871,6 +5871,80 @@
       ],
       "id": "counterparty_risk_monitor",
       "path": "https://petroai1492.github.io/delta/finance/counterparty/counterparty_risk.html"
+    },
+    {
+      "title": "Bank Health Check",
+      "file": "finance/fdic/bank_health.html",
+      "description": "Live FDIC Call Report health snapshot for six major U.S. banks (JPM, BAC, WFC, C, GS, MS) \u2014 fetches directly from the FDIC BankFind Suite API at build time (no API key, no Storehouse dependency); Tier 1 risk-based capital ratio, nonperforming loan ratio, ROA/ROE, total assets/deposits; PCA (Prompt Corrective Action, 12 CFR 324.403) capital category read on Tier 1 ratio alone \u2014 single-metric, not a full regulatory determination",
+      "json_file": "finance/fdic/bank_health.json",
+      "published": true,
+      "url": "`petroai1492.github.io/delta/finance/fdic/bank_health.html`",
+      "auto_published": true,
+      "primary_domain": "Finance",
+      "secondary_domains": [
+        "Economy"
+      ],
+      "entities": [
+        "FDIC",
+        "JPMorgan Chase Bank",
+        "Bank of America",
+        "Wells Fargo Bank",
+        "Citibank",
+        "Goldman Sachs Bank USA",
+        "Morgan Stanley Bank"
+      ],
+      "data_sources": [
+        "FDIC BankFind Suite API (live fetch \u2014 api.fdic.gov/banks/institutions",
+        "api.fdic.gov/banks/financials); no Storehouse dependency"
+      ],
+      "update_frequency": "On-demand (live FDIC Call Report fetch at runtime \u2014 always current to latest quarterly filing)",
+      "key_signals": [
+        "Tier 1 risk-based capital ratio (RBC1RWAJ)",
+        "nonperforming loan ratio (NCLNLSR)",
+        "ROA/ROE",
+        "total assets/deposits/net income",
+        "PCA capital category (Well Capitalized threshold: Tier 1 RBC \u2265 8%, per 12 CFR 324.403)",
+        "loans-to-deposits ratio (liquidity proxy)"
+      ],
+      "intent_phrases": [
+        "bank health",
+        "is my bank safe",
+        "FDIC bank health",
+        "bank capital ratio",
+        "Tier 1 capital",
+        "JPMorgan health",
+        "Bank of America health",
+        "Wells Fargo health",
+        "Citibank health",
+        "Goldman Sachs health",
+        "Morgan Stanley health",
+        "bank safety",
+        "well capitalized",
+        "nonperforming loans",
+        "bank ROA",
+        "bank ROE",
+        "FDIC call report",
+        "bank balance sheet",
+        "is JPM safe",
+        "is BAC safe",
+        "is Citibank safe",
+        "bank stress check",
+        "bank capital adequacy",
+        {
+          "keyword": "bank",
+          "weight": 10
+        },
+        {
+          "keyword": "health",
+          "weight": 10
+        },
+        {
+          "keyword": "check",
+          "weight": 10
+        }
+      ],
+      "id": "bank_health_check",
+      "path": "https://petroai1492.github.io/delta/finance/fdic/bank_health.html"
     }
   ],
   "cross_domain_matrix": [
