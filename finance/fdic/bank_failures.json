@@ -1,6 +1,6 @@
 {
   "report": "Bank Failures Monitor",
-  "generated_at": "2026-07-03 14:44",
+  "generated_at": "2026-07-03 15:04",
   "source": "FDIC BankFind Suite API (api.fdic.gov)",
   "lookback_window": "2022-2026",
   "lookback_failure_count": 11,
@@ -10,7 +10,8 @@
   },
   "field_notes": {
     "cost_to_dif_usd": "Estimated loss to the FDIC Deposit Insurance Fund",
-    "resolution_type": "FAILURE = bank closed; ASSISTANCE = FDIC aided without formal closure"
+    "resolution_type": "FAILURE = bank closed; ASSISTANCE = FDIC aided without formal closure",
+    "cost_to_dif_usd_null": "null = not yet posted by FDIC. Loss estimates are periodically revised throughout the receivership and can take weeks to years to finalize depending on complexity -- not a fixed timeline. Example: SVB/Signature's estimate was still being revised 2.5+ years after failure due to litigation."
   },
   "failures": [
     {
