@@ -1,0 +1,160 @@
+{
+  "report": "Bank Failures Monitor",
+  "generated_at": "2026-07-03 14:44",
+  "source": "FDIC BankFind Suite API (api.fdic.gov)",
+  "lookback_window": "2022-2026",
+  "lookback_failure_count": 11,
+  "alltime_summary_1934_present": {
+    "total_failures": 4115,
+    "total_cost_to_dif_usd": 294027753000.0
+  },
+  "field_notes": {
+    "cost_to_dif_usd": "Estimated loss to the FDIC Deposit Insurance Fund",
+    "resolution_type": "FAILURE = bank closed; ASSISTANCE = FDIC aided without formal closure"
+  },
+  "failures": [
+    {
+      "cert": 25796,
+      "name": "COMMUNITY BANK AND TRUST - WEST GEORGIA",
+      "city_state": "LAGRANGE, GA",
+      "fail_date": "5/1/2026",
+      "cost_to_dif_usd": null,
+      "assets_at_failure_usd": 305716000.0,
+      "deposits_at_failure_usd": 296420000.0,
+      "resolution_type": "FAILURE",
+      "resolution_subtype": "PI",
+      "resolution_subtype_label": "Payout Insured",
+      "receiver_fund": "DIF"
+    },
+    {
+      "cert": 57488,
+      "name": "METROPOLITAN CAPITAL B&T",
+      "city_state": "CHICAGO, IL",
+      "fail_date": "1/30/2026",
+      "cost_to_dif_usd": 19647000.0,
+      "assets_at_failure_usd": 261185000.0,
+      "deposits_at_failure_usd": 212152000.0,
+      "resolution_type": "FAILURE",
+      "resolution_subtype": "PA",
+      "resolution_subtype_label": "Purchase & Assumption",
+      "receiver_fund": "DIF"
+    },
+    {
+      "cert": 5520,
+      "name": "SANTA ANNA NATIONAL BANK",
+      "city_state": "SANTA ANNA, TX",
+      "fail_date": "6/27/2025",
+      "cost_to_dif_usd": 23460000.0,
+      "assets_at_failure_usd": 76938000.0,
+      "deposits_at_failure_usd": 71376000.0,
+      "resolution_type": "FAILURE",
+      "resolution_subtype": "PI",
+      "resolution_subtype_label": "Payout Insured",
+      "receiver_fund": "DIF"
+    },
+    {
+      "cert": 28611,
+      "name": "PULASKI SAVINGS BANK",
+      "city_state": "CHICAGO, IL",
+      "fail_date": "1/17/2025",
+      "cost_to_dif_usd": 31149000.0,
+      "assets_at_failure_usd": 49466000.0,
+      "deposits_at_failure_usd": 42741000.0,
+      "resolution_type": "FAILURE",
+      "resolution_subtype": "PA",
+      "resolution_subtype_label": "Purchase & Assumption",
+      "receiver_fund": "DIF"
+    },
+    {
+      "cert": 4134,
+      "name": "FIRST NB OF LINDSAY",
+      "city_state": "LINDSAY, OK",
+      "fail_date": "10/18/2024",
+      "cost_to_dif_usd": 45030000.0,
+      "assets_at_failure_usd": 107850000.0,
+      "deposits_at_failure_usd": 97515000.0,
+      "resolution_type": "FAILURE",
+      "resolution_subtype": "PI",
+      "resolution_subtype_label": "Payout Insured",
+      "receiver_fund": "DIF"
+    },
+    {
+      "cert": 27332,
+      "name": "REPUBLIC BANK",
+      "city_state": "PHILADELPHIA, PA",
+      "fail_date": "4/26/2024",
+      "cost_to_dif_usd": 712503000.0,
+      "assets_at_failure_usd": 5866190000.0,
+      "deposits_at_failure_usd": 4373927000.0,
+      "resolution_type": "FAILURE",
+      "resolution_subtype": "PA",
+      "resolution_subtype_label": "Purchase & Assumption",
+      "receiver_fund": "DIF"
+    },
+    {
+      "cert": 8758,
+      "name": "CITIZENS BANK",
+      "city_state": "SAC CITY, IA",
+      "fail_date": "11/3/2023",
+      "cost_to_dif_usd": 14114000.0,
+      "assets_at_failure_usd": 60448000.0,
+      "deposits_at_failure_usd": 52311000.0,
+      "resolution_type": "FAILURE",
+      "resolution_subtype": "PA",
+      "resolution_subtype_label": "Purchase & Assumption",
+      "receiver_fund": "DIF"
+    },
+    {
+      "cert": 25851,
+      "name": "HEARTLAND TRI-STATE BANK",
+      "city_state": "ELKHART, KS",
+      "fail_date": "7/28/2023",
+      "cost_to_dif_usd": 43408000.0,
+      "assets_at_failure_usd": 139446000.0,
+      "deposits_at_failure_usd": 130110000.0,
+      "resolution_type": "FAILURE",
+      "resolution_subtype": "PA",
+      "resolution_subtype_label": "Purchase & Assumption",
+      "receiver_fund": "DIF"
+    },
+    {
+      "cert": 59017,
+      "name": "FIRST REPUBLIC BANK",
+      "city_state": "SAN FRANCISCO, CA",
+      "fail_date": "5/1/2023",
+      "cost_to_dif_usd": 15639197000.0,
+      "assets_at_failure_usd": 212638872000.0,
+      "deposits_at_failure_usd": 176436706000.0,
+      "resolution_type": "FAILURE",
+      "resolution_subtype": "PA",
+      "resolution_subtype_label": "Purchase & Assumption",
+      "receiver_fund": "DIF"
+    },
+    {
+      "cert": 57053,
+      "name": "SIGNATURE BANK",
+      "city_state": "NEW YORK, NY",
+      "fail_date": "3/12/2023",
+      "cost_to_dif_usd": 0.0,
+      "assets_at_failure_usd": 110363650000.0,
+      "deposits_at_failure_usd": 88612911000.0,
+      "resolution_type": "FAILURE",
+      "resolution_subtype": "PA",
+      "resolution_subtype_label": "Purchase & Assumption",
+      "receiver_fund": "DIF"
+    },
+    {
+      "cert": 24735,
+      "name": "SILICON VALLEY BANK",
+      "city_state": "SANTA CLARA, CA",
+      "fail_date": "3/10/2023",
+      "cost_to_dif_usd": 18894401000.0,
+      "assets_at_failure_usd": 209026000000.0,
+      "deposits_at_failure_usd": 175378000000.0,
+      "resolution_type": "FAILURE",
+      "resolution_subtype": "PA",
+      "resolution_subtype_label": "Purchase & Assumption",
+      "receiver_fund": "DIF"
+    }
+  ]
+}
