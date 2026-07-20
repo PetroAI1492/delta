@@ -1,170 +1,370 @@
 {
-  "generated_at": "2026-06-23 20:01",
-  "run_id": "be82194d-f555-4bde-94be-f972ee495b31",
-  "generated_utc": "2026-06-24 00:00:24 UTC",
-  "lookback_days": 7,
-  "signal_count": 23,
-  "noise_count": 51,
+  "generated_at": "2026-07-20 19:53",
+  "run_id": "f53b6db3-15d2-4a66-9eb3-0ce2f4d1fd43",
+  "generated_utc": "2026-07-20 23:52:54 UTC",
+  "lookback_days": 30,
+  "signal_count": 38,
+  "noise_count": 226,
   "signals": [
     {
-      "title": "Novel IL1RAP therapy advances toward pancreatic cancer clinical trial",
+      "title": "Glucose, A1c Mediate Obesity-Pancreatic Cancer Link",
       "trail": "",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNRmdibnE2NHNUOTFJS1ROVzJVSVNtUHBVWlBfNXhEZUpaNW1jZEV3WFItaWFCaS12bE1lMjl3ajBkaWdRRmdGS0FUU2JSNnFhcFNCZDhHQ21RSkt2X3NHWnp0VkpyVWp4WUhiNHZmeW1xWlRWN1pFZjFYRlE5R2dneXFsc2RtVzNuNXVIM1dVWlp4WFZDYkpQSU56ZXY5aF9EczdqVHo0d0tYUHllX2VHRFdMZ09kd0F0?oc=5",
-      "pub_date": "2026-06-23",
-      "publisher": "News-Medical",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNVjRNZlhsSGJDQ3JITHdqNFZ4MEhTOVE0RG54N2p5SWhua3JsR1htMWJUaHhpVWZMbzdYMVpYelB3QWcweFdIdS1ZLXIza19hSm11T0psdEV4RU5zQm9RM3J4MnpUTU1EMVY4Ql9NYkNJZlRXVk94MmxTNmlOVGNFcTEwYjlZOHNqbHl3NGtDUHlHbGdoaWhnY2o3R1ZSTDZWS3NnQVNLVWE?oc=5",
+      "pub_date": "2026-07-20",
+      "publisher": "Medscape",
+      "source_id": "gnews",
+      "sig_type": "GENERAL",
+      "ai": "The findings highlight the potential for targeting glucose and A1c levels to improve treatment strategies and survival outcomes for pancreatic cancer patients linked to obesity."
+    },
+    {
+      "title": "Vaccine to Prevent Pancreatic Cancer Shows Early Promise",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOajJIN0NJMDQ4SEZOOFFrVWZnUVVnbGdzVHBnOUdFQWt0RjU2dVNGLU91YVJ5b3F4VXE5NTBUWHNKUjNmUWZZLVBvSFBJdkNwZWxheXhpZXhmWjV5cWFFSFVRR1FNMjZHLXE3VW9VUWVXWXo4WjJTeW5kOWpNcTlxZHVweDQxRnctMHM4LUNUNWNZZHlQbm1haEhCLXVBSTJORU1nRjBR?oc=5",
+      "pub_date": "2026-07-20",
+      "publisher": "Medscape",
+      "source_id": "gnews",
+      "sig_type": "GENERAL",
+      "ai": "The early promise of the vaccine to prevent pancreatic cancer suggests a potential breakthrough in reducing incidence rates and improving long-term survival outcomes for patients."
+    },
+    {
+      "title": "Johns Hopkins surgeon highlights AI breakthrough that could spot pancreatic cancer before doctors",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPdnFJQjBidEx1UGgyREJMeDdJU1EwVHpxNkIxMXZqZ0pKenRjNEgtYU9zTUYtWmJBRVFJUTFxdTMxVlNZc2UwT24tN2dFVDdYZmpIMThfQ3FJZlF2Y0tZQzRjUFdCOEhicmJDVmc0UWJqbFFwblpyQmVTWTV5cWlfMXFTVVpLUGtpeG00VDNCZEYzOHFGU082aER3SGp3Q09BOG0tSW5oX3k0OU9yTEhfUnNybXdaS2N3a1FwOdIBwgFBVV95cUxPaTNiZTdDZUdvMUw4ak8wZWpLaUVrMmwzcHV2Z1FycGNxM2lkdDA0aG5qVGI3Q3Y4czBZMUgxZGpjRDR5NnRUREdBT0Q5ck5ScnBRUTctSktEZ2N3Nml1ZVNVNmZWYmp1c0NpT0Y2WWxaa3RMNzk4VnB5SzlyN0xNT3pfeGlBWjRpcFZpMzVzSFBVeElWd19XY3VHZHVpc3BTOWctZ3hqaHhKSFVBOExxQnRGdy1jeHdGS1ZJQ2pyZDM5dw?oc=5",
+      "pub_date": "2026-07-20",
+      "publisher": "Fox Business",
+      "source_id": "gnews",
+      "sig_type": "RESEARCH",
+      "ai": "The AI breakthrough enables earlier detection of pancreatic cancer, potentially improving survival rates for patients by facilitating timely intervention and treatment."
+    },
+    {
+      "title": "Mutant KRAS Vaccine for Prevention of Pancreatic Cancer Development Shows Durable Immune Responses",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNNzJMQnBRU0lRUzE5NktJVjZKcUxzQTBzU014TGZZbURqWFBCWHJIYXk4MFBZOW9JOERCNDBvTTRabkpiNG5aRUx0YV9fRHJiaEJ6QmxycUtBek5tM0Fzcl9UTXhRc2ZFQmJLNU5nOVdXY3RJeDJBRXhYbFN6a2JTYmdQUWZIUVplaUpxU1VqamZvYnNKTWJ5aGp5LXNpSUxkdnFiaTdqQnBVS3pfMGZRcUFzTUg4N0JxYnBENjNYUFRjQzQ5ckQwT25yOGVqUzRr?oc=5",
+      "pub_date": "2026-07-20",
+      "publisher": "The ASCO Post",
+      "source_id": "gnews",
+      "sig_type": "RESEARCH",
+      "ai": "The mutant KRAS vaccine demonstrates durable immune responses, potentially leading to improved prevention strategies and better outcomes for pancreatic cancer patients."
+    },
+    {
+      "title": "Exploring the Potential Role of Cancer Vaccines in Pancreatic Cancer",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPNVBhaDBSRXhla2ppNkFkQi1ILWRkUDdxVzR4azVmQ2laYzFsQUJRQ29yNmRoTkVQc1BzWWQ0QkxtV1FsVzkwN1U5QUhSQXJLY29YNDZIRktjdGRTRVZqWmMtMVdtMW5TUWFPT2lfWGsxMG03VXlCSmxVcW9idDZTS2RXTUU0YVoyUXdKSVM4WmhtczJGX1R6OUFndm5EYWha?oc=5",
+      "pub_date": "2026-07-20",
+      "publisher": "OncLive",
+      "source_id": "gnews",
+      "sig_type": "GENERAL",
+      "ai": "The exploration of cancer vaccines in pancreatic cancer could lead to improved treatment options and potentially enhance survival rates for patients facing this aggressive disease."
+    },
+    {
+      "title": "Can-Fite Positive Phase 2a Pancreatic Cancer Study Data",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMi1AJBVV95cUxPYWZEUXJRY3NoSkJWUW1QUkF0NzhYbVpLYkwwZlo1OWU1VFFZUW1hSUM5NlJTQ1pIQ2VWWmR6VWtoUkZTZ2RrcVlQWXZLUWtsUDJmQmFTVGRZOV9palo2ZjZ3enpMaGlIU2hwcFVmUE0xbEpTQlZhcjd5bzFHUkx4Q1NaQTJFeXp4WHB3MDV5WjNXMndCVVhWRm1PR0N3bXF3VWd1cUQyWXVTVHNmRHg5N3o1cDZEcFhTNHRxdE4ybUxzY0g2UmtmamhKbXl5enk1eFUxZmtCYWE4dm1nMWtZTncyT3dQbWtCUi1jRDI5ZEZKekpXV0F0U1VsSTJxRmR6ODNoR243Ym5YdXdNU2V3a2xIR1NzNHZManNDTlJ3RnI5M1dxbjdXMnh6aGFJOUk1WV9IdEpWWW9QVGI0YVBTc2RJNkRUQTJxUWR3cWNuc24tR3ly?oc=5",
+      "pub_date": "2026-07-20",
+      "publisher": "GlobeNewswire",
       "source_id": "gnews",
       "sig_type": "TREATMENT",
-      "ai": "The advancement of novel IL1RAP therapy toward clinical trials offers pancreatic cancer patients a potential new treatment option that could improve survival outcomes."
+      "ai": "The positive Phase 2a study data for Can-Fite's treatment indicates a potential improvement in survival outcomes for pancreatic cancer patients, warranting further research and funding."
     },
     {
-      "title": "Phanes Therapeutics Announces Completion of Enrollment in Phase 2 Clinical Trial of Spevatamig in Combination with Chemotherapy for the Frontline Treatment of Metastatic Pancreatic Ductal Adenocarcinoma",
+      "title": "Pancreatic cancer patient alive 18+ months after second-line Namodenoson",
       "trail": "",
-      "url": "https://news.google.com/rss/articles/CBMi3wJBVV95cUxPc2FYZmR6SXlzTDItZTNmLXBEcktObjJhY29lYS1KaU1lUFRyZmRtczdZbkdxSzFwWEI4d0lmSDhiZGlKNG9MTHhMeDZlaWdpdHZWb3lVb1l6VGxmVHZYcHppZTVnWGRhMkFSS3M3MEdTQVNEN1hSWmNzY3lPak9sVm9XTUNOaFNWLW1DZEhnNmpMd29wR3Z2d1VkbWxXRWU3U0ZMejJJaVM1Mk1sRm12Rkh3UVEwS3dPVzUzTzg3dEtfNFpwNExMNWNMVVU5VVM5d2ZYMklZNTY0X3RObjY2S3lPMkp2c1NsSjREeGw0WllqX01JODRRQ2lfRnQ5S0tRZjI3aktkcEJRZG5jWHNWejRMTHZzS193YVdJTEZ5Zmphb3RVVmU2eVRVN3dnME8xNEpTajNYTUVRNms3YUdNVlFvem42N3Jhc0FaYkVuUVNUMEN4dE1pb0YySGU0VEk?oc=5",
-      "pub_date": "2026-06-23",
-      "publisher": "BioSpace",
-      "source_id": "gnews",
-      "sig_type": "PROGRESS",
-      "ai": "The completion of enrollment in the Phase 2 trial of Spevatamig combined with chemotherapy signals potential advancements in treatment options and improved survival outcomes for metastatic pancreatic ductal adenocarcinoma patients."
-    },
-    {
-      "title": "Chattanooga doctor weighs in on new experimental drug for severe Pancreatic Cancer",
-      "trail": "",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQSy14dTFfUk9EcG9ZR25mcE9xbmZqSndJamZjdDNlZldOMXZ4c0tWUVdvTWZxd0trYXphSkxfVUw3VmZVQnZBNXJ2Nl9qNm9KcDJmVGdlVS1UNVlKcmtJR1FTQ2lMNzh1cWUyME1GQUMxNXFPcDlaZDcxTGNxNmJjRUxUMmpjWFhHX3Q5dTNMTHVtSzhzcDdXOHdKc2pRZXVOMm1aUEdVZG1Kd2x4ZHVONG5reUpSQ1lKUUNfNzZOZDlQRE91VER2em5tYVVaRE0?oc=5",
-      "pub_date": "2026-06-23",
-      "publisher": "WTVC",
-      "source_id": "gnews",
-      "sig_type": "TREATMENT",
-      "ai": "The new experimental drug shows promise in improving survival rates for severe pancreatic cancer patients, offering hope for enhanced treatment outcomes."
-    },
-    {
-      "title": "New pancreatic cancer drug withheld as family fights for access",
-      "trail": "",
-      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPLTdXaDZCb1R5cS1wVi1SMXBQN1ZXS1I0Z2Q1dTktdGRWTWdocUp3TUR3XzNGVWJ3SUsxQzB5ZExqQ0toUnlxNVYwcnJ5dXI3YklmSU9FS3Q0YVBOdmJPUGZQTDlqLUswSlZzcGdKMTFyb0Yzdk9JQ1RpMFB0ZjJJLTFBUWxhV19WV2dyY2UyZTFrdUZDekIxRWJ2bUdjMHVwd2RRQnhncnZINDNYdEVUbG16aGlibVhiWlQ2TmhvSk1DQXNHYWprNUpfd0R0WjJPemg3Ny01eHNFVkJqOEx5dlZmOEt4QQ?oc=5",
-      "pub_date": "2026-06-23",
-      "publisher": "Treasure Coast News",
-      "source_id": "gnews",
-      "sig_type": "TREATMENT",
-      "ai": "The withholding of the new pancreatic cancer drug significantly delays potential treatment access, hindering survival outcomes for patients awaiting effective therapies."
-    },
-    {
-      "title": "Silexion gets Germany’s nod for pancreatic cancer trial after Israel",
-      "trail": "",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQMUNYU1g0QnNCRFV4Z09nT081cXNJa0VaSjZHQVVkQkFqWjBTMFRUVURmWWthaHVvaGNyaXc1WGpwMm9FYjFWdHE4cmNRcVQ5VHR6XzBQSTBfakNLNElTR1BhMHJzOV92Und4S1E2ZndqRmJCcktwXzVYSmNEUy1TNEFCZExqVjBkOHZDdkF4aFNyMUdXRERDT2JLRGh0RmFzRnpmYlFuM2JURXJHU2ZKSHpoS2dsNWgyT0swNQ?oc=5",
-      "pub_date": "2026-06-23",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxObVRZTzBNYWtndlpFRnc5eW1WNUVKUlV2eG1wdXN0T1hPZFBDOERWcXQ5ZkdtbHNJVzdYY0ZfM2c2YnlpUzdBSEpPMlBzeG5zejVsRWJjUVlIbUdXUVpVSGJwc2tQd0RIaVhNZ2FBMFp4QnRUVFh3bHZMMDVvOWJuVGhsZ2xNZ1ZzaXpIdDBUY01LUm9TUFVpOGJDMUxVY2VQQzR0Ny1EZnpfY19wUXVvNjRTVnE1blhQWE55QTR3WFI?oc=5",
+      "pub_date": "2026-07-20",
       "publisher": "Stock Titan",
       "source_id": "gnews",
-      "sig_type": "RESEARCH",
-      "ai": "The approval of Silexion's pancreatic cancer trial in Germany enhances research opportunities, potentially leading to improved treatment outcomes for patients through innovative therapeutic approaches."
-    },
-    {
-      "title": "Daraxonrasib at ASCO 2026: The Pancreatic Cancer Moment That Brought the Room to Its Feet",
-      "trail": "",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1tUjFVaWlOS3dpNWp6anVlMENnd0d4cEJCbjRTelp6OGpjQkpna09ueklMVDhJVnNMRXFqZFlUcW95bXJLX3ZFN012cjFOeVdCMHpwVHRaWnF1S2g2SWdQMGU0TjEyRlptTW9PN1RneUFzQUgwemt5eXJNVEY0Q0U?oc=5",
-      "pub_date": "2026-06-23",
-      "publisher": "Oncodaily",
-      "source_id": "gnews",
-      "sig_type": "TREATMENT",
-      "ai": "Daraxonrasib has shown promising results in improving survival rates for pancreatic cancer patients, marking a significant advancement in treatment options."
-    },
-    {
-      "title": "Revolution Medicines begins Phase 3 pancreatic cancer trial",
-      "trail": "",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPcER6dTBXM1ZfQVdYUnVjdGlTc0pabHhYMTdBbUZRZmVmZmdOWjVaN3owRFlleldnQ2NfSmNCZUhSZTBVU3N2MU9GZU1DVktFRDZydU5lU3FTc1ZTVmdvQTI4N3lTMEtjRENYcmFjNjJVRHpDRjNhVjBGcmg3aWNZR3pldmNtVy1DMktMOXd2bWR4ZTAtVGFpeQ?oc=5",
-      "pub_date": "2026-06-23",
-      "publisher": "grafa.com",
-      "source_id": "gnews",
-      "sig_type": "INDUSTRY",
-      "ai": "The initiation of Revolution Medicines' Phase 3 trial for pancreatic cancer could lead to improved treatment options and potentially enhance survival rates for patients."
-    },
-    {
-      "title": "Pancreatic Cancer Treatment Market Size, Share, Growth, 2034",
-      "trail": "",
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5wS0ktZXU2US1GUkpBT3pZeXdqUnNOUU5KaTg5NVFnbGJ6RWhzYy1wZDI5eDgtTmFKM2xKTzlfb1FnMS1nYU1qNzNmV054b0NOWjRCVllSR3lYNFhfckZWQ3IxUFhJYnZWX3p0ejV5dk9UUXZYQy02Vw?oc=5",
-      "pub_date": "2026-06-23",
-      "publisher": "Straits Research",
-      "source_id": "gnews",
-      "sig_type": "INDUSTRY",
-      "ai": "The projected growth of the pancreatic cancer treatment market indicates increased funding and research opportunities, potentially leading to improved survival outcomes for patients by 2034."
-    },
-    {
-      "title": "Eileen O’Reilly Receives Hope Through Compassion Award for Pancreatic Cancer Leadership",
-      "trail": "",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE0zUm1qT09LbS1MSUdoYm1GbHhRM2h4UDc0RWVPRWZjZlRfZ0xLcXhDYnZUNG96OFZHdDJYam1qaWtCWGxUbWtjQ2t1TW9IZ1JFYmNTSnVB?oc=5",
-      "pub_date": "2026-06-23",
-      "publisher": "Oncodaily",
-      "source_id": "gnews",
       "sig_type": "GENERAL",
-      "ai": "Eileen O’Reilly's recognition enhances visibility and funding for pancreatic cancer research, potentially leading to improved treatment options and outcomes for patients."
+      "ai": "The successful use of Namodenoson in a pancreatic cancer patient demonstrates its potential to extend survival beyond 18 months in second-line treatment settings."
     },
     {
-      "title": "Hind Rafei: Collaborative Efforts to Improve CAR-T Therapy For Pancreatic Cancer",
+      "title": "Can-Fite’s pancreatic cancer study accepted for ESMO presentation",
       "trail": "",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5hNVdtNWNETFhQU2FKSEgzYXdXWS1EVWw3WmpYX2ZaLV9kenZGQTNCUlhJMkxpSzIxMThFc3FQTXhkY2JBWG16VGFqc3RZSmFrQnFXWUtzUUhCZw?oc=5",
-      "pub_date": "2026-06-23",
-      "publisher": "Oncodaily",
-      "source_id": "gnews",
-      "sig_type": "TREATMENT",
-      "ai": "The collaborative efforts to enhance CAR-T therapy for pancreatic cancer promise to improve treatment outcomes and potentially extend survival rates for patients facing this aggressive disease."
-    },
-    {
-      "title": "After 40 years without progress, this drug finally doubles pancreatic cancer survival",
-      "trail": "",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNZ2NPM3RsdTdEWE1FUXdfZFdobEFyQmtNUXRxUThIaTRQVm03WWFSRkZ5ZVRocjZKUlV6eWVsaXZFNnJjN2cySlUwNm9CRk1yQjlYSHhTTjZwYlVoR29PVXY0VGtTbmhGOHdWYjdDekdHdFVLbHdpcXdoVkpSSnpYWWdkWEtrRmhBcmllWGcwTWtnWTUyajQ1R1RvZ3ktdHRqQVkydG9zZWZoN2RvTVFmaDBseUR5MEs5U1haMVY1Q1M3dDNi?oc=5",
-      "pub_date": "2026-06-23",
-      "publisher": "Futura, le média qui explore le monde",
-      "source_id": "gnews",
-      "sig_type": "PROGRESS",
-      "ai": "The approval of this drug significantly improves pancreatic cancer survival rates, offering new hope for patients and prompting increased funding for further research and treatment advancements."
-    },
-    {
-      "title": "Daily Beer Linked to Up to 30% Higher Pancreatic Cancer Risk",
-      "trail": "",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQaE94WmViTnR1TE9uQXdhZ0xwaVRMeVhDSkZjSHRUaHZrcUNxSHRMdEdKZXFaQ3ZnT0kxcmFFaTRxbERWem9Ea0VIakhXcjk5cU0zS3JnbUwtcDFubkUzSzBKN0NMMERFUXJRZk12WDd5MC1USE1yR1BrN2R2TExvcm9za0g4MXRDYURVOFdPNHdsRFRsVzFHV0ozZnlrdw?oc=5",
-      "pub_date": "2026-06-23",
-      "publisher": "Seoul Economic Daily",
-      "source_id": "gnews",
-      "sig_type": "GENERAL",
-      "ai": "Increased daily beer consumption is associated with a 30% higher risk of developing pancreatic cancer, highlighting the need for lifestyle modifications in at-risk populations."
-    },
-    {
-      "title": "UVic-led study finds alcohol may increase risk of deadly pancreatic cancer",
-      "trail": "",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPc3k5dnAwOVZONm5tQTdtdkV1em5rcVBHRnUwZFFSZFZKYW8zaDhOWm1BUG1lYkxUa2Y1RHI3cUljRm5oYVgtSVV4cmtfZklmODQ4UEY5eFFacFhjVmdoX0JuTnVwT19EcXItd1pIWE9JSDFrTWFmT2R3NTRxOTJUOFRzRlZQVHFjYzNEZW11OVJTWjNjUlhyNUN2TF9NazBIQ2VKR3VRdmNGMUxC?oc=5",
-      "pub_date": "2026-06-23",
-      "publisher": "Victoria Buzz",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNV19icXd0R0RPNlc2M3pZMzZPQWpMQmtKdDd6ZjBLWnZHU3ZLbEhfZFd5YWRQZ0RPLWpxczdkWGF4allUX2dsWVY0LTBKdnJJTXNURnM2N29SNFBMbDVNX3JMb0M3c1JkQUdQOVI1a1R2V3haODZiZVhXbGJGNnVNcFBfamYzTUhDZnppdVh0YkdQNklDazF2TmhEajJHRVNuMjU2VjRBMFUzaDQxeXl1TW1RSkhjUHZtc3VuYQ?oc=5",
+      "pub_date": "2026-07-20",
+      "publisher": "Investing.com",
       "source_id": "gnews",
       "sig_type": "RESEARCH",
-      "ai": "The study indicates that increased alcohol consumption is linked to a higher risk of developing pancreatic cancer, highlighting the need for targeted prevention strategies in at-risk populations."
+      "ai": "The acceptance of Can-Fite's pancreatic cancer study for ESMO presentation highlights potential advancements in treatment strategies, which could lead to improved survival outcomes for patients."
     },
     {
-      "title": "Breakthrough in Pancreatic Cancer Research Paves Way for Groundbreaking Clinical Trial",
+      "title": "UMN Discovers New Way to Boost Immune Fight on Pancreatic Cancer",
       "trail": "",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNbldMTmoxeDlXM1l1dTViR3Uxdks2WXpyRmhnaXZ4TkQ0QThkakZXR0IzWURMRERua0FaTnBzSFRLa0liUHRJdDFyenoyakN2RXlwN21fUFpGX0hZaVpKdEl0Z1UxU2lmekVtU01Ham9PME0yaks0ay1pdGtNcTBCcm9VQkZUNklVcl9IS0pjbGZVU25XYlBBZ0J6SGRvdDVIZURmMmRqSWZrTGFiZWxPSw?oc=5",
-      "pub_date": "2026-06-23",
-      "publisher": "Bioengineer.org",
-      "source_id": "gnews",
-      "sig_type": "TREATMENT",
-      "ai": "The breakthrough in pancreatic cancer research will lead to a groundbreaking clinical trial for a new drug, potentially improving survival rates for patients significantly."
-    },
-    {
-      "title": "New drug could double survival time in patients with advanced pancreatic cancer",
-      "trail": "",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQeG9RTnBhX0kweThUY21yMTdIcnV0V2wtekdreEVPRDczR24wdkprLW5jbk5WbU45SjhrdWNzYzh4SUprWThYTmJoTTJwOWEyVXUtZ19Fc2JBSnNBazIzY0NoYXE0SnFIV2pDbU9UYy1wSmNRZEpqOVcyTkJ2Q1BqVnhfS3loWEdfQVFkbVJSTWY3cFlFVFlSMVZDUTVVZDFTb01FUEV3ZXlpQUZWYWd3bWVONWwzNDNqTWJXZFVia1FsLUl5SUE?oc=5",
-      "pub_date": "2026-06-22",
-      "publisher": "News-Medical",
-      "source_id": "gnews",
-      "sig_type": "PROGRESS",
-      "ai": "The new drug PROGRESS is expected to double survival time for patients with advanced pancreatic cancer, significantly improving treatment outcomes and patient prognosis."
-    },
-    {
-      "title": "Lung, pancreatic, ovarian cancer death toll rises",
-      "trail": "",
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBiTlNXRFY1ODhwcEVRVVR2N0FvZUltNXA2OXFWVkdSZE12T25CalJWMFZOSFJrbkVybkxfNlFRYnM4QklMLWdha0w5Tko1dWctZm1XNDBFV1hSRzBSaTg0NFlTVEphYjh5YTFmZ2k4c0RuNGVXVjRULQ?oc=5",
-      "pub_date": "2026-06-22",
-      "publisher": "Taipei Times",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQZndZc2FpZ1NsbWY2QTVXOEhMTG1IVnd5cmhGLVF4TVV2UWZhTHpKWUxvUzZpVU4wOEpjVUV4UGo2a2l3YzlVYV95M1lQRkZzeGhEYlRMdDBvVFR4bG1IckRzSUU1MnpubkNMbXU2Qnljbzk5R0JXV1JKbGhMU3hUSnhDZWtUOGtoRkE?oc=5",
+      "pub_date": "2026-07-20",
+      "publisher": "Mirage News",
       "source_id": "gnews",
       "sig_type": "GENERAL",
-      "ai": "The rising death toll underscores the urgent need for increased funding and research into effective treatments for pancreatic cancer, which remains one of the deadliest cancer types."
+      "ai": "The discovery at UMN enhances immune response against pancreatic cancer, potentially improving treatment outcomes and survival rates for patients through novel therapeutic strategies."
+    },
+    {
+      "title": "Andrea Wang-Gillam Highlights the Advancement of JAB-23E73 in Frontline PDAC",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBFN0Z2dE9mTkJnX3R4SHV1MG1wTWJ2bl9pZktnb28wQVBQQ25hRXMzd1VtU29sVU5qN2NHcEI5Y2RfdlE2RThHSm51Ni1FbUlYbVVPSkpsNGN6eXM?oc=5",
+      "pub_date": "2026-07-20",
+      "publisher": "Oncodaily",
+      "source_id": "gnews",
+      "sig_type": "GENERAL",
+      "ai": "The advancement of JAB-23E73 in frontline PDAC treatment significantly enhances survival outcomes for pancreatic cancer patients, offering a promising new therapeutic option."
+    },
+    {
+      "title": "ESSO – Advanced Course on Pancreatic Cancer Surgery",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE03S1hFdWxhMTlQb0JqZmFkZTRNRkw2MUpIYkNvYXFndjl4bWtkaDdmYWxhZFlzMTRmcEFBR1hDYlY4TTFVNmF4THZERUhJdGotbXhkRjhiTmF5OURBSEp3ckRzQ1IyaXkyaG1iZQ?oc=5",
+      "pub_date": "2026-07-19",
+      "publisher": "Oncodaily",
+      "source_id": "gnews",
+      "sig_type": "TREATMENT",
+      "ai": "The advanced course on pancreatic cancer surgery will enhance surgical techniques, potentially improving survival outcomes for patients undergoing treatment."
+    },
+    {
+      "title": "KRAS-Targeted Vaccine Crosses First Clinical Milestone in Pancreatic Cancer Prevention",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPVHllSmN5cUZIY2N5M2pNWXY3Z1YxVVk2bk1zX1hkUHV6Z3lMYkJNUDVyaEd6OG1uUWtpOGJZME5qS2FoVUIzMHNndHZtQVByeDNKVlNFbzhSeFBadnpkM0VCZUM4ZkIyQ1o3RkVETFdkYjVaRGdTbVh0UjVKZlRYTTNoWm5fRTZFTVVsOTlOcFJ1Qm5Ham9sTWtxLWRjQ0ZNZE9meW1PZUtXaGR6WllTYUtRRXBMWlVrRHJFZmZ5dkM3OGtVdGxV?oc=5",
+      "pub_date": "2026-07-17",
+      "publisher": "genengnews.com",
+      "source_id": "gnews",
+      "sig_type": "TREATMENT",
+      "ai": "The KRAS-targeted vaccine's successful milestone in clinical trials offers new hope for improved prevention strategies, potentially enhancing survival outcomes for pancreatic cancer patients."
+    },
+    {
+      "title": "Experimental KRAS Vaccine Generates Immune Response Against Pancreatic Cancer in People at High Risk",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPMmkwMTQyQlQyOXcydThJR2p1ZmhlUEdMX2FkbjNkb0k5OU5XVF94bmRmTVZtcG1oc0RGN0o0RmxXUzVhSFA1NWJlQjhlUW1reXlaSWo4QmNCeTdxZzJjU1RXR0xnVmRLRzlDcWhqa3ZiOHo0WnlxVU9aTU5fN3VGSnR4ZUpjSVRObzEzcmJTejJZVWtTSnlFX2dVdWgzcVZ6bUltcUJKV015WVRyTlI2Ri1Ba256dzNyVjN4SXEtY0JjSjNLel85emphUzhrTWNMRk5Nb1pyaklpeWY1Rm5uWTdkU2s2UE10cFNwVHA3bTc1S3NTSFpJeVA3ZnE?oc=5",
+      "pub_date": "2026-07-16",
+      "publisher": "Johns Hopkins Medicine",
+      "source_id": "gnews",
+      "sig_type": "RESEARCH",
+      "ai": "The experimental KRAS vaccine demonstrates potential to enhance immune responses in high-risk pancreatic cancer patients, potentially improving early intervention and survival outcomes."
+    },
+    {
+      "title": "Blood gene test detects 90% of early-stage pancreatic cancers",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOMkVpRERqZmlTN3BrMTFDd2JVTTc3eUFhVENDenBjdXdkVEg0cm81SDdaSml6X0ZqNnVBU2V1NGxjQmxSdnBlMWVKcktMTkxoNEQzRGNNZUhCd0hLeWdsYXpmOUJIaEh4TmRENlZEdXVZelR2dDBkdUIyWVMxcTVTN2NkZw?oc=5",
+      "pub_date": "2026-07-16",
+      "publisher": "Medical Xpress",
+      "source_id": "gnews",
+      "sig_type": "RESEARCH",
+      "ai": "The blood gene test's ability to detect 90% of early-stage pancreatic cancers significantly enhances early diagnosis, potentially improving treatment outcomes and survival rates for patients."
+    },
+    {
+      "title": "Groundbreaking pancreatic cancer drug trials in South Florida despite not being FDA approved",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNMVBHNEFSWjEtVjVPV1p2Tjk3N21QaXN4UXRPX3VhQnkxMDV2S0MtRk5GczVudWF0anFIU0JPZ0lkNjl3TVFnSno4c0pRUTEzYjhKYmhZVy1PR2ZuYWpSMHVVRWlXbUtrQmVHM25CcUlrZGJYTUVIdzJPal9hOWxnTGRObmNaOWx6V0ZqTGFEcm1vZ2Via0oyOXNPeDBQZERMUk96ekE3YllIWTlpZW16WERsWkxzT0ZjblRpdUgwR21QRmdUeGplTQ?oc=5",
+      "pub_date": "2026-07-16",
+      "publisher": "CBS News",
+      "source_id": "gnews",
+      "sig_type": "TREATMENT",
+      "ai": "The groundbreaking pancreatic cancer drug trials in South Florida offer patients access to innovative therapies that could significantly improve survival outcomes despite the lack of FDA approval."
+    },
+    {
+      "title": "Study: New pancreatic cancer drug doubled survival time",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNekNTRlhPdEtGSklDb1QtaUtYbzFOb0JEcDVLTU5ZbklXQTBRUldyMEppNnlfZTNHYlVnZUFhZEtBQ0VOSDVVeUpnNHNvV3ZmOEVEQ2JqQmlaajA2eWNJdlBZY2syYnluNWd6OFVuNG04NHVSNFlMRExmVlQtc1lOTmRablBsTDJjaWkwVkVmRkFjRm1DRWtEWFhlYUhFdHk1c2tQOENKdVB0Qzdq?oc=5",
+      "pub_date": "2026-07-16",
+      "publisher": "Observer-Reporter",
+      "source_id": "gnews",
+      "sig_type": "PROGRESS",
+      "ai": "The new pancreatic cancer drug has doubled survival time for patients, significantly improving treatment outcomes and offering hope for enhanced therapeutic strategies in future research."
+    },
+    {
+      "title": "City of Hope Patient Among the First to Receive Emerging Pancreatic Cancer Treatment",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQYl9xX0k4dUh4c1V5c29EZ0NYRGhPR3ZYSDBwM3daQ0ttMW9COFE5OGJObzg3bW5LY0lyZ1BBUTF3VEJ4M3c5ck9hMUg4ZWFqQkZoYmFIa3NBYWE2WXNwLWstZ3R5cVpLZ1o1LTNza2JaRTF6NGtxS2VOUEpjVW5RcVhPS3MzcVB3RUF0YWZJeTFKVWtEOHZ4UW5COExUMlh4SUlQX2V6d2xjU0V2SWRYZDYyYm43RUtkb0ZHYXBWSWE3dzlqQnc?oc=5",
+      "pub_date": "2026-07-15",
+      "publisher": "City of Hope",
+      "source_id": "gnews",
+      "sig_type": "TREATMENT",
+      "ai": "The administration of the emerging pancreatic cancer treatment at City of Hope signifies a potential breakthrough in survival rates for patients with this aggressive disease."
+    },
+    {
+      "title": "Dr Ko on the Safety Profile of Optune Pax in Pancreatic Cancer",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOSDI5T25paUFuRUYzQmN1ZzFhSG9vVFRrTzVyUk9jZVljZ0dXUnhPUGxpXzBGMEVaV3BFb011NHNJaktiUU54NVhlU2NlalgwbkFUbWV2aGVla2pzOWQ0MVd3X2FLMzFhTnphR2FHUFJhYXpMaGFiRXJXY1NzWjlMVVNPX2FWcExFSEhCZ0lrenVIX01yVkE?oc=5",
+      "pub_date": "2026-07-15",
+      "publisher": "OncLive",
+      "source_id": "gnews",
+      "sig_type": "GENERAL",
+      "ai": "The safety profile of Optune Pax in pancreatic cancer suggests improved treatment tolerability, potentially enhancing patient adherence and overall survival outcomes."
+    },
+    {
+      "title": "Immanuel works to solve puzzle of better pancreatic cancer treatment",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQT1BueEJpQ3FtY0MyZDMwSWNnTUFqSmw0M1NKbDFxS2wzNjZBak1mOHdoTFpESWxud3JCT3hwcGlkZmJDcTNFMEF1WVFYdjdBenZwS3RiV1NPaGJQOFBqMjh5QU1qMmV3aVZEdUdGYmR4Nk0xbVJHR3NRdk1SdG96ZEM1MTd6RnpvZXdNVURyeWk4cUI2bWtrYXIyZ183dUhL?oc=5",
+      "pub_date": "2026-07-15",
+      "publisher": "South Dakota State University",
+      "source_id": "gnews",
+      "sig_type": "TREATMENT",
+      "ai": "Immanuel's research aims to enhance pancreatic cancer treatment, potentially leading to improved survival rates for patients through innovative therapeutic strategies."
+    },
+    {
+      "title": "New Strategy Could Break Pancreatic Cancer’s Protective Shield",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPc3k0c1hXaGdXVGRtaUlZcWg1VXNqS21SV3pQOTNWSk5EanpoM05FWTFSNHdhMWQ5SDRJVnF4U05fQ29YOHBtb21RX3R5b3RnLTkyZFBGZjR3dnpiU1dJcXh6ckU3MGxQUTU5XzZsM05NNlh2Yjh4Tm5vRzhTalFFeDg3ZjhxT0NxYlZaMDc1MlI?oc=5",
+      "pub_date": "2026-07-14",
+      "publisher": "SciTechDaily",
+      "source_id": "gnews",
+      "sig_type": "GENERAL",
+      "ai": "The new strategy targeting pancreatic cancer's protective shield enhances the potential for improved treatment efficacy, potentially leading to better survival outcomes for patients."
+    },
+    {
+      "title": "What Do the Daraxonrasib Study Results Really Mean, and What’s Next? Clinical Trials, FDA Approval, and Compassionate Use",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPWW5xc1pIdlE0eHBRb0Vsc3NMT2gzTU81SklpM0E5TlNYb0tIQ1hKZTUtSVNlc2ZORWg1NTdHenNnajlXMDBDV1hITE5tWi1veXVMeFRMYjJRRDc0UnVkWmlFQWx1RzJxOTV6MGNwSUdLdkpFVjJzeVM1dXhldmR0YXh2dmFwNnpXYWNR?oc=5",
+      "pub_date": "2026-07-09",
+      "publisher": "WebMD",
+      "source_id": "gnews",
+      "sig_type": "INDUSTRY",
+      "ai": "The promising results from the Daraxonrasib study indicate a potential increase in survival rates for pancreatic cancer patients, paving the way for future FDA approval and expanded treatment options."
+    },
+    {
+      "title": "The pill bringing new hope to patients with pancreatic cancer | On Point with Meghna Chakrabarti",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPc1JRTGJSRXF2MDBJREhnVDkyYkpHeFJsMDRIWkdKZnE1eHdIRTI2Z3BEQ0t3T01CMXZIWmg2ODBVRV9fR0tfUURQM3JCVkFFaExiQ2NGNVVmbnpXdmdUblBKeE5pRGVoMHVmb1J4VlpMMTluV3A5UzQ2UGNHaW1od3hqY3NONndTTkV3?oc=5",
+      "pub_date": "2026-07-08",
+      "publisher": "WBUR",
+      "source_id": "gnews",
+      "sig_type": "TREATMENT",
+      "ai": "The introduction of the new pill significantly improves survival rates for pancreatic cancer patients, offering a promising advancement in treatment options."
+    },
+    {
+      "title": "EMA fast tracks review of a medicine for metastatic pancreatic cancer",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOV3VTUkN4Q2ZydXJTcnFRemo4Zlp2X0x4dmlnV1RQUkVJM0JWUHpBTEh6Zkc2ZmxvM3V3b1FKcDNNb3J6dUloY1laeDVtV0duNV9JUVgzUXp1eFB2R0FILUk3M3NUVU5PUVZkemNDaTQzRVh3TnZMdG1iaGlCM0NsanFBVjFKMFdyNTZpUTQ3RV9HTE9LT0lCSHJn?oc=5",
+      "pub_date": "2026-07-07",
+      "publisher": "European Medicines Agency (EMA)",
+      "source_id": "gnews",
+      "sig_type": "PROGRESS",
+      "ai": "The EMA's fast-tracked review of PROGRESS for metastatic pancreatic cancer accelerates potential access to a new treatment, improving survival outcomes for patients."
+    },
+    {
+      "title": "Revolution’s RAS inhibitor pipeline posts more pancreatic cancer trial wins",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNaGJ4R0JrdEhrdmplQks2a1o1bU1XUk1Ud3Y3LTd4Q0xpcG5PUnlVRWZmT0VsYVIycGt2OTN6ZmhqbEEwa0gzUDVFUGZrYVdTeHdmX1hDaWRmWFB1WHRObUp3d3NWaG5fZVNXZ0xFYmgyQ0w0TkFjbEZQdGQ0UzRMNllfcGw2dXVQZ25jU3U5OHd3WUMyU3c?oc=5",
+      "pub_date": "2026-07-03",
+      "publisher": "Clinical Trials Arena",
+      "source_id": "gnews",
+      "sig_type": "INDUSTRY",
+      "ai": "Revolution's RAS inhibitor pipeline demonstrates improved survival outcomes for pancreatic cancer patients, potentially leading to enhanced treatment options and increased funding for further research in this area."
+    },
+    {
+      "title": "Drug Stops 90% of Pancreatic Cancer Migration in Lab Tests",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOaEFlVFFKenMzbm1qdHFlNTBKbmg1SDBHUUNHblE5ejlTVUFPaXJoY3pmdnQ1VUUzYUlTdmdDcjNyLUNST0JYa0RrZmZJMkFRMGJQelBTejY4YV9xSmQxNkFVZzRxRl9kVm83MGRrZlE3YXhWU2tMRjU3eTNZNHlhQU9HYWEycUJOMTFfdUp5dHVUbkk5LVJXTUUxLTI5OVlYazM4?oc=5",
+      "pub_date": "2026-07-02",
+      "publisher": "ScienceAlert",
+      "source_id": "gnews",
+      "sig_type": "TREATMENT",
+      "ai": "The drug significantly reduces pancreatic cancer cell migration by 90%, potentially improving treatment outcomes and survival rates for patients."
+    },
+    {
+      "title": "Zoldonrasib combinations show encouraging response rates in KRAS G12D-mutant pancreatic cancer",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxNMlJsZ1hMSjNxVTJkbXNnZURGUllfZ1dvVF90YmMxZ21JYVBTVUVGMFp1SmFpVlRTYS1jUldsYnc5RE9WSHltb0VDT1hMeGdFTkdJanpfb0hnSkVKcE4yXzFSNTVRdHJGQ2ZXeWpsZU1feEREMURmX1FEQWlmWlN2R2ZBWERKUldsV1F5OHRHejkyMUx5U0EwSDhZMDlfci1ackV6akl3UnhoN3lPd2VxSi1Pd0Myanh5SktHVlNpa1A4U3d1dnR5LVBaRGJRR08zSzVaY0JZM0FCRDdVeWZUX29xc0xPUmhyOS1sRzcyZU5KODNxLVNnWkxBaEI3Smkzbk1Heg?oc=5",
+      "pub_date": "2026-07-02",
+      "publisher": "ESMO Daily Reporter",
+      "source_id": "gnews",
+      "sig_type": "PROGRESS",
+      "ai": "Zoldonrasib combinations significantly improve response rates in KRAS G12D-mutant pancreatic cancer, potentially enhancing treatment outcomes for patients with this specific mutation."
+    },
+    {
+      "title": "The Cancer Search Bar: Top Pancreatic Cancer Questions Answered",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOTVZKTnhtTnVjWHpFZEhfZmhBdUFkWThJODQwWWtiZDQwMHlsMjZ5RjM5czFoaDZIblZ2MExsbzRzWFhMamNiakVUV2xucTVCcnNHcmd1bklxWWxBRDhXTVNDVlpWMll0bFdjTkpQNFRCdDhTUWZHQnJyWVRNd3pBLVlwNFhXRnRoSEpDRlZ6dmNlWG8?oc=5",
+      "pub_date": "2026-07-01",
+      "publisher": "Cure Today",
+      "source_id": "gnews",
+      "sig_type": "GENERAL",
+      "ai": "The increased public interest in pancreatic cancer research may lead to enhanced funding opportunities, ultimately improving treatment options and survival outcomes for patients."
+    },
+    {
+      "title": "Tip Sheet: New therapy shows promise for pancreatic cancer, experts redefine survivorship — and new strategies for preventing skin cancer",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNVDdtY0xtbkJiWXNlZGFyeTZRcjlPbjZXUVc3LXlGY0lHUzlDTm1GQ0VWMU5NeHF0R2ZfSU00WU9sUndpb3NuM2dmdXZzdWxSVmpYRVF1aHV0dFBUMkRBLS05RmRIOXc5UjdDNU1NWmpJVWNUZzdrd2YtdkVJak1lV2JSSFhVUlpwZTVJdVBGNXBSYS1BR1UwVUliU2l4eXB4OG5EbEVSeXZ2UzVIRXVLMzAxOFJUTkVjd0RlODdITnBLSlpUZ1E4YU5JNnpqa1FybXJOMHI3RF9hVXox?oc=5",
+      "pub_date": "2026-07-01",
+      "publisher": "Fred Hutchinson Cancer Center",
+      "source_id": "gnews",
+      "sig_type": "TREATMENT",
+      "ai": "The new therapy demonstrates improved survival rates for pancreatic cancer patients, offering hope for enhanced treatment outcomes and redefining survivorship strategies in this challenging disease."
+    },
+    {
+      "title": "Blood test spots hidden pancreatic cancer after treatment",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPMzRaWlJvdjN4alR5bHplQzhTMlp1SXRwTkdQZHNJbVZSYmZwSXNCLU95RDQ3WGdjS2prQXUweEc2QUl2NVhVNUgxeDZTMDIyZVNhNWJYZFUtYmk3bFFBVG91U0l0X0Q3c0JZN1lNa3Q4UHVzQ1V4cFM5SzQ5VVA2STlwM2RNRlJpVmF0cFp6TkJSWWpiSk5KM1NkTVQ2YkdaZGhvVXBmbG5fR3dUdXk0MmMxbWlJaVFWaTkxag?oc=5",
+      "pub_date": "2026-06-30",
+      "publisher": "Northwestern Now News",
+      "source_id": "gnews",
+      "sig_type": "TREATMENT",
+      "ai": "The new blood test enables earlier detection of residual pancreatic cancer post-treatment, potentially improving survival rates for patients by facilitating timely intervention."
+    },
+    {
+      "title": "Scientists discover an unexpected way to make pancreatic cancer cells self-destruct",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9zeVZZdGtZRFlWZ0taREh4aWo1bjVFZklMa2FDWXN1N0FBYjVnRHpDaHVvSU1fdmxKa3BfQXRUQzM5MFZuaHRGeGFSN01acDloRTdkZDdTX0RDeENoRG40WlRoRkg3czE2bG9STFJrQQ?oc=5",
+      "pub_date": "2026-06-29",
+      "publisher": "ScienceDaily",
+      "source_id": "gnews",
+      "sig_type": "RESEARCH",
+      "ai": "The discovery of a method to induce self-destruction in pancreatic cancer cells could lead to innovative treatments, potentially improving survival rates for patients."
+    },
+    {
+      "title": "Pancreatic Cancer | Summer 2026 Synthesis | UC Davis Comprehensive Cancer Center",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPQ21BaGFXSjZWSkJDblFaSF9PX2wtY3hGVWstZ1VwSW9mZ1IzNHNha19xbi1qTVNNejZQbG9GTVhnN3dlYklsQXpqSm9QQldzMnJJU3l3cmxwb2NFUXFqSmcwMllfU3g0T0RwV3BTaW92Z1JlMVU1cU5oLTIwTk9JWWxxTEdEMVJLV05nbDlBdw?oc=5",
+      "pub_date": "2026-06-27",
+      "publisher": "UC Davis Health",
+      "source_id": "gnews",
+      "sig_type": "GENERAL",
+      "ai": "The UC Davis Comprehensive Cancer Center's Summer 2026 Synthesis indicates a potential increase in funding for pancreatic cancer research, enhancing treatment options and survival outcomes for patients."
+    },
+    {
+      "title": "Robert Mayer tells us about pancreatic cancer’s hopeless past as new data shows promise",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5Gc2xuUDlucmV3cFV6YURnSFBKcTBLX2RoMzN6dnhuN1ZDOE5DNW0tZ1NWenJCM2VicGN1RUdwVklsWjFvaXZfVG9SQzJDdTZHc1hhRFZVNWV5ZG5sWGZFb0V3?oc=5",
+      "pub_date": "2026-06-26",
+      "publisher": "The Cancer Letter",
+      "source_id": "gnews",
+      "sig_type": "GENERAL",
+      "ai": "The new data suggests potential advancements in treatment options for pancreatic cancer, offering hope for improved survival rates among patients."
+    },
+    {
+      "title": "AI identifies pancreatic cancer years before diagnosis, offering potential for earlier treatment",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxPSGVlVDZGaWhhSGlLLUdHWlYwdnhMYlRaWkJQTTJheFhiYlJ0SkdDOXA1OFpIb3dkUldZX3FFbW1FMnJNOWp1SjAxUFRmOFo4cUtZZi1tdUs4aGhNeUZabUdxN1FjWlVUdjROWW1ZZUhBdXVtWHVJWmhCbDA5LXJBd2IybFRqd1poWmJmS0tDMDl0UWY0ZVlWUUhVMW9lVzFOcmVzU244NjBOSXZHWHFTLWJwWEE4TVd6SnFOWTQ2U3Nwc3IzY2lYY25aU2RLSmFSSEM0bHhhVkVNYXh3Q0hweDF3TlpKVW9tOERkYVZyZm1jamxjQWVLNkJYWTJkdw?oc=5",
+      "pub_date": "2026-06-25",
+      "publisher": "Mayo Clinic",
+      "source_id": "gnews",
+      "sig_type": "TREATMENT",
+      "ai": "The use of AI for early detection of pancreatic cancer significantly enhances the potential for timely treatment, potentially improving survival rates for patients diagnosed at earlier stages."
+    },
+    {
+      "title": "A pancreatic cancer drug provides new hope: Five things to know about daraxonrasib",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNbGxQMlFPSXpWVzcyWFhrUEpqSjdldDFiNDhjTzMtdXk5R0xHbERjQjVyMXBUcGhEUHNzZU95OENhV0NCZ1otZHVmTV9id1UzOW5DVFJ5alZ6dXRETVNuRFY5TWlvdkd6TGN3N2ZPeHE5eFVfVVhuaWQ0ZUhKaUl1Sm1nZjdwMDd6Z1N3ODMwc2lWMmRmR1h5a3ByVWNFQTNFZEE?oc=5",
+      "pub_date": "2026-06-24",
+      "publisher": "Stanford Medicine",
+      "source_id": "gnews",
+      "sig_type": "TREATMENT",
+      "ai": "Daraxonrasib significantly improves survival rates for pancreatic cancer patients, offering a promising new treatment option that could enhance overall outcomes in clinical practice."
+    },
+    {
+      "title": "Do Antiparasitics Like Ivermectin Help Treat Pancreatic Cancer?",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNNzY0emNUYXczLWdacXY2NUEzZ2xLSldDdWFROWp1YjBZaGxzb2ZCWFpmdGxfZ3hGY0tBeDdES0tRMWFVOU5Dc1FTVEtPeDByMWtsbldrY0J6ZFNOc2Vhd29uN1ZEZjl0UVV1SzJvLWduVnRkbDYwaVJ0NXNCMklMQXk4RHdlWlFwSzl4cGtBVGRfVkpRX0pxM1g0TzlicU9SRFg4N1AxTWUySjZZU0E?oc=5",
+      "pub_date": "2026-06-24",
+      "publisher": "WebMD",
+      "source_id": "gnews",
+      "sig_type": "GENERAL",
+      "ai": "The investigation into antiparasitics like Ivermectin suggests potential new avenues for treatment, which could enhance survival outcomes for pancreatic cancer patients if proven effective in clinical trials."
+    },
+    {
+      "title": "Nab-paclitaxel plus S-1 induction chemotherapy for patients with locally advanced pancreatic cancer: a multicenter, open-label phase 2 study | Signal Transduction and Targeted Therapy",
+      "trail": "",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBLOVBrQ2tDbkc2dEcwUndyOFFrZkRjZTFXV1JMbWpTMUtJbmNWSWNhSmFfZGdJN29oSEUzUThuekRoSXNsY01uWjJhRjRhelc3Wm85ZnRfV25wTEVPN0Vr?oc=5",
+      "pub_date": "2026-06-22",
+      "publisher": "Nature",
+      "source_id": "gnews",
+      "sig_type": "TREATMENT",
+      "ai": "The combination of nab-paclitaxel and S-1 induction chemotherapy significantly improves treatment outcomes for patients with locally advanced pancreatic cancer, potentially extending survival rates."
     },
     {
       "title": "V Foundation Funds Sylvester-Led Strategy to Break Pancreatic Cancer Resistance",
@@ -177,64 +377,14 @@
       "ai": "The V Foundation's funding for the Sylvester-led strategy aims to enhance treatment efficacy, potentially improving survival outcomes for pancreatic cancer patients by overcoming drug resistance."
     },
     {
-      "title": "A New Way To Hit Pancreatic Cancer’s Hardest Target",
+      "title": "Pancreatic cancer discovery advances toward first-of-its-kind clinical trial",
       "trail": "",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxObE40Mkl1ZTdDR0dJZnlFN3JhcmNOUUQzeS1EdzRTSmY1QjVycS1LMGlJV0MyWFNPN0RTZkl1VUFJYkh6N3RmSGdGSGZZc0R2aEljOWswLW1XUXZJUW9xWmRPUVBLM2g2Q0hrN1hTUUhIYVBueExfRHFENzc5aU1qNUwzdDZ6TEVtX2dnZ3JILWxvX2lzN1B2NUcwQ2NqTWNVQ3dWdE9DWWowekVa?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1mZVlwa1ljRjEwUU8zYVZXMjZNeTNVTnV3UmxWMzdNLVA5UE5ZVVNkTEotaFc2VUtNVTI4NW5Zc2Y5R2k5MEhmVGc2OEpHSU9KTWJtQkhHazJLOHhy?oc=5",
       "pub_date": "2026-06-22",
-      "publisher": "Forbes",
+      "publisher": "EurekAlert!",
       "source_id": "gnews",
-      "sig_type": "GENERAL",
-      "ai": "The development of this new treatment strategy significantly enhances the potential for improved survival rates in pancreatic cancer patients by effectively targeting previously resistant cancer cells."
-    },
-    {
-      "title": "The real work for making dramatic gains against pancreatic cancer is just beginning",
-      "trail": "",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQU290a054M3hBd1ZDTlVCb214UVFKUV9YMFB6ZC14X20xRHhrRkZULXdrYXBmVG8tMU0xWkh1S3RjR3d2MVFQcW95dXd5a3FIZEJCNHlCOF9fdDFtMklPbG95SXJucG84V3dSRFhOUlpJZ2JnUjNrbWtUNFBJMVRQbmNtNkFRRWJHUUp0UktmQzN1TTBzNlJMblFNRQ?oc=5",
-      "pub_date": "2026-06-19",
-      "publisher": "STAT News",
-      "source_id": "gnews",
-      "sig_type": "GENERAL",
-      "ai": "Increased funding and research efforts are essential for developing innovative treatments that could significantly improve survival rates for pancreatic cancer patients."
-    },
-    {
-      "title": "Booze and Pancreatic Cancer Risk; From 'Hospice' to 'Hope'; Gen Z-ers Skip Screening",
-      "trail": "",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5iRktxS3ViQlozUnZpQ3A0VmVuamQ0TnlURndZZGZPWU9vai1zSF9VUE9PcHJ4SjRtamJiczI4Tk9RS2VnQ0x3TGkzM3lKeDNkSlFERXdmS2NEemZCRXUzWDA2eWtBbjdPZG9BZzNfZ1ZDRzNjTmc?oc=5",
-      "pub_date": "2026-06-19",
-      "publisher": "MedPage Today",
-      "source_id": "gnews",
-      "sig_type": "GENERAL",
-      "ai": "Increased awareness of alcohol's link to pancreatic cancer risk may lead to more targeted prevention strategies and funding for research, ultimately improving early detection and treatment outcomes for patients."
-    },
-    {
-      "title": "Trial offers hope for metastatic pancreatic cancer",
-      "trail": "",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQOHhCUDZxUFBvRTkwcWVDd2M3bHdZbVptak9TRDFDWFdjWXNuUXRxVlB0RmtxYnp5allrRnhVd1E3ZENEc3ZPS25oLUdROUtnNXZHTGJDQTFndTFaTE9BNHVvZzhsZW82MDk1aXVsMm5xeGNvcmVGeEFHdS00NER5SzZvZmVPREEtbjZUcFR4bUJiN2VSRndVX0VOTGJ4eXFxeUZUOG9ybVRISFRrQmZpSVNTUUxDb3lQTWNDb0NQM3JFQQ?oc=5",
-      "pub_date": "2026-06-18",
-      "publisher": "Mayo Clinic",
-      "source_id": "gnews",
-      "sig_type": "PROGRESS",
-      "ai": "The trial results indicate that the new treatment significantly improves survival rates for metastatic pancreatic cancer patients, providing a promising advancement in therapeutic options."
-    },
-    {
-      "title": "2 major advances fuel new optimism in pancreatic cancer care",
-      "trail": "",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNeTNmR3hWZDdhcVB6NHQyVGUzN19pb2dDN05Ca1hORWg5aEpoallHSjFueGFvOXJkcXNpYy1vaURTamdySzg1bldQSjFwSHhhajZKMmllTFR3UW9UVjYxNHo0TjhWTkZZTFhObjJndzBMZG5wdzFDU0RrRlRlaFJSd2U1dWpqM1JyVGNhQTRWcGlCZUF2T1NfRlNRZG5GMFVrMjdIakN3OWFPNmJSRmdzOV9YWmM5aGUyLUpCazh3VS1TY3hLLUdWRTEwZG1QbjQ?oc=5",
-      "pub_date": "2026-06-18",
-      "publisher": "Mayo Clinic",
-      "source_id": "gnews",
-      "sig_type": "GENERAL",
-      "ai": "The advances in pancreatic cancer care enhance treatment options, potentially improving survival rates for patients and encouraging increased funding for ongoing research initiatives."
-    },
-    {
-      "title": "Stage 4 pancreatic cancer: Lewis' story",
-      "trail": "",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPM0NvdGI3N0FDVjF4bERiV3NUR1doMi1iSXFtcU9ybDR5RVhhWW85ZkRkcDZQc1NIS3UwV0VIVFU0Njd0Tlg0ZXpFZlp4N0NfV1hydlFMQ2RGVGoyc2VkWE9Kd0FIOE84dHpzTzJfODZHSlR0YUhGSEFHQTROWi05a1NfYjdaUU9xbTRr?oc=5",
-      "pub_date": "2026-06-18",
-      "publisher": "Roswell Park Comprehensive Cancer Center",
-      "source_id": "gnews",
-      "sig_type": "PROGRESS",
-      "ai": "Lewis' story highlights the potential for improved survival outcomes in stage 4 pancreatic cancer patients through innovative treatment approaches and increased funding for research initiatives."
+      "sig_type": "TREATMENT",
+      "ai": "The advancement toward a first-of-its-kind clinical trial for pancreatic cancer signifies a potential breakthrough in treatment options, which could improve survival outcomes for patients."
     }
   ]
 }
