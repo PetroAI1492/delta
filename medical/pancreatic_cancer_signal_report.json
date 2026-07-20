@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-20 19:53",
-  "run_id": "f53b6db3-15d2-4a66-9eb3-0ce2f4d1fd43",
-  "generated_utc": "2026-07-20 23:52:54 UTC",
+  "generated_at": "2026-07-20 19:58",
+  "run_id": "fa64c027-55e3-4cb3-8c04-5f9b044749bd",
+  "generated_utc": "2026-07-20 23:57:58 UTC",
   "lookback_days": 30,
   "signal_count": 38,
   "noise_count": 226,
@@ -14,7 +14,7 @@
       "publisher": "Medscape",
       "source_id": "gnews",
       "sig_type": "GENERAL",
-      "ai": "The findings highlight the potential for targeting glucose and A1c levels to improve treatment strategies and survival outcomes for pancreatic cancer patients linked to obesity."
+      "ai": "The findings highlight the importance of managing glucose and A1c levels in obese patients to potentially reduce the risk of developing pancreatic cancer."
     },
     {
       "title": "Vaccine to Prevent Pancreatic Cancer Shows Early Promise",
@@ -24,7 +24,7 @@
       "publisher": "Medscape",
       "source_id": "gnews",
       "sig_type": "GENERAL",
-      "ai": "The early promise of the vaccine to prevent pancreatic cancer suggests a potential breakthrough in reducing incidence rates and improving long-term survival outcomes for patients."
+      "ai": "The early promise of the vaccine to prevent pancreatic cancer suggests a potential breakthrough in reducing incidence rates and improving long-term survival outcomes for at-risk patients."
     },
     {
       "title": "Johns Hopkins surgeon highlights AI breakthrough that could spot pancreatic cancer before doctors",
@@ -74,7 +74,7 @@
       "publisher": "Stock Titan",
       "source_id": "gnews",
       "sig_type": "GENERAL",
-      "ai": "The successful use of Namodenoson in a pancreatic cancer patient demonstrates its potential to extend survival beyond 18 months in second-line treatment settings."
+      "ai": "The successful use of Namodenoson in a pancreatic cancer patient demonstrates its potential to extend survival beyond 18 months in advanced cases, offering hope for improved treatment outcomes."
     },
     {
       "title": "Can-Fite’s pancreatic cancer study accepted for ESMO presentation",
@@ -84,7 +84,7 @@
       "publisher": "Investing.com",
       "source_id": "gnews",
       "sig_type": "RESEARCH",
-      "ai": "The acceptance of Can-Fite's pancreatic cancer study for ESMO presentation highlights potential advancements in treatment strategies, which could lead to improved survival outcomes for patients."
+      "ai": "The acceptance of Can-Fite's pancreatic cancer study for ESMO presentation highlights potential advancements in treatment strategies, which may improve survival outcomes for patients."
     },
     {
       "title": "UMN Discovers New Way to Boost Immune Fight on Pancreatic Cancer",
@@ -104,7 +104,7 @@
       "publisher": "Oncodaily",
       "source_id": "gnews",
       "sig_type": "GENERAL",
-      "ai": "The advancement of JAB-23E73 in frontline PDAC treatment significantly enhances survival outcomes for pancreatic cancer patients, offering a promising new therapeutic option."
+      "ai": "The advancement of JAB-23E73 in frontline PDAC treatment significantly improves survival outcomes for pancreatic cancer patients, offering new hope in a historically challenging disease."
     },
     {
       "title": "ESSO – Advanced Course on Pancreatic Cancer Surgery",
@@ -124,7 +124,7 @@
       "publisher": "genengnews.com",
       "source_id": "gnews",
       "sig_type": "TREATMENT",
-      "ai": "The KRAS-targeted vaccine's successful milestone in clinical trials offers new hope for improved prevention strategies, potentially enhancing survival outcomes for pancreatic cancer patients."
+      "ai": "The KRAS-targeted vaccine's successful milestone in clinical trials signifies a promising advancement in preventive strategies, potentially improving survival outcomes for pancreatic cancer patients."
     },
     {
       "title": "Experimental KRAS Vaccine Generates Immune Response Against Pancreatic Cancer in People at High Risk",
@@ -134,7 +134,7 @@
       "publisher": "Johns Hopkins Medicine",
       "source_id": "gnews",
       "sig_type": "RESEARCH",
-      "ai": "The experimental KRAS vaccine demonstrates potential to enhance immune responses in high-risk pancreatic cancer patients, potentially improving early intervention and survival outcomes."
+      "ai": "The experimental KRAS vaccine demonstrates potential to enhance immune responses in high-risk pancreatic cancer patients, potentially improving survival outcomes and paving the way for new treatment strategies."
     },
     {
       "title": "Blood gene test detects 90% of early-stage pancreatic cancers",
@@ -174,7 +174,7 @@
       "publisher": "City of Hope",
       "source_id": "gnews",
       "sig_type": "TREATMENT",
-      "ai": "The administration of the emerging pancreatic cancer treatment at City of Hope signifies a potential breakthrough in survival rates for patients with this aggressive disease."
+      "ai": "The administration of the emerging pancreatic cancer treatment at City of Hope signifies a potential increase in survival rates for patients with this aggressive disease."
     },
     {
       "title": "Dr Ko on the Safety Profile of Optune Pax in Pancreatic Cancer",
@@ -254,7 +254,7 @@
       "publisher": "ScienceAlert",
       "source_id": "gnews",
       "sig_type": "TREATMENT",
-      "ai": "The drug significantly reduces pancreatic cancer cell migration by 90%, potentially improving treatment outcomes and survival rates for patients."
+      "ai": "The drug significantly reduces pancreatic cancer cell migration, potentially improving treatment outcomes and survival rates for patients."
     },
     {
       "title": "Zoldonrasib combinations show encouraging response rates in KRAS G12D-mutant pancreatic cancer",
@@ -274,7 +274,7 @@
       "publisher": "Cure Today",
       "source_id": "gnews",
       "sig_type": "GENERAL",
-      "ai": "The increased public interest in pancreatic cancer research may lead to enhanced funding opportunities, ultimately improving treatment options and survival outcomes for patients."
+      "ai": "Increased public awareness and understanding of pancreatic cancer through accessible information resources can lead to earlier diagnosis and improved treatment outcomes for patients."
     },
     {
       "title": "Tip Sheet: New therapy shows promise for pancreatic cancer, experts redefine survivorship — and new strategies for preventing skin cancer",
@@ -294,7 +294,7 @@
       "publisher": "Northwestern Now News",
       "source_id": "gnews",
       "sig_type": "TREATMENT",
-      "ai": "The new blood test enables earlier detection of residual pancreatic cancer post-treatment, potentially improving survival rates for patients by facilitating timely intervention."
+      "ai": "The new blood test enables earlier detection of residual pancreatic cancer post-treatment, potentially improving survival rates by allowing timely intervention for patients."
     },
     {
       "title": "Scientists discover an unexpected way to make pancreatic cancer cells self-destruct",
@@ -304,7 +304,7 @@
       "publisher": "ScienceDaily",
       "source_id": "gnews",
       "sig_type": "RESEARCH",
-      "ai": "The discovery of a method to induce self-destruction in pancreatic cancer cells could lead to innovative treatments, potentially improving survival rates for patients."
+      "ai": "The discovery of a method to induce self-destruction in pancreatic cancer cells could lead to innovative treatments, significantly improving survival rates for patients."
     },
     {
       "title": "Pancreatic Cancer | Summer 2026 Synthesis | UC Davis Comprehensive Cancer Center",
@@ -314,7 +314,7 @@
       "publisher": "UC Davis Health",
       "source_id": "gnews",
       "sig_type": "GENERAL",
-      "ai": "The UC Davis Comprehensive Cancer Center's Summer 2026 Synthesis indicates a potential increase in funding for pancreatic cancer research, enhancing treatment options and survival outcomes for patients."
+      "ai": "The UC Davis Comprehensive Cancer Center's Summer 2026 Synthesis indicates a potential increase in funding for innovative therapies, directly enhancing treatment options and survival rates for pancreatic cancer patients."
     },
     {
       "title": "Robert Mayer tells us about pancreatic cancer’s hopeless past as new data shows promise",
@@ -324,7 +324,7 @@
       "publisher": "The Cancer Letter",
       "source_id": "gnews",
       "sig_type": "GENERAL",
-      "ai": "The new data suggests potential advancements in treatment options for pancreatic cancer, offering hope for improved survival rates among patients."
+      "ai": "The new data suggests improved treatment outcomes for pancreatic cancer patients, potentially increasing survival rates and encouraging further research funding for innovative therapies."
     },
     {
       "title": "AI identifies pancreatic cancer years before diagnosis, offering potential for earlier treatment",
@@ -354,7 +354,7 @@
       "publisher": "WebMD",
       "source_id": "gnews",
       "sig_type": "GENERAL",
-      "ai": "The investigation into antiparasitics like Ivermectin suggests potential new avenues for treatment, which could enhance survival outcomes for pancreatic cancer patients if proven effective in clinical trials."
+      "ai": "The investigation into ivermectin as a treatment for pancreatic cancer suggests potential new therapeutic avenues, which could enhance survival outcomes for patients if proven effective in clinical trials."
     },
     {
       "title": "Nab-paclitaxel plus S-1 induction chemotherapy for patients with locally advanced pancreatic cancer: a multicenter, open-label phase 2 study | Signal Transduction and Targeted Therapy",
