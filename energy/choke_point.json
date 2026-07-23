@@ -1,88 +1,149 @@
 {
-  "generated_at": "2026-06-22 13:25",
+  "generated_at": "2026-07-23 08:20",
   "chokepoints": {
     "Strait of Hormuz": {
-      "stress": 48,
+      "stress": 34,
       "stress_label": "MODERATE",
-      "article_count": 59,
+      "article_count": 43,
       "why": "Moderate signal activity. Emerging monitoring conditions.",
       "top_signals": [
         {
-          "title": "Hormuz: Traffic flows despite Iran's closure announcement - France 24",
+          "title": "Oil prices touch six week high as Strait of Hormuz is 'completely closed' - The Times of India",
           "chokepoint": null,
-          "categories": [],
+          "categories": [
+            "Energy Markets"
+          ],
           "strength": 3,
-          "source": "France 24"
+          "source": "The Times of India"
         },
         {
-          "title": "Shipping stalls in Strait of Hormuz after Iran declares key waterway closed again - CNBC",
+          "title": "Tehran responds after Trump warns US will strike bridges, power plants over Hormuz attacks - Fox News",
+          "chokepoint": null,
+          "categories": [
+            "Geopolitics / Security"
+          ],
+          "strength": 1,
+          "source": "Fox News"
+        },
+        {
+          "title": "Iran Apparently Seizes Greek Billionaire\u2019s Shipping Tanker In Strait Of Hormuz, Report Says - Forbes",
           "chokepoint": null,
           "categories": [
             "Maritime / Shipping"
           ],
-          "strength": 3,
-          "source": "CNBC"
+          "strength": 1,
+          "source": "Forbes"
         },
         {
-          "title": "Traffic flows in Strait of Hormuz despite Iran\u2019s closure announcement - The Times of Israel",
+          "title": "Major owners find new VLCC trade routes as Strait of Hormuz and Red Sea become \u2018no-go zones\u2019 - TradeWinds News",
           "chokepoint": null,
           "categories": [],
-          "strength": 3,
-          "source": "The Times of Israel"
+          "strength": 1,
+          "source": "TradeWinds News"
         },
         {
-          "title": "Vessels moving in Hormuz despite Iran\u2019s threat of closure - Seatrade Maritime News",
+          "title": "Mideast oil producers step up plans to bypass the Strait of Hormuz - Yahoo",
           "chokepoint": null,
           "categories": [
-            "Maritime / Shipping"
+            "Energy Markets"
           ],
-          "strength": 3,
-          "source": "Seatrade Maritime News"
-        },
-        {
-          "title": "The U.S. says it's open. Iran says it's closed. The Strait of Hormuz remains precarious - CBC",
-          "chokepoint": null,
-          "categories": [],
-          "strength": 3,
-          "source": "CBC"
+          "strength": 1,
+          "source": "Yahoo"
         }
       ]
     },
     "Strait of Malacca": {
+      "stress": 0,
+      "stress_label": "NOMINAL",
+      "article_count": 0,
+      "why": "No significant signals detected for Strait of Malacca in the last 24 hours.",
+      "top_signals": []
+    },
+    "Suez Canal": {
       "stress": 33,
       "stress_label": "MODERATE",
-      "article_count": 2,
+      "article_count": 3,
       "why": "Moderate signal activity. Emerging monitoring conditions.",
       "top_signals": [
         {
-          "title": "Thailand revives US$30 billion corridor to challenge Malacca Strait - DredgeWire",
+          "title": "Can the Suez save Asian oil consumers after Houthis shut Bab al-Mandeb? - Al Jazeera",
           "chokepoint": null,
-          "categories": [],
+          "categories": [
+            "Energy Markets"
+          ],
           "strength": 1,
-          "source": "DredgeWire"
+          "source": "Al Jazeera"
         },
         {
-          "title": "China\u2019s Malacca panic jails US scholar to appease Myanmar - Asia Times",
+          "title": "Asian Refiners Seek To Move Saudi Crude Via Suez Canal Route After Houthi Naval Blockade - Marine Insight",
+          "chokepoint": null,
+          "categories": [
+            "Energy Markets"
+          ],
+          "strength": 1,
+          "source": "Marine Insight"
+        },
+        {
+          "title": "Al Ahli Sabbour obtains $85.7mln loan from CIB, Suez Canal Bank for North Coast project - Zawya",
           "chokepoint": null,
           "categories": [],
           "strength": 1,
-          "source": "Asia Times"
+          "source": "Zawya"
         }
       ]
     },
-    "Suez Canal": {
-      "stress": 0,
-      "stress_label": "NOMINAL",
-      "article_count": 0,
-      "why": "No significant signals detected for Suez Canal in the last 24 hours.",
-      "top_signals": []
-    },
     "Bab el-Mandeb": {
-      "stress": 0,
-      "stress_label": "NOMINAL",
-      "article_count": 0,
-      "why": "No significant signals detected for Bab el-Mandeb in the last 24 hours.",
-      "top_signals": []
+      "stress": 33,
+      "stress_label": "MODERATE",
+      "article_count": 18,
+      "why": "Moderate signal activity. Emerging monitoring conditions.",
+      "top_signals": [
+        {
+          "title": "Two Chinese supertankers with Saudi oil head to Bab el-Mandeb for Red Sea exit - Reuters",
+          "chokepoint": null,
+          "categories": [
+            "Energy Markets",
+            "Maritime / Shipping"
+          ],
+          "strength": 1,
+          "source": "Reuters"
+        },
+        {
+          "title": "Will the Houthis escalate attacks on the Bab el-Mandeb Strait? - The Jerusalem Post",
+          "chokepoint": null,
+          "categories": [
+            "Geopolitics / Security"
+          ],
+          "strength": 1,
+          "source": "The Jerusalem Post"
+        },
+        {
+          "title": "Chinese Tankers Push Through Bab el-Mandeb Despite Houthi Blockade Threats - Crude Oil Prices Today | OilPrice.com",
+          "chokepoint": null,
+          "categories": [
+            "Energy Markets",
+            "Maritime / Shipping"
+          ],
+          "strength": 1,
+          "source": "Crude Oil Prices Today | OilPrice.com"
+        },
+        {
+          "title": "Yemen\u2019s Houthis Block Saudi-Linked Shipping Through Bab El-Mandeb Strait In Retaliation - NewsCord",
+          "chokepoint": null,
+          "categories": [
+            "Maritime / Shipping"
+          ],
+          "strength": 1,
+          "source": "NewsCord"
+        },
+        {
+          "title": "Houthis announce blockade of Saudi Arabia, ships reroute to avoid Bab al Mandeb Strait - Foundation for Defense of Democracies",
+          "chokepoint": null,
+          "categories": [],
+          "strength": 1,
+          "source": "Foundation for Defense of Democracies"
+        }
+      ]
     },
     "Turkish Straits": {
       "stress": 0,
@@ -92,11 +153,49 @@
       "top_signals": []
     },
     "Panama Canal": {
-      "stress": 0,
-      "stress_label": "NOMINAL",
-      "article_count": 0,
-      "why": "No significant signals detected for Panama Canal in the last 24 hours.",
-      "top_signals": []
+      "stress": 33,
+      "stress_label": "MODERATE",
+      "article_count": 8,
+      "why": "Moderate signal activity. Emerging monitoring conditions.",
+      "top_signals": [
+        {
+          "title": "News Panama Canal braces for El Ni\u00f1o, announcing first transit restrictions - The Loadstar",
+          "chokepoint": null,
+          "categories": [],
+          "strength": 1,
+          "source": "The Loadstar"
+        },
+        {
+          "title": "Panama Canal monitors weather as severe El Ni\u00f1o threat rises - Reuters",
+          "chokepoint": null,
+          "categories": [],
+          "strength": 1,
+          "source": "Reuters"
+        },
+        {
+          "title": "Panama Canal sees increase in transits as El Ni\u00f1o impact looms - Seatrade Maritime News",
+          "chokepoint": null,
+          "categories": [
+            "Maritime / Shipping"
+          ],
+          "strength": 1,
+          "source": "Seatrade Maritime News"
+        },
+        {
+          "title": "Panama Canal\u2019s El Ni\u00f1o Concerns Prompt Carrier Surcharges, New Draft Restrictions - Yahoo Finance",
+          "chokepoint": null,
+          "categories": [],
+          "strength": 1,
+          "source": "Yahoo Finance"
+        },
+        {
+          "title": "Panama Canal traffic momentum challenged by growing El Ni\u00f1o risk - WorldCargo News",
+          "chokepoint": null,
+          "categories": [],
+          "strength": 1,
+          "source": "WorldCargo News"
+        }
+      ]
     }
   }
 }
