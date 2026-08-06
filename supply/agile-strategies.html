@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agile Strategies | Procurement Done Right</title>
+
+<!-- Primary meta tags -->
+<meta name="description" content="Agile Strategies provides end-to-end procurement solutions, legal services, staff augmentation, and procurement/legal training.">
+<meta name="author" content="Agile Strategies, LLC">
+<link rel="canonical" href="https://www.agilestrategies.net/">
+
+<!-- Open Graph (Facebook, LinkedIn, Slack previews) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Agile Strategies | Procurement Done Right">
+<meta property="og:description" content="Agile Strategies provides end-to-end procurement solutions, legal services, staff augmentation, and procurement/legal training.">
+<meta property="og:url" content="https://www.agilestrategies.net/">
+<meta property="og:image" content="https://www.agilestrategies.net/images/agile-og-share.png">
+<meta property="og:site_name" content="Agile Strategies">
+
+<!-- Twitter/X card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agile Strategies | Procurement Done Right">
+<meta name="twitter:description" content="Agile Strategies provides end-to-end procurement solutions, legal services, staff augmentation, and procurement/legal training.">
+<meta name="twitter:image" content="https://www.agilestrategies.net/images/agile-og-share.png">
+
+<!-- Favicon -->
+<link rel="icon" href="https://www.agilestrategies.net/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="https://www.agilestrategies.net/favicon-32x32.png">
+
+<style>
+  :root{
+    --ink:#111111;
+    --paper:#ffffff;
+    --grey-line:#d9d9d9;
+    --grey-bg:#f2f2f2;
+    --grey-text:#595959;
+    --orange:#FF8000;
+    --orange-dark:#d96900;
+    --serif: Georgia, 'Times New Roman', Times, serif;
+    --sans: Arial, Helvetica, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{
+    margin:0;padding:0;max-width:100%;overflow-x:hidden;
+    scrollbar-width:none;        /* Firefox */
+    -ms-overflow-style:none;     /* old Edge/IE */
+  }
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar{
+    display:none;                 /* Chrome/Safari/new Edge */
+    width:0;
+    height:0;
+  }
+  body{
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- Top utility bar ---------- */
+  .util-bar{
+    background:var(--ink);
+    color:#fff;
+    font-size:11px;
+    letter-spacing:.04em;
+  }
+  .util-bar .wrap{
+    display:flex;justify-content:space-between;align-items:center;
+    height:30px;
+  }
+  .util-bar .tag{color:#bbbbbb;}
+  .util-bar .tag strong{color:var(--orange);font-weight:700;}
+
+  /* ---------- Header / masthead ---------- */
+  header.masthead{
+    background:#fff;
+  }
+  .masthead-row{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:24px;
+    padding-top:16px;padding-bottom:16px;
+  }
+  .brand{display:flex;align-items:center;gap:18px;flex:0 0 auto;}
+  .brand-logo{
+    height:84px;
+    width:auto;
+    display:block;
+  }
+  .brand-tag{
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    color:var(--grey-text);
+    border-left:1px solid var(--grey-line);
+    padding-left:16px;
+    margin-left:4px;
+    align-self:center;
+    white-space:nowrap;
+  }
+  nav.primary{
+    display:flex;
+    align-items:center;
+    gap:0;
+    overflow-x:auto;
+    scrollbar-width:none;      /* Firefox */
+    -ms-overflow-style:none;   /* old Edge/IE */
+    flex:0 1 auto;
+    min-width:0;
+    justify-content:flex-start;
+  }
+  nav.primary::-webkit-scrollbar{
+    display:none;              /* Chrome/Safari */
+  }
+  nav.primary a{
+    display:inline-block;
+    padding:8px 16px;
+    font-size:13px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.03em;
+    color:var(--ink);
+    border-bottom:3px solid transparent;
+    white-space:nowrap;
+  }
+  nav.primary a:hover{border-bottom-color:var(--orange);}
+  nav.primary a.cta-link{
+    color:#fff;
+    background:var(--ink);
+    border-radius:999px;
+    padding:9px 20px;
+    margin-left:8px;
+    border-bottom:none;
+  }
+  nav.primary a.cta-link:hover{background:var(--orange-dark);}
+
+  .nav-dropdown{position:relative;}
+  .nav-dropdown-trigger{
+    display:inline-flex;align-items:center;gap:4px;
+  }
+  .nav-dropdown .caret{font-size:9px;}
+  .nav-dropdown-menu{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#fff;
+    border:1px solid var(--ink);
+    min-width:240px;
+    box-shadow:0 10px 24px rgba(0,0,0,.15);
+    z-index:50;
+  }
+  .nav-dropdown-menu a{
+    display:block;
+    padding:12px 16px;
+    border-bottom:1px solid var(--grey-line);
+    font-size:12.5px;
+    white-space:normal;
+  }
+  .nav-dropdown-menu a:last-child{border-bottom:none;}
+  .nav-dropdown-menu a:hover{background:var(--grey-bg);border-bottom-color:var(--grey-line);color:var(--orange-dark);}
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu{display:block;}
+
+  @media (max-width:1100px){
+    .masthead-row{flex-wrap:wrap;}
+    nav.primary{justify-content:flex-start;width:100%;}
+  }
+
+  /* ---------- Ticker ---------- */
+  .ticker{
+    background:var(--grey-bg);
+    border-bottom:1px solid var(--grey-line);
+    font-size:12px;
+    color:var(--grey-text);
+    overflow:hidden;
+  }
+  .ticker .wrap{
+    display:flex;align-items:center;gap:14px;
+    height:34px;
+  }
+  .ticker .label{
+    background:var(--orange);
+    color:#fff;
+    font-weight:700;
+    font-size:10px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    padding:3px 8px;
+    flex:0 0 auto;
+  }
+  .ticker .items{
+    display:flex;gap:26px;
+    white-space:nowrap;
+  }
+  .ticker .items span{color:var(--ink);}
+  .ticker .items span::after{
+    content:"•";
+    color:var(--grey-line);
+    margin-left:26px;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    border-bottom:1px solid var(--grey-line);
+    padding:44px 0 40px;
+  }
+  .hero .eyebrow{
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    color:var(--orange-dark);
+    margin-bottom:14px;
+  }
+  .hero .eyebrow::before{
+    content:"● ";
+    color:var(--orange);
+  }
+  .hero h1{
+    font-family:var(--serif);
+    font-size:46px;
+    line-height:1.08;
+    font-weight:700;
+    letter-spacing:-0.02em;
+    margin:0 0 18px;
+    max-width:820px;
+  }
+  .hero .dek{
+    font-size:18px;
+    line-height:1.55;
+    color:#333;
+    max-width:660px;
+    margin:0 0 26px;
+    font-family:var(--serif);
+  }
+  .hero .byline{
+    font-size:12px;
+    color:var(--grey-text);
+    border-top:1px solid var(--grey-line);
+    padding-top:12px;
+    margin-bottom:26px;
+  }
+  .hero .actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;
+    padding:12px 22px;
+    font-size:13px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    border:1px solid var(--ink);
+  }
+  .btn-solid{background:var(--ink);color:#fff;}
+  .btn-solid:hover{background:var(--orange-dark);border-color:var(--orange-dark);}
+  .btn-outline{background:transparent;color:var(--ink);}
+  .btn-outline:hover{border-color:var(--orange-dark);color:var(--orange-dark);}
+
+  /* ---------- Stat strip ---------- */
+  .stat-strip{
+    border-bottom:1px solid var(--grey-line);
+    background:var(--grey-bg);
+  }
+  .stat-strip .wrap{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+  }
+  .stat-strip .stat{
+    padding:22px 20px;
+    border-left:1px solid var(--grey-line);
+  }
+  .stat-strip .stat:first-child{border-left:none;}
+  .stat-strip .stat .label{
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:var(--grey-text);
+    font-weight:700;
+  }
+
+  /* ---------- Section shell ---------- */
+  section{padding:48px 0;border-bottom:1px solid var(--grey-line);}
+  #about, #end-to-end, #staffing, #training, .cta-band{
+    padding:60px 0;
+  }
+  .section-head{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:10px;
+    margin-bottom:28px;
+  }
+  .section-head .kicker{
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    color:var(--orange-dark);
+  }
+  .section-head h2{
+    font-family:var(--serif);
+    font-size:30px;
+    margin:4px 0 0;
+    font-weight:700;
+  }
+  .lede{
+    font-size:16px;
+    color:#333;
+    max-width:760px;
+    line-height:1.6;
+    margin-bottom:8px;
+  }
+
+  /* ---------- About ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    gap:40px;
+  }
+  .about-grid p{
+    font-size:15px;
+    line-height:1.6;
+    color:#2a2a2a;
+    margin:0 0 16px;
+  }
+  .pull{
+    border-left:3px solid var(--orange);
+    padding-left:18px;
+    font-family:var(--serif);
+    font-size:19px;
+    line-height:1.5;
+    color:var(--ink);
+    font-style:italic;
+  }
+
+  /* ---------- Leadership ---------- */
+  .leadership{margin-top:36px;}
+  .leader-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    border-top:1px solid var(--grey-line);
+    border-left:1px solid var(--grey-line);
+  }
+  .leader-card{
+    border-right:1px solid var(--grey-line);
+    border-bottom:1px solid var(--grey-line);
+    padding:22px 24px;
+    transition:background-color .15s ease;
+  }
+  .leader-card:hover{background:var(--grey-bg);}
+  .leader-name{
+    font-family:var(--serif);
+    font-size:18px;
+    font-weight:700;
+  }
+  .leader-title{
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    color:var(--orange-dark);
+    margin:4px 0 12px;
+  }
+  .leader-card p{
+    font-size:14px;
+    color:var(--grey-text);
+    line-height:1.6;
+    margin:0;
+  }
+  @media (max-width:900px){
+    .leader-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- Services ---------- */
+  .service-cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:0;
+    border-top:1px solid var(--grey-line);
+    border-left:1px solid var(--grey-line);
+  }
+  .service-card{
+    border-right:1px solid var(--grey-line);
+    border-bottom:1px solid var(--grey-line);
+    padding:26px 24px;
+    background:#fff;
+    transition:background-color .15s ease;
+  }
+  .service-card:hover{background:var(--grey-bg);}
+  .service-card .num{
+    font-family:var(--serif);
+    font-size:13px;
+    color:var(--orange-dark);
+    font-weight:700;
+    letter-spacing:.05em;
+  }
+  .service-card h3{
+    font-size:17px;
+    margin:10px 0 10px;
+    font-weight:700;
+  }
+  .service-card p{
+    font-size:14px;
+    color:var(--grey-text);
+    line-height:1.6;
+    margin:0 0 14px;
+  }
+  .service-card a{
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    color:var(--orange-dark);
+  }
+  .service-card a:hover{text-decoration:underline;}
+
+  /* ---------- Detail blocks (deep dive) ---------- */
+  .detail{
+    display:grid;
+    grid-template-columns: 220px 1fr;
+    gap:36px;
+    padding:30px 0;
+    border-top:1px solid var(--grey-line);
+  }
+  .detail:first-of-type{border-top:none;}
+  .detail .tag-col .tag{
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:#fff;
+    background:var(--ink);
+    display:inline-block;
+    padding:4px 9px;
+  }
+  .detail h3{
+    font-family:var(--serif);
+    font-size:21px;
+    margin:0 0 10px;
+  }
+  .detail p{
+    font-size:14.5px;
+    color:#2a2a2a;
+    line-height:1.6;
+    margin:0 0 14px;
+  }
+  .detail ul{
+    margin:0;padding:0;list-style:none;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px 24px;
+  }
+  .detail ul li{
+    font-size:13.5px;
+    color:#333;
+    padding-left:16px;
+    position:relative;
+    line-height:1.5;
+  }
+  .detail ul li::before{
+    content:"›";
+    color:var(--orange-dark);
+    font-weight:700;
+    position:absolute;left:0;top:0;
+  }
+
+  /* ---------- Legal (Privacy / Terms) ---------- */
+  .legal-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0 48px;
+  }
+  .legal-block{padding:8px 0;}
+  .legal-block .tag-col{margin-bottom:12px;}
+  .legal-block .tag-col .tag{
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:#fff;
+    background:var(--ink);
+    display:inline-block;
+    padding:4px 9px;
+  }
+  .legal-block p{
+    font-size:14.5px;
+    color:#2a2a2a;
+    line-height:1.6;
+    margin:0 0 14px;
+  }
+  .legal-block ul{margin:0;padding:0;list-style:none;}
+  .legal-block ul li{
+    font-size:13.5px;
+    color:#333;
+    padding-left:16px;
+    position:relative;
+    line-height:1.55;
+    margin-bottom:8px;
+  }
+  .legal-block ul li::before{
+    content:"›";
+    color:var(--orange-dark);
+    font-weight:700;
+    position:absolute;left:0;top:0;
+  }
+  @media(max-width:900px){
+    .legal-grid{grid-template-columns:1fr;gap:32px 0;}
+  }
+
+  /* ---------- Framework / numbered steps (real sequence) ---------- */
+  .framework-strip{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    border-top:1px solid var(--grey-line);
+    border-left:1px solid var(--grey-line);
+  }
+  .fw-step{
+    border-right:1px solid var(--grey-line);
+    border-bottom:1px solid var(--grey-line);
+    padding:20px 16px;
+    text-align:left;
+  }
+  .fw-step .n{
+    font-family:var(--serif);
+    font-size:26px;
+    color:var(--grey-line);
+    font-weight:700;
+  }
+  .fw-step h4{
+    font-size:13.5px;
+    margin:8px 0 0;
+    font-weight:700;
+    line-height:1.35;
+  }
+
+  /* ---------- Timeline ---------- */
+  .timeline{
+    border-top:1px solid var(--grey-line);
+  }
+  .tl-row{
+    display:grid;
+    grid-template-columns:140px 1fr;
+    gap:20px;
+    padding:16px 0;
+    border-bottom:1px solid var(--grey-line);
+  }
+  .tl-row .week{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:14px;
+    color:var(--orange-dark);
+  }
+  .tl-row p{margin:0;font-size:14px;color:#2a2a2a;line-height:1.55;}
+
+  /* ---------- Contact / CTA band ---------- */
+  .cta-band{
+    background:var(--ink);
+    color:#fff;
+    border-bottom:none;
+  }
+  .cta-band .section-head{border-bottom:2px solid #444;}
+  .cta-band .section-head .kicker{color:var(--orange);}
+  .cta-band .section-head h2{color:#fff;}
+  .cta-grid{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:44px;
+  }
+  .cta-grid p{
+    font-size:15px;
+    line-height:1.7;
+    color:#d6d6d6;
+    margin:0 0 18px;
+  }
+  .contact-line{
+    font-size:14px;
+    color:#fff;
+    margin:0 0 8px;
+    border-bottom:1px solid #333;
+    padding-bottom:8px;
+  }
+  .contact-line strong{color:var(--orange);font-weight:700;}
+
+  form.inquiry{
+    background:#1a1a1a;
+    border:1px solid #333;
+    padding:26px;
+  }
+  form.inquiry label{
+    display:block;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:#aaa;
+    margin-bottom:6px;
+  }
+  form.inquiry .field{margin-bottom:16px;}
+  form.inquiry input,
+  form.inquiry select,
+  form.inquiry textarea{
+    width:100%;
+    background:#111;
+    border:1px solid #3a3a3a;
+    color:#fff;
+    padding:10px 12px;
+    font-size:14px;
+    font-family:var(--sans);
+  }
+  form.inquiry textarea{min-height:90px;resize:vertical;}
+  form.inquiry button{
+    width:100%;
+    background:var(--orange);
+    border:none;
+    color:#111;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    padding:13px;
+    font-size:13px;
+    cursor:pointer;
+  }
+  form.inquiry button:hover{background:#ffa03d;}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:#fff;
+    padding:28px 0;
+  }
+  footer .wrap{
+    display:flex;justify-content:space-between;align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  footer .legal-links{display:flex;gap:22px;}
+  footer .legal-links a{
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    color:var(--grey-text);
+  }
+  footer .legal-links a:hover{color:var(--orange-dark);}
+  footer .copyright{
+    font-size:12px;
+    color:var(--grey-text);
+  }
+
+  @media (max-width:900px){
+    .hero h1{font-size:32px;}
+    .stat-strip .wrap{grid-template-columns:repeat(2,1fr);}
+    .stat-strip .stat:nth-child(3){border-left:none;}
+    .about-grid{grid-template-columns:1fr;}
+    .service-cards{grid-template-columns:1fr;}
+    .detail{grid-template-columns:1fr;}
+    .detail ul{grid-template-columns:1fr;}
+    .framework-strip{grid-template-columns:repeat(2,1fr);}
+    .cta-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- Chat widget ---------- */
+  .back-to-top{
+    position:fixed;
+    right:24px;
+    bottom:92px;
+    z-index:1000;
+    height:44px;
+    padding:0 18px;
+    border-radius:999px;
+    background:#fff;
+    color:var(--ink);
+    border:1px solid var(--ink);
+    font-size:13px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    cursor:pointer;
+    box-shadow:0 6px 16px rgba(0,0,0,.18);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .2s ease, background .2s ease, color .2s ease;
+  }
+  .back-to-top.visible{opacity:1;pointer-events:auto;}
+  .back-to-top:hover{background:var(--orange);border-color:var(--orange);color:#fff;}
+  .back-to-top-icon{font-size:15px;line-height:1;}
+  .back-to-top-label{white-space:nowrap;}
+
+  .chat-toggle{
+    position:fixed;
+    right:24px;
+    bottom:24px;
+    z-index:1000;
+    background:var(--ink);
+    color:#fff;
+    border:none;
+    border-radius:999px;
+    padding:14px 20px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:13px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    cursor:pointer;
+    box-shadow:0 6px 18px rgba(0,0,0,.25);
+  }
+  .chat-toggle:hover{background:var(--orange-dark);}
+  .chat-toggle.hidden{display:none;}
+  .chat-toggle-icon{color:var(--orange);font-size:15px;}
+  .chat-toggle.hidden .chat-toggle-icon{color:inherit;}
+
+  .chat-panel{
+    position:fixed;
+    right:24px;
+    bottom:24px;
+    z-index:1000;
+    width:340px;
+    max-width:calc(100vw - 32px);
+    height:460px;
+    max-height:calc(100vh - 48px);
+    background:#fff;
+    border:1px solid var(--ink);
+    box-shadow:0 12px 30px rgba(0,0,0,.3);
+    display:none;
+    flex-direction:column;
+    overflow:hidden;
+  }
+  .chat-panel.open{display:flex;}
+
+  .chat-header{
+    background:var(--ink);
+    color:#fff;
+    padding:14px 16px;
+    font-size:14px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:3px solid var(--orange);
+  }
+  .chat-close{
+    background:none;
+    border:none;
+    color:#fff;
+    font-size:20px;
+    line-height:1;
+    cursor:pointer;
+    padding:0;
+  }
+  .chat-close:hover{color:var(--orange);}
+
+  .chat-body{
+    flex:1;
+    overflow-y:auto;
+    padding:16px;
+    background:var(--grey-bg);
+  }
+  .chat-row{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:14px;
+  }
+  .chat-row-user{justify-content:flex-end;}
+  .chat-avatar{
+    width:30px;height:30px;
+    border-radius:50%;
+    background:var(--ink);
+    color:var(--orange);
+    font-size:11px;
+    font-weight:700;
+    display:flex;
+    align-items:center;justify-content:center;
+    flex:0 0 auto;
+  }
+  .chat-bubble{
+    background:#fff;
+    border:1px solid var(--grey-line);
+    padding:10px 13px;
+    font-size:13.5px;
+    line-height:1.5;
+    color:var(--ink);
+    max-width:220px;
+  }
+  .chat-bubble-user{
+    background:var(--ink);
+    color:#fff;
+    border-color:var(--ink);
+  }
+  .chat-quick-replies{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:8px;
+    margin-bottom:6px;
+  }
+  .chat-chip{
+    background:#fff;
+    border:1px solid var(--orange-dark);
+    color:var(--orange-dark);
+    font-size:12.5px;
+    font-weight:700;
+    padding:8px 14px;
+    cursor:pointer;
+  }
+  .chat-chip:hover{background:var(--orange-dark);color:#fff;}
+
+  .chat-input-row{
+    border-top:1px solid var(--grey-line);
+    padding:10px 12px;
+    background:#fff;
+  }
+  .chat-input-row input{
+    width:100%;
+    border:1px solid var(--grey-line);
+    padding:9px 12px;
+    font-size:13.5px;
+    font-family:var(--sans);
+  }
+  .chat-input-row input:focus{outline:2px solid var(--orange);outline-offset:1px;}
+
+  @media (max-width:500px){
+    .chat-panel{
+      right:16px;left:16px;width:auto;bottom:88px;
+    }
+    .chat-toggle{right:16px;bottom:16px;}
+  }
+</style>
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="wrap masthead-row">
+      <div class="brand">
+        <img class="brand-logo" src="https://www.agilestrategies.net/images/agile-logo.png" alt="Agile Strategies logo">
+      </div>
+      <nav class="primary">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <div class="nav-dropdown">
+          <a href="#services" class="nav-dropdown-trigger">Services <span class="caret">&#9662;</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="#end-to-end">End-to-End Procurement</a>
+            <a href="#staffing">Staff Augmentation</a>
+            <a href="#training">Training</a>
+          </div>
+        </div>
+        <a href="#framework">Assessment</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#contact" class="cta-link">Contact →</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ticker">
+    <div class="wrap">
+      <div class="items">
+        <span>Cost Optimization</span>
+        <span>Compliance</span>
+        <span>Supplier Management</span>
+        <span>Process Transformation</span>
+        <span>Source-to-Pay Transformation</span>
+        <span>Contract Risk Mitigation</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="hero" id="home" style="border-bottom:1px solid var(--grey-line);padding-top:44px;">
+    <div class="wrap">
+      <h1>Procurement done right. We plug in. You win.</h1>
+      <p class="dek">Agile Strategies provides end-to-end procurement solutions, legal services, staff augmentation, and procurement/legal training.</p>
+      <div class="actions">
+        <a href="#contact" class="btn btn-solid">Start a Conversation</a>
+        <a href="#services" class="btn btn-outline">Explore Services</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="stat-strip">
+    <div class="wrap">
+      <div class="stat"><div class="label">Cost Optimization</div></div>
+      <div class="stat"><div class="label">Compliance</div></div>
+      <div class="stat"><div class="label">Supplier Management</div></div>
+      <div class="stat"><div class="label">Process Transformation</div></div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker">About Us</div>
+          <h2>Experienced procurement, contracting, and business operations leadership.</h2>
+        </div>
+      </div>
+      <div class="about-grid">
+        <div>
+          <p>With more than 45 years of combined experience, our leadership team specializes in procurement transformation, strategic sourcing, contract management, supplier governance, and technology-enabled business operations. We help organizations optimize procurement functions, reduce costs, improve operational efficiency, and strengthen supplier performance across highly regulated and global industries — including financial services, consulting, hospitality, technology, and government contracting.</p>
+          <p>Our experience includes managing multi-billion-dollar spend portfolios, leading enterprise-wide sourcing initiatives, implementing modern procurement and contract management technologies, and negotiating complex commercial, technology, software, cloud, and SaaS agreements. We have built and transformed procurement organizations, streamlined processes, enhanced governance frameworks, and delivered measurable cost savings and operational improvements that support long-term business objectives.</p>
+          <p>In addition to procurement and contracting expertise, we design and deliver executive workshops, procurement training programs, and stakeholder engagement initiatives that help organizations build internal capabilities and drive sustainable change. Our team also brings more than a decade of experience leading large-scale staff augmentation programs for enterprise organizations, helping clients access specialized talent, improve workforce flexibility, and maintain strong governance and cost control.</p>
+          <p>We're intentionally small. That means senior-only staffing on every engagement — no bench of junior consultants learning on your dime — direct access to the people doing the work, and the flexibility to move at your pace, not a standardized methodology's.</p>
+        </div>
+        <div>
+          <div class="pull">"By combining strategic insight with hands-on execution, we enable organizations to improve performance, mitigate risk, and maximize value from supplier relationships."</div>
+        </div>
+      </div>
+
+      <div class="leadership">
+        <div class="section-head" style="margin-top:8px;">
+          <div>
+            <div class="kicker">Leadership</div>
+            <h2 style="font-size:22px;">The people behind the work.</h2>
+          </div>
+        </div>
+        <div class="leader-grid">
+          <div class="leader-card">
+            <div class="leader-name">Michael Ferraro</div>
+            <div class="leader-title">Founder &amp; Managing Partner</div>
+            <p>18+ years leading strategic sourcing and procurement transformation for global financial services and technology firms, managing spend portfolios exceeding $1.5B annually. Has led enterprise-wide sourcing initiatives and built procurement functions from the ground up through rapid growth and M&amp;A.</p>
+          </div>
+          <div class="leader-card">
+            <div class="leader-name">Elena Whitfield</div>
+            <div class="leader-title">Co-Founder &amp; Head of Legal Advisory</div>
+            <p>12 years in commercial contracting and legal operations, including negotiating complex technology, SaaS, and vendor agreements for enterprise organizations. Specializes in contract risk mitigation and scalable legal-procurement workflows for growing companies.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Services</div>
+          <h2>Flexible solutions for procurement, legal, and operational maturity.</h2>
+        </div>
+      </div>
+      <p class="lede">Choose a full lifecycle transformation assessment, targeted support in a specific function, staff augmentation, or customized training and workshops for your team.</p>
+    </div>
+    <div class="wrap" style="padding-top:12px;">
+      <div class="service-cards">
+        <div class="service-card">
+          <div class="num">01 / Advisory</div>
+          <h3>End-to-End Procurement &amp; Legal Services</h3>
+          <p>Comprehensive review of procurement strategy, governance, operating model, technology enablement, controls, supplier management, and process performance.</p>
+          <a href="#end-to-end">Learn more →</a>
+        </div>
+        <div class="service-card">
+          <div class="num">02 / Staffing</div>
+          <h3>Staff Augmentation</h3>
+          <p>Experienced procurement, legal, and corporate administrative professionals who quickly integrate into existing teams and support critical initiatives.</p>
+          <a href="#staffing">Learn more →</a>
+        </div>
+        <div class="service-card">
+          <div class="num">03 / Capability</div>
+          <h3>Procurement &amp; Legal Training</h3>
+          <p>Practical workshops and capability-building programs that improve sourcing, contracting, negotiation, governance, compliance, and execution.</p>
+          <a href="#training">Learn more →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="end-to-end">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker">End-to-End Procurement</div>
+          <h2>Source-to-pay transformation and legal alignment.</h2>
+        </div>
+      </div>
+      <p class="lede">We assess current-state maturity and build a practical roadmap for transformation, savings, risk reduction, and improved business alignment.</p>
+
+      <div class="detail">
+        <div class="tag-col"><span class="tag">Assessment</span></div>
+        <div>
+          <h3>End-to-End Procurement Assessment</h3>
+          <p>We evaluate workflows across sourcing, contracting, purchasing, supplier onboarding, invoice processing, approvals, compliance, reporting, and supplier performance management.</p>
+          <ul>
+            <li>Increased procurement efficiency and process standardization</li>
+            <li>Improved spend visibility and policy compliance</li>
+            <li>Enhanced supplier performance and risk management</li>
+            <li>Identification of automation and digital transformation opportunities</li>
+            <li>Actionable recommendations with prioritized implementation plans</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="detail">
+        <div class="tag-col"><span class="tag">Savings</span></div>
+        <div>
+          <h3>Cost Optimization &amp; Compliance</h3>
+          <p>We identify untapped opportunities across the procurement lifecycle to drive measurable financial and operational results.</p>
+          <ul>
+            <li>Improved cost control and spend management</li>
+            <li>Increased process effectiveness</li>
+            <li>Greater visibility into procurement operations and spend analytics</li>
+            <li>Reduced operational and compliance risk</li>
+            <li>Prioritized roadmap for continuous improvement</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="detail">
+        <div class="tag-col"><span class="tag">Focused Review</span></div>
+        <div>
+          <h3>Targeted Procurement Function Review</h3>
+          <p>For high-priority pain points, we conduct a focused assessment of a single procurement function or process area.</p>
+          <ul>
+            <li>Sourcing and category management</li>
+            <li>Requisition-to-purchase and approval workflows</li>
+            <li>Supplier onboarding and supplier performance management</li>
+            <li>Contract management and invoice processing</li>
+            <li>Quick-win opportunities and sustainable process improvements</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="detail">
+        <div class="tag-col"><span class="tag">Summary</span></div>
+        <div>
+          <h3>In a nutshell, we offer:</h3>
+          <ul>
+            <li>Source-to-pay transformation</li>
+            <li>Strategic sourcing &amp; category management</li>
+            <li>Supplier management &amp; contract optimization</li>
+            <li>Process design + system alignment</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="staffing">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Staff Augmentation</div>
+          <h2>Flexible professionals for critical business needs.</h2>
+        </div>
+      </div>
+      <p class="lede">We provide skilled procurement, legal, and corporate administrative professionals for short-term initiatives and long-term operational support.</p>
+
+      <div class="detail">
+        <div class="tag-col"><span class="tag">Scalable</span></div>
+        <div>
+          <h3>Scalable staffing support</h3>
+          <p>Whether you need help during growth, transformation, system implementations, employee transitions, specialized projects, or increased workload, our professionals bring functional expertise and business acumen.</p>
+          <ul>
+            <li>Procurement support across sourcing, supplier management, P2P, spend analysis, category management, and transformation</li>
+            <li>Legal support for contract management, legal operations, document review, compliance coordination, and legal administration</li>
+            <li>Corporate operations professionals who support critical functions and improve organizational efficiency</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="detail">
+        <div class="tag-col"><span class="tag">Benefits</span></div>
+        <div>
+          <h3>Why clients choose our staffing model</h3>
+          <ul>
+            <li>Rapid access to experienced professionals</li>
+            <li>Flexible staffing aligned to project or operational demands</li>
+            <li>Reduced hiring timelines and recruitment burden</li>
+            <li>Enhanced workforce scalability and operational continuity</li>
+            <li>Seamless integration with internal teams and business operations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="training">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Training &amp; Workshops</div>
+          <h2>Capability building your teams can apply immediately.</h2>
+        </div>
+      </div>
+      <p class="lede">We deliver practical, real-world training programs for procurement, legal operations, and commercial contracting functions.</p>
+
+      <div class="detail">
+        <div class="tag-col"><span class="tag">Procurement</span></div>
+        <div>
+          <h3>Procurement Training Programs</h3>
+          <ul>
+            <li>End-to-end Source-to-Pay process training</li>
+            <li>Strategic sourcing and category management</li>
+            <li>Supplier negotiation skills and techniques</li>
+            <li>Procurement governance, controls, and compliance</li>
+            <li>Contract lifecycle management fundamentals</li>
+            <li>Spend optimization and value creation strategies</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="detail">
+        <div class="tag-col"><span class="tag">Legal</span></div>
+        <div>
+          <h3>Legal Operations &amp; Contracting Workshops</h3>
+          <ul>
+            <li>Contract drafting, review, and negotiation fundamentals</li>
+            <li>Legal operations optimization</li>
+            <li>Contract risk identification and mitigation</li>
+            <li>Playbook development for Legal and Procurement teams</li>
+            <li>Cross-functional contracting workflows</li>
+            <li>Standardization of legal processes and templates</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="detail">
+        <div class="tag-col"><span class="tag">Custom</span></div>
+        <div>
+          <h3>Custom Corporate Workshops</h3>
+          <ul>
+            <li>Role-based training for Procurement, Legal, Finance, and Operations</li>
+            <li>Live contract review and negotiation labs</li>
+            <li>Scenario-based simulations using real company examples</li>
+            <li>Procurement transformation bootcamps</li>
+            <li>Executive leadership alignment sessions</li>
+            <li>Policy, process, and playbook development workshops</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="detail">
+        <div class="tag-col"><span class="tag">Outcomes</span></div>
+        <div>
+          <h3>Outcomes you can expect</h3>
+          <ul>
+            <li>Faster, more consistent contract turnaround times</li>
+            <li>Improved supplier negotiation outcomes</li>
+            <li>Reduced legal and commercial risk exposure</li>
+            <li>Stronger alignment between Legal, Procurement, and Business teams</li>
+            <li>Greater efficiency in sourcing and contracting workflows</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="framework">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Assessment Framework</div>
+          <h2>Structured. Data-driven. Practical.</h2>
+        </div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:6px;">
+      <div class="framework-strip">
+        <div class="fw-step"><div class="n">01</div><h4>Strategy &amp; Governance</h4></div>
+        <div class="fw-step"><div class="n">02</div><h4>Sourcing &amp; Category Management</h4></div>
+        <div class="fw-step"><div class="n">03</div><h4>Procure-to-Pay Operations</h4></div>
+        <div class="fw-step"><div class="n">04</div><h4>Supplier Management</h4></div>
+        <div class="fw-step"><div class="n">05</div><h4>Technology &amp; Data</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Deliverables &amp; Timeline</div>
+          <h2>A clear roadmap with quantified value opportunities.</h2>
+        </div>
+      </div>
+      <p class="lede">Typical engagement: 4–8 weeks, including data collection, analysis, interviews, opportunity sizing, final report, and roadmap.</p>
+      <div class="timeline">
+        <div class="tl-row">
+          <div class="week">Week 1</div>
+          <p>Kickoff, scope confirmation, stakeholder alignment, and initial data collection.</p>
+        </div>
+        <div class="tl-row">
+          <div class="week">Weeks 2–4</div>
+          <p>Analysis, stakeholder interviews, process walkthroughs, benchmarking, and maturity review.</p>
+        </div>
+        <div class="tl-row">
+          <div class="week">Weeks 5–6</div>
+          <p>Opportunity identification, savings estimation, and transformation roadmap development.</p>
+        </div>
+        <div class="tl-row">
+          <div class="week">Weeks 7–8</div>
+          <p>Final report, scorecard, dashboards, opportunity pipeline, and implementation priorities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Get Started</div>
+          <h2>Let's build your procurement program.</h2>
+        </div>
+      </div>
+      <div class="cta-grid">
+        <div>
+          <p>Every organization has different gaps and goals. We will work with you to design a tailored assessment, staffing solution, training program, or workshop.</p>
+          <p class="contact-line"><strong>Email:</strong> info@agilestrategies.net</p>
+          <p class="contact-line"><strong>Next steps:</strong> Confirm scope and stakeholders, provide initial data, and schedule kickoff.</p>
+        </div>
+        <form class="inquiry" action="mailto:info@agilestrategies.net" method="post" enctype="text/plain">
+          <div class="field">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="service">Service Interest</label>
+            <select id="service" name="service">
+              <option>End-to-End Procurement &amp; Legal Services</option>
+              <option>Staff Augmentation</option>
+              <option>Procurement &amp; Legal Training / Workshops</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Comment or Message</label>
+            <textarea id="message" name="message"></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="legal">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Legal</div>
+          <h2>Privacy Policy &amp; Terms of Use</h2>
+        </div>
+      </div>
+      <div class="legal-grid">
+        <div class="legal-block" id="privacy">
+          <div class="tag-col"><span class="tag">Privacy Policy</span></div>
+          <p>Agile Strategies respects your privacy. Information submitted through this website is used only to respond to inquiries, provide requested information, and support business communications related to our services.</p>
+          <ul>
+            <li>We may collect basic contact details such as name, email address, organization, and message content when you submit a form.</li>
+            <li>We do not sell personal information to third parties.</li>
+            <li>Information may be used to follow up about procurement, legal, training, workshop, or staff augmentation services.</li>
+            <li>Reasonable administrative and technical safeguards are used to protect submitted information.</li>
+            <li>You may contact us at info@agilestrategies.net to request updates or removal of your contact information.</li>
+          </ul>
+        </div>
+        <div class="legal-block" id="terms">
+          <div class="tag-col"><span class="tag">Terms of Use</span></div>
+          <p>By using this website, you agree that the information provided is for general informational purposes only and does not create a client, legal, consulting, or advisory relationship unless agreed in writing by Agile Strategies.</p>
+          <ul>
+            <li>Website content may be updated, changed, or removed at any time without notice.</li>
+            <li>Materials on this site may not be copied, modified, or reused without permission.</li>
+            <li>Agile Strategies makes reasonable efforts to provide accurate information, but does not guarantee that all content is complete or current.</li>
+            <li>Use of this website is at your own discretion and risk.</li>
+            <li>Formal service terms, scope, pricing, deliverables, and confidentiality obligations are governed by separate written agreements.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="legal-links">
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#terms">Terms of Use</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="copyright">Agile Strategies&reg;, LLC &copy; 2026 All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <!--
+    Live chat widget — styled to match the Reuters treatment.
+    This is a static UI shell only. To connect a real chat backend
+    (e.g. tawk.to), replace the toggle/send logic below with your
+    provider's embed script, or paste it just before </body>.
+  -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <span class="back-to-top-icon">&#8593;</span>
+    <span class="back-to-top-label">We Are Here!</span>
+  </button>
+
+  <button class="chat-toggle" id="chatToggle" aria-label="Open customer support chat">
+    <span class="chat-toggle-icon">&#9998;</span>
+    <span class="chat-toggle-label">Support</span>
+  </button>
+
+  <div class="chat-panel" id="chatPanel">
+    <div class="chat-header">
+      <span>Customer Support</span>
+      <button class="chat-close" id="chatClose" aria-label="Close chat">&times;</button>
+    </div>
+    <div class="chat-body" id="chatBody">
+      <div class="chat-row">
+        <div class="chat-avatar">AS</div>
+        <div class="chat-bubble">Hi! How can we help? Ask us about procurement assessments, staffing, or training.</div>
+      </div>
+      <div class="chat-quick-replies">
+        <button class="chat-chip" data-msg="I have a question">I have a question</button>
+        <button class="chat-chip" data-msg="Tell me more about your services">Tell me more</button>
+      </div>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" id="chatInput" placeholder="Type here and press enter...">
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      var backToTop = document.getElementById('backToTop');
+      function toggleVisibility(){
+        if(window.scrollY > 400){ backToTop.classList.add('visible'); }
+        else{ backToTop.classList.remove('visible'); }
+      }
+      window.addEventListener('scroll', toggleVisibility);
+      toggleVisibility();
+      backToTop.addEventListener('click', function(){
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+
+  <script>
+    (function(){
+      var toggle = document.getElementById('chatToggle');
+      var panel = document.getElementById('chatPanel');
+      var closeBtn = document.getElementById('chatClose');
+      var body = document.getElementById('chatBody');
+      var input = document.getElementById('chatInput');
+      var chips = document.querySelectorAll('.chat-chip');
+
+      function openPanel(){ panel.classList.add('open'); toggle.classList.add('hidden'); }
+      function closePanel(){ panel.classList.remove('open'); toggle.classList.remove('hidden'); }
+
+      toggle.addEventListener('click', openPanel);
+      closeBtn.addEventListener('click', closePanel);
+
+      function addUserMessage(text){
+        if(!text) return;
+        var row = document.createElement('div');
+        row.className = 'chat-row chat-row-user';
+        row.innerHTML = '<div class="chat-bubble chat-bubble-user"></div>';
+        row.querySelector('.chat-bubble-user').textContent = text;
+        body.appendChild(row);
+        body.scrollTop = body.scrollHeight;
+
+        setTimeout(function(){
+          var reply = document.createElement('div');
+          reply.className = 'chat-row';
+          reply.innerHTML = '<div class="chat-avatar">AS</div><div class="chat-bubble">Thanks for reaching out — a member of our team will follow up shortly. In the meantime, feel free to email info@agilestrategies.net.</div>';
+          body.appendChild(reply);
+          body.scrollTop = body.scrollHeight;
+        }, 500);
+      }
+
+      input.addEventListener('keydown', function(e){
+        if(e.key === 'Enter' && input.value.trim() !== ''){
+          addUserMessage(input.value.trim());
+          input.value = '';
+        }
+      });
+
+      chips.forEach(function(chip){
+        chip.addEventListener('click', function(){
+          addUserMessage(chip.getAttribute('data-msg'));
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
