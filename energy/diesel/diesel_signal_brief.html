@@ -44,7 +44,7 @@
 
     <div class="report-header">
         <h1>Diesel Signal Brief</h1>
-        <div class="meta">Generated: 2026-10-23 03:42  | Deterministic structural calculation</div>
+        <div class="meta">Generated: 2026-10-23 04:01  | Deterministic structural calculation</div>
     </div>
 
     <!-- KPI STRIP -->
@@ -157,6 +157,14 @@
             <strong>Disclaimer:</strong> This report is for informational purposes only and does not constitute investment advice.
             Past performance does not guarantee future results. Data is believed accurate but not warranted.
             All figures computed deterministically from public sources without adjustment or AI inference.
+        </div>
+        <div class="footer-disclaimer">
+            <strong>Methodology Note:</strong> The Diesel/WTI ratio and its 10Y percentile are computed by joining
+            weekly diesel observations to WTI crude observations on exact date match. Because WTI is a daily series
+            and diesel is weekly, weeks without an exact-date WTI observation (e.g., holidays) are excluded from the
+            ratio history, covering approximately 90% of available diesel weeks in this run.
+            This does not affect the standalone Diesel Price, WTI Crude, Distillate Stocks, or Refinery Input figures,
+            which are each computed from their full respective series.
         </div>
         <div class="footer-legal">
             <span>© 2026 Randy Hinton. All rights reserved.</span>
